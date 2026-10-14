@@ -48,7 +48,7 @@ jobs:
             --project-name dia-health-one \
             --branch "$DEPLOY_BRANCH" \
             --commit-hash "$GITHUB_SHA" | tee deployment.log
-          deployment_url=$(sed -n 's/.*\(https:\/\/[a-z0-9]*\.dia-health-one\.pages\.dev\).*/\1/p' deployment.log | tail -1)
+          deployment_url=$(sed -n 's/.*Deployment complete! Take a peek over at \(https:\/\/[a-z0-9]*\.dia-health-one\.pages\.dev\).*/\1/p' deployment.log | tail -1)
           test -n "$deployment_url"
           echo "url=$deployment_url" >> "$GITHUB_OUTPUT"
           printf 'Website deployment: %s\n' "$deployment_url" >> "$GITHUB_STEP_SUMMARY"

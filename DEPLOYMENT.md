@@ -1,6 +1,6 @@
 # Website deployment
 
-Changes pushed to `main` deploy to the `dia-health-one` Cloudflare Pages project in the shared **Dia Health One** account. Other pushed branches create preview deployments. Pull requests validate website packaging without receiving deployment credentials.
+Changes pushed to `main` deploy to the `dia-health-one` Cloudflare Pages project in the shared **Dia Health One** account. The Pages project's production branch must be configured as `main`. Other pushed branches create preview deployments. Pull requests validate website packaging without receiving deployment credentials.
 
 The GitHub Actions workflow uploads `index.html`, optional `assets/` and `images/` directories, and optional `favicon.ico`, `robots.txt`, and `sitemap.xml`. Repository documentation and workflow files are excluded. Add other public files explicitly to the workflow when needed.
 
