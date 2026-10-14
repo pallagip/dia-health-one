@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f8f5" />
+  <meta name="description" content="DIA HEALTH ONE — a smart insulin discovery endeavour." />
+  <title>DIA HEALTH ONE — Smart Insulin Discovery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f8f8f5;
+      --ink: #201f27;
+      --muted: #777681;
+      --purple: #7155bd;
+      --purple-dark: #4d388a;
+      --lavender: #e8e1f5;
+      --green: #c8e5a8;
+      --line: #e5e4e0;
+      --mono: "DM Mono", monospace;
+      --sans: "Manrope", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1240px, calc(100% - 80px)); margin: 0 auto; }
+    .topbar { height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .wordmark { font-weight: 800; letter-spacing: .13em; font-size: 13px; white-space: nowrap; }
+    .wordmark span { color: var(--purple); }
+    .nav-center { display: flex; gap: 34px; font-size: 12px; color: #65636f; }
+    .nav-center a { transition: color .2s ease; }
+    .nav-center a:hover { color: var(--purple); }
+    .contact-link { font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; }
+    .contact-link::after { content: "↗"; font-size: 15px; color: var(--purple); transition: transform .2s ease; }
+    .contact-link:hover::after { transform: translate(3px,-3px); }
+    .hero { min-height: 680px; display: grid; grid-template-columns: 1fr .88fr; align-items: center; gap: 5%; padding: 74px 0 86px; }
+    .eyebrow, .section-label { font: 11px var(--mono); letter-spacing: .13em; text-transform: uppercase; color: var(--purple); }
+    .eyebrow { display: flex; align-items: center; gap: 11px; margin-bottom: 26px; }
+    .eyebrow::before { content: ""; width: 25px; height: 1px; background: var(--purple); }
+    h1 { margin: 0; font-size: clamp(48px, 6.1vw, 82px); line-height: .99; letter-spacing: -.075em; font-weight: 600; max-width: 660px; }
+    h1 .accent { color: var(--purple); }
+    .hero-sub { margin: 26px 0 36px; color: var(--muted); font-size: clamp(16px, 1.7vw, 20px); letter-spacing: -.025em; }
+    .hero-cta { border-radius: 999px; background: var(--purple); color: white; display: inline-flex; align-items: center; gap: 26px; padding: 15px 20px 15px 23px; font-size: 12px; font-weight: 700; box-shadow: 0 8px 24px #7155bd24; transition: transform .25s, background .25s, box-shadow .25s; }
+    .hero-cta:hover { transform: translateY(-3px); background: var(--purple-dark); box-shadow: 0 12px 30px #7155bd38; }
+    .hero-cta span { font-size: 18px; line-height: 12px; }
+    .hero-art { position: relative; min-height: 430px; display: grid; place-items: center; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(.1px); }
+    .orb-back { width: min(360px, 82%); aspect-ratio: 1; background: radial-gradient(circle at 35% 30%, #f4f0fb 0, #e7dff4 54%, #d6c9ec 100%); right: 6%; top: 6%; animation: float 7s ease-in-out infinite; }
+    .orb-front { width: 225px; height: 225px; background: linear-gradient(145deg, #d9edc5, #b6d995); left: 5%; bottom: 7%; opacity: .94; animation: float 8s ease-in-out -2s infinite; }
+    .chart-card { z-index: 1; width: min(390px, 90%); padding: 22px 22px 18px; border: 1px solid #ffffffb8; border-radius: 16px; background: #ffffffd9; box-shadow: 0 22px 70px #4b3b7620; backdrop-filter: blur(12px); transform: rotate(-2deg); }
+    .chart-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .chart-title { font-size: 12px; font-weight: 700; }
+    .chart-tag { font: 9px var(--mono); letter-spacing: .06em; color: #4b7941; background: #e9f4e1; padding: 7px 9px; border-radius: 30px; }
+    .chart { display: block; width: 100%; height: auto; overflow: visible; }
+    .chart-caption { display: flex; justify-content: space-between; color: #9997a0; font: 9px var(--mono); margin-top: 8px; }
+    .chart-legend { display: flex; gap: 15px; font: 9px var(--mono); color: #7f7d88; margin-top: 17px; }
+    .legend-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; background: var(--purple); }
+    .legend-dot.green { background: #83b35c; }
+    .float-note { z-index: 2; position: absolute; right: 0; bottom: 9%; padding: 12px 15px; border-radius: 11px; background: var(--ink); color: #fff; font-size: 10px; box-shadow: 0 12px 32px #201f2733; }
+    .float-note b { color: var(--green); font-weight: 600; }
+    .hero-index { position: absolute; left: 1%; bottom: 0; color: #aaa8ae; font: 9px var(--mono); letter-spacing: .12em; }
+    .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
+    .ticker-inner { display: flex; width: max-content; gap: 34px; padding: 19px 0; color: #8b8991; font: 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; animation: marquee 32s linear infinite; }
+    .ticker-inner span { display: inline-flex; align-items: center; gap: 34px; }
+    .ticker-inner span::after { content: "✳"; color: #9f8bd0; font-size: 14px; }
+    section.content { padding: 124px 0; }
+    .problem { display: grid; grid-template-columns: .8fr 1.2fr; gap: 11%; align-items: start; }
+    .problem h2, .method h2 { font-size: clamp(37px, 5vw, 62px); line-height: 1.04; letter-spacing: -.065em; margin: 24px 0 0; font-weight: 600; }
+    .problem-copy { padding-top: 45px; }
+    .problem-copy p { font-size: clamp(20px, 2.45vw, 30px); line-height: 1.35; letter-spacing: -.045em; margin: 0; max-width: 650px; }
+    .problem-copy p + p { margin-top: 20px; }
+    .problem-copy strong { color: var(--purple-dark); font-weight: 600; }
+    .problem-copy .ceiling { display: inline-block; margin-top: 28px; padding: 13px 18px; background: var(--green); border-radius: 100px; font-size: 11px; letter-spacing: .02em; font-weight: 700; }
+    .divider { height: 1px; background: var(--line); }
+    .why { background: #f0edf6; position: relative; overflow: hidden; }
+    .why::after { content: ""; position: absolute; width: 440px; height: 440px; border: 1px solid #d8d0e9; border-radius: 50%; right: -170px; top: -200px; box-shadow: 0 0 0 42px #f0edf6, 0 0 0 43px #ded7ed, 0 0 0 86px #f0edf6, 0 0 0 87px #e4deef; pointer-events: none; }
+    .why-grid { position: relative; z-index: 1; display: grid; grid-template-columns: .8fr 1.2fr; gap: 11%; align-items: center; }
+    .why h2 { font-size: clamp(38px, 5vw, 60px); line-height: 1.05; letter-spacing: -.07em; font-weight: 600; margin: 24px 0 0; max-width: 440px; }
+    .why-copy { font-size: clamp(19px, 2.2vw, 27px); line-height: 1.42; letter-spacing: -.04em; max-width: 690px; }
+    .why-copy strong { color: var(--purple-dark); font-weight: 700; }
+    .why-copy p { margin: 0 0 20px; }
+    .why-copy p:last-child { margin-bottom: 0; }
+    .quote-mark { color: var(--purple); font-size: 46px; line-height: .2; vertical-align: -10px; margin-right: 3px; }
+    .method { display: grid; grid-template-columns: .8fr 1.2fr; gap: 11%; align-items: center; }
+    .method h2 { margin-bottom: 0; }
+    .method-copy { border-left: 1px solid #d4cec2; padding: 6px 0 6px 30px; font-size: clamp(20px, 2.5vw, 32px); line-height: 1.37; letter-spacing: -.045em; }
+    .method-copy p { margin: 0; }
+    .method-copy p + p { margin-top: 12px; color: var(--purple-dark); }
+    .method-visual { margin-top: 34px; display: flex; align-items: center; gap: 10px; color: #81808a; font: 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    .method-visual .line { height: 1px; flex: 1; background: linear-gradient(90deg, #b8a9db, #93bc75); position: relative; }
+    .method-visual .line::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #93bc75; position: absolute; right: 0; top: -3px; }
+    .closing { padding: 100px 0 36px; background: #201f27; color: white; overflow: hidden; position: relative; }
+    .closing::before { content: ""; position: absolute; width: 540px; height: 540px; border: 1px solid #ffffff14; border-radius: 50%; top: -280px; left: 55%; box-shadow: 0 0 0 45px #ffffff05, 0 0 0 46px #ffffff12, 0 0 0 90px #ffffff05, 0 0 0 91px #ffffff10; }
+    .closing-inner { position: relative; z-index: 1; text-align: center; }
+    .closing .section-label { color: #b7a5e5; }
+    .closing h2 { font-size: clamp(42px, 7vw, 86px); line-height: 1; letter-spacing: -.075em; font-weight: 600; margin: 24px auto 35px; max-width: 800px; }
+    .closing h2 span { color: var(--green); }
+    .closing .hero-cta { background: var(--green); color: var(--ink); box-shadow: none; }
+    .closing .hero-cta:hover { background: #d7efc0; }
+    .footer { display: flex; justify-content: space-between; margin-top: 110px; border-top: 1px solid #ffffff23; padding-top: 20px; color: #a09ea7; font: 9px var(--mono); letter-spacing: .08em; }
+    .footer .wordmark { color: white; font: 700 10px var(--sans); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(2deg); } }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 40px, 560px); }
+      .topbar { height: 68px; }
+      .wordmark { font-size: 10px; letter-spacing: .11em; }
+      .nav-center { display: none; }
+      .contact-link { font-size: 11px; }
+      .hero { min-height: 0; display: flex; flex-direction: column; align-items: stretch; gap: 18px; padding: 65px 0 50px; }
+      .hero-copy { position: relative; z-index: 2; }
+      .eyebrow { margin-bottom: 22px; font-size: 9px; }
+      h1 { font-size: clamp(49px, 13vw, 75px); }
+      .hero-sub { margin: 20px 0 25px; font-size: 16px; }
+      .hero-art { min-height: 350px; margin-top: 0; }
+      .orb-back { width: 300px; right: 7%; top: 6%; }
+      .orb-front { width: 175px; height: 175px; left: 0; bottom: 0; }
+      .chart-card { width: min(360px, 90%); padding: 17px; }
+      .float-note { right: -2px; bottom: 1%; }
+      .hero-index { display: none; }
+      .ticker-inner { padding: 15px 0; }
+      section.content { padding: 78px 0; }
+      .problem, .why-grid, .method { grid-template-columns: 1fr; gap: 30px; }
+      .problem h2, .why h2, .method h2 { margin-top: 17px; }
+      .problem-copy { padding-top: 0; }
+      .problem-copy p { font-size: 23px; }
+      .why::after { width: 280px; height: 280px; right: -170px; top: -100px; }
+      .why-copy { font-size: 21px; }
+      .method-copy { padding-left: 20px; font-size: 23px; }
+      .closing { padding-top: 75px; }
+      .closing h2 { margin-top: 19px; }
+      .footer { margin-top: 80px; font-size: 8px; gap: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="wordmark" href="#top" aria-label="DIA HEALTH ONE home">DIA <span>HEALTH</span> ONE</a>
+    <nav class="nav-center" aria-label="Main navigation">
+      <a href="#smart-insulin">Smart insulin</a>
+      <a href="#challenge">The challenge</a>
+      <a href="#approach">Our approach</a>
+    </nav>
+    <a class="contact-link" href="mailto:patrik@diahealth.one?subject=DIA%20HEALTH%20ONE%20%E2%80%94%20Hello">Contact</a>
+  </header>
+
+  <main id="top">
+    <section class="shell hero" id="smart-insulin">
+      <div class="hero-copy">
+        <div class="eyebrow">A smart insulin discovery endeavour</div>
+        <h1>Insulin that<br />switches <span class="accent">off</span><br />before glucose<br />goes low.</h1>
+        <p class="hero-sub">Rethinking the dose-limiting problem in insulin therapy.</p>
+        <a class="hero-cta" href="mailto:patrik@diahealth.one?subject=DIA%20HEALTH%20ONE%20%E2%80%94%20Hello">Contact DIA HEALTH ONE <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-label="Illustration of glucose response and smart insulin switching off">
+        <div class="orb orb-back"></div><div class="orb orb-front"></div>
+        <div class="chart-card">
+          <div class="chart-top"><div class="chart-title">A safer glucose response</div><div class="chart-tag">CONCEPT</div></div>
+          <svg class="chart" viewBox="0 0 360 150" role="img" aria-label="A glucose line levels out as smart insulin switches off">
+            <defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7155bd" stop-opacity=".16"/><stop offset="1" stop-color="#7155bd" stop-opacity="0"/></linearGradient></defs>
+            <path d="M18 22H350M18 62H350M18 102H350M18 142H350" stroke="#eeedf0" stroke-width="1"/>
+            <path d="M18 112 C50 109, 57 76, 86 65 S121 78, 145 92 S184 108, 205 110 C225 111, 238 106, 255 99 S285 81, 305 83 S329 95,350 91 L350 145 L18 145Z" fill="url(#fill)"/>
+            <path d="M18 112 C50 109, 57 76, 86 65 S121 78, 145 92 S184 108, 205 110 C225 111, 238 106, 255 99 S285 81, 305 83 S329 95,350 91" fill="none" stroke="#7155bd" stroke-width="3" stroke-linecap="round"/>
+            <path d="M205 110 C225 111, 238 106, 255 99 S285 81, 305 83 S329 95,350 91" fill="none" stroke="#81ad5f" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 6"/>
+            <circle cx="205" cy="110" r="5" fill="#fff" stroke="#7155bd" stroke-width="2"/><circle cx="205" cy="110" r="9" fill="none" stroke="#7155bd" stroke-opacity=".25"/>
+            <text x="211" y="130" fill="#777681" font-family="DM Mono, monospace" font-size="8">INSULIN SWITCHES OFF</text>
+          </svg>
+          <div class="chart-caption"><span>GLUCOSE LEVEL</span><span>TIME →</span></div>
+          <div class="chart-legend"><span><i class="legend-dot"></i>glucose response</span><span><i class="legend-dot green"></i>smart insulin</span></div>
+        </div>
+        <div class="float-note">Responsive by design <b>↗</b></div>
+      </div>
+      <div class="hero-index">01 — DISCOVERY</div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-inner"><span>Smart insulin</span><span>Analytical discovery</span><span>Safer by design</span><span>Smart insulin</span><span>Analytical discovery</span><span>Safer by design</span></div></div>
+
+    <section class="shell content problem" id="challenge">
+      <div class="reveal"><div class="section-label">01 / The need</div><h2>Why we<br />need it.</h2></div>
+      <div class="problem-copy reveal"><p>Hypoglycemia is insulin’s <strong>dose-limiting problem.</strong></p><p>Not a side effect.<br /><strong>The ceiling.</strong></p><span class="ceiling">A hard limit on better control</span></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="content why" id="why">
+      <div class="shell why-grid">
+        <div class="reveal"><div class="section-label">02 / The gap</div><h2>Why is it<br />not fixed?</h2></div>
+        <div class="why-copy reveal">
+          <p><span class="quote-mark">“</span><strong>Novo’s NNC2215 almost worked</strong> — but a simple paracetamol glucuronide corrupted it.</p>
+          <p>Patients under-dose, and therefore, <strong>chronic hyperglycemia is the price.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="shell content method" id="approach">
+      <div class="reveal"><div class="section-label">03 / The approach</div><h2>Compute.<br />Falsify.<br />Discover.</h2></div>
+      <div class="reveal">
+        <div class="method-copy"><p>We compute the target, then falsify mechanisms analytically.</p><p>Each hypothesis is tested in days, not years.</p></div>
+        <div class="method-visual"><span>Target</span><i class="line"></i><span>Mechanism</span><i class="line"></i><span>Evidence</span></div>
+      </div>
+    </section>
+
+    <footer class="closing" id="contact">
+      <div class="shell closing-inner">
+        <div class="section-label">DIA HEALTH ONE</div>
+        <h2>Let’s make insulin<br /><span>safer by design.</span></h2>
+        <a class="hero-cta" href="mailto:patrik@diahealth.one?subject=DIA%20HEALTH%20ONE%20%E2%80%94%20Hello">Get in touch <span>↗</span></a>
+        <div class="footer"><a class="wordmark" href="#top">DIA HEALTH ONE</a><span>A SMART INSULIN DISCOVERY ENDEAVOUR</span><span>© 2026</span></div>
+      </div>
+    </footer>
+  </main>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
