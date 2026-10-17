@@ -1,15 +1,15 @@
 {
   "schema": "dia-health-one.reproduction.v2",
   "run": {
-    "id": "DHO-NNC2215-FIG3D-20261017T195544Z",
-    "created_at_utc": "2026-10-17T19:55:44.348326+00:00",
+    "id": "DHO-NNC2215-FIG3D-20261017T205814Z",
+    "created_at_utc": "2026-10-17T20:58:14.063545+00:00",
     "engine": "Python standard library",
-    "engine_version": "3.14.4",
+    "engine_version": "3.12.15",
     "analysis": "source-data reanalysis; means, sample SD, paired experiment fold changes",
     "input_sha256": "b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f",
-    "script_sha256": "b4afed6be157cf296a0544a517d331ecb23dad06601e3fe4ee3b4cc5618e0b32",
+    "script_sha256": "ead0d4abfae1edd6a23e1b76c48f1a628aaa141e878f7bfed00732547af4eda5",
     "environment": {
-      "platform": "macOS-26.3-arm64-arm-64bit-Mach-O",
+      "platform": "macOS-26.3-arm64-arm-64bit",
       "architecture": "arm64",
       "dependencies": "Python standard library only",
       "accelerator": "CPU",
@@ -416,7 +416,7 @@
     }
   ],
   "interpretation": {
-    "hill_fit": "Not fitted: this proof of concept reports source-level means and paired fold changes; a five-dose, three-experiment dataset is insufficient for a robust four-parameter curve and threshold claim.",
+    "hill_fit": "A separate exploratory shared-slope Hill fit is recorded in data/hill-fit-summary.json. Its experiment-bootstrap EC50 upper tail is censored at the 1000 mmol/L fit ceiling; no reliable midpoint or 6 mmol/L threshold is inferred.",
     "scope": "Reanalysis of published in-vitro data only. No molecular dynamics, binding free-energy, or patient-response model was run."
   }
 }

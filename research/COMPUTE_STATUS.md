@@ -6,14 +6,16 @@
 
 ## Reproductions completed
 
-Four Python analyses completed on the Apple M4 host:
+Five Python analyses completed on the Apple M4 host:
 
 1. **Nature 2024 Figure 3d source values:** 30 CSV values were verified against the publisher workbook's source cells and workbook SHA-256. Paired fold changes across three independent experiments are 3.1576× for 3→20 mmol/L glucose and 12.4720× for 0→20 mmol/L, matching the paper's rounded 3.2× and 12.5× values.
 2. **2026 PaG pig clamp, Table 1:** the published group means, SEM, sample sizes, and p-values were transcribed. The script calculates descriptive ratios of group means: 1.1466× for low-dose PaG and 1.4226× for high-dose PaG versus saline. Individual animal values are not available in this data set, so SEM and significance tests are not recomputed.
 3. **2026 PaG model, Appendix S4 Equation 4b:** the reported `CoeffPaG` value is reapplied at published human and pig concentration anchors. This reproduces only the linear insulin-sensitivity component, not receptor affinity, glucose-infusion rate, or patient response.
 4. **2026 PaG binding summaries:** ratios are recalculated from the paper's reported Kd means (1.91 and 0.17 mmol/L) and zero-glucose hIR-A affinity means (0.9% and 5.4% with 70 μmol/L PaG). These are arithmetic checks on rounded published summaries; the native-MS and receptor-binding curves are not refitted.
 
-The run records and input checksums are in `data/reproduction.json`, `data/pag-clamp-reproduction.json`, `data/pag-sensitivity-reproduction.json`, and `data/pag-binding-summary-reproduction.json`. `data/nvidia-access-status.json` records the compute-access state and source links.
+5. **Nature 2024 Figure 3d descriptive Hill fit:** the 15 NNC2215 source-workbook values were fit with a shared apparent slope and EC50, measured experiment-specific zero-glucose baselines, and experiment-specific upper responses. The best fit is EC50 13.43 mmol/L and apparent Hill slope 1.115. In 2,000 deterministic bootstrap resamples of the three independent experiments, the EC50 2.5th percentile is 8.06 mmol/L; 64 resamples (3.2%) hit the 1,000 mmol/L optimization ceiling, censoring the upper percentile. The apparent-slope percentile range is 0.675–1.491. This fit establishes that the available points do not identify a reliable EC50; it does not establish a 6 mmol/L switch threshold. Percentile ranges are fragile with three clusters and are not formal inferential confidence intervals.
+
+The run records and input checksums are in `data/reproduction.json`, `data/pag-clamp-reproduction.json`, `data/pag-sensitivity-reproduction.json`, `data/pag-binding-summary-reproduction.json`, and `data/hill-fit-summary.json`. The Hill-fit script is `fit_nnc2215_hill_response.py`; it regenerates `assets/hill-fit.svg`. `data/nvidia-access-status.json` records the compute-access state and source links.
 
 ## Local engine preflight
 

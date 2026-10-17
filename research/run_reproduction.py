@@ -133,7 +133,7 @@ def main():
         "inputs": rows,
         "series": {"NNC2215": nnc, "Insulin_degludec": control},
         "fold_changes": folds,
-        "interpretation": {"hill_fit": "Not fitted: this proof of concept reports source-level means and paired fold changes; a five-dose, three-experiment dataset is insufficient for a robust four-parameter curve and threshold claim.",
+        "interpretation": {"hill_fit": "A separate exploratory shared-slope Hill fit is recorded in data/hill-fit-summary.json. Its experiment-bootstrap EC50 upper tail is censored at the 1000 mmol/L fit ceiling; no reliable midpoint or 6 mmol/L threshold is inferred.",
                            "scope": "Reanalysis of published in-vitro data only. No molecular dynamics, binding free-energy, or patient-response model was run."}
     }
     RESULTS.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

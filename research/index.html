@@ -58,12 +58,12 @@
       <div class="evidence-grid">
         <article class="chart-card">
           <div class="chart-head">
-            <div><div class="chart-title">A graded increase across glucose concentrations</div><div class="chart-subtitle">Values from the Nature 2024 source workbook · Figure 3d</div></div>
+            <div><div class="chart-title">Measured response and exploratory Hill fit</div><div class="chart-subtitle">Values from the Nature 2024 source workbook · Figure 3d</div></div>
             <div class="metric-callout"><strong id="fold-3-20">3.16×</strong><span>mean paired change<br />3 → 20 mmol/L</span></div>
           </div>
           <figure class="chart-figure">
-            <img src="assets/glucose-response.svg" alt="Source-data chart showing three independent NNC2215 experiment values and mean with sample standard deviation across five glucose concentrations." width="900" height="480" />
-            <figcaption>Each point is an independent experiment. The line joins group means as a visual guide; no Hill curve or threshold is fitted.</figcaption>
+            <img src="assets/hill-fit.svg" alt="NNC2215 hIR-A affinity source data at five glucose concentrations, showing three independent experiments, mean and standard deviation, an exploratory shared-slope Hill curve, and a wide experiment-bootstrap range." width="900" height="480" />
+            <figcaption>Open points show the three source experiments; bars show mean ± sample SD. The fitted curve is descriptive, and the green band resamples the three experiments. Its upper EC50 tail reaches the fit ceiling.</figcaption>
           </figure>
           <div class="data-table-wrap">
             <table class="data-table">
@@ -71,6 +71,18 @@
               <thead><tr><th scope="col">Glucose (mmol/L)</th><th scope="col">NNC2215 mean ± SD</th><th scope="col">Insulin degludec control mean</th></tr></thead>
               <tbody id="data-rows"><tr><td colspan="3">Loading source-data summary…</td></tr></tbody>
             </table>
+          </div>
+          <div class="hill-fit-panel" aria-labelledby="hill-fit-title">
+            <div class="hill-fit-head">
+              <div><div class="hill-fit-kicker">DESCRIPTIVE MODEL / IDENTIFIABILITY CHECK</div><h3 id="hill-fit-title">The fitted midpoint is weakly identified.</h3></div>
+              <span class="hill-fit-badge">EXPLORATORY</span>
+            </div>
+            <div class="hill-fit-stats">
+              <div><span>APPARENT HILL SLOPE</span><strong id="hill-fit-slope">1.12</strong><small id="hill-fit-slope-range">Bootstrap range 0.67–1.49</small></div>
+              <div><span>EC50 · mmol/L</span><strong id="hill-fit-ec50">13.4</strong><small id="hill-fit-ec50-range">97.5th percentile reaches the 1,000 mmol/L fit ceiling</small></div>
+            </div>
+            <p id="hill-fit-note">The model shares EC50 and slope across experiments, fixes each measured zero-glucose baseline, and fits a separate upper response per experiment. Only three experiments are available; the upper bootstrap tail is censored, so no reliable midpoint or 6 mmol/L threshold is established.</p>
+            <div class="hill-fit-links"><a href="data/hill-fit-summary.json" download>Fit and provenance JSON ↓</a><a href="fit_nnc2215_hill_response.py">Reproduce fit ↗</a><a href="assets/glucose-response.svg">Source-only chart ↗</a></div>
           </div>
           <div class="card-source"><span>ASSAY</span> hIR-A · 1.5% HSA <span class="source-dot">·</span> <span>REPLICATES</span> 3 independent experiments</div>
         </article>
@@ -221,8 +233,8 @@
         <p class="output-meta" id="output-meta"></p>
       </div>
       <div class="run-register" aria-label="Current research run register">
-        <div class="run-register-heading">
-          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four source-data reanalyses, a PaG hydration pilot, and a public-model audit complete. NNC2215–PaG binding MD has not started.</h3></div>
+          <div class="run-register-heading">
+          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four source-data reanalyses and one Hill-fit identifiability check complete. PaG hydration and public-model audits are also recorded; target binding MD has not started.</h3></div>
           <a class="run-register-status-link" href="data/nvidia-access-status.json" download>Compute status manifest <span>↓</span></a>
         </div>
         <div class="run-register-grid">
@@ -247,8 +259,15 @@
             <p>Ratios use rounded published means. Equation 4b is also reapplied at three PaG exposure anchors; no raw curves are refitted.</p>
             <div class="register-links"><a href="data/pag-binding-summary-reproduction.json" download>Binding JSON ↓</a><a href="reproduce_pag_binding_summary.py">Binding script ↗</a><a href="data/pag-sensitivity-reproduction.json" download>Equation 4b JSON ↓</a><a href="reproduce_pag_sensitivity.py">Equation 4b script ↗</a></div>
           </article>
+          <article class="register-card register-card-review">
+            <div class="register-card-top"><span>RUN 05 · NATURE 2024</span><span class="register-state register-review">WEAKLY IDENTIFIED</span></div>
+            <h4>Hill response fit · Figure 3d</h4>
+            <div class="register-values"><div><strong>n = 1.12</strong><small>apparent slope</small></div><div><strong>13.4 mM</strong><small>best-fit EC50</small></div></div>
+            <p>Bootstrap over three experiments reaches the 1,000 mM fit ceiling for EC50. This is an exploratory fit, not a reliable midpoint or activation threshold.</p>
+            <div class="register-links"><a href="data/hill-fit-summary.json" download>Fit JSON ↓</a><a href="fit_nnc2215_hill_response.py">Python script ↗</a></div>
+          </article>
           <article class="register-card register-card-pending">
-            <div class="register-card-top"><span>RUN 05 · TARGET MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
+            <div class="register-card-top"><span>RUN 06 · TARGET MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
             <h4>Macrocycle analogue · PaG</h4>
             <div class="register-single-value"><strong>500 ns</strong><small>published production method</small></div>
             <p>The published 500 ns study used an in-house glucose-bound macrocycle analogue, not full NNC2215; its seed coordinates are not public. Our PaG-only water pilot checks setup stability, not binding. Conjugate chemistry and GPU allocation remain pending.</p>
@@ -308,7 +327,7 @@
         <article class="gate-card gate-blocked"><div class="gate-number">02</div><div class="gate-status">SCAFFOLD CHECKED · CONJUGATE CHEMISTRY OPEN</div><h3>Structure &amp; parameters</h3><p>The publisher model PDBs pass hash, sequence, backbone, disulfide, and modification-link checks. Duplicate atom names and differing LYX-to-macrocycle attachment labels remain unresolved in the nonstandard residues. The 2026 seed coordinates and validated full-conjugate parameters are also unavailable.</p><div class="gate-links"><a class="gate-action" href="structures/nnc2215-open-model.pdb" download>Open-state PDB ↓</a><a class="gate-action" href="structures/nnc2215-closed-model.pdb" download>Closed-state PDB ↓</a><a class="gate-action" href="data/structure-manifest.json" download>Checksums &amp; provenance ↓</a><a class="gate-action" href="data/nnc2215-model-validation.json" download>Structure audit ↓</a><a class="gate-action" href="data/target-md-pilot-protocol.json" download>Proposed pilot ↓</a></div><div class="gate-foot">MODEL-BUILT · TOPOLOGY NOT VALIDATED</div></article>
         <article class="gate-card gate-access-pending"><div class="gate-number">03</div><div class="gate-status">LAMBDA FORM NOT SUBMITTED · GPU PENDING</div><h3>NVIDIA compute access</h3><p>Dia Health One's Inception membership is approved and the research dashboard product profile is saved. NVIDIA recorded the $1,000 Lambda benefit request, but Lambda's separate partner application was only opened for inspection; no fields were entered or submitted, so Lambda has not begun review. The Innovation Lab tile returned zero results; NVIDIA support was contacted to enable it or share the application route. No GPU instance is allocated.</p><div class="gate-links"><a class="gate-action" href="https://programs.nvidia.com/phoenix/application?program=inception" target="_blank" rel="noreferrer">Open Inception portal ↗</a><a class="gate-action" href="https://www.nvidia.com/en-us/data-center/innovation-lab/" target="_blank" rel="noreferrer">View program requirements ↗</a><a class="gate-action" href="mailto:inceptionprogram@nvidia.com">Inception support ↗</a></div><div class="gate-foot">PROFILE SAVED · NO GPU JOB · NO SPEND</div></article>
       </div>
-      <div class="method-note"><div class="method-icon">i</div><div><b>Why no Hill curve or 6 mmol/L switch threshold?</b><p>This proof of concept has five glucose concentrations across three independent experiments. It supports a transparent source-data reanalysis, but not a robust four-parameter response fit or a claim that NNC2215 switches at a specific threshold.</p></div><a href="data/reproduction.json">View analysis record ↗</a></div>
+      <div class="method-note"><div class="method-icon">i</div><div><b>Why the Hill midpoint remains unresolved</b><p>The descriptive fit uses five glucose concentrations from three independent experiments. Its EC50 bootstrap upper tail reaches the 1,000 mmol/L numerical fit ceiling, showing that these data do not identify a reliable midpoint. The apparent Hill slope is not a binding-site count, and this analysis does not establish a 6 mmol/L switch threshold.</p></div><a href="data/hill-fit-summary.json">View fit record ↗</a></div>
     </section>
 
     <section class="sources-section">

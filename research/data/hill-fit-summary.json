@@ -1,0 +1,1690 @@
+{
+  "schema": "dia-health-one.nnc2215-hill-fit.v1",
+  "run": {
+    "run_id": "DHO-NNC2215-HILL-20261017T210119Z",
+    "created_at_utc": "2026-10-17T21:01:19.813110+00:00",
+    "script": "research/fit_nnc2215_hill_response.py",
+    "script_sha256": "2ce98b5b7c9d418e6948d01cc674b3dc3edd4a521645948b7c226bc5b7a57b8e",
+    "input": "research/data/source-data.csv",
+    "input_sha256": "b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f",
+    "engine": "SciPy least_squares and deterministic cluster bootstrap",
+    "software": {
+      "python": "3.12.15",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2"
+    },
+    "bootstrap_seed": 2215,
+    "bootstrap_requested": 2000,
+    "bootstrap_converged": 2000,
+    "bootstrap_failed": 0
+  },
+  "source": {
+    "doi": "10.1038/s41586-024-08042-3",
+    "article": "https://www.nature.com/articles/s41586-024-08042-3",
+    "source_data": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM5_ESM.xlsx",
+    "sheet": "Figure 3d",
+    "assay": "hIR-A affinity relative to human insulin; 1.5% HSA",
+    "analyte": "NNC2215",
+    "experiments": [
+      1,
+      2,
+      3
+    ],
+    "glucose_mmol_L": [
+      0.0,
+      3.0,
+      5.0,
+      10.0,
+      20.0
+    ],
+    "rows": [
+      {
+        "experiment": 1,
+        "glucose_mmol_L": 0.0,
+        "relative_affinity_percent": 0.7985418265541059,
+        "source_sheet": "Figure 3d",
+        "source_cell": "B5"
+      },
+      {
+        "experiment": 1,
+        "glucose_mmol_L": 3.0,
+        "relative_affinity_percent": 3.094715268628312,
+        "source_sheet": "Figure 3d",
+        "source_cell": "C5"
+      },
+      {
+        "experiment": 1,
+        "glucose_mmol_L": 5.0,
+        "relative_affinity_percent": 4.555531869537412,
+        "source_sheet": "Figure 3d",
+        "source_cell": "D5"
+      },
+      {
+        "experiment": 1,
+        "glucose_mmol_L": 10.0,
+        "relative_affinity_percent": 7.712298682284041,
+        "source_sheet": "Figure 3d",
+        "source_cell": "E5"
+      },
+      {
+        "experiment": 1,
+        "glucose_mmol_L": 20.0,
+        "relative_affinity_percent": 10.15632401705353,
+        "source_sheet": "Figure 3d",
+        "source_cell": "F5"
+      },
+      {
+        "experiment": 2,
+        "glucose_mmol_L": 0.0,
+        "relative_affinity_percent": 0.868466898954704,
+        "source_sheet": "Figure 3d",
+        "source_cell": "B10"
+      },
+      {
+        "experiment": 2,
+        "glucose_mmol_L": 3.0,
+        "relative_affinity_percent": 3.262691760240392,
+        "source_sheet": "Figure 3d",
+        "source_cell": "C10"
+      },
+      {
+        "experiment": 2,
+        "glucose_mmol_L": 5.0,
+        "relative_affinity_percent": 4.421816479400749,
+        "source_sheet": "Figure 3d",
+        "source_cell": "D10"
+      },
+      {
+        "experiment": 2,
+        "glucose_mmol_L": 10.0,
+        "relative_affinity_percent": 6.136528685548294,
+        "source_sheet": "Figure 3d",
+        "source_cell": "E10"
+      },
+      {
+        "experiment": 2,
+        "glucose_mmol_L": 20.0,
+        "relative_affinity_percent": 9.261083743842367,
+        "source_sheet": "Figure 3d",
+        "source_cell": "F10"
+      },
+      {
+        "experiment": 3,
+        "glucose_mmol_L": 0.0,
+        "relative_affinity_percent": 0.5909916454776607,
+        "source_sheet": "Figure 3d",
+        "source_cell": "B15"
+      },
+      {
+        "experiment": 3,
+        "glucose_mmol_L": 3.0,
+        "relative_affinity_percent": 2.473867595818815,
+        "source_sheet": "Figure 3d",
+        "source_cell": "C15"
+      },
+      {
+        "experiment": 3,
+        "glucose_mmol_L": 5.0,
+        "relative_affinity_percent": 3.7750906892382106,
+        "source_sheet": "Figure 3d",
+        "source_cell": "D15"
+      },
+      {
+        "experiment": 3,
+        "glucose_mmol_L": 10.0,
+        "relative_affinity_percent": 5.771195097037794,
+        "source_sheet": "Figure 3d",
+        "source_cell": "E15"
+      },
+      {
+        "experiment": 3,
+        "glucose_mmol_L": 20.0,
+        "relative_affinity_percent": 8.293838862559243,
+        "source_sheet": "Figure 3d",
+        "source_cell": "F15"
+      }
+    ],
+    "values_are_source_workbook_values": true,
+    "digitized_from_figure": false
+  },
+  "model": {
+    "equation": "R_i(G) = b_i + (T_i - b_i) * G^n / (EC50^n + G^n)",
+    "baseline": "b_i is the measured 0 mmol/L value for experiment i; it is fixed, not fitted.",
+    "upper_response": "T_i is fitted separately for each independent experiment.",
+    "shared_parameters": [
+      "EC50",
+      "apparent Hill coefficient n"
+    ],
+    "fit_method": "Unweighted nonlinear least squares on the 15 experiment-level source values; the zero-glucose values define the fixed baselines.",
+    "parameter_bounds": {
+      "upper_response_percent": [
+        0.0,
+        10000.0
+      ],
+      "EC50_mmol_L": [
+        0.01,
+        1000.0
+      ],
+      "apparent_hill_coefficient": [
+        0.1,
+        10.0
+      ]
+    }
+  },
+  "derived": {
+    "point_estimate": {
+      "ec50_mmol_L": 13.433438921678832,
+      "apparent_hill_coefficient": 1.1152239311250571,
+      "experiment_baselines_percent": {
+        "1": 0.7985418265541059,
+        "2": 0.868466898954704,
+        "3": 0.5909916454776607
+      },
+      "experiment_upper_responses_percent": {
+        "1": 16.418832741445307,
+        "2": 14.417546269203788,
+        "3": 13.145551429198822
+      },
+      "rmse_nonzero_glucose_points_percent": 0.20673604834116732,
+      "residuals_percent": {
+        "1": [
+          0.0,
+          0.17456438445258593,
+          0.13762536439634854,
+          -0.3775682278623558,
+          0.1576972330294666
+        ],
+        "2": [
+          0.0,
+          -0.25110069688395376,
+          -0.1751504445466967,
+          0.4014445612985309,
+          -0.138866216437032
+        ],
+        "3": [
+          0.0,
+          0.10294018599345778,
+          -0.0538640031355091,
+          0.07315394961432808,
+          -0.0549323386476992
+        ]
+      }
+    },
+    "cluster_bootstrap": {
+      "method": "Resample the three independent experiments with replacement; refit experiment-specific upper responses and shared EC50/Hill slope for each sample.",
+      "resamples": 2000,
+      "percentile_ranges_not_formal_confidence_intervals": {
+        "ec50_mmol_L": {
+          "lower_2_5_percent": 8.05523304300306,
+          "median": 13.433439356828211,
+          "upper_97_5_percent": 999.9999999999989
+        },
+        "apparent_hill_coefficient": {
+          "lower_2_5_percent": 0.6745931803431383,
+          "median": 1.1152239175950736,
+          "upper_97_5_percent": 1.4906265735566409
+        }
+      },
+      "parameter_bound_diagnostics": {
+        "ec50_upper_bound_mmol_L": 1000.0,
+        "ec50_upper_bound_hit_count": 64,
+        "ec50_upper_bound_hit_fraction": 0.032,
+        "upper_percentile_is_censored": true
+      }
+    },
+    "observed_summary": [
+      {
+        "glucose_mmol_L": 0.0,
+        "mean_relative_affinity_percent": 0.7526667903288237,
+        "sample_sd_percent": 0.14431395734488256,
+        "n_independent_experiments": 3
+      },
+      {
+        "glucose_mmol_L": 3.0,
+        "mean_relative_affinity_percent": 2.9437582082291733,
+        "sample_sd_percent": 0.4155140384597274,
+        "n_independent_experiments": 3
+      },
+      {
+        "glucose_mmol_L": 5.0,
+        "mean_relative_affinity_percent": 4.250813012725457,
+        "sample_sd_percent": 0.41737722528658466,
+        "n_independent_experiments": 3
+      },
+      {
+        "glucose_mmol_L": 10.0,
+        "mean_relative_affinity_percent": 6.540007488290043,
+        "sample_sd_percent": 1.031536301038599,
+        "n_independent_experiments": 3
+      },
+      {
+        "glucose_mmol_L": 20.0,
+        "mean_relative_affinity_percent": 9.23708220781838,
+        "sample_sd_percent": 0.9314745262091364,
+        "n_independent_experiments": 3
+      }
+    ],
+    "curve": [
+      {
+        "glucose_mmol_L": 0.0,
+        "fitted_mean": 0.7526667903288237,
+        "bootstrap_median_mean": 0.7526667903288237,
+        "bootstrap_lower_2_5_percent": 0.5909916454776607,
+        "bootstrap_upper_97_5_percent": 0.8684668989547039
+      },
+      {
+        "glucose_mmol_L": 0.1,
+        "fitted_mean": 0.8112838986750092,
+        "bootstrap_median_mean": 0.8112839014284615,
+        "bootstrap_lower_2_5_percent": 0.6426252096248912,
+        "bootstrap_upper_97_5_percent": 1.1192236511054638
+      },
+      {
+        "glucose_mmol_L": 0.2,
+        "fitted_mean": 0.8790271085058045,
+        "bootstrap_median_mean": 0.8790271103930648,
+        "bootstrap_lower_2_5_percent": 0.7022769570174922,
+        "bootstrap_upper_97_5_percent": 1.2682350980476624
+      },
+      {
+        "glucose_mmol_L": 0.30000000000000004,
+        "fitted_mean": 0.95024624312329,
+        "bootstrap_median_mean": 0.9502462525896576,
+        "bootstrap_lower_2_5_percent": 0.7650015305747674,
+        "bootstrap_upper_97_5_percent": 1.3934714536206485
+      },
+      {
+        "glucose_mmol_L": 0.4,
+        "fitted_mean": 1.0235292926509665,
+        "bootstrap_median_mean": 1.0235293040040796,
+        "bootstrap_lower_2_5_percent": 0.82956522446074,
+        "bootstrap_upper_97_5_percent": 1.5053457294206796
+      },
+      {
+        "glucose_mmol_L": 0.5,
+        "fitted_mean": 1.0981619247022048,
+        "bootstrap_median_mean": 1.0981619375871154,
+        "bootstrap_lower_2_5_percent": 0.8953442999519381,
+        "bootstrap_upper_97_5_percent": 1.6081975943586606
+      },
+      {
+        "glucose_mmol_L": 0.6000000000000001,
+        "fitted_mean": 1.17370449389968,
+        "bootstrap_median_mean": 1.1737045080252984,
+        "bootstrap_lower_2_5_percent": 0.9619549170754896,
+        "bootstrap_upper_97_5_percent": 1.7043658094438527
+      },
+      {
+        "glucose_mmol_L": 0.7000000000000001,
+        "fitted_mean": 1.249856930579493,
+        "bootstrap_median_mean": 1.2498569457007294,
+        "bootstrap_lower_2_5_percent": 1.0291350172366163,
+        "bootstrap_upper_97_5_percent": 1.7952937648879448
+      },
+      {
+        "glucose_mmol_L": 0.8,
+        "fitted_mean": 1.3264008313370834,
+        "bootstrap_median_mean": 1.3264008472439828,
+        "bootstrap_lower_2_5_percent": 1.095307042776754,
+        "bootstrap_upper_97_5_percent": 1.88195175555286
+      },
+      {
+        "glucose_mmol_L": 0.9,
+        "fitted_mean": 1.4031701497957283,
+        "bootstrap_median_mean": 1.4031701663062712,
+        "bootstrap_lower_2_5_percent": 1.1629596161650733,
+        "bootstrap_upper_97_5_percent": 1.9650318705560637
+      },
+      {
+        "glucose_mmol_L": 1.0,
+        "fitted_mean": 1.4800346414584673,
+        "bootstrap_median_mean": 1.4800346584134942,
+        "bootstrap_lower_2_5_percent": 1.2318947601604011,
+        "bootstrap_upper_97_5_percent": 2.045049790256964
+      },
+      {
+        "glucose_mmol_L": 1.1,
+        "fitted_mean": 1.5568897466344367,
+        "bootstrap_median_mean": 1.556889763893903,
+        "bootstrap_lower_2_5_percent": 1.3003359422154879,
+        "bootstrap_upper_97_5_percent": 2.122402865550857
+      },
+      {
+        "glucose_mmol_L": 1.2000000000000002,
+        "fitted_mean": 1.633650028471749,
+        "bootstrap_median_mean": 1.6336500459118664,
+        "bootstrap_lower_2_5_percent": 1.3682271233334615,
+        "bootstrap_upper_97_5_percent": 2.1974055335084937
+      },
+      {
+        "glucose_mmol_L": 1.3,
+        "fitted_mean": 1.7102447132284258,
+        "bootstrap_median_mean": 1.7102447307394097,
+        "bootstrap_lower_2_5_percent": 1.436008280547466,
+        "bootstrap_upper_97_5_percent": 2.2703120676628052
+      },
+      {
+        "glucose_mmol_L": 1.4000000000000001,
+        "fitted_mean": 1.7866145428074054,
+        "bootstrap_median_mean": 1.786614560291671,
+        "bootstrap_lower_2_5_percent": 1.503627032275639,
+        "bootstrap_upper_97_5_percent": 2.341331818657966
+      },
+      {
+        "glucose_mmol_L": 1.5,
+        "fitted_mean": 1.8627094832684845,
+        "bootstrap_median_mean": 1.8627095006391599,
+        "bootstrap_lower_2_5_percent": 1.5710390109695427,
+        "bootstrap_upper_97_5_percent": 2.410639783324003
+      },
+      {
+        "glucose_mmol_L": 1.6,
+        "fitted_mean": 1.9384870124422975,
+        "bootstrap_median_mean": 1.9384870170245645,
+        "bootstrap_lower_2_5_percent": 1.6382063755701788,
+        "bootstrap_upper_97_5_percent": 2.47838414983855
+      },
+      {
+        "glucose_mmol_L": 1.7000000000000002,
+        "fitted_mean": 2.0139108115897906,
+        "bootstrap_median_mean": 2.013910816105111,
+        "bootstrap_lower_2_5_percent": 1.705096675699253,
+        "bootstrap_upper_97_5_percent": 2.5446918188396506
+      },
+      {
+        "glucose_mmol_L": 1.8,
+        "fitted_mean": 2.0889497465041242,
+        "bootstrap_median_mean": 2.088949750936091,
+        "bootstrap_lower_2_5_percent": 1.7716819676720792,
+        "bootstrap_upper_97_5_percent": 2.609672530399999
+      },
+      {
+        "glucose_mmol_L": 1.9000000000000001,
+        "fitted_mean": 2.163577060750619,
+        "bootstrap_median_mean": 2.1635770650846147,
+        "bootstrap_lower_2_5_percent": 1.8379381149652916,
+        "bootstrap_upper_97_5_percent": 2.6734220066583654
+      },
+      {
+        "glucose_mmol_L": 2.0,
+        "fitted_mean": 2.23776972752681,
+        "bootstrap_median_mean": 2.2377697317498346,
+        "bootstrap_lower_2_5_percent": 1.9038442265217697,
+        "bootstrap_upper_97_5_percent": 2.7360243842414653
+      },
+      {
+        "glucose_mmol_L": 2.1,
+        "fitted_mean": 2.3115079222373676,
+        "bootstrap_median_mean": 2.3115079263378813,
+        "bootstrap_lower_2_5_percent": 1.9693821998898542,
+        "bootstrap_upper_97_5_percent": 2.7975541243927147
+      },
+      {
+        "glucose_mmol_L": 2.2,
+        "fitted_mean": 2.384774588389224,
+        "bootstrap_median_mean": 2.3847745923570147,
+        "bootstrap_lower_2_5_percent": 2.034536345356326,
+        "bootstrap_upper_97_5_percent": 2.8580775324349177
+      },
+      {
+        "glucose_mmol_L": 2.3000000000000003,
+        "fitted_mean": 2.457555076648886,
+        "bootstrap_median_mean": 2.4575550804749464,
+        "bootstrap_lower_2_5_percent": 2.099293073538795,
+        "bootstrap_upper_97_5_percent": 2.9176539805555692
+      },
+      {
+        "glucose_mmol_L": 2.4000000000000004,
+        "fitted_mean": 2.5298368419872808,
+        "bootstrap_median_mean": 2.5298368456637044,
+        "bootstrap_lower_2_5_percent": 2.1636406333314033,
+        "bootstrap_upper_97_5_percent": 2.976336902194575
+      },
+      {
+        "glucose_mmol_L": 2.5,
+        "fitted_mean": 2.601609187473429,
+        "bootstrap_median_mean": 2.601609190993312,
+        "bootstrap_lower_2_5_percent": 2.2275688902638566,
+        "bootstrap_upper_97_5_percent": 3.0341746084143097
+      },
+      {
+        "glucose_mmol_L": 2.6,
+        "fitted_mean": 2.6728630459215186,
+        "bootstrap_median_mean": 2.672863049278874,
+        "bootstrap_lower_2_5_percent": 2.2910691376347594,
+        "bootstrap_upper_97_5_percent": 3.0912109639520566
+      },
+      {
+        "glucose_mmol_L": 2.7,
+        "fitted_mean": 2.7435907925463723,
+        "bootstrap_median_mean": 2.743590795736052,
+        "bootstrap_lower_2_5_percent": 2.3541339344773036,
+        "bootstrap_upper_97_5_percent": 3.1474859515305176
+      },
+      {
+        "glucose_mmol_L": 2.8000000000000003,
+        "fitted_mean": 2.8137860832410446,
+        "bootstrap_median_mean": 2.813786091950213,
+        "bootstrap_lower_2_5_percent": 2.416756965684189,
+        "bootstrap_upper_97_5_percent": 3.2030361463417787
+      },
+      {
+        "glucose_mmol_L": 2.9000000000000004,
+        "fitted_mean": 2.883443714194888,
+        "bootstrap_median_mean": 2.8834437225008283,
+        "bootstrap_lower_2_5_percent": 2.4789329205790205,
+        "bootstrap_upper_97_5_percent": 3.2578951176941886
+      },
+      {
+        "glucose_mmol_L": 3.0,
+        "fitted_mean": 2.952559499416536,
+        "bootstrap_median_mean": 2.9525595073106192,
+        "bootstrap_lower_2_5_percent": 2.540657386956753,
+        "bootstrap_upper_97_5_percent": 3.312093771124323
+      },
+      {
+        "glucose_mmol_L": 3.1,
+        "fitted_mean": 3.0211301633811587,
+        "bootstrap_median_mean": 3.0211301708562366,
+        "bootstrap_lower_2_5_percent": 2.6019267581846623,
+        "bootstrap_upper_97_5_percent": 3.365660641485226
+      },
+      {
+        "glucose_mmol_L": 3.2,
+        "fitted_mean": 3.089153246533286,
+        "bootstrap_median_mean": 3.0891532535835737,
+        "bootstrap_lower_2_5_percent": 2.6627381513998696,
+        "bootstrap_upper_97_5_percent": 3.4186221453877175
+      },
+      {
+        "glucose_mmol_L": 3.3000000000000003,
+        "fitted_mean": 3.1566270217803094,
+        "bootstrap_median_mean": 3.156627028401276,
+        "bootstrap_lower_2_5_percent": 2.7230893351898744,
+        "bootstrap_upper_97_5_percent": 3.4710027997236357
+      },
+      {
+        "glucose_mmol_L": 3.4000000000000004,
+        "fitted_mean": 3.2235504204329843,
+        "bootstrap_median_mean": 3.2235504266212516,
+        "bootstrap_lower_2_5_percent": 2.782978665421259,
+        "bootstrap_upper_97_5_percent": 3.5228254117161355
+      },
+      {
+        "glucose_mmol_L": 3.5,
+        "fitted_mean": 3.289922966306836,
+        "bootstrap_median_mean": 3.289922972060087,
+        "bootstrap_lower_2_5_percent": 2.8424050281050395,
+        "bootstrap_upper_97_5_percent": 3.574111244933892
+      },
+      {
+        "glucose_mmol_L": 3.6,
+        "fitted_mean": 3.3557447169063885,
+        "bootstrap_median_mean": 3.3557447222232852,
+        "bootstrap_lower_2_5_percent": 2.9013677883674625,
+        "bootstrap_upper_97_5_percent": 3.6248801649078577
+      },
+      {
+        "glucose_mmol_L": 3.7,
+        "fitted_mean": 3.4210162107834208,
+        "bootstrap_median_mean": 3.4210162156635193,
+        "bootstrap_lower_2_5_percent": 2.959866744741609,
+        "bootstrap_upper_97_5_percent": 3.675150767352795
+      },
+      {
+        "glucose_mmol_L": 3.8000000000000003,
+        "fitted_mean": 3.485738420298898,
+        "bootstrap_median_mean": 3.4857384246350986,
+        "bootstrap_lower_2_5_percent": 3.01790208811518,
+        "bootstrap_upper_97_5_percent": 3.7249404914848534
+      },
+      {
+        "glucose_mmol_L": 3.9000000000000004,
+        "fitted_mean": 3.549912709132478,
+        "bootstrap_median_mean": 3.549912712778417,
+        "bootstrap_lower_2_5_percent": 3.0754743647685188,
+        "bootstrap_upper_97_5_percent": 3.78651845646133
+      },
+      {
+        "glucose_mmol_L": 4.0,
+        "fitted_mean": 3.6135407939779243,
+        "bootstrap_median_mean": 3.613540796938446,
+        "bootstrap_lower_2_5_percent": 3.132584443018814,
+        "bootstrap_upper_97_5_percent": 3.8715036692845692
+      },
+      {
+        "glucose_mmol_L": 4.1000000000000005,
+        "fitted_mean": 3.67662470994163,
+        "bootstrap_median_mean": 3.6766247122225173,
+        "bootstrap_lower_2_5_percent": 3.189233483054428,
+        "bootstrap_upper_97_5_percent": 3.95588372767016
+      },
+      {
+        "glucose_mmol_L": 4.2,
+        "fitted_mean": 3.739166779227373,
+        "bootstrap_median_mean": 3.7391667808352698,
+        "bootstrap_lower_2_5_percent": 3.2454229096003666,
+        "bootstrap_upper_97_5_percent": 4.039633970407631
+      },
+      {
+        "glucose_mmol_L": 4.3,
+        "fitted_mean": 3.8011695827459504,
+        "bootstrap_median_mean": 3.801169583688291,
+        "bootstrap_lower_2_5_percent": 3.3011543871038302,
+        "bootstrap_upper_97_5_percent": 4.122732038009428
+      },
+      {
+        "glucose_mmol_L": 4.4,
+        "fitted_mean": 3.8626359343352967,
+        "bootstrap_median_mean": 3.8626359346202306,
+        "bootstrap_lower_2_5_percent": 3.3564297971692922,
+        "bootstrap_upper_97_5_percent": 4.205157732441946
+      },
+      {
+        "glucose_mmol_L": 4.5,
+        "fitted_mean": 3.923568857316512,
+        "bootstrap_median_mean": 3.923568857316512,
+        "bootstrap_lower_2_5_percent": 3.411251218006933,
+        "bootstrap_upper_97_5_percent": 4.2868928846496255
+      },
+      {
+        "glucose_mmol_L": 4.6000000000000005,
+        "fitted_mean": 3.9839715631452495,
+        "bootstrap_median_mean": 3.9839715630865755,
+        "bootstrap_lower_2_5_percent": 3.46562090568761,
+        "bootstrap_upper_97_5_percent": 4.367921229413951
+      },
+      {
+        "glucose_mmol_L": 4.7,
+        "fitted_mean": 4.043847431947017,
+        "bootstrap_median_mean": 4.0438474315342035,
+        "bootstrap_lower_2_5_percent": 3.519541277022571,
+        "bootstrap_upper_97_5_percent": 4.448228287126537
+      },
+      {
+        "glucose_mmol_L": 4.800000000000001,
+        "fitted_mean": 4.103199994749941,
+        "bootstrap_median_mean": 4.103199994226739,
+        "bootstrap_lower_2_5_percent": 3.5730148939077075,
+        "bootstrap_upper_97_5_percent": 4.527801252087708
+      },
+      {
+        "glucose_mmol_L": 4.9,
+        "fitted_mean": 4.1620329172501345,
+        "bootstrap_median_mean": 4.162032916644017,
+        "bootstrap_lower_2_5_percent": 3.626044448990713,
+        "bootstrap_upper_97_5_percent": 4.606628886970184
+      },
+      {
+        "glucose_mmol_L": 5.0,
+        "fitted_mean": 4.220349984963504,
+        "bootstrap_median_mean": 4.22034998427602,
+        "bootstrap_lower_2_5_percent": 3.678632752535588,
+        "bootstrap_upper_97_5_percent": 4.684701423112212
+      },
+      {
+        "glucose_mmol_L": 5.1000000000000005,
+        "fitted_mean": 4.2781550896340335,
+        "bootstrap_median_mean": 4.278155088713288,
+        "bootstrap_lower_2_5_percent": 3.7307827203728814,
+        "bootstrap_upper_97_5_percent": 4.762010466326468
+      },
+      {
+        "glucose_mmol_L": 5.2,
+        "fitted_mean": 4.335452216782712,
+        "bootstrap_median_mean": 4.335452215487995,
+        "bootstrap_lower_2_5_percent": 3.7824973628362195,
+        "bootstrap_upper_97_5_percent": 4.8385489079306305
+      },
+      {
+        "glucose_mmol_L": 5.300000000000001,
+        "fitted_mean": 4.392245434293659,
+        "bootstrap_median_mean": 4.39224543263194,
+        "bootstrap_lower_2_5_percent": 3.8337797745962856,
+        "bootstrap_upper_97_5_percent": 4.914310840723263
+      },
+      {
+        "glucose_mmol_L": 5.4,
+        "fitted_mean": 4.448538881944795,
+        "bootstrap_median_mean": 4.4485388799232295,
+        "bootstrap_lower_2_5_percent": 3.884633125312719,
+        "bootstrap_upper_97_5_percent": 4.989291479644579
+      },
+      {
+        "glucose_mmol_L": 5.5,
+        "fitted_mean": 4.504336761799937,
+        "bootstrap_median_mean": 4.5043367594258426,
+        "bootstrap_lower_2_5_percent": 3.935060651032554,
+        "bootstrap_upper_97_5_percent": 5.063487086876354
+      },
+      {
+        "glucose_mmol_L": 5.6000000000000005,
+        "fitted_mean": 4.55964332938757,
+        "bootstrap_median_mean": 4.559643326668405,
+        "bootstrap_lower_2_5_percent": 3.9850656462710616,
+        "bootstrap_upper_97_5_percent": 5.1368949011486364
+      },
+      {
+        "glucose_mmol_L": 5.7,
+        "fitted_mean": 4.614462885598964,
+        "bootstrap_median_mean": 4.614462882542316,
+        "bootstrap_lower_2_5_percent": 4.034651456717123,
+        "bootstrap_upper_97_5_percent": 5.209513071033363
+      },
+      {
+        "glucose_mmol_L": 5.800000000000001,
+        "fitted_mean": 4.668799769244867,
+        "bootstrap_median_mean": 4.668799765858428,
+        "bootstrap_lower_2_5_percent": 4.083821472511026,
+        "bootstrap_upper_97_5_percent": 5.281340592016508
+      },
+      {
+        "glucose_mmol_L": 5.9,
+        "fitted_mean": 4.722658350215818,
+        "bootstrap_median_mean": 4.722658346507379,
+        "bootstrap_lower_2_5_percent": 4.132579122047411,
+        "bootstrap_upper_97_5_percent": 5.352377247151115
+      },
+      {
+        "glucose_mmol_L": 6.0,
+        "fitted_mean": 4.776043023196316,
+        "bootstrap_median_mean": 4.776043019173744,
+        "bootstrap_lower_2_5_percent": 4.180927866260682,
+        "bootstrap_upper_97_5_percent": 5.422623551103693
+      },
+      {
+        "glucose_mmol_L": 6.1000000000000005,
+        "fitted_mean": 4.82895820188769,
+        "bootstrap_median_mean": 4.828958197558918,
+        "bootstrap_lower_2_5_percent": 4.228871193354051,
+        "bootstrap_upper_97_5_percent": 5.492080697415875
+      },
+      {
+        "glucose_mmol_L": 6.2,
+        "fitted_mean": 4.881408313698647,
+        "bootstrap_median_mean": 4.881408309071662,
+        "bootstrap_lower_2_5_percent": 4.276412613936953,
+        "bootstrap_upper_97_5_percent": 5.560750508812222
+      },
+      {
+        "glucose_mmol_L": 6.300000000000001,
+        "fitted_mean": 4.933397794866185,
+        "bootstrap_median_mean": 4.933397789949013,
+        "bootstrap_lower_2_5_percent": 4.323555656538791,
+        "bootstrap_upper_97_5_percent": 5.628635390393438
+      },
+      {
+        "glucose_mmol_L": 6.4,
+        "fitted_mean": 4.984931085972826,
+        "bootstrap_median_mean": 4.984931080773527,
+        "bootstrap_lower_2_5_percent": 4.370303863469676,
+        "bootstrap_upper_97_5_percent": 5.695738285562276
+      },
+      {
+        "glucose_mmol_L": 6.5,
+        "fitted_mean": 5.036012627829174,
+        "bootstrap_median_mean": 5.036012622355828,
+        "bootstrap_lower_2_5_percent": 4.416660787001541,
+        "bootstrap_upper_97_5_percent": 5.762062634537024
+      },
+      {
+        "glucose_mmol_L": 6.6000000000000005,
+        "fitted_mean": 5.086646857693412,
+        "bootstrap_median_mean": 5.086646851954111,
+        "bootstrap_lower_2_5_percent": 4.462629985845152,
+        "bootstrap_upper_97_5_percent": 5.827612335314601
+      },
+      {
+        "glucose_mmol_L": 6.7,
+        "fitted_mean": 5.136838205801807,
+        "bootstrap_median_mean": 5.136838199804646,
+        "bootstrap_lower_2_5_percent": 4.508215021900722,
+        "bootstrap_upper_97_5_percent": 5.892391706952207
+      },
+      {
+        "glucose_mmol_L": 6.800000000000001,
+        "fitted_mean": 5.186591092186482,
+        "bootstrap_median_mean": 5.1865910859395505,
+        "bootstrap_lower_2_5_percent": 4.553419457261637,
+        "bootstrap_upper_97_5_percent": 5.956405455042936
+      },
+      {
+        "glucose_mmol_L": 6.9,
+        "fitted_mean": 5.235909923758664,
+        "bootstrap_median_mean": 5.235909917270039,
+        "bootstrap_lower_2_5_percent": 4.598246851452507,
+        "bootstrap_upper_97_5_percent": 6.019658639267028
+      },
+      {
+        "glucose_mmol_L": 7.0,
+        "fitted_mean": 5.284799091637415,
+        "bootstrap_median_mean": 5.2847990849151545,
+        "bootstrap_lower_2_5_percent": 4.642700758884314,
+        "bootstrap_upper_97_5_percent": 6.082156642906298
+      },
+      {
+        "glucose_mmol_L": 7.1000000000000005,
+        "fitted_mean": 5.333262968705488,
+        "bootstrap_median_mean": 5.333262961757627,
+        "bootstrap_lower_2_5_percent": 4.686784726510782,
+        "bootstrap_upper_97_5_percent": 6.143905144214966
+      },
+      {
+        "glucose_mmol_L": 7.2,
+        "fitted_mean": 5.3813059073754195,
+        "bootstrap_median_mean": 5.381305900209957,
+        "bootstrap_lower_2_5_percent": 4.730502291671369,
+        "bootstrap_upper_97_5_percent": 6.204910089545471
+      },
+      {
+        "glucose_mmol_L": 7.300000000000001,
+        "fitted_mean": 5.4289322375502875,
+        "bootstrap_median_mean": 5.428932230175189,
+        "bootstrap_lower_2_5_percent": 4.773856980107454,
+        "bootstrap_upper_97_5_percent": 6.265177668132993
+      },
+      {
+        "glucose_mmol_L": 7.4,
+        "fitted_mean": 5.476146264764833,
+        "bootstrap_median_mean": 5.47614625718802,
+        "bootstrap_lower_2_5_percent": 4.816852304139291,
+        "bootstrap_upper_97_5_percent": 6.3247142884472956
+      },
+      {
+        "glucose_mmol_L": 7.5,
+        "fitted_mean": 5.522952268493715,
+        "bootstrap_median_mean": 5.522952260723065,
+        "bootstrap_lower_2_5_percent": 4.859491760992305,
+        "bootstrap_upper_97_5_percent": 6.383526556025143
+      },
+      {
+        "glucose_mmol_L": 7.6000000000000005,
+        "fitted_mean": 5.569354500614722,
+        "bootstrap_median_mean": 5.569354492658058,
+        "bootstrap_lower_2_5_percent": 4.901778831262137,
+        "bootstrap_upper_97_5_percent": 6.441621252701057
+      },
+      {
+        "glucose_mmol_L": 7.7,
+        "fitted_mean": 5.615357184015639,
+        "bootstrap_median_mean": 5.615357175880731,
+        "bootstrap_lower_2_5_percent": 4.94371697750868,
+        "bootstrap_upper_97_5_percent": 6.499005317158321
+      },
+      {
+        "glucose_mmol_L": 7.800000000000001,
+        "fitted_mean": 5.66096451133441,
+        "bootstrap_median_mean": 5.66096450302897,
+        "bootstrap_lower_2_5_percent": 4.985309642970055,
+        "bootstrap_upper_97_5_percent": 6.555685826726289
+      },
+      {
+        "glucose_mmol_L": 7.9,
+        "fitted_mean": 5.7061806438229326,
+        "bootstrap_median_mean": 5.7061806353546105,
+        "bootstrap_lower_2_5_percent": 5.0265602503881235,
+        "bootstrap_upper_97_5_percent": 6.611669980353791
+      },
+      {
+        "glucose_mmol_L": 8.0,
+        "fitted_mean": 5.751009710325561,
+        "bootstrap_median_mean": 5.751009701701943,
+        "bootstrap_lower_2_5_percent": 5.067472200937817,
+        "bootstrap_upper_97_5_percent": 6.6669650826922044
+      },
+      {
+        "glucose_mmol_L": 8.1,
+        "fitted_mean": 5.795455806364092,
+        "bootstrap_median_mean": 5.795455797592697,
+        "bootstrap_lower_2_5_percent": 5.108048873253053,
+        "bootstrap_upper_97_5_percent": 6.7215785292251375
+      },
+      {
+        "glucose_mmol_L": 8.200000000000001,
+        "fitted_mean": 5.8395229933215616,
+        "bootstrap_median_mean": 5.839522984409836,
+        "bootstrap_lower_2_5_percent": 5.148293622542562,
+        "bootstrap_upper_97_5_percent": 6.775517792385101
+      },
+      {
+        "glucose_mmol_L": 8.3,
+        "fitted_mean": 5.883215297717733,
+        "bootstrap_median_mean": 5.883215288673053,
+        "bootstrap_lower_2_5_percent": 5.188209779789429,
+        "bootstrap_upper_97_5_percent": 6.828790408600606
+      },
+      {
+        "glucose_mmol_L": 8.4,
+        "fitted_mean": 5.926536710569752,
+        "bootstrap_median_mean": 5.926536701399422,
+        "bootstrap_lower_2_5_percent": 5.227800651028589,
+        "bootstrap_upper_97_5_percent": 6.8814039662202395
+      },
+      {
+        "glucose_mmol_L": 8.5,
+        "fitted_mean": 5.969491186831782,
+        "bootstrap_median_mean": 5.969491177543026,
+        "bootstrap_lower_2_5_percent": 5.2670695166968935,
+        "bootstrap_upper_97_5_percent": 6.933366094262975
+      },
+      {
+        "glucose_mmol_L": 8.6,
+        "fitted_mean": 6.012082644907989,
+        "bootstrap_median_mean": 6.012082635507956,
+        "bootstrap_lower_2_5_percent": 5.306019631050801,
+        "bootstrap_upper_97_5_percent": 6.9846844519468965
+      },
+      {
+        "glucose_mmol_L": 8.700000000000001,
+        "fitted_mean": 6.054314966233583,
+        "bootstrap_median_mean": 6.054314956729345,
+        "bootstrap_lower_2_5_percent": 5.3446542216470165,
+        "bootstrap_upper_97_5_percent": 7.035366718950889
+      },
+      {
+        "glucose_mmol_L": 8.8,
+        "fitted_mean": 6.096191994918997,
+        "bootstrap_median_mean": 6.096191985317542,
+        "bootstrap_lower_2_5_percent": 5.382976488881789,
+        "bootstrap_upper_97_5_percent": 7.085420586366458
+      },
+      {
+        "glucose_mmol_L": 8.9,
+        "fitted_mean": 6.13771753745267,
+        "bootstrap_median_mean": 6.1377175277609055,
+        "bootstrap_lower_2_5_percent": 5.420989605584815,
+        "bootstrap_upper_97_5_percent": 7.134853748299079
+      },
+      {
+        "glucose_mmol_L": 9.0,
+        "fitted_mean": 6.178895362458145,
+        "bootstrap_median_mean": 6.178895352682896,
+        "bootstrap_lower_2_5_percent": 5.458696716664025,
+        "bootstrap_upper_97_5_percent": 7.183673894080745
+      },
+      {
+        "glucose_mmol_L": 9.1,
+        "fitted_mean": 6.219729200501555,
+        "bootstrap_median_mean": 6.219729190649564,
+        "bootstrap_lower_2_5_percent": 5.496100938797736,
+        "bootstrap_upper_97_5_percent": 7.231888701057421
+      },
+      {
+        "glucose_mmol_L": 9.200000000000001,
+        "fitted_mean": 6.260222743945826,
+        "bootstrap_median_mean": 6.260222734023752,
+        "bootstrap_lower_2_5_percent": 5.533205360170913,
+        "bootstrap_upper_97_5_percent": 7.279505827917171
+      },
+      {
+        "glucose_mmol_L": 9.3,
+        "fitted_mean": 6.300379646848125,
+        "bootstrap_median_mean": 6.300379636862538,
+        "bootstrap_lower_2_5_percent": 5.570013040252495,
+        "bootstrap_upper_97_5_percent": 7.326532908526573
+      },
+      {
+        "glucose_mmol_L": 9.4,
+        "fitted_mean": 6.340203524897394,
+        "bootstrap_median_mean": 6.340203514854786,
+        "bootstrap_lower_2_5_percent": 5.60652700961094,
+        "bootstrap_upper_97_5_percent": 7.372977546244815
+      },
+      {
+        "glucose_mmol_L": 9.5,
+        "fitted_mean": 6.379697955388984,
+        "bootstrap_median_mean": 6.379697945295757,
+        "bootstrap_lower_2_5_percent": 5.642750269765344,
+        "bootstrap_upper_97_5_percent": 7.41884730868662
+      },
+      {
+        "glucose_mmol_L": 9.600000000000001,
+        "fitted_mean": 6.418866477233593,
+        "bootstrap_median_mean": 6.418866467096066,
+        "bootstrap_lower_2_5_percent": 5.678685793069628,
+        "bootstrap_upper_97_5_percent": 7.464149722906683
+      },
+      {
+        "glucose_mmol_L": 9.700000000000001,
+        "fitted_mean": 6.457712590997932,
+        "bootstrap_median_mean": 6.457712580822336,
+        "bootstrap_lower_2_5_percent": 5.714336522627522,
+        "bootstrap_upper_97_5_percent": 7.508892270979892
+      },
+      {
+        "glucose_mmol_L": 9.8,
+        "fitted_mean": 6.4962397589747125,
+        "bootstrap_median_mean": 6.496239748767195,
+        "bootstrap_lower_2_5_percent": 5.749705372236121,
+        "bootstrap_upper_97_5_percent": 7.553082385953014
+      },
+      {
+        "glucose_mmol_L": 9.9,
+        "fitted_mean": 6.534451405279668,
+        "bootstrap_median_mean": 6.534451395046287,
+        "bootstrap_lower_2_5_percent": 5.784795226356036,
+        "bootstrap_upper_97_5_percent": 7.5967274481449065
+      },
+      {
+        "glucose_mmol_L": 10.0,
+        "fitted_mean": 6.572350915973544,
+        "bootstrap_median_mean": 6.572350905720273,
+        "bootstrap_lower_2_5_percent": 5.8196089401062165,
+        "bootstrap_upper_97_5_percent": 7.639834781773597
+      },
+      {
+        "glucose_mmol_L": 10.100000000000001,
+        "fitted_mean": 6.609941639207055,
+        "bootstrap_median_mean": 6.609941628939784,
+        "bootstrap_lower_2_5_percent": 5.854149339281679,
+        "bootstrap_upper_97_5_percent": 7.682411651889834
+      },
+      {
+        "glucose_mmol_L": 10.200000000000001,
+        "fitted_mean": 6.647226885387013,
+        "bootstrap_median_mean": 6.647226875111543,
+        "bootstrap_lower_2_5_percent": 5.88841922039249,
+        "bootstrap_upper_97_5_percent": 7.724465261597795
+      },
+      {
+        "glucose_mmol_L": 10.3,
+        "fitted_mean": 6.684209927361882,
+        "bootstrap_median_mean": 6.684209917083932,
+        "bootstrap_lower_2_5_percent": 5.922421350722452,
+        "bootstrap_upper_97_5_percent": 7.766002749544857
+      },
+      {
+        "glucose_mmol_L": 10.4,
+        "fitted_mean": 6.7208940006251865,
+        "bootstrap_median_mean": 6.720893990350388,
+        "bootstrap_lower_2_5_percent": 5.956158468406007,
+        "bootstrap_upper_97_5_percent": 7.80703118766326
+      },
+      {
+        "glucose_mmol_L": 10.5,
+        "fitted_mean": 6.757282303535253,
+        "bootstrap_median_mean": 6.7572822932691565,
+        "bootstrap_lower_2_5_percent": 5.98963328252205,
+        "bootstrap_upper_97_5_percent": 7.847557579147504
+      },
+      {
+        "glucose_mmol_L": 10.600000000000001,
+        "fitted_mean": 6.793377997549935,
+        "bootstrap_median_mean": 6.793377987298,
+        "bootstrap_lower_2_5_percent": 6.022848473203337,
+        "bootstrap_upper_97_5_percent": 7.887588856652315
+      },
+      {
+        "glucose_mmol_L": 10.700000000000001,
+        "fitted_mean": 6.829184207474956,
+        "bootstrap_median_mean": 6.829184197242566,
+        "bootstrap_lower_2_5_percent": 6.05580669176031,
+        "bootstrap_upper_97_5_percent": 7.927131880696801
+      },
+      {
+        "glucose_mmol_L": 10.8,
+        "fitted_mean": 6.864704021724736,
+        "bootstrap_median_mean": 6.864704011517184,
+        "bootstrap_lower_2_5_percent": 6.088510560818217,
+        "bootstrap_upper_97_5_percent": 7.966193438261296
+      },
+      {
+        "glucose_mmol_L": 10.9,
+        "fitted_mean": 6.899940492594479,
+        "bootstrap_median_mean": 6.8999404824169845,
+        "bootstrap_lower_2_5_percent": 6.120962674466486,
+        "bootstrap_upper_97_5_percent": 8.004780241564184
+      },
+      {
+        "glucose_mmol_L": 11.0,
+        "fitted_mean": 6.934896636542542,
+        "bootstrap_median_mean": 6.934896626400234,
+        "bootstrap_lower_2_5_percent": 6.153165598419368,
+        "bootstrap_upper_97_5_percent": 8.042898927006709
+      },
+      {
+        "glucose_mmol_L": 11.100000000000001,
+        "fitted_mean": 6.9695754344820315,
+        "bootstrap_median_mean": 6.96957542437996,
+        "bootstrap_lower_2_5_percent": 6.185121870186937,
+        "bootstrap_upper_97_5_percent": 8.080556054274469
+      },
+      {
+        "glucose_mmol_L": 11.200000000000001,
+        "fitted_mean": 7.003979832080742,
+        "bootstrap_median_mean": 7.003979822023877,
+        "bootstrap_lower_2_5_percent": 6.2168339992555675,
+        "bootstrap_upper_97_5_percent": 8.117758105585018
+      },
+      {
+        "glucose_mmol_L": 11.3,
+        "fitted_mean": 7.038112740068569,
+        "bootstrap_median_mean": 7.038112730061797,
+        "bootstrap_lower_2_5_percent": 6.248304467277099,
+        "bootstrap_upper_97_5_percent": 8.154511485071533
+      },
+      {
+        "glucose_mmol_L": 11.4,
+        "fitted_mean": 7.0719770345515665,
+        "bootstrap_median_mean": 7.0719770245997,
+        "bootstrap_lower_2_5_percent": 6.279535728265948,
+        "bootstrap_upper_97_5_percent": 8.190822518293151
+      },
+      {
+        "glucose_mmol_L": 11.5,
+        "fitted_mean": 7.105575557331935,
+        "bootstrap_median_mean": 7.105575547439705,
+        "bootstrap_lower_2_5_percent": 6.3105302088034145,
+        "bootstrap_upper_97_5_percent": 8.226697451863163
+      },
+      {
+        "glucose_mmol_L": 11.600000000000001,
+        "fitted_mean": 7.1389111162332055,
+        "bootstrap_median_mean": 7.1389111064052635,
+        "bootstrap_lower_2_5_percent": 6.341290308248567,
+        "bootstrap_upper_97_5_percent": 8.26214245318665
+      },
+      {
+        "glucose_mmol_L": 11.700000000000001,
+        "fitted_mean": 7.171986485429979,
+        "bootstrap_median_mean": 7.171986475670899,
+        "bootstrap_lower_2_5_percent": 6.371818398955052,
+        "bootstrap_upper_97_5_percent": 8.297163610299851
+      },
+      {
+        "glucose_mmol_L": 11.8,
+        "fitted_mean": 7.204804405781616,
+        "bootstrap_median_mean": 7.204804396095895,
+        "bootstrap_lower_2_5_percent": 6.402116826493273,
+        "bootstrap_upper_97_5_percent": 8.331766931803786
+      },
+      {
+        "glucose_mmol_L": 11.9,
+        "fitted_mean": 7.237367585169298,
+        "bootstrap_median_mean": 7.237367575561361,
+        "bootstrap_lower_2_5_percent": 6.432187909877361,
+        "bootstrap_upper_97_5_percent": 8.365958346885321
+      },
+      {
+        "glucose_mmol_L": 12.0,
+        "fitted_mean": 7.269678698835932,
+        "bootstrap_median_mean": 7.26967868931013,
+        "bootstrap_lower_2_5_percent": 6.4620339417964665,
+        "bootstrap_upper_97_5_percent": 8.399743705419063
+      },
+      {
+        "glucose_mmol_L": 12.100000000000001,
+        "fitted_mean": 7.301740389728418,
+        "bootstrap_median_mean": 7.301740380289019,
+        "bootstrap_lower_2_5_percent": 6.491657188849863,
+        "bootstrap_upper_97_5_percent": 8.433128778144088
+      },
+      {
+        "glucose_mmol_L": 12.200000000000001,
+        "fitted_mean": 7.333555268841779,
+        "bootstrap_median_mean": 7.333555259492983,
+        "bootstrap_lower_2_5_percent": 6.521059891785431,
+        "bootstrap_upper_97_5_percent": 8.466119256909678
+      },
+      {
+        "glucose_mmol_L": 12.3,
+        "fitted_mean": 7.365125915564782,
+        "bootstrap_median_mean": 7.365125906310719,
+        "bootstrap_lower_2_5_percent": 6.5502442657411,
+        "bootstrap_upper_97_5_percent": 8.498720754984722
+      },
+      {
+        "glucose_mmol_L": 12.4,
+        "fitted_mean": 7.396454878026607,
+        "bootstrap_median_mean": 7.39645486887133,
+        "bootstrap_lower_2_5_percent": 6.579212500488857,
+        "bootstrap_upper_97_5_percent": 8.530938807425718
+      },
+      {
+        "glucose_mmol_L": 12.5,
+        "fitted_mean": 7.427544673444214,
+        "bootstrap_median_mean": 7.427544664391706,
+        "bootstrap_lower_2_5_percent": 6.607966760680953,
+        "bootstrap_upper_97_5_percent": 8.56277887149863
+      },
+      {
+        "glucose_mmol_L": 12.600000000000001,
+        "fitted_mean": 7.458397788470044,
+        "bootstrap_median_mean": 7.4583977795242165,
+        "bootstrap_lower_2_5_percent": 6.636509186097982,
+        "bootstrap_upper_97_5_percent": 8.594246327150115
+      },
+      {
+        "glucose_mmol_L": 12.700000000000001,
+        "fitted_mean": 7.489016679539759,
+        "bootstrap_median_mean": 7.489016670704462,
+        "bootstrap_lower_2_5_percent": 6.664841891898473,
+        "bootstrap_upper_97_5_percent": 8.625346477524008
+      },
+      {
+        "glucose_mmol_L": 12.8,
+        "fitted_mean": 7.519403773219725,
+        "bootstrap_median_mean": 7.519403764498732,
+        "bootstrap_lower_2_5_percent": 6.692966968869751,
+        "bootstrap_upper_97_5_percent": 8.65608454951911
+      },
+      {
+        "glucose_mmol_L": 12.9,
+        "fitted_mean": 7.5495614665539135,
+        "bootstrap_median_mean": 7.54956145795093,
+        "bootstrap_lower_2_5_percent": 6.720886483679741,
+        "bootstrap_upper_97_5_percent": 8.686465694384566
+      },
+      {
+        "glucose_mmol_L": 13.0,
+        "fitted_mean": 7.579492127410032,
+        "bootstrap_median_mean": 7.579492118928703,
+        "bootstrap_lower_2_5_percent": 6.748602479129471,
+        "bootstrap_upper_97_5_percent": 8.716494988349508
+      },
+      {
+        "glucose_mmol_L": 13.100000000000001,
+        "fitted_mean": 7.609198094824609,
+        "bootstrap_median_mean": 7.609198086468506,
+        "bootstrap_lower_2_5_percent": 6.7761169744060465,
+        "bootstrap_upper_97_5_percent": 8.746177433283622
+      },
+      {
+        "glucose_mmol_L": 13.200000000000001,
+        "fitted_mean": 7.638681679346817,
+        "bootstrap_median_mean": 7.638681671119453,
+        "bootstrap_lower_2_5_percent": 6.803431965335837,
+        "bootstrap_upper_97_5_percent": 8.775517957385704
+      },
+      {
+        "glucose_mmol_L": 13.3,
+        "fitted_mean": 7.66794516338085,
+        "bootstrap_median_mean": 7.667945155285668,
+        "bootstrap_lower_2_5_percent": 6.8305494246376925,
+        "bootstrap_upper_97_5_percent": 8.80452141589736
+      },
+      {
+        "glucose_mmol_L": 13.4,
+        "fitted_mean": 7.696990801526636,
+        "bootstrap_median_mean": 7.696990793567024,
+        "bootstrap_lower_2_5_percent": 6.857471302175985,
+        "bootstrap_upper_97_5_percent": 8.833192591839188
+      },
+      {
+        "glucose_mmol_L": 13.5,
+        "fitted_mean": 7.7258208209187735,
+        "bootstrap_median_mean": 7.725820813098042,
+        "bootstrap_lower_2_5_percent": 6.884199525213277,
+        "bootstrap_upper_97_5_percent": 8.861536196767016
+      },
+      {
+        "glucose_mmol_L": 13.600000000000001,
+        "fitted_mean": 7.754437421563431,
+        "bootstrap_median_mean": 7.754437413884847,
+        "bootstrap_lower_2_5_percent": 6.910735998662471,
+        "bootstrap_upper_97_5_percent": 8.889556871545858
+      },
+      {
+        "glucose_mmol_L": 13.700000000000001,
+        "fitted_mean": 7.782842776673209,
+        "bootstrap_median_mean": 7.782842769139961,
+        "bootstrap_lower_2_5_percent": 6.93708260533825,
+        "bootstrap_upper_97_5_percent": 8.917259187139456
+      },
+      {
+        "glucose_mmol_L": 13.8,
+        "fitted_mean": 7.811039032999667,
+        "bootstrap_median_mean": 7.811039025614896,
+        "bootstrap_lower_2_5_percent": 6.963241206207711,
+        "bootstrap_upper_97_5_percent": 8.944647645413374
+      },
+      {
+        "glucose_mmol_L": 13.9,
+        "fitted_mean": 7.839028311163556,
+        "bootstrap_median_mean": 7.839028303930341,
+        "bootstrap_lower_2_5_percent": 6.989213640639995,
+        "bootstrap_upper_97_5_percent": 8.971726679949798
+      },
+      {
+        "glucose_mmol_L": 14.0,
+        "fitted_mean": 7.866812705982514,
+        "bootstrap_median_mean": 7.866812698903865,
+        "bootstrap_lower_2_5_percent": 7.01500172665484,
+        "bootstrap_upper_97_5_percent": 8.998500656872265
+      },
+      {
+        "glucose_mmol_L": 14.100000000000001,
+        "fitted_mean": 7.8943942867961825,
+        "bootstrap_median_mean": 7.89439427987507,
+        "bootstrap_lower_2_5_percent": 7.0406072611699,
+        "bootstrap_upper_97_5_percent": 9.02497387567872
+      },
+      {
+        "glucose_mmol_L": 14.200000000000001,
+        "fitted_mean": 7.921775097788693,
+        "bootstrap_median_mean": 7.92177509102802,
+        "bootstrap_lower_2_5_percent": 7.066032020246758,
+        "bootstrap_upper_97_5_percent": 9.051150570081349
+      },
+      {
+        "glucose_mmol_L": 14.3,
+        "fitted_mean": 7.948957158308333,
+        "bootstrap_median_mean": 7.948957151710943,
+        "bootstrap_lower_2_5_percent": 7.0912777593355,
+        "bootstrap_upper_97_5_percent": 9.077034908851813
+      },
+      {
+        "glucose_mmol_L": 14.4,
+        "fitted_mean": 7.975942463184425,
+        "bootstrap_median_mean": 7.9759424567531125,
+        "bootstrap_lower_2_5_percent": 7.1163462135177795,
+        "bootstrap_upper_97_5_percent": 9.10263099667055
+      },
+      {
+        "glucose_mmol_L": 14.5,
+        "fitted_mean": 8.002732983041282,
+        "bootstrap_median_mean": 8.002732976778786,
+        "bootstrap_lower_2_5_percent": 7.141239097748293,
+        "bootstrap_upper_97_5_percent": 9.127942874978926
+      },
+      {
+        "glucose_mmol_L": 14.600000000000001,
+        "fitted_mean": 8.029330664609217,
+        "bootstrap_median_mean": 8.029330658518221,
+        "bootstrap_lower_2_5_percent": 7.165958107094551,
+        "bootstrap_upper_97_5_percent": 9.152974522833107
+      },
+      {
+        "glucose_mmol_L": 14.700000000000001,
+        "fitted_mean": 8.055737431032533,
+        "bootstrap_median_mean": 8.055737425115668,
+        "bootstrap_lower_2_5_percent": 7.190504916974937,
+        "bootstrap_upper_97_5_percent": 9.177729857758615
+      },
+      {
+        "glucose_mmol_L": 14.8,
+        "fitted_mean": 8.081955182174449,
+        "bootstrap_median_mean": 8.081955176434299,
+        "bootstrap_lower_2_5_percent": 7.214881183394927,
+        "bootstrap_upper_97_5_percent": 9.202212736604574
+      },
+      {
+        "glucose_mmol_L": 14.9,
+        "fitted_mean": 8.107985794918958,
+        "bootstrap_median_mean": 8.107985789358041,
+        "bootstrap_lower_2_5_percent": 7.2390885431814525,
+        "bootstrap_upper_97_5_percent": 9.226426956396764
+      },
+      {
+        "glucose_mmol_L": 15.0,
+        "fitted_mean": 8.133831123469486,
+        "bootstrap_median_mean": 8.133831118090287,
+        "bootstrap_lower_2_5_percent": 7.263128614215323,
+        "bootstrap_upper_97_5_percent": 9.25037625518866
+      },
+      {
+        "glucose_mmol_L": 15.100000000000001,
+        "fitted_mean": 8.15949299964447,
+        "bootstrap_median_mean": 8.159492994449417,
+        "bootstrap_lower_2_5_percent": 7.287002995661703,
+        "bootstrap_upper_97_5_percent": 9.274064312909653
+      },
+      {
+        "glucose_mmol_L": 15.200000000000001,
+        "fitted_mean": 8.184973233169671,
+        "bootstrap_median_mean": 8.18497322816114,
+        "bootstrap_lower_2_5_percent": 7.310713268198536,
+        "bootstrap_upper_97_5_percent": 9.297494752209795
+      },
+      {
+        "glucose_mmol_L": 15.3,
+        "fitted_mean": 8.210273611967319,
+        "bootstrap_median_mean": 8.210273607147636,
+        "bootstrap_lower_2_5_percent": 7.334260994242957,
+        "bootstrap_upper_97_5_percent": 9.320671139300394
+      },
+      {
+        "glucose_mmol_L": 15.4,
+        "fitted_mean": 8.23539590244202,
+        "bootstrap_median_mean": 8.23539589781347,
+        "bootstrap_lower_2_5_percent": 7.357647718175566,
+        "bootstrap_upper_97_5_percent": 9.343596984789853
+      },
+      {
+        "glucose_mmol_L": 15.5,
+        "fitted_mean": 8.260341849763417,
+        "bootstrap_median_mean": 8.26034184532824,
+        "bootstrap_lower_2_5_percent": 7.380874966562625,
+        "bootstrap_upper_97_5_percent": 9.366275744514232
+      },
+      {
+        "glucose_mmol_L": 15.600000000000001,
+        "fitted_mean": 8.285113178145622,
+        "bootstrap_median_mean": 8.285113173906,
+        "bootstrap_lower_2_5_percent": 7.403944248376067,
+        "bootstrap_upper_97_5_percent": 9.388710820362009
+      },
+      {
+        "glucose_mmol_L": 15.700000000000001,
+        "fitted_mean": 8.309711591123351,
+        "bootstrap_median_mean": 8.30971158708143,
+        "bootstrap_lower_2_5_percent": 7.4268570552113715,
+        "bootstrap_upper_97_5_percent": 9.410905561092614
+      },
+      {
+        "glucose_mmol_L": 15.8,
+        "fitted_mean": 8.334138771824861,
+        "bootstrap_median_mean": 8.334138767982742,
+        "bootstrap_lower_2_5_percent": 7.449614861503218,
+        "bootstrap_upper_97_5_percent": 9.43286326314827
+      },
+      {
+        "glucose_mmol_L": 15.9,
+        "fitted_mean": 8.358396383241578,
+        "bootstrap_median_mean": 8.358396379601311,
+        "bootstrap_lower_2_5_percent": 7.472219124738939,
+        "bootstrap_upper_97_5_percent": 9.454587171458824
+      },
+      {
+        "glucose_mmol_L": 16.0,
+        "fitted_mean": 8.3824860684945,
+        "bootstrap_median_mean": 8.382486065058101,
+        "bootstrap_lower_2_5_percent": 7.494671285669756,
+        "bootstrap_upper_97_5_percent": 9.476080480239196
+      },
+      {
+        "glucose_mmol_L": 16.1,
+        "fitted_mean": 8.406409451097355,
+        "bootstrap_median_mean": 8.406409447890661,
+        "bootstrap_lower_2_5_percent": 7.516972768519767,
+        "bootstrap_upper_97_5_percent": 9.497346333779118
+      },
+      {
+        "glucose_mmol_L": 16.2,
+        "fitted_mean": 8.430168135216496,
+        "bootstrap_median_mean": 8.430168132310342,
+        "bootstrap_lower_2_5_percent": 7.539124981192704,
+        "bootstrap_upper_97_5_percent": 9.518387827224947
+      },
+      {
+        "glucose_mmol_L": 16.3,
+        "fitted_mean": 8.453763705927587,
+        "bootstrap_median_mean": 8.45376370332442,
+        "bootstrap_lower_2_5_percent": 7.561129315476426,
+        "bootstrap_upper_97_5_percent": 9.539208007353231
+      },
+      {
+        "glucose_mmol_L": 16.400000000000002,
+        "fitted_mean": 8.477197729469083,
+        "bootstrap_median_mean": 8.47719772717128,
+        "bootstrap_lower_2_5_percent": 7.582987147245153,
+        "bootstrap_upper_97_5_percent": 9.559809873335881
+      },
+      {
+        "glucose_mmol_L": 16.5,
+        "fitted_mean": 8.500471753492475,
+        "bootstrap_median_mean": 8.500471751502372,
+        "bootstrap_lower_2_5_percent": 7.604699836659466,
+        "bootstrap_upper_97_5_percent": 9.580196377496696
+      },
+      {
+        "glucose_mmol_L": 16.6,
+        "fitted_mean": 8.52358730730938,
+        "bootstrap_median_mean": 8.523587305634479,
+        "bootstrap_lower_2_5_percent": 7.626268728364003,
+        "bootstrap_upper_97_5_percent": 9.600370426059127
+      },
+      {
+        "glucose_mmol_L": 16.7,
+        "fitted_mean": 8.54654590213545,
+        "bootstrap_median_mean": 8.546545900840444,
+        "bootstrap_lower_2_5_percent": 7.64769515168295,
+        "bootstrap_upper_97_5_percent": 9.620334879885055
+      },
+      {
+        "glucose_mmol_L": 16.8,
+        "fitted_mean": 8.569349031331136,
+        "bootstrap_median_mean": 8.569349030418548,
+        "bootstrap_lower_2_5_percent": 7.668980420813227,
+        "bootstrap_upper_97_5_percent": 9.64009255520457
+      },
+      {
+        "glucose_mmol_L": 16.900000000000002,
+        "fitted_mean": 8.591998170639307,
+        "bootstrap_median_mean": 8.591998169902254,
+        "bootstrap_lower_2_5_percent": 7.690125835015459,
+        "bootstrap_upper_97_5_percent": 9.659646224336527
+      },
+      {
+        "glucose_mmol_L": 17.0,
+        "fitted_mean": 8.614494778419795,
+        "bootstrap_median_mean": 8.614494778001314,
+        "bootstrap_lower_2_5_percent": 7.711132678802673,
+        "bootstrap_upper_97_5_percent": 9.678998616399861
+      },
+      {
+        "glucose_mmol_L": 17.1,
+        "fitted_mean": 8.636840295880837,
+        "bootstrap_median_mean": 8.636840295597688,
+        "bootstrap_lower_2_5_percent": 7.732002222126781,
+        "bootstrap_upper_97_5_percent": 9.698152418015596
+      },
+      {
+        "glucose_mmol_L": 17.2,
+        "fitted_mean": 8.659036147307445,
+        "bootstrap_median_mean": 8.659036147076142,
+        "bootstrap_lower_2_5_percent": 7.752735720562824,
+        "bootstrap_upper_97_5_percent": 9.717110273999417
+      },
+      {
+        "glucose_mmol_L": 17.3,
+        "fitted_mean": 8.681083740286768,
+        "bootstrap_median_mean": 8.681083740107612,
+        "bootstrap_lower_2_5_percent": 7.773334415490989,
+        "bootstrap_upper_97_5_percent": 9.735874788044868
+      },
+      {
+        "glucose_mmol_L": 17.400000000000002,
+        "fitted_mean": 8.70298446593043,
+        "bootstrap_median_mean": 8.702984465803716,
+        "bootstrap_lower_2_5_percent": 7.79379953427642,
+        "bootstrap_upper_97_5_percent": 9.75444852339705
+      },
+      {
+        "glucose_mmol_L": 17.5,
+        "fitted_mean": 8.724739699093885,
+        "bootstrap_median_mean": 8.724739699019894,
+        "bootstrap_lower_2_5_percent": 7.814132290446842,
+        "bootstrap_upper_97_5_percent": 9.772834003516893
+      },
+      {
+        "glucose_mmol_L": 17.6,
+        "fitted_mean": 8.746350798592822,
+        "bootstrap_median_mean": 8.746350798592822,
+        "bootstrap_lower_2_5_percent": 7.83433388386799,
+        "bootstrap_upper_97_5_percent": 9.791033712735908
+      },
+      {
+        "glucose_mmol_L": 17.7,
+        "fitted_mean": 8.767819107416644,
+        "bootstrap_median_mean": 8.767819107448934,
+        "bootstrap_lower_2_5_percent": 7.854405500916862,
+        "bootstrap_upper_97_5_percent": 9.809050096901503
+      },
+      {
+        "glucose_mmol_L": 17.8,
+        "fitted_mean": 8.789145952939036,
+        "bootstrap_median_mean": 8.789145953073012,
+        "bootstrap_lower_2_5_percent": 7.874348314652827,
+        "bootstrap_upper_97_5_percent": 9.826885564012846
+      },
+      {
+        "glucose_mmol_L": 17.900000000000002,
+        "fitted_mean": 8.810332647125687,
+        "bootstrap_median_mean": 8.810332647361902,
+        "bootstrap_lower_2_5_percent": 7.894163484986586,
+        "bootstrap_upper_97_5_percent": 9.84454248484728
+      },
+      {
+        "glucose_mmol_L": 18.0,
+        "fitted_mean": 8.831380486739137,
+        "bootstrap_median_mean": 8.831380487078102,
+        "bootstrap_lower_2_5_percent": 7.913852158847003,
+        "bootstrap_upper_97_5_percent": 9.862023193577384
+      },
+      {
+        "glucose_mmol_L": 18.1,
+        "fitted_mean": 8.852290753540851,
+        "bootstrap_median_mean": 8.852290753983064,
+        "bootstrap_lower_2_5_percent": 7.933415470345833,
+        "bootstrap_upper_97_5_percent": 9.87932998837867
+      },
+      {
+        "glucose_mmol_L": 18.2,
+        "fitted_mean": 8.873064714490495,
+        "bootstrap_median_mean": 8.873064715036438,
+        "bootstrap_lower_2_5_percent": 7.952854540940348,
+        "bootstrap_upper_97_5_percent": 9.896465132027963
+      },
+      {
+        "glucose_mmol_L": 18.3,
+        "fitted_mean": 8.893703621942445,
+        "bootstrap_median_mean": 8.893703622592591,
+        "bootstrap_lower_2_5_percent": 7.9721704795939,
+        "bootstrap_upper_97_5_percent": 9.913430852492592
+      },
+      {
+        "glucose_mmol_L": 18.400000000000002,
+        "fitted_mean": 8.914208713839612,
+        "bootstrap_median_mean": 8.914208714594418,
+        "bootstrap_lower_2_5_percent": 7.991364382934407,
+        "bootstrap_upper_97_5_percent": 9.93022934351034
+      },
+      {
+        "glucose_mmol_L": 18.5,
+        "fitted_mean": 8.934581213904544,
+        "bootstrap_median_mean": 8.934581214764462,
+        "bootstrap_lower_2_5_percent": 8.010437335410824,
+        "bootstrap_upper_97_5_percent": 9.94686276516034
+      },
+      {
+        "glucose_mmol_L": 18.6,
+        "fitted_mean": 8.95482233182791,
+        "bootstrap_median_mean": 8.95482233279337,
+        "bootstrap_lower_2_5_percent": 8.029390409447569,
+        "bootstrap_upper_97_5_percent": 9.96333324442489
+      },
+      {
+        "glucose_mmol_L": 18.7,
+        "fitted_mean": 8.974933263454309,
+        "bootstrap_median_mean": 8.974933264525736,
+        "bootstrap_lower_2_5_percent": 8.048224665596967,
+        "bootstrap_upper_97_5_percent": 9.979642875742343
+      },
+      {
+        "glucose_mmol_L": 18.8,
+        "fitted_mean": 8.994915190965523,
+        "bootstrap_median_mean": 8.994915192143328,
+        "bootstrap_lower_2_5_percent": 8.066941152689703,
+        "bootstrap_upper_97_5_percent": 9.99579372155108
+      },
+      {
+        "glucose_mmol_L": 18.900000000000002,
+        "fitted_mean": 9.01476928306119,
+        "bootstrap_median_mean": 9.014769284345773,
+        "bootstrap_lower_2_5_percent": 8.085540907983294,
+        "bootstrap_upper_97_5_percent": 10.011787812824727
+      },
+      {
+        "glucose_mmol_L": 19.0,
+        "fitted_mean": 9.034496695136943,
+        "bootstrap_median_mean": 9.034496696528691,
+        "bootstrap_lower_2_5_percent": 8.104024957308658,
+        "bootstrap_upper_97_5_percent": 10.027627149598645
+      },
+      {
+        "glucose_mmol_L": 19.1,
+        "fitted_mean": 9.054098569460052,
+        "bootstrap_median_mean": 9.054098570959352,
+        "bootstrap_lower_2_5_percent": 8.122394315214732,
+        "bootstrap_upper_97_5_percent": 10.043313701487817
+      },
+      {
+        "glucose_mmol_L": 19.200000000000003,
+        "fitted_mean": 9.07357603534261,
+        "bootstrap_median_mean": 9.073576036949822,
+        "bootstrap_lower_2_5_percent": 8.140649985111175,
+        "bootstrap_upper_97_5_percent": 10.058849408196194
+      },
+      {
+        "glucose_mmol_L": 19.3,
+        "fitted_mean": 9.092930209312234,
+        "bootstrap_median_mean": 9.092930211027719,
+        "bootstrap_lower_2_5_percent": 8.158792959409224,
+        "bootstrap_upper_97_5_percent": 10.074236180017648
+      },
+      {
+        "glucose_mmol_L": 19.400000000000002,
+        "fitted_mean": 9.112162195280423,
+        "bootstrap_median_mean": 9.112162197104526,
+        "bootstrap_lower_2_5_percent": 8.176824219660658,
+        "bootstrap_upper_97_5_percent": 10.089475898328596
+      },
+      {
+        "glucose_mmol_L": 19.5,
+        "fitted_mean": 9.13127308470848,
+        "bootstrap_median_mean": 9.13127308664154,
+        "bootstrap_lower_2_5_percent": 8.194744736694934,
+        "bootstrap_upper_97_5_percent": 10.104570416072375
+      },
+      {
+        "glucose_mmol_L": 19.6,
+        "fitted_mean": 9.150263956771132,
+        "bootstrap_median_mean": 9.15026395881347,
+        "bootstrap_lower_2_5_percent": 8.2125554707545,
+        "bootstrap_upper_97_5_percent": 10.11952155823552
+      },
+      {
+        "glucose_mmol_L": 19.700000000000003,
+        "fitted_mean": 9.169135878517798,
+        "bootstrap_median_mean": 9.169135880669737,
+        "bootstrap_lower_2_5_percent": 8.230257371628293,
+        "bootstrap_upper_97_5_percent": 10.134331122316025
+      },
+      {
+        "glucose_mmol_L": 19.8,
+        "fitted_mean": 9.187889905031609,
+        "bootstrap_median_mean": 9.187889907293453,
+        "bootstrap_lower_2_5_percent": 8.247851378783489,
+        "bootstrap_upper_97_5_percent": 10.149000878783669
+      },
+      {
+        "glucose_mmol_L": 19.900000000000002,
+        "fitted_mean": 9.206527079586147,
+        "bootstrap_median_mean": 9.20652708195819,
+        "bootstrap_lower_2_5_percent": 8.265338421495454,
+        "bootstrap_upper_97_5_percent": 10.16353257153257
+      },
+      {
+        "glucose_mmol_L": 20.0,
+        "fitted_mean": 9.225048433799957,
+        "bootstrap_median_mean": 9.22504843974326,
+        "bootstrap_lower_2_5_percent": 8.282719418975985,
+        "bootstrap_upper_97_5_percent": 10.177927918325992
+      }
+    ]
+  },
+  "interpretation": {
+    "status": "exploratory; EC50 weakly identified",
+    "summary": "The fitted midpoint varies widely when the three independent experiments are resampled. Some fits hit the 1000 mmol/L EC50 optimization ceiling, so the upper bootstrap tail is censored and no reliable midpoint interval is identified.",
+    "limits": [
+      "Only three independent experiment clusters and five glucose concentrations are available.",
+      "The observed data do not establish a high-glucose response plateau; EC50 and upper response are therefore strongly correlated.",
+      "Bootstrap percentile ranges are fragile with three clusters and are not formal inferential confidence intervals.",
+      "The apparent Hill coefficient is a descriptive steepness parameter, not a binding-site count or proof of cooperativity.",
+      "No 6 mmol/L activation threshold is inferred; the secondary product-design target remains separate.",
+      "This fit describes published receptor-affinity data; it is not a molecular simulation, clinical model, or dosing recommendation."
+    ]
+  }
+}

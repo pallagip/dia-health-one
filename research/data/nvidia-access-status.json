@@ -110,6 +110,17 @@
   },
   "research_status": {
     "source_data_reanalyses_completed": 4,
+    "hill_response_fit": {
+      "status": "completed; EC50 weakly identified and bootstrap upper tail censored",
+      "record": "research/data/hill-fit-summary.json",
+      "script": "research/fit_nnc2215_hill_response.py",
+      "best_fit_ec50_mmol_L": 13.433438921678832,
+      "best_fit_apparent_hill_coefficient": 1.1152239311250571,
+      "bootstrap_resamples": 2000,
+      "ec50_upper_bound_hits": 64,
+      "ec50_fit_ceiling_mmol_L": 1000,
+      "gpu_used": false
+    },
     "nature_source_cells_verified": 30,
     "pag_molecular_dynamics_started": true,
     "pag_seed_coordinates_public": false,

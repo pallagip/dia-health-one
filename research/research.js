@@ -25,6 +25,26 @@ async function loadPublishedSummary() {
   document.getElementById("fold-0-20").innerHTML = `${fmt(result.fold_changes[1].mean_within_experiment_ratio)}<span>×</span>`;
 }
 
+async function loadHillFitSummary() {
+  const response = await fetch("data/hill-fit-summary.json", { cache: "no-cache" });
+  if (!response.ok) throw new Error("Could not load the exploratory Hill-fit record.");
+  const record = await response.json();
+  const point = record.derived.point_estimate;
+  const bootstrap = record.derived.cluster_bootstrap;
+  const ranges = bootstrap.percentile_ranges_not_formal_confidence_intervals;
+  const bounds = bootstrap.parameter_bound_diagnostics;
+
+  document.getElementById("hill-fit-slope").textContent = point.apparent_hill_coefficient.toFixed(2);
+  document.getElementById("hill-fit-slope-range").textContent =
+    `Bootstrap percentiles ${ranges.apparent_hill_coefficient.lower_2_5_percent.toFixed(2)}–${ranges.apparent_hill_coefficient.upper_97_5_percent.toFixed(2)}`;
+  document.getElementById("hill-fit-ec50").textContent = point.ec50_mmol_L.toFixed(1);
+  document.getElementById("hill-fit-ec50-range").textContent = bounds.upper_percentile_is_censored
+    ? `Upper tail hits ${bounds.ec50_upper_bound_mmol_L.toLocaleString("en-US")} mmol/L fit ceiling in ${bounds.ec50_upper_bound_hit_count}/${bootstrap.resamples} resamples`
+    : `Bootstrap percentiles ${ranges.ec50_mmol_L.lower_2_5_percent.toFixed(1)}–${ranges.ec50_mmol_L.upper_97_5_percent.toFixed(1)} mmol/L`;
+  document.getElementById("hill-fit-note").textContent =
+    `${record.interpretation.summary} ${record.interpretation.limits.join(" ")}`;
+}
+
 function parseCsv(text) {
   const lines = text.trim().split(/\r?\n/);
   const headers = lines.shift().split(",");
@@ -127,7 +147,7 @@ document.getElementById("run-button").addEventListener("click", async event => {
       series: { NNC2215: summarize(rows, "NNC2215"), Insulin_degludec: summarize(rows, "Insulin degludec") },
       fold_changes: folds,
       interpretation: {
-        hill_fit: "Not fitted: five dose levels across three experiments do not support a robust four-parameter curve or threshold claim in this proof of concept.",
+        hill_fit: "A separate SciPy shared-slope Hill fit is available in data/hill-fit-summary.json. It is exploratory; its EC50 bootstrap upper tail is censored at the 1000 mmol/L fit ceiling and does not establish a threshold.",
         scope: "Published in-vitro data reanalysis only; no molecular dynamics, binding free-energy, or patient-response model was run."
       }
     };
@@ -155,4 +175,8 @@ document.getElementById("manifest-button").addEventListener("click", () => {
 
 loadPublishedSummary().catch(error => {
   document.getElementById("data-rows").innerHTML = `<tr><td colspan="3">${error.message} The CSV and analysis script remain available below.</td></tr>`;
+});
+
+loadHillFitSummary().catch(error => {
+  document.getElementById("hill-fit-note").textContent = `${error.message} Use the downloadable fit record and script for the full result.`;
 });

@@ -1,12 +1,13 @@
 # NNC2215–PaG reproducibility milestone report
 
-**Date:** 2026-10-17 20:28 UTC
-**Status:** Published-data reanalysis complete; target binding MD not started.
+**Date:** 2026-10-17 20:58 UTC
+**Status:** Published-data reanalysis and Hill-fit identifiability check complete; target binding MD not started.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
 
 ## Complete
 
 - Reanalysed all 30 NNC2215 Figure 3d source-data cells against the publisher workbook. Paired fold changes across three independent experiments are 3.1576× (3 to 20 mmol/L glucose) and 12.4720× (0 to 20 mmol/L), matching the paper's rounded 3.2× and 12.5× values.
+- Fit an exploratory shared-slope Hill model to the 15 NNC2215 source-workbook measurements. The best fit is EC50 13.43 mmol/L and apparent Hill slope 1.115. Resampling the three experiments 2,000 times produces a 2.5th EC50 percentile of 8.06 mmol/L; 64 resamples hit the 1,000 mmol/L fit ceiling, so the upper percentile is censored. The dataset does not identify a reliable midpoint or establish a 6 mmol/L threshold. The assumptions, residuals, raw source rows, fit record, and SVG are in `data/hill-fit-summary.json` and `assets/hill-fit.svg`.
 - Recalculated the reported PaG/glucose binding-summary ratio (11.2× from rounded Kd means), the zero-glucose hIR-A affinity ratio at 70 μmol/L PaG (6.0× from rounded means), descriptive pig-clamp group-mean ratios, and the published Equation 4b coefficient component. Raw binding curves and individual animal observations are not available in the reanalysed inputs.
 - Reproduced the publisher model-file hashes and checked insulin A/B sequence coverage, backbone atoms, three native disulfides, and modification-site LINK records in both public open/closed NNC2215 model PDBs.
 - Completed a PaG-only chemistry and explicit-water setup preflight. PaG stereochemistry was retained and the isolated glucuronate parameterization has net charge −1. This does not validate any part of the NNC2215 conjugate.

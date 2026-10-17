@@ -72,6 +72,16 @@ The scripts write a chemistry preflight, timestamped run manifest, raw per-repli
 
 The analysis reports the mean and sample SD across the three experiment-level values at each concentration. To compare with the paper's reported fold changes, it first divides the high-glucose value by the corresponding low-glucose value within each experiment, then reports the mean and sample SD across those three paired ratios. This gives 3.1576× for 3→20 mmol/L and 12.4720× for 0→20 mmol/L, which round to the reported 3.2× and 12.5×. Dividing the group means instead gives different values (3.1379× and 12.2725×); both calculations are preserved in the output to make the analysis choice visible.
 
+## Exploratory Hill-fit identifiability check
+
+`fit_nnc2215_hill_response.py` fits the 15 NNC2215 source-workbook values with one shared apparent Hill slope and EC50, measured 0 mmol/L baselines fixed per experiment, and an experiment-specific upper response. It uses unweighted nonlinear least squares and 2,000 deterministic bootstrap resamples of the three independent experiments. Run it in the pinned arm64 chemistry environment:
+
+```sh
+micromamba run -p /tmp/dho-pag-chem python research/fit_nnc2215_hill_response.py
+```
+
+The recorded point estimates are EC50 = 13.43 mmol/L and apparent Hill slope = 1.115. The 2.5th bootstrap percentile for EC50 is 8.06 mmol/L, while 64 of 2,000 resamples hit the 1,000 mmol/L optimization ceiling; the 97.5th percentile is therefore censored by that fit bound. The apparent-slope bootstrap percentile range is 0.675–1.491. These percentiles are exploratory and are not formal confidence intervals: there are only three independent experiment clusters, and the observed series does not show a high-glucose plateau. The result demonstrates that this dataset does not identify a reliable EC50. It does not establish a 6 mmol/L threshold, binding-site count, cooperativity, receptor affinity in a new condition, or clinical response. The script writes the machine-readable fit and provenance record to `data/hill-fit-summary.json` and the figure to `assets/hill-fit.svg`.
+
 To verify that the checked-in CSV still matches the publisher workbook, download the workbook and run:
 
 ```sh
@@ -104,7 +114,7 @@ The model-coefficient panel evaluates `SI = SIbase * (1 + ConcPaG * CoeffPaG / 1
 
 ## Interpretation limits
 
-- No Hill curve or 6 mmol/L threshold is fitted or inferred.
+- The exploratory Hill fit is weakly identified: its EC50 bootstrap upper tail reaches the numerical fit ceiling. No 6 mmol/L threshold is fitted or inferred.
 - The only molecular dynamics in this demo are two short simulations of PaG alone in water. No NNC2215–PaG binding simulation, docking, binding free-energy calculation, or patient-response model is run. The published NNC2215 model PDBs are catalogued inputs, not evidence that target binding was simulated.
 - GPU acceleration is not needed for the source-data calculations. NVIDIA Inception is approved, but no GPU is allocated. The `$1,000` Lambda benefit is pending at the NVIDIA catalog stage; the required Lambda partner form has not been submitted. The Innovation Lab tile is absent from the benefits catalog and support was contacted. See `data/nvidia-access-status.json` and `COMPUTE_STATUS.md` for the checked status and official request path.
 - The original PaG MD starting coordinates are not public in the supporting information. Any later study using the published NNC2215 models must be labelled as a public-input proxy, not an exact rerun of the PaG simulation.
