@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 12081)
+Total output lines: 355
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -157,103 +160,7 @@
               <div><span class="kd-label">D-GLUCOSE</span><strong>1.91 <small>mM</small></strong><span class="kd-error">± 0.10 mM</span></div>
               <div class="kd-divider"><span>VS</span></div>
               <div><span class="kd-label">PaG</span><strong class="mint-text">0.17 <small>mM</small></strong><span class="kd-error">± 0.01 mM</span></div>
-            </div>
-            <div class="kd-ratio"><strong>11.2×</strong><span>lower reported K<sub>d</sub> for PaG, calculated from the reported means</span></div>
-          </article>
-          <article class="pag-response-card">
-            <div class="pag-card-label">ZERO-GLUCOSE hIR-A AFFINITY · REPORTED</div>
-            <div class="response-row"><div><small>NO PaG</small><strong>0.9%</strong></div><div class="response-arrow">→</div><div><small>70 μM PaG</small><strong class="mint-text">5.4%</strong></div></div>
-            <div class="response-caption"><span>6.0× from rounded source means</span><span>1.5% HSA assay</span></div>
-          </article>
-        </div>
-        <article class="pag-clamp-card">
-          <div class="pag-clamp-heading">
-            <div><div class="pag-card-label">IN VIVO / PIG GLUCOSE CLAMP</div><h3>More glucose was needed to hold the clamp at 3 mmol/L.</h3></div>
-            <div class="clamp-meta">GIR AUC · 300–420 min<br />reported mean ± SEM · mg/kg</div>
-          </div>
-          <div class="clamp-table-scroll">
-            <table class="clamp-table">
-              <thead><tr><th scope="col">Treatment</th><th scope="col">Published AUC summary</th><th scope="col">n</th><th scope="col">P vs saline</th><th scope="col">Ratio to saline*</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">Low-dose PaG <small>0.5 g</small></th><td><div class="clamp-value">684.3 ± 107.5</div><div class="clamp-track" role="img" aria-label="AUC mean and SEM on a zero to 1100 milligram per kilogram scale"><span class="clamp-bar" style="--bar-width:62.2%"></span><span class="clamp-error" style="--error-start:52.4%;--error-width:19.5%"></span></div></td><td>8</td><td>0.16</td><td>1.15×</td></tr>
-                <tr><th scope="row">High-dose PaG <small>2.0 g</small></th><td><div class="clamp-value">849.0 ± 178.5</div><div class="clamp-track" role="img" aria-label="AUC mean and SEM on a zero to 1100 milligram per kilogram scale"><span class="clamp-bar clamp-bar-highlight" style="--bar-width:77.2%"></span><span class="clamp-error" style="--error-start:61.0%;--error-width:32.5%"></span></div></td><td>7</td><td>0.04</td><td>1.42×</td></tr>
-                <tr><th scope="row">L-glucose <small>0.3 g/kg</small></th><td><div class="clamp-value">790.1 ± 120.2</div><div class="clamp-track" role="img" aria-label="AUC mean and SEM on a zero to 1100 milligram per kilogram scale"><span class="clamp-bar clamp-bar-highlight" style="--bar-width:71.8%"></span><span class="clamp-error" style="--error-start:60.9%;--error-width:21.9%"></span></div></td><td>8</td><td>0.01</td><td>1.32×</td></tr>
-                <tr><th scope="row">Saline <small>control</small></th><td><div class="clamp-value">596.8 ± 85.9</div><div class="clamp-track" role="img" aria-label="AUC mean and SEM on a zero to 1100 milligram per kilogram scale"><span class="clamp-bar clamp-bar-control" style="--bar-width:54.3%"></span><span class="clamp-error" style="--error-start:46.5%;--error-width:15.6%"></span></div></td><td>8</td><td>—</td><td>1.00×</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="clamp-axis" aria-hidden="true"><span>0</span><span>550</span><span>1100 mg/kg</span></div>
-          <div class="clamp-note"><span>* DERIVED</span> Ratios divide published group means by the saline mean; they are descriptive, not paired animal-level effects. P-values and SEM are reported by the paper. Low-dose PaG was not statistically significant versus saline. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/" target="_blank" rel="noreferrer">Published Table 1 ↗</a><a href="data/pag-clamp-summary.csv" download>Download clamp values ↗</a><a href="data/pag-model-parameters.csv" download>Model parameters ↗</a><a href="data/pag-clamp-reproduction.json" download>Derived analysis JSON ↗</a><a href="reproduce_pag_clamp.py">Calculation script ↗</a></div>
-        </article>
-        <article class="pag-model-card">
-          <div class="pag-model-head">
-            <div><div class="pag-card-label">MODEL REPRODUCTION / PUBLISHED EQUATION 4B</div><h3>Reapply the reported PaG sensitivity coefficient.</h3><p>SI = SI<sub>base</sub> × (1 + PaG × Coeff<sub>PaG</sub> / 100)</p></div>
-            <div class="model-coefficient"><strong>0.7784%</strong><span>SI increase per μmol/L PaG</span><small>fitted pig PK/PD parameter · CV 5.5%</small></div>
-          </div>
-          <div class="model-rows">
-            <div class="model-row"><div class="model-context"><b>Human · 1 g paracetamol</b><small>estimated mean maximum PaG · 70 μmol/L</small></div><div class="model-track" role="img" aria-label="Model-implied insulin sensitivity increase of 54.5 percent on a zero to 350 percent scale"><span style="--model-width:15.6%"></span></div><div class="model-result"><strong>+54.5%</strong><small>1.54× baseline SI</small></div></div>
-            <div class="model-row"><div class="model-context"><b>Pig · 0.5 g IV PaG</b><small>reported mean maximum PaG · 102 μmol/L</small></div><div class="model-track" role="img" aria-label="Model-implied insulin sensitivity increase of 79.4 percent on a zero to 350 percent scale"><span style="--model-width:22.7%"></span></div><div class="model-result"><strong>+79.4%</strong><small>1.79× baseline SI</small></div></div>
-            <div class="model-row"><div class="model-context"><b>Pig · 2.0 g IV PaG</b><small>reported mean maximum PaG · 426 μmol/L</small></div><div class="model-track" role="img" aria-label="Model-implied insulin sensitivity increase of 331.6 percent on a zero to 350 percent scale"><span class="model-bar-high" style="--model-width:94.7%"></span></div><div class="model-result"><strong>+331.6%</strong><small>4.32× baseline SI</small></div></div>
-          </div>
-          <div class="model-scale" aria-hidden="true"><span>0%</span><span>175%</span><span>350%</span></div>
-          <div class="model-foot"><span>INTERPRETATION</span> Equation-derived change in the fitted insulin-sensitivity parameter. This is not receptor affinity, a glucose-infusion prediction, or an individual-patient outcome. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/" target="_blank" rel="noreferrer">Article &amp; model source ↗</a><a href="data/pag-cmax-scenarios.csv" download>Concentration inputs ↗</a><a href="data/pag-sensitivity-reproduction.json" download>Result JSON ↗</a><a href="reproduce_pag_sensitivity.py">Calculation script ↗</a></div>
-        </article>
-        <div class="pag-footnote"><span>ASSAY FINDING</span> In vitro receptor-binding data; the reported 70 μM condition is not a patient-specific exposure estimate. <span>DATA LIMIT</span> PaG figure-level raw values were not available for independent recalculation in this demo.</div>
-        <article class="md-protocol-card">
-          <div class="md-protocol-head">
-            <div><div class="pag-card-label">ORIGINAL SIMULATION / REPORTED IN SUPPORTING INFORMATION</div><h3>The published MD recipe is recovered; its seed coordinates are not.</h3></div>
-            <span class="md-protocol-badge">METHOD TRANSCRIBED</span>
-          </div>
-          <div class="md-protocol-metrics" aria-label="Reported molecular dynamics protocol">
-            <div><strong>500 ns</strong><small>production phase</small></div>
-            <div><strong>Desmond 6.6</strong><small>Schrödinger 2021-2</small></div>
-            <div><strong>OPLS4</strong><small>force field</small></div>
-            <div><strong>SPC</strong><small>explicit water</small></div>
-            <div><strong>0.15 M</strong><small>NaCl</small></div>
-          </div>
-          <div class="md-protocol-foot"><span>STARTING INPUT</span> An in-house crystal structure of a related glucose-bound macrocycle; the article says its coordinates are not shown. The public NNC2215 state models below are a different structural input. <a href="https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700" target="_blank" rel="noreferrer">Open PaG Supporting Information ↗</a><a href="data/pag-md-protocol.json" download>Download protocol record ↓</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="reproduction wrap section-space" id="reproduction">
-      <div class="section-heading">
-        <div><div class="section-kicker">03 / REPRODUCIBILITY RUN</div><h2>Re-run the source analysis.</h2></div>
-        <div class="heading-note">4 source-data reanalyses · engine preflight<br />source values checked against workbook</div>
-      </div>
-      <div class="run-console">
-        <div class="console-top"><span><i></i> ANALYSIS READY</span><span>INPUT · FIGURE 3D CSV</span></div>
-        <div class="console-main"><div><h3>Replicate-level fold change</h3><p>Recalculate group means, sample standard deviations, and paired fold changes from the deposited CSV. The browser run hashes its input and creates a downloadable JSON manifest.</p></div><div class="console-actions"><button class="button button-primary" id="run-button" type="button">Run reproduction <span>↗</span></button><a class="text-link dark-link" href="data/reproduction.json" download>Download latest result <span>↓</span></a></div></div>
-        <div class="console-bottom"><span>COMPUTE: CPU</span><span>INPUT CHECKSUM: <b id="input-checksum">Available on run</b></span><span>TARGET BINDING MD: NOT RUN</span><span>CLINICAL MODEL: NONE</span></div>
-      </div>
-      <div class="code-links"><a href="run_reproduction.py">View Python analysis ↗</a><a href="README.md">Read source &amp; methods ↗</a><a href="COMPUTE_STATUS.md">Compute readiness note ↗</a></div>
-      <div class="run-output" id="run-output" hidden aria-live="polite">
-        <div class="output-head"><div><div class="section-kicker">RUN OUTPUT</div><h3>Published fold-change checks</h3></div><button class="download-button" id="manifest-button" type="button">Download run manifest ↓</button></div>
-        <div class="output-grid" id="output-grid"></div>
-        <p class="output-meta" id="output-meta"></p>
-      </div>
-      <div class="run-register" aria-label="Current research run register">
-          <div class="run-register-heading">
-          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four source-data reanalyses and one Hill-fit identifiability check complete. PaG hydration and public-model audits are also recorded; target binding MD has not started.</h3></div>
-          <a class="run-register-status-link" href="data/nvidia-access-status.json" download>Compute status manifest <span>↓</span></a>
-        </div>
-        <div class="run-register-grid">
-          <article class="register-card">
-            <div class="register-card-top"><span>RUN 01 · NATURE 2024</span><span class="register-state register-done">REPRODUCED</span></div>
-            <h4>Figure 3d · hIR-A affinity</h4>
-            <div class="register-values"><div><strong>3.158×</strong><small>3 → 20 mmol/L</small></div><div><strong>12.472×</strong><small>0 → 20 mmol/L</small></div></div>
-            <p>Paired ratios across three experiments; both match the published 3.2× and 12.5× after rounding.</p>
-            <div class="register-links"><a href="data/reproduction.json" download>Run JSON ↓</a><a href="run_reproduction.py">Python script ↗</a></div>
-          </article>
-          <article class="register-card">
-            <div class="register-card-top"><span>RUN 02 · ACS 2026</span><span class="register-state register-done">REPRODUCED</span></div>
-            <h4>PaG pig clamp · Table 1</h4>
-            <div class="register-values"><div><strong>1.147×</strong><small>Low dose vs saline</small></div><div><strong>1.423×</strong><small>High dose vs saline</small></div></div>
-            <p>Derived ratios of published group means. Individual animal data and statistical tests were not recomputed.</p>
-            <div class="register-links"><a href="data/pag-clamp-reproduction.json" download>Run JSON ↓</a><a href="reproduce_pag_clamp.py">Python script ↗</a></div>
-          </article>
-          <article class="register-card">
-            <div class="register-card-top"><span>RUNS 03–04 · ACS 2026</span><span class="register-state register-done">REPRODUCED</span></div>
+            </…3081 tokens truncated…card-top"><span>RUNS 03–04 · ACS 2026</span><span class="register-state register-done">REPRODUCED</span></div>
             <h4>PaG binding summaries + Equation 4b</h4>
             <div class="register-values"><div><strong>11.2×</strong><small>lower reported Kd vs glucose</small></div><div><strong>6.0×</strong><small>hIR-A affinity at zero glucose</small></div></div>
             <p>Ratios use rounded published means. Equation 4b is also reapplied at three PaG exposure anchors; no raw curves are refitted.</p>
@@ -325,7 +232,7 @@
       <div class="gate-grid">
         <article class="gate-card gate-done"><div class="gate-number">01</div><div class="gate-status">COMPLETE</div><h3>Source data</h3><p>Nature Figure 3d values are transcribed with source sheet and cell references. Paired experiment ratios reproduce the published rounded glucose-response benchmarks. PaG binding ratios are recalculated from the article's rounded means.</p><div class="gate-foot">30 CELLS · SHA-256 TRACKED</div></article>
         <article class="gate-card gate-blocked"><div class="gate-number">02</div><div class="gate-status">SCAFFOLD CHECKED · CONJUGATE CHEMISTRY OPEN</div><h3>Structure &amp; parameters</h3><p>The publisher model PDBs pass hash, sequence, backbone, disulfide, and modification-link checks. Duplicate atom names and differing LYX-to-macrocycle attachment labels remain unresolved in the nonstandard residues. The 2026 seed coordinates and validated full-conjugate parameters are also unavailable.</p><div class="gate-links"><a class="gate-action" href="structures/nnc2215-open-model.pdb" download>Open-state PDB ↓</a><a class="gate-action" href="structures/nnc2215-closed-model.pdb" download>Closed-state PDB ↓</a><a class="gate-action" href="data/structure-manifest.json" download>Checksums &amp; provenance ↓</a><a class="gate-action" href="data/nnc2215-model-validation.json" download>Structure audit ↓</a><a class="gate-action" href="data/target-md-pilot-protocol.json" download>Proposed pilot ↓</a></div><div class="gate-foot">MODEL-BUILT · TOPOLOGY NOT VALIDATED</div></article>
-        <article class="gate-card gate-access-pending"><div class="gate-number">03</div><div class="gate-status">LAMBDA FORM NOT SUBMITTED · GPU PENDING</div><h3>NVIDIA compute access</h3><p>Dia Health One's Inception membership is approved and the research dashboard product profile is saved. NVIDIA recorded the $1,000 Lambda benefit request, but Lambda's separate partner application was only opened for inspection; no fields were entered or submitted, so Lambda has not begun review. The Innovation Lab tile returned zero results; NVIDIA support was contacted to enable it or share the application route. No GPU instance is allocated.</p><div class="gate-links"><a class="gate-action" href="https://programs.nvidia.com/phoenix/application?program=inception" target="_blank" rel="noreferrer">Open Inception portal ↗</a><a class="gate-action" href="https://www.nvidia.com/en-us/data-center/innovation-lab/" target="_blank" rel="noreferrer">View program requirements ↗</a><a class="gate-action" href="mailto:inceptionprogram@nvidia.com">Inception support ↗</a></div><div class="gate-foot">PROFILE SAVED · NO GPU JOB · NO SPEND</div></article>
+        <article class="gate-card gate-access-pending compute-access-card"><div class="gate-number">03</div><div class="gate-status">3 REQUESTS PENDING · NO GPU ALLOCATION</div><h3>NVIDIA compute access</h3><p>Inception is approved. The authenticated portal currently lists three pending cloud-credit requests; partner review and usable compute are not confirmed.</p><div class="compute-benefit-list" aria-label="Pending cloud-credit requests"><div class="compute-benefit-row"><div><strong>Lambda</strong><small>$1,000 · separate partner application not submitted</small></div><span class="compute-benefit-state">PENDING</span></div><div class="compute-benefit-row"><div><strong>AWS Activate</strong><small>$10,000 · separate AWS application not submitted</small></div><span class="compute-benefit-state">PENDING</span></div><div class="compute-benefit-row"><div><strong>Microsoft Azure</strong><small>$5,000 · partner sign-in and application incomplete</small></div><span class="compute-benefit-state">PENDING</span></div></div><p class="compute-access-note"><strong>Innovation Lab:</strong> application tile missing; NVIDIA support was contacted. No GPU instance is allocated.</p><div class="gate-links"><a class="gate-action" href="https://programs.nvidia.com/phoenix/application?program=inception" target="_blank" rel="noreferrer">Open Inception portal ↗</a><a class="gate-action" href="https://www.nvidia.com/en-us/data-center/innovation-lab/" target="_blank" rel="noreferrer">View program requirements ↗</a><a class="gate-action" href="mailto:inceptionprogram@nvidia.com">Inception support ↗</a></div><div class="gate-foot">PROFILE SAVED · NO GPU JOB · NO SPEND</div></article>
       </div>
       <div class="method-note"><div class="method-icon">i</div><div><b>Why the Hill midpoint remains unresolved</b><p>The descriptive fit uses five glucose concentrations from three independent experiments. Its EC50 bootstrap upper tail reaches the 1,000 mmol/L numerical fit ceiling, showing that these data do not identify a reliable midpoint. The apparent Hill slope is not a binding-site count, and this analysis does not establish a 6 mmol/L switch threshold.</p></div><a href="data/hill-fit-summary.json">View fit record ↗</a></div>
     </section>
