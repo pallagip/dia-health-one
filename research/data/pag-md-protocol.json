@@ -1,0 +1,28 @@
+{
+  "record_type": "published_md_protocol_summary",
+  "study_doi": "10.1021/acsptsci.6c00069",
+  "supporting_information_doi": "10.1021/acsptsci.6c00069.s001",
+  "supporting_information_url": "https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700",
+  "supporting_information_license": {
+    "name": "CC BY-NC 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/"
+  },
+  "method_summary": {
+    "engine": "Desmond v6.6",
+    "schrodinger_release": "2021-2",
+    "force_field": "OPLS4",
+    "water_model": "SPC explicit water",
+    "salt": "0.15 mol/L NaCl",
+    "production_duration_ns": 500,
+    "equilibration": "Standard equilibration protocol; details are referenced but not fully enumerated in the SI.",
+    "seed_system": "An in-house crystal structure of a macrocycle similar to the one in NNC2215, bound to glucose.",
+    "glucose_to_pag_setup": "A representative snapshot from the macrocycle\u2013glucose 500 ns production run was used to build the macrocycle\u2013PaG starting configuration in Maestro; the same MD protocol was then applied.",
+    "analysis": "Relevant snapshots were extracted to inspect dynamics and intermolecular interactions; the paper also reports NMR observations supporting the proposed conformation."
+  },
+  "public_input_status": {
+    "starting_crystal_coordinates": "Not supplied in the article or supporting information; the structure is described as in-house and data not shown.",
+    "2024_nnc2215_model_pdbs": "Available separately in the Springer Nature Figshare dataset recorded in structure-manifest.json; these are model-built NNC2215 states, not the 2026 study seed structure.",
+    "exact_md_rerun": "Not reproducible from the currently available public input set."
+  },
+  "evidence_note": "This JSON paraphrases reported methods and records the input gap. It is not a simulation input deck, a reconstruction of unpublished coordinates, or evidence that MD was rerun."
+}

@@ -43,11 +43,19 @@ python3 research/verify_source_extract.py /path/to/41586_2024_8042_MOESM5_ESM.xl
 
 The verifier checks the workbook checksum, worksheet name, source-cell references, and all 30 numeric values.
 
+## Published NNC2215 model coordinates
+
+The 2024 study's [Springer Nature Figshare dataset](https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460) publishes model-built PDB coordinates for open and closed NNC2215 states. The two PDB files are included under `structures/` under the dataset's CC BY 4.0 licence. Their original filenames, download URLs, source checksum values, local SHA-256 values, and attribution are recorded in `data/structure-manifest.json`.
+
+The open model places free D-glucose in the B29 macrocycle; the closed model places the tethered glucoside there. These are useful author-supplied starting models, not experimentally resolved NNC2215 structures. They do not supply the separate in-house glucose-bound macrocycle crystal coordinates used to initialize the 2026 PaG molecular-dynamics work, and their presence does not establish force-field readiness.
+
 ## PaG evidence boundary
 
 Sturis et al., [“Interaction between Paracetamol Glucuronide and a Glucose-Sensitive Insulin Molecule (NNC2215): Increased Risk of Hypoglycemia”](https://pubs.acs.org/doi/10.1021/acsptsci.6c00069), *ACS Pharmacology & Translational Science* (2026), DOI `10.1021/acsptsci.6c00069`, is represented on the dashboard through explicitly labelled published summary values. The reported Kd means are 1.91 mM for D-glucose and 0.17 mM for PaG; their ratio (about 11.2) is calculated from those means. The paper reports 0.9% and 5.4% hIR-A relative affinity at zero glucose without PaG and with 70 μM PaG. These rounded summaries are not independently reanalysed raw values.
 
-The PaG study describes a 500 ns Desmond/OPLS4 simulation from an in-house crystal structure of a related macrocycle, but the article does not supply those starting coordinates. Therefore this demo does not claim an exact molecular-dynamics rerun. PDB 6PXV and 2VJZ are reference structures used in the 2024 paper's modelling; they are not solved atomic structures of every NNC2215 switch state.
+The PaG study's [Supporting Information](https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700) specifies Desmond v6.6 (Schrödinger Release 2021-2), OPLS4, SPC explicit water, 0.15 mol/L NaCl, and a 500 ns production phase. A representative snapshot from the glucose-bound macrocycle run was used to build the PaG starting configuration in Maestro, followed by the same protocol. The input is described as an in-house crystal structure of a related macrocycle; its coordinates are not supplied. The reported method is transcribed in `data/pag-md-protocol.json`; the SI PDF is not redistributed here. Exact MD therefore cannot be rerun from the public input set currently available to this project.
+
+PDB 6PXV and 2VJZ are reference structures used in the 2024 paper's modelling. The open/closed model files in the Figshare dataset are distinct model-built NNC2215 coordinate files, not experimental structures.
 
 The pig-clamp panel reports the article's GIR AUC from 300 to 420 minutes at a 3 mmol/L glucose clamp. Means, SEM, sample sizes, and p-values are transcribed from the main article's Table 1; ratios to saline are derived from the reported means. `data/pag-model-parameters.csv` transcribes the minimal-model values in Supporting Information Table S2. The equations and these selected parameter estimates are not enough to recreate the authors' full PK/PD fit: individual-animal time series and some model inputs are not published with the article.
 
@@ -56,6 +64,6 @@ The model-coefficient panel evaluates `SI = SIbase * (1 + ConcPaG * CoeffPaG / 1
 ## Interpretation limits
 
 - No Hill curve or 6 mmol/L threshold is fitted or inferred.
-- No molecular dynamics, docking, binding free-energy calculation, or patient-response model is run.
+- No molecular dynamics, docking, binding free-energy calculation, or patient-response model is run. The published NNC2215 model PDBs are catalogued inputs, not evidence that a simulation was performed.
 - GPU acceleration is not useful for this small source-data reanalysis. Any later GPU simulation is gated on published structure availability, validated parameters for the conjugate and ligands, and a verified compute allocation.
 - All source data, derived calculations, model-built structures, and future simulation outputs must remain separately labelled.

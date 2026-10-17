@@ -1,0 +1,75 @@
+{
+  "record_type": "source_structure_manifest",
+  "dataset": "3D models of NNC2215",
+  "authors": [
+    "Eva Johansson",
+    "Daniele Granata"
+  ],
+  "repository": "Springer Nature Figshare",
+  "dataset_doi": "10.6084/m9.figshare.26526460.v1",
+  "dataset_url": "https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460",
+  "related_article": {
+    "title": "Glucose-sensitive insulin with attenuation of hypoglycaemia",
+    "doi": "10.1038/s41586-024-08042-3",
+    "url": "https://www.nature.com/articles/s41586-024-08042-3"
+  },
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "retrieved_utc_date": "2026-10-17",
+  "attribution": "Johansson E, Granata D. 3D models of NNC2215. Springer Nature Figshare (2024). https://doi.org/10.6084/m9.figshare.26526460.v1. CC BY 4.0.",
+  "interpretation": "These are author-supplied 3D models of NNC2215 open and closed states. They are useful, attributable model inputs; they are not experimentally resolved NNC2215 coordinates and do not provide the separate in-house macrocycle crystal structure used to seed the 2026 PaG molecular-dynamics study.",
+  "files": [
+    {
+      "state": "active_open",
+      "label": "Active/open NNC2215 model",
+      "ligand_state": "Free D-glucose is modelled in the B29 macrocycle.",
+      "path": "structures/nnc2215-open-model.pdb",
+      "source_filename": "NNC2215_active_open form.pdb",
+      "source_url": "https://ndownloader.figshare.com/files/48308383",
+      "figshare_file_id": 48308383,
+      "bytes": 85574,
+      "md5": "ec4d0e098061a8eb534665eec52f0eb8",
+      "sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+      "coordinate_atom_records": 990,
+      "chain_ids": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "nonstandard_hetero_residue_labels": [
+        "BGL",
+        "LYX",
+        "MC",
+        "PHX"
+      ],
+      "coordinate_status": "Publisher-supplied model coordinates; not an experimentally resolved NNC2215 structure."
+    },
+    {
+      "state": "inactive_closed",
+      "label": "Inactive/closed NNC2215 model",
+      "ligand_state": "The tethered glucoside is modelled in the B29 macrocycle.",
+      "path": "structures/nnc2215-closed-model.pdb",
+      "source_filename": "NNC2215_inactive_closed form.pdb",
+      "source_url": "https://ndownloader.figshare.com/files/48308386",
+      "figshare_file_id": 48308386,
+      "bytes": 82929,
+      "md5": "ff996257d2b41b74b51e4b82d4b267d1",
+      "sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+      "coordinate_atom_records": 968,
+      "chain_ids": [
+        "A",
+        "B",
+        "C"
+      ],
+      "nonstandard_hetero_residue_labels": [
+        "LYX",
+        "MC",
+        "PHX"
+      ],
+      "coordinate_status": "Publisher-supplied model coordinates; not an experimentally resolved NNC2215 structure."
+    }
+  ]
+}

@@ -2,37 +2,49 @@
 
 **Checked:** 2026-10-17 UTC
 
-**Decision:** source-data reanalysis is complete on CPU; atomistic GPU work remains gated.
+**Decision:** published-data reanalysis is complete on CPU; the 2026 PaG molecular-dynamics method is now documented, but its starting coordinates and an NVIDIA allocation are still unavailable. No target MD run has been made.
 
-## Reproduction completed
+## Reproductions completed
 
-The Nature 2024 Figure 3d source values were extracted with workbook-cell provenance and independently verified against the publisher workbook. The Python standard-library analysis reproduces the reported paired glucose-response fold changes from three experiments. This calculation is CPU-suitable; a GPU would not improve it.
+- Nature 2024 Figure 3d source values were extracted with workbook-cell provenance and verified against the publisher workbook. The paired fold changes reproduce the reported rounded 3→20 and 0→20 mmol/L benchmarks.
+- The 2026 PaG pig-clamp group means, SEM, sample sizes, and reported p-values are transcribed from Table 1. The CPU script derives treatment-to-saline ratios from group means; individual-animal records are not available here, so the published SEM and statistical tests are not recomputed.
+- The PaG paper's Appendix S4 Equation 4b and Table S2 coefficient are reapplied at the published human and pig PaG concentration anchors. This reproduces the model's linear insulin-sensitivity component only, not GIR, receptor affinity, or patient outcomes.
 
-The 2026 PaG pig-clamp AUC means, SEM values, sample sizes, and reported p-values are transcribed from the main article's Table 1. A second CPU script derives treatment-to-saline ratios from those published group means. These are descriptive ratios only; individual-animal records are not available here, so the published SEM and statistical tests cannot be independently recomputed. The supporting-information Table S2 model parameters are catalogued in `data/pag-model-parameters.csv`, but they are insufficient to reconstruct the full PK/PD fit and input profiles.
+## Structure data recovered
 
-A third CPU calculation reapplies Appendix S4 Equation 4b (`SI = SIbase * (1 + ConcPaG * CoeffPaG / 100)`) at the paper's 70 μmol/L human estimate and 102/426 μmol/L pig concentration anchors. It reproduces the fitted model's linear insulin-sensitivity component only; it does not predict GIR or patient outcomes.
+Springer Nature Figshare publishes author-supplied open and closed NNC2215 model PDBs under CC BY 4.0. The files are included in `structures/`; provenance and source/local checksums are recorded in `data/structure-manifest.json`.
+
+| State model | Source PDB | Local SHA-256 |
+|---|---|---|
+| Active/open, free D-glucose in the B29 macrocycle | `NNC2215_active_open form.pdb` | `44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a` |
+| Inactive/closed, tethered glucoside in the B29 macrocycle | `NNC2215_inactive_closed form.pdb` | `a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d` |
+
+These files are model-built coordinates, not experimentally resolved NNC2215 structures. They are not the in-house crystal structure of a related macrocycle used to initialize the 2026 PaG simulation. The files also contain non-standard chemistry that still needs validated force-field treatment before any energetic interpretation.
+
+## Published PaG MD protocol and remaining gap
+
+The 2026 Supporting Information is available as a separate ACS Figshare record (SI DOI `10.1021/acsptsci.6c00069.s001`, CC BY-NC 4.0). It reports:
+
+- Desmond v6.6, Schrödinger Release 2021-2
+- OPLS4 force field and SPC explicit water
+- 0.15 mol/L NaCl
+- 500 ns production phase
+- An in-house crystal structure of a glucose-bound macrocycle similar to NNC2215 as the initial system
+- A representative glucose-bound snapshot used to build the PaG configuration in Maestro, followed by the same MD protocol
+
+The Supporting Information does not provide the starting crystal coordinates; it describes the structure as in-house and “data not shown.” This method and the public-input gap are recorded separately in `data/pag-md-protocol.json`. The local NNC2215 models can support a separately labelled proxy study, but they cannot be substituted silently and called an exact rerun of the published PaG simulation.
 
 ## Compute access
 
-- Dia Health One's NVIDIA Inception membership is approved. NVIDIA's welcome email says members can request partner benefits through the portal; membership alone does not allocate compute.
-- NVIDIA's [DGX Cloud Innovation Lab](https://www.nvidia.com/en-eu/data-center/dgx-cloud/innovation-lab/) offers selected Inception members a 60-day cloud environment. A separate application is required, approval depends on fit and availability, and members do not qualify automatically. The Innovation Lab request has not been submitted.
-- The NVIDIA portal currently requires account sign-in before the benefit request can be checked or submitted.
-- Google's billing console confirms an active Free Trial account. Google's [Free Trial documentation](https://docs.cloud.google.com/free/docs/free-cloud-features) says GPU attachment and quota requests are unavailable while billing remains a non-billable Free Trial account. A [Google for Startups Cloud Program application](https://cloud.google.com/startup/apply) has been received; no approval is visible yet.
-- No GPU instance or simulation job has been created, and no GPU spend has been incurred. No paid billing upgrade has been made.
-- The local host is macOS arm64 without an NVIDIA GPU runtime. OpenMM/GROMACS GPU benchmarking is not complete.
-
-## Independent structural gate
-
-The 2026 PaG paper reports a 500 ns Desmond/OPLS4 simulation initialized from an in-house crystal structure of a related macrocycle. The article does not publish those starting coordinates. The NNC2215 conjugate also needs verified parameters for its non-standard switch chemistry. Therefore this project does not claim an exact MD rerun or run target-system MD from invented coordinates or unvalidated parameters.
-
-The public article and its supplement are listed on [PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/). The supplement describes the molecular-dynamics and NMR methods and publishes selected PK/PD model parameters; these values are catalogued in the research data folder. No macrocycle coordinates, target conjugate topology, or atomistic trajectory is supplied.
+- Dia Health One's NVIDIA Inception membership is approved. Membership itself does not allocate compute.
+- The separate DGX Cloud Innovation Lab request has not been submitted. The portal URL opened in Chrome on 2026-10-17 returned `net::ERR_CERT_AUTHORITY_INVALID`. No warning was bypassed and no credentials were entered on that page. A GPU instance/job has not been created and no GPU spend has occurred.
+- The host is macOS arm64 without an NVIDIA GPU runtime. OpenMM/GROMACS GPU benchmarking is not complete.
+- The Google Cloud account remains a Free Trial; its billing console did not allow GPU attachment/quota requests. The Google for Startups Cloud Program application was received, but no approval was visible in the last account review.
 
 ## Next gates
 
-1. Sign in to the NVIDIA Inception portal and request the Innovation Lab benefit; wait for selection and access details.
-2. If Google for Startups approves the application, confirm the resulting billing and GPU-quota terms before using that account for GPU work.
-3. Obtain the published starting coordinates or define a separately labelled model, then validate the conjugate and PaG parameterisation.
-4. Once compute and chemistry are ready, benchmark OpenMM and GROMACS on the same documented test system and protocol.
-5. Run target MD only after the structure, parameters, diagnostics, and comparison observable are specified.
-
-The source-data reanalysis, published measurements, model assumptions, and any future simulation outputs must remain separate in the dashboard and run manifests.
+1. Access the NVIDIA Inception portal through a trusted browser/network, then submit the separate Innovation Lab benefit request and await selection.
+2. Obtain the original macrocycle coordinates from the authors or another attributable source; otherwise define a proxy study using the published NNC2215 state models and label it separately.
+3. Validate parameters for PaG and all non-standard residues/linkages in the chosen model. Do not interpret energies before this gate passes.
+4. Once chemistry and compute are ready, benchmark OpenMM and GROMACS on the same documented test system, then run a small pilot with stability diagnostics.
+5. Compare molecular outputs only with observables they actually predict. The published receptor-binding assay and animal clamp results remain experimental benchmarks, not outputs of the existing CPU calculations.
