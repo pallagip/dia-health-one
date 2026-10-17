@@ -1,9 +1,9 @@
 {
   "schema": "dia-health-one.compute-access-status.v1",
   "checked_date_utc": "2026-10-17",
-  "portal_status_checked_at_utc": "2026-10-17T22:05:51Z",
+  "portal_status_checked_at_utc": "2026-10-17T23:48:05Z",
   "portal_status_evidence": {
-    "source": "Authenticated NVIDIA Inception Benefits page for andrii@diahealth.one, checked 2026-10-17T22:05:51Z.",
+    "source": "Authenticated NVIDIA Inception Benefits page for andrii@diahealth.one, checked 2026-10-17T23:48:05Z.",
     "visible_requests": [
       "$1,000 in Lambda Cloud Credits \u2014 benefit request pending",
       "$10,000 in AWS Cloud Credits \u2014 benefit request pending",
@@ -13,8 +13,9 @@
     "catalog_search": {
       "query": "Innovation Lab",
       "result_count": 0,
-      "checked_at_utc": "2026-10-17T22:05:51Z",
-      "url": "https://www.nvidia.com/programs/benefits/?search=Innovation%20Lab"
+      "checked_at_utc": "2026-10-17T23:48:05Z",
+      "url": "https://www.nvidia.com/programs/benefits/",
+      "observed_result": "Sorry, we could not find any results for this search."
     }
   },
   "nvidia_inception": {
@@ -100,14 +101,15 @@
       "checked_date_utc": "2026-10-17",
       "search_query": "Innovation Lab",
       "results": 0,
-      "checked_at_utc": "2026-10-17T22:05:51Z"
+      "checked_at_utc": "2026-10-17T23:48:05Z",
+      "url": "https://www.nvidia.com/programs/benefits/"
     },
     "support_request": {
       "recipient": "inceptionprogram@nvidia.com",
       "sent_date_utc": "2026-10-17",
       "subject": "Innovation Lab benefit tile missing",
-      "response_status": "No NVIDIA reply found as of 2026-10-17T22:05:51Z.",
-      "last_mailbox_check_at_utc": "2026-10-17T22:05:51Z"
+      "response_status": "No NVIDIA Innovation Lab support reply found as of 2026-10-17T23:48:05Z.",
+      "last_mailbox_check_at_utc": "2026-10-17T23:48:05Z"
     },
     "duration_days": 60,
     "selection_required": true,
@@ -124,6 +126,21 @@
       "checked_at_utc": "2026-10-17T22:05:51Z",
       "url": "https://programs.nvidia.com/phoenix/application?program=inception",
       "observed": "This route opens the generic NVIDIA Inception Program Application sign-in page, not an Innovation Lab-specific request form. No fields were entered and no submission was made."
+    },
+    "official_program_details": {
+      "program_duration_days": 60,
+      "selection_required": true,
+      "separate_application_required": true,
+      "public_use_case_relevant_to_project": "Dynamic simulations",
+      "official_url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    "application_brief": {
+      "file": "research/NVIDIA_INNOVATION_LAB_BRIEF.md",
+      "status": "prepared_not_submitted",
+      "requested_compute": "one CUDA-capable GPU environment for target-system benchmark and proposed pilot",
+      "proposed_production_ns": 450,
+      "target_gpu_hours_estimated": false,
+      "reason": "Generic 1UBQ T4 throughput is not transferable; estimate only after a valid target system is prepared and benchmarked."
     }
   },
   "local_compute": {
@@ -248,6 +265,13 @@
       "record": "research/data/nnc2215-chemistry-source-audit.json",
       "checked_at_utc": "2026-10-17T22:05:51Z",
       "production_simulation_ready": false
+    },
+    "pag_assay_source_audit": {
+      "status": "complete; exact article-text values and data-availability boundary recorded; no figure digitization or curve fit",
+      "record": "research/data/pag-assay-source-audit.json",
+      "script": "research/audit_pag_assay_source.py",
+      "license": "CC BY-NC-ND 4.0",
+      "target_binding_simulation": false
     }
   },
   "sources": [
@@ -281,11 +305,11 @@
     }
   ],
   "latest_verification": {
-    "checked_at_utc": "2026-10-17T22:44:55Z",
+    "checked_at_utc": "2026-10-17T23:48:05Z",
     "local_host": "Apple M4 / macOS 26.3 arm64; no local NVIDIA GPU. A separate temporary free Colab Tesla T4 completed only a generic benchmark; no Inception or partner allocation exists.",
     "colab_t4_preflight": "Completed three synchronized 100 ps OpenMM 8.6.1 OpenCL timing runs on a 17,764-atom 1UBQ system; median 270.175 ns/day (257.885\u2013282.691). This is not target NNC2215\u2013PaG MD and used no paid compute.",
-    "inception_portal": "Lambda $1,000, AWS $10,000, and Microsoft Azure $5,000 catalog requests still read as pending; partner review/awards not confirmed.",
-    "innovation_lab": "Public catalog search returned zero results. NVIDIA support request remains unanswered. Direct portal application route opened a generic Inception sign-in page, not an Innovation Lab form.",
+    "inception_portal": "The authenticated portal lists the $1,000 Lambda, $10,000 AWS, and $5,000 Microsoft Azure requests as pending.",
+    "innovation_lab": "The authenticated Explore Benefits route opened the public catalog; search for Innovation Lab returned zero results. The support email has no reply as of this check.",
     "lambda": "Official form reviewed; no application-specific values manually entered, no submission made. A redacted phone-field value appeared on load and remained redacted after a clear attempt; the tab was closed without submission.",
     "other_gpu_cloud_offers_screened": [
       {
@@ -299,21 +323,27 @@
         "eligibility": "Catalog lists pre-Series A, 3\u20135 years in operation, maximum 50 employees, post-product development, and active EU go-to-market. Operating history and EU go-to-market are not verified; no request submitted."
       }
     ],
-    "patrick_inbox": "Latest incoming message found: 2026-10-17T21:01:27Z; the 21:57:41Z status reply is on record; no later incoming reply was present in the 2026-10-17T22:10:00Z manual inbox check."
+    "patrick_inbox": "Latest incoming message found: 2026-10-17T21:01:27Z; no newer incoming message was present in the 2026-10-17T23:48:05Z manual inbox search."
   },
   "latest_inception_catalog_check": {
-    "checked_at_utc": "2026-10-17T22:54:36Z",
-    "authenticated_portal": "The Inception Benefits page still showed the $1,000 Lambda, $10,000 AWS, and $5,000 Microsoft Azure requests as pending.",
+    "checked_at_utc": "2026-10-17T23:48:05Z",
+    "authenticated_portal": "Welcome to Inception, Andrii; Explore Benefits opened the NVIDIA Benefits Catalog.",
+    "pending_requests": [
+      "$1,000 Lambda Cloud Credits",
+      "$10,000 AWS Cloud Credits",
+      "$5,000 Microsoft Azure Cloud Credits"
+    ],
     "public_benefits_catalog_search": {
       "query": "Innovation Lab",
       "result_count": 0,
+      "observed_result": "Sorry, we could not find any results for this search.",
       "url": "https://www.nvidia.com/programs/benefits/"
     },
     "nvidia_compute_allocation_confirmed": false,
     "project_compute_spend_usd": 0
   },
   "latest_inbox_check": {
-    "checked_at_utc": "2026-10-17T23:02:20Z",
+    "checked_at_utc": "2026-10-17T23:48:05Z",
     "patrik": {
       "address": "patrik@diahealth.one",
       "latest_incoming_message_at_utc": "2026-10-17T21:01:27Z",
@@ -322,8 +352,8 @@
     },
     "nvidia_innovation_lab_support": {
       "new_reply_found": false,
-      "search": "\"Innovation Lab\" after:2026/10/17 -from:me -in:spam -in:trash"
+      "search": "from:(nvidia.com) after:2026/10/17 -in:spam -in:trash"
     },
-    "scope_note": "Read-only Gmail search at 2026-10-17T23:02:20Z; no messages were sent or changed."
+    "scope_note": "Read-only Gmail search at 2026-10-17T23:48:05Z; no messages were sent or changed."
   }
 }
