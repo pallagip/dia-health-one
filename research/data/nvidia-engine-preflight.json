@@ -1,0 +1,112 @@
+{
+  "schema": "dia-health-one.openmm-gpu-preflight.v1",
+  "run": {
+    "id": "DHO-NVIDIA-OPENMM-20261017T224308Z",
+    "started_at_utc": "2026-10-17T22:43:08.590102+00:00",
+    "completed_at_utc": "2026-10-17T22:44:55.701102+00:00",
+    "status": "completed",
+    "reference_script": "research/benchmark_openmm_nvidia.py",
+    "reference_script_sha256": "7decc82ac416d3bc43e5500eea7c8f941401022786e352131767baaa19d45ce0",
+    "execution": "Equivalent benchmark code was executed and saved in the linked Colab notebook. getState(getEnergy=True) synchronization is inside the timed interval.",
+    "notebook_url": "https://colab.research.google.com/drive/1ImHF0tk_wGSWfPwtuZjC04cFN7i4fCmt?authuser=1",
+    "input_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+    "environment": {
+      "openmm": "8.6.1",
+      "python": "3.13.15",
+      "os": "Linux-6.6.122+-x86_64-with-glibc2.39",
+      "architecture": "x86_64"
+    },
+    "gpu": {
+      "model": "Tesla T4",
+      "uuid": "GPU-5a6869f5-cecc-6d90-c811-8ec49a4492dc",
+      "driver_version": "580.82.07",
+      "memory_total": "15360 MiB"
+    },
+    "purpose": "Generic 1UBQ OpenMM OpenCL throughput preflight; not NNC2215/PaG target MD.",
+    "clinical_use": false
+  },
+  "system": {
+    "source_id": "1UBQ",
+    "source_url": "https://www.rcsb.org/structure/1UBQ",
+    "structure_class": "public experimental X-ray ubiquitin structure",
+    "force_field": "Amber14-all",
+    "water_model": "TIP3P",
+    "solvent_padding_nm": 1.0,
+    "salt_added": false,
+    "atom_count": 17764,
+    "nonbonded_method": "PME",
+    "nonbonded_cutoff_nm": 1.0,
+    "constraints": "HBonds"
+  },
+  "protocol": {
+    "engine": "OpenMM",
+    "version": "8.6.1",
+    "platform": "OpenCL",
+    "platform_properties": {
+      "DeviceIndex": "0",
+      "Precision": "single"
+    },
+    "device_name": "Tesla T4",
+    "integrator": "LangevinMiddleIntegrator",
+    "ensemble": "NVT",
+    "temperature_K": 300.0,
+    "friction_per_ps": 1.0,
+    "timestep_fs": 2.0,
+    "minimizer_tolerance_kj_mol_nm": 10.0,
+    "warmup_steps": 1000,
+    "timed_steps_per_replicate": 50000,
+    "independent_velocity_seeds": [
+      2215001,
+      2215002,
+      2215003
+    ],
+    "synchronization_in_timed_interval": true
+  },
+  "measurements": [
+    {
+      "seed": 2215001,
+      "warmup_steps": 1000,
+      "timed_steps": 50000,
+      "simulated_ns": 0.1,
+      "elapsed_seconds": 30.5634,
+      "ns_per_day": 282.691,
+      "potential_energy_after_warmup_kj_mol": -236497.673,
+      "potential_energy_after_timing_kj_mol": -227635.434
+    },
+    {
+      "seed": 2215002,
+      "warmup_steps": 1000,
+      "timed_steps": 50000,
+      "simulated_ns": 0.1,
+      "elapsed_seconds": 31.9793,
+      "ns_per_day": 270.175,
+      "potential_energy_after_warmup_kj_mol": -236088.955,
+      "potential_energy_after_timing_kj_mol": -228247.91
+    },
+    {
+      "seed": 2215003,
+      "warmup_steps": 1000,
+      "timed_steps": 50000,
+      "simulated_ns": 0.1,
+      "elapsed_seconds": 33.5034,
+      "ns_per_day": 257.885,
+      "potential_energy_after_warmup_kj_mol": -236465.447,
+      "potential_energy_after_timing_kj_mol": -228363.313
+    }
+  ],
+  "summary": {
+    "replicates": 3,
+    "median_ns_per_day": 270.175,
+    "mean_ns_per_day": 270.25,
+    "sample_sd_ns_per_day": 12.403,
+    "min_ns_per_day": 257.885,
+    "max_ns_per_day": 282.691
+  },
+  "limitations": [
+    "Generic ubiquitin system, not NNC2215, PaG, or insulin receptor complex.",
+    "OpenMM used OpenCL on the Tesla T4; CUDA platform was not available in this runtime.",
+    "This setup differs from Apple M4 benchmark and is not a controlled cross-machine comparison.",
+    "Throughput is not target-system performance and does not validate conjugate parameters or predict binding affinity.",
+    "Free Colab runtime is temporary and is not an NVIDIA Inception or partner GPU allocation."
+  ]
+}

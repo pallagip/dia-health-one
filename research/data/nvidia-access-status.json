@@ -131,7 +131,10 @@
     "operating_system": "macOS 26.3 arm64",
     "nvidia_gpu_available": false,
     "nvidia_smi_available": false,
-    "nvidia_instance_or_job": false,
+    "nvidia_inception_or_partner_instance_or_job": false,
+    "temporary_google_colab_gpu_job": true,
+    "nvidia_inception_or_partner_allocation": false,
+    "free_colab_t4_preflight_completed": true,
     "nvidia_compute_spend_for_this_project": 0,
     "system_openmm_installed": false,
     "system_gromacs_installed": false,
@@ -158,7 +161,23 @@
         "openmm_opencl": 126.274
       }
     },
-    "last_checked_at_utc": "2026-10-17T22:05:51Z"
+    "colab_t4_preflight": {
+      "status": "completed; temporary free Colab runtime, not an Inception or partner allocation",
+      "notebook_url": "https://colab.research.google.com/drive/1ImHF0tk_wGSWfPwtuZjC04cFN7i4fCmt?authuser=1",
+      "record": "research/data/nvidia-engine-preflight.json",
+      "gpu_model": "Tesla T4",
+      "gpu_memory": "15360 MiB",
+      "openmm": "8.6.1",
+      "platform": "OpenCL",
+      "median_ns_per_day": 270.175,
+      "replicate_range_ns_per_day": [257.885, 282.691],
+      "atom_count": 17764,
+      "generic_1ubq_only": true,
+      "target_nnc2215_pag_md": false,
+      "compute_spend_usd": 0,
+      "completed_at_utc": "2026-10-17T22:44:55.701102+00:00"
+    },
+    "last_checked_at_utc": "2026-10-17T22:44:55Z"
   },
   "research_status": {
     "source_data_reanalyses_completed": 4,
@@ -186,6 +205,18 @@
       "production_ps_per_replicate": 100,
       "engine": "OpenMM 8.6.1 OpenCL on Apple M4",
       "nvidia_gpu_used": false
+    },
+    "nvidia_generic_engine_preflight": {
+      "status": "completed",
+      "record": "research/data/nvidia-engine-preflight.json",
+      "notebook_url": "https://colab.research.google.com/drive/1ImHF0tk_wGSWfPwtuZjC04cFN7i4fCmt?authuser=1",
+      "run_id": "DHO-NVIDIA-OPENMM-20261017T224308Z",
+      "gpu": "Tesla T4",
+      "engine": "OpenMM 8.6.1 OpenCL",
+      "median_ns_per_day": 270.175,
+      "replicates": 3,
+      "target_binding_simulation": false,
+      "temporary_free_runtime": true
     },
     "target_nnc2215_pag_binding_md_started": false,
     "public_nnc2215_model_audit": {
@@ -247,8 +278,9 @@
     }
   ],
   "latest_verification": {
-    "checked_at_utc": "2026-10-17T22:09:07Z",
-    "local_host": "Apple M4 / macOS 26.3 arm64; nvidia-smi unavailable; no NVIDIA GPU or instance allocated.",
+    "checked_at_utc": "2026-10-17T22:44:55Z",
+    "local_host": "Apple M4 / macOS 26.3 arm64; no local NVIDIA GPU. A separate temporary free Colab Tesla T4 completed only a generic benchmark; no Inception or partner allocation exists.",
+    "colab_t4_preflight": "Completed three synchronized 100 ps OpenMM 8.6.1 OpenCL timing runs on a 17,764-atom 1UBQ system; median 270.175 ns/day (257.885–282.691). This is not target NNC2215–PaG MD and used no paid compute.",
     "inception_portal": "Lambda $1,000, AWS $10,000, and Microsoft Azure $5,000 catalog requests still read as pending; partner review/awards not confirmed.",
     "innovation_lab": "Public catalog search returned zero results. NVIDIA support request remains unanswered. Direct portal application route opened a generic Inception sign-in page, not an Innovation Lab form.",
     "lambda": "Official form reviewed; no application-specific values manually entered, no submission made. A redacted phone-field value appeared on load and remained redacted after a clear attempt; the tab was closed without submission.",
