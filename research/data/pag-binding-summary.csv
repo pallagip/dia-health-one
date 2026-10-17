@@ -1,0 +1,5 @@
+measure,condition,reported_value,reported_standard_error,uncertainty_status,unit,source_section,source_url
+Kd,D-glucose binding to NNC2215,1.91,0.10,standard error,mmol/L,Results: Binding of Glucose and PaG to NNC2215 In Vitro,https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/
+Kd,PaG binding to NNC2215,0.17,0.01,standard error,mmol/L,Results: Binding of Glucose and PaG to NNC2215 In Vitro,https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/
+Relative insulin-receptor affinity,zero d-glucose without PaG,0.9,,rounded published mean; uncertainty not transcribed,percent of human insulin,Results: Glucose- and PaG-Sensitive Binding of NNC2215 to the Insulin Receptor In Vitro,https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/
+Relative insulin-receptor affinity,zero d-glucose with 70 umol/L PaG,5.4,,rounded published mean; uncertainty not transcribed,percent of human insulin,Results: Glucose- and PaG-Sensitive Binding of NNC2215 to the Insulin Receptor In Vitro,https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/

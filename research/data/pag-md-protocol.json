@@ -7,6 +7,15 @@
     "name": "CC BY-NC 4.0",
     "url": "https://creativecommons.org/licenses/by-nc/4.0/"
   },
+  "related_public_macrocycle_model": {
+    "article_title": "A biomimetic receptor for glucose",
+    "doi": "10.1038/s41557-018-0155-z",
+    "article_url": "https://www.nature.com/articles/s41557-018-0155-z",
+    "supporting_information_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41557-018-0155-z/MediaObjects/41557_2018_155_MOESM46_ESM.pdf",
+    "relationship": "The 2024 NNC2215 article cites this work as reference 4 and states that its macrocycle model was adapted from models shown there.",
+    "reported_modeling": "The 2019 supplement describes Maestro 10.4/Batchmin 11.0 MCMM models of a receptor surrogate and its glucose complex using MMFFs and OPLS2005 with aqueous GB/SA solvation. It reports figures and methods, not coordinate files, in the reviewed supplement.",
+    "boundary": "This is a related public model source, not the in-house crystal structure used to seed the 2026 PaG simulation; it does not make the exact 2026 run reproducible."
+  },
   "method_summary": {
     "engine": "Desmond v6.6",
     "schrodinger_release": "2021-2",

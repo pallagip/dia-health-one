@@ -10,6 +10,7 @@ From the repository root:
 python3 research/run_reproduction.py
 python3 research/reproduce_pag_clamp.py
 python3 research/reproduce_pag_sensitivity.py
+python3 research/reproduce_pag_binding_summary.py
 ```
 
 The script uses only the Python standard library. It reads `data/source-data.csv`, calculates the mean and sample standard deviation at each glucose concentration, calculates paired fold changes within each independent experiment, and writes:
@@ -22,6 +23,8 @@ The JSON result includes the exact source rows used, with experiment IDs and wor
 The second script processes the published group-level summaries for the 2026 pig clamp study. It writes `data/pag-clamp-reproduction.json` with the source CSV checksum and descriptive treatment-to-saline ratios. These ratios divide published group means; they are not paired animal-level effects. The study's individual animal measurements and hypothesis tests are not reanalysed by this script.
 
 The third script applies the paper's Appendix S4 Equation 4b and Table S2 `CoeffPaG` estimate to the published human and pig PaG concentration anchors. It writes `data/pag-sensitivity-reproduction.json` with checksums for the parameter and concentration inputs. The result is a reproduction of the model's linear SI component at those concentrations, not the full PK/PD model, receptor-affinity assay, GIR response, or an individual response prediction.
+
+The fourth script recalculates two ratios from the 2026 paper's reported binding summaries: the ratio of glucose and PaG Kd means, and the zero-glucose hIR-A relative-affinity ratio with versus without 70 μmol/L PaG. It writes `data/pag-binding-summary-reproduction.json`. These are arithmetic checks on rounded summary values; the source curves and individual replicate values are not refitted.
 
 The dashboard also re-runs the paired calculations in the browser from the CSV and offers a timestamped JSON run manifest. Serve the repository over HTTP to use the browser run button; browsers do not allow `fetch()` of a sibling CSV from a `file://` page.
 
@@ -56,6 +59,8 @@ Run `python3 research/inspect_structure_models.py` to verify the local PDB check
 Sturis et al., [“Interaction between Paracetamol Glucuronide and a Glucose-Sensitive Insulin Molecule (NNC2215): Increased Risk of Hypoglycemia”](https://pubs.acs.org/doi/10.1021/acsptsci.6c00069), *ACS Pharmacology & Translational Science* (2026), DOI `10.1021/acsptsci.6c00069`, is represented on the dashboard through explicitly labelled published summary values. The reported Kd means are 1.91 mM for D-glucose and 0.17 mM for PaG; their ratio (about 11.2) is calculated from those means. The paper reports 0.9% and 5.4% hIR-A relative affinity at zero glucose without PaG and with 70 μM PaG. These rounded summaries are not independently reanalysed raw values.
 
 The PaG study's [Supporting Information](https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700) specifies Desmond v6.6 (Schrödinger Release 2021-2), OPLS4, SPC explicit water, 0.15 mol/L NaCl, and a 500 ns production phase. A representative snapshot from the glucose-bound macrocycle run was used to build the PaG starting configuration in Maestro, followed by the same protocol. The input is described as an in-house crystal structure of a related macrocycle; its coordinates are not supplied. The reported method is transcribed in `data/pag-md-protocol.json`; the SI PDF is not redistributed here. Exact MD therefore cannot be rerun from the public input set currently available to this project.
+
+The 2024 NNC2215 paper cites Tromans et al. (2019), [“A biomimetic receptor for glucose”](https://www.nature.com/articles/s41557-018-0155-z), as the source of its macrocycle model. That paper's [Supporting Information](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41557-018-0155-z/MediaObjects/41557_2018_155_MOESM46_ESM.pdf) describes Monte Carlo molecular-mechanics models of a receptor surrogate and glucose complex, but the reviewed PDF supplies figures and methods rather than coordinates. It is useful model provenance, not a replacement for the unpublished 2026 seed coordinates. The relationship and boundary are recorded in `data/pag-md-protocol.json`.
 
 PDB 6PXV and 2VJZ are reference structures used in the 2024 paper's modelling. The open/closed model files in the Figshare dataset are distinct model-built NNC2215 coordinate files, not experimental structures.
 

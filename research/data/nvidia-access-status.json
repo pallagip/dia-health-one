@@ -32,7 +32,7 @@
     "nvidia_compute_spend_for_this_project": 0
   },
   "research_status": {
-    "source_data_reanalyses_completed": 3,
+    "source_data_reanalyses_completed": 4,
     "nature_source_cells_verified": 30,
     "pag_molecular_dynamics_started": false,
     "pag_seed_coordinates_public": false,
@@ -42,6 +42,10 @@
   "sources": [
     {
       "claim": "NVIDIA Innovation Lab is a 60-day program for selected Inception members; a separate application is required and approval is subject to availability and fit.",
+      "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    {
+      "claim": "NVIDIA lists molecular dynamics, protein folding, and drug-discovery pipelines among Innovation Lab simulation use cases.",
       "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
     },
     {

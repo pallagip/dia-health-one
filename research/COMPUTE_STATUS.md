@@ -6,13 +6,14 @@
 
 ## Reproductions completed
 
-Three Python analyses completed on the Apple M4 host:
+Four Python analyses completed on the Apple M4 host:
 
 1. **Nature 2024 Figure 3d source values:** 30 CSV values were verified against the publisher workbook's source cells and workbook SHA-256. Paired fold changes across three independent experiments are 3.1576× for 3→20 mmol/L glucose and 12.4720× for 0→20 mmol/L, matching the paper's rounded 3.2× and 12.5× values.
 2. **2026 PaG pig clamp, Table 1:** the published group means, SEM, sample sizes, and p-values were transcribed. The script calculates descriptive ratios of group means: 1.1466× for low-dose PaG and 1.4226× for high-dose PaG versus saline. Individual animal values are not available in this data set, so SEM and significance tests are not recomputed.
 3. **2026 PaG model, Appendix S4 Equation 4b:** the reported `CoeffPaG` value is reapplied at published human and pig concentration anchors. This reproduces only the linear insulin-sensitivity component, not receptor affinity, glucose-infusion rate, or patient response.
+4. **2026 PaG binding summaries:** ratios are recalculated from the paper's reported Kd means (1.91 and 0.17 mmol/L) and zero-glucose hIR-A affinity means (0.9% and 5.4% with 70 μmol/L PaG). These are arithmetic checks on rounded published summaries; the native-MS and receptor-binding curves are not refitted.
 
-The run records and input checksums are in `data/reproduction.json`, `data/pag-clamp-reproduction.json`, and `data/pag-sensitivity-reproduction.json`. `data/nvidia-access-status.json` records the compute-access state and source links.
+The run records and input checksums are in `data/reproduction.json`, `data/pag-clamp-reproduction.json`, `data/pag-sensitivity-reproduction.json`, and `data/pag-binding-summary-reproduction.json`. `data/nvidia-access-status.json` records the compute-access state and source links.
 
 ## Structure data and PaG MD method
 
@@ -22,10 +23,13 @@ Springer Nature Figshare publishes author-supplied open and closed NNC2215 model
 
 The 2026 Supporting Information reports Desmond 6.6 (Schrödinger Release 2021-2), OPLS4, SPC explicit water, 0.15 mol/L NaCl, and 500 ns production. The input is an in-house crystal structure of a related glucose-bound macrocycle. The coordinates are described as in-house and are not supplied. The public NNC2215 state models are different inputs and cannot be substituted silently for an exact rerun. The recipe is recorded in `data/pag-md-protocol.json`.
 
+A related public model source is now traced: the 2024 NNC2215 article cites Tromans et al. (2019) as the source of its macrocycle model. The 2019 Supporting Information describes Maestro MCMM models of a receptor surrogate and its glucose complex, but the reviewed supplement contains figures and methods rather than coordinate files. This narrows the search history; it does not supply the 2026 crystal seed or validate a replacement parameterization.
+
 ## NVIDIA compute access
 
 - Dia Health One's NVIDIA Inception membership was approved on 2026-10-15. Membership does not allocate a GPU.
 - NVIDIA's [Innovation Lab](https://www.nvidia.com/en-us/data-center/innovation-lab/) is a separate 60-day program for selected Inception members. A request must be submitted through the Inception Portal; NVIDIA reviews applications on a rolling basis and states that approval depends on availability and fit.
+- NVIDIA's current Innovation Lab page explicitly lists molecular dynamics, protein folding, and drug-discovery pipelines among GPU-accelerated simulation use cases. The scientific workload fits the stated use case; selection and allocation remain outstanding.
 - The official portal opens to NVIDIA sign-in. The user must complete account authentication before the benefit catalog and request status can be inspected. No Innovation Lab request has been submitted.
 - The current host is macOS 26.3 on Apple M4/arm64. `nvidia-smi`, OpenMM, GROMACS, and Desmond are not installed; no NVIDIA instance/job has been started and no compute spend has occurred.
 
