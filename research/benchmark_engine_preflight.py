@@ -274,7 +274,8 @@ def render_chart(records: list[dict], atom_count: int, run_date: str) -> None:
     for index, item in enumerate(records):
         y = chart_top + index * row_gap
         if item["engine"] == "GROMACS":
-            label = f"GROMACS {item['version']} · CPU, 4 threads"
+            version = item["version"].split("-", 1)[0]
+            label = f"GROMACS {version} · CPU (4 threads)"
             color = "#8573b8"
         elif item["platform"] == "CPU":
             label = f"OpenMM {item['version']} · CPU, 4 threads"
@@ -294,7 +295,7 @@ def render_chart(records: list[dict], atom_count: int, run_date: str) -> None:
         '<title id="title">Local molecular-dynamics engine preflight on ubiquitin</title>',
         '<desc id="desc">Single short throughput runs for GROMACS CPU, OpenMM CPU, and OpenMM OpenCL on an Apple M4 using the same solvated ubiquitin test system. This is not an NNC2215 or NVIDIA run.</desc>',
         '<rect width="100%" height="100%" rx="14" fill="#ffffff"/>',
-        '<text x="32" y="35" font-family="Arial, sans-serif" font-size="11" letter-spacing="2" fill="#75678f">LOCAL ENGINE PREFLIGHT · {run_date}</text>',
+        f'<text x="32" y="35" font-family="Arial, sans-serif" font-size="11" letter-spacing="2" fill="#75678f">LOCAL ENGINE PREFLIGHT · {run_date}</text>',
         '<text x="32" y="64" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#24212b">Short-run throughput on one standard protein system</text>',
         *labels,
         '<line x1="32" y1="319" x2="968" y2="319" stroke="#ece9e4"/>',

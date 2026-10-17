@@ -2,9 +2,9 @@
 <title id="title">Local molecular-dynamics engine preflight on ubiquitin</title>
 <desc id="desc">Single short throughput runs for GROMACS CPU, OpenMM CPU, and OpenMM OpenCL on an Apple M4 using the same solvated ubiquitin test system. This is not an NNC2215 or NVIDIA run.</desc>
 <rect width="100%" height="100%" rx="14" fill="#ffffff"/>
-<text x="32" y="35" font-family="Arial, sans-serif" font-size="11" letter-spacing="2" fill="#75678f">LOCAL ENGINE PREFLIGHT · {run_date}</text>
+<text x="32" y="35" font-family="Arial, sans-serif" font-size="11" letter-spacing="2" fill="#75678f">LOCAL ENGINE PREFLIGHT · 2026-10-17 UTC</text>
 <text x="32" y="64" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#24212b">Short-run throughput on one standard protein system</text>
-<text x="32" y="103" font-family="Arial, sans-serif" font-size="16" fill="#40394b">GROMACS 2026.3-conda_forge · CPU, 4 threads</text>
+<text x="32" y="103" font-family="Arial, sans-serif" font-size="16" fill="#40394b">GROMACS 2026.3 · CPU (4 threads)</text>
 <rect x="290" y="85" width="630" height="18" rx="9" fill="#eeeaf2"/>
 <rect x="290" y="85" width="166.7" height="18" rx="9" fill="#8573b8"/>
 <text x="468.7" y="103" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#40394b">37.42 ns/day</text>
