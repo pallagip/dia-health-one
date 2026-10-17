@@ -1,0 +1,53 @@
+{
+  "schema": "dia-health-one.compute-access-status.v1",
+  "checked_date_utc": "2026-10-17",
+  "nvidia_inception": {
+    "status": "approved",
+    "approval_date": "2026-10-15",
+    "evidence": "NVIDIA Inception approval email in the company account"
+  },
+  "nvidia_innovation_lab": {
+    "status": "benefit request not submitted",
+    "duration_days": 60,
+    "selection_required": true,
+    "review": "Rolling review; approval subject to availability and fit",
+    "portal_sign_in_required": true,
+    "application_steps": [
+      "In the Inception Portal, open Profile > Add product and complete at least one product profile",
+      "Open Benefits > Explore Benefits > Innovation Lab",
+      "Select Request Benefit and complete the application"
+    ],
+    "portal_url": "https://programs.nvidia.com/phoenix/application?program=inception",
+    "official_program_url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+  },
+  "local_compute": {
+    "host": "Apple M4",
+    "operating_system": "macOS 26.3 arm64",
+    "nvidia_gpu_available": false,
+    "nvidia_smi_available": false,
+    "openmm_installed": false,
+    "gromacs_installed": false,
+    "desmond_installed": false,
+    "nvidia_instance_or_job": false,
+    "nvidia_compute_spend_for_this_project": 0
+  },
+  "research_status": {
+    "source_data_reanalyses_completed": 3,
+    "nature_source_cells_verified": 30,
+    "pag_molecular_dynamics_started": false,
+    "pag_seed_coordinates_public": false,
+    "conjugate_force_field_validated": false,
+    "clinical_model": false
+  },
+  "sources": [
+    {
+      "claim": "NVIDIA Innovation Lab is a 60-day program for selected Inception members; a separate application is required and approval is subject to availability and fit.",
+      "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    {
+      "claim": "The 2026 PaG paper's in-house starting structure coordinates are not supplied in the publication materials reviewed.",
+      "url": "https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700"
+    }
+  ]
+}
+

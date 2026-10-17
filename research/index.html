@@ -206,7 +206,7 @@
     <section class="reproduction wrap section-space" id="reproduction">
       <div class="section-heading">
         <div><div class="section-kicker">03 / REPRODUCIBILITY RUN</div><h2>Re-run the source analysis.</h2></div>
-        <div class="heading-note">30 source-workbook values<br />Python baseline · browser rerun</div>
+        <div class="heading-note">3 CPU analyses · 1 MD protocol<br />source values checked against workbook</div>
       </div>
       <div class="run-console">
         <div class="console-top"><span><i></i> ANALYSIS READY</span><span>INPUT · FIGURE 3D CSV</span></div>
@@ -215,9 +215,45 @@
       </div>
       <div class="code-links"><a href="run_reproduction.py">View Python analysis ↗</a><a href="README.md">Read source &amp; methods ↗</a><a href="COMPUTE_STATUS.md">Compute readiness note ↗</a></div>
       <div class="run-output" id="run-output" hidden aria-live="polite">
-        <div class="output-head"><div><div class="section-kicker">RUN OUTPUT</div><h3>Benchmark checks completed</h3></div><button class="download-button" id="manifest-button" type="button">Download run manifest ↓</button></div>
+        <div class="output-head"><div><div class="section-kicker">RUN OUTPUT</div><h3>Published fold-change checks</h3></div><button class="download-button" id="manifest-button" type="button">Download run manifest ↓</button></div>
         <div class="output-grid" id="output-grid"></div>
         <p class="output-meta" id="output-meta"></p>
+      </div>
+      <div class="run-register" aria-label="Current research run register">
+        <div class="run-register-heading">
+          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Three CPU reanalyses complete. GPU molecular dynamics has not started.</h3></div>
+          <a class="run-register-status-link" href="data/nvidia-access-status.json" download>Compute status manifest <span>↓</span></a>
+        </div>
+        <div class="run-register-grid">
+          <article class="register-card">
+            <div class="register-card-top"><span>RUN 01 · NATURE 2024</span><span class="register-state register-done">REPRODUCED</span></div>
+            <h4>Figure 3d · hIR-A affinity</h4>
+            <div class="register-values"><div><strong>3.158×</strong><small>3 → 20 mmol/L</small></div><div><strong>12.472×</strong><small>0 → 20 mmol/L</small></div></div>
+            <p>Paired ratios across three experiments; both match the published 3.2× and 12.5× after rounding.</p>
+            <div class="register-links"><a href="data/reproduction.json" download>Run JSON ↓</a><a href="run_reproduction.py">Python script ↗</a></div>
+          </article>
+          <article class="register-card">
+            <div class="register-card-top"><span>RUN 02 · ACS 2026</span><span class="register-state register-done">REPRODUCED</span></div>
+            <h4>PaG pig clamp · Table 1</h4>
+            <div class="register-values"><div><strong>1.147×</strong><small>Low dose vs saline</small></div><div><strong>1.423×</strong><small>High dose vs saline</small></div></div>
+            <p>Derived ratios of published group means. Individual animal data and statistical tests were not recomputed.</p>
+            <div class="register-links"><a href="data/pag-clamp-reproduction.json" download>Run JSON ↓</a><a href="reproduce_pag_clamp.py">Python script ↗</a></div>
+          </article>
+          <article class="register-card">
+            <div class="register-card-top"><span>RUN 03 · ACS 2026 SI</span><span class="register-state register-done">REPRODUCED</span></div>
+            <h4>PaG sensitivity · Equation 4b</h4>
+            <div class="register-single-value"><strong>0.7784%</strong><small>reported coefficient per μmol/L PaG</small></div>
+            <p>Reapplied to three published concentration anchors. This is a fitted insulin-sensitivity component, not an affinity or patient outcome.</p>
+            <div class="register-links"><a href="data/pag-sensitivity-reproduction.json" download>Run JSON ↓</a><a href="reproduce_pag_sensitivity.py">Python script ↗</a></div>
+          </article>
+          <article class="register-card register-card-pending">
+            <div class="register-card-top"><span>RUN 04 · MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
+            <h4>PaG · NNC2215 interaction</h4>
+            <div class="register-single-value"><strong>500 ns</strong><small>published production method</small></div>
+            <p>Exact seed coordinates are not public. NVIDIA compute is not allocated, and conjugate force-field validation remains open.</p>
+            <div class="register-links"><a href="data/pag-md-protocol.json" download>Method record ↓</a><a href="#readiness">Readiness gates ↘</a></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -228,8 +264,8 @@
       </div>
       <div class="gate-grid">
         <article class="gate-card gate-done"><div class="gate-number">01</div><div class="gate-status">COMPLETE</div><h3>Source data</h3><p>Nature Figure 3d values are transcribed with source sheet and cell references. Paired experiment ratios reproduce the published rounded glucose-response benchmarks.</p><div class="gate-foot">30 CELLS · SHA-256 TRACKED</div></article>
-        <article class="gate-card gate-blocked"><div class="gate-number">02</div><div class="gate-status">MODEL INPUTS FOUND</div><h3>Structure &amp; parameters</h3><p>The 2024 source dataset provides open and closed NNC2215 model PDBs. The separate in-house crystal coordinates used in the 2026 PaG MD and validated parameters for the conjugate are still missing.</p><div class="gate-links"><a class="gate-action" href="structures/nnc2215-open-model.pdb" download>Open-state PDB ↓</a><a class="gate-action" href="structures/nnc2215-closed-model.pdb" download>Closed-state PDB ↓</a><a class="gate-action" href="data/structure-manifest.json" download>Checksums &amp; provenance ↓</a></div><div class="gate-foot">MODEL-BUILT · FORCE-FIELD VALIDATION OPEN</div></article>
-        <article class="gate-card"><div class="gate-number">03</div><div class="gate-status">APPLICATION NOT SUBMITTED</div><h3>NVIDIA GPU run</h3><p>Inception membership is approved, but the separate 60-day Innovation Lab benefit requires a request and selection. This browser reports an invalid certificate for the NVIDIA portal, so no request was submitted. No GPU instance or simulation run has started.</p><div class="gate-links"><a class="gate-action" href="https://programs.nvidia.com/phoenix" target="_blank" rel="noreferrer">Open Inception portal ↗</a></div><div class="gate-foot">NO INSTANCE · NO GPU COST</div></article>
+        <article class="gate-card gate-blocked"><div class="gate-number">02</div><div class="gate-status">MODEL INPUTS FOUND</div><h3>Structure &amp; parameters</h3><p>The 2024 source dataset provides open and closed NNC2215 model PDBs. A checksum-checked record inventory confirms their chains, residues, and covalent-link records. The separate in-house crystal coordinates used in the 2026 PaG MD and validated parameters for the conjugate are still missing.</p><div class="gate-links"><a class="gate-action" href="structures/nnc2215-open-model.pdb" download>Open-state PDB ↓</a><a class="gate-action" href="structures/nnc2215-closed-model.pdb" download>Closed-state PDB ↓</a><a class="gate-action" href="data/structure-manifest.json" download>Checksums &amp; provenance ↓</a><a class="gate-action" href="data/structure-preflight.json" download>PDB record inventory ↓</a></div><div class="gate-foot">MODEL-BUILT · FORCE-FIELD VALIDATION OPEN</div></article>
+        <article class="gate-card gate-access-pending"><div class="gate-number">03</div><div class="gate-status">INCEPTION APPROVED · GPU PENDING</div><h3>NVIDIA compute access</h3><p>Dia Health One's Inception membership was approved on 15 Oct 2026. NVIDIA's Innovation Lab offers selected members a separate 60-day GPU program; a portal request and review are required. The request has not been submitted, and no GPU instance is allocated.</p><div class="gate-links"><a class="gate-action" href="https://programs.nvidia.com/phoenix/application?program=inception" target="_blank" rel="noreferrer">Continue in Inception portal ↗</a><a class="gate-action" href="https://www.nvidia.com/en-us/data-center/innovation-lab/" target="_blank" rel="noreferrer">View program requirements ↗</a></div><div class="gate-foot">MEMBERSHIP ACTIVE · NO GPU JOB · NO SPEND</div></article>
       </div>
       <div class="method-note"><div class="method-icon">i</div><div><b>Why no Hill curve or 6 mmol/L switch threshold?</b><p>This proof of concept has five glucose concentrations across three independent experiments. It supports a transparent source-data reanalysis, but not a robust four-parameter response fit or a claim that NNC2215 switches at a specific threshold.</p></div><a href="data/reproduction.json">View analysis record ↗</a></div>
     </section>
@@ -244,7 +280,7 @@
           <a class="source-item" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/" target="_blank" rel="noreferrer"><span class="source-no">04</span><span><b>PaG article</b><small>Published receptor-binding and pig-clamp findings</small></span><span class="source-arrow">↗</span></a>
           <a class="source-item" href="https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700" target="_blank" rel="noreferrer"><span class="source-no">05</span><span><b>PaG Supporting Information</b><small>MD recipe, model parameters, and supplementary figures · SI DOI 10.1021/acsptsci.6c00069.s001</small></span><span class="source-arrow">↗</span></a>
           <a class="source-item" href="https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460" target="_blank" rel="noreferrer"><span class="source-no">06</span><span><b>Published NNC2215 open/closed model PDBs</b><small>Johansson &amp; Granata · Springer Nature Figshare · CC BY 4.0 · checksums in manifest</small></span><span class="source-arrow">↗</span></a>
-          <a class="source-item" href="https://www.nvidia.com/en-eu/data-center/dgx-cloud/innovation-lab/" target="_blank" rel="noreferrer"><span class="source-no">07</span><span><b>NVIDIA DGX Cloud Innovation Lab</b><small>60-day cloud access for selected members · separate application required</small></span><span class="source-arrow">↗</span></a>
+          <a class="source-item" href="https://www.nvidia.com/en-us/data-center/innovation-lab/" target="_blank" rel="noreferrer"><span class="source-no">07</span><span><b>NVIDIA Innovation Lab</b><small>60-day GPU access for selected Inception members · separate request · rolling review</small></span><span class="source-arrow">↗</span></a>
           <a class="source-item" href="https://docs.cloud.google.com/free/docs/free-cloud-features" target="_blank" rel="noreferrer"><span class="source-no">08</span><span><b>Google Cloud Free Trial restrictions</b><small>GPU attachment and quota requests require a paid billing account</small></span><span class="source-arrow">↗</span></a>
         </div>
       </div>

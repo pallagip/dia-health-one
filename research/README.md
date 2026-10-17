@@ -49,6 +49,8 @@ The 2024 study's [Springer Nature Figshare dataset](https://springernature.figsh
 
 The open model places free D-glucose in the B29 macrocycle; the closed model places the tethered glucoside there. These are useful author-supplied starting models, not experimentally resolved NNC2215 structures. They do not supply the separate in-house glucose-bound macrocycle crystal coordinates used to initialize the 2026 PaG molecular-dynamics work, and their presence does not establish force-field readiness.
 
+Run `python3 research/inspect_structure_models.py` to verify the local PDB checksums and produce `data/structure-preflight.json`. This inventory records coordinate counts, chain/residue labels, disulfide and covalent-link records, and nonstandard residue names. It is a file/record preflight, not chemical-graph or force-field validation.
+
 ## PaG evidence boundary
 
 Sturis et al., [“Interaction between Paracetamol Glucuronide and a Glucose-Sensitive Insulin Molecule (NNC2215): Increased Risk of Hypoglycemia”](https://pubs.acs.org/doi/10.1021/acsptsci.6c00069), *ACS Pharmacology & Translational Science* (2026), DOI `10.1021/acsptsci.6c00069`, is represented on the dashboard through explicitly labelled published summary values. The reported Kd means are 1.91 mM for D-glucose and 0.17 mM for PaG; their ratio (about 11.2) is calculated from those means. The paper reports 0.9% and 5.4% hIR-A relative affinity at zero glucose without PaG and with 70 μM PaG. These rounded summaries are not independently reanalysed raw values.
@@ -65,5 +67,6 @@ The model-coefficient panel evaluates `SI = SIbase * (1 + ConcPaG * CoeffPaG / 1
 
 - No Hill curve or 6 mmol/L threshold is fitted or inferred.
 - No molecular dynamics, docking, binding free-energy calculation, or patient-response model is run. The published NNC2215 model PDBs are catalogued inputs, not evidence that a simulation was performed.
-- GPU acceleration is not useful for this small source-data reanalysis. Any later GPU simulation is gated on published structure availability, validated parameters for the conjugate and ligands, and a verified compute allocation.
+- GPU acceleration is not needed for the source-data calculations. Dia Health One's NVIDIA Inception membership is approved, but the separate Innovation Lab request and GPU allocation are still pending. See `data/nvidia-access-status.json` and `COMPUTE_STATUS.md` for the checked status and official request path.
+- The original PaG MD starting coordinates are not public in the supporting information. Any later study using the published NNC2215 models must be labelled as a public-input proxy, not an exact rerun of the PaG simulation.
 - All source data, derived calculations, model-built structures, and future simulation outputs must remain separately labelled.
