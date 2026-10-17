@@ -2,7 +2,7 @@
   "record_type": "structure_coordinate_preflight",
   "schema": "dia-health-one.structure-preflight.v1",
   "run": {
-    "created_at_utc": "2026-10-17T17:52:35.282527+00:00",
+    "created_at_utc": "2026-10-17T18:18:25.362999+00:00",
     "script": "research/inspect_structure_models.py",
     "script_sha256": "899d4d817d56c0a3bf28b243ce91f791b3716df2bcf6d748975e0c66afb966fe",
     "runtime": "3.14.4"

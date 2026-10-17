@@ -2,7 +2,7 @@
 
 **Checked:** 2026-10-17 UTC
 
-**Decision:** the published-data analyses run reproducibly on the local CPU. The NVIDIA Inception membership is approved, but the separate Innovation Lab request has not been filed and no GPU is allocated. The published PaG MD method is documented, but its in-house starting coordinates are not public and force-field readiness for the NNC2215 conjugate remains unresolved. No target molecular-dynamics run has been made.
+**Decision:** the published-data analyses run reproducibly on the local CPU. NVIDIA Inception membership is approved and the Dia Health One Research Dashboard product profile is saved. The Innovation Lab tile is absent from the account's benefits search, so its application is not yet submitted; a short request was sent to NVIDIA Inception support on 2026-10-17. No GPU is allocated. The published PaG MD method is documented, but its in-house starting coordinates are not public and force-field readiness for the NNC2215 conjugate remains unresolved. No target molecular-dynamics run has been made.
 
 ## Reproductions completed
 
@@ -30,10 +30,12 @@ A related public model source is now traced: the 2024 NNC2215 article cites Trom
 - Dia Health One's NVIDIA Inception membership was approved on 2026-10-15. Membership does not allocate a GPU.
 - NVIDIA's [Innovation Lab](https://www.nvidia.com/en-us/data-center/innovation-lab/) is a separate 60-day program for selected Inception members. A request must be submitted through the Inception Portal; NVIDIA reviews applications on a rolling basis and states that approval depends on availability and fit.
 - NVIDIA's current Innovation Lab page explicitly lists molecular dynamics, protein folding, and drug-discovery pipelines among GPU-accelerated simulation use cases. The scientific workload fits the stated use case; selection and allocation remain outstanding.
-- The official portal opens to NVIDIA sign-in. The user must complete account authentication before the benefit catalog and request status can be inspected. No Innovation Lab request has been submitted.
+- The authenticated Inception account now contains the product profile **Dia Health One Research Dashboard** (Developing). The pre-existing computational-insulin product entry was left unchanged.
+- The portal's **Benefits → Explore Benefits** catalog was checked after saving the product. Searching “Innovation Lab” returned zero results, so the program application tile is not available in the current account view.
+- A concise support request was sent to `inceptionprogram@nvidia.com` on 2026-10-17, identifying the Dia Health One account and product and asking NVIDIA to enable the tile or provide the right application link. No reply was present at the latest inbox check. The Innovation Lab application itself has not been submitted.
 - The current host is macOS 26.3 on Apple M4/arm64. `nvidia-smi`, OpenMM, GROMACS, and Desmond are not installed; no NVIDIA instance/job has been started and no compute spend has occurred.
 
-The official request path is: **Inception Portal → Profile → Add product → Benefits → Explore Benefits → Innovation Lab → Request Benefit.** Keep the final application unsubmitted until the user reviews its contents.
+The official request path is: **Inception Portal → Profile → Add product → Benefits → Explore Benefits → Innovation Lab → Request Benefit → application form.** The product step is complete; the missing tile is the current access blocker.
 
 ## Gates before any target MD run
 

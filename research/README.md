@@ -72,6 +72,6 @@ The model-coefficient panel evaluates `SI = SIbase * (1 + ConcPaG * CoeffPaG / 1
 
 - No Hill curve or 6 mmol/L threshold is fitted or inferred.
 - No molecular dynamics, docking, binding free-energy calculation, or patient-response model is run. The published NNC2215 model PDBs are catalogued inputs, not evidence that a simulation was performed.
-- GPU acceleration is not needed for the source-data calculations. Dia Health One's NVIDIA Inception membership is approved, but the separate Innovation Lab request and GPU allocation are still pending. See `data/nvidia-access-status.json` and `COMPUTE_STATUS.md` for the checked status and official request path.
+- GPU acceleration is not needed for the source-data calculations. Dia Health One's NVIDIA Inception membership and product profile are active, but the Innovation Lab tile is absent from the benefits catalog. Support was contacted; the separate application and any GPU allocation remain pending. See `data/nvidia-access-status.json` and `COMPUTE_STATUS.md` for the checked status and official request path.
 - The original PaG MD starting coordinates are not public in the supporting information. Any later study using the published NNC2215 models must be labelled as a public-input proxy, not an exact rerun of the PaG simulation.
 - All source data, derived calculations, model-built structures, and future simulation outputs must remain separately labelled.

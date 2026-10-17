@@ -4,10 +4,25 @@
   "nvidia_inception": {
     "status": "approved",
     "approval_date": "2026-10-15",
-    "evidence": "NVIDIA Inception approval email in the company account"
+    "evidence": "NVIDIA Inception approval email in the company account",
+    "product_profile_status": "saved",
+    "product_profile_name": "Dia Health One Research Dashboard",
+    "product_profile_stage": "Developing"
   },
   "nvidia_innovation_lab": {
-    "status": "benefit request not submitted",
+    "status": "application tile unavailable; support request sent",
+    "application_submitted": false,
+    "catalog_check": {
+      "checked_date_utc": "2026-10-17",
+      "search_query": "Innovation Lab",
+      "results": 0
+    },
+    "support_request": {
+      "recipient": "inceptionprogram@nvidia.com",
+      "sent_date_utc": "2026-10-17",
+      "subject": "Innovation Lab benefit tile missing",
+      "response_status": "pending"
+    },
     "duration_days": 60,
     "selection_required": true,
     "review": "Rolling review; approval subject to availability and fit",
@@ -46,6 +61,10 @@
     },
     {
       "claim": "NVIDIA lists molecular dynamics, protein folding, and drug-discovery pipelines among Innovation Lab simulation use cases.",
+      "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    {
+      "claim": "Innovation Lab access requires a separate application through the Inception benefits tile; selection and availability apply.",
       "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
     },
     {
