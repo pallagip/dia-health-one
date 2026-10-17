@@ -9,6 +9,7 @@ From the repository root:
 ```sh
 python3 research/run_reproduction.py
 python3 research/reproduce_pag_clamp.py
+python3 research/reproduce_pag_sensitivity.py
 ```
 
 The script uses only the Python standard library. It reads `data/source-data.csv`, calculates the mean and sample standard deviation at each glucose concentration, calculates paired fold changes within each independent experiment, and writes:
@@ -19,6 +20,8 @@ The script uses only the Python standard library. It reads `data/source-data.csv
 The JSON result includes the exact source rows used, with experiment IDs and workbook cell references, so the result can be reviewed without reconstructing the input from the chart.
 
 The second script processes the published group-level summaries for the 2026 pig clamp study. It writes `data/pag-clamp-reproduction.json` with the source CSV checksum and descriptive treatment-to-saline ratios. These ratios divide published group means; they are not paired animal-level effects. The study's individual animal measurements and hypothesis tests are not reanalysed by this script.
+
+The third script applies the paper's Appendix S4 Equation 4b and Table S2 `CoeffPaG` estimate to the published human and pig PaG concentration anchors. It writes `data/pag-sensitivity-reproduction.json` with checksums for the parameter and concentration inputs. The result is a reproduction of the model's linear SI component at those concentrations, not the full PK/PD model, receptor-affinity assay, GIR response, or an individual response prediction.
 
 The dashboard also re-runs the paired calculations in the browser from the CSV and offers a timestamped JSON run manifest. Serve the repository over HTTP to use the browser run button; browsers do not allow `fetch()` of a sibling CSV from a `file://` page.
 
@@ -47,6 +50,8 @@ Sturis et al., [“Interaction between Paracetamol Glucuronide and a Glucose-Sen
 The PaG study describes a 500 ns Desmond/OPLS4 simulation from an in-house crystal structure of a related macrocycle, but the article does not supply those starting coordinates. Therefore this demo does not claim an exact molecular-dynamics rerun. PDB 6PXV and 2VJZ are reference structures used in the 2024 paper's modelling; they are not solved atomic structures of every NNC2215 switch state.
 
 The pig-clamp panel reports the article's GIR AUC from 300 to 420 minutes at a 3 mmol/L glucose clamp. Means, SEM, sample sizes, and p-values are transcribed from the main article's Table 1; ratios to saline are derived from the reported means. `data/pag-model-parameters.csv` transcribes the minimal-model values in Supporting Information Table S2. The equations and these selected parameter estimates are not enough to recreate the authors' full PK/PD fit: individual-animal time series and some model inputs are not published with the article.
+
+The model-coefficient panel evaluates `SI = SIbase * (1 + ConcPaG * CoeffPaG / 100)` using `CoeffPaG = 0.7784% per μmol/L`. The 70 μmol/L human anchor is the article's estimated mean maximum after 1000 mg oral paracetamol; 102 and 426 μmol/L are the reported mean maxima after low- and high-dose IV PaG in pigs. Values are equation-derived and remain separate from observed GIR and receptor-binding outcomes.
 
 ## Interpretation limits
 

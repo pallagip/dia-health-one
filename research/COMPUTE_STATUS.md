@@ -10,6 +10,8 @@ The Nature 2024 Figure 3d source values were extracted with workbook-cell proven
 
 The 2026 PaG pig-clamp AUC means, SEM values, sample sizes, and reported p-values are transcribed from the main article's Table 1. A second CPU script derives treatment-to-saline ratios from those published group means. These are descriptive ratios only; individual-animal records are not available here, so the published SEM and statistical tests cannot be independently recomputed. The supporting-information Table S2 model parameters are catalogued in `data/pag-model-parameters.csv`, but they are insufficient to reconstruct the full PK/PD fit and input profiles.
 
+A third CPU calculation reapplies Appendix S4 Equation 4b (`SI = SIbase * (1 + ConcPaG * CoeffPaG / 100)`) at the paper's 70 μmol/L human estimate and 102/426 μmol/L pig concentration anchors. It reproduces the fitted model's linear insulin-sensitivity component only; it does not predict GIR or patient outcomes.
+
 ## Compute access
 
 - Dia Health One's NVIDIA Inception membership is approved. NVIDIA's welcome email says members can request partner benefits through the portal; membership alone does not allocate compute.

@@ -172,6 +172,19 @@
           <div class="clamp-axis" aria-hidden="true"><span>0</span><span>550</span><span>1100 mg/kg</span></div>
           <div class="clamp-note"><span>* DERIVED</span> Ratios divide published group means by the saline mean; they are descriptive, not paired animal-level effects. P-values and SEM are reported by the paper. Low-dose PaG was not statistically significant versus saline. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/" target="_blank" rel="noreferrer">Published Table 1 ↗</a><a href="data/pag-clamp-summary.csv" download>Download clamp values ↗</a><a href="data/pag-model-parameters.csv" download>Model parameters ↗</a><a href="data/pag-clamp-reproduction.json" download>Derived analysis JSON ↗</a><a href="reproduce_pag_clamp.py">Calculation script ↗</a></div>
         </article>
+        <article class="pag-model-card">
+          <div class="pag-model-head">
+            <div><div class="pag-card-label">MODEL REPRODUCTION / PUBLISHED EQUATION 4B</div><h3>Reapply the reported PaG sensitivity coefficient.</h3><p>SI = SI<sub>base</sub> × (1 + PaG × Coeff<sub>PaG</sub> / 100)</p></div>
+            <div class="model-coefficient"><strong>0.7784%</strong><span>SI increase per μmol/L PaG</span><small>fitted pig PK/PD parameter · CV 5.5%</small></div>
+          </div>
+          <div class="model-rows">
+            <div class="model-row"><div class="model-context"><b>Human · 1 g paracetamol</b><small>estimated mean maximum PaG · 70 μmol/L</small></div><div class="model-track" role="img" aria-label="Model-implied insulin sensitivity increase of 54.5 percent on a zero to 350 percent scale"><span style="--model-width:15.6%"></span></div><div class="model-result"><strong>+54.5%</strong><small>1.54× baseline SI</small></div></div>
+            <div class="model-row"><div class="model-context"><b>Pig · 0.5 g IV PaG</b><small>reported mean maximum PaG · 102 μmol/L</small></div><div class="model-track" role="img" aria-label="Model-implied insulin sensitivity increase of 79.4 percent on a zero to 350 percent scale"><span style="--model-width:22.7%"></span></div><div class="model-result"><strong>+79.4%</strong><small>1.79× baseline SI</small></div></div>
+            <div class="model-row"><div class="model-context"><b>Pig · 2.0 g IV PaG</b><small>reported mean maximum PaG · 426 μmol/L</small></div><div class="model-track" role="img" aria-label="Model-implied insulin sensitivity increase of 331.6 percent on a zero to 350 percent scale"><span class="model-bar-high" style="--model-width:94.7%"></span></div><div class="model-result"><strong>+331.6%</strong><small>4.32× baseline SI</small></div></div>
+          </div>
+          <div class="model-scale" aria-hidden="true"><span>0%</span><span>175%</span><span>350%</span></div>
+          <div class="model-foot"><span>INTERPRETATION</span> Equation-derived change in the fitted insulin-sensitivity parameter. This is not receptor affinity, a glucose-infusion prediction, or an individual-patient outcome. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/" target="_blank" rel="noreferrer">Article &amp; model source ↗</a><a href="data/pag-cmax-scenarios.csv" download>Concentration inputs ↗</a><a href="data/pag-sensitivity-reproduction.json" download>Result JSON ↗</a><a href="reproduce_pag_sensitivity.py">Calculation script ↗</a></div>
+        </article>
         <div class="pag-footnote"><span>ASSAY FINDING</span> In vitro receptor-binding data; the reported 70 μM condition is not a patient-specific exposure estimate. <span>DATA LIMIT</span> PaG figure-level raw values were not available for independent recalculation in this demo.</div>
       </div>
     </section>
