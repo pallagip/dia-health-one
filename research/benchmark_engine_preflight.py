@@ -275,7 +275,7 @@ def render_chart(records: list[dict], atom_count: int, run_date: str) -> None:
         y = chart_top + index * row_gap
         if item["engine"] == "GROMACS":
             version = item["version"].split("-", 1)[0]
-            label = f"GROMACS {version} · CPU (4 threads)"
+            label = f"GROMACS {version} · CPU × 4"
             color = "#8573b8"
         elif item["platform"] == "CPU":
             label = f"OpenMM {item['version']} · CPU, 4 threads"
