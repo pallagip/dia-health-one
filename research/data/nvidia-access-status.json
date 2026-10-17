@@ -9,6 +9,21 @@
     "product_profile_name": "Dia Health One Research Dashboard",
     "product_profile_stage": "Developing"
   },
+  "lambda_cloud_credits": {
+    "status": "NVIDIA Inception catalog request acknowledged; Lambda decision pending",
+    "requested_amount_usd": 1000,
+    "requested_date_utc": "2026-10-17",
+    "request_channel": "NVIDIA Inception Benefits Catalog",
+    "confirmation_evidence": {
+      "sender": "inceptionprogram@nvidia.com",
+      "subject": "Your Request for $1,000 in Lambda Cloud Credits",
+      "received_at_utc": "2026-10-17T18:25:07Z"
+    },
+    "partner_reviewed_by": "Lambda",
+    "approval_confirmed": false,
+    "gpu_allocated": false,
+    "partner_application_status": "The account holder reports requesting the credits; the NVIDIA confirmation says Lambda processes partner offers separately."
+  },
   "nvidia_innovation_lab": {
     "status": "application tile unavailable; support request sent",
     "application_submitted": false,
