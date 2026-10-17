@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="research.css" />
+  <link rel="stylesheet" href="structure-audit.css" />
 </head>
 <body>
   <header class="site-header">
@@ -221,7 +222,7 @@
       </div>
       <div class="run-register" aria-label="Current research run register">
         <div class="run-register-heading">
-          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four source-data reanalyses and a PaG hydration pilot complete. NNC2215–PaG binding MD has not started.</h3></div>
+          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four source-data reanalyses, a PaG hydration pilot, and a public-model audit complete. NNC2215–PaG binding MD has not started.</h3></div>
           <a class="run-register-status-link" href="data/nvidia-access-status.json" download>Compute status manifest <span>↓</span></a>
         </div>
         <div class="run-register-grid">
@@ -250,10 +251,24 @@
             <div class="register-card-top"><span>RUN 05 · TARGET MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
             <h4>Macrocycle analogue · PaG</h4>
             <div class="register-single-value"><strong>500 ns</strong><small>published production method</small></div>
-            <p>The published 500 ns study used an in-house glucose-bound macrocycle analogue, not full NNC2215; its seed coordinates are not public. Our separate PaG-only water pilot checks setup stability, not binding. The macrocycle parameters and NVIDIA allocation remain pending.</p>
-            <div class="register-links"><a href="data/pag-md-protocol.json" download>Published method ↓</a><a href="data/pag-solvation-preflight/latest.json" download>Latest pilot ↓</a><a href="#readiness">Readiness gates ↘</a></div>
+            <p>The published 500 ns study used an in-house glucose-bound macrocycle analogue, not full NNC2215; its seed coordinates are not public. Our PaG-only water pilot checks setup stability, not binding. Conjugate chemistry and GPU allocation remain pending.</p>
+            <div class="register-links"><a href="data/pag-md-protocol.json" download>Published method ↓</a><a href="data/target-md-pilot-protocol.json" download>Proposed pilot ↓</a><a href="data/pag-solvation-preflight/latest.json" download>Latest solvent pilot ↓</a><a href="#readiness">Readiness gates ↘</a></div>
           </article>
         </div>
+        <article class="structure-audit" aria-labelledby="structure-audit-title">
+          <div class="structure-audit-head">
+            <div><div class="section-kicker">PUBLIC MODEL AUDIT · RUN MANIFEST AVAILABLE</div><h3 id="structure-audit-title">Sequence, backbone, and disulfide checks pass; conjugate topology remains open.</h3><p>Both publisher model files match their recorded hashes, full desB30 A/B sequences, backbone coverage, three native disulfides, and documented B29/B1 link records.</p></div>
+            <span class="structure-audit-badge">MODEL CHEMISTRY OPEN</span>
+          </div>
+          <div class="structure-audit-stats">
+            <div><strong>2 / 2</strong><small>source hashes match</small></div>
+            <div><strong>2 / 2</strong><small>insulin chains complete</small></div>
+            <div><strong>3 / 3</strong><small>native disulfides match</small></div>
+            <div><strong>0</strong><small>conjugate force fields validated</small></div>
+          </div>
+          <div class="structure-audit-note"><b>TOPOLOGY REVIEW REQUIRED</b><p>Repeated atom names occur in PHX, LYX, and MC residues. The open PDB links macrocycle C31 to LYX CD6; the closed PDB links C31 to LYX C. The reason is unresolved, so no shared topology or target simulation is prepared. These are model-built coordinates and include no insulin receptor.</p></div>
+          <div class="structure-audit-links"><a href="data/nnc2215-model-validation.json" download>Audit record ↓</a><a href="validate_nnc2215_models.py">Validation script ↗</a><a href="MILESTONE_REPORT.md">Milestone report ↗</a><a href="data/target-md-pilot-protocol.json" download>Proposed pilot plan ↓</a></div>
+        </article>
       </div>
       <article class="engine-preflight" aria-labelledby="engine-preflight-title">
         <div class="engine-preflight-header">
@@ -290,8 +305,8 @@
       </div>
       <div class="gate-grid">
         <article class="gate-card gate-done"><div class="gate-number">01</div><div class="gate-status">COMPLETE</div><h3>Source data</h3><p>Nature Figure 3d values are transcribed with source sheet and cell references. Paired experiment ratios reproduce the published rounded glucose-response benchmarks. PaG binding ratios are recalculated from the article's rounded means.</p><div class="gate-foot">30 CELLS · SHA-256 TRACKED</div></article>
-        <article class="gate-card gate-blocked"><div class="gate-number">02</div><div class="gate-status">MODEL INPUTS FOUND</div><h3>Structure &amp; parameters</h3><p>The 2024 source dataset provides open and closed NNC2215 model PDBs. A checksum-checked record inventory confirms their chains, residues, and covalent-link records. The separate in-house crystal coordinates used in the 2026 PaG MD and validated parameters for the conjugate are still missing.</p><div class="gate-links"><a class="gate-action" href="structures/nnc2215-open-model.pdb" download>Open-state PDB ↓</a><a class="gate-action" href="structures/nnc2215-closed-model.pdb" download>Closed-state PDB ↓</a><a class="gate-action" href="data/structure-manifest.json" download>Checksums &amp; provenance ↓</a><a class="gate-action" href="data/structure-preflight.json" download>PDB record inventory ↓</a></div><div class="gate-foot">MODEL-BUILT · FORCE-FIELD VALIDATION OPEN</div></article>
-        <article class="gate-card gate-access-pending"><div class="gate-number">03</div><div class="gate-status">SUPPORT CONTACTED · GPU PENDING</div><h3>NVIDIA compute access</h3><p>Dia Health One's Inception membership is approved and the research dashboard product profile is saved. NVIDIA acknowledged our $1,000 Lambda credits request on 17 Oct; Lambda handles its partner review and approval is not confirmed. The Innovation Lab tile returned zero results in the catalog; NVIDIA support was contacted to enable it or share the application route. That application is not submitted and no GPU instance is allocated.</p><div class="gate-links"><a class="gate-action" href="https://programs.nvidia.com/phoenix/application?program=inception" target="_blank" rel="noreferrer">Open Inception portal ↗</a><a class="gate-action" href="https://www.nvidia.com/en-us/data-center/innovation-lab/" target="_blank" rel="noreferrer">View program requirements ↗</a><a class="gate-action" href="mailto:inceptionprogram@nvidia.com">Inception support ↗</a></div><div class="gate-foot">PROFILE SAVED · NO GPU JOB · NO SPEND</div></article>
+        <article class="gate-card gate-blocked"><div class="gate-number">02</div><div class="gate-status">SCAFFOLD CHECKED · CONJUGATE CHEMISTRY OPEN</div><h3>Structure &amp; parameters</h3><p>The publisher model PDBs pass hash, sequence, backbone, disulfide, and modification-link checks. Duplicate atom names and differing LYX-to-macrocycle attachment labels remain unresolved in the nonstandard residues. The 2026 seed coordinates and validated full-conjugate parameters are also unavailable.</p><div class="gate-links"><a class="gate-action" href="structures/nnc2215-open-model.pdb" download>Open-state PDB ↓</a><a class="gate-action" href="structures/nnc2215-closed-model.pdb" download>Closed-state PDB ↓</a><a class="gate-action" href="data/structure-manifest.json" download>Checksums &amp; provenance ↓</a><a class="gate-action" href="data/nnc2215-model-validation.json" download>Structure audit ↓</a><a class="gate-action" href="data/target-md-pilot-protocol.json" download>Proposed pilot ↓</a></div><div class="gate-foot">MODEL-BUILT · TOPOLOGY NOT VALIDATED</div></article>
+        <article class="gate-card gate-access-pending"><div class="gate-number">03</div><div class="gate-status">LAMBDA FORM NOT SUBMITTED · GPU PENDING</div><h3>NVIDIA compute access</h3><p>Dia Health One's Inception membership is approved and the research dashboard product profile is saved. NVIDIA recorded the $1,000 Lambda benefit request, but Lambda's separate partner application was only opened for inspection; no fields were entered or submitted, so Lambda has not begun review. The Innovation Lab tile returned zero results; NVIDIA support was contacted to enable it or share the application route. No GPU instance is allocated.</p><div class="gate-links"><a class="gate-action" href="https://programs.nvidia.com/phoenix/application?program=inception" target="_blank" rel="noreferrer">Open Inception portal ↗</a><a class="gate-action" href="https://www.nvidia.com/en-us/data-center/innovation-lab/" target="_blank" rel="noreferrer">View program requirements ↗</a><a class="gate-action" href="mailto:inceptionprogram@nvidia.com">Inception support ↗</a></div><div class="gate-foot">PROFILE SAVED · NO GPU JOB · NO SPEND</div></article>
       </div>
       <div class="method-note"><div class="method-icon">i</div><div><b>Why no Hill curve or 6 mmol/L switch threshold?</b><p>This proof of concept has five glucose concentrations across three independent experiments. It supports a transparent source-data reanalysis, but not a robust four-parameter response fit or a claim that NNC2215 switches at a specific threshold.</p></div><a href="data/reproduction.json">View analysis record ↗</a></div>
     </section>

@@ -26,6 +26,10 @@ The third script applies the paper's Appendix S4 Equation 4b and Table S2 `Coeff
 
 The fourth script recalculates two ratios from the 2026 paper's reported binding summaries: the ratio of glucose and PaG Kd means, and the zero-glucose hIR-A relative-affinity ratio with versus without 70 μmol/L PaG. It writes `data/pag-binding-summary-reproduction.json`. These are arithmetic checks on rounded summary values; the source curves and individual replicate values are not refitted.
 
+The structural audit is reproducible with `python3 research/validate_nnc2215_models.py`. It checks the publisher file hashes, insulin sequences, backbone coverage, native disulfides, and PDB modification-site/link records. It deliberately does not infer bond orders, stereochemistry, protonation, partial charges, or force-field parameters. The present audit flags duplicate names in PHX/LYX/MC residues and different open/closed LYX-to-macrocycle link atom names; these must be reconciled before system preparation. See `data/nnc2215-model-validation.json` and `MILESTONE_REPORT.md`.
+
+`data/target-md-pilot-protocol.json` records a proposed three-condition pilot (apo, glucose reference, PaG) with three 50 ns replicas per condition. It is explicitly not run: the full conjugate topology, PaG starting pose, force-field compatibility, and GPU allocation remain unresolved. It defines a public-input proxy, not an exact rerun of the 2026 macrocycle-analogue simulation.
+
 The dashboard also re-runs the paired calculations in the browser from the CSV and offers a timestamped JSON run manifest. Serve the repository over HTTP to use the browser run button; browsers do not allow `fetch()` of a sibling CSV from a `file://` page.
 
 ## Local engine preflight
@@ -102,7 +106,8 @@ The model-coefficient panel evaluates `SI = SIbase * (1 + ConcPaG * CoeffPaG / 1
 
 - No Hill curve or 6 mmol/L threshold is fitted or inferred.
 - The only molecular dynamics in this demo are two short simulations of PaG alone in water. No NNC2215–PaG binding simulation, docking, binding free-energy calculation, or patient-response model is run. The published NNC2215 model PDBs are catalogued inputs, not evidence that target binding was simulated.
-- GPU acceleration is not needed for the source-data calculations. Dia Health One's NVIDIA Inception membership and product profile are active, but the Innovation Lab tile is absent from the benefits catalog. Support was contacted; the separate application and any GPU allocation remain pending. See `data/nvidia-access-status.json` and `COMPUTE_STATUS.md` for the checked status and official request path.
+- GPU acceleration is not needed for the source-data calculations. NVIDIA Inception is approved, but no GPU is allocated. The `$1,000` Lambda benefit is pending at the NVIDIA catalog stage; the required Lambda partner form has not been submitted. The Innovation Lab tile is absent from the benefits catalog and support was contacted. See `data/nvidia-access-status.json` and `COMPUTE_STATUS.md` for the checked status and official request path.
 - The original PaG MD starting coordinates are not public in the supporting information. Any later study using the published NNC2215 models must be labelled as a public-input proxy, not an exact rerun of the PaG simulation.
 - The local 1UBQ engine preflight verifies that a generic solvated protein system can be constructed and stepped on the available OpenMM OpenCL platform. Its performance does not validate the PaG/NNC2215 setup or substitute for an NVIDIA benchmark.
+- The new NNC2215 model audit confirms sequence/backbone/disulfide and modification-link records, but flags duplicate atom names and an open/closed linker-attachment naming difference in the nonstandard residues. Chemical graphs and parameters remain unvalidated; see `MILESTONE_REPORT.md` and the audit JSON.
 - All source data, derived calculations, model-built structures, and future simulation outputs must remain separately labelled.

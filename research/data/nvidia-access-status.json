@@ -10,7 +10,7 @@
     "product_profile_stage": "Developing"
   },
   "lambda_cloud_credits": {
-    "status": "NVIDIA Inception catalog request acknowledged; Lambda decision pending",
+    "status": "NVIDIA Inception catalog request acknowledged; separate Lambda partner application not submitted",
     "requested_amount_usd": 1000,
     "requested_date_utc": "2026-10-17",
     "request_channel": "NVIDIA Inception Benefits Catalog",
@@ -19,10 +19,35 @@
       "subject": "Your Request for $1,000 in Lambda Cloud Credits",
       "received_at_utc": "2026-10-17T18:25:07Z"
     },
-    "partner_reviewed_by": "Lambda",
+    "partner_reviewed_by": "Lambda, after its separate application is submitted",
+    "partner_application_submitted": false,
+    "partner_application_url": "https://lambda.ai/nvidia-inception",
+    "partner_application_form": {
+      "status": "opened for inspection; no fields entered or submitted",
+      "checked_at_utc": "2026-10-17T19:50:47Z",
+      "required_fields_observed": [
+        "business contact name, email, and phone",
+        "company name, website, role, and title",
+        "country of residence and payment-card country",
+        "compute goals and estimated monthly GPU-hours",
+        "funding, cloud alternatives, team, and traction"
+      ],
+      "valid_payment_card_required": true,
+      "review_started": false
+    },
     "approval_confirmed": false,
     "gpu_allocated": false,
-    "partner_application_status": "The account holder reports requesting the credits; the NVIDIA confirmation says Lambda processes partner offers separately."
+    "partner_application_status": "NVIDIA confirms Lambda processes partner offers separately. The Lambda form was opened but not completed or submitted, so Lambda has not begun reviewing this application."
+  },
+  "aws_activate_credits": {
+    "status": "NVIDIA email directs the applicant to AWS for a separate Activate application; no AWS application submitted",
+    "potential_amount_usd": 10000,
+    "application_submitted": false,
+    "aws_account_and_prior_credit_eligibility_confirmed": false,
+    "eligibility_question_pending": true,
+    "reviewed_email_received_at_utc": "2026-10-17T20:14:00Z",
+    "reviewed_email_sender": "inceptionprogram@nvidia.com",
+    "reviewed_email_subject": "AWS Cloud Credits"
   },
   "nvidia_innovation_lab": {
     "status": "application tile unavailable; support request sent",
@@ -99,7 +124,28 @@
       "engine": "OpenMM 8.6.1 OpenCL on Apple M4",
       "nvidia_gpu_used": false
     },
-    "target_nnc2215_pag_binding_md_started": false
+    "target_nnc2215_pag_binding_md_started": false,
+    "public_nnc2215_model_audit": {
+      "status": "sequence, backbone, disulfide, and modification-link checks completed; chemistry and topology unresolved",
+      "record": "research/data/nnc2215-model-validation.json",
+      "run_id": "DHO-NNC2215-MODEL-VALIDATION-20261017T202847Z",
+      "model_pdb_hashes_match": true,
+      "full_conjugate_parameters_validated": false,
+      "target_binding_simulation_ready": false,
+      "script_sha256": "e72f4751c9e1e053669017680a106e0c61597772d178f1dad18348b41ac17ad6"
+    },
+    "target_pilot_protocol": {
+      "status": "proposed_not_run",
+      "record": "research/data/target-md-pilot-protocol.json",
+      "conditions": [
+        "apo",
+        "glucose reference",
+        "PaG"
+      ],
+      "independent_replicates_per_condition": 3,
+      "production_ns_per_replicate": 50,
+      "gpu_hours_estimated": false
+    }
   },
   "sources": [
     {
@@ -113,6 +159,10 @@
     {
       "claim": "Innovation Lab access requires a separate application through the Inception benefits tile; selection and availability apply.",
       "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    {
+      "claim": "The $1,000 Lambda benefit requires a separate partner application; Lambda's offer page says a valid payment card is required and lists supported countries.",
+      "url": "https://lambda.ai/nvidia-inception"
     },
     {
       "claim": "The 2026 PaG paper's in-house starting structure coordinates are not supplied in the publication materials reviewed.",

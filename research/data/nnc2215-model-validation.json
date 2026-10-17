@@ -1,0 +1,550 @@
+{
+  "record_type": "nnc2215_source_model_validation",
+  "schema": "dia-health-one.nnc2215-model-validation.v1",
+  "run": {
+    "run_id": "DHO-NNC2215-MODEL-VALIDATION-20261017T202847Z",
+    "created_at_utc": "2026-10-17T20:28:47.446301+00:00",
+    "script": "research/validate_nnc2215_models.py",
+    "script_sha256": "e72f4751c9e1e053669017680a106e0c61597772d178f1dad18348b41ac17ad6",
+    "python_version": "3.14.4",
+    "host_platform": "macOS-26.3-arm64-arm-64bit-Mach-O",
+    "nvidia_gpu_used": false
+  },
+  "source": {
+    "dataset_doi": "10.6084/m9.figshare.26526460.v1",
+    "dataset_url": "https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460",
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "article_doi": "10.1038/s41586-024-08042-3",
+    "article_url": "https://www.nature.com/articles/s41586-024-08042-3",
+    "chemistry_reference": "The 2024 Nature paper describes the B29 Lys N\u03b5 macrocycle linkage and the B1 Phe N-terminal O1-glucoside modification."
+  },
+  "expected_insulin_sequence": {
+    "A": "GIVEQCCTSICSLYQLENYCN",
+    "B": "FVNQHLCGSHLVEALYLVCGERGFFYTPK"
+  },
+  "models": [
+    {
+      "state": "active_open",
+      "file": "structures/nnc2215-open-model.pdb",
+      "sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+      "coordinate_atom_records": 990,
+      "seqres_sequences": {
+        "A": {
+          "expected": "GIVEQCCTSICSLYQLENYCN",
+          "pdb_seqres": "GIVEQCCTSICSLYQLENYCN",
+          "matches": true,
+          "coordinate_matches": true
+        },
+        "B": {
+          "expected": "FVNQHLCGSHLVEALYLVCGERGFFYTPK",
+          "pdb_seqres": "FVNQHLCGSHLVEALYLVCGERGFFYTPK",
+          "matches": true,
+          "coordinate_matches": true
+        }
+      },
+      "coordinate_sequences": {
+        "A": "GIVEQCCTSICSLYQLENYCN",
+        "B": "FVNQHLCGSHLVEALYLVCGERGFFYTPK"
+      },
+      "backbone_atoms_complete": true,
+      "missing_backbone_atoms": [],
+      "native_disulfide_pairs_match": true,
+      "disulfide_records": [
+        "SSBOND   1 CYS A    6    CYS A   11                          1555   1555  2.03",
+        "SSBOND   2 CYS A    7    CYS B    7                          1555   1555  2.04",
+        "SSBOND   3 CYS A   20    CYS B   19                          1555   1555  2.02"
+      ],
+      "b29_lys_link_present": true,
+      "b1_phe_glucoside_link_present": true,
+      "macrocycle_roof_link_atom_names": [
+        {
+          "lyx_attachment_atom": "CD6",
+          "macrocycle_attachment_atom": "C31",
+          "record": "LINK        C31  MC  C   1                CD6  LYX B  30     1555   1555  1.56"
+        }
+      ],
+      "free_glucose_residue_present": true,
+      "open_closed_ligand_state_label_matches": true,
+      "record_counts": {
+        "ATOM": 767,
+        "CONECT": 266,
+        "END": 1,
+        "HELIX": 3,
+        "HETATM": 223,
+        "LINK": 3,
+        "REMARK": 3,
+        "SEQRES": 5,
+        "SSBOND": 3,
+        "TER": 4,
+        "TITLE": 1
+      },
+      "atom_counts_by_chain": {
+        "A": 311,
+        "B": 515,
+        "C": 140,
+        "D": 24
+      },
+      "nonstandard_residues": [
+        {
+          "chain": "B",
+          "residue_number": 0,
+          "insertion_code": "",
+          "residue_name": "PHX",
+          "atom_count": 35,
+          "heavy_atom_count": 18,
+          "element_counts": {
+            "C": 10,
+            "H": 17,
+            "O": 8
+          }
+        },
+        {
+          "chain": "B",
+          "residue_number": 30,
+          "insertion_code": "",
+          "residue_name": "LYX",
+          "atom_count": 22,
+          "heavy_atom_count": 13,
+          "element_counts": {
+            "C": 8,
+            "H": 11,
+            "N": 3,
+            "O": 2
+          }
+        },
+        {
+          "chain": "C",
+          "residue_number": 1,
+          "insertion_code": "",
+          "residue_name": "MC",
+          "atom_count": 131,
+          "heavy_atom_count": 80,
+          "element_counts": {
+            "C": 56,
+            "H": 60,
+            "N": 12,
+            "O": 12
+          }
+        },
+        {
+          "chain": "D",
+          "residue_number": 1,
+          "insertion_code": "",
+          "residue_name": "BGL",
+          "atom_count": 24,
+          "heavy_atom_count": 12,
+          "element_counts": {
+            "C": 6,
+            "H": 12,
+            "O": 6
+          }
+        }
+      ],
+      "duplicate_atoms": [
+        {
+          "residue": [
+            "B",
+            30,
+            "",
+            "LYX"
+          ],
+          "atom": "H2",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "B",
+            30,
+            "",
+            "LYX"
+          ],
+          "atom": "HXT",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H4",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H11",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H12",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H19",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H23",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H26",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H50",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H51",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H60",
+          "altloc": ""
+        }
+      ],
+      "invalid_coordinates": [],
+      "findings": [
+        "Duplicate atom names were found within a residue."
+      ],
+      "source_model_interpretation": "Publisher-supplied model coordinates; not an experimentally resolved NNC2215 structure."
+    },
+    {
+      "state": "inactive_closed",
+      "file": "structures/nnc2215-closed-model.pdb",
+      "sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+      "coordinate_atom_records": 968,
+      "seqres_sequences": {
+        "A": {
+          "expected": "GIVEQCCTSICSLYQLENYCN",
+          "pdb_seqres": "GIVEQCCTSICSLYQLENYCN",
+          "matches": true,
+          "coordinate_matches": true
+        },
+        "B": {
+          "expected": "FVNQHLCGSHLVEALYLVCGERGFFYTPK",
+          "pdb_seqres": "FVNQHLCGSHLVEALYLVCGERGFFYTPK",
+          "matches": true,
+          "coordinate_matches": true
+        }
+      },
+      "coordinate_sequences": {
+        "A": "GIVEQCCTSICSLYQLENYCN",
+        "B": "FVNQHLCGSHLVEALYLVCGERGFFYTPK"
+      },
+      "backbone_atoms_complete": true,
+      "missing_backbone_atoms": [],
+      "native_disulfide_pairs_match": true,
+      "disulfide_records": [
+        "SSBOND   1 CYS A    6    CYS A   11                          1555   1555  2.07",
+        "SSBOND   2 CYS A    7    CYS B    7                          1555   1555  2.04",
+        "SSBOND   3 CYS A   20    CYS B   19                          1555   1555  1.97"
+      ],
+      "b29_lys_link_present": true,
+      "b1_phe_glucoside_link_present": true,
+      "macrocycle_roof_link_atom_names": [
+        {
+          "lyx_attachment_atom": "C",
+          "macrocycle_attachment_atom": "C31",
+          "record": "LINK        C31  MC  C   1                C    LYX B  30     1555   1555  1.55"
+        }
+      ],
+      "free_glucose_residue_present": false,
+      "open_closed_ligand_state_label_matches": true,
+      "record_counts": {
+        "ATOM": 769,
+        "CONECT": 226,
+        "END": 1,
+        "HELIX": 3,
+        "HETATM": 199,
+        "LINK": 3,
+        "REMARK": 3,
+        "SEQRES": 5,
+        "SSBOND": 3,
+        "TER": 3,
+        "TITLE": 1
+      },
+      "atom_counts_by_chain": {
+        "A": 312,
+        "B": 516,
+        "C": 140
+      },
+      "nonstandard_residues": [
+        {
+          "chain": "B",
+          "residue_number": 0,
+          "insertion_code": "",
+          "residue_name": "PHX",
+          "atom_count": 35,
+          "heavy_atom_count": 18,
+          "element_counts": {
+            "C": 10,
+            "H": 18,
+            "O": 8
+          }
+        },
+        {
+          "chain": "B",
+          "residue_number": 30,
+          "insertion_code": "",
+          "residue_name": "LYX",
+          "atom_count": 19,
+          "heavy_atom_count": 13,
+          "element_counts": {
+            "C": 8,
+            "H": 10,
+            "N": 3,
+            "O": 2
+          }
+        },
+        {
+          "chain": "C",
+          "residue_number": 1,
+          "insertion_code": "",
+          "residue_name": "MC",
+          "atom_count": 131,
+          "heavy_atom_count": 80,
+          "element_counts": {
+            "C": 56,
+            "H": 60,
+            "N": 12,
+            "O": 12
+          }
+        }
+      ],
+      "duplicate_atoms": [
+        {
+          "residue": [
+            "B",
+            0,
+            "",
+            "PHX"
+          ],
+          "atom": "H2",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "B",
+            30,
+            "",
+            "LYX"
+          ],
+          "atom": "HC",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "B",
+            30,
+            "",
+            "LYX"
+          ],
+          "atom": "HC",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "B",
+            30,
+            "",
+            "LYX"
+          ],
+          "atom": "HC",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "B",
+            30,
+            "",
+            "LYX"
+          ],
+          "atom": "HXT",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H4",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H11",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H12",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H19",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H23",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H26",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H50",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H51",
+          "altloc": ""
+        },
+        {
+          "residue": [
+            "C",
+            1,
+            "",
+            "MC"
+          ],
+          "atom": "H60",
+          "altloc": ""
+        }
+      ],
+      "invalid_coordinates": [],
+      "findings": [
+        "Duplicate atom names were found within a residue."
+      ],
+      "source_model_interpretation": "Publisher-supplied model coordinates; not an experimentally resolved NNC2215 structure."
+    }
+  ],
+  "cross_model_comparison": {
+    "macrocycle_roof_attachment_atom_names_match": false,
+    "open_model_roof_link": [
+      {
+        "lyx_attachment_atom": "CD6",
+        "macrocycle_attachment_atom": "C31",
+        "record": "LINK        C31  MC  C   1                CD6  LYX B  30     1555   1555  1.56"
+      }
+    ],
+    "closed_model_roof_link": [
+      {
+        "lyx_attachment_atom": "C",
+        "macrocycle_attachment_atom": "C31",
+        "record": "LINK        C31  MC  C   1                C    LYX B  30     1555   1555  1.55"
+      }
+    ],
+    "interpretation": "The open and closed PDBs use different LYX atom names for the linker-to-macrocycle connection. This may be representational, but it must be reconciled to the chemical source before assigning a shared topology."
+  },
+  "validation_summary": {
+    "source_hashes_match_manifest": true,
+    "insulin_sequences_match_desB30_human_insulin": true,
+    "backbone_atoms_complete": true,
+    "three_native_disulfides_match": true,
+    "b29_macrocycle_and_b1_glucoside_link_records_present": true,
+    "chemical_graph_and_bond_orders_validated": false,
+    "protonation_and_partial_charges_validated": false,
+    "force_field_parameters_validated": false,
+    "insulin_receptor_coordinates_present": false,
+    "production_simulation_ready": false
+  },
+  "readiness_boundary": "Source, sequence, backbone, disulfide, and modification-site records were checked. These are author-supplied model-built NNC2215 conformations, not experimentally resolved NNC2215 coordinates. No receptor coordinates are included. The nonstandard LYX/PHX/MC chemical graphs, bond orders, stereochemistry, protonation, charges, and force-field parameters remain unvalidated; no target simulation is authorized by this record.",
+  "models_have_findings": true,
+  "cross_model_topology_requires_review": true,
+  "clinical_use": false
+}
