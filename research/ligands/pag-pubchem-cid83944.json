@@ -1,0 +1,16 @@
+{
+  "record_type": "chemical_identity_input",
+  "compound": "paracetamol glucuronide",
+  "abbreviation": "PaG",
+  "pubchem_cid": 83944,
+  "source_url": "https://pubchem.ncbi.nlm.nih.gov/compound/83944",
+  "download_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/83944/SDF?record_type=2d",
+  "retrieved_utc_date": "2026-10-17",
+  "file": "pag-pubchem-cid83944-2d.sdf",
+  "sha256": "412ff847d07966ddaa6cfc7237f26faac6051ada040fad393b7b606e82abf69f",
+  "format": "PubChem 2D SDF; 40 atoms and 41 bonds in the source record",
+  "source_form": "The downloaded PubChem record is the neutral glucuronic-acid form (net formal charge 0).",
+  "simulation_status": "Identity source only. No simulation coordinates, protonation variant, partial charges, or force-field parameters are implied by this 2D record.",
+  "physiological_modeling_note": "A separate deprotonated carboxylate state may be appropriate near physiological pH. It must be generated as a documented modeling assumption and chemically checked; it is not substituted into this source file.",
+  "clinical_use": false
+}

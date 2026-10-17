@@ -80,7 +80,7 @@ function renderOutput(manifest) {
     return `<article class="output-card"><div class="output-card-head"><strong>${item.title}</strong><span class="output-badge">${fold.matches_published_rounding ? "ROUNDING MATCH" : "REVIEW"}</span></div><p><code>${fmt(fold.mean_within_experiment_ratio, 3)}× ± ${fmt(fold.sd_within_experiment_ratio, 3)}</code> mean ± sample SD of paired ratios across three experiments; paper reports ${fold.published_reported_fold.toFixed(1)}×. Replicate ratios: ${fold.replicate_ratios.map(value => fmt(value, 2)).join(", ")}×. ${item.note}</p></article>`;
   }).join("");
   document.getElementById("input-checksum").textContent = `${manifest.run.input_sha256.slice(0, 16)}…`;
-  document.getElementById("output-meta").textContent = `RUN ${manifest.run.id} · ${manifest.run.created_at_utc} · ${manifest.run.engine} · Input SHA-256 ${manifest.run.input_sha256} · Source: Nature (2024), Figure 3d. No molecular dynamics or patient-response model was run.`;
+  document.getElementById("output-meta").textContent = `RUN ${manifest.run.id} · ${manifest.run.created_at_utc} · ${manifest.run.engine} · Input SHA-256 ${manifest.run.input_sha256} · Source: Nature (2024), Figure 3d. No NNC2215–PaG binding MD or patient-response model was run.`;
   document.getElementById("run-output").hidden = false;
   document.getElementById("run-output").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }

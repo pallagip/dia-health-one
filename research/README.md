@@ -28,6 +28,36 @@ The fourth script recalculates two ratios from the 2026 paper's reported binding
 
 The dashboard also re-runs the paired calculations in the browser from the CSV and offers a timestamped JSON run manifest. Serve the repository over HTTP to use the browser run button; browsers do not allow `fetch()` of a sibling CSV from a `file://` page.
 
+## Local engine preflight
+
+The engine preflight runs a generic, solvated ubiquitin benchmark through GROMACS CPU and OpenMM CPU/OpenCL. It uses the public [RCSB 1UBQ structure](https://www.rcsb.org/structure/1UBQ), Amber99SB-ILDN, TIP3P, a 1.0 nm solvent padding, a 2 fs timestep, and 5,000 timed steps. The input PDB is checked into `benchmarks/1ubq.pdb`; its SHA-256 is included in `data/engine-preflight.json`.
+
+Recreate the isolated environment and run the workflow from the repository root:
+
+```sh
+mamba env create -f research/engine-benchmark-environment.yml
+mamba run -n dho-engine-preflight python research/benchmark_engine_preflight.py
+```
+
+The run rebuilds and minimizes the test system, records one short throughput measurement per available engine/platform, and regenerates `data/engine-preflight.json` and `assets/engine-preflight.svg`. The latest recorded Apple M4 run measured 37.420 ns/day for GROMACS CPU, 11.141 ns/day for OpenMM CPU, and 126.274 ns/day for OpenMM OpenCL. The pinned environment uses Python 3.13.16, OpenMM 8.6.1, and GROMACS 2026.3. OpenMM OpenCL was available; the GROMACS build had CPU support only. These timings are single-run environment checks, not a controlled comparison: GROMACS and OpenMM use different thermostat implementations and timing boundaries. This is not an NNC2215/PaG run, does not use NVIDIA hardware, and does not validate the conjugate force field or predict binding energetics.
+
+## PaG small-molecule solvation pilot
+
+The PaG identity reference is PubChem CID 83944. Its downloaded neutral 2D SDF is retained unchanged; a separate simulation conformer was built with the glucuronic-acid carboxylate deprotonated (net charge −1), with the five source stereocentres retained. RDKit ETKDGv3/MMFF94s generated and minimized the conformer, AmberTools AM1-BCC assigned charges, and OpenFF Sage 2.3.0 parameterized the 39-atom ligand. These checks cover the isolated PaG molecule only.
+
+The completed pilot ran two independent OpenMM 8.6.1 OpenCL simulations on Apple M4. Each system contained one PaG carboxylate in Amber14/TIP3P water with 0.15 M NaCl; NPT was run at 298.15 K and 1 atm with a 2 fs timestep, 10 ps equilibration, and 100 ps production. The 1,272-atom periodic system implies approximately 0.118 M PaG from its one-ligand box composition. This is not the 70 μM experimental assay concentration. Production temperature means were 298.85 K and 297.54 K; the traces remained finite. Two short replicas establish only that this small-molecule setup ran, not equilibrium sampling, force-field transferability to the insulin conjugate, or binding affinity.
+
+Recreate the chemistry and pilot with the arm64 environment lock:
+
+```sh
+micromamba create -p /tmp/dho-pag-chem -f research/pag-chemistry-environment-macos-arm64.lock.txt
+micromamba run -p /tmp/dho-pag-chem python research/validate_pag_chemistry.py
+micromamba run -p /tmp/dho-pag-chem python research/run_pag_solvation_preflight.py
+micromamba run -p /tmp/dho-pag-chem python research/plot_pag_solvation_preflight.py
+```
+
+The scripts write a chemistry preflight, timestamped run manifest, raw per-replicate logs and final coordinates, production-only analysis JSON, and SVG figure. The latest run pointer is `data/pag-solvation-preflight/latest.json`. Raw logs and hashes are retained; earlier pilot attempts are marked superseded in their manifests.
+
 ## Source and extraction
 
 - Høeg-Jensen et al., “Glucose-sensitive insulin with attenuation of hypoglycaemia,” *Nature* (2024), [article and methods](https://www.nature.com/articles/s41586-024-08042-3), DOI `10.1038/s41586-024-08042-3`.
@@ -71,7 +101,8 @@ The model-coefficient panel evaluates `SI = SIbase * (1 + ConcPaG * CoeffPaG / 1
 ## Interpretation limits
 
 - No Hill curve or 6 mmol/L threshold is fitted or inferred.
-- No molecular dynamics, docking, binding free-energy calculation, or patient-response model is run. The published NNC2215 model PDBs are catalogued inputs, not evidence that a simulation was performed.
+- The only molecular dynamics in this demo are two short simulations of PaG alone in water. No NNC2215–PaG binding simulation, docking, binding free-energy calculation, or patient-response model is run. The published NNC2215 model PDBs are catalogued inputs, not evidence that target binding was simulated.
 - GPU acceleration is not needed for the source-data calculations. Dia Health One's NVIDIA Inception membership and product profile are active, but the Innovation Lab tile is absent from the benefits catalog. Support was contacted; the separate application and any GPU allocation remain pending. See `data/nvidia-access-status.json` and `COMPUTE_STATUS.md` for the checked status and official request path.
 - The original PaG MD starting coordinates are not public in the supporting information. Any later study using the published NNC2215 models must be labelled as a public-input proxy, not an exact rerun of the PaG simulation.
+- The local 1UBQ engine preflight verifies that a generic solvated protein system can be constructed and stepped on the available OpenMM OpenCL platform. Its performance does not validate the PaG/NNC2215 setup or substitute for an NVIDIA benchmark.
 - All source data, derived calculations, model-built structures, and future simulation outputs must remain separately labelled.

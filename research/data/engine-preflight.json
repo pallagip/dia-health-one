@@ -1,0 +1,121 @@
+{
+  "schema": "dia-health-one.engine-preflight.v1",
+  "run": {
+    "id": "DHO-ENGINE-PREFLIGHT-20261017T190112Z",
+    "started_at_utc": "2026-10-17T18:58:25.575271+00:00",
+    "completed_at_utc": "2026-10-17T19:01:12.750881+00:00",
+    "script_sha256": "3477240e0f8f82dd43893a56e18eb7ff999bb5eb1ec92903b9dee0293e4fccf9",
+    "input_sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+    "software_environment": "research/engine-benchmark-environment.yml",
+    "python_version": "3.13.16",
+    "host_os": "macOS-26.3-arm64-arm-64bit-Mach-O",
+    "host_architecture": "arm64",
+    "host_processor": "Apple M4",
+    "nvidia_gpu_available": false,
+    "nvidia_gpu_used": false,
+    "clinical_use": false
+  },
+  "source_system": {
+    "structure_id": "1UBQ",
+    "source_url": "https://www.rcsb.org/structure/1UBQ",
+    "structure_class": "public experimental X-ray structure of ubiquitin",
+    "protein_residues": 76,
+    "force_field": "Amber99SB-ILDN",
+    "water_model": "TIP3P",
+    "water_box_coordinates": "GROMACS spc216.gro three-site water coordinates",
+    "box_padding_nm": 1.0,
+    "added_salt": false,
+    "solvated_atom_count": 26821
+  },
+  "protocol": {
+    "purpose": "engine throughput and installation preflight only",
+    "timed_steps": 5000,
+    "openmm_warmup_steps_excluded_from_timing": 500,
+    "timestep_ps": 0.002,
+    "temperature_K": 300.0,
+    "random_seed": 1729,
+    "threads": 4,
+    "gromacs_integrator": "md with v-rescale thermostat",
+    "openmm_integrator": "LangevinMiddleIntegrator",
+    "limitations": [
+      "One short run per engine/platform; timing is not a statistically sampled benchmark.",
+      "GROMACS and OpenMM use different thermostat implementations.",
+      "GROMACS mdrun timing includes run setup; OpenMM timing excludes setup, minimization, and warmup.",
+      "The test protein is not NNC2215, PaG, or an insulin-receptor complex.",
+      "The OpenCL result is from Apple M4 hardware, not an NVIDIA GPU.",
+      "Throughput does not validate force-field quality or predict binding affinity."
+    ]
+  },
+  "available_openmm_platforms": [
+    {
+      "platform": "CPU",
+      "available": true
+    },
+    {
+      "platform": "OpenCL",
+      "available": true
+    }
+  ],
+  "measurements": [
+    {
+      "engine": "GROMACS",
+      "version": "2026.3-conda_forge",
+      "platform": "CPU",
+      "threads": 4,
+      "gpu_support_in_build": false,
+      "steps": 5000,
+      "timestep_ps": 0.002,
+      "ns_per_day": 37.42,
+      "hours_per_ns": 0.641,
+      "milliseconds_per_step": 4.618,
+      "million_atom_steps_per_second": 5.808,
+      "minimization_steps": 734,
+      "solvated_atom_count": 26821,
+      "timing_note": "GROMACS mdrun-reported wall time, including engine run setup."
+    },
+    {
+      "engine": "OpenMM",
+      "version": "8.6.1",
+      "platform": "CPU",
+      "platform_properties": {
+        "Threads": "4",
+        "DeterministicForces": "true"
+      },
+      "threads": 4,
+      "steps": 5000,
+      "warmup_steps_excluded_from_timing": 500,
+      "timestep_ps": 0.002,
+      "timed_seconds": 77.55086,
+      "ns_per_day": 11.141,
+      "million_atom_steps_per_second": 1.729,
+      "solvated_atom_count": 26821,
+      "initial_potential_energy_kj_mol_after_warmup": -378333.184,
+      "timing_note": "OpenMM wall time for production steps only, after 500 warmup steps; setup and minimization excluded."
+    },
+    {
+      "engine": "OpenMM",
+      "version": "8.6.1",
+      "platform": "OpenCL",
+      "platform_properties": {
+        "Precision": "single",
+        "DeviceIndex": "0"
+      },
+      "threads": null,
+      "steps": 5000,
+      "warmup_steps_excluded_from_timing": 500,
+      "timestep_ps": 0.002,
+      "timed_seconds": 6.84229,
+      "ns_per_day": 126.274,
+      "million_atom_steps_per_second": 19.599,
+      "solvated_atom_count": 26821,
+      "initial_potential_energy_kj_mol_after_warmup": -379214.31,
+      "timing_note": "OpenMM wall time for production steps only, after 500 warmup steps; setup and minimization excluded."
+    }
+  ],
+  "interpretation": {
+    "status": "local generic engine preflight complete",
+    "target_nnc2215_pag_md_run": false,
+    "nvidia_acceleration_demonstrated": false,
+    "scale_up_recommendation": "Repeat a controlled benchmark on the allocated NVIDIA system; do not use this preflight to select production MD parameters or infer NNC2215/PaG energetics."
+  }
+}

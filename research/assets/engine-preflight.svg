@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+<title id="title">Local molecular-dynamics engine preflight on ubiquitin</title>
+<desc id="desc">Single short throughput runs for GROMACS CPU, OpenMM CPU, and OpenMM OpenCL on an Apple M4 using the same solvated ubiquitin test system. This is not an NNC2215 or NVIDIA run.</desc>
+<rect width="100%" height="100%" rx="14" fill="#ffffff"/>
+<text x="32" y="35" font-family="Arial, sans-serif" font-size="11" letter-spacing="2" fill="#75678f">LOCAL ENGINE PREFLIGHT · {run_date}</text>
+<text x="32" y="64" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#24212b">Short-run throughput on one standard protein system</text>
+<text x="32" y="103" font-family="Arial, sans-serif" font-size="16" fill="#40394b">GROMACS 2026.3-conda_forge · CPU, 4 threads</text>
+<rect x="290" y="85" width="630" height="18" rx="9" fill="#eeeaf2"/>
+<rect x="290" y="85" width="166.7" height="18" rx="9" fill="#8573b8"/>
+<text x="468.7" y="103" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#40394b">37.42 ns/day</text>
+<text x="32" y="173" font-family="Arial, sans-serif" font-size="16" fill="#40394b">OpenMM 8.6.1 · CPU, 4 threads</text>
+<rect x="290" y="155" width="630" height="18" rx="9" fill="#eeeaf2"/>
+<rect x="290" y="155" width="49.6" height="18" rx="9" fill="#b4a6d3"/>
+<text x="351.6" y="173" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#40394b">11.14 ns/day</text>
+<text x="32" y="243" font-family="Arial, sans-serif" font-size="16" fill="#40394b">OpenMM 8.6.1 · OpenCL / Apple M4</text>
+<rect x="290" y="225" width="630" height="18" rx="9" fill="#eeeaf2"/>
+<rect x="290" y="225" width="562.5" height="18" rx="9" fill="#9ebd77"/>
+<text x="864.5" y="243" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#40394b">126.27 ns/day</text>
+<line x1="32" y1="319" x2="968" y2="319" stroke="#ece9e4"/>
+<text x="32" y="345" font-family="Arial, sans-serif" font-size="11" fill="#77737e">1UBQ ubiquitin · 26,821 solvated atoms · 5,000 timed steps · single run per engine</text>
+<text x="32" y="367" font-family="Arial, sans-serif" font-size="10" fill="#918c96">Different integrators and timing boundaries; indicative only. No target MD or NVIDIA GPU allocation.</text>
+</svg>

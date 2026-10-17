@@ -55,19 +55,51 @@
     "operating_system": "macOS 26.3 arm64",
     "nvidia_gpu_available": false,
     "nvidia_smi_available": false,
-    "openmm_installed": false,
-    "gromacs_installed": false,
-    "desmond_installed": false,
     "nvidia_instance_or_job": false,
-    "nvidia_compute_spend_for_this_project": 0
+    "nvidia_compute_spend_for_this_project": 0,
+    "system_openmm_installed": false,
+    "system_gromacs_installed": false,
+    "system_desmond_installed": false,
+    "isolated_engine_preflight": {
+      "environment_file": "research/engine-benchmark-environment.yml",
+      "software": {
+        "openmm": "8.6.1",
+        "gromacs": "2026.3",
+        "python": "3.13.16"
+      },
+      "openmm_platforms_used": [
+        "CPU",
+        "OpenCL"
+      ],
+      "gromacs_gpu_support": false,
+      "nvidia_gpu_used": false,
+      "target_nnc2215_pag_md_run": false,
+      "record": "research/data/engine-preflight.json",
+      "run_id": "DHO-ENGINE-PREFLIGHT-20261017T190112Z",
+      "measurements_ns_per_day": {
+        "gromacs_cpu": 37.42,
+        "openmm_cpu": 11.141,
+        "openmm_opencl": 126.274
+      }
+    }
   },
   "research_status": {
     "source_data_reanalyses_completed": 4,
     "nature_source_cells_verified": 30,
-    "pag_molecular_dynamics_started": false,
+    "pag_molecular_dynamics_started": true,
     "pag_seed_coordinates_public": false,
     "conjugate_force_field_validated": false,
-    "clinical_model": false
+    "clinical_model": false,
+    "pag_molecular_dynamics_scope": "PaG-only explicit-water compatibility pilot; not target binding MD",
+    "pag_solvent_only_pilot": {
+      "status": "completed",
+      "run_id": "DHO-PAG-SOLVATION-20261017T191929Z",
+      "production_replicates": 2,
+      "production_ps_per_replicate": 100,
+      "engine": "OpenMM 8.6.1 OpenCL on Apple M4",
+      "nvidia_gpu_used": false
+    },
+    "target_nnc2215_pag_binding_md_started": false
   },
   "sources": [
     {

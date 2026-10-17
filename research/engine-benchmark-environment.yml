@@ -1,0 +1,7 @@
+name: dho-engine-preflight
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13.16
+  - openmm=8.6.1
+  - gromacs=2026.3

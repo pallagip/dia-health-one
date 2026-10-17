@@ -1,0 +1,152 @@
+{
+  "schema": "dia-health-one.pag-solvation-preflight.v1",
+  "run": {
+    "id": "DHO-PAG-SOLVATION-20261017T191758Z",
+    "started_at_utc": "20261017T191758Z",
+    "completed_at_utc": "2026-10-17T19:19:02.686166+00:00",
+    "status": "superseded",
+    "purpose": "PaG small-molecule explicit-water parameter compatibility smoke test; not a binding or affinity study",
+    "clinical_use": false,
+    "script_sha256": "cb66533c7b855ea59b97a3f15632c8e292eb419b92377d048ee63d47823accfb",
+    "input_sha256": "bdc61656a6d6a8f067adb64375d3376101f701f3ed692bd4c0aea2b7520e3411",
+    "environment_lock_sha256": "608d83e646a04e939b5b6b38619337b2822966113beb60c8368f90ecba803d6d",
+    "original_status": "completed",
+    "superseded_at_utc": "2026-10-17T19:22:08.011506+00:00",
+    "superseded_by": "DHO-PAG-SOLVATION-20261017T191929Z",
+    "superseded_reason": "Superseded after protocol review moved velocity assignment to after energy minimization. Raw traces are retained; the final run uses the corrected order."
+  },
+  "chemical_model": {
+    "source": "PubChem CID 83944; neutral 2D identity record",
+    "modeled_state": "PaG glucuronate carboxylate, net charge -1",
+    "protonation": "explicit modeling assumption near physiological pH; not an experimental pKa determination",
+    "stereochemistry": "five CIP centers retained from the PubChem source record",
+    "conformer": "RDKit ETKDGv3 seed 2215 and MMFF94s minimization",
+    "partial_charge_method": "AM1-BCC assigned by AmberTools 26.0 through OpenFF Toolkit",
+    "ligand_force_field": "openff-2.3.0.offxml",
+    "water_force_field": "Amber14/TIP3P",
+    "mixed_force_field_note": "OpenFF ligand parameters combined with Amber14/TIP3P solvent through the SMIRNOFF template generator; this is a small-molecule compatibility setup, not a validated NNC2215 parameterization."
+  },
+  "system": {
+    "atom_count": 1272,
+    "residue_counts": {
+      "UNK": 1,
+      "HOH": 410,
+      "NA": 2,
+      "CL": 1
+    },
+    "box_dimensions_nm_initial": [
+      2.41192204639633,
+      2.41192204639633,
+      2.41192204639633
+    ],
+    "box_volume_nm3_initial": 14.031038029640904,
+    "one_ligand_box_implied_concentration_M": 0.1183475565860429,
+    "salt_added_M": 0.15,
+    "neutralize": true,
+    "nonbonded_method": "PME",
+    "nonbonded_cutoff_nm": 1.0,
+    "constraints": "HBonds",
+    "hydrogen_mass_amu": 4.0,
+    "clinical_concentration_interpretation": "The one-ligand periodic-box concentration is a finite-size consequence and is not equivalent to the 70 micromol/L experimental assay or plasma exposure."
+  },
+  "protocol": {
+    "ensemble": "NPT",
+    "temperature_K": 298.15,
+    "pressure_atm": 1.0,
+    "timestep_fs": 2.0,
+    "equilibration_ps": 10.0,
+    "production_ps_per_replicate": 100.0,
+    "replicate_count": 2,
+    "independent_velocity_seeds": [
+      2215001,
+      2215002
+    ],
+    "platform": "OpenCL",
+    "platform_properties": {
+      "Precision": "single",
+      "DeviceIndex": "0"
+    },
+    "host_os": "macOS-26.3-arm64-arm-64bit",
+    "host_architecture": "arm64",
+    "host_processor": "Apple M4; OpenCL device 0",
+    "limitations": [
+      "Only PaG in water and salt was simulated; no NNC2215 or macrocycle is present.",
+      "Two 100 ps replicas assess setup and gross stability only; they do not establish conformational equilibrium.",
+      "No ligand binding, receptor affinity, or published PaG MD result is reproduced.",
+      "Water-mixed ligand parameters do not validate transferability to the macrocycle/protein system.",
+      "This Apple OpenCL run is not an NVIDIA benchmark."
+    ]
+  },
+  "replicates": [
+    {
+      "replicate": "replicate-01",
+      "integrator_seed": 2215001,
+      "barostat_seed": 2215101,
+      "equilibration_steps": 5000,
+      "production_steps": 50000,
+      "production_duration_ps": 100.0,
+      "minimized_state": {
+        "potential_energy_kj_mol": -21135.53062412789,
+        "kinetic_energy_kj_mol": 5232.1630859375,
+        "temperature_K": 490.2879441475031
+      },
+      "final_state": {
+        "potential_energy_kj_mol": -17861.292611553392,
+        "kinetic_energy_kj_mol": 3362.80908203125,
+        "temperature_K": 315.11723245420035
+      },
+      "thermodynamic_samples": {
+        "samples": 55,
+        "temperature_mean_K": 298.8700979869273,
+        "temperature_min_K": 285.13365345677147,
+        "temperature_max_K": 318.0256586053385,
+        "potential_energy_min_kj_mol": -18232.98218473594,
+        "potential_energy_max_kj_mol": -17719.78847151257,
+        "volume_min_nm3": 12.454687421392947,
+        "volume_max_nm3": 13.269365857122542
+      },
+      "log_file": "DHO-PAG-SOLVATION-20261017T191758Z-replicate-01.csv",
+      "log_sha256": "bea840540cf7e33bb46c3063674467d782f540017120ebbdf28cfb8b5cd47856",
+      "final_structure_file": "DHO-PAG-SOLVATION-20261017T191758Z-replicate-01-final.pdb",
+      "final_structure_sha256": "e7c1ec7b9c6594e722f2ce23056a080f853a6671409bab0987eb8adfeb5f262b"
+    },
+    {
+      "replicate": "replicate-02",
+      "integrator_seed": 2215002,
+      "barostat_seed": 2215102,
+      "equilibration_steps": 5000,
+      "production_steps": 50000,
+      "production_duration_ps": 100.0,
+      "minimized_state": {
+        "potential_energy_kj_mol": -21128.26109287789,
+        "kinetic_energy_kj_mol": 5297.416015625,
+        "temperature_K": 496.4025709702168
+      },
+      "final_state": {
+        "potential_energy_kj_mol": -17846.63419661853,
+        "kinetic_energy_kj_mol": 3194.03515625,
+        "temperature_K": 299.30201038679314
+      },
+      "thermodynamic_samples": {
+        "samples": 55,
+        "temperature_mean_K": 298.9988080576207,
+        "temperature_min_K": 277.9777080379644,
+        "temperature_max_K": 316.88809404985045,
+        "potential_energy_min_kj_mol": -18208.420457578555,
+        "potential_energy_max_kj_mol": -17382.278222383145,
+        "volume_min_nm3": 12.562093235372089,
+        "volume_max_nm3": 13.201718201759368
+      },
+      "log_file": "DHO-PAG-SOLVATION-20261017T191758Z-replicate-02.csv",
+      "log_sha256": "f0e1988078c74d1a95abac4564ec282551850efe27679962897edab0fd576e2f",
+      "final_structure_file": "DHO-PAG-SOLVATION-20261017T191758Z-replicate-02-final.pdb",
+      "final_structure_sha256": "25622530df6d3158253d960f4799fbb2b3950abb9ca42ea3cc387b211e53dadc"
+    }
+  ],
+  "artifacts": {
+    "initial_system_pdb": "DHO-PAG-SOLVATION-20261017T191758Z-initial.pdb",
+    "initial_system_pdb_sha256": "ebfca240c4d099939dc9ba8165ce7d13328d19e1dd351eafaace6bfa06f74688",
+    "openmm_system_xml": "DHO-PAG-SOLVATION-20261017T191758Z-system.xml",
+    "openmm_system_xml_sha256": "1b5454e871f98d55e1208960b3d0bc63908677ef4d3d225269c2f3488574084a"
+  }
+}

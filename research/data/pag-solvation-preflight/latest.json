@@ -1,0 +1,14 @@
+{
+  "record_type": "latest_pag_solvation_preflight_pointer",
+  "updated_at_utc": "2026-10-17T19:24:51.471857+00:00",
+  "run_id": "DHO-PAG-SOLVATION-20261017T191929Z",
+  "status": "completed",
+  "manifest": "DHO-PAG-SOLVATION-20261017T191929Z.json",
+  "scope": "PaG small-molecule explicit-water parameter compatibility smoke test; not a binding or affinity study",
+  "nvidia_gpu_used": false,
+  "target_binding_md_started": false,
+  "analysis": "DHO-PAG-SOLVATION-20261017T191929Z-analysis.json",
+  "analysis_sha256": "be59d3d155420174f6910e9cb97d12b7af5938b6672a7343eb5859725db82326",
+  "figure": "assets/pag-solvation-preflight.svg",
+  "figure_sha256": "661988e4a4319bb007b69274273542c7b87ef69d3836bf95181b92c3848e5dfc"
+}

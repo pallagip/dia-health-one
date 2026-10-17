@@ -31,21 +31,21 @@
       <div class="hero-copy">
         <div class="eyebrow"><span class="pulse"></span> DIA RESEARCH / REPRODUCIBILITY SERIES 01</div>
         <h1>Make the evidence<br /><em>reproducible.</em></h1>
-        <p class="hero-intro">A computational research workspace examining glucose-responsive insulin and paracetamol glucuronide. We begin by reanalysing published measurements, then make the evidence and limits visible before molecular simulation.</p>
+        <p class="hero-intro">A computational research workspace examining glucose-responsive insulin and paracetamol glucuronide. We reanalyse published measurements, check the small-molecule setup, and show what is still needed before target binding simulations.</p>
         <div class="hero-actions"><a class="button button-primary" href="#evidence">Explore the evidence <span>↓</span></a><a class="text-link" href="data/source-data.csv" download>Download source values <span>↗</span></a></div>
         <div class="hero-footnote"><span>01</span> EVIDENCE FIRST <i></i> COMPUTATIONAL <i></i> NON-CLINICAL</div>
       </div>
       <aside class="study-index" aria-label="Research workflow overview">
-        <div class="index-top"><span>STUDY / 001</span><span class="index-status"><i></i> SOURCE ANALYSIS COMPLETE</span></div>
+        <div class="index-top"><span>STUDY / 001</span><span class="index-status"><i></i> PAG PREFLIGHT COMPLETE</span></div>
         <h2>NNC2215 <span>×</span> PaG</h2>
         <p>From published evidence to a traceable computational result.</p>
         <div class="workflow">
           <div class="workflow-step done"><span class="step-number">01</span><div><b>Published evidence</b><small>Nature 2024 · ACS 2026</small></div><i class="step-check">✓</i></div>
-          <div class="workflow-step done"><span class="step-number">02</span><div><b>Source-data analysis</b><small>3 experiments · 5 glucose levels</small></div><i class="step-check">✓</i></div>
-          <div class="workflow-step active"><span class="step-number">03</span><div><b>Structure &amp; parameters</b><small>Public models catalogued · seed gap remains</small></div><i class="step-wait">•••</i></div>
-          <div class="workflow-step"><span class="step-number">04</span><div><b>GPU molecular simulation</b><small>Innovation Lab tile missing · support contacted</small></div><i class="step-wait">—</i></div>
+          <div class="workflow-step done"><span class="step-number">02</span><div><b>Source-data analysis</b><small>4 reanalyses · published benchmarks</small></div><i class="step-check">✓</i></div>
+          <div class="workflow-step done"><span class="step-number">03</span><div><b>PaG solvent preflight</b><small>2 × 100 ps · Apple M4 OpenCL</small></div><i class="step-check">✓</i></div>
+          <div class="workflow-step active"><span class="step-number">04</span><div><b>Target binding MD</b><small>Conjugate parameters · compute pending</small></div><i class="step-wait">•••</i></div>
         </div>
-        <div class="index-foot"><span>DEMO ENVIRONMENT</span><span>CPU DATA REANALYSIS</span></div>
+        <div class="index-foot"><span>DEMO ENVIRONMENT</span><span>APPLE M4 OPENCL</span></div>
       </aside>
     </section>
 
@@ -206,12 +206,12 @@
     <section class="reproduction wrap section-space" id="reproduction">
       <div class="section-heading">
         <div><div class="section-kicker">03 / REPRODUCIBILITY RUN</div><h2>Re-run the source analysis.</h2></div>
-        <div class="heading-note">4 CPU analyses · 1 MD protocol<br />source values checked against workbook</div>
+        <div class="heading-note">4 source-data reanalyses · engine preflight<br />source values checked against workbook</div>
       </div>
       <div class="run-console">
         <div class="console-top"><span><i></i> ANALYSIS READY</span><span>INPUT · FIGURE 3D CSV</span></div>
         <div class="console-main"><div><h3>Replicate-level fold change</h3><p>Recalculate group means, sample standard deviations, and paired fold changes from the deposited CSV. The browser run hashes its input and creates a downloadable JSON manifest.</p></div><div class="console-actions"><button class="button button-primary" id="run-button" type="button">Run reproduction <span>↗</span></button><a class="text-link dark-link" href="data/reproduction.json" download>Download latest result <span>↓</span></a></div></div>
-        <div class="console-bottom"><span>COMPUTE: CPU</span><span>INPUT CHECKSUM: <b id="input-checksum">Available on run</b></span><span>GPU MD: NOT RUN</span><span>CLINICAL MODEL: NONE</span></div>
+        <div class="console-bottom"><span>COMPUTE: CPU</span><span>INPUT CHECKSUM: <b id="input-checksum">Available on run</b></span><span>TARGET BINDING MD: NOT RUN</span><span>CLINICAL MODEL: NONE</span></div>
       </div>
       <div class="code-links"><a href="run_reproduction.py">View Python analysis ↗</a><a href="README.md">Read source &amp; methods ↗</a><a href="COMPUTE_STATUS.md">Compute readiness note ↗</a></div>
       <div class="run-output" id="run-output" hidden aria-live="polite">
@@ -221,7 +221,7 @@
       </div>
       <div class="run-register" aria-label="Current research run register">
         <div class="run-register-heading">
-          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four CPU reanalyses complete. GPU molecular dynamics has not started.</h3></div>
+          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four source-data reanalyses and a PaG hydration pilot complete. NNC2215–PaG binding MD has not started.</h3></div>
           <a class="run-register-status-link" href="data/nvidia-access-status.json" download>Compute status manifest <span>↓</span></a>
         </div>
         <div class="run-register-grid">
@@ -247,19 +247,45 @@
             <div class="register-links"><a href="data/pag-binding-summary-reproduction.json" download>Binding JSON ↓</a><a href="reproduce_pag_binding_summary.py">Binding script ↗</a><a href="data/pag-sensitivity-reproduction.json" download>Equation 4b JSON ↓</a><a href="reproduce_pag_sensitivity.py">Equation 4b script ↗</a></div>
           </article>
           <article class="register-card register-card-pending">
-            <div class="register-card-top"><span>RUN 05 · MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
+            <div class="register-card-top"><span>RUN 05 · TARGET MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
             <h4>Macrocycle analogue · PaG</h4>
             <div class="register-single-value"><strong>500 ns</strong><small>published production method</small></div>
-            <p>The published MD used an in-house glucose-bound macrocycle analogue, not full NNC2215. The supporting-information record lists one PDF and no separate coordinates. The Innovation Lab tile is missing from the account catalog; support was contacted on 17 Oct. No GPU is allocated, and conjugate force-field validation remains open.</p>
-            <div class="register-links"><a href="data/pag-md-protocol.json" download>Method record ↓</a><a href="#readiness">Readiness gates ↘</a></div>
+            <p>The published 500 ns study used an in-house glucose-bound macrocycle analogue, not full NNC2215; its seed coordinates are not public. Our separate PaG-only water pilot checks setup stability, not binding. The macrocycle parameters and NVIDIA allocation remain pending.</p>
+            <div class="register-links"><a href="data/pag-md-protocol.json" download>Published method ↓</a><a href="data/pag-solvation-preflight/latest.json" download>Latest pilot ↓</a><a href="#readiness">Readiness gates ↘</a></div>
           </article>
         </div>
       </div>
+      <article class="engine-preflight" aria-labelledby="engine-preflight-title">
+        <div class="engine-preflight-header">
+          <div><div class="section-kicker">LOCAL COMPUTE / ENGINE PREFLIGHT</div><h3 id="engine-preflight-title">OpenMM OpenCL is running on the Apple M4.</h3><p>A generic, solvated ubiquitin benchmark checks that the local simulation stack can build and run a protein system.</p></div>
+          <span class="engine-preflight-status"><i></i> LOCAL ACCELERATOR · NO NVIDIA</span>
+        </div>
+        <figure class="engine-figure">
+          <img src="assets/engine-preflight.svg" width="1000" height="390" loading="lazy" alt="Single-run throughput for GROMACS CPU, OpenMM CPU and OpenMM OpenCL on a 26,821-atom ubiquitin system. OpenMM OpenCL on Apple M4 measured 126.274 nanoseconds per day; this is not an NNC2215 or NVIDIA run." />
+          <figcaption>One 5,000-step run per engine on the same 1UBQ system. The chart is an installation and throughput preflight, not a controlled head-to-head benchmark.</figcaption>
+        </figure>
+        <div class="engine-preflight-facts"><div><strong>26,821</strong><small>solvated atoms · 1UBQ</small></div><div><strong>5,000</strong><small>timed steps · 2 fs</small></div><div><strong>4</strong><small>CPU threads</small></div><div><strong>0</strong><small>NVIDIA GPUs used</small></div></div>
+        <div class="engine-preflight-boundary"><b>How to read this</b><p>Each bar is one short throughput run. The engines use different thermostat implementations and timing boundaries, so the chart is an environment preflight, not a controlled engine ranking. It does not validate the PaG force field, reproduce the published 500 ns method, or establish binding energetics.</p></div>
+        <div class="engine-preflight-links"><a href="data/engine-preflight.json" download>Run manifest ↓</a><a href="benchmark_engine_preflight.py">Re-run script ↗</a><a href="engine-benchmark-environment.yml">Pinned environment ↗</a><a href="benchmarks/1ubq.pdb" download>Benchmark input PDB ↓</a><a href="https://www.rcsb.org/structure/1UBQ" target="_blank" rel="noreferrer">RCSB source ↗</a></div>
+      </article>
+      <article class="pag-solvation" aria-labelledby="pag-solvation-title">
+        <div class="pag-solvation-head">
+          <div><div class="section-kicker">LOCAL RESEARCH / PAG-ONLY SOLVATION PILOT</div><h3 id="pag-solvation-title">A small-molecule setup completed two short explicit-water runs.</h3><p>Two independent 100 ps OpenMM runs used the modeled PaG glucuronate in water and salt on Apple M4 OpenCL.</p></div>
+          <span class="pag-solvation-badge">SOLVENT ONLY · NO BINDING</span>
+        </div>
+        <figure class="pag-solvation-figure">
+          <img src="assets/pag-solvation-preflight.svg" width="1000" height="425" loading="lazy" alt="Temperature and box-volume time series from two 100-picosecond PaG-only explicit-water OpenMM runs. Samples fluctuate around 298 kelvin; no NNC2215 or binding partner is present." />
+          <figcaption>The shaded first 10 ps are equilibration; the remaining 100 ps are the short production interval. The traces check setup behavior, not conformational equilibrium or binding.</figcaption>
+        </figure>
+        <div class="pag-solvation-facts"><div><strong>2 × 100 ps</strong><small>independent velocity seeds</small></div><div><strong>1,272</strong><small>atoms · PaG + water + ions</small></div><div><strong>298.9 K</strong><small>replicate 1 production mean</small></div><div><strong>297.5 K</strong><small>replicate 2 production mean</small></div></div>
+        <div class="pag-solvation-boundary"><b>Interpretation</b><p>Both production traces remained finite and had mean temperatures near the 298.15 K target. The periodic box contains one PaG at an implied concentration of about 0.118 M; this is a finite-box consequence, not the 70 μM assay condition. No NNC2215, macrocycle, receptor, binding energy, or NVIDIA GPU is included.</p></div>
+        <div class="pag-solvation-links"><a href="data/pag-solvation-preflight/latest.json" download>Latest run pointer ↓</a><a href="data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z.json" download>Run manifest ↓</a><a href="data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z-analysis.json" download>Production summary ↓</a><a href="data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z-replicate-01.csv" download>Replicate 1 trace ↓</a><a href="data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z-replicate-02.csv" download>Replicate 2 trace ↓</a><a href="run_pag_solvation_preflight.py">Re-run pilot ↗</a><a href="plot_pag_solvation_preflight.py">Rebuild figure ↗</a><a href="ligands/pag-pubchem-cid83944.json" download>PaG identity &amp; checksum ↓</a><a href="ligands/pag-chemistry-preflight.json" download>Ligand parameter record ↓</a><a href="pag-chemistry-environment-macos-arm64.lock.txt">Locked environment ↗</a></div>
+      </article>
     </section>
 
     <section class="readiness wrap section-space" id="readiness">
       <div class="section-heading">
-        <div><div class="section-kicker">04 / SIMULATION READINESS</div><h2>What has to be true before MD?</h2></div>
+        <div><div class="section-kicker">04 / SIMULATION READINESS</div><h2>What has to be true before binding MD?</h2></div>
         <div class="heading-note">No guessed chemistry.<br />No unvalidated simulation.</div>
       </div>
       <div class="gate-grid">
@@ -286,10 +312,10 @@
         </div>
       </div>
     </section>
-    <p class="disclaimer wrap">RESEARCH DEMONSTRATION · NOT A CLINICAL MODEL · NOT FOR TREATMENT OR INSULIN-DOSING DECISIONS. This page reanalyses selected published in-vitro source data and reports selected pig-clamp summary values. It does not reproduce laboratory assays, perform molecular dynamics, establish safety, or predict an individual’s response.</p>
+    <p class="disclaimer wrap">RESEARCH DEMONSTRATION · NOT A CLINICAL MODEL · NOT FOR TREATMENT OR INSULIN-DOSING DECISIONS. This page reanalyses selected published in-vitro source data and reports selected pig-clamp summary values. Its short PaG-only solvent simulations do not reproduce a binding study, establish safety, or predict an individual’s response.</p>
   </main>
 
   <footer class="site-footer"><div class="wrap footer-inner"><a class="brand" href="/"><span class="brand-mark">D</span><span>DIA HEALTH ONE</span></a><span>COMPUTATIONAL RESEARCH · EVIDENCE STATUS SHOWN</span><span>© 2026</span></div></footer>
-  <script src="research.js" defer></script>
+  <script src="research.js?v=20261017-2" defer></script>
 </body>
 </html>

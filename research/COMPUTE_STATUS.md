@@ -2,7 +2,7 @@
 
 **Checked:** 2026-10-17 UTC
 
-**Decision:** the published-data analyses run reproducibly on the local CPU. NVIDIA Inception membership is approved and the Dia Health One Research Dashboard product profile is saved. The Innovation Lab tile is absent from the account's benefits search, so its application is not yet submitted; a short request was sent to NVIDIA Inception support on 2026-10-17. No GPU is allocated. The published PaG MD method is documented, but its in-house starting coordinates are not public and force-field readiness for the NNC2215 conjugate remains unresolved. No target molecular-dynamics run has been made.
+**Decision:** the published-data analyses run reproducibly on the local CPU, a generic engine preflight ran on Apple M4 OpenCL, and a PaG-only explicit-water setup pilot completed as two short OpenMM OpenCL replicas. The PaG pilot is a small-molecule compatibility check, not an NNC2215–PaG binding study. NVIDIA Inception membership is approved and the Dia Health One Research Dashboard product profile is saved. The Innovation Lab tile is absent from the account's benefits search, so its application is not yet submitted; a short request was sent to NVIDIA Inception support on 2026-10-17. No NVIDIA GPU is allocated. The published PaG MD method is documented, but its in-house starting coordinates are not public and force-field readiness for the NNC2215 conjugate remains unresolved. No target binding MD has been made.
 
 ## Reproductions completed
 
@@ -14,6 +14,18 @@ Four Python analyses completed on the Apple M4 host:
 4. **2026 PaG binding summaries:** ratios are recalculated from the paper's reported Kd means (1.91 and 0.17 mmol/L) and zero-glucose hIR-A affinity means (0.9% and 5.4% with 70 μmol/L PaG). These are arithmetic checks on rounded published summaries; the native-MS and receptor-binding curves are not refitted.
 
 The run records and input checksums are in `data/reproduction.json`, `data/pag-clamp-reproduction.json`, `data/pag-sensitivity-reproduction.json`, and `data/pag-binding-summary-reproduction.json`. `data/nvidia-access-status.json` records the compute-access state and source links.
+
+## Local engine preflight
+
+The current run record compares GROMACS CPU, OpenMM CPU, and OpenMM OpenCL using the same solvated 1UBQ ubiquitin coordinates (26,821 atoms). This Apple M4 run measured 37.420 ns/day for GROMACS CPU, 11.141 ns/day for OpenMM CPU, and 126.274 ns/day for OpenMM OpenCL. These are single-run timings, with different thermostat implementations and timing boundaries; use them as installation and rough throughput checks only. They do not compare NVIDIA hardware or reproduce any PaG/NNC2215 result.
+
+The run record contains exact versions, setup parameters, host details, input and script hashes, and interpretation limits at `data/engine-preflight.json`. Recreate it with the pinned environment and `benchmark_engine_preflight.py`; the chart at `assets/engine-preflight.svg` is generated from that result. The input is public RCSB PDB 1UBQ. GROMACS 2026.3 was built without GPU support; OpenMM 8.6.1 ran on CPU and OpenCL. No target MD was started.
+
+## PaG-only explicit-water pilot
+
+The arm64 chemistry environment uses RDKit 2026.03.1, AmberTools 26.0, OpenFF Toolkit 0.19.0, OpenFF Sage 2.3.0, and OpenMM 8.6.1. It builds a PaG carboxylate conformer from the PubChem CID 83944 identity record, retains the five stereocentres, assigns AM1-BCC charges, and verifies an OpenFF ligand system with net charge −1. This does not parameterize the NNC2215 macrocycle, linker, glucoside, or insulin conjugate.
+
+Two independent OpenCL replicas completed, each with 10 ps equilibration and 100 ps production at 298.15 K and 1 atm in 0.15 M NaCl. Each solvated box contains 1,272 atoms and one PaG; its implied 0.118 M ligand concentration is a finite-box property and does not reproduce the 70 μM assay. Production mean temperatures were 298.85 K and 297.54 K, with finite energy and volume traces. This is a setup smoke test only: no NNC2215 or binding partner is present, and no affinity or published PaG simulation result is reproduced. The run manifest, raw logs, final coordinates, analysis JSON, and figure are linked from the research dashboard and indexed in `data/pag-solvation-preflight/latest.json`.
 
 ## Structure data and PaG MD method
 
@@ -33,7 +45,7 @@ A related public model source is now traced: the 2024 NNC2215 article cites Trom
 - The authenticated Inception account now contains the product profile **Dia Health One Research Dashboard** (Developing). The pre-existing computational-insulin product entry was left unchanged.
 - The portal's **Benefits → Explore Benefits** catalog was checked after saving the product. Searching “Innovation Lab” returned zero results, so the program application tile is not available in the current account view.
 - A concise support request was sent to `inceptionprogram@nvidia.com` on 2026-10-17, identifying the Dia Health One account and product and asking NVIDIA to enable the tile or provide the right application link. No reply was present at the latest inbox check. The Innovation Lab application itself has not been submitted.
-- The current host is macOS 26.3 on Apple M4/arm64. `nvidia-smi`, OpenMM, GROMACS, and Desmond are not installed; no NVIDIA instance/job has been started and no compute spend has occurred.
+- The current host is macOS 26.3 on Apple M4/arm64. No NVIDIA device or `nvidia-smi` is available. A temporary conda environment was used for the generic engine preflight (OpenMM 8.6.1 CPU/OpenCL and GROMACS 2026.3 CPU-only); this does not provide NVIDIA compute. Desmond is not installed. No NVIDIA instance/job has been started and no compute spend has occurred.
 
 The official request path is: **Inception Portal → Profile → Add product → Benefits → Explore Benefits → Innovation Lab → Request Benefit → application form.** The product step is complete; the missing tile is the current access blocker.
 
@@ -42,7 +54,7 @@ The official request path is: **Inception Portal → Profile → Add product →
 1. Obtain Innovation Lab access or another explicitly approved compute allocation.
 2. Obtain the original PaG MD starting coordinates from the authors or another attributable source. If they remain unavailable, define any public-input proxy as a separate study.
 3. Validate charges and force-field parameters for PaG, the macrocycle, glucoside, linker, and insulin conjugate before interpreting energetics.
-4. Benchmark OpenMM and GROMACS on the same documented test system in the actual NVIDIA environment.
+4. Repeat the OpenMM/GROMACS benchmark in the actual NVIDIA environment. The local 1UBQ preflight is only a portable engine check and is not a substitute for that measurement.
 5. Run a small stability pilot with documented diagnostics and independent replicates before considering longer production simulations.
 
 Experimental receptor-binding and pig-clamp results remain literature benchmarks. The existing CPU calculations do not predict or reproduce those assays through molecular dynamics.
