@@ -99,3 +99,11 @@ The ACS Figshare API record for article 32292700 was queried directly. It lists 
 ## NVIDIA access recheck — 18 October 2026, 00:53 CEST
 
 The authenticated Inception Benefits page still shows the $1,000 Lambda, $10,000 AWS, and $5,000 Microsoft Azure requests as pending. The public NVIDIA Benefits Catalog search returned zero results for “Innovation Lab.” No NVIDIA partner GPU allocation was visible. The free Colab T4 remains a generic preflight only. No target MD or project compute spend is recorded.
+
+## NNC2215 connectivity audit — 18 October 2026, 01:10 CEST
+
+The new `audit_nnc2215_connectivity.py` audit resolves the PDB record-level evidence more precisely. Open and closed model atom serials are unique, all three named LINK endpoints resolve uniquely in each file, and duplicate atom labels can be associated with distinct serial-level CONECT neighbors. The open model has 11 duplicate-name groups and the closed model 12; the closed model additionally has an unconnected PHX H2 atom, serial 332. The macrocycle attachment differs across models: open MC C31–LYX CD6, closed MC C31–LYX C. Measured distances for both records are consistent with their PDB LINK annotations.
+
+The wwPDB specification provides connectivity by atom serial and does not encode bond orders or distinguish formal charge states. An exploratory RDKit bond-order perception attempt on the 164-atom modified HET component did not complete within roughly one minute and was interrupted; no inferred assignments were retained. The audit therefore improves the adjacency map but does not validate bond order, stereochemistry, protonation, charges, or force-field parameters. Machine-readable findings are in `data/nnc2215-connectivity-audit.json`. Recreate with `python3 research/audit_nnc2215_connectivity.py`.
+
+The user-provided Drive folder currently contains the progress record, company handbook, EIN letter, and incorporation certificate, but no raw molecular source data or simulation files. Research code, source extracts, structures, manifests, and generated figures currently live in the GitHub research repository. No target binding MD or NVIDIA-allocated compute was used for this audit.

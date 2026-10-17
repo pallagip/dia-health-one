@@ -17,7 +17,7 @@
 ## Readiness findings and blockers
 
 1. **The available NNC2215 PDBs are model-built, not experimentally resolved NNC2215 structures.** Their source sequences, backbone coverage, disulfide pairs, and documented modification-site records match the checks performed. The public files contain no insulin-receptor coordinates.
-2. **The nonstandard conjugate topology is unresolved.** Duplicate atom names occur in the PHX, LYX, and MC nonstandard residues. The open-state model links MC atom C31 to LYX atom CD6, while the closed-state model links C31 to LYX atom C. This may be a file-labeling or chemistry issue; it must be reconciled against the source chemistry before creating a shared topology. Bond orders, stereochemistry of the complete conjugate, protonation, charges, and force-field parameters have not been validated.
+2. **The nonstandard conjugate chemistry is unresolved.** A new serial-connectivity audit shows that repeated atom names do not erase CONECT adjacency: duplicate labels have distinct atom serials and their connections can be traced. All three LINK endpoints resolve uniquely in both model files. However, the open-state model links MC C31 to LYX CD6, while the closed-state model links MC C31 to LYX C; the source chemistry has not yet established whether this reflects alternate atom naming or a chemical inconsistency. The closed model also has one unconnected PHX hydrogen (serial 332). PDB connectivity does not provide bond orders or formal charges. Complete stereochemistry, protonation, charges, and force-field parameters remain unvalidated.
 3. **The original PaG MD cannot be exactly rerun from reviewed public files.** The 2026 Supporting Information reports Desmond 6.6, OPLS4, SPC water, 0.15 M NaCl, and 500 ns production using an in-house crystal structure of a related glucose-bound macrocycle. The reviewed article/SI and associated public model materials describe the structural input but do not supply those seed coordinates. The study's MD system is a related macrocycle analogue, not full NNC2215. Public 2024 NNC2215 state models are a different input and can support only a clearly labelled proxy study. The reviewed project files still lack the original seed coordinates. Patrik said he would contact the authors; the latest project status message asked for any update, but no coordinate file has been received.
 4. **No target NNC2215–PaG binding simulation has run.** The authenticated NVIDIA portal lists pending $1,000 Lambda, $10,000 AWS, and $5,000 Azure credit requests; none is an award. The Lambda and AWS partner applications are unsubmitted, the Microsoft handoff requires the correct company identity, and the Innovation Lab application tile is awaiting NVIDIA support. The temporary free Colab T4 run above was a generic engine preflight only; no NVIDIA Inception or partner allocation and no project compute spend are recorded.
 
@@ -25,7 +25,7 @@ The record-level evidence is in [`nnc2215-model-validation.json`](data/nnc2215-m
 
 ## Proposed next deliverable
 
-Resolve the public-model nonstandard-residue atom/bond graph against the published chemistry and, where needed, the structure authors' source files; document an atom-mapped topology for each state; validate protonation, stereochemistry, partial charges, and force-field compatibility for the complete conjugate and PaG; and document how a PaG pose is initialized. If these checks pass, benchmark the selected engine on the allocated GPU using the prepared target system, then run the small three-condition stability pilot described in the protocol. If any topology or parameter check fails, stop before binding MD and report the unresolved evidence needed.
+Reconcile the existing serial-level atom adjacency and open/closed LINK difference against authoritative chemistry; assign and validate bond orders, protonation, stereochemistry, partial charges, and force-field compatibility for the full conjugate and PaG; and document how a PaG pose is initialized. If those checks pass, benchmark the selected engine on the allocated GPU using the prepared target system, then run the small three-condition stability pilot described in the protocol. If any chemistry or parameter check fails, stop before target MD and report the evidence still needed.
 
 The two-week pilot/report estimate starts only when the necessary structural inputs, validated parameters, and compute are available. A later replicated/convergence study remains a separate four-to-eight-week planning estimate after the pilot is justified.
 
@@ -39,6 +39,17 @@ The two-week pilot/report estimate starts only when the necessary structural inp
 | Pilot stability | Minimized valid system; finite energies; stable temperature/volume; no clashes/crashes; three independent seeds and consistent structural observables | Not run |
 | GPU performance/cost | Target-system benchmark on allocated hardware with versions and measured ns/day | Generic T4 preflight complete; target-system performance/cost not measured; no production allocation |
 | Binding inference | A validated free-energy/affinity method with convergence diagnostics and appropriate controls | Not part of the initial pilot |
+
+
+## Update — 18 October 2026, 01:10 CEST
+
+The new reproducible audit `research/audit_nnc2215_connectivity.py` checks the publisher PDB CONECT and LINK records using atom serials and source-file checksums. It finds 11 duplicate-name groups in the open model and 12 in the closed model; all three LINK endpoints resolve uniquely in each file. The open model has 990 coordinate records and 223 hetero atoms, and the closed model has 968 coordinate records and 199 hetero atoms. The closed model contains one hetero atom without a CONECT neighbor: PHX H2, serial 332.
+
+The open model records the macrocycle bond MC C31–LYX CD6 (coordinate distance 1.561 Å); the closed model records MC C31–LYX C (1.555 Å). The two other links in each model resolve to LYX CD1–LysB29 NZ and PheB1 N–PHX C2, with measured distances matching the PDB annotations to rounding. This shows that duplicate text labels alone do not block serial-level adjacency reconstruction. It does not settle which macrocycle attachment atom is chemically correct.
+
+The wwPDB PDB format describes CONECT as atom-serial connectivity, with no field for bond order and no distinction for excess atomic charge. A preliminary RDKit bond-order perception attempt on the 164-atom modified HET component did not finish within roughly one minute and was interrupted; no inferred bond assignment was retained. The resulting audit is therefore a connectivity inventory, not a validated chemical graph or parameterization. The machine-readable result is `research/data/nnc2215-connectivity-audit.json`; the page links the audit and the [wwPDB connectivity specification](https://www.wwpdb.org/documentation/file-format-content/format23/sect10.html).
+
+No target NNC2215–PaG binding MD or NVIDIA-allocated compute was used for this audit. The full-conjugate chemical validation and exact 2026 seed-coordinate gates remain open.
 
 
 ## Update — 18 October 2026, 00:05 CEST
