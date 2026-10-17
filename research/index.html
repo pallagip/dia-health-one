@@ -43,7 +43,7 @@
           <div class="workflow-step done"><span class="step-number">01</span><div><b>Published evidence</b><small>Nature 2024 · ACS 2026</small></div><i class="step-check">✓</i></div>
           <div class="workflow-step done"><span class="step-number">02</span><div><b>Source-data analysis</b><small>3 experiments · 5 glucose levels</small></div><i class="step-check">✓</i></div>
           <div class="workflow-step active"><span class="step-number">03</span><div><b>Structure &amp; parameters</b><small>Public-coordinate gap identified</small></div><i class="step-wait">•••</i></div>
-          <div class="workflow-step"><span class="step-number">04</span><div><b>GPU molecular simulation</b><small>Not started · readiness gated</small></div><i class="step-wait">—</i></div>
+          <div class="workflow-step"><span class="step-number">04</span><div><b>GPU molecular simulation</b><small>Access request pending · no run started</small></div><i class="step-wait">—</i></div>
         </div>
         <div class="index-foot"><span>DEMO ENVIRONMENT</span><span>CPU DATA REANALYSIS</span></div>
       </aside>
@@ -153,6 +153,25 @@
             <div class="response-caption"><span>6.0× from rounded source means</span><span>1.5% HSA assay</span></div>
           </article>
         </div>
+        <article class="pag-clamp-card">
+          <div class="pag-clamp-heading">
+            <div><div class="pag-card-label">IN VIVO / PIG GLUCOSE CLAMP</div><h3>More glucose was needed to hold the clamp at 3 mmol/L.</h3></div>
+            <div class="clamp-meta">GIR AUC · 300–420 min<br />reported mean ± SEM · mg/kg</div>
+          </div>
+          <div class="clamp-table-scroll">
+            <table class="clamp-table">
+              <thead><tr><th scope="col">Treatment</th><th scope="col">Published AUC summary</th><th scope="col">n</th><th scope="col">P vs saline</th><th scope="col">Ratio to saline*</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Low-dose PaG <small>0.5 g</small></th><td><div class="clamp-value">684.3 ± 107.5</div><div class="clamp-track" role="img" aria-label="AUC mean and SEM on a zero to 1100 milligram per kilogram scale"><span class="clamp-bar" style="--bar-width:62.2%"></span><span class="clamp-error" style="--error-start:52.4%;--error-width:19.5%"></span></div></td><td>8</td><td>0.16</td><td>1.15×</td></tr>
+                <tr><th scope="row">High-dose PaG <small>2.0 g</small></th><td><div class="clamp-value">849.0 ± 178.5</div><div class="clamp-track" role="img" aria-label="AUC mean and SEM on a zero to 1100 milligram per kilogram scale"><span class="clamp-bar clamp-bar-highlight" style="--bar-width:77.2%"></span><span class="clamp-error" style="--error-start:61.0%;--error-width:32.5%"></span></div></td><td>7</td><td>0.04</td><td>1.42×</td></tr>
+                <tr><th scope="row">L-glucose <small>0.3 g/kg</small></th><td><div class="clamp-value">790.1 ± 120.2</div><div class="clamp-track" role="img" aria-label="AUC mean and SEM on a zero to 1100 milligram per kilogram scale"><span class="clamp-bar clamp-bar-highlight" style="--bar-width:71.8%"></span><span class="clamp-error" style="--error-start:60.9%;--error-width:21.9%"></span></div></td><td>8</td><td>0.01</td><td>1.32×</td></tr>
+                <tr><th scope="row">Saline <small>control</small></th><td><div class="clamp-value">596.8 ± 85.9</div><div class="clamp-track" role="img" aria-label="AUC mean and SEM on a zero to 1100 milligram per kilogram scale"><span class="clamp-bar clamp-bar-control" style="--bar-width:54.3%"></span><span class="clamp-error" style="--error-start:46.5%;--error-width:15.6%"></span></div></td><td>8</td><td>—</td><td>1.00×</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="clamp-axis" aria-hidden="true"><span>0</span><span>550</span><span>1100 mg/kg</span></div>
+          <div class="clamp-note"><span>* DERIVED</span> Ratios divide published group means by the saline mean; they are descriptive, not paired animal-level effects. P-values and SEM are reported by the paper. Low-dose PaG was not statistically significant versus saline. <a href="data/pag-clamp-summary.csv" download>Download clamp values ↗</a><a href="data/pag-model-parameters.csv" download>Model parameters ↗</a><a href="data/pag-clamp-reproduction.json" download>Derived analysis JSON ↗</a></div>
+        </article>
         <div class="pag-footnote"><span>ASSAY FINDING</span> In vitro receptor-binding data; the reported 70 μM condition is not a patient-specific exposure estimate. <span>DATA LIMIT</span> PaG figure-level raw values were not available for independent recalculation in this demo.</div>
       </div>
     </section>
@@ -183,7 +202,7 @@
       <div class="gate-grid">
         <article class="gate-card gate-done"><div class="gate-number">01</div><div class="gate-status">COMPLETE</div><h3>Source data</h3><p>Nature Figure 3d values are transcribed with source sheet and cell references. Paired experiment ratios reproduce the published rounded glucose-response benchmarks.</p><div class="gate-foot">30 CELLS · SHA-256 TRACKED</div></article>
         <article class="gate-card gate-blocked"><div class="gate-number">02</div><div class="gate-status">SOURCE GAP</div><h3>Structure &amp; parameters</h3><p>The 2026 PaG study describes an in-house crystal structure of a related macrocycle, but does not provide its coordinates. Exact starting geometry and conjugate parameters are not yet verified.</p><div class="gate-foot">NO ATOMISTIC CLAIM MADE</div></article>
-        <article class="gate-card"><div class="gate-number">03</div><div class="gate-status">NOT STARTED</div><h3>NVIDIA GPU run</h3><p>The current reproducibility analysis is CPU-only and needs no accelerator. Compute Engine is disabled in the Dia project checked, so GPU quota is not yet visible; no instance has been created.</p><div class="gate-foot">WAITING ON QUOTA &amp; SYSTEM READINESS</div></article>
+        <article class="gate-card"><div class="gate-number">03</div><div class="gate-status">ACCESS REQUEST PENDING</div><h3>NVIDIA GPU run</h3><p>The source-data analysis is CPU-only. NVIDIA Inception is approved, but GPU access requires a separate application to its 60-day Innovation Lab and selection. Google Cloud Free Trial accounts cannot attach GPUs or request GPU quota. No GPU instance or simulation run has started.</p><div class="gate-foot">NO INSTANCE · NO GPU COST</div></article>
       </div>
       <div class="method-note"><div class="method-icon">i</div><div><b>Why no Hill curve or 6 mmol/L switch threshold?</b><p>This proof of concept has five glucose concentrations across three independent experiments. It supports a transparent source-data reanalysis, but not a robust four-parameter response fit or a claim that NNC2215 switches at a specific threshold.</p></div><a href="data/reproduction.json">View analysis record ↗</a></div>
     </section>
@@ -195,11 +214,13 @@
           <a class="source-item" href="https://www.nature.com/articles/s41586-024-08042-3" target="_blank" rel="noreferrer"><span class="source-no">01</span><span><b>Høeg-Jensen et al.</b><small>Nature · 2024 · NNC2215 architecture and glucose response</small></span><span class="source-arrow">↗</span></a>
           <a class="source-item" href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM5_ESM.xlsx" target="_blank" rel="noreferrer"><span class="source-no">02</span><span><b>Nature Source Data · Figure 3d</b><small>Original workbook · NNC2215 and insulin degludec source values</small></span><span class="source-arrow">↗</span></a>
           <a class="source-item" href="https://pubs.acs.org/doi/10.1021/acsptsci.6c00069" target="_blank" rel="noreferrer"><span class="source-no">03</span><span><b>Sturis et al.</b><small>ACS Pharmacol. Transl. Sci. · 2026 · PaG interaction</small></span><span class="source-arrow">↗</span></a>
-          <a class="source-item" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/" target="_blank" rel="noreferrer"><span class="source-no">04</span><span><b>PaG supporting information</b><small>Methods and parameter details · starting coordinates unavailable</small></span><span class="source-arrow">↗</span></a>
+          <a class="source-item" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/" target="_blank" rel="noreferrer"><span class="source-no">04</span><span><b>PaG article &amp; supporting information</b><small>Clamp outcomes and model parameters · in-house MD starting coordinates unavailable</small></span><span class="source-arrow">↗</span></a>
+          <a class="source-item" href="https://www.nvidia.com/en-eu/data-center/dgx-cloud/innovation-lab/" target="_blank" rel="noreferrer"><span class="source-no">05</span><span><b>NVIDIA DGX Cloud Innovation Lab</b><small>60-day cloud access for selected members · separate application required</small></span><span class="source-arrow">↗</span></a>
+          <a class="source-item" href="https://docs.cloud.google.com/free/docs/free-cloud-features" target="_blank" rel="noreferrer"><span class="source-no">06</span><span><b>Google Cloud Free Trial restrictions</b><small>GPU attachment and quota requests require a paid billing account</small></span><span class="source-arrow">↗</span></a>
         </div>
       </div>
     </section>
-    <p class="disclaimer wrap">RESEARCH DEMONSTRATION · NOT A CLINICAL MODEL · NOT FOR TREATMENT OR INSULIN-DOSING DECISIONS. This page reanalyses selected published in-vitro data. It does not reproduce laboratory assays, perform molecular dynamics, establish safety, or predict an individual’s response.</p>
+    <p class="disclaimer wrap">RESEARCH DEMONSTRATION · NOT A CLINICAL MODEL · NOT FOR TREATMENT OR INSULIN-DOSING DECISIONS. This page reanalyses selected published in-vitro source data and reports selected pig-clamp summary values. It does not reproduce laboratory assays, perform molecular dynamics, establish safety, or predict an individual’s response.</p>
   </main>
 
   <footer class="site-footer"><div class="wrap footer-inner"><a class="brand" href="/"><span class="brand-mark">D</span><span>DIA HEALTH ONE</span></a><span>COMPUTATIONAL RESEARCH · EVIDENCE STATUS SHOWN</span><span>© 2026</span></div></footer>

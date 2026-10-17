@@ -8,6 +8,7 @@ From the repository root:
 
 ```sh
 python3 research/run_reproduction.py
+python3 research/reproduce_pag_clamp.py
 ```
 
 The script uses only the Python standard library. It reads `data/source-data.csv`, calculates the mean and sample standard deviation at each glucose concentration, calculates paired fold changes within each independent experiment, and writes:
@@ -16,6 +17,8 @@ The script uses only the Python standard library. It reads `data/source-data.csv
 - `assets/glucose-response.svg` — original vector chart from the same values.
 
 The JSON result includes the exact source rows used, with experiment IDs and workbook cell references, so the result can be reviewed without reconstructing the input from the chart.
+
+The second script processes the published group-level summaries for the 2026 pig clamp study. It writes `data/pag-clamp-reproduction.json` with the source CSV checksum and descriptive treatment-to-saline ratios. These ratios divide published group means; they are not paired animal-level effects. The study's individual animal measurements and hypothesis tests are not reanalysed by this script.
 
 The dashboard also re-runs the paired calculations in the browser from the CSV and offers a timestamped JSON run manifest. Serve the repository over HTTP to use the browser run button; browsers do not allow `fetch()` of a sibling CSV from a `file://` page.
 
@@ -42,6 +45,8 @@ The verifier checks the workbook checksum, worksheet name, source-cell reference
 Sturis et al., [“Interaction between Paracetamol Glucuronide and a Glucose-Sensitive Insulin Molecule (NNC2215): Increased Risk of Hypoglycemia”](https://pubs.acs.org/doi/10.1021/acsptsci.6c00069), *ACS Pharmacology & Translational Science* (2026), DOI `10.1021/acsptsci.6c00069`, is represented on the dashboard through explicitly labelled published summary values. The reported Kd means are 1.91 mM for D-glucose and 0.17 mM for PaG; their ratio (about 11.2) is calculated from those means. The paper reports 0.9% and 5.4% hIR-A relative affinity at zero glucose without PaG and with 70 μM PaG. These rounded summaries are not independently reanalysed raw values.
 
 The PaG study describes a 500 ns Desmond/OPLS4 simulation from an in-house crystal structure of a related macrocycle, but the article does not supply those starting coordinates. Therefore this demo does not claim an exact molecular-dynamics rerun. PDB 6PXV and 2VJZ are reference structures used in the 2024 paper's modelling; they are not solved atomic structures of every NNC2215 switch state.
+
+The pig-clamp panel reports the article's GIR AUC from 300 to 420 minutes at a 3 mmol/L glucose clamp. Means, SEM, sample sizes, and p-values are transcribed from the main article's Table 1; ratios to saline are derived from the reported means. `data/pag-model-parameters.csv` transcribes the minimal-model values in Supporting Information Table S2. The equations and these selected parameter estimates are not enough to recreate the authors' full PK/PD fit: individual-animal time series and some model inputs are not published with the article.
 
 ## Interpretation limits
 

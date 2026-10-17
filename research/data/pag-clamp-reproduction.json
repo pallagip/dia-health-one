@@ -1,0 +1,91 @@
+{
+  "schema": "dia-health-one.pag-clamp-summary.v1",
+  "run": {
+    "created_at_utc": "2026-10-17T16:47:45.322509+00:00",
+    "analysis": "descriptive ratios of published group-level AUC means",
+    "input_sha256": "f797774f79e313f9d557012a293d2741d664462397cb70f0e267464b13cf0313",
+    "script_sha256": "28c3d5a8681db0f6a06ad90b2692bbf61fe163c64c13e3997b564fc15644e5c6",
+    "individual_animal_data_used": false,
+    "statistical_tests_recomputed": false
+  },
+  "source": {
+    "doi": "10.1021/acsptsci.6c00069",
+    "article": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/",
+    "source_location": "Main article Table 1; clamp at 3 mmol/L glucose",
+    "endpoint": "GIR AUC from 300 to 420 min, mg/kg",
+    "reported_uncertainty": "SEM"
+  },
+  "published_group_summaries": [
+    {
+      "treatment": "Low-dose PaG",
+      "dose": "0.5 g",
+      "auc_gir_300_420_mg_kg": "684.3",
+      "sem_mg_kg": "107.5",
+      "n": "8",
+      "p_value_vs_saline": "0.16",
+      "source_location": "Main article Table 1"
+    },
+    {
+      "treatment": "High-dose PaG",
+      "dose": "2.0 g",
+      "auc_gir_300_420_mg_kg": "849.0",
+      "sem_mg_kg": "178.5",
+      "n": "7",
+      "p_value_vs_saline": "0.04",
+      "source_location": "Main article Table 1"
+    },
+    {
+      "treatment": "L-glucose",
+      "dose": "0.3 g/kg",
+      "auc_gir_300_420_mg_kg": "790.1",
+      "sem_mg_kg": "120.2",
+      "n": "8",
+      "p_value_vs_saline": "0.01",
+      "source_location": "Main article Table 1"
+    },
+    {
+      "treatment": "Saline",
+      "dose": "vehicle",
+      "auc_gir_300_420_mg_kg": "596.8",
+      "sem_mg_kg": "85.9",
+      "n": "8",
+      "p_value_vs_saline": "",
+      "source_location": "Main article Table 1"
+    }
+  ],
+  "saline_control": {
+    "auc_mean_mg_kg": 596.8,
+    "sem_mg_kg": 85.9,
+    "n": 8
+  },
+  "derived_comparisons": [
+    {
+      "treatment": "Low-dose PaG",
+      "dose": "0.5 g",
+      "auc_mean_mg_kg": 684.3,
+      "sem_mg_kg": 107.5,
+      "n": 8,
+      "published_p_value_vs_saline": 0.16,
+      "derived_ratio_of_group_means_vs_saline": 1.1466152815013404
+    },
+    {
+      "treatment": "High-dose PaG",
+      "dose": "2.0 g",
+      "auc_mean_mg_kg": 849.0,
+      "sem_mg_kg": 178.5,
+      "n": 7,
+      "published_p_value_vs_saline": 0.04,
+      "derived_ratio_of_group_means_vs_saline": 1.4225871313672924
+    },
+    {
+      "treatment": "L-glucose",
+      "dose": "0.3 g/kg",
+      "auc_mean_mg_kg": 790.1,
+      "sem_mg_kg": 120.2,
+      "n": 8,
+      "published_p_value_vs_saline": 0.01,
+      "derived_ratio_of_group_means_vs_saline": 1.3238941018766757
+    }
+  ],
+  "interpretation": "Ratios divide published group means and are descriptive. They are not paired animal-level effects and do not reproduce the published p-values."
+}
