@@ -43,7 +43,7 @@
           <div class="workflow-step done"><span class="step-number">01</span><div><b>Published evidence</b><small>Nature 2024 · ACS 2026</small></div><i class="step-check">✓</i></div>
           <div class="workflow-step done"><span class="step-number">02</span><div><b>Source-data analysis</b><small>3 experiments · 5 glucose levels</small></div><i class="step-check">✓</i></div>
           <div class="workflow-step active"><span class="step-number">03</span><div><b>Structure &amp; parameters</b><small>Public-coordinate gap identified</small></div><i class="step-wait">•••</i></div>
-          <div class="workflow-step"><span class="step-number">04</span><div><b>GPU molecular simulation</b><small>Access request pending · no run started</small></div><i class="step-wait">—</i></div>
+          <div class="workflow-step"><span class="step-number">04</span><div><b>GPU molecular simulation</b><small>Application not submitted · structure gap</small></div><i class="step-wait">—</i></div>
         </div>
         <div class="index-foot"><span>DEMO ENVIRONMENT</span><span>CPU DATA REANALYSIS</span></div>
       </aside>
@@ -215,7 +215,7 @@
       <div class="gate-grid">
         <article class="gate-card gate-done"><div class="gate-number">01</div><div class="gate-status">COMPLETE</div><h3>Source data</h3><p>Nature Figure 3d values are transcribed with source sheet and cell references. Paired experiment ratios reproduce the published rounded glucose-response benchmarks.</p><div class="gate-foot">30 CELLS · SHA-256 TRACKED</div></article>
         <article class="gate-card gate-blocked"><div class="gate-number">02</div><div class="gate-status">SOURCE GAP</div><h3>Structure &amp; parameters</h3><p>The 2026 PaG study describes an in-house crystal structure of a related macrocycle, but does not provide its coordinates. Exact starting geometry and conjugate parameters are not yet verified.</p><div class="gate-foot">NO ATOMISTIC CLAIM MADE</div></article>
-        <article class="gate-card"><div class="gate-number">03</div><div class="gate-status">ACCESS REQUEST PENDING</div><h3>NVIDIA GPU run</h3><p>The source-data analysis is CPU-only. NVIDIA Inception is approved, but GPU access requires a separate application to its 60-day Innovation Lab and selection. Google Cloud Free Trial accounts cannot attach GPUs or request GPU quota. No GPU instance or simulation run has started.</p><div class="gate-foot">NO INSTANCE · NO GPU COST</div></article>
+        <article class="gate-card"><div class="gate-number">03</div><div class="gate-status">APPLICATION NOT SUBMITTED</div><h3>NVIDIA GPU run</h3><p>The source-data analysis is CPU-only. Inception membership is approved; GPU access requires adding a product to the profile, requesting the separate 60-day Innovation Lab benefit, and selection. No GPU instance or simulation run has started.</p><a class="gate-action" href="https://programs.nvidia.com/phoenix" target="_blank" rel="noreferrer">Open Inception portal ↗</a><div class="gate-foot">NO INSTANCE · NO GPU COST</div></article>
       </div>
       <div class="method-note"><div class="method-icon">i</div><div><b>Why no Hill curve or 6 mmol/L switch threshold?</b><p>This proof of concept has five glucose concentrations across three independent experiments. It supports a transparent source-data reanalysis, but not a robust four-parameter response fit or a claim that NNC2215 switches at a specific threshold.</p></div><a href="data/reproduction.json">View analysis record ↗</a></div>
     </section>
