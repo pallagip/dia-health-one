@@ -7,6 +7,17 @@
     "name": "CC BY-NC 4.0",
     "url": "https://creativecommons.org/licenses/by-nc/4.0/"
   },
+  "supporting_information_inventory": {
+    "figshare_article_id": 32292700,
+    "file_id": 64563187,
+    "filename": "pt6c00069_si_001.pdf",
+    "format": "24-page PDF; the public Figshare record lists no separate PDB or coordinate file",
+    "size_bytes": 2870120,
+    "md5": "c87fafa63a891bd1f5aec832e51182ea",
+    "sha256": "f3d279ef9169666cef211ad9849fa0ea1ca807820eb4e3993944417b51936db2",
+    "retrieved_date_utc": "2026-10-17",
+    "download_url": "https://ndownloader.figshare.com/files/64563187"
+  },
   "related_public_macrocycle_model": {
     "article_title": "A biomimetic receptor for glucose",
     "doi": "10.1038/s41557-018-0155-z",
@@ -33,5 +44,5 @@
     "2024_nnc2215_model_pdbs": "Available separately in the Springer Nature Figshare dataset recorded in structure-manifest.json; these are model-built NNC2215 states, not the 2026 study seed structure.",
     "exact_md_rerun": "Not reproducible from the currently available public input set."
   },
-  "evidence_note": "This JSON paraphrases reported methods and records the input gap. It is not a simulation input deck, a reconstruction of unpublished coordinates, or evidence that MD was rerun."
+  "evidence_note": "This JSON paraphrases reported methods and records the input gap. The public Figshare item contains one 24-page supplementary PDF; Appendix S2 describes the in-house glucose-bound macrocycle crystal seed and does not provide its coordinates. The published MD is on a macrocycle analogue, not full NNC2215. This is not a simulation input deck, a reconstruction of unpublished coordinates, or evidence that MD was rerun."
 }
