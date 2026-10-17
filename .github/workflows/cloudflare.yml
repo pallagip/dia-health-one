@@ -29,7 +29,7 @@ jobs:
           test -s index.html
           mkdir _site
           cp index.html _site/index.html
-          for directory in assets images; do
+          for directory in assets images research; do
             if [ -d "$directory" ]; then cp -R "$directory" "_site/$directory"; fi
           done
           for file in favicon.ico robots.txt sitemap.xml; do
