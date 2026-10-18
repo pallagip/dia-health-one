@@ -1,6 +1,6 @@
 # NNC2215–PaG reproducibility milestone report
 
-**Updated:** 2026-10-18 10:06 CEST (08:06 UTC)
+**Updated:** 2026-10-18 10:14 CEST (08:14 UTC)
 **Repository file:** [`research/MILESTONE_REPORT.md`](https://github.com/pallagip/dia-health-one/blob/feat/reproducibility-dashboard/research/MILESTONE_REPORT.md) on branch `feat/reproducibility-dashboard` · [Live Markdown report](https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/MILESTONE_REPORT.md)
 **Status:** Published-data reanalysis and Hill-fit identifiability check complete; generic Tesla T4 throughput preflight complete. The separate PaG-only T4 portability preflight is waiting at Colab’s human verification step. NVIDIA partner requests remain pending with no project allocation; a fresh portal recheck at 08:06 UTC still showed all six requests pending, with no allocation. The public Innovation Lab catalog search again returned zero results. Target binding MD has not started; the public study seed coordinates and validated NNC2215 conjugate chemistry/parameters remain unresolved.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
@@ -266,3 +266,8 @@ At approximately 07:31 UTC, the authenticated NVIDIA Benefits page still showed 
 The deployed dashboard’s browser “Run reproduction” action completed at 08:04:10 UTC as `DHO-NNC2215-FIG3D-20261018080410`. Using Browser JavaScript arithmetic on the Nature Figure 3d CSV (SHA-256 `b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f`), it returned paired fold changes of 3.158 ± 0.279 (3→20 mmol/L) and 12.472 ± 1.699 (0→20 mmol/L); both match the publication after rounding. This is published-data reanalysis, not MD or a GPU run.
 
 At approximately 08:06 UTC, the authenticated Inception portal still showed all six catalog requests pending and no GPU allocation. A completed public catalog search for “Innovation Lab” displayed zero results. Gmail searches through 08:04 UTC found no reply to the NVIDIA support request or newer incoming message from Patrik than his 17 October 21:01 UTC note that he would contact the study authors; the broken GitHub report link was answered in-thread with the corrected branch and live report URLs at 06:52 UTC. No target NNC2215–PaG MD has run.
+
+
+## Live browser reproduction — 18 October 2026, 08:14 UTC
+
+The deployed branch preview’s “Run reproduction” action completed as `DHO-NNC2215-FIG3D-20261018081424`. Browser JavaScript arithmetic over the Nature Figure 3d source CSV (SHA-256 `b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f`) returned paired fold changes of 3.157629 ± 0.278646 from 3 to 20 mmol/L and 12.472023 ± 1.698501 from 0 to 20 mmol/L. Both match the paper’s rounded 3.2× and 12.5× values and the local Python reanalysis. The run manifest is archived at `research/data/browser-runs/DHO-NNC2215-FIG3D-20261018081424.json`; its recorded script SHA-256 matches `research/research.js`. This is CPU-side source-data arithmetic, not an NVIDIA run, molecular dynamics, affinity prediction, or patient model. Target NNC2215–PaG binding MD remains unstarted.
