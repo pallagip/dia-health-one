@@ -1,7 +1,7 @@
 {
   "schema": "dia-health-one.compute-access-status.v1",
   "checked_date_utc": "2026-10-18",
-  "portal_status_checked_at_utc": "2026-10-18T02:01:17Z",
+  "portal_status_checked_at_utc": "2026-10-18T02:36:21Z",
   "portal_status_evidence": {
     "source": "Authenticated NVIDIA Inception Benefits and Products pages observed at 2026-10-18T02:01:17Z.",
     "visible_requests": [
@@ -60,27 +60,27 @@
       "interpretation": "Two non-EOL Developing product rows exist; neither is marked NVIDIA-accelerated. This does not establish an active NVIDIA GPU workload or an award."
     },
     "latest_observation": {
-      "checked_at_utc": "2026-10-18T02:01:17Z",
+      "checked_at_utc": "2026-10-18T02:36:21Z",
       "benefit_requests": [
         {
           "benefit": "$1,000 in Lambda Cloud Credits",
-          "status": "Benefit request pending; portal says complete the request with the partner."
+          "status": "NVIDIA request pending; Lambda's separate partner application is still incomplete."
         },
         {
           "benefit": "$10,000 in AWS Cloud Credits",
-          "status": "Benefit request pending; portal says complete the request with the partner."
+          "status": "NVIDIA request pending; AWS's separate partner application is still incomplete."
         },
         {
           "benefit": "$5,000 in Microsoft Azure Cloud Credits",
-          "status": "Benefit request pending; portal says complete the request with the partner."
+          "status": "NVIDIA request pending; Microsoft's separate partner application is still incomplete."
         },
         {
           "benefit": "Up to 50K GPU Hours + AI Services for Accelerating European Startups",
-          "status": "Benefit request pending; portal says complete the request with the partner."
+          "status": "NVIDIA request pending; AI Factory France's separate application/referral route is still incomplete."
         },
         {
           "benefit": "$2,000-$350,000 in Google Cloud Credits",
-          "status": "Benefit request pending; portal says complete the request with the partner."
+          "status": "NVIDIA request pending; Google's separate partner application is still incomplete."
         }
       ],
       "explore_benefits_control": "Clicked from the authenticated Benefits page; the page and accessibility tree remained unchanged, with no catalog results or application tab opened.",
@@ -103,7 +103,8 @@
           ]
         }
       ],
-      "profile_technology_evidence_note": "The current project run manifests show OpenMM OpenCL on a temporary free Colab Tesla T4 and do not record BioNeMo or CUDA Toolkit execution. Confirm the product-profile technology selections against other company work before using them as evidence of an active NVIDIA workload or in a partner application."
+      "profile_technology_evidence_note": "The current project run manifests show OpenMM OpenCL on a temporary free Colab Tesla T4 and do not record BioNeMo or CUDA Toolkit execution. Confirm the product-profile technology selections against other company work before using them as evidence of an active NVIDIA workload or in a partner application.",
+      "portal_conclusion": "All five catalog receipts are partner referrals, not awards or compute allocations."
     }
   },
   "nvidia_inception": {
@@ -189,15 +190,16 @@
       "checked_date_utc": "2026-10-18",
       "search_query": "Innovation Lab",
       "results": 0,
-      "checked_at_utc": "2026-10-18T00:54:30Z",
-      "url": "https://www.nvidia.com/programs/benefits/"
+      "checked_at_utc": "2026-10-18T02:36:21Z",
+      "url": "https://www.nvidia.com/programs/benefits/",
+      "observed_result": "The public NVIDIA Benefits Catalog showed zero results for Innovation Lab."
     },
     "support_request": {
       "recipient": "inceptionprogram@nvidia.com",
       "sent_date_utc": "2026-10-17",
       "subject": "Innovation Lab benefit tile missing",
-      "response_status": "No NVIDIA Innovation Lab support reply found as of 2026-10-18T01:23:33Z.",
-      "last_mailbox_check_at_utc": "2026-10-18T01:23:33Z"
+      "response_status": "No reply from NVIDIA Inception support in the Innovation Lab thread as of 2026-10-18T02:36:21Z.",
+      "last_mailbox_check_at_utc": "2026-10-18T02:36:21Z"
     },
     "duration_days": 60,
     "selection_required": true,
@@ -220,7 +222,8 @@
       "selection_required": true,
       "separate_application_required": true,
       "public_use_case_relevant_to_project": "Dynamic simulations",
-      "official_url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+      "official_url": "https://www.nvidia.com/en-us/data-center/innovation-lab/",
+      "molecular_dynamics_use_case": "The official Innovation Lab page lists molecular dynamics/protein folding and drug-discovery pipelines under GPU-accelerated simulations and modeling."
     },
     "application_brief": {
       "file": "research/NVIDIA_INNOVATION_LAB_BRIEF.md",
@@ -419,15 +422,14 @@
     }
   ],
   "latest_verification": {
-    "checked_at_utc": "2026-10-18T01:23:33Z",
-    "local_host": "Apple M4 / macOS 26.3 arm64; no local NVIDIA GPU. A temporary free Colab Tesla T4 completed only a generic 1UBQ preflight; no Inception or partner allocation exists.",
-    "colab_t4_preflight": "Three synchronized 100 ps OpenMM 8.6.1 OpenCL timing runs on 17,764-atom 1UBQ; median 270.175 ns/day. Not target NNC2215–PaG MD and no paid compute.",
-    "inception_portal": "Authenticated portal observed at 2026-10-18T01:18:46Z; five benefit requests remain pending. No award or GPU allocation is confirmed. The Innovation Lab request tile was not present in the request table; the Explore Benefits control failed to open because the portal auth component raised a JavaScript error.",
-    "innovation_lab": "The previous public benefits catalog query for Innovation Lab returned zero results at 2026-10-18T00:54:30Z. A support email remains unanswered as of the 2026-10-18T01:23:33Z inbox check.",
-    "new_partner_routes": "NVIDIA acknowledged the AI Factory France 50K GPU-hours request at 2026-10-18T00:48:56Z and directed the applicant to a separate partner application; AI Factory France reviews it. Its FAQ requires France-based R&D and open research with a publication commitment. Dia Health One eligibility/referral is unconfirmed. Google partner form remains unsubmitted.",
-    "target_simulation": "No NNC2215–PaG binding MD has run. Exact public 2026 seed coordinates remain unavailable. The target system is not force-field ready and no NVIDIA/partner GPU allocation exists.",
-    "patrick_inbox": "Latest incoming message found at 2026-10-17T21:01:27Z; no newer incoming message in the 2026-10-18T00:54:30Z point-in-time query. A project update was sent at 2026-10-18T00:52:09Z.",
-    "connectivity_audit": "Selected PHX/LYX/MC heavy atoms plus the PheB1 N and LysB29 NZ attachment atoms match across states as 113 nodes and 120 CONECT/LINK edges after two explicit LYX label aliases. Hydrogen records still differ; bond orders, stereochemistry, protonation, formal charges and force-field parameters remain unvalidated."
+    "checked_at_utc": "2026-10-18T02:36:21Z",
+    "authenticated_nvidia_portal": "Five catalog requests remain pending with partner completion required; none is an award or GPU allocation.",
+    "innovation_lab": "Public catalog search for Innovation Lab returned zero results. The support thread has no NVIDIA reply as of this check. Official program page lists molecular dynamics/protein folding and drug-discovery pipelines as eligible simulation use cases; the portal still has no submission route.",
+    "hun_aifa": "Company profile headquarters is Hungary. HunAIFA's official intake form was opened and advanced to the contact page. Startup and support-area selections (computing infrastructure, technical expertise, European partnerships) were entered; contact and project fields remain blank and form was not submitted.",
+    "ai_factory_france_eligibility": "The NVIDIA catalog detail permits possible EU partner-country eligibility only with agreement between AI2F and that country's AI Factory. HunAIFA is the relevant Hungarian referral route. Eligibility is not established.",
+    "inbox": "No NVIDIA support reply and no new Patrick/Patrik inbound email found in point-in-time searches. No persistent monitoring hook is configured.",
+    "compute": "No NVIDIA allocation, project compute spend, or target NNC2215-PaG MD. The temporary free T4 result remains only a generic 1UBQ preflight.",
+    "scientific_gate": "Target NNC2215-PaG MD remains unstarted pending full conjugate connectivity, stereochemistry, protonation, charges, parameters and a defensible pose."
   },
   "latest_inception_catalog_check": {
     "checked_at_utc": "2026-10-18T01:18:46Z",
@@ -495,20 +497,48 @@
     "eligibility": {
       "france_route": "AI Factory France FAQ says free compute requires the applicant R&D department to be based in France and use open research with a commitment to publish results.",
       "cross_border_route": "An EU startup outside France may require agreement between AI Factory France and the applicant country AI Factory. Eligibility for Dia Health One has not been confirmed.",
-      "hungary_context": "EuroHPC lists HunAIFA as the Hungarian AI Factory Antenna linked to JAIF; a referral path for this specific France offer is unconfirmed.",
+      "hungary_context": "The Inception company profile lists Dia Health One headquarters as Hungary. The NVIDIA benefit description says startups doing R&D in an EU country partnered with AI2F may qualify by agreement and should request a referral from their country AI Factory. EuroHPC lists HunAIFA as the Hungarian AI Factory Antenna linked to JUPITER AI Factory.",
       "portal_response": "NVIDIA acknowledgement is a catalog referral only; it is not an AI Factory France application, approval, or GPU allocation."
     },
     "user_inputs_still_needed": [
-      "Confirm where Dia Health One’s R&D function is based",
-      "Confirm whether the company accepts publication of non-confidential compute results",
-      "Confirm an AI Factory referral or eligibility route if R&D is outside France"
+      "User authorization before entering Andrii Shylenko, Dia Health One, Inc., and the Dia Health One business email in HunAIFA's intake form",
+      "User authorization to share a concise public-scope NNC2215/PaG research summary with HunAIFA",
+      "Confirm the R&D location if it differs from the Hungary headquarters listed in NVIDIA's profile",
+      "No approval or allocation has been granted; any referral and publication requirement remain subject to review"
     ],
     "gpu_allocated": false,
     "sources": [
       "https://aifactory-france.eu/faq/",
       "https://www.eurohpc-ju.europa.eu/ai-factory-antennas_en"
     ],
-    "last_reviewed_at_utc": "2026-10-18T01:23:33Z"
+    "last_reviewed_at_utc": "2026-10-18T02:36:21Z",
+    "hungarian_referral_route": {
+      "status": "Support-intake form reached; final contact fields blank; request not submitted.",
+      "official_site": "https://hunaifa.eu/",
+      "intake_form_url": "https://limesurvey.sztaki.hu/index.php?r=survey/index&sid=565358&newtest=Y&lang=en",
+      "purpose": "Ask HunAIFA about GPU/HPC access and whether it can refer a Hungary-based startup to AI Factory France for the NVIDIA Inception GPU-hours offer.",
+      "form_progress": {
+        "organization_type": "Startup selected",
+        "support_areas": [
+          "Computing infrastructure",
+          "Technical expertise",
+          "European partnerships"
+        ],
+        "contact_fields_entered": false,
+        "project_details_entered": false,
+        "submitted": false,
+        "current_page_fields": [
+          "Surname",
+          "First name",
+          "Organization",
+          "Email address",
+          "Tell us more about your needs"
+        ],
+        "note": "Only the non-contact selections above were entered. No name, company name, email address, phone number or project text has been supplied."
+      },
+      "privacy_notice": "https://hunaifa.eu/privacy-policy",
+      "reviewed_at_utc": "2026-10-18T02:36:21Z"
+    }
   },
   "google_cloud_startups": {
     "status": "NVIDIA Inception catalog request acknowledged; separate Google for Startups Cloud Program application not submitted",
@@ -551,15 +581,24 @@
       "published_scope": "Up to 50,000 GPU hours for up to three months for SMEs/startups performing AI activities.",
       "current_project_scope": "Classical molecular dynamics; no AI activity has been established for this reproduction workload.",
       "source": "https://www.eurohpc-ju.europa.eu/ai-factories/ai-factories-access-modes/fast-lane-access-ai-factories_en"
+    },
+    "hunaifa": {
+      "status": "Local support-intake route identified; not submitted",
+      "country": "Hungary",
+      "role": "AI Factory Antenna providing guidance to Hungarian companies and a route into the European AI Factories ecosystem",
+      "official_site": "https://hunaifa.eu/",
+      "officially_listed_link": "JUPITER AI Factory (JAIF)",
+      "source": "https://www.eurohpc-ju.europa.eu/ai-factory-antennas_en"
     }
   },
   "mailbox_check": {
-    "checked_at_utc": "2026-10-18T02:01:17Z",
+    "checked_at_utc": "2026-10-18T02:36:21Z",
     "queries": [
-      "after:2026/10/18 from:(nvidia.com) -in:spam -in:trash",
-      "after:2026/10/18 {from:patrick@deahealth.one from:patrik@deahealth.one} -in:spam -in:trash"
+      "in:anywhere from:inceptionprogram@nvidia.com newer_than:2d",
+      "in:anywhere from:nvidia.com \"Innovation Lab\" newer_than:14d",
+      "in:anywhere {from:patrick@deahealth.one from:patrik@deahealth.one} newer_than:14d"
     ],
-    "result": "The only NVIDIA messages returned were the previously logged pending-request acknowledgements at 00:48:56 UTC and 00:53:38 UTC; no later NVIDIA response was found. No new message from Patrick/Patrik was found.",
+    "result": "The five NVIDIA catalog acknowledgements remain the latest partner-related messages. No NVIDIA reply to the Innovation Lab support thread was found; no incoming message from Patrick/Patrik was found in the 14-day query.",
     "monitoring": "Point-in-time searches only; no continuous inbox monitor or hook is configured."
   }
 }
