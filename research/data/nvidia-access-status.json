@@ -80,7 +80,7 @@
         },
         {
           "benefit": "$2,000-$350,000 in Google Cloud Credits",
-          "status": "NVIDIA request pending; Google's separate partner application is still incomplete."
+          "status": "NVIDIA request pending; the initial Google for Startups program application was received on 2026-10-15, but the separate credits application is incomplete and no award is confirmed."
         }
       ],
       "explore_benefits_control": "Clicked from the authenticated Benefits page; the page and accessibility tree remained unchanged, with no catalog results or application tab opened.",
@@ -427,9 +427,10 @@
     "innovation_lab": "Public catalog search for Innovation Lab returned zero results. The support thread has no NVIDIA reply as of this check. Official program page lists molecular dynamics/protein folding and drug-discovery pipelines as eligible simulation use cases; the portal still has no submission route.",
     "hun_aifa": "Company profile headquarters is Hungary. HunAIFA's official intake form was opened and advanced to the contact page. Startup and support-area selections (computing infrastructure, technical expertise, European partnerships) were entered; contact and project fields remain blank and form was not submitted.",
     "ai_factory_france_eligibility": "The NVIDIA catalog detail permits possible EU partner-country eligibility only with agreement between AI2F and that country's AI Factory. HunAIFA is the relevant Hungarian referral route. Eligibility is not established.",
-    "inbox": "No NVIDIA support reply and no new Patrick/Patrik inbound email found in point-in-time searches. No persistent monitoring hook is configured.",
+    "inbox": "No NVIDIA Innovation Lab support reply was found in the point-in-time check at 2026-10-18T02:48:35Z.",
     "compute": "No NVIDIA allocation, project compute spend, or target NNC2215-PaG MD. The temporary free T4 result remains only a generic 1UBQ preflight.",
-    "scientific_gate": "Target NNC2215-PaG MD remains unstarted pending full conjugate connectivity, stereochemistry, protonation, charges, parameters and a defensible pose."
+    "scientific_gate": "Target NNC2215-PaG MD remains unstarted pending full conjugate connectivity, stereochemistry, protonation, charges, parameters and a defensible pose.",
+    "google_for_startups": "Google confirmed receipt of an initial Cloud Program application on 2026-10-15T20:27:42Z and stated that credits would be deposited only if approved. The separate credits application remains unsubmitted; no credit award is confirmed."
   },
   "latest_inception_catalog_check": {
     "checked_at_utc": "2026-10-18T01:18:46Z",
@@ -455,18 +456,12 @@
     }
   },
   "latest_inbox_check": {
-    "checked_at_utc": "2026-10-18T01:23:33Z",
-    "patrik": {
-      "address": "patrik@diahealth.one",
-      "latest_incoming_message_at_utc": "2026-10-17T21:01:27Z",
-      "newer_incoming_message_found": false,
-      "latest_project_reply_sent_at_utc": "2026-10-18T00:52:09Z"
-    },
+    "checked_at_utc": "2026-10-18T02:48:35Z",
     "nvidia_innovation_lab_support": {
       "new_reply_found": false,
-      "search": "from:(nvidia.com) after:2026/10/17 -in:spam -in:trash",
-      "last_checked_at_utc": "2026-10-18T01:23:33Z",
-      "response_status": "No NVIDIA Innovation Lab support reply found in the point-in-time search at 2026-10-18T01:23:33Z."
+      "search": "in:anywhere \"Innovation Lab\" newer_than:7d",
+      "last_checked_at_utc": "2026-10-18T02:48:35Z",
+      "response_status": "No incoming NVIDIA Innovation Lab response was found in the latest point-in-time Gmail search."
     },
     "new_catalog_acknowledgements": [
       {
@@ -478,7 +473,13 @@
         "received_at_utc": "2026-10-18T00:53:38Z"
       }
     ],
-    "scope_note": "Point-in-time read-only search at 2026-10-18T01:23:33Z. NVIDIA acknowledgements confirm pending catalog requests only; partner applications and compute awards remain outstanding. No continuous inbox monitor is configured."
+    "scope_note": "Point-in-time support and program-status checks at 2026-10-18T02:48:35Z. This public manifest records program-access state only; private founder correspondence and inbox monitoring details are kept in the internal progress record.",
+    "google_for_startups": {
+      "initial_program_application_received_at_utc": "2026-10-15T20:27:42Z",
+      "initial_program_application_status": "Google confirmed receipt; review outcome not found in latest search.",
+      "separate_credits_application_submitted": false,
+      "credit_award_confirmed": false
+    }
   },
   "ai_factory_france_gpu_hours": {
     "status": "NVIDIA Inception catalog request acknowledged; AI Factory France partner application not submitted",
@@ -541,7 +542,7 @@
     }
   },
   "google_cloud_startups": {
-    "status": "NVIDIA Inception catalog request acknowledged; separate Google for Startups Cloud Program application not submitted",
+    "status": "NVIDIA catalog request pending; Google confirmed receipt of the initial Google for Startups Cloud Program application on 2026-10-15; the separate credits application remains unsubmitted and no credit award is confirmed.",
     "offer_amount_usd": "2000-350000; actual tier and award decided by Google",
     "request_channel": "NVIDIA Inception Benefits Catalog",
     "request_acknowledgement": {
@@ -553,7 +554,7 @@
     "partner_application_url": "https://cloud.google.com/startup/apply",
     "application_form_review": {
       "checked_at_utc": "2026-10-18T00:54:30Z",
-      "status": "Partner application page inspected only; no fields were edited and no application was submitted.",
+      "status": "The separate Google credits-application page was inspected only; no fields were edited or submitted there. Gmail separately confirms receipt of the initial Cloud Program application on 2026-10-15.",
       "required_information_observed": [
         "Google Cloud billing account ID",
         "business email and phone",
@@ -562,11 +563,22 @@
         "country and headquarters address",
         "acceptance of Google Cloud and startup-program terms"
       ],
-      "account_profile_issue": "The open form was signed in with a personal Google account and showed prefilled business details that did not match the Dia Health One application. No personal or mismatched values were transmitted to the partner form.",
-      "submission_gate": "Use the Dia Health One Google Workspace identity and verified company/billing details; review the terms and obtain explicit user confirmation immediately before final submission."
+      "account_profile_issue": "The separate credit form was signed in with a personal Google account and showed prefilled business details that did not match Dia Health One. No personal or mismatched values were transmitted through that form.",
+      "submission_gate": "The initial program application was received, but the separate credits application remains unsubmitted. Use the Dia Health One Google Workspace identity and verified company/billing details; review terms and obtain explicit user confirmation immediately before final submission."
     },
     "gpu_allocated": false,
-    "source": "https://cloud.google.com/startup/benefits"
+    "source": "https://cloud.google.com/startup/benefits",
+    "initial_program_application": {
+      "status": "received_pending_review",
+      "received_at_utc": "2026-10-15T20:27:42Z",
+      "subject": "We've received your application to the Google for Startups Cloud Program!",
+      "evidence": "Google confirmed receipt and said it would provide application status in the next few business days. It says credits are deposited only if approved."
+    },
+    "first_step_completion": {
+      "received_at_utc": "2026-10-15T20:05:16Z",
+      "subject": "Google for Startups Cloud Program: First step for application completed",
+      "evidence": "Google says the first step is complete and directs the applicant to apply separately for credits."
+    }
   },
   "european_compute_access": {
     "eurohpc_development_access": {
@@ -590,15 +602,5 @@
       "officially_listed_link": "JUPITER AI Factory (JAIF)",
       "source": "https://www.eurohpc-ju.europa.eu/ai-factory-antennas_en"
     }
-  },
-  "mailbox_check": {
-    "checked_at_utc": "2026-10-18T02:36:21Z",
-    "queries": [
-      "in:anywhere from:inceptionprogram@nvidia.com newer_than:2d",
-      "in:anywhere from:nvidia.com \"Innovation Lab\" newer_than:14d",
-      "in:anywhere {from:patrick@deahealth.one from:patrik@deahealth.one} newer_than:14d"
-    ],
-    "result": "The five NVIDIA catalog acknowledgements remain the latest partner-related messages. No NVIDIA reply to the Innovation Lab support thread was found; no incoming message from Patrick/Patrik was found in the 14-day query.",
-    "monitoring": "Point-in-time searches only; no continuous inbox monitor or hook is configured."
   }
 }

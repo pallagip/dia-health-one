@@ -1,6 +1,6 @@
 # NNC2215–PaG reproducibility milestone report
 
-**Date:** 2026-10-18 03:23 CEST (01:23 UTC)
+**Date:** 2026-10-18 04:48 CEST (02:48 UTC)
 **Status:** Published-data reanalysis and Hill-fit identifiability check complete; PaG-only and generic T4 preflights complete; NVIDIA catalog requests remain pending at partner review; no production GPU allocation; target binding MD not started.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
 
@@ -124,7 +124,7 @@ The local formula comparison now derives the two attachment components from the 
 
 The dashboard was reviewed locally at desktop size. The formula cards, source-derived equality strip, provenance links, readiness state and compute-access panel render together in the Dia Health One visual system. The browser **Run reproduction** action was executed as run DHO-NNC2215-FIG3D-20261018020919 at 2026-10-18T02:09:19.805Z. It read 30 source-data cells, hashed the input as b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f, and reproduced the paired fold changes 3.157629× ± 0.278646 and 12.472023× ± 1.698501 across three experiments. The input checksum and numeric results match the independent Python calculation; the browser manifest is archived at `data/browser-runs/DHO-NNC2215-FIG3D-20261018020919.json`. This reproduces published source-data arithmetic only; it is not a molecular simulation, GPU run, or PaG-binding result.
 
-The user-provided Drive folder was listed. Its direct contents include the existing progress record and company reference documents; no additional NNC2215 coordinates, PaG simulation system, or trajectories were found in that folder. A point-in-time Gmail query at approximately 02:09 UTC for mail from patrick@deahealth.one and patrik@deahealth.one during the last hour returned no messages. Inbox monitoring is still not continuous and no hook is active.
+The user-provided Drive folder was listed. Its direct contents include the existing progress record and company reference documents; no additional NNC2215 coordinates, PaG simulation system, or trajectories were found in that folder. **Correction:** the point-in-time Gmail query at approximately 02:09 UTC used mistyped Patrik addresses and did not establish that no messages existed. A later audit found the existing private hourly monitor and the messages recorded on its Page.
 
 The new browser manifest link, README explanation and archived JSON are currently local alongside the source-component dashboard edits. The last deployed Cloudflare branch preview predates these changes; the company production website remains unchanged. The Inception portal status most recently checked at 02:01:17 UTC still has five pending benefit requests, no Innovation Lab application path, and no GPU allocation. Target NNC2215–PaG binding MD remains not started. Next: publish the feature branch preview, verify the live page and downloadable manifest, then record the deployment commit and workflow result.
 
@@ -146,6 +146,16 @@ The PaG clamp summary script recalculated ratios of the paper's published group 
 
 The 2026 Supporting Information specifies Desmond 6.6 / Schrödinger 2021-2, OPLS4, SPC water, 0.15 mol/L NaCl and 500 ns production. The simulated object was a related in-house crystal structure initially bound to glucose; a snapshot from its glucose trajectory was used to build the PaG starting configuration. The public ACS Figshare item still lists one PDF and no machine-readable coordinates, project/system files, snapshots or trajectories. Thus the exact published molecular-dynamics run cannot be rerun from the public inputs presently available; substituting the 2024 NNC2215 models would be a separate proxy study, not an exact reproduction.
 
-A fresh read-only Gmail query at approximately 02:40 UTC found no new Patrick/Patrik message. The last check of the NVIDIA Innovation Lab support thread, at 02:36 UTC, found no reply. The five NVIDIA catalog requests remain partner referrals; no award or GPU allocation is recorded. The local machine is Apple M4 with no `nvidia-smi`, `nvcc` or GROMACS executable, and its Python environment has no OpenMM. The earlier free Colab T4 result remains a generic 1UBQ preflight. No target NNC2215–PaG run or project compute spend is confirmed. The HunAIFA support form remains unsubmitted at the contact page; approval to transmit contact details and a short project request has not been received. No continuous email-monitoring hook is configured.
+A fresh read-only Gmail query at approximately 02:40 UTC found no new message in its search scope. The last check of the NVIDIA Innovation Lab support thread, at 02:36 UTC, found no reply. The five NVIDIA catalog requests remain partner referrals; no award or GPU allocation is recorded. The local machine is Apple M4 with no `nvidia-smi`, `nvcc` or GROMACS executable, and its Python environment has no OpenMM. The earlier free Colab T4 result remains a generic 1UBQ preflight. No target NNC2215–PaG run or project compute spend is confirmed. The HunAIFA support form remains unsubmitted at the contact page; approval to transmit contact details and a short project request has not been received. Private correspondence and monitoring details are kept in the internal Drive progress record.
 
 The refreshed source-data outputs and access-status manifest are local at this point. They are being prepared for the existing `feat/reproducibility-dashboard` preview; no production-site change is intended.
+
+## Update — 18 October 2026, 04:48 CEST
+
+The NVIDIA catalog state is unchanged: five benefit requests remain pending, with no GPU allocation or target NNC2215–PaG MD. A read-only Gmail search found NVIDIA request receipts but no reply to the Innovation Lab support thread.
+
+Google confirmed receipt of the initial Google for Startups Cloud Program application on 15 October at 20:27:42 UTC, following a message that marked the first step complete. The separate credits-application form linked from the NVIDIA catalog request remains unsubmitted; Google has not confirmed credits or an award. The dashboard and manifest now distinguish the received program application from the outstanding credit application.
+
+The NVIDIA Innovation Lab support thread still has no reply in the latest point-in-time check. The public report excludes private founder correspondence and monitoring details; those remain in the internal Drive progress record.
+
+The local host remains an Apple M4 without `nvidia-smi`, `nvcc`, GROMACS, OpenMM or RDKit. The temporary Colab T4 remains a generic 1UBQ preflight only. No NVIDIA GPU award, project compute spend or target molecular simulation is confirmed. The target MD gate still requires a validated atom-mapped conjugate topology, stereochemistry, protonation, charges, force-field coverage and a reproducible PaG pose.
