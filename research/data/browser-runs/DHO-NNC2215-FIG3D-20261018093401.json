@@ -1,0 +1,415 @@
+{
+  "schema": "dia-health-one.reproduction.v2",
+  "run": {
+    "id": "DHO-NNC2215-FIG3D-20261018093401",
+    "created_at_utc": "2026-10-18T09:34:01.894Z",
+    "engine": "Browser JavaScript arithmetic",
+    "engine_version": "ES2022",
+    "analysis": "source-data reanalysis; group means, sample SD, paired experiment fold changes",
+    "input_sha256": "b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f",
+    "script_sha256": "8883526bcf7f853cefa07dbb2fab5e23e2f0dd15a021a4177cc096148b3b4695",
+    "gpu_simulation": false,
+    "clinical_use": false
+  },
+  "source": {
+    "doi": "10.1038/s41586-024-08042-3",
+    "article": "https://www.nature.com/articles/s41586-024-08042-3",
+    "source_data": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM5_ESM.xlsx",
+    "source_data_sha256": "09a9b6aa4103f9d61af7df03886d59f16d6b09f69f2fe768260548061c7dc81d",
+    "accessed_utc_date": "2026-10-17",
+    "sheet": "Figure 3d",
+    "assay": "hIR-A affinity relative to human insulin; 1.5% HSA",
+    "source_rows": 30,
+    "replicate_design": "Three independent experiments"
+  },
+  "inputs": [
+    {
+      "experiment": 1,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 0,
+      "relative_affinity_percent": 0.7985418265541059,
+      "source_sheet": "Figure 3d",
+      "source_cell": "B5"
+    },
+    {
+      "experiment": 1,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 3,
+      "relative_affinity_percent": 3.094715268628312,
+      "source_sheet": "Figure 3d",
+      "source_cell": "C5"
+    },
+    {
+      "experiment": 1,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 5,
+      "relative_affinity_percent": 4.555531869537412,
+      "source_sheet": "Figure 3d",
+      "source_cell": "D5"
+    },
+    {
+      "experiment": 1,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 10,
+      "relative_affinity_percent": 7.712298682284041,
+      "source_sheet": "Figure 3d",
+      "source_cell": "E5"
+    },
+    {
+      "experiment": 1,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 20,
+      "relative_affinity_percent": 10.15632401705353,
+      "source_sheet": "Figure 3d",
+      "source_cell": "F5"
+    },
+    {
+      "experiment": 1,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 0,
+      "relative_affinity_percent": 0.3567632436139208,
+      "source_sheet": "Figure 3d",
+      "source_cell": "B6"
+    },
+    {
+      "experiment": 1,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 3,
+      "relative_affinity_percent": 0.307669917042643,
+      "source_sheet": "Figure 3d",
+      "source_cell": "C6"
+    },
+    {
+      "experiment": 1,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 5,
+      "relative_affinity_percent": 0.3477624084621644,
+      "source_sheet": "Figure 3d",
+      "source_cell": "D6"
+    },
+    {
+      "experiment": 1,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 10,
+      "relative_affinity_percent": 0.3480918552783744,
+      "source_sheet": "Figure 3d",
+      "source_cell": "E6"
+    },
+    {
+      "experiment": 1,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 20,
+      "relative_affinity_percent": 0.37567899071315924,
+      "source_sheet": "Figure 3d",
+      "source_cell": "F6"
+    },
+    {
+      "experiment": 2,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 0,
+      "relative_affinity_percent": 0.868466898954704,
+      "source_sheet": "Figure 3d",
+      "source_cell": "B10"
+    },
+    {
+      "experiment": 2,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 3,
+      "relative_affinity_percent": 3.262691760240392,
+      "source_sheet": "Figure 3d",
+      "source_cell": "C10"
+    },
+    {
+      "experiment": 2,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 5,
+      "relative_affinity_percent": 4.421816479400749,
+      "source_sheet": "Figure 3d",
+      "source_cell": "D10"
+    },
+    {
+      "experiment": 2,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 10,
+      "relative_affinity_percent": 6.136528685548294,
+      "source_sheet": "Figure 3d",
+      "source_cell": "E10"
+    },
+    {
+      "experiment": 2,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 20,
+      "relative_affinity_percent": 9.261083743842367,
+      "source_sheet": "Figure 3d",
+      "source_cell": "F10"
+    },
+    {
+      "experiment": 2,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 0,
+      "relative_affinity_percent": 0.3533581428318271,
+      "source_sheet": "Figure 3d",
+      "source_cell": "B11"
+    },
+    {
+      "experiment": 2,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 3,
+      "relative_affinity_percent": 0.36565047855370436,
+      "source_sheet": "Figure 3d",
+      "source_cell": "C11"
+    },
+    {
+      "experiment": 2,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 5,
+      "relative_affinity_percent": 0.33846980827808637,
+      "source_sheet": "Figure 3d",
+      "source_cell": "D11"
+    },
+    {
+      "experiment": 2,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 10,
+      "relative_affinity_percent": 0.37257495590828926,
+      "source_sheet": "Figure 3d",
+      "source_cell": "E11"
+    },
+    {
+      "experiment": 2,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 20,
+      "relative_affinity_percent": 0.32376578645235365,
+      "source_sheet": "Figure 3d",
+      "source_cell": "F11"
+    },
+    {
+      "experiment": 3,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 0,
+      "relative_affinity_percent": 0.5909916454776607,
+      "source_sheet": "Figure 3d",
+      "source_cell": "B15"
+    },
+    {
+      "experiment": 3,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 3,
+      "relative_affinity_percent": 2.473867595818815,
+      "source_sheet": "Figure 3d",
+      "source_cell": "C15"
+    },
+    {
+      "experiment": 3,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 5,
+      "relative_affinity_percent": 3.7750906892382106,
+      "source_sheet": "Figure 3d",
+      "source_cell": "D15"
+    },
+    {
+      "experiment": 3,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 10,
+      "relative_affinity_percent": 5.771195097037794,
+      "source_sheet": "Figure 3d",
+      "source_cell": "E15"
+    },
+    {
+      "experiment": 3,
+      "analyte": "NNC2215",
+      "glucose_mmol_L": 20,
+      "relative_affinity_percent": 8.293838862559243,
+      "source_sheet": "Figure 3d",
+      "source_cell": "F15"
+    },
+    {
+      "experiment": 3,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 0,
+      "relative_affinity_percent": 0.3744533947065592,
+      "source_sheet": "Figure 3d",
+      "source_cell": "B16"
+    },
+    {
+      "experiment": 3,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 3,
+      "relative_affinity_percent": 0.3655083655083655,
+      "source_sheet": "Figure 3d",
+      "source_cell": "C16"
+    },
+    {
+      "experiment": 3,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 5,
+      "relative_affinity_percent": 0.3860994311155083,
+      "source_sheet": "Figure 3d",
+      "source_cell": "D16"
+    },
+    {
+      "experiment": 3,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 10,
+      "relative_affinity_percent": 0.4037636969985708,
+      "source_sheet": "Figure 3d",
+      "source_cell": "E16"
+    },
+    {
+      "experiment": 3,
+      "analyte": "Insulin degludec",
+      "glucose_mmol_L": 20,
+      "relative_affinity_percent": 0.40202159430277973,
+      "source_sheet": "Figure 3d",
+      "source_cell": "F16"
+    }
+  ],
+  "series": {
+    "NNC2215": [
+      {
+        "glucose_mmol_L": 0,
+        "values": [
+          0.7985418265541059,
+          0.868466898954704,
+          0.5909916454776607
+        ],
+        "n": 3,
+        "mean": 0.7526667903288237,
+        "sd": 0.14431395734488256
+      },
+      {
+        "glucose_mmol_L": 3,
+        "values": [
+          3.094715268628312,
+          3.262691760240392,
+          2.473867595818815
+        ],
+        "n": 3,
+        "mean": 2.9437582082291733,
+        "sd": 0.4155140384597274
+      },
+      {
+        "glucose_mmol_L": 5,
+        "values": [
+          4.555531869537412,
+          4.421816479400749,
+          3.7750906892382106
+        ],
+        "n": 3,
+        "mean": 4.250813012725457,
+        "sd": 0.41737722528658466
+      },
+      {
+        "glucose_mmol_L": 10,
+        "values": [
+          7.712298682284041,
+          6.136528685548294,
+          5.771195097037794
+        ],
+        "n": 3,
+        "mean": 6.540007488290043,
+        "sd": 1.031536301038599
+      },
+      {
+        "glucose_mmol_L": 20,
+        "values": [
+          10.15632401705353,
+          9.261083743842367,
+          8.293838862559243
+        ],
+        "n": 3,
+        "mean": 9.23708220781838,
+        "sd": 0.9314745262091364
+      }
+    ],
+    "Insulin_degludec": [
+      {
+        "glucose_mmol_L": 0,
+        "values": [
+          0.3567632436139208,
+          0.3533581428318271,
+          0.3744533947065592
+        ],
+        "n": 3,
+        "mean": 0.361524927050769,
+        "sd": 0.011325088731624274
+      },
+      {
+        "glucose_mmol_L": 3,
+        "values": [
+          0.307669917042643,
+          0.36565047855370436,
+          0.3655083655083655
+        ],
+        "n": 3,
+        "mean": 0.34627625370157095,
+        "sd": 0.03343414380085539
+      },
+      {
+        "glucose_mmol_L": 5,
+        "values": [
+          0.3477624084621644,
+          0.33846980827808637,
+          0.3860994311155083
+        ],
+        "n": 3,
+        "mean": 0.3574438826185864,
+        "sd": 0.025247642450135152
+      },
+      {
+        "glucose_mmol_L": 10,
+        "values": [
+          0.3480918552783744,
+          0.37257495590828926,
+          0.4037636969985708
+        ],
+        "n": 3,
+        "mean": 0.3748101693950781,
+        "sd": 0.027903147217263724
+      },
+      {
+        "glucose_mmol_L": 20,
+        "values": [
+          0.37567899071315924,
+          0.32376578645235365,
+          0.40202159430277973
+        ],
+        "n": 3,
+        "mean": 0.36715545715609754,
+        "sd": 0.039818096812937576
+      }
+    ]
+  },
+  "fold_changes": [
+    {
+      "from_glucose_mmol_L": 3,
+      "to_glucose_mmol_L": 20,
+      "replicate_ratios": [
+        3.281828257355377,
+        2.8384795207132956,
+        3.352579934583807
+      ],
+      "mean_within_experiment_ratio": 3.1576292375508266,
+      "sd_within_experiment_ratio": 0.27864647185235664,
+      "published_reported_fold": 3.2,
+      "matches_published_rounding": true
+    },
+    {
+      "from_glucose_mmol_L": 0,
+      "to_glucose_mmol_L": 20,
+      "replicate_ratios": [
+        12.718587404344786,
+        10.663715283782382,
+        14.033766680163243
+      ],
+      "mean_within_experiment_ratio": 12.472023122763469,
+      "sd_within_experiment_ratio": 1.6985014166246464,
+      "published_reported_fold": 12.5,
+      "matches_published_rounding": true
+    }
+  ],
+  "interpretation": {
+    "hill_fit": "A separate SciPy shared-slope Hill fit is available in data/hill-fit-summary.json. It is exploratory; its EC50 bootstrap upper tail is censored at the 1000 mmol/L fit ceiling and does not establish a threshold.",
+    "scope": "Published in-vitro data reanalysis only; no molecular dynamics, binding free-energy, or patient-response model was run."
+  }
+}
