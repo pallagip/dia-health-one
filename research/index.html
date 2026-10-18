@@ -308,8 +308,8 @@
             <div class="register-card-top"><span>RUN 07 · TARGET MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
             <h4>Macrocycle analogue · PaG</h4>
             <div class="register-single-value"><strong>500 ns</strong><small>published production method</small></div>
-            <p>The published 500 ns study used an in-house glucose-bound macrocycle analogue, not full NNC2215; its seed coordinates are not public. Our PaG-only water pilot checks setup stability, not binding. Conjugate chemistry and GPU allocation remain pending.</p>
-            <div class="register-links"><a href="data/pag-md-protocol.json" download>Published method ↓</a><a href="data/target-md-pilot-protocol.json" download>Proposed pilot ↓</a><a href="data/pag-solvation-preflight/latest.json" download>Latest solvent pilot ↓</a><a href="#readiness">Readiness gates ↘</a></div>
+            <p>Published method: Desmond 6.6, OPLS4, SPC water and 0.15 M NaCl. A 500 ns glucose-bound macrocycle-analogue trajectory supplied the snapshot used to build the PaG start; the same protocol was then applied. The in-house crystal coordinates and trajectory are not public, so an exact rerun is blocked. Our NVIDIA runner is a separate PaG-in-water portability check, not binding MD, and remains unrun.</p>
+            <div class="register-links"><a href="data/pag-md-protocol.json" download>Published method ↓</a><a href="data/target-md-pilot-protocol.json" download>Proposed pilot ↓</a><a href="data/pag-solvation-preflight/latest.json" download>Latest solvent pilot ↓</a><a href="https://github.com/pallagip/dia-health-one/blob/a1b679056acad6b665d7313003e6e0fb1acbcb9c/research/run_pag_gpu_portability.py" target="_blank" rel="noreferrer">NVIDIA runner source ↗</a><a href="https://github.com/pallagip/dia-health-one/blob/a1b679056acad6b665d7313003e6e0fb1acbcb9c/research/README.md#nvidia-portability-preflight" target="_blank" rel="noreferrer">Run instructions ↗</a><a href="#readiness">Readiness gates ↘</a></div>
           </article>
         </div>
         <article class="structure-audit" aria-labelledby="structure-audit-title">
