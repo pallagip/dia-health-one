@@ -43,7 +43,7 @@
         <div class="workflow">
           <div class="workflow-step done"><span class="step-number">01</span><div><b>Published evidence</b><small>Nature 2024 · ACS 2026</small></div><i class="step-check">✓</i></div>
           <div class="workflow-step done"><span class="step-number">02</span><div><b>Source-data analysis</b><small>4 reanalyses · published benchmarks</small></div><i class="step-check">✓</i></div>
-          <div class="workflow-step done"><span class="step-number">03</span><div><b>PaG solvent preflight</b><small>2 × 100 ps · Apple M4 OpenCL</small></div><i class="step-check">✓</i></div>
+          <div class="workflow-step done"><span class="step-number">03</span><div><b>PaG input preflights</b><small>Solvent runs · ligand file audit</small></div><i class="step-check">✓</i></div>
           <div class="workflow-step active"><span class="step-number">04</span><div><b>Target binding MD</b><small>Conjugate parameters · compute pending</small></div><i class="step-wait">•••</i></div>
         </div>
         <div class="index-foot"><span>DEMO ENVIRONMENT</span><span>APPLE M4 OPENCL</span></div>
@@ -250,7 +250,7 @@
     <section class="reproduction wrap section-space" id="reproduction">
       <div class="section-heading">
         <div><div class="section-kicker">03 / REPRODUCIBILITY RUN</div><h2>Re-run the source analysis.</h2></div>
-        <div class="heading-note">4 source-data reanalyses · engine preflight<br />source values checked against workbook</div>
+        <div class="heading-note">4 published-data reanalyses · 1 analogue PMF reanalysis<br />source values checked against original records</div>
       </div>
       <div class="run-console">
         <div class="console-top"><span><i></i> ANALYSIS READY</span><span>INPUT · FIGURE 3D CSV</span></div>
@@ -265,7 +265,7 @@
       </div>
       <div class="run-register" aria-label="Current research run register">
           <div class="run-register-heading">
-          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four source-data reanalyses and one Hill-fit identifiability check complete. PaG hydration and public-model audits are also recorded; target binding MD has not started.</h3></div>
+          <div><div class="section-kicker">CURRENT RUN REGISTER</div><h3>Four published-data reanalyses, one Hill-fit check, a PaG ligand-file audit, and a public analogue PMF reanalysis complete. Target binding MD has not started.</h3></div>
           <a class="run-register-status-link" href="data/nvidia-access-status.json" download>Compute status manifest <span>↓</span></a>
         </div>
         <div class="run-register-grid">
@@ -297,8 +297,15 @@
             <p>Bootstrap over three experiments reaches the 1,000 mM fit ceiling for EC50. This is an exploratory fit, not a reliable midpoint or activation threshold.</p>
             <div class="register-links"><a href="data/hill-fit-summary.json" download>Fit JSON ↓</a><a href="fit_nnc2215_hill_response.py">Python script ↗</a></div>
           </article>
+          <article class="register-card">
+            <div class="register-card-top"><span>RUN 06 · PAG LIGAND FILE AUDIT</span><span class="register-state register-done">FILE AUDIT COMPLETE</span></div>
+            <h4>GAFF2 connectivity + stereochemistry</h4>
+            <div class="register-values"><div><strong>39 / 39</strong><small>atoms in source order</small></div><div><strong>5 / 5</strong><small>CIP labels preserved</small></div></div>
+            <p>All 40 bonds map to the source graph. OpenMM loads the Amber files with net charge −1.000001 e and finite initial energy. This checks PaG alone, not conjugate parameters or binding.</p>
+            <div class="register-links"><a href="data/pag-gaff2-validation.json" download>Audit JSON ↓</a><a href="validate_pag_gaff2.py">Audit script ↗</a><a href="ligands/pag-gaff2/pag-carboxylate-gaff2.mol2" download>GAFF2 Mol2 ↓</a></div>
+          </article>
           <article class="register-card register-card-pending">
-            <div class="register-card-top"><span>RUN 06 · TARGET MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
+            <div class="register-card-top"><span>RUN 07 · TARGET MOLECULAR DYNAMICS</span><span class="register-state register-pending">NOT STARTED</span></div>
             <h4>Macrocycle analogue · PaG</h4>
             <div class="register-single-value"><strong>500 ns</strong><small>published production method</small></div>
             <p>The published 500 ns study used an in-house glucose-bound macrocycle analogue, not full NNC2215; its seed coordinates are not public. Our PaG-only water pilot checks setup stability, not binding. Conjugate chemistry and GPU allocation remain pending.</p>
@@ -359,6 +366,19 @@
         <div class="pag-solvation-boundary"><b>Interpretation</b><p>Both production traces remained finite and had mean temperatures near the 298.15 K target. The periodic box contains one PaG at an implied concentration of about 0.118 M; this is a finite-box consequence, not the 70 μM assay condition. No NNC2215, macrocycle, receptor, binding energy, or NVIDIA GPU is included.</p></div>
         <div class="pag-solvation-links"><a href="data/pag-solvation-preflight/latest.json" download>Latest run pointer ↓</a><a href="data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z.json" download>Run manifest ↓</a><a href="data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z-analysis.json" download>Production summary ↓</a><a href="data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z-replicate-01.csv" download>Replicate 1 trace ↓</a><a href="data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z-replicate-02.csv" download>Replicate 2 trace ↓</a><a href="run_pag_solvation_preflight.py">Re-run pilot ↗</a><a href="plot_pag_solvation_preflight.py">Rebuild figure ↗</a><a href="ligands/pag-pubchem-cid83944.json" download>PaG identity &amp; checksum ↓</a><a href="ligands/pag-chemistry-preflight.json" download>Ligand parameter record ↓</a><a href="pag-chemistry-environment-macos-arm64.lock.txt">Locked environment ↗</a></div>
       </article>
+      <article class="engine-preflight analogue-pmf" aria-labelledby="analogue-pmf-title">
+        <div class="engine-preflight-header">
+          <div><div class="section-kicker">PUBLIC METHOD ANALOGUE / SOURCE-TRAJECTORY REANALYSIS</div><h3 id="analogue-pmf-title">WHAM reanalysis lands within the published GluHUT uncertainty.</h3><p>We reprocessed the authors’ public umbrella-sampling trajectories with Grossfield WHAM 2.0.11. This is a methods check on a biomimetic receptor analogue.</p></div>
+          <span class="engine-preflight-status"><i></i> ANALYSIS COMPLETE · CPU WHAM</span>
+        </div>
+        <figure class="engine-figure">
+          <img src="assets/gluhut-glucose-pmf.svg" width="1000" height="453" loading="lazy" alt="Three independent GluHUT and glucose unbinding free-energy profiles, with a mean and between-run standard deviation. The reproduced mean binding free energy is minus 12.78 plus or minus 1.02 kilocalories per mole, compared with the published minus 12.5 plus or minus 0.9." />
+          <figcaption>PMFs are reanalysed from deposited trajectories. The binding free energy is the global profile minimum relative to the 13–15 Å bulk region; shaded band shows between-run ±1 sample SD.</figcaption>
+        </figure>
+        <div class="engine-preflight-facts"><div><strong>−12.78 ± 1.02</strong><small>reanalysed ΔG · kcal/mol</small></div><div><strong>−12.5 ± 0.9</strong><small>published ΔG · kcal/mol</small></div><div><strong>3 × 51</strong><small>PMFs × windows per PMF</small></div><div><strong>0</strong><small>new MD runs · CPU post-processing</small></div></div>
+        <div class="engine-preflight-boundary"><b>SCOPE LIMIT</b><p>GluHUT is a biomimetic glucose receptor; these files contain D-glucose, not PaG or NNC2215. This reanalysis checks a public WHAM workflow and does not establish NNC2215–PaG binding, receptor activity, or clinical effects.</p></div>
+        <div class="engine-preflight-links"><a href="data/gluhut-glucose-wham-reproduction.json" download>Reanalysis JSON ↓</a><a href="reproduce_gluhut_glucose_pmf.py">Re-run WHAM analysis ↗</a><a href="https://pubs.rsc.org/en/content/articlehtml/2026/sc/d6sc00738d" target="_blank" rel="noreferrer">Source article ↗</a><a href="https://zenodo.org/records/19664426" target="_blank" rel="noreferrer">Source trajectories ↗</a><a href="https://github.com/agrossfield/wham/tree/43bdd6fcd1916ae2b169cb52ac326b7eea567abb" target="_blank" rel="noreferrer">Pinned WHAM source ↗</a></div>
+      </article>
     </section>
 
     <section class="readiness wrap section-space" id="readiness">
@@ -392,6 +412,9 @@
           <a class="source-item" href="data/nnc2215-connectivity-audit.json" download><span class="source-no">12</span><span><b>NNC2215 serial-connectivity audit</b><small>Publisher PDB CONECT/LINK records · duplicate-name mapping, resolved links, and remaining bond-order gaps</small></span><span class="source-arrow">↓</span></a>
           <a class="source-item" href="https://www.wwpdb.org/documentation/file-format-content/format23/sect10.html" target="_blank" rel="noreferrer"><span class="source-no">13</span><span><b>wwPDB PDB connectivity specification</b><small>CONECT records identify atom serials; charge distinction and bond orders require separate chemical evidence</small></span><span class="source-arrow">↗</span></a>
           <a class="source-item" href="data/pag-assay-source-audit.json" download><span class="source-no">14</span><span><b>PaG receptor-assay source audit</b><small>Exact text values, CC BY-NC-ND 4.0 license, and missing machine-readable curve data</small></span><span class="source-arrow">↓</span></a>
+          <a class="source-item" href="https://pubs.rsc.org/en/content/articlehtml/2026/sc/d6sc00738d" target="_blank" rel="noreferrer"><span class="source-no">15</span><span><b>Eades et al. · GluHUT glucose receptor</b><small>Chemical Science · 2026 · public host–guest PMF analogue and umbrella-sampling method</small></span><span class="source-arrow">↗</span></a>
+          <a class="source-item" href="https://zenodo.org/records/19664426" target="_blank" rel="noreferrer"><span class="source-no">16</span><span><b>GluHUT umbrella-sampling dataset</b><small>Zenodo · deposited windows, trajectories, and WHAM inputs used in this reanalysis</small></span><span class="source-arrow">↗</span></a>
+          <a class="source-item" href="data/pag-gaff2-validation.json" download><span class="source-no">17</span><span><b>PaG GAFF2 ligand-only audit</b><small>Source graph, CIP stereochemistry, charge, and OpenMM Amber-file load check</small></span><span class="source-arrow">↓</span></a>
         </div>
       </div>
     </section>

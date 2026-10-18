@@ -1,0 +1,3319 @@
+{
+  "record_type": "public_analogue_pmf_reproduction",
+  "created_at_utc": "2026-10-18T00:28:59.793398+00:00",
+  "system": "GluHUT host with D-glucose; public methodological analogue only",
+  "not_target_claim": "This is not an NNC2215\u2013PaG simulation or a target reproduction.",
+  "sources": {
+    "article": {
+      "citation": "Eades et al., Chem. Sci. 2026, 17, 10896\u201310906",
+      "doi": "10.1039/D6SC00738D",
+      "url": "https://pubs.rsc.org/en/content/articlehtml/2026/sc/d6sc00738d",
+      "license": "CC BY 3.0",
+      "published_glucose_binding_free_energy_kcal_mol": {
+        "mean": -12.5,
+        "sd": 0.9
+      }
+    },
+    "dataset": {
+      "doi": "10.5281/zenodo.19664426",
+      "url": "https://zenodo.org/records/19664426",
+      "license": "CC BY 4.0",
+      "file": "WHAM_PMF.zip",
+      "download_url": "https://zenodo.org/api/records/19664426/files/WHAM_PMF.zip/content",
+      "archive_sha256": "e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb"
+    }
+  },
+  "analysis": {
+    "method": "Weighted Histogram Analysis Method on deposited reaction-coordinate time series",
+    "software": {
+      "name": "Grossfield WHAM",
+      "version": "2.0.11",
+      "repository": "https://github.com/agrossfield/wham",
+      "source_commit": "43bdd6fcd1916ae2b169cb52ac326b7eea567abb",
+      "binary_sha256": "695a695e996672220d44443b461a119f35ed946fef55c79696f7a58f9ed98e9c"
+    },
+    "parameters": {
+      "reaction_coordinate": "distance between sugar-ring COM and GluHUT cavity COM, \u00c5",
+      "range_angstrom": [
+        0.0,
+        15.0
+      ],
+      "bins": 400,
+      "temperature_kelvin": 300,
+      "tolerance": 1e-06,
+      "periodic": false,
+      "wham_metadata_spring_kcal_mol_angstrom2": 100.0,
+      "article_reported_amber_spring_kcal_mol_angstrom2": 50.0,
+      "spring_convention_note": "Zenodo example metadata uses 100; the paper reports Amber restraint constant 50. Grossfield WHAM documentation explains that Amber omits the 1/2 factor, so WHAM metadata uses twice the Amber value.",
+      "bulk_region_angstrom": [
+        13.0,
+        15.0
+      ],
+      "binding_free_energy_definition": "global PMF minimum minus mean PMF over the 13\u201315 \u00c5 bulk region"
+    },
+    "replicates": [
+      {
+        "run": 1,
+        "windows": 51,
+        "frames_across_windows": 765051,
+        "wham_convergence_iteration": 49280,
+        "binding_free_energy_kcal_mol": -13.794472169811321,
+        "metadata_source": "Zenodo example metadata, validated against extracted run-1 windows"
+      },
+      {
+        "run": 2,
+        "windows": 51,
+        "frames_across_windows": 765051,
+        "wham_convergence_iteration": 46810,
+        "binding_free_energy_kcal_mol": -12.79014541509434,
+        "metadata_source": "generated using the Zenodo run-1 metadata convention"
+      },
+      {
+        "run": 3,
+        "windows": 51,
+        "frames_across_windows": 765051,
+        "wham_convergence_iteration": 46400,
+        "binding_free_energy_kcal_mol": -11.760403301886793,
+        "metadata_source": "generated using the Zenodo run-1 metadata convention"
+      }
+    ],
+    "result": {
+      "mean_binding_free_energy_kcal_mol": -12.781673628930818,
+      "sd_across_independent_pmfs_kcal_mol": 1.0170608970143054,
+      "published_mean_kcal_mol": -12.5,
+      "published_sd_kcal_mol": 0.9,
+      "difference_from_published_mean_kcal_mol": -0.28167362893081815,
+      "mean_within_published_one_sd": true,
+      "mean_profile": [
+        {
+          "coordinate_angstrom": 0.01875,
+          "mean_kcal_mol": 2.488172666666667,
+          "sd_kcal_mol": 0.05535041774307885
+        },
+        {
+          "coordinate_angstrom": 0.05625,
+          "mean_kcal_mol": 1.358374,
+          "sd_kcal_mol": 0.05796396510764246
+        },
+        {
+          "coordinate_angstrom": 0.09375,
+          "mean_kcal_mol": 0.763631,
+          "sd_kcal_mol": 0.06369972995233183
+        },
+        {
+          "coordinate_angstrom": 0.13125,
+          "mean_kcal_mol": 0.431127,
+          "sd_kcal_mol": 0.05228945270319818
+        },
+        {
+          "coordinate_angstrom": 0.16875,
+          "mean_kcal_mol": 0.195224,
+          "sd_kcal_mol": 0.061620766361673886
+        },
+        {
+          "coordinate_angstrom": 0.20625,
+          "mean_kcal_mol": 0.08855933333333334,
+          "sd_kcal_mol": 0.05706458623641578
+        },
+        {
+          "coordinate_angstrom": 0.24375,
+          "mean_kcal_mol": 0.043966333333333336,
+          "sd_kcal_mol": 0.04289728630500225
+        },
+        {
+          "coordinate_angstrom": 0.28125,
+          "mean_kcal_mol": 0.09671733333333334,
+          "sd_kcal_mol": 0.0691758153788832
+        },
+        {
+          "coordinate_angstrom": 0.31875,
+          "mean_kcal_mol": 0.129585,
+          "sd_kcal_mol": 0.04663128474532951
+        },
+        {
+          "coordinate_angstrom": 0.35625,
+          "mean_kcal_mol": 0.241253,
+          "sd_kcal_mol": 0.05121884168936272
+        },
+        {
+          "coordinate_angstrom": 0.39375,
+          "mean_kcal_mol": 0.32331333333333334,
+          "sd_kcal_mol": 0.061168306927144346
+        },
+        {
+          "coordinate_angstrom": 0.43125,
+          "mean_kcal_mol": 0.430077,
+          "sd_kcal_mol": 0.06686319037407652
+        },
+        {
+          "coordinate_angstrom": 0.46875,
+          "mean_kcal_mol": 0.47207400000000005,
+          "sd_kcal_mol": 0.06109206701364753
+        },
+        {
+          "coordinate_angstrom": 0.50625,
+          "mean_kcal_mol": 0.4729163333333333,
+          "sd_kcal_mol": 0.02250614232455962
+        },
+        {
+          "coordinate_angstrom": 0.54375,
+          "mean_kcal_mol": 0.430313,
+          "sd_kcal_mol": 0.018034713305178987
+        },
+        {
+          "coordinate_angstrom": 0.58125,
+          "mean_kcal_mol": 0.4035883333333333,
+          "sd_kcal_mol": 0.023183908219567565
+        },
+        {
+          "coordinate_angstrom": 0.61875,
+          "mean_kcal_mol": 0.31773833333333334,
+          "sd_kcal_mol": 0.052344640120391826
+        },
+        {
+          "coordinate_angstrom": 0.65625,
+          "mean_kcal_mol": 0.2545503333333333,
+          "sd_kcal_mol": 0.049131864714595706
+        },
+        {
+          "coordinate_angstrom": 0.69375,
+          "mean_kcal_mol": 0.15985366666666667,
+          "sd_kcal_mol": 0.03937772332592799
+        },
+        {
+          "coordinate_angstrom": 0.73125,
+          "mean_kcal_mol": 0.08952566666666667,
+          "sd_kcal_mol": 0.06214591108297741
+        },
+        {
+          "coordinate_angstrom": 0.76875,
+          "mean_kcal_mol": 0.024474,
+          "sd_kcal_mol": 0.03842332428356505
+        },
+        {
+          "coordinate_angstrom": 0.80625,
+          "mean_kcal_mol": 0.049584,
+          "sd_kcal_mol": 0.06336068963482011
+        },
+        {
+          "coordinate_angstrom": 0.84375,
+          "mean_kcal_mol": 0.032617,
+          "sd_kcal_mol": 0.056494301190474064
+        },
+        {
+          "coordinate_angstrom": 0.88125,
+          "mean_kcal_mol": 0.05287266666666667,
+          "sd_kcal_mol": 0.07139590461877582
+        },
+        {
+          "coordinate_angstrom": 0.91875,
+          "mean_kcal_mol": 0.07559500000000001,
+          "sd_kcal_mol": 0.09584989114756469
+        },
+        {
+          "coordinate_angstrom": 0.95625,
+          "mean_kcal_mol": 0.13731133333333334,
+          "sd_kcal_mol": 0.08343035163735878
+        },
+        {
+          "coordinate_angstrom": 0.99375,
+          "mean_kcal_mol": 0.182074,
+          "sd_kcal_mol": 0.08563292947809273
+        },
+        {
+          "coordinate_angstrom": 1.03125,
+          "mean_kcal_mol": 0.2661576666666667,
+          "sd_kcal_mol": 0.05950262347437575
+        },
+        {
+          "coordinate_angstrom": 1.06875,
+          "mean_kcal_mol": 0.3778823333333333,
+          "sd_kcal_mol": 0.053374429142926984
+        },
+        {
+          "coordinate_angstrom": 1.10625,
+          "mean_kcal_mol": 0.5554830000000001,
+          "sd_kcal_mol": 0.06989904369159854
+        },
+        {
+          "coordinate_angstrom": 1.14375,
+          "mean_kcal_mol": 0.702178,
+          "sd_kcal_mol": 0.06800160532663921
+        },
+        {
+          "coordinate_angstrom": 1.18125,
+          "mean_kcal_mol": 0.909114,
+          "sd_kcal_mol": 0.06062133471806767
+        },
+        {
+          "coordinate_angstrom": 1.21875,
+          "mean_kcal_mol": 1.087232,
+          "sd_kcal_mol": 0.0633010094785225
+        },
+        {
+          "coordinate_angstrom": 1.25625,
+          "mean_kcal_mol": 1.3051433333333333,
+          "sd_kcal_mol": 0.04453034544367852
+        },
+        {
+          "coordinate_angstrom": 1.29375,
+          "mean_kcal_mol": 1.5321236666666667,
+          "sd_kcal_mol": 0.030235623266824458
+        },
+        {
+          "coordinate_angstrom": 1.33125,
+          "mean_kcal_mol": 1.8083343333333333,
+          "sd_kcal_mol": 0.04765397218840559
+        },
+        {
+          "coordinate_angstrom": 1.36875,
+          "mean_kcal_mol": 2.0663406666666666,
+          "sd_kcal_mol": 0.04827337205264749
+        },
+        {
+          "coordinate_angstrom": 1.40625,
+          "mean_kcal_mol": 2.3699233333333334,
+          "sd_kcal_mol": 0.06420971999887048
+        },
+        {
+          "coordinate_angstrom": 1.44375,
+          "mean_kcal_mol": 2.6362343333333333,
+          "sd_kcal_mol": 0.07805448377468985
+        },
+        {
+          "coordinate_angstrom": 1.48125,
+          "mean_kcal_mol": 2.9601113333333333,
+          "sd_kcal_mol": 0.09340980886573608
+        },
+        {
+          "coordinate_angstrom": 1.51875,
+          "mean_kcal_mol": 3.241085,
+          "sd_kcal_mol": 0.09172237072274145
+        },
+        {
+          "coordinate_angstrom": 1.55625,
+          "mean_kcal_mol": 3.6291396666666667,
+          "sd_kcal_mol": 0.11239702010877932
+        },
+        {
+          "coordinate_angstrom": 1.59375,
+          "mean_kcal_mol": 3.962653,
+          "sd_kcal_mol": 0.11188417758110374
+        },
+        {
+          "coordinate_angstrom": 1.63125,
+          "mean_kcal_mol": 4.386875666666667,
+          "sd_kcal_mol": 0.06157706311877286
+        },
+        {
+          "coordinate_angstrom": 1.66875,
+          "mean_kcal_mol": 4.763221333333333,
+          "sd_kcal_mol": 0.030682065157569095
+        },
+        {
+          "coordinate_angstrom": 1.70625,
+          "mean_kcal_mol": 5.197959333333333,
+          "sd_kcal_mol": 0.0620635470895218
+        },
+        {
+          "coordinate_angstrom": 1.74375,
+          "mean_kcal_mol": 5.586552333333334,
+          "sd_kcal_mol": 0.11141357399048536
+        },
+        {
+          "coordinate_angstrom": 1.78125,
+          "mean_kcal_mol": 6.034623666666667,
+          "sd_kcal_mol": 0.1734637140912569
+        },
+        {
+          "coordinate_angstrom": 1.81875,
+          "mean_kcal_mol": 6.484083666666667,
+          "sd_kcal_mol": 0.2692499493135203
+        },
+        {
+          "coordinate_angstrom": 1.85625,
+          "mean_kcal_mol": 6.966505333333333,
+          "sd_kcal_mol": 0.3300279041631685
+        },
+        {
+          "coordinate_angstrom": 1.89375,
+          "mean_kcal_mol": 7.359388333333333,
+          "sd_kcal_mol": 0.3798307316691651
+        },
+        {
+          "coordinate_angstrom": 1.93125,
+          "mean_kcal_mol": 7.782297666666667,
+          "sd_kcal_mol": 0.3331701007628586
+        },
+        {
+          "coordinate_angstrom": 1.96875,
+          "mean_kcal_mol": 8.021763666666667,
+          "sd_kcal_mol": 0.22476236125368745
+        },
+        {
+          "coordinate_angstrom": 2.00625,
+          "mean_kcal_mol": 8.215130666666667,
+          "sd_kcal_mol": 0.1388891002142836
+        },
+        {
+          "coordinate_angstrom": 2.04375,
+          "mean_kcal_mol": 8.352993,
+          "sd_kcal_mol": 0.2903965434866611
+        },
+        {
+          "coordinate_angstrom": 2.08125,
+          "mean_kcal_mol": 8.475707,
+          "sd_kcal_mol": 0.5598546260869867
+        },
+        {
+          "coordinate_angstrom": 2.11875,
+          "mean_kcal_mol": 8.552003333333333,
+          "sd_kcal_mol": 0.8351223046370715
+        },
+        {
+          "coordinate_angstrom": 2.15625,
+          "mean_kcal_mol": 8.694469333333334,
+          "sd_kcal_mol": 1.1726587881393007
+        },
+        {
+          "coordinate_angstrom": 2.19375,
+          "mean_kcal_mol": 8.742464333333334,
+          "sd_kcal_mol": 1.4137515005934864
+        },
+        {
+          "coordinate_angstrom": 2.23125,
+          "mean_kcal_mol": 8.782411,
+          "sd_kcal_mol": 1.5603190186163851
+        },
+        {
+          "coordinate_angstrom": 2.26875,
+          "mean_kcal_mol": 8.644442333333334,
+          "sd_kcal_mol": 1.4641311347858614
+        },
+        {
+          "coordinate_angstrom": 2.30625,
+          "mean_kcal_mol": 8.586499333333332,
+          "sd_kcal_mol": 1.426881561369875
+        },
+        {
+          "coordinate_angstrom": 2.34375,
+          "mean_kcal_mol": 8.507187,
+          "sd_kcal_mol": 1.346865748579642
+        },
+        {
+          "coordinate_angstrom": 2.38125,
+          "mean_kcal_mol": 8.451939333333334,
+          "sd_kcal_mol": 1.2846588176735223
+        },
+        {
+          "coordinate_angstrom": 2.41875,
+          "mean_kcal_mol": 8.39198,
+          "sd_kcal_mol": 1.2255542608416001
+        },
+        {
+          "coordinate_angstrom": 2.45625,
+          "mean_kcal_mol": 8.359133666666667,
+          "sd_kcal_mol": 1.1681544541734763
+        },
+        {
+          "coordinate_angstrom": 2.49375,
+          "mean_kcal_mol": 8.295502,
+          "sd_kcal_mol": 1.1111925933288975
+        },
+        {
+          "coordinate_angstrom": 2.53125,
+          "mean_kcal_mol": 8.274149666666666,
+          "sd_kcal_mol": 1.0434727707162907
+        },
+        {
+          "coordinate_angstrom": 2.56875,
+          "mean_kcal_mol": 8.222812666666666,
+          "sd_kcal_mol": 0.9889382327761088
+        },
+        {
+          "coordinate_angstrom": 2.60625,
+          "mean_kcal_mol": 8.232555,
+          "sd_kcal_mol": 0.9095093749252945
+        },
+        {
+          "coordinate_angstrom": 2.64375,
+          "mean_kcal_mol": 8.232730333333333,
+          "sd_kcal_mol": 0.8490610741674203
+        },
+        {
+          "coordinate_angstrom": 2.68125,
+          "mean_kcal_mol": 8.256085666666667,
+          "sd_kcal_mol": 0.7829939658211512
+        },
+        {
+          "coordinate_angstrom": 2.71875,
+          "mean_kcal_mol": 8.234014,
+          "sd_kcal_mol": 0.7220623652143907
+        },
+        {
+          "coordinate_angstrom": 2.75625,
+          "mean_kcal_mol": 8.259889333333334,
+          "sd_kcal_mol": 0.6843281180284301
+        },
+        {
+          "coordinate_angstrom": 2.79375,
+          "mean_kcal_mol": 8.242741333333333,
+          "sd_kcal_mol": 0.6283084542367177
+        },
+        {
+          "coordinate_angstrom": 2.83125,
+          "mean_kcal_mol": 8.278343666666666,
+          "sd_kcal_mol": 0.5831487899647343
+        },
+        {
+          "coordinate_angstrom": 2.86875,
+          "mean_kcal_mol": 8.297760333333333,
+          "sd_kcal_mol": 0.5389356544842187
+        },
+        {
+          "coordinate_angstrom": 2.90625,
+          "mean_kcal_mol": 8.339883666666667,
+          "sd_kcal_mol": 0.49949654107444313
+        },
+        {
+          "coordinate_angstrom": 2.94375,
+          "mean_kcal_mol": 8.377120333333334,
+          "sd_kcal_mol": 0.44374509620088615
+        },
+        {
+          "coordinate_angstrom": 2.98125,
+          "mean_kcal_mol": 8.415655333333333,
+          "sd_kcal_mol": 0.44307735770668016
+        },
+        {
+          "coordinate_angstrom": 3.01875,
+          "mean_kcal_mol": 8.456617666666666,
+          "sd_kcal_mol": 0.417563211497772
+        },
+        {
+          "coordinate_angstrom": 3.05625,
+          "mean_kcal_mol": 8.523918333333333,
+          "sd_kcal_mol": 0.3855854032303778
+        },
+        {
+          "coordinate_angstrom": 3.09375,
+          "mean_kcal_mol": 8.529371666666666,
+          "sd_kcal_mol": 0.36290859122695596
+        },
+        {
+          "coordinate_angstrom": 3.13125,
+          "mean_kcal_mol": 8.597381333333333,
+          "sd_kcal_mol": 0.38875839243202637
+        },
+        {
+          "coordinate_angstrom": 3.16875,
+          "mean_kcal_mol": 8.621772,
+          "sd_kcal_mol": 0.34874305206555717
+        },
+        {
+          "coordinate_angstrom": 3.20625,
+          "mean_kcal_mol": 8.701690333333334,
+          "sd_kcal_mol": 0.3471468372639064
+        },
+        {
+          "coordinate_angstrom": 3.24375,
+          "mean_kcal_mol": 8.738515666666666,
+          "sd_kcal_mol": 0.3329920785339092
+        },
+        {
+          "coordinate_angstrom": 3.28125,
+          "mean_kcal_mol": 8.81527,
+          "sd_kcal_mol": 0.3291083824046416
+        },
+        {
+          "coordinate_angstrom": 3.31875,
+          "mean_kcal_mol": 8.857754,
+          "sd_kcal_mol": 0.3305448481099049
+        },
+        {
+          "coordinate_angstrom": 3.35625,
+          "mean_kcal_mol": 8.952231,
+          "sd_kcal_mol": 0.3215179563368114
+        },
+        {
+          "coordinate_angstrom": 3.39375,
+          "mean_kcal_mol": 8.978514333333333,
+          "sd_kcal_mol": 0.3113345106382099
+        },
+        {
+          "coordinate_angstrom": 3.43125,
+          "mean_kcal_mol": 9.064365333333333,
+          "sd_kcal_mol": 0.3364739568262794
+        },
+        {
+          "coordinate_angstrom": 3.46875,
+          "mean_kcal_mol": 9.096740333333333,
+          "sd_kcal_mol": 0.29757392183847864
+        },
+        {
+          "coordinate_angstrom": 3.50625,
+          "mean_kcal_mol": 9.218983666666666,
+          "sd_kcal_mol": 0.30339846562620193
+        },
+        {
+          "coordinate_angstrom": 3.54375,
+          "mean_kcal_mol": 9.282277666666667,
+          "sd_kcal_mol": 0.3285126838256528
+        },
+        {
+          "coordinate_angstrom": 3.58125,
+          "mean_kcal_mol": 9.400161666666666,
+          "sd_kcal_mol": 0.32194060774362304
+        },
+        {
+          "coordinate_angstrom": 3.61875,
+          "mean_kcal_mol": 9.449673,
+          "sd_kcal_mol": 0.3333916783919476
+        },
+        {
+          "coordinate_angstrom": 3.65625,
+          "mean_kcal_mol": 9.547383666666667,
+          "sd_kcal_mol": 0.3423603459402584
+        },
+        {
+          "coordinate_angstrom": 3.69375,
+          "mean_kcal_mol": 9.601898666666667,
+          "sd_kcal_mol": 0.3382782209340909
+        },
+        {
+          "coordinate_angstrom": 3.73125,
+          "mean_kcal_mol": 9.730389666666667,
+          "sd_kcal_mol": 0.34560662692913374
+        },
+        {
+          "coordinate_angstrom": 3.76875,
+          "mean_kcal_mol": 9.807355,
+          "sd_kcal_mol": 0.33796505694524087
+        },
+        {
+          "coordinate_angstrom": 3.80625,
+          "mean_kcal_mol": 9.910547000000001,
+          "sd_kcal_mol": 0.3052437667684631
+        },
+        {
+          "coordinate_angstrom": 3.84375,
+          "mean_kcal_mol": 9.984608,
+          "sd_kcal_mol": 0.2997974236163481
+        },
+        {
+          "coordinate_angstrom": 3.88125,
+          "mean_kcal_mol": 10.099593,
+          "sd_kcal_mol": 0.30024775931387027
+        },
+        {
+          "coordinate_angstrom": 3.91875,
+          "mean_kcal_mol": 10.177871666666666,
+          "sd_kcal_mol": 0.26413933323405925
+        },
+        {
+          "coordinate_angstrom": 3.95625,
+          "mean_kcal_mol": 10.277072333333333,
+          "sd_kcal_mol": 0.27212761327423757
+        },
+        {
+          "coordinate_angstrom": 3.99375,
+          "mean_kcal_mol": 10.332326333333333,
+          "sd_kcal_mol": 0.27374595529675577
+        },
+        {
+          "coordinate_angstrom": 4.03125,
+          "mean_kcal_mol": 10.426947666666667,
+          "sd_kcal_mol": 0.25963830401605525
+        },
+        {
+          "coordinate_angstrom": 4.06875,
+          "mean_kcal_mol": 10.517399666666666,
+          "sd_kcal_mol": 0.28090900805124375
+        },
+        {
+          "coordinate_angstrom": 4.10625,
+          "mean_kcal_mol": 10.61035,
+          "sd_kcal_mol": 0.2714623148449895
+        },
+        {
+          "coordinate_angstrom": 4.14375,
+          "mean_kcal_mol": 10.710459666666667,
+          "sd_kcal_mol": 0.28678640868481425
+        },
+        {
+          "coordinate_angstrom": 4.18125,
+          "mean_kcal_mol": 10.789942666666667,
+          "sd_kcal_mol": 0.29575648413912015
+        },
+        {
+          "coordinate_angstrom": 4.21875,
+          "mean_kcal_mol": 10.864637,
+          "sd_kcal_mol": 0.3298604312053809
+        },
+        {
+          "coordinate_angstrom": 4.25625,
+          "mean_kcal_mol": 10.942658333333332,
+          "sd_kcal_mol": 0.3349139712841691
+        },
+        {
+          "coordinate_angstrom": 4.29375,
+          "mean_kcal_mol": 11.004701333333333,
+          "sd_kcal_mol": 0.37116106145760125
+        },
+        {
+          "coordinate_angstrom": 4.33125,
+          "mean_kcal_mol": 11.079865,
+          "sd_kcal_mol": 0.3699325127114407
+        },
+        {
+          "coordinate_angstrom": 4.36875,
+          "mean_kcal_mol": 11.102574666666667,
+          "sd_kcal_mol": 0.32968440267827903
+        },
+        {
+          "coordinate_angstrom": 4.40625,
+          "mean_kcal_mol": 11.161530333333333,
+          "sd_kcal_mol": 0.34607564135074986
+        },
+        {
+          "coordinate_angstrom": 4.44375,
+          "mean_kcal_mol": 11.211992333333333,
+          "sd_kcal_mol": 0.32106266080834356
+        },
+        {
+          "coordinate_angstrom": 4.48125,
+          "mean_kcal_mol": 11.244854,
+          "sd_kcal_mol": 0.3055817982619382
+        },
+        {
+          "coordinate_angstrom": 4.51875,
+          "mean_kcal_mol": 11.234422666666667,
+          "sd_kcal_mol": 0.27432505632795046
+        },
+        {
+          "coordinate_angstrom": 4.55625,
+          "mean_kcal_mol": 11.23982,
+          "sd_kcal_mol": 0.2460483741848338
+        },
+        {
+          "coordinate_angstrom": 4.59375,
+          "mean_kcal_mol": 11.213699666666667,
+          "sd_kcal_mol": 0.24402141064737165
+        },
+        {
+          "coordinate_angstrom": 4.63125,
+          "mean_kcal_mol": 11.214703333333334,
+          "sd_kcal_mol": 0.25322198323276257
+        },
+        {
+          "coordinate_angstrom": 4.66875,
+          "mean_kcal_mol": 11.204354,
+          "sd_kcal_mol": 0.24996708701147052
+        },
+        {
+          "coordinate_angstrom": 4.70625,
+          "mean_kcal_mol": 11.212563333333334,
+          "sd_kcal_mol": 0.30226655021740856
+        },
+        {
+          "coordinate_angstrom": 4.74375,
+          "mean_kcal_mol": 11.193948666666667,
+          "sd_kcal_mol": 0.3551821964306952
+        },
+        {
+          "coordinate_angstrom": 4.78125,
+          "mean_kcal_mol": 11.209926333333334,
+          "sd_kcal_mol": 0.40214562984239133
+        },
+        {
+          "coordinate_angstrom": 4.81875,
+          "mean_kcal_mol": 11.194022666666667,
+          "sd_kcal_mol": 0.4654598469001732
+        },
+        {
+          "coordinate_angstrom": 4.85625,
+          "mean_kcal_mol": 11.180342333333334,
+          "sd_kcal_mol": 0.5275983322910842
+        },
+        {
+          "coordinate_angstrom": 4.89375,
+          "mean_kcal_mol": 11.165204333333334,
+          "sd_kcal_mol": 0.5834616407274202
+        },
+        {
+          "coordinate_angstrom": 4.93125,
+          "mean_kcal_mol": 11.156799666666666,
+          "sd_kcal_mol": 0.640280082215067
+        },
+        {
+          "coordinate_angstrom": 4.96875,
+          "mean_kcal_mol": 11.120868666666667,
+          "sd_kcal_mol": 0.6568581631587855
+        },
+        {
+          "coordinate_angstrom": 5.00625,
+          "mean_kcal_mol": 11.159027666666667,
+          "sd_kcal_mol": 0.708413941391143
+        },
+        {
+          "coordinate_angstrom": 5.04375,
+          "mean_kcal_mol": 11.153944666666668,
+          "sd_kcal_mol": 0.7465483490935687
+        },
+        {
+          "coordinate_angstrom": 5.08125,
+          "mean_kcal_mol": 11.168433333333333,
+          "sd_kcal_mol": 0.795927833613283
+        },
+        {
+          "coordinate_angstrom": 5.11875,
+          "mean_kcal_mol": 11.152657,
+          "sd_kcal_mol": 0.8181702755301002
+        },
+        {
+          "coordinate_angstrom": 5.15625,
+          "mean_kcal_mol": 11.174284,
+          "sd_kcal_mol": 0.8242512032548086
+        },
+        {
+          "coordinate_angstrom": 5.19375,
+          "mean_kcal_mol": 11.160514000000001,
+          "sd_kcal_mol": 0.8636996124556272
+        },
+        {
+          "coordinate_angstrom": 5.23125,
+          "mean_kcal_mol": 11.193213666666667,
+          "sd_kcal_mol": 0.8989311675213698
+        },
+        {
+          "coordinate_angstrom": 5.26875,
+          "mean_kcal_mol": 11.217496333333333,
+          "sd_kcal_mol": 0.9285872524509116
+        },
+        {
+          "coordinate_angstrom": 5.30625,
+          "mean_kcal_mol": 11.264297666666666,
+          "sd_kcal_mol": 0.9432722649565889
+        },
+        {
+          "coordinate_angstrom": 5.34375,
+          "mean_kcal_mol": 11.279889333333333,
+          "sd_kcal_mol": 0.9267251890659568
+        },
+        {
+          "coordinate_angstrom": 5.38125,
+          "mean_kcal_mol": 11.343288333333334,
+          "sd_kcal_mol": 0.938699654770541
+        },
+        {
+          "coordinate_angstrom": 5.41875,
+          "mean_kcal_mol": 11.354934333333333,
+          "sd_kcal_mol": 0.9396354220171426
+        },
+        {
+          "coordinate_angstrom": 5.45625,
+          "mean_kcal_mol": 11.399177666666667,
+          "sd_kcal_mol": 0.9363265900113763
+        },
+        {
+          "coordinate_angstrom": 5.49375,
+          "mean_kcal_mol": 11.409933666666667,
+          "sd_kcal_mol": 0.9350051263053767
+        },
+        {
+          "coordinate_angstrom": 5.53125,
+          "mean_kcal_mol": 11.455436333333333,
+          "sd_kcal_mol": 0.8833672233025928
+        },
+        {
+          "coordinate_angstrom": 5.56875,
+          "mean_kcal_mol": 11.474537999999999,
+          "sd_kcal_mol": 0.9275384324204574
+        },
+        {
+          "coordinate_angstrom": 5.60625,
+          "mean_kcal_mol": 11.523375666666666,
+          "sd_kcal_mol": 0.9428595933257152
+        },
+        {
+          "coordinate_angstrom": 5.64375,
+          "mean_kcal_mol": 11.560553666666667,
+          "sd_kcal_mol": 0.9570354326995075
+        },
+        {
+          "coordinate_angstrom": 5.68125,
+          "mean_kcal_mol": 11.604993,
+          "sd_kcal_mol": 0.9355501507519522
+        },
+        {
+          "coordinate_angstrom": 5.71875,
+          "mean_kcal_mol": 11.619706666666668,
+          "sd_kcal_mol": 0.9661809423882951
+        },
+        {
+          "coordinate_angstrom": 5.75625,
+          "mean_kcal_mol": 11.643796333333333,
+          "sd_kcal_mol": 0.97332262501718
+        },
+        {
+          "coordinate_angstrom": 5.79375,
+          "mean_kcal_mol": 11.651062333333334,
+          "sd_kcal_mol": 0.9992257058894813
+        },
+        {
+          "coordinate_angstrom": 5.83125,
+          "mean_kcal_mol": 11.654344666666667,
+          "sd_kcal_mol": 0.969918310888259
+        },
+        {
+          "coordinate_angstrom": 5.86875,
+          "mean_kcal_mol": 11.676842333333333,
+          "sd_kcal_mol": 0.9879748973907857
+        },
+        {
+          "coordinate_angstrom": 5.90625,
+          "mean_kcal_mol": 11.697736333333333,
+          "sd_kcal_mol": 0.9885081852095782
+        },
+        {
+          "coordinate_angstrom": 5.94375,
+          "mean_kcal_mol": 11.711053333333334,
+          "sd_kcal_mol": 0.9699083880616425
+        },
+        {
+          "coordinate_angstrom": 5.98125,
+          "mean_kcal_mol": 11.755114333333333,
+          "sd_kcal_mol": 0.9775195335727737
+        },
+        {
+          "coordinate_angstrom": 6.01875,
+          "mean_kcal_mol": 11.748981666666667,
+          "sd_kcal_mol": 0.9619362050969567
+        },
+        {
+          "coordinate_angstrom": 6.05625,
+          "mean_kcal_mol": 11.786786,
+          "sd_kcal_mol": 0.9681360596259182
+        },
+        {
+          "coordinate_angstrom": 6.09375,
+          "mean_kcal_mol": 11.774329666666667,
+          "sd_kcal_mol": 0.9364903980662768
+        },
+        {
+          "coordinate_angstrom": 6.13125,
+          "mean_kcal_mol": 11.816384666666666,
+          "sd_kcal_mol": 0.9101503462309586
+        },
+        {
+          "coordinate_angstrom": 6.16875,
+          "mean_kcal_mol": 11.816583,
+          "sd_kcal_mol": 0.9224831458899395
+        },
+        {
+          "coordinate_angstrom": 6.20625,
+          "mean_kcal_mol": 11.843509333333333,
+          "sd_kcal_mol": 0.9224136092915874
+        },
+        {
+          "coordinate_angstrom": 6.24375,
+          "mean_kcal_mol": 11.866771333333332,
+          "sd_kcal_mol": 0.9384603275186081
+        },
+        {
+          "coordinate_angstrom": 6.28125,
+          "mean_kcal_mol": 11.890329999999999,
+          "sd_kcal_mol": 0.9345839767923481
+        },
+        {
+          "coordinate_angstrom": 6.31875,
+          "mean_kcal_mol": 11.899554333333333,
+          "sd_kcal_mol": 0.9244609698263814
+        },
+        {
+          "coordinate_angstrom": 6.35625,
+          "mean_kcal_mol": 11.921863,
+          "sd_kcal_mol": 0.9233647935740236
+        },
+        {
+          "coordinate_angstrom": 6.39375,
+          "mean_kcal_mol": 11.916272000000001,
+          "sd_kcal_mol": 0.9214221651534111
+        },
+        {
+          "coordinate_angstrom": 6.43125,
+          "mean_kcal_mol": 11.925318,
+          "sd_kcal_mol": 0.9227117123636175
+        },
+        {
+          "coordinate_angstrom": 6.46875,
+          "mean_kcal_mol": 11.939046,
+          "sd_kcal_mol": 0.9279091365704947
+        },
+        {
+          "coordinate_angstrom": 6.50625,
+          "mean_kcal_mol": 11.982951,
+          "sd_kcal_mol": 0.9591645334472074
+        },
+        {
+          "coordinate_angstrom": 6.54375,
+          "mean_kcal_mol": 11.984041333333334,
+          "sd_kcal_mol": 0.9749186555504683
+        },
+        {
+          "coordinate_angstrom": 6.58125,
+          "mean_kcal_mol": 12.024447333333333,
+          "sd_kcal_mol": 0.9818479342109621
+        },
+        {
+          "coordinate_angstrom": 6.61875,
+          "mean_kcal_mol": 12.019905666666666,
+          "sd_kcal_mol": 0.9926440145522125
+        },
+        {
+          "coordinate_angstrom": 6.65625,
+          "mean_kcal_mol": 12.033561666666667,
+          "sd_kcal_mol": 1.0206797635989133
+        },
+        {
+          "coordinate_angstrom": 6.69375,
+          "mean_kcal_mol": 12.030321,
+          "sd_kcal_mol": 1.0309298936537836
+        },
+        {
+          "coordinate_angstrom": 6.73125,
+          "mean_kcal_mol": 12.017361666666666,
+          "sd_kcal_mol": 1.0550716527783
+        },
+        {
+          "coordinate_angstrom": 6.76875,
+          "mean_kcal_mol": 12.028702000000001,
+          "sd_kcal_mol": 1.0538476479183316
+        },
+        {
+          "coordinate_angstrom": 6.80625,
+          "mean_kcal_mol": 12.061445333333333,
+          "sd_kcal_mol": 1.0519145578916254
+        },
+        {
+          "coordinate_angstrom": 6.84375,
+          "mean_kcal_mol": 12.060642,
+          "sd_kcal_mol": 1.0417870849991373
+        },
+        {
+          "coordinate_angstrom": 6.88125,
+          "mean_kcal_mol": 12.091566333333333,
+          "sd_kcal_mol": 1.0391581425944434
+        },
+        {
+          "coordinate_angstrom": 6.91875,
+          "mean_kcal_mol": 12.0783,
+          "sd_kcal_mol": 1.0369185088824486
+        },
+        {
+          "coordinate_angstrom": 6.95625,
+          "mean_kcal_mol": 12.087282333333334,
+          "sd_kcal_mol": 1.0404807851057767
+        },
+        {
+          "coordinate_angstrom": 6.99375,
+          "mean_kcal_mol": 12.074915333333333,
+          "sd_kcal_mol": 1.0373349508149878
+        },
+        {
+          "coordinate_angstrom": 7.03125,
+          "mean_kcal_mol": 12.077583,
+          "sd_kcal_mol": 1.0484336574953133
+        },
+        {
+          "coordinate_angstrom": 7.06875,
+          "mean_kcal_mol": 12.050776666666666,
+          "sd_kcal_mol": 1.0233017440312184
+        },
+        {
+          "coordinate_angstrom": 7.10625,
+          "mean_kcal_mol": 12.094569333333334,
+          "sd_kcal_mol": 1.0207476961934976
+        },
+        {
+          "coordinate_angstrom": 7.14375,
+          "mean_kcal_mol": 12.086651666666667,
+          "sd_kcal_mol": 1.0101340237178105
+        },
+        {
+          "coordinate_angstrom": 7.18125,
+          "mean_kcal_mol": 12.091825666666667,
+          "sd_kcal_mol": 1.0141357353729008
+        },
+        {
+          "coordinate_angstrom": 7.21875,
+          "mean_kcal_mol": 12.071480666666666,
+          "sd_kcal_mol": 0.9995036546788275
+        },
+        {
+          "coordinate_angstrom": 7.25625,
+          "mean_kcal_mol": 12.082882,
+          "sd_kcal_mol": 0.9901773782747214
+        },
+        {
+          "coordinate_angstrom": 7.29375,
+          "mean_kcal_mol": 12.053405666666666,
+          "sd_kcal_mol": 0.9737213378833464
+        },
+        {
+          "coordinate_angstrom": 7.33125,
+          "mean_kcal_mol": 12.019772333333334,
+          "sd_kcal_mol": 0.9802151356005143
+        },
+        {
+          "coordinate_angstrom": 7.36875,
+          "mean_kcal_mol": 12.005823,
+          "sd_kcal_mol": 0.9777358347258216
+        },
+        {
+          "coordinate_angstrom": 7.40625,
+          "mean_kcal_mol": 12.021101666666667,
+          "sd_kcal_mol": 0.9824661162718705
+        },
+        {
+          "coordinate_angstrom": 7.44375,
+          "mean_kcal_mol": 12.015177333333334,
+          "sd_kcal_mol": 1.0029542819642048
+        },
+        {
+          "coordinate_angstrom": 7.48125,
+          "mean_kcal_mol": 12.026159666666667,
+          "sd_kcal_mol": 0.9950649114989104
+        },
+        {
+          "coordinate_angstrom": 7.51875,
+          "mean_kcal_mol": 11.996312,
+          "sd_kcal_mol": 0.9992265081246597
+        },
+        {
+          "coordinate_angstrom": 7.55625,
+          "mean_kcal_mol": 11.998885333333334,
+          "sd_kcal_mol": 1.0143590809064282
+        },
+        {
+          "coordinate_angstrom": 7.59375,
+          "mean_kcal_mol": 11.958518333333334,
+          "sd_kcal_mol": 1.0237589699418186
+        },
+        {
+          "coordinate_angstrom": 7.63125,
+          "mean_kcal_mol": 11.966708333333333,
+          "sd_kcal_mol": 0.9836520213532487
+        },
+        {
+          "coordinate_angstrom": 7.66875,
+          "mean_kcal_mol": 11.927878666666667,
+          "sd_kcal_mol": 0.963332628582845
+        },
+        {
+          "coordinate_angstrom": 7.70625,
+          "mean_kcal_mol": 11.969396,
+          "sd_kcal_mol": 0.9822559429965289
+        },
+        {
+          "coordinate_angstrom": 7.74375,
+          "mean_kcal_mol": 11.948253333333334,
+          "sd_kcal_mol": 0.9626303528506326
+        },
+        {
+          "coordinate_angstrom": 7.78125,
+          "mean_kcal_mol": 11.9683,
+          "sd_kcal_mol": 0.9550251344875689
+        },
+        {
+          "coordinate_angstrom": 7.81875,
+          "mean_kcal_mol": 11.938378,
+          "sd_kcal_mol": 0.9475772869054004
+        },
+        {
+          "coordinate_angstrom": 7.85625,
+          "mean_kcal_mol": 11.948366333333333,
+          "sd_kcal_mol": 0.9544582946411707
+        },
+        {
+          "coordinate_angstrom": 7.89375,
+          "mean_kcal_mol": 11.900148,
+          "sd_kcal_mol": 0.957442756226711
+        },
+        {
+          "coordinate_angstrom": 7.93125,
+          "mean_kcal_mol": 11.910669333333333,
+          "sd_kcal_mol": 0.9592560444867326
+        },
+        {
+          "coordinate_angstrom": 7.96875,
+          "mean_kcal_mol": 11.902527,
+          "sd_kcal_mol": 0.9572590902827721
+        },
+        {
+          "coordinate_angstrom": 8.00625,
+          "mean_kcal_mol": 11.922755333333333,
+          "sd_kcal_mol": 0.9529389501926833
+        },
+        {
+          "coordinate_angstrom": 8.04375,
+          "mean_kcal_mol": 11.904872666666666,
+          "sd_kcal_mol": 0.9463203733410439
+        },
+        {
+          "coordinate_angstrom": 8.08125,
+          "mean_kcal_mol": 11.925214,
+          "sd_kcal_mol": 0.9529093499189734
+        },
+        {
+          "coordinate_angstrom": 8.11875,
+          "mean_kcal_mol": 11.897357,
+          "sd_kcal_mol": 0.9728050401760872
+        },
+        {
+          "coordinate_angstrom": 8.15625,
+          "mean_kcal_mol": 11.908216333333334,
+          "sd_kcal_mol": 0.9757656089637167
+        },
+        {
+          "coordinate_angstrom": 8.19375,
+          "mean_kcal_mol": 11.866184666666667,
+          "sd_kcal_mol": 0.9670887949378444
+        },
+        {
+          "coordinate_angstrom": 8.23125,
+          "mean_kcal_mol": 11.882290666666666,
+          "sd_kcal_mol": 0.9840346223890369
+        },
+        {
+          "coordinate_angstrom": 8.26875,
+          "mean_kcal_mol": 11.865078333333333,
+          "sd_kcal_mol": 0.966815861716353
+        },
+        {
+          "coordinate_angstrom": 8.30625,
+          "mean_kcal_mol": 11.893731333333333,
+          "sd_kcal_mol": 0.9410113078620963
+        },
+        {
+          "coordinate_angstrom": 8.34375,
+          "mean_kcal_mol": 11.878961333333333,
+          "sd_kcal_mol": 0.9578895088977293
+        },
+        {
+          "coordinate_angstrom": 8.38125,
+          "mean_kcal_mol": 11.908398,
+          "sd_kcal_mol": 0.9577038323678154
+        },
+        {
+          "coordinate_angstrom": 8.41875,
+          "mean_kcal_mol": 11.888344333333333,
+          "sd_kcal_mol": 0.9645197091507947
+        },
+        {
+          "coordinate_angstrom": 8.45625,
+          "mean_kcal_mol": 11.896630333333333,
+          "sd_kcal_mol": 0.9573715819870221
+        },
+        {
+          "coordinate_angstrom": 8.49375,
+          "mean_kcal_mol": 11.876498,
+          "sd_kcal_mol": 0.9458883898494573
+        },
+        {
+          "coordinate_angstrom": 8.53125,
+          "mean_kcal_mol": 11.881063666666668,
+          "sd_kcal_mol": 0.9469365338951354
+        },
+        {
+          "coordinate_angstrom": 8.56875,
+          "mean_kcal_mol": 11.866157333333334,
+          "sd_kcal_mol": 0.9714994150447717
+        },
+        {
+          "coordinate_angstrom": 8.60625,
+          "mean_kcal_mol": 11.914504666666666,
+          "sd_kcal_mol": 0.9456111074719538
+        },
+        {
+          "coordinate_angstrom": 8.64375,
+          "mean_kcal_mol": 11.906067666666667,
+          "sd_kcal_mol": 0.9791973358993246
+        },
+        {
+          "coordinate_angstrom": 8.68125,
+          "mean_kcal_mol": 11.915116,
+          "sd_kcal_mol": 0.9515941904567301
+        },
+        {
+          "coordinate_angstrom": 8.71875,
+          "mean_kcal_mol": 11.906129666666667,
+          "sd_kcal_mol": 0.9627725392533447
+        },
+        {
+          "coordinate_angstrom": 8.75625,
+          "mean_kcal_mol": 11.941948,
+          "sd_kcal_mol": 0.956878790523126
+        },
+        {
+          "coordinate_angstrom": 8.79375,
+          "mean_kcal_mol": 11.910976,
+          "sd_kcal_mol": 0.9538752594930853
+        },
+        {
+          "coordinate_angstrom": 8.83125,
+          "mean_kcal_mol": 11.914296666666667,
+          "sd_kcal_mol": 0.9639607803175044
+        },
+        {
+          "coordinate_angstrom": 8.86875,
+          "mean_kcal_mol": 11.895286666666667,
+          "sd_kcal_mol": 0.9475017223057347
+        },
+        {
+          "coordinate_angstrom": 8.90625,
+          "mean_kcal_mol": 11.921741333333333,
+          "sd_kcal_mol": 0.9554106478181683
+        },
+        {
+          "coordinate_angstrom": 8.94375,
+          "mean_kcal_mol": 11.933799666666667,
+          "sd_kcal_mol": 0.9627952294866932
+        },
+        {
+          "coordinate_angstrom": 8.98125,
+          "mean_kcal_mol": 11.962013333333333,
+          "sd_kcal_mol": 0.9654551864454062
+        },
+        {
+          "coordinate_angstrom": 9.01875,
+          "mean_kcal_mol": 11.947076666666668,
+          "sd_kcal_mol": 0.9674669099686737
+        },
+        {
+          "coordinate_angstrom": 9.05625,
+          "mean_kcal_mol": 11.964364,
+          "sd_kcal_mol": 0.9731885718215143
+        },
+        {
+          "coordinate_angstrom": 9.09375,
+          "mean_kcal_mol": 11.954270666666666,
+          "sd_kcal_mol": 0.9717923853284366
+        },
+        {
+          "coordinate_angstrom": 9.13125,
+          "mean_kcal_mol": 11.948608333333333,
+          "sd_kcal_mol": 0.9491308816924741
+        },
+        {
+          "coordinate_angstrom": 9.16875,
+          "mean_kcal_mol": 11.955222000000001,
+          "sd_kcal_mol": 0.9715309457155752
+        },
+        {
+          "coordinate_angstrom": 9.20625,
+          "mean_kcal_mol": 11.979813666666667,
+          "sd_kcal_mol": 0.978380847300444
+        },
+        {
+          "coordinate_angstrom": 9.24375,
+          "mean_kcal_mol": 11.980726333333333,
+          "sd_kcal_mol": 0.970181394664077
+        },
+        {
+          "coordinate_angstrom": 9.28125,
+          "mean_kcal_mol": 12.002216,
+          "sd_kcal_mol": 0.983966840522586
+        },
+        {
+          "coordinate_angstrom": 9.31875,
+          "mean_kcal_mol": 12.006598666666667,
+          "sd_kcal_mol": 0.9952407983098033
+        },
+        {
+          "coordinate_angstrom": 9.35625,
+          "mean_kcal_mol": 11.999172666666666,
+          "sd_kcal_mol": 0.9868814976745353
+        },
+        {
+          "coordinate_angstrom": 9.39375,
+          "mean_kcal_mol": 11.989339666666666,
+          "sd_kcal_mol": 0.9829216677158634
+        },
+        {
+          "coordinate_angstrom": 9.43125,
+          "mean_kcal_mol": 12.010159333333334,
+          "sd_kcal_mol": 0.9998875472898605
+        },
+        {
+          "coordinate_angstrom": 9.46875,
+          "mean_kcal_mol": 11.991716333333333,
+          "sd_kcal_mol": 1.0133693910930663
+        },
+        {
+          "coordinate_angstrom": 9.50625,
+          "mean_kcal_mol": 12.038349,
+          "sd_kcal_mol": 1.0047811727948535
+        },
+        {
+          "coordinate_angstrom": 9.54375,
+          "mean_kcal_mol": 12.031919,
+          "sd_kcal_mol": 1.0107548816122536
+        },
+        {
+          "coordinate_angstrom": 9.58125,
+          "mean_kcal_mol": 12.069666666666667,
+          "sd_kcal_mol": 1.00446088295231
+        },
+        {
+          "coordinate_angstrom": 9.61875,
+          "mean_kcal_mol": 12.070475666666667,
+          "sd_kcal_mol": 1.0023645925172804
+        },
+        {
+          "coordinate_angstrom": 9.65625,
+          "mean_kcal_mol": 12.096045,
+          "sd_kcal_mol": 0.9900551488290945
+        },
+        {
+          "coordinate_angstrom": 9.69375,
+          "mean_kcal_mol": 12.085654,
+          "sd_kcal_mol": 0.9812201978205505
+        },
+        {
+          "coordinate_angstrom": 9.73125,
+          "mean_kcal_mol": 12.075429,
+          "sd_kcal_mol": 0.9763725265527498
+        },
+        {
+          "coordinate_angstrom": 9.76875,
+          "mean_kcal_mol": 12.087860666666668,
+          "sd_kcal_mol": 0.986775910589802
+        },
+        {
+          "coordinate_angstrom": 9.80625,
+          "mean_kcal_mol": 12.119019666666667,
+          "sd_kcal_mol": 0.9706427609421154
+        },
+        {
+          "coordinate_angstrom": 9.84375,
+          "mean_kcal_mol": 12.107641666666666,
+          "sd_kcal_mol": 0.9837765521094379
+        },
+        {
+          "coordinate_angstrom": 9.88125,
+          "mean_kcal_mol": 12.146177666666667,
+          "sd_kcal_mol": 0.9828766509060696
+        },
+        {
+          "coordinate_angstrom": 9.91875,
+          "mean_kcal_mol": 12.133552,
+          "sd_kcal_mol": 0.9616273436737328
+        },
+        {
+          "coordinate_angstrom": 9.95625,
+          "mean_kcal_mol": 12.155202,
+          "sd_kcal_mol": 0.9716237064681985
+        },
+        {
+          "coordinate_angstrom": 9.99375,
+          "mean_kcal_mol": 12.148257333333333,
+          "sd_kcal_mol": 0.9663924892569965
+        },
+        {
+          "coordinate_angstrom": 10.03125,
+          "mean_kcal_mol": 12.148273666666666,
+          "sd_kcal_mol": 0.9829990698542558
+        },
+        {
+          "coordinate_angstrom": 10.06875,
+          "mean_kcal_mol": 12.126229333333333,
+          "sd_kcal_mol": 0.9902303103441812
+        },
+        {
+          "coordinate_angstrom": 10.10625,
+          "mean_kcal_mol": 12.173148333333334,
+          "sd_kcal_mol": 0.965806424146336
+        },
+        {
+          "coordinate_angstrom": 10.14375,
+          "mean_kcal_mol": 12.179419666666666,
+          "sd_kcal_mol": 0.966694400100328
+        },
+        {
+          "coordinate_angstrom": 10.18125,
+          "mean_kcal_mol": 12.205309333333334,
+          "sd_kcal_mol": 0.9879282993741669
+        },
+        {
+          "coordinate_angstrom": 10.21875,
+          "mean_kcal_mol": 12.199367333333333,
+          "sd_kcal_mol": 0.9944784688178688
+        },
+        {
+          "coordinate_angstrom": 10.25625,
+          "mean_kcal_mol": 12.214134333333334,
+          "sd_kcal_mol": 0.9696522101745207
+        },
+        {
+          "coordinate_angstrom": 10.29375,
+          "mean_kcal_mol": 12.202957,
+          "sd_kcal_mol": 0.9851039319604813
+        },
+        {
+          "coordinate_angstrom": 10.33125,
+          "mean_kcal_mol": 12.195882,
+          "sd_kcal_mol": 0.9993280216205288
+        },
+        {
+          "coordinate_angstrom": 10.36875,
+          "mean_kcal_mol": 12.184617000000001,
+          "sd_kcal_mol": 1.0320231035093157
+        },
+        {
+          "coordinate_angstrom": 10.40625,
+          "mean_kcal_mol": 12.227098666666667,
+          "sd_kcal_mol": 1.0291577620240409
+        },
+        {
+          "coordinate_angstrom": 10.44375,
+          "mean_kcal_mol": 12.239410666666666,
+          "sd_kcal_mol": 1.0101715997197378
+        },
+        {
+          "coordinate_angstrom": 10.48125,
+          "mean_kcal_mol": 12.257081666666666,
+          "sd_kcal_mol": 1.0237113622405163
+        },
+        {
+          "coordinate_angstrom": 10.51875,
+          "mean_kcal_mol": 12.257546666666666,
+          "sd_kcal_mol": 1.024572291502329
+        },
+        {
+          "coordinate_angstrom": 10.55625,
+          "mean_kcal_mol": 12.277413666666668,
+          "sd_kcal_mol": 1.0246510949890861
+        },
+        {
+          "coordinate_angstrom": 10.59375,
+          "mean_kcal_mol": 12.245894333333334,
+          "sd_kcal_mol": 1.00034634357723
+        },
+        {
+          "coordinate_angstrom": 10.63125,
+          "mean_kcal_mol": 12.275287666666665,
+          "sd_kcal_mol": 1.032362453884455
+        },
+        {
+          "coordinate_angstrom": 10.66875,
+          "mean_kcal_mol": 12.253926666666667,
+          "sd_kcal_mol": 1.0321553159928658
+        },
+        {
+          "coordinate_angstrom": 10.70625,
+          "mean_kcal_mol": 12.280956,
+          "sd_kcal_mol": 1.0251722929034905
+        },
+        {
+          "coordinate_angstrom": 10.74375,
+          "mean_kcal_mol": 12.281636333333333,
+          "sd_kcal_mol": 1.0134892783331915
+        },
+        {
+          "coordinate_angstrom": 10.78125,
+          "mean_kcal_mol": 12.315441666666667,
+          "sd_kcal_mol": 1.0056338454150862
+        },
+        {
+          "coordinate_angstrom": 10.81875,
+          "mean_kcal_mol": 12.303611666666667,
+          "sd_kcal_mol": 1.0054135588216095
+        },
+        {
+          "coordinate_angstrom": 10.85625,
+          "mean_kcal_mol": 12.331239,
+          "sd_kcal_mol": 0.9979549389641799
+        },
+        {
+          "coordinate_angstrom": 10.89375,
+          "mean_kcal_mol": 12.302678333333333,
+          "sd_kcal_mol": 1.0130535008726511
+        },
+        {
+          "coordinate_angstrom": 10.93125,
+          "mean_kcal_mol": 12.350202333333334,
+          "sd_kcal_mol": 1.0053312875029472
+        },
+        {
+          "coordinate_angstrom": 10.96875,
+          "mean_kcal_mol": 12.337392,
+          "sd_kcal_mol": 0.9868330076213495
+        },
+        {
+          "coordinate_angstrom": 11.00625,
+          "mean_kcal_mol": 12.375708666666666,
+          "sd_kcal_mol": 0.9931012307727412
+        },
+        {
+          "coordinate_angstrom": 11.04375,
+          "mean_kcal_mol": 12.401224333333333,
+          "sd_kcal_mol": 1.0013518963607813
+        },
+        {
+          "coordinate_angstrom": 11.08125,
+          "mean_kcal_mol": 12.424790333333334,
+          "sd_kcal_mol": 1.0153096729325166
+        },
+        {
+          "coordinate_angstrom": 11.11875,
+          "mean_kcal_mol": 12.408190666666666,
+          "sd_kcal_mol": 1.0100059985348273
+        },
+        {
+          "coordinate_angstrom": 11.15625,
+          "mean_kcal_mol": 12.430249333333334,
+          "sd_kcal_mol": 1.0186400290545887
+        },
+        {
+          "coordinate_angstrom": 11.19375,
+          "mean_kcal_mol": 12.416404666666667,
+          "sd_kcal_mol": 1.0185112076621117
+        },
+        {
+          "coordinate_angstrom": 11.23125,
+          "mean_kcal_mol": 12.435767333333333,
+          "sd_kcal_mol": 0.9835421943029862
+        },
+        {
+          "coordinate_angstrom": 11.26875,
+          "mean_kcal_mol": 12.452427333333333,
+          "sd_kcal_mol": 0.9998377410531837
+        },
+        {
+          "coordinate_angstrom": 11.30625,
+          "mean_kcal_mol": 12.493888666666667,
+          "sd_kcal_mol": 0.9910293321008887
+        },
+        {
+          "coordinate_angstrom": 11.34375,
+          "mean_kcal_mol": 12.520935,
+          "sd_kcal_mol": 0.9921863734314228
+        },
+        {
+          "coordinate_angstrom": 11.38125,
+          "mean_kcal_mol": 12.546987333333332,
+          "sd_kcal_mol": 0.9902163329214141
+        },
+        {
+          "coordinate_angstrom": 11.41875,
+          "mean_kcal_mol": 12.546993,
+          "sd_kcal_mol": 0.9879475222662382
+        },
+        {
+          "coordinate_angstrom": 11.45625,
+          "mean_kcal_mol": 12.567769,
+          "sd_kcal_mol": 0.9855481589161434
+        },
+        {
+          "coordinate_angstrom": 11.49375,
+          "mean_kcal_mol": 12.568456000000001,
+          "sd_kcal_mol": 0.9847610233081932
+        },
+        {
+          "coordinate_angstrom": 11.53125,
+          "mean_kcal_mol": 12.574895666666666,
+          "sd_kcal_mol": 1.0088441285948655
+        },
+        {
+          "coordinate_angstrom": 11.56875,
+          "mean_kcal_mol": 12.581166333333334,
+          "sd_kcal_mol": 1.0031934523860961
+        },
+        {
+          "coordinate_angstrom": 11.60625,
+          "mean_kcal_mol": 12.625098333333334,
+          "sd_kcal_mol": 1.0135277378228644
+        },
+        {
+          "coordinate_angstrom": 11.64375,
+          "mean_kcal_mol": 12.625429,
+          "sd_kcal_mol": 1.0036394259389179
+        },
+        {
+          "coordinate_angstrom": 11.68125,
+          "mean_kcal_mol": 12.661898,
+          "sd_kcal_mol": 1.0033406053833367
+        },
+        {
+          "coordinate_angstrom": 11.71875,
+          "mean_kcal_mol": 12.651673333333333,
+          "sd_kcal_mol": 0.996048072932393
+        },
+        {
+          "coordinate_angstrom": 11.75625,
+          "mean_kcal_mol": 12.670178,
+          "sd_kcal_mol": 1.0024383692083023
+        },
+        {
+          "coordinate_angstrom": 11.79375,
+          "mean_kcal_mol": 12.670827666666666,
+          "sd_kcal_mol": 0.9952082886664145
+        },
+        {
+          "coordinate_angstrom": 11.83125,
+          "mean_kcal_mol": 12.661346,
+          "sd_kcal_mol": 1.0206881780578234
+        },
+        {
+          "coordinate_angstrom": 11.86875,
+          "mean_kcal_mol": 12.677969,
+          "sd_kcal_mol": 0.9906595320608387
+        },
+        {
+          "coordinate_angstrom": 11.90625,
+          "mean_kcal_mol": 12.684973333333334,
+          "sd_kcal_mol": 1.001537797092218
+        },
+        {
+          "coordinate_angstrom": 11.94375,
+          "mean_kcal_mol": 12.685922666666666,
+          "sd_kcal_mol": 1.0029711667846355
+        },
+        {
+          "coordinate_angstrom": 11.98125,
+          "mean_kcal_mol": 12.705606333333334,
+          "sd_kcal_mol": 0.9753358433966905
+        },
+        {
+          "coordinate_angstrom": 12.01875,
+          "mean_kcal_mol": 12.703025333333333,
+          "sd_kcal_mol": 1.0075765904070688
+        },
+        {
+          "coordinate_angstrom": 12.05625,
+          "mean_kcal_mol": 12.706369333333333,
+          "sd_kcal_mol": 1.0025172585528561
+        },
+        {
+          "coordinate_angstrom": 12.09375,
+          "mean_kcal_mol": 12.679184,
+          "sd_kcal_mol": 0.9920039522970665
+        },
+        {
+          "coordinate_angstrom": 12.13125,
+          "mean_kcal_mol": 12.676511666666666,
+          "sd_kcal_mol": 0.9778169936431527
+        },
+        {
+          "coordinate_angstrom": 12.16875,
+          "mean_kcal_mol": 12.673572,
+          "sd_kcal_mol": 1.0008362823614056
+        },
+        {
+          "coordinate_angstrom": 12.20625,
+          "mean_kcal_mol": 12.689193666666666,
+          "sd_kcal_mol": 1.0219945955729575
+        },
+        {
+          "coordinate_angstrom": 12.24375,
+          "mean_kcal_mol": 12.697619333333332,
+          "sd_kcal_mol": 1.0157196103533364
+        },
+        {
+          "coordinate_angstrom": 12.28125,
+          "mean_kcal_mol": 12.709888666666666,
+          "sd_kcal_mol": 1.0192733068045754
+        },
+        {
+          "coordinate_angstrom": 12.31875,
+          "mean_kcal_mol": 12.711000666666667,
+          "sd_kcal_mol": 1.017783515336309
+        },
+        {
+          "coordinate_angstrom": 12.35625,
+          "mean_kcal_mol": 12.710437666666667,
+          "sd_kcal_mol": 1.02816297552982
+        },
+        {
+          "coordinate_angstrom": 12.39375,
+          "mean_kcal_mol": 12.689725333333334,
+          "sd_kcal_mol": 1.0230328470045973
+        },
+        {
+          "coordinate_angstrom": 12.43125,
+          "mean_kcal_mol": 12.691234333333334,
+          "sd_kcal_mol": 1.0003793417625804
+        },
+        {
+          "coordinate_angstrom": 12.46875,
+          "mean_kcal_mol": 12.701745,
+          "sd_kcal_mol": 1.048985832448179
+        },
+        {
+          "coordinate_angstrom": 12.50625,
+          "mean_kcal_mol": 12.724117,
+          "sd_kcal_mol": 1.0494568764008358
+        },
+        {
+          "coordinate_angstrom": 12.54375,
+          "mean_kcal_mol": 12.735752333333334,
+          "sd_kcal_mol": 1.0440285654331176
+        },
+        {
+          "coordinate_angstrom": 12.58125,
+          "mean_kcal_mol": 12.759590666666666,
+          "sd_kcal_mol": 1.0434288201905932
+        },
+        {
+          "coordinate_angstrom": 12.61875,
+          "mean_kcal_mol": 12.740964666666667,
+          "sd_kcal_mol": 1.0539520485137512
+        },
+        {
+          "coordinate_angstrom": 12.65625,
+          "mean_kcal_mol": 12.74442,
+          "sd_kcal_mol": 1.0561286560623186
+        },
+        {
+          "coordinate_angstrom": 12.69375,
+          "mean_kcal_mol": 12.726877333333332,
+          "sd_kcal_mol": 1.0455213662213383
+        },
+        {
+          "coordinate_angstrom": 12.73125,
+          "mean_kcal_mol": 12.731342999999999,
+          "sd_kcal_mol": 1.0320206133324084
+        },
+        {
+          "coordinate_angstrom": 12.76875,
+          "mean_kcal_mol": 12.731859,
+          "sd_kcal_mol": 1.0361547752758753
+        },
+        {
+          "coordinate_angstrom": 12.80625,
+          "mean_kcal_mol": 12.758649666666667,
+          "sd_kcal_mol": 1.0125980759770055
+        },
+        {
+          "coordinate_angstrom": 12.84375,
+          "mean_kcal_mol": 12.757806666666667,
+          "sd_kcal_mol": 1.0272090792892812
+        },
+        {
+          "coordinate_angstrom": 12.88125,
+          "mean_kcal_mol": 12.773667,
+          "sd_kcal_mol": 1.01349753209961
+        },
+        {
+          "coordinate_angstrom": 12.91875,
+          "mean_kcal_mol": 12.761783,
+          "sd_kcal_mol": 1.0196546085944984
+        },
+        {
+          "coordinate_angstrom": 12.95625,
+          "mean_kcal_mol": 12.780082,
+          "sd_kcal_mol": 1.0239376694447768
+        },
+        {
+          "coordinate_angstrom": 12.99375,
+          "mean_kcal_mol": 12.742118999999999,
+          "sd_kcal_mol": 0.9996003811178745
+        },
+        {
+          "coordinate_angstrom": 13.03125,
+          "mean_kcal_mol": 12.772227333333333,
+          "sd_kcal_mol": 1.014624182255348
+        },
+        {
+          "coordinate_angstrom": 13.06875,
+          "mean_kcal_mol": 12.739113,
+          "sd_kcal_mol": 1.0252702001467713
+        },
+        {
+          "coordinate_angstrom": 13.10625,
+          "mean_kcal_mol": 12.764959666666666,
+          "sd_kcal_mol": 1.004298002804613
+        },
+        {
+          "coordinate_angstrom": 13.14375,
+          "mean_kcal_mol": 12.777748333333333,
+          "sd_kcal_mol": 1.0068747016790784
+        },
+        {
+          "coordinate_angstrom": 13.18125,
+          "mean_kcal_mol": 12.795610333333334,
+          "sd_kcal_mol": 1.0037709038871037
+        },
+        {
+          "coordinate_angstrom": 13.21875,
+          "mean_kcal_mol": 12.767301,
+          "sd_kcal_mol": 1.008666310832279
+        },
+        {
+          "coordinate_angstrom": 13.25625,
+          "mean_kcal_mol": 12.790001333333334,
+          "sd_kcal_mol": 1.0054359932051036
+        },
+        {
+          "coordinate_angstrom": 13.29375,
+          "mean_kcal_mol": 12.777935333333334,
+          "sd_kcal_mol": 1.0148829665120669
+        },
+        {
+          "coordinate_angstrom": 13.33125,
+          "mean_kcal_mol": 12.767492666666667,
+          "sd_kcal_mol": 1.0125790872363165
+        },
+        {
+          "coordinate_angstrom": 13.36875,
+          "mean_kcal_mol": 12.758890000000001,
+          "sd_kcal_mol": 1.0315610905191226
+        },
+        {
+          "coordinate_angstrom": 13.40625,
+          "mean_kcal_mol": 12.785842333333333,
+          "sd_kcal_mol": 1.0335438709858096
+        },
+        {
+          "coordinate_angstrom": 13.44375,
+          "mean_kcal_mol": 12.782667333333332,
+          "sd_kcal_mol": 1.0098668402736741
+        },
+        {
+          "coordinate_angstrom": 13.48125,
+          "mean_kcal_mol": 12.799524666666667,
+          "sd_kcal_mol": 1.0158780736138238
+        },
+        {
+          "coordinate_angstrom": 13.51875,
+          "mean_kcal_mol": 12.774989666666666,
+          "sd_kcal_mol": 1.0189102217253159
+        },
+        {
+          "coordinate_angstrom": 13.55625,
+          "mean_kcal_mol": 12.794792666666666,
+          "sd_kcal_mol": 1.0054264875570627
+        },
+        {
+          "coordinate_angstrom": 13.59375,
+          "mean_kcal_mol": 12.776742666666667,
+          "sd_kcal_mol": 1.0202917779470408
+        },
+        {
+          "coordinate_angstrom": 13.63125,
+          "mean_kcal_mol": 12.769802333333333,
+          "sd_kcal_mol": 1.028260382612465
+        },
+        {
+          "coordinate_angstrom": 13.66875,
+          "mean_kcal_mol": 12.764568333333333,
+          "sd_kcal_mol": 1.0022746545614794
+        },
+        {
+          "coordinate_angstrom": 13.70625,
+          "mean_kcal_mol": 12.795943,
+          "sd_kcal_mol": 0.995527226471984
+        },
+        {
+          "coordinate_angstrom": 13.74375,
+          "mean_kcal_mol": 12.773019333333334,
+          "sd_kcal_mol": 1.0140781928649947
+        },
+        {
+          "coordinate_angstrom": 13.78125,
+          "mean_kcal_mol": 12.804597333333334,
+          "sd_kcal_mol": 1.0107283290322548
+        },
+        {
+          "coordinate_angstrom": 13.81875,
+          "mean_kcal_mol": 12.779322333333333,
+          "sd_kcal_mol": 1.0170624818782443
+        },
+        {
+          "coordinate_angstrom": 13.85625,
+          "mean_kcal_mol": 12.784706666666667,
+          "sd_kcal_mol": 1.0234380677863872
+        },
+        {
+          "coordinate_angstrom": 13.89375,
+          "mean_kcal_mol": 12.763031666666667,
+          "sd_kcal_mol": 1.0124027325666072
+        },
+        {
+          "coordinate_angstrom": 13.93125,
+          "mean_kcal_mol": 12.771095666666666,
+          "sd_kcal_mol": 1.027736976875082
+        },
+        {
+          "coordinate_angstrom": 13.96875,
+          "mean_kcal_mol": 12.769073333333333,
+          "sd_kcal_mol": 0.9920804096449702
+        },
+        {
+          "coordinate_angstrom": 14.00625,
+          "mean_kcal_mol": 12.794681666666666,
+          "sd_kcal_mol": 1.0048477666026499
+        },
+        {
+          "coordinate_angstrom": 14.04375,
+          "mean_kcal_mol": 12.789015333333333,
+          "sd_kcal_mol": 1.016684538310844
+        },
+        {
+          "coordinate_angstrom": 14.08125,
+          "mean_kcal_mol": 12.80587,
+          "sd_kcal_mol": 1.0293363918180491
+        },
+        {
+          "coordinate_angstrom": 14.11875,
+          "mean_kcal_mol": 12.799784666666666,
+          "sd_kcal_mol": 1.021887307302686
+        },
+        {
+          "coordinate_angstrom": 14.15625,
+          "mean_kcal_mol": 12.81405,
+          "sd_kcal_mol": 1.0100397449491776
+        },
+        {
+          "coordinate_angstrom": 14.19375,
+          "mean_kcal_mol": 12.784677333333333,
+          "sd_kcal_mol": 1.0152388796841525
+        },
+        {
+          "coordinate_angstrom": 14.23125,
+          "mean_kcal_mol": 12.786972666666667,
+          "sd_kcal_mol": 1.0109559679997608
+        },
+        {
+          "coordinate_angstrom": 14.26875,
+          "mean_kcal_mol": 12.784885333333333,
+          "sd_kcal_mol": 1.0337683579034196
+        },
+        {
+          "coordinate_angstrom": 14.30625,
+          "mean_kcal_mol": 12.803494666666667,
+          "sd_kcal_mol": 1.0124424375520487
+        },
+        {
+          "coordinate_angstrom": 14.34375,
+          "mean_kcal_mol": 12.781165999999999,
+          "sd_kcal_mol": 1.0111359173924144
+        },
+        {
+          "coordinate_angstrom": 14.38125,
+          "mean_kcal_mol": 12.797831333333333,
+          "sd_kcal_mol": 1.0143800007799517
+        },
+        {
+          "coordinate_angstrom": 14.41875,
+          "mean_kcal_mol": 12.778031,
+          "sd_kcal_mol": 1.0057562740898012
+        },
+        {
+          "coordinate_angstrom": 14.45625,
+          "mean_kcal_mol": 12.799379333333334,
+          "sd_kcal_mol": 1.0258844615829477
+        },
+        {
+          "coordinate_angstrom": 14.49375,
+          "mean_kcal_mol": 12.756642333333334,
+          "sd_kcal_mol": 1.0258461097037572
+        },
+        {
+          "coordinate_angstrom": 14.53125,
+          "mean_kcal_mol": 12.787697999999999,
+          "sd_kcal_mol": 1.0353960358601917
+        },
+        {
+          "coordinate_angstrom": 14.56875,
+          "mean_kcal_mol": 12.751902666666666,
+          "sd_kcal_mol": 1.0344545947997588
+        },
+        {
+          "coordinate_angstrom": 14.60625,
+          "mean_kcal_mol": 12.798787,
+          "sd_kcal_mol": 1.0122027330861145
+        },
+        {
+          "coordinate_angstrom": 14.64375,
+          "mean_kcal_mol": 12.787841333333333,
+          "sd_kcal_mol": 1.0414149907939363
+        },
+        {
+          "coordinate_angstrom": 14.68125,
+          "mean_kcal_mol": 12.807736,
+          "sd_kcal_mol": 1.0122602221607844
+        },
+        {
+          "coordinate_angstrom": 14.71875,
+          "mean_kcal_mol": 12.805488333333333,
+          "sd_kcal_mol": 1.0137709043153353
+        },
+        {
+          "coordinate_angstrom": 14.75625,
+          "mean_kcal_mol": 12.804840333333333,
+          "sd_kcal_mol": 1.0410439482770808
+        },
+        {
+          "coordinate_angstrom": 14.79375,
+          "mean_kcal_mol": 12.787552333333332,
+          "sd_kcal_mol": 1.0227926610053155
+        },
+        {
+          "coordinate_angstrom": 14.83125,
+          "mean_kcal_mol": 12.766355,
+          "sd_kcal_mol": 1.0319301027787686
+        },
+        {
+          "coordinate_angstrom": 14.86875,
+          "mean_kcal_mol": 12.751698666666666,
+          "sd_kcal_mol": 1.0129587426555597
+        },
+        {
+          "coordinate_angstrom": 14.90625,
+          "mean_kcal_mol": 12.766897666666667,
+          "sd_kcal_mol": 1.0116925110844375
+        },
+        {
+          "coordinate_angstrom": 14.94375,
+          "mean_kcal_mol": 12.756568666666666,
+          "sd_kcal_mol": 1.0297847541551264
+        },
+        {
+          "coordinate_angstrom": 14.98125,
+          "mean_kcal_mol": 12.777856333333332,
+          "sd_kcal_mol": 1.0237455168357676
+        }
+      ],
+      "independent_profiles_kcal_mol": [
+        {
+          "run": 1,
+          "values": [
+            2.505331,
+            1.387859,
+            0.787515,
+            0.445919,
+            0.207801,
+            0.099643,
+            0.046191,
+            0.099624,
+            0.139278,
+            0.257265,
+            0.32785,
+            0.445908,
+            0.49708,
+            0.466278,
+            0.411375,
+            0.402678,
+            0.293885,
+            0.236974,
+            0.164568,
+            0.08165,
+            0.000794,
+            0.012374,
+            0.0,
+            0.0128,
+            0.040666,
+            0.128963,
+            0.178239,
+            0.248398,
+            0.396213,
+            0.552266,
+            0.719195,
+            0.906993,
+            1.092056,
+            1.299486,
+            1.551886,
+            1.847243,
+            2.098004,
+            2.420163,
+            2.696101,
+            3.036856,
+            3.339364,
+            3.743989,
+            4.08346,
+            4.437122,
+            4.775503,
+            5.133574,
+            5.459675,
+            5.844036,
+            6.174925,
+            6.587673,
+            6.921012,
+            7.400314,
+            7.788516,
+            8.217959,
+            8.634861,
+            9.090772,
+            9.496895,
+            10.032653,
+            10.363523,
+            10.572975,
+            10.321775,
+            10.220616,
+            10.045126,
+            9.91617,
+            9.788453,
+            9.685099,
+            9.55465,
+            9.454652,
+            9.332602,
+            9.249732,
+            9.179233,
+            9.129746,
+            9.037257,
+            9.014275,
+            8.935826,
+            8.913569,
+            8.883023,
+            8.865571,
+            8.836439,
+            8.865107,
+            8.864429,
+            8.87914,
+            8.840766,
+            8.930325,
+            8.897314,
+            8.936317,
+            8.969158,
+            9.034903,
+            9.071146,
+            9.159129,
+            9.173025,
+            9.259507,
+            9.278607,
+            9.405091,
+            9.497362,
+            9.605531,
+            9.647318,
+            9.745119,
+            9.793112,
+            9.911623,
+            9.951681,
+            10.022128,
+            10.061909,
+            10.165629,
+            10.223369,
+            10.279263,
+            10.342857,
+            10.399798,
+            10.457628,
+            10.533505,
+            10.602577,
+            10.632348,
+            10.674292,
+            10.702039,
+            10.74252,
+            10.798665,
+            10.866308,
+            10.887674,
+            10.985011,
+            11.057221,
+            11.099906,
+            11.148573,
+            11.197962,
+            11.277943,
+            11.356499,
+            11.464869,
+            11.540738,
+            11.616075,
+            11.678185,
+            11.750995,
+            11.801569,
+            11.867491,
+            11.852232,
+            11.957933,
+            11.990102,
+            12.065521,
+            12.079048,
+            12.109041,
+            12.140064,
+            12.215783,
+            12.275074,
+            12.336497,
+            12.334426,
+            12.407566,
+            12.421265,
+            12.459976,
+            12.469867,
+            12.456235,
+            12.524197,
+            12.591365,
+            12.642792,
+            12.663835,
+            12.71146,
+            12.739556,
+            12.777102,
+            12.753325,
+            12.791208,
+            12.813824,
+            12.804178,
+            12.853819,
+            12.828694,
+            12.8744,
+            12.82484,
+            12.848779,
+            12.853458,
+            12.882659,
+            12.920245,
+            12.933257,
+            12.930123,
+            12.942841,
+            12.933882,
+            12.936506,
+            12.941997,
+            13.01733,
+            13.031906,
+            13.076413,
+            13.08978,
+            13.120374,
+            13.122426,
+            13.130844,
+            13.141816,
+            13.163651,
+            13.149383,
+            13.167904,
+            13.154994,
+            13.168634,
+            13.152635,
+            13.156935,
+            13.110038,
+            13.134971,
+            13.104418,
+            13.124278,
+            13.08236,
+            13.071944,
+            13.027595,
+            12.986496,
+            12.981974,
+            12.988315,
+            13.000597,
+            13.007704,
+            12.980847,
+            12.99341,
+            12.968111,
+            12.950242,
+            12.870282,
+            12.928308,
+            12.886124,
+            12.893609,
+            12.866925,
+            12.883439,
+            12.837998,
+            12.840701,
+            12.819834,
+            12.840533,
+            12.825728,
+            12.846543,
+            12.845441,
+            12.864829,
+            12.813638,
+            12.853293,
+            12.815901,
+            12.829277,
+            12.838234,
+            12.86683,
+            12.844778,
+            12.863366,
+            12.809676,
+            12.835981,
+            12.836886,
+            12.860734,
+            12.887211,
+            12.861046,
+            12.863185,
+            12.899257,
+            12.872832,
+            12.886007,
+            12.835962,
+            12.875167,
+            12.89231,
+            12.915801,
+            12.90652,
+            12.923756,
+            12.921379,
+            12.888762,
+            12.921659,
+            12.955716,
+            12.941576,
+            12.973592,
+            12.982874,
+            12.957341,
+            12.931715,
+            12.979018,
+            12.966802,
+            13.024698,
+            13.00749,
+            13.046556,
+            13.051642,
+            13.065191,
+            13.05186,
+            13.025096,
+            13.039467,
+            13.058107,
+            13.071978,
+            13.107852,
+            13.076277,
+            13.108808,
+            13.090286,
+            13.096616,
+            13.105046,
+            13.12299,
+            13.131685,
+            13.17187,
+            13.175746,
+            13.162067,
+            13.164887,
+            13.183708,
+            13.205014,
+            13.240533,
+            13.230283,
+            13.259242,
+            13.265601,
+            13.290174,
+            13.220036,
+            13.296814,
+            13.260142,
+            13.273123,
+            13.2869,
+            13.301154,
+            13.29967,
+            13.309037,
+            13.316553,
+            13.343007,
+            13.320863,
+            13.361535,
+            13.411219,
+            13.44477,
+            13.422842,
+            13.459403,
+            13.441798,
+            13.410739,
+            13.458058,
+            13.483323,
+            13.513618,
+            13.548165,
+            13.526745,
+            13.566615,
+            13.550843,
+            13.596296,
+            13.582276,
+            13.640314,
+            13.619991,
+            13.665504,
+            13.643915,
+            13.667158,
+            13.669729,
+            13.673027,
+            13.652583,
+            13.669435,
+            13.671382,
+            13.666368,
+            13.697046,
+            13.679187,
+            13.640485,
+            13.639473,
+            13.652906,
+            13.669588,
+            13.683435,
+            13.695368,
+            13.688871,
+            13.718498,
+            13.679685,
+            13.635635,
+            13.709102,
+            13.744477,
+            13.736452,
+            13.767478,
+            13.755194,
+            13.75372,
+            13.717832,
+            13.722214,
+            13.752652,
+            13.73246,
+            13.762036,
+            13.755253,
+            13.754659,
+            13.762876,
+            13.72698,
+            13.771792,
+            13.74804,
+            13.769301,
+            13.782661,
+            13.78388,
+            13.764465,
+            13.788035,
+            13.794736,
+            13.769891,
+            13.774482,
+            13.804851,
+            13.773073,
+            13.802248,
+            13.7762,
+            13.7907,
+            13.778275,
+            13.772696,
+            13.754842,
+            13.78179,
+            13.7705,
+            13.789069,
+            13.779944,
+            13.783884,
+            13.75937,
+            13.790002,
+            13.739016,
+            13.786494,
+            13.787333,
+            13.825939,
+            13.815175,
+            13.821453,
+            13.801819,
+            13.789942,
+            13.82458,
+            13.825259,
+            13.806655,
+            13.813033,
+            13.795382,
+            13.836486,
+            13.793569,
+            13.804443,
+            13.784301,
+            13.822129,
+            13.846517,
+            13.830888,
+            13.825614,
+            13.857058,
+            13.820603,
+            13.804304,
+            13.782604,
+            13.793456,
+            13.803089,
+            13.815157
+          ]
+        },
+        {
+          "run": 2,
+          "values": [
+            2.426275,
+            1.291595,
+            0.691441,
+            0.373035,
+            0.128285,
+            0.026766,
+            0.0,
+            0.026134,
+            0.078869,
+            0.183941,
+            0.260003,
+            0.356719,
+            0.402446,
+            0.454476,
+            0.447283,
+            0.427214,
+            0.377761,
+            0.310053,
+            0.196662,
+            0.155234,
+            0.068807,
+            0.122743,
+            0.097851,
+            0.135303,
+            0.184011,
+            0.224602,
+            0.26956,
+            0.332518,
+            0.419676,
+            0.626935,
+            0.760055,
+            0.970768,
+            1.147983,
+            1.352232,
+            1.547168,
+            1.822577,
+            2.090238,
+            2.392025,
+            2.664649,
+            2.987375,
+            3.226135,
+            3.624063,
+            3.941902,
+            4.405321,
+            4.78586,
+            5.257406,
+            5.668419,
+            6.183274,
+            6.667145,
+            7.19174,
+            7.590452,
+            8.012896,
+            8.236951,
+            8.352584,
+            8.369358,
+            8.340536,
+            8.246333,
+            8.204478,
+            8.098728,
+            8.060351,
+            7.989069,
+            7.951754,
+            7.93848,
+            7.925663,
+            7.892189,
+            7.910503,
+            7.879607,
+            7.892815,
+            7.900887,
+            7.950286,
+            7.980848,
+            8.020794,
+            8.025976,
+            8.086367,
+            8.081932,
+            8.154197,
+            8.188302,
+            8.282555,
+            8.344132,
+            8.402619,
+            8.475482,
+            8.578771,
+            8.616528,
+            8.691667,
+            8.738322,
+            8.865844,
+            8.889628,
+            8.97403,
+            9.025116,
+            9.115744,
+            9.143086,
+            9.257749,
+            9.258282,
+            9.382978,
+            9.445336,
+            9.56583,
+            9.636949,
+            9.744972,
+            9.801267,
+            9.947685,
+            10.049195,
+            10.144301,
+            10.238185,
+            10.361326,
+            10.416307,
+            10.548098,
+            10.600655,
+            10.699094,
+            10.823384,
+            10.911951,
+            11.035542,
+            11.131123,
+            11.245527,
+            11.325159,
+            11.429401,
+            11.498934,
+            11.479214,
+            11.550491,
+            11.579335,
+            11.597467,
+            11.550042,
+            11.518457,
+            11.465209,
+            11.430312,
+            11.340702,
+            11.295268,
+            11.210178,
+            11.201797,
+            11.154038,
+            11.07975,
+            11.038614,
+            10.977939,
+            10.929237,
+            10.911769,
+            10.917429,
+            10.892882,
+            10.849937,
+            10.862025,
+            10.83303,
+            10.836335,
+            10.841748,
+            10.894192,
+            10.91005,
+            10.989031,
+            10.995317,
+            11.049714,
+            11.057845,
+            11.125739,
+            11.134071,
+            11.172502,
+            11.21305,
+            11.261029,
+            11.272731,
+            11.312342,
+            11.305937,
+            11.291732,
+            11.331169,
+            11.346839,
+            11.375515,
+            11.429772,
+            11.434929,
+            11.46683,
+            11.47119,
+            11.470467,
+            11.509434,
+            11.526352,
+            11.559927,
+            11.609022,
+            11.625256,
+            11.677467,
+            11.676486,
+            11.710449,
+            11.76404,
+            11.808605,
+            11.816411,
+            11.864595,
+            11.841155,
+            11.885018,
+            11.894508,
+            11.888749,
+            11.897971,
+            11.952362,
+            11.959332,
+            12.012715,
+            11.993547,
+            12.000048,
+            11.988774,
+            12.012736,
+            11.9746,
+            12.054055,
+            12.07121,
+            12.054142,
+            12.048327,
+            12.085109,
+            12.052469,
+            12.04622,
+            12.008985,
+            12.050928,
+            12.049372,
+            12.052671,
+            12.025074,
+            12.037454,
+            11.986286,
+            11.966945,
+            11.968455,
+            12.014528,
+            11.995996,
+            12.025189,
+            11.975356,
+            11.986023,
+            11.938199,
+            11.966665,
+            11.977967,
+            11.989562,
+            11.953897,
+            11.985511,
+            11.945045,
+            11.945456,
+            11.904327,
+            11.907857,
+            11.896308,
+            11.904569,
+            11.876189,
+            11.90694,
+            11.904318,
+            11.877619,
+            11.901426,
+            11.864895,
+            11.867697,
+            11.913267,
+            11.902164,
+            11.926345,
+            11.917464,
+            11.941087,
+            11.894809,
+            11.898606,
+            11.908795,
+            11.925699,
+            11.942313,
+            11.98494,
+            11.962929,
+            11.991394,
+            11.963572,
+            11.966315,
+            11.965331,
+            11.984752,
+            11.999128,
+            12.026932,
+            12.043503,
+            12.054289,
+            12.065949,
+            12.069568,
+            12.064373,
+            12.074251,
+            12.09895,
+            12.122708,
+            12.111606,
+            12.136616,
+            12.115023,
+            12.126811,
+            12.154792,
+            12.179319,
+            12.145433,
+            12.187292,
+            12.170303,
+            12.190287,
+            12.195269,
+            12.214262,
+            12.148675,
+            12.204323,
+            12.207659,
+            12.246741,
+            12.234629,
+            12.256204,
+            12.247775,
+            12.218502,
+            12.207489,
+            12.257856,
+            12.276962,
+            12.298902,
+            12.28982,
+            12.300795,
+            12.296391,
+            12.296629,
+            12.303985,
+            12.344052,
+            12.297892,
+            12.354166,
+            12.322068,
+            12.3704,
+            12.301034,
+            12.374804,
+            12.344082,
+            12.390102,
+            12.383709,
+            12.415385,
+            12.398835,
+            12.408886,
+            12.402498,
+            12.45269,
+            12.440739,
+            12.497071,
+            12.519941,
+            12.524688,
+            12.563185,
+            12.540612,
+            12.573187,
+            12.549296,
+            12.585321,
+            12.621714,
+            12.643344,
+            12.661367,
+            12.659243,
+            12.681007,
+            12.6634,
+            12.679128,
+            12.709316,
+            12.718294,
+            12.720074,
+            12.734129,
+            12.729611,
+            12.763339,
+            12.737975,
+            12.705575,
+            12.715273,
+            12.767849,
+            12.754995,
+            12.774411,
+            12.78661,
+            12.749528,
+            12.75294,
+            12.795089,
+            12.780557,
+            12.780072,
+            12.817593,
+            12.827369,
+            12.816361,
+            12.832554,
+            12.828578,
+            12.809229,
+            12.761928,
+            12.832213,
+            12.802319,
+            12.834729,
+            12.813381,
+            12.857926,
+            12.770973,
+            12.801704,
+            12.771053,
+            12.764873,
+            12.781661,
+            12.825926,
+            12.789925,
+            12.804646,
+            12.774089,
+            12.787556,
+            12.790119,
+            12.814324,
+            12.820525,
+            12.825342,
+            12.809512,
+            12.813568,
+            12.81328,
+            12.818785,
+            12.788154,
+            12.815029,
+            12.805437,
+            12.855209,
+            12.811443,
+            12.831615,
+            12.79443,
+            12.788535,
+            12.811958,
+            12.820264,
+            12.824804,
+            12.824161,
+            12.812657,
+            12.819303,
+            12.780861,
+            12.802761,
+            12.772929,
+            12.784586,
+            12.751821,
+            12.796186,
+            12.754426,
+            12.776554,
+            12.73411,
+            12.824043,
+            12.756003,
+            12.776128,
+            12.752416,
+            12.785589,
+            12.792657,
+            12.782121,
+            12.766718,
+            12.75421,
+            12.714797,
+            12.73648,
+            12.722239,
+            12.750185
+          ]
+        },
+        {
+          "run": 3,
+          "values": [
+            2.532912,
+            1.395668,
+            0.811937,
+            0.474427,
+            0.249586,
+            0.139269,
+            0.085708,
+            0.164394,
+            0.170608,
+            0.282553,
+            0.382087,
+            0.487604,
+            0.516696,
+            0.497995,
+            0.432281,
+            0.380873,
+            0.281569,
+            0.216624,
+            0.118331,
+            0.031693,
+            0.003821,
+            0.013635,
+            0.0,
+            0.010515,
+            0.002108,
+            0.058369,
+            0.098423,
+            0.217557,
+            0.317758,
+            0.487248,
+            0.627284,
+            0.849581,
+            1.021657,
+            1.263712,
+            1.497317,
+            1.755183,
+            2.01078,
+            2.297582,
+            2.547953,
+            2.856103,
+            3.157756,
+            3.519367,
+            3.862597,
+            4.318184,
+            4.728301,
+            5.202898,
+            5.631563,
+            6.076561,
+            6.610181,
+            7.120103,
+            7.566701,
+            7.933683,
+            8.039824,
+            8.074849,
+            8.05476,
+            7.995813,
+            7.912782,
+            7.846277,
+            7.765142,
+            7.713907,
+            7.622483,
+            7.587128,
+            7.537955,
+            7.513985,
+            7.495298,
+            7.481799,
+            7.452249,
+            7.474982,
+            7.434949,
+            7.497647,
+            7.53811,
+            7.617717,
+            7.638809,
+            7.679026,
+            7.710466,
+            7.767265,
+            7.821956,
+            7.871525,
+            7.95079,
+            7.97924,
+            8.029942,
+            8.113844,
+            8.130821,
+            8.170152,
+            8.22968,
+            8.30291,
+            8.356761,
+            8.436877,
+            8.477,
+            8.58182,
+            8.619432,
+            8.67584,
+            8.753332,
+            8.868882,
+            8.904135,
+            9.029124,
+            9.064752,
+            9.15206,
+            9.211317,
+            9.331861,
+            9.421189,
+            9.565212,
+            9.65373,
+            9.771824,
+            9.893939,
+            10.003856,
+            10.053467,
+            10.181951,
+            10.271187,
+            10.385594,
+            10.49326,
+            10.606357,
+            10.674092,
+            10.800777,
+            10.842183,
+            10.941996,
+            10.962202,
+            11.046426,
+            11.071631,
+            11.079874,
+            11.05332,
+            11.05243,
+            10.977928,
+            10.935855,
+            10.915861,
+            10.877553,
+            10.83093,
+            10.811907,
+            10.749845,
+            10.710282,
+            10.65543,
+            10.624969,
+            10.581137,
+            10.607381,
+            10.554303,
+            10.546897,
+            10.528986,
+            10.551786,
+            10.508448,
+            10.527523,
+            10.535667,
+            10.562204,
+            10.595192,
+            10.633268,
+            10.648221,
+            10.687843,
+            10.702089,
+            10.784335,
+            10.765346,
+            10.80626,
+            10.825819,
+            10.890115,
+            10.874929,
+            10.879491,
+            10.870148,
+            10.917977,
+            10.90815,
+            10.932546,
+            10.953467,
+            10.981752,
+            10.983322,
+            11.019128,
+            11.026959,
+            11.129908,
+            11.086857,
+            11.121517,
+            11.120142,
+            11.128711,
+            11.143284,
+            11.145281,
+            11.138448,
+            11.128999,
+            11.111101,
+            11.122918,
+            11.103807,
+            11.132334,
+            11.128782,
+            11.095293,
+            11.074029,
+            11.032492,
+            11.046319,
+            11.068323,
+            11.073211,
+            11.09408,
+            11.086359,
+            11.093165,
+            11.083337,
+            11.063078,
+            11.067692,
+            11.094682,
+            11.084327,
+            11.097057,
+            11.083755,
+            11.091593,
+            11.080153,
+            11.026601,
+            11.02651,
+            11.024062,
+            10.995563,
+            11.018104,
+            10.983015,
+            10.965792,
+            10.921158,
+            10.982938,
+            10.944899,
+            10.965352,
+            10.96264,
+            10.986102,
+            10.972853,
+            10.975637,
+            10.924247,
+            10.924642,
+            10.90978,
+            10.938171,
+            10.934993,
+            10.943588,
+            10.901585,
+            10.914364,
+            10.880589,
+            10.885722,
+            10.883026,
+            10.947348,
+            10.922461,
+            10.951424,
+            10.915937,
+            10.948906,
+            10.918392,
+            10.942315,
+            10.893889,
+            10.969513,
+            10.928828,
+            10.957957,
+            10.93774,
+            10.9855,
+            10.965287,
+            10.958277,
+            10.941103,
+            10.964358,
+            10.966776,
+            10.985299,
+            10.971781,
+            10.977942,
+            10.977861,
+            10.990748,
+            10.978676,
+            10.998973,
+            11.001475,
+            11.006124,
+            10.993419,
+            10.985888,
+            10.970355,
+            10.981892,
+            10.943974,
+            11.016098,
+            10.989317,
+            11.039736,
+            11.048179,
+            11.086328,
+            11.090079,
+            11.07438,
+            11.069323,
+            11.119633,
+            11.105514,
+            11.143389,
+            11.154076,
+            11.166511,
+            11.159217,
+            11.133943,
+            11.124967,
+            11.192132,
+            11.198915,
+            11.197317,
+            11.187727,
+            11.224132,
+            11.196209,
+            11.185436,
+            11.141348,
+            11.182907,
+            11.210987,
+            11.213101,
+            11.217219,
+            11.241272,
+            11.221256,
+            11.23242,
+            11.197653,
+            11.225693,
+            11.260117,
+            11.291005,
+            11.289097,
+            11.31428,
+            11.290448,
+            11.332796,
+            11.347231,
+            11.375489,
+            11.408745,
+            11.414216,
+            11.402895,
+            11.422459,
+            11.404918,
+            11.443873,
+            11.458485,
+            11.501272,
+            11.529246,
+            11.568109,
+            11.551049,
+            11.59608,
+            11.581338,
+            11.579095,
+            11.575902,
+            11.613267,
+            11.612952,
+            11.658823,
+            11.651862,
+            11.662369,
+            11.679354,
+            11.631883,
+            11.672008,
+            11.667191,
+            11.666312,
+            11.716322,
+            11.682419,
+            11.676582,
+            11.659092,
+            11.684487,
+            11.652537,
+            11.630144,
+            11.654428,
+            11.659887,
+            11.657521,
+            11.663287,
+            11.636551,
+            11.642979,
+            11.615576,
+            11.647802,
+            11.653212,
+            11.683925,
+            11.651339,
+            11.646986,
+            11.634222,
+            11.662586,
+            11.680997,
+            11.711276,
+            11.709065,
+            11.731019,
+            11.717309,
+            11.719444,
+            11.728404,
+            11.743186,
+            11.698246,
+            11.760705,
+            11.768923,
+            11.777025,
+            11.747513,
+            11.777323,
+            11.764981,
+            11.745031,
+            11.712069,
+            11.738352,
+            11.754404,
+            11.770984,
+            11.739257,
+            11.78011,
+            11.738673,
+            11.717926,
+            11.750709,
+            11.79101,
+            11.743121,
+            11.769514,
+            11.74658,
+            11.738621,
+            11.735295,
+            11.73475,
+            11.756246,
+            11.777287,
+            11.754909,
+            11.76751,
+            11.771522,
+            11.801394,
+            11.771352,
+            11.768215,
+            11.757147,
+            11.800639,
+            11.785022,
+            11.784275,
+            11.784285,
+            11.785098,
+            11.742248,
+            11.734608,
+            11.715404,
+            11.798104,
+            11.764591,
+            11.806731,
+            11.798194,
+            11.775342,
+            11.775336,
+            11.740551,
+            11.757695,
+            11.770757,
+            11.744378,
+            11.768227
+          ]
+        }
+      ]
+    }
+  },
+  "compute": {
+    "execution": "CPU WHAM post-processing; no molecular dynamics was run for this reproduction",
+    "nvidia_gpu_used": false
+  },
+  "limitations": [
+    "GluHUT is a glucose-binding receptor analogue and is not the NNC2215 insulin conjugate.",
+    "No PaG was simulated or analysed in this PMF reproduction.",
+    "The deposited trajectories are original authors' simulation outputs; this workflow redoes their WHAM analysis.",
+    "This source-data reproduction does not establish NNC2215\u2013PaG binding, clinical effects, or force-field validity for the insulin conjugate."
+  ],
+  "clinical_use": false
+}

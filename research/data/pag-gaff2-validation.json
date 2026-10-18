@@ -1,0 +1,112 @@
+{
+  "record_type": "pag_gaff2_ligand_parameter_file_audit",
+  "created_at_utc": "2026-10-18T00:31:27.524916+00:00",
+  "source": {
+    "pubchem_cid": 83944,
+    "prepared_conformer": "pag-pubchem-cid83944-carboxylate-3d.sdf",
+    "formula": "C14H16NO8-",
+    "formal_charge": -1,
+    "stereocenters_cip": [
+      {
+        "atom_index_zero_based": 9,
+        "cip": "S"
+      },
+      {
+        "atom_index_zero_based": 10,
+        "cip": "S"
+      },
+      {
+        "atom_index_zero_based": 11,
+        "cip": "R"
+      },
+      {
+        "atom_index_zero_based": 12,
+        "cip": "S"
+      },
+      {
+        "atom_index_zero_based": 13,
+        "cip": "S"
+      }
+    ]
+  },
+  "parameterization": {
+    "method": "GAFF2 / AM1-BCC",
+    "toolchain": "AmberTools 26.0",
+    "mol2_atom_count": 39,
+    "mol2_bond_count": 40,
+    "atom_element_order_matches_source": true,
+    "connectivity_matches_source": true,
+    "output_geometry_cip_matches_source": true,
+    "output_geometry_cip": [
+      {
+        "atom_index_zero_based": 9,
+        "cip": "S"
+      },
+      {
+        "atom_index_zero_based": 10,
+        "cip": "S"
+      },
+      {
+        "atom_index_zero_based": 11,
+        "cip": "R"
+      },
+      {
+        "atom_index_zero_based": 12,
+        "cip": "S"
+      },
+      {
+        "atom_index_zero_based": 13,
+        "cip": "S"
+      }
+    ],
+    "mol2_partial_charge_sum_e": -1.0000010000000001,
+    "expected_carboxylate_resonance_bond_difference": [
+      {
+        "atom_names": [
+          "O7",
+          "C6"
+        ],
+        "source_sdf_type": "DOUBLE",
+        "gaff2_mol2_type": "SINGLE"
+      }
+    ]
+  },
+  "openmm_file_check": {
+    "openmm_version": "8.6.1",
+    "prmtop_particle_count": 39,
+    "topology_charge_sum_e": -1.0000009927396651,
+    "initial_potential_energy_kcal_mol": 106.79897387853555,
+    "energy_is_finite": true,
+    "platform": "CPU",
+    "scope": "ligand-only Amber parameter and coordinate loading check"
+  },
+  "files": {
+    "pag-pubchem-cid83944-carboxylate-3d.sdf": {
+      "path": "/Users/andrii/Projects/dia-health-one-demo/research/ligands/pag-pubchem-cid83944-carboxylate-3d.sdf",
+      "sha256": "bdc61656a6d6a8f067adb64375d3376101f701f3ed692bd4c0aea2b7520e3411"
+    },
+    "pag-carboxylate-gaff2.mol2": {
+      "path": "/Users/andrii/Projects/dia-health-one-demo/research/ligands/pag-gaff2/pag-carboxylate-gaff2.mol2",
+      "sha256": "59c76736eee68e4ce908f9fb9e4b502f91f416e89736ebc5d98bc1b21e68af1a"
+    },
+    "pag-carboxylate-gaff2.frcmod": {
+      "path": "/Users/andrii/Projects/dia-health-one-demo/research/ligands/pag-gaff2/pag-carboxylate-gaff2.frcmod",
+      "sha256": "977e0e01696cb16f3fe88b6f0633b553366c951f1a2f997081d4be14cf91d46b"
+    },
+    "pag-carboxylate-gaff2.prmtop": {
+      "path": "/Users/andrii/Projects/dia-health-one-demo/research/ligands/pag-gaff2/pag-carboxylate-gaff2.prmtop",
+      "sha256": "2cb71dbefed1a46d9627446779be1aecd1bd40021891f1a0c962c11da082253b"
+    },
+    "pag-carboxylate-gaff2.inpcrd": {
+      "path": "/Users/andrii/Projects/dia-health-one-demo/research/ligands/pag-gaff2/pag-carboxylate-gaff2.inpcrd",
+      "sha256": "9c2440d31b65724ca9b057cc3832c8a9f3d477b07670f0819b3e7e04f9b469e0"
+    }
+  },
+  "limitations": [
+    "No NNC2215 conjugate or protein is included.",
+    "No host\u2013guest pose, binding energy, or affinity was calculated.",
+    "GAFF2/AM1-BCC is a candidate parameterization, not a validated transfer to the NNC2215 conjugate.",
+    "The carboxylate uses a delocalized GAFF2 single-bond representation where the source SDF uses one localized C=O bond."
+  ],
+  "clinical_use": false
+}

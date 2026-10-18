@@ -118,10 +118,32 @@ The pig-clamp panel reports the article's GIR AUC from 300 to 420 minutes at a 3
 
 The model-coefficient panel evaluates `SI = SIbase * (1 + ConcPaG * CoeffPaG / 100)` using `CoeffPaG = 0.7784% per μmol/L`. The 70 μmol/L human anchor is the article's estimated mean maximum after 1000 mg oral paracetamol; 102 and 426 μmol/L are the reported mean maxima after low- and high-dose IV PaG in pigs. Values are equation-derived and remain separate from observed GIR and receptor-binding outcomes.
 
+## Public analogue PMF reanalysis: GluHUT and D-glucose
+
+Eades et al., [“Free energy simulations on a biomimetic glucose receptor: understanding the selectivity of GluHUT”](https://pubs.rsc.org/en/content/articlehtml/2026/sc/d6sc00738d), report a glucose binding free energy of −12.5 ± 0.9 kcal/mol. Their public [Zenodo dataset](https://zenodo.org/records/19664426) includes the umbrella-window time series used for a source-data reproduction of the WHAM analysis. The downloaded `WHAM_PMF.zip` SHA-256 is `e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb`.
+
+`reproduce_gluhut_glucose_pmf.py` extracts the three glucose runs, checks the 51-window metadata, and invokes [Grossfield WHAM](https://github.com/agrossfield/wham) 2.0.11 from source commit `43bdd6fcd1916ae2b169cb52ac326b7eea567abb`. It uses 400 bins over 0–15 Å, 300 K, tolerance `1e-6`, and a 13–15 Å bulk reference. Each of the three independent PMFs contains 51 windows and 765,051 frames across windows. The Zenodo example metadata uses a spring parameter of 100; the paper reports an Amber restraint constant of 50, consistent with WHAM's documented convention that Amber omits the 1/2 factor.
+
+The reanalysed run values are −13.794, −12.790, and −11.760 kcal/mol. Their mean ± sample SD is −12.782 ± 1.017 kcal/mol, 0.282 kcal/mol below the published mean and within its reported one-SD range. These are WHAM calculations on the authors' trajectories, not new MD. The JSON result is `data/gluhut-glucose-wham-reproduction.json`, and the generated figure is `assets/gluhut-glucose-pmf.svg`. Reproduce with Python dependencies for the analysis/plot and a Grossfield WHAM binary built from the pinned commit:
+
+```sh
+python research/reproduce_gluhut_glucose_pmf.py \
+  --archive /path/to/WHAM_PMF.zip \
+  --wham-binary /path/to/wham
+```
+
+GluHUT is a biomimetic glucose receptor, not the NNC2215 insulin conjugate. The dataset contains glucose, not PaG. This analogue demonstrates that the published PMF post-processing can be reconstructed; it does not reproduce NNC2215–PaG binding, validate the NNC2215 force field, or predict receptor/clinical outcomes. The WHAM post-processing ran on CPU and did not use an NVIDIA GPU.
+
+## PaG GAFF2 ligand-only file audit
+
+`validate_pag_gaff2.py` compares the prepared, singly deprotonated PaG carboxylate SDF with the AmberTools 26 GAFF2/AM1-BCC Mol2 and Amber files. The source structure has formula C14H16NO8−, 39 atoms, and five CIP centres (`S, S, R, S, S`). The audit confirms matching atom element order and 40-bond connectivity, and geometry-based CIP labels match at all five centres. The one localized SDF C=O bond is represented as a single bond in the GAFF2 carboxylate resonance form; this is the expected carboxylate bond representation, not a connectivity mismatch.
+
+The Mol2 partial-charge sum is −1.000001 e. OpenMM 8.6.1 loads the 39-atom Amber topology with total charge −1.00000099 e and finite initial potential energy 106.799 kcal/mol. Machine-readable details and SHA-256 checksums are in `data/pag-gaff2-validation.json`; the parameter and coordinate files are under `ligands/pag-gaff2/`. This is an isolated-ligand preparation/file check. It does not validate the force field against experiment, transfer parameters to the NNC2215 conjugate, or calculate a pose or affinity. A finite initial energy is a load/geometry sanity check, not a stability or accuracy result.
+
 ## Interpretation limits
 
 - The exploratory Hill fit is weakly identified: its EC50 bootstrap upper tail reaches the numerical fit ceiling. No 6 mmol/L threshold is fitted or inferred.
-- The only molecular dynamics in this demo are two short simulations of PaG alone in water. No NNC2215–PaG binding simulation, docking, binding free-energy calculation, or patient-response model is run. The published NNC2215 model PDBs are catalogued inputs, not evidence that target binding was simulated.
+- The only PaG molecular dynamics in this demo are two short simulations of PaG alone in water. Separate generic 1UBQ engine preflights include no project ligands. No NNC2215–PaG binding simulation, docking, binding free-energy calculation, or patient-response model is run. The GluHUT PMF panel reanalyses the source authors’ trajectories; the published NNC2215 model PDBs are catalogued inputs, not evidence that target binding was simulated.
 - GPU acceleration is not needed for source-data calculations. A generic OpenMM 8.6.1 OpenCL preflight has now run on a temporary free Colab Tesla T4: three 100 ps 1UBQ runs measured a median 270.175 ns/day. This is not target-system throughput or an NVIDIA Inception/partner allocation. Inception is approved; its `$1,000` Lambda, `$10,000` AWS, and `$5,000` Azure catalog requests remain pending, while the separate partner applications and Innovation Lab tile remain unresolved. See `data/nvidia-engine-preflight.json`, `data/nvidia-access-status.json`, and `COMPUTE_STATUS.md`.
 - The original PaG MD starting coordinates are not public in the supporting information. Any later study using the published NNC2215 models must be labelled as a public-input proxy, not an exact rerun of the PaG simulation.
 - The Apple M4 and Colab T4 1UBQ preflights verify that a generic solvated protein system can be constructed and stepped on OpenMM CPU/OpenCL platforms. The T4 timing is not a controlled comparison with Apple M4, does not estimate target-system performance, and does not validate the PaG/NNC2215 setup.
