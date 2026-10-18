@@ -1,10 +1,10 @@
 {
   "schema": "dia-health-one.nnc2215-model-formula-audit.v1",
   "run": {
-    "run_id": "DHO-NNC2215-FORMULA-20261018T014529Z",
-    "created_at_utc": "2026-10-18T01:45:29.731739+00:00",
+    "run_id": "DHO-NNC2215-FORMULA-20261018T015810Z",
+    "created_at_utc": "2026-10-18T01:58:10.189578+00:00",
     "script": "research/audit_nnc2215_model_formula.py",
-    "script_sha256": "b83712d0484a17e6dca7ad69fa80eb90d38cdb0d7c096ea45ec2a0bea5a11be4",
+    "script_sha256": "3cdaccd5c69a4a232730885bbbdc91b0af3f3e915b125911fc2afbe1233f8f68",
     "nvidia_gpu_used": false
   },
   "published_reference": {
@@ -18,6 +18,77 @@
       "N": 79,
       "O": 97,
       "S": 6
+    }
+  },
+  "source_component_decomposition": {
+    "sources": [
+      {
+        "role": "NNC2215 synthesis and component formulae",
+        "title": "Glucose-sensitive insulin with attenuation of hypoglycaemia — Supplementary Information",
+        "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+        "locations": [
+          "Methods §§1–4, PDF pp. 2–11",
+          "B1 peracetyl glycoside acid formula C18H26O13, p. 3",
+          "B29 active ester formula C10H11NO5, p. 2",
+          "Macrocycle roof propyl azide formula C56H63N15O12, p. 10",
+          "NNC2215 formula C325H461N79O97S6, p. 11"
+        ]
+      },
+      {
+        "role": "Independent synthesis-description cross-check",
+        "publication": "WO2023144240A1, Example 2",
+        "url": "https://patents.google.com/patent/WO2023144240A1/en",
+        "reported_product": "B1-glucoside-EG-Ac B29-MC-propyl-triazole-propanoxycarbonyl desB30 human insulin (INS2)",
+        "reported_calculated_ions": {
+          "m_plus_4h_mz": 1805.8,
+          "m_plus_5h_mz": 1444.8
+        },
+        "interpretation": "The patent describes the same named B1/B29 building blocks and reports the same calculated mass-to-charge values as the Nature SI. This supports product-identity cross-checking; it does not supply an atom-mapped topology for the PDB residues."
+      }
+    ],
+    "derivation": {
+      "b1_peracetyl_acid_formula": "C18H26O13",
+      "b1_deacetylation_count": 4,
+      "formula_removed_per_o_deacetylation": "C2H2O",
+      "b1_deacetylated_acid_formula": "C10H18O9",
+      "b1_net_attachment_formula_after_condensation": "C10H16O8",
+      "b1_net_attachment_element_counts": {
+        "C": 10,
+        "H": 16,
+        "O": 8
+      },
+      "b29_active_ester_formula": "C10H11NO5",
+      "n_hydroxysuccinimide_leaving_group_formula": "C4H5NO3",
+      "b29_linker_formula_after_nhs_departure": "C6H6O2",
+      "macrocycle_roof_propyl_azide_formula": "C56H63N15O12",
+      "b29_net_attachment_formula_after_click": "C62H69N15O14",
+      "b29_net_attachment_element_counts": {
+        "C": 62,
+        "H": 69,
+        "N": 15,
+        "O": 14
+      },
+      "expected_total_attachment_formula": "C72H85N15O22",
+      "expected_total_attachment_element_counts": {
+        "C": 72,
+        "H": 85,
+        "N": 15,
+        "O": 22
+      },
+      "published_formula_minus_derived_parent_formula": "C72H85N15O22",
+      "published_formula_minus_derived_parent_element_counts": {
+        "C": 72,
+        "H": 85,
+        "N": 15,
+        "O": 22
+      },
+      "source_decomposition_matches_published_formula_difference": true,
+      "assumptions": [
+        "Four O-acetyl groups are removed during the reported saponification.",
+        "B1 amide formation removes H2O from the deacetylated acid and insulin amino group.",
+        "The B29 NHS active ester transfers the C6H6O2 linker composition after NHS leaves.",
+        "The azide–alkyne cycloaddition incorporates both source molecules without atom loss."
+      ]
     }
   },
   "source_structure_manifest": "research/data/structure-manifest.json",
@@ -64,14 +135,77 @@
         "C": 2
       }
     },
-    "interpretation": "The PDB ATOM protein cores retain the same heavy-element counts as sequence-derived desB30 insulin in the closed model. After subtracting this parent formula from the published NNC2215 formula, the PDB PHX/LYX/MC HETATM component sum contains two excess carbon records (C74 observed versus C72 expected); nitrogen and oxygen counts match. This localizes the two-carbon discrepancy to the aggregate nonstandard HETATM components, but not to a particular residue or atom."
+    "interpretation": "The source-reported B1 and B29 building-block formulae sum to the published attachment difference C72H85N15O22. The PDB PHX heavy-element inventory matches the source-derived B1 attachment C10O8. The B29-linked PDB LYX/MC pool contains C64N15O14 versus source-derived C62N15O14: nitrogen and oxygen match, with two excess carbon coordinate records. This narrows the inventory discrepancy to the B29-linked component pool, but does not establish which atom records are unsupported or missing from the source atom mapping."
   },
+  "model_source_component_count_comparison": [
+    {
+      "state": "active_open",
+      "b1_source_component_vs_pdb_phx": {
+        "source_expected_heavy_element_counts": {
+          "C": 10,
+          "O": 8
+        },
+        "pdb_heavy_element_counts": {
+          "C": 10,
+          "O": 8
+        },
+        "pdb_minus_source_delta": {}
+      },
+      "b29_source_component_vs_pdb_lyx_mc_pool": {
+        "source_expected_heavy_element_counts": {
+          "C": 62,
+          "N": 15,
+          "O": 14
+        },
+        "pdb_heavy_element_counts": {
+          "C": 64,
+          "N": 15,
+          "O": 14
+        },
+        "pdb_minus_source_delta": {
+          "C": 2
+        },
+        "scope_note": "Residue labels group the B29-linked pool for element-count comparison only; this is not an atom-by-atom graph mapping."
+      }
+    },
+    {
+      "state": "inactive_closed",
+      "b1_source_component_vs_pdb_phx": {
+        "source_expected_heavy_element_counts": {
+          "C": 10,
+          "O": 8
+        },
+        "pdb_heavy_element_counts": {
+          "C": 10,
+          "O": 8
+        },
+        "pdb_minus_source_delta": {}
+      },
+      "b29_source_component_vs_pdb_lyx_mc_pool": {
+        "source_expected_heavy_element_counts": {
+          "C": 62,
+          "N": 15,
+          "O": 14
+        },
+        "pdb_heavy_element_counts": {
+          "C": 64,
+          "N": 15,
+          "O": 14
+        },
+        "pdb_minus_source_delta": {
+          "C": 2
+        },
+        "scope_note": "Residue labels group the B29-linked pool for element-count comparison only; this is not an atom-by-atom graph mapping."
+      }
+    }
+  ],
   "method": {
-    "description": "Verify source-file SHA-256 values and coordinate-record counts; count ATOM/HETATM element fields; derive the desB30 parent formula from validated chain sequences and three disulfides; and exclude the explicitly modelled free-glucose BGL residue before comparing the model components with the published formula.",
+    "description": "Verify source-file SHA-256 values and coordinate-record counts; count ATOM/HETATM element fields; derive the desB30 parent formula from validated chain sequences and three disulfides; calculate attachment formulae from source-reported building-block compositions and reaction stoichiometry; and exclude the explicitly modelled free-glucose BGL residue before comparing model component inventories.",
     "chemistry_inference": false,
+    "source_formula_arithmetic_performed": true,
     "bond_order_or_charge_assignment": false,
     "hydrogen_counts_interpreted_as_formula_validation": false,
-    "limitation": "This is a coordinate atom inventory plus a sequence-based parent-formula calculation, not a validated molecular graph. It localizes a heavy-atom count difference to the aggregate nonstandard components but does not establish which atom is wrong, whether a model atom is chemically intended, or the chemical cause. Hydrogen counts are not used as formula-validation evidence."
+    "limitation": "This combines source-reported building-block formula arithmetic with PDB coordinate-record counts; it is not a validated molecular graph or atom map. The count comparison narrows the two-carbon residual to the B29-linked LYX/MC component pool but does not identify the specific atom records, establish which model atoms are chemically intended, or validate bond orders, stereochemistry, protonation, charges, or parameters. Hydrogen coordinate counts are not used as formula-validation evidence."
   },
   "model_results": [
     {
@@ -564,10 +698,13 @@
   "assessment": {
     "same_extra_heavy_carbon_count_in_both_states": true,
     "unresolved_coordinate_inventory_mismatch": true,
-    "interpretation": "After excluding free-glucose BGL, both publisher-supplied state files contain two more carbon records than the published NNC2215 formula. Comparison against the sequence-derived desB30 insulin parent localizes those two excess carbon records to the aggregate PHX/LYX/MC HETATM components. The open model's one-oxygen shortfall is localized to the missing ASN A21 OXT terminal atom record; the closed model contains it. Hydrogen counts differ between states and are not treated as formula evidence. The identity and chemical reason for the extra carbon records remain unresolved.",
+    "source_building_block_decomposition_matches_published_formula": true,
+    "b1_heavy_inventory_matches_source_count_in_both_states": true,
+    "b29_pool_has_two_excess_carbon_records_in_both_states": true,
+    "interpretation": "The source-reported B1/B29 building-block formula arithmetic reproduces the published NNC2215 attachment difference. The PDB PHX B1 component matches its expected heavy-element count; the PDB LYX/MC B29-linked pool has two additional carbon coordinate records, with N/O counts matching source composition. This is an element-count localization, not an atom mapping. The open model's one-oxygen shortfall is the missing ASN A21 OXT terminal record; the closed model contains it. Hydrogen counts differ between states and are not treated as formula evidence.",
     "production_md_ready": false,
     "target_binding_md_started": false,
     "clinical_use": false
   },
-  "next_gate": "Map the PHX/LYX/MC atoms against the published B1 and B29 structures and resolve the two excess carbon records in their aggregate heavy-atom inventory before assigning a force-field topology or running target binding MD."
+  "next_gate": "Map the source-derived B1 and B29 building blocks atom by atom onto PHX/LYX/MC, reconcile the two-carbon excess in the B29-linked PDB pool and the remaining hydrogen/link-record differences, then validate the complete graph, stereochemistry, protonation, charges, and force-field parameters before target binding MD."
 }

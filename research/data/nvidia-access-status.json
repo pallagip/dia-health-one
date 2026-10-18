@@ -1,9 +1,9 @@
 {
   "schema": "dia-health-one.compute-access-status.v1",
   "checked_date_utc": "2026-10-18",
-  "portal_status_checked_at_utc": "2026-10-18T01:29:33Z",
+  "portal_status_checked_at_utc": "2026-10-18T02:01:17Z",
   "portal_status_evidence": {
-    "source": "Authenticated NVIDIA Inception Benefits page and Products page observed at 2026-10-18T01:29:33Z.",
+    "source": "Authenticated NVIDIA Inception Benefits and Products pages observed at 2026-10-18T02:01:17Z.",
     "visible_requests": [
       "$1,000 in Lambda Cloud Credits — benefit request pending",
       "$10,000 in AWS Cloud Credits — benefit request pending",
@@ -24,22 +24,86 @@
       "observed_browser_console_error": "TypeError: Cannot read properties of undefined (reading 'Silent_Auth_Host__c') in NVIDIA portal auth component.",
       "catalog_tile_conclusion": "The Innovation Lab search result remains zero from the earlier catalog search at 2026-10-18T00:54:30Z; no Innovation Lab request is listed in the five visible request rows.",
       "latest_recheck": {
-        "checked_at_utc": "2026-10-18T01:29:33Z",
-        "outcome": "Click left the Benefits page unchanged; no catalog modal or navigation appeared.",
-        "console_error_returned_for_this_attempt": false,
-        "prior_console_error_retained": "TypeError: Cannot read properties of undefined (reading 'Silent_Auth_Host__c') was observed during the 2026-10-18T01:18:46Z check."
+        "checked_at_utc": "2026-10-18T02:01:17Z",
+        "outcome": "Click left the Benefits page unchanged; no catalog modal, results, or navigation appeared.",
+        "console_error_returned_for_this_attempt": false
       }
     },
     "product_records_observed": {
-      "checked_at_utc": "2026-10-18T01:29:33Z",
+      "checked_at_utc": "2026-10-18T02:01:17Z",
       "count": 2,
+      "records": [
+        {
+          "name": "Dia Health computational insulin discovery platform",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "BioNeMo Framework",
+            "CUDA Toolkit"
+          ]
+        },
+        {
+          "name": "Dia Health One Research Dashboard",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "CUDA Toolkit"
+          ]
+        }
+      ],
       "stage_values": [
         "Developing"
       ],
       "acceleration_values": [
         "Not Accelerated"
       ],
-      "interpretation": "Two product rows are present in the account, so product records exist. Both are marked Developing and Not Accelerated; this does not establish an active NVIDIA GPU workload or benefit eligibility."
+      "interpretation": "Two non-EOL Developing product rows exist; neither is marked NVIDIA-accelerated. This does not establish an active NVIDIA GPU workload or an award."
+    },
+    "latest_observation": {
+      "checked_at_utc": "2026-10-18T02:01:17Z",
+      "benefit_requests": [
+        {
+          "benefit": "$1,000 in Lambda Cloud Credits",
+          "status": "Benefit request pending; portal says complete the request with the partner."
+        },
+        {
+          "benefit": "$10,000 in AWS Cloud Credits",
+          "status": "Benefit request pending; portal says complete the request with the partner."
+        },
+        {
+          "benefit": "$5,000 in Microsoft Azure Cloud Credits",
+          "status": "Benefit request pending; portal says complete the request with the partner."
+        },
+        {
+          "benefit": "Up to 50K GPU Hours + AI Services for Accelerating European Startups",
+          "status": "Benefit request pending; portal says complete the request with the partner."
+        },
+        {
+          "benefit": "$2,000-$350,000 in Google Cloud Credits",
+          "status": "Benefit request pending; portal says complete the request with the partner."
+        }
+      ],
+      "explore_benefits_control": "Clicked from the authenticated Benefits page; the page and accessibility tree remained unchanged, with no catalog results or application tab opened.",
+      "product_records": [
+        {
+          "name": "Dia Health computational insulin discovery platform",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "BioNeMo Framework",
+            "CUDA Toolkit"
+          ]
+        },
+        {
+          "name": "Dia Health One Research Dashboard",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "CUDA Toolkit"
+          ]
+        }
+      ],
+      "profile_technology_evidence_note": "The current project run manifests show OpenMM OpenCL on a temporary free Colab Tesla T4 and do not record BioNeMo or CUDA Toolkit execution. Confirm the product-profile technology selections against other company work before using them as evidence of an active NVIDIA workload or in a partner application."
     }
   },
   "nvidia_inception": {
@@ -488,5 +552,14 @@
       "current_project_scope": "Classical molecular dynamics; no AI activity has been established for this reproduction workload.",
       "source": "https://www.eurohpc-ju.europa.eu/ai-factories/ai-factories-access-modes/fast-lane-access-ai-factories_en"
     }
+  },
+  "mailbox_check": {
+    "checked_at_utc": "2026-10-18T02:01:17Z",
+    "queries": [
+      "after:2026/10/18 from:(nvidia.com) -in:spam -in:trash",
+      "after:2026/10/18 {from:patrick@deahealth.one from:patrik@deahealth.one} -in:spam -in:trash"
+    ],
+    "result": "The only NVIDIA messages returned were the previously logged pending-request acknowledgements at 00:48:56 UTC and 00:53:38 UTC; no later NVIDIA response was found. No new message from Patrick/Patrik was found.",
+    "monitoring": "Point-in-time searches only; no continuous inbox monitor or hook is configured."
   }
 }
