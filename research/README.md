@@ -110,6 +110,23 @@ The open model places free D-glucose in the B29 macrocycle; the closed model pla
 
 Run `python3 research/inspect_structure_models.py` to verify the local PDB checksums and produce `data/structure-preflight.json`. This inventory records coordinate counts, chain/residue labels, disulfide and covalent-link records, and nonstandard residue names. It is a file/record preflight, not chemical-graph or force-field validation.
 
+### ChimeraX receptor-session audit
+
+The same Figshare dataset also provides the 79 MB ChimeraX session [“NNC2215 in open and closed forms docked into insulin receptor.cxs”](https://ndownloader.figshare.com/files/48308389). The audit verifies its MD5 against the publisher's file metadata and parses the embedded active/open and inactive/closed NNC2215 snapshots. Their atom-identity sequences match the corresponding public PDB coordinate records after applying the documented `BGLC` → `BGL` alias to the open model. The session contains 990 atoms / 1,010 bond edges in the open snapshot and 968 atoms / 986 bond edges in the closed snapshot.
+
+This is a session-content audit, not chemical validation. At the pinned ChimeraX source revision, session serialization stores bond endpoint atom-index pairs but no authoritative bond-order field. The target PHX/LYX/MC residues have no explicit IDATM type strings; cached computed types are derived labels. The two-carbon excess in the B29-linked LYX/MC pool remains unresolved, and no force-field parameters are validated. Do not use this session as a production-MD topology. Machine-readable findings are in `data/nnc2215-chimerax-session-audit.json`; the source file is distributed under the dataset's CC BY 4.0 licence.
+
+To reproduce the audit, install `research/chimerax-session-audit-requirements.txt`, download the CXS file, and decompress it with LZ4:
+
+```sh
+lz4 -d -f "NNC2215 in open and closed forms docked into insulin receptor.cxs" nnc2215-session.raw
+python research/audit_nnc2215_chimerax_session.py \
+  --session nnc2215-session.raw \
+  --cxs "NNC2215 in open and closed forms docked into insulin receptor.cxs"
+```
+
+The script checks the downloaded session's published MD5 and writes the complete audit record. Interpretation of session fields is grounded in ChimeraX source at commit [`b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f`](https://github.com/RBVI/ChimeraX/tree/b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f/src/bundles/atomic_lib/atomic_cpp/atomstruct_cpp). This work ran on the local CPU and did not use an NVIDIA GPU.
+
 ## PaG evidence boundary
 
 Sturis et al., [“Interaction between Paracetamol Glucuronide and a Glucose-Sensitive Insulin Molecule (NNC2215): Increased Risk of Hypoglycemia”](https://pubs.acs.org/doi/10.1021/acsptsci.6c00069), *ACS Pharmacology & Translational Science* (2026), DOI `10.1021/acsptsci.6c00069`, is represented on the dashboard through explicitly labelled published summary values. The reported Kd means are 1.91 mM for D-glucose and 0.17 mM for PaG; their ratio (about 11.2) is calculated from those means. The paper reports 0.9% and 5.4% hIR-A relative affinity at zero glucose without PaG and with 70 μM PaG. These rounded summaries are not independently reanalysed raw values.

@@ -193,3 +193,15 @@ The AI Factory France and Google Cloud NVIDIA receipt messages likewise say each
 ## HunAIFA intake readback — 18 October 2026, 03:55 UTC
 
 The HunAIFA support form now displays “Thank you! Your survey responses have been recorded.” This confirms the guidance/referral intake was submitted. It is separate from the AI Factory France compute application; no GPU-hours award or allocation is confirmed. This replaces the stale partial-form status in the access manifest.
+
+## ChimeraX session audit and dashboard update — 18 October 2026, 06:43 CEST
+
+The publisher's Springer Nature Figshare dataset (DOI `10.6084/m9.figshare.26526460.v1`, CC BY 4.0) includes `NNC2215 in open and closed forms docked into insulin receptor.cxs` (file 48308389). The downloaded 79,145,092-byte CXS has MD5 `33143f4fad4e80bf4accd09718339aa7`, matching the Figshare metadata, and SHA-256 `bcfd37935142cec08a84271f12b172b84911c7e6e4adb3411801e37ea4d65fb3`. Its LZ4-decompressed session is 111,053,522 bytes with SHA-256 `c660b040ca4383ed6b51b752b6668f48cf9773b018bcb2595367ae62111934a3`.
+
+Run `DHO-NNC2215-CXS-20261018T044200Z` parsed the ChimeraX v19 session on Python 3.14.4 with `msgpack==1.2.3`; no GPU was used. The open snapshot has 990 atoms, 54 residues, and 1,010 bond edges; the closed snapshot has 968 atoms, 53 residues, and 986 bond edges. The atom-identity sequences match the published PDB model files after applying the `BGLC`→`BGL` residue-name alias to the open snapshot. This verifies record identity/order, not chemical correctness.
+
+Inspection of ChimeraX serializers at pinned commit `b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f` confirms that bond edges are serialized as endpoint atom-index pairs without authoritative bond orders. The target PHX/LYX/MC residues have no explicit IDATM atom-type strings; cached computed IDATM types are derived metadata. The attachment heavy-atom count remains C74N15O22 versus the source-formula-derived C72N15O22, leaving two excess carbon records in the B29-linked LYX/MC pool unexplained. The session therefore does not clear the structure or parameterisation gate. No NNC2215–PaG target binding MD, target affinity calculation, receptor-bound simulation, or NVIDIA GPU run has occurred.
+
+New local artifacts: `research/audit_nnc2215_chimerax_session.py`, `research/chimerax-session-audit-requirements.txt`, and `research/data/nnc2215-chimerax-session-audit.json`. The dashboard now contains a compact audit panel with open/closed inventory counts, the identity-match result, the three unresolved chemistry checks, and links to the JSON, script, and original CXS. It distinguishes checksum/identity verification from topology validation. The dashboard and report edits are local and not yet deployed at the time of this entry.
+
+Reproduction: decompress the Figshare CXS with `lz4 -d -f <session.cxs> <session.raw>`, install the pinned audit requirement, then run `python research/audit_nnc2215_chimerax_session.py --session <session.raw> --cxs <session.cxs>`. The JSON records the publisher's expected MD5 and the SHA-256 checksums. No chemistry or atom mapping was inferred from the ChimeraX session.

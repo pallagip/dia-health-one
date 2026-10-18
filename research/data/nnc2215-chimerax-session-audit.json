@@ -1,0 +1,275 @@
+{
+  "formula_comparison": {
+    "interpretation": "The CXS snapshot preserves the same model atom inventory. Its computed IDATM types are metadata derived by ChimeraX; they are not an atom-mapped source chemical definition. The two-carbon excess in LYX+MC versus the published formula-derived B29 component remains unresolved.",
+    "model_target_residue_heavy_atoms": {
+      "active_open": {
+        "C": 74,
+        "N": 15,
+        "O": 22
+      },
+      "inactive_closed": {
+        "C": 74,
+        "N": 15,
+        "O": 22
+      }
+    },
+    "published_expected_attachment_heavy_atoms": {
+      "C": 72,
+      "N": 15,
+      "O": 22
+    }
+  },
+  "models": {
+    "active_open": {
+      "atom_count": 990,
+      "bond_edge_count": 1010,
+      "chimerax_structure_session_version": 19,
+      "compared_pdb": "nnc2215-open-model.pdb",
+      "computed_idatm_type_counts_all_atoms": {
+        "C2": 64,
+        "C3": 181,
+        "Cac": 8,
+        "Car": 80,
+        "H": 100,
+        "HC": 370,
+        "N2": 2,
+        "N3+": 1,
+        "Ng+": 3,
+        "Npl": 73,
+        "O2": 63,
+        "O2-": 16,
+        "O3": 23,
+        "S3": 6
+      },
+      "computed_idatm_type_counts_by_target_residue": {
+        "LYX": {
+          "C2": 1,
+          "C3": 5,
+          "Car": 2,
+          "HC": 11,
+          "N2": 2,
+          "Npl": 1,
+          "O2": 1,
+          "O3": 1
+        },
+        "MC": {
+          "C2": 6,
+          "C3": 17,
+          "Cac": 3,
+          "Car": 30,
+          "H": 12,
+          "HC": 48,
+          "Npl": 12,
+          "O2": 6,
+          "O2-": 6
+        },
+        "PHX": {
+          "C2": 1,
+          "C3": 9,
+          "H": 4,
+          "HC": 13,
+          "O2": 1,
+          "O3": 7
+        }
+      },
+      "element_counts_by_target_residue": {
+        "LYX": {
+          "C": 8,
+          "H": 11,
+          "N": 3,
+          "O": 2
+        },
+        "MC": {
+          "C": 56,
+          "H": 60,
+          "N": 12,
+          "O": 12
+        },
+        "PHX": {
+          "C": 10,
+          "H": 17,
+          "O": 8
+        }
+      },
+      "explicit_idatm_type_counts_all_atoms": {},
+      "explicit_idatm_type_counts_by_target_residue": {
+        "LYX": {},
+        "MC": {},
+        "PHX": {}
+      },
+      "model_name": "2215_active-alt_glucose_rec_correctaminopacids.pdb",
+      "pdb_atom_identity_name_aliases_applied": {
+        "BGLC": "BGL"
+      },
+      "pdb_atom_identity_sequence_match": true,
+      "pdb_atom_identity_sequence_match_before_alias": false,
+      "pdb_coordinate_atom_count": 990,
+      "pdb_link_records": [
+        "LINK         C31 MC  C   1                 CD6 LYX B  30     1555   1555  1.56",
+        "LINK         CD1 LYX B  30                 NZ  LYS B  29     1555   1555  1.38"
+      ],
+      "residue_count": 54,
+      "source_title_records": [
+        "TITLE     2215_active_glucose_rec                                               "
+      ],
+      "state": "active_open",
+      "target_attachment_heavy_atom_counts": {
+        "C": 74,
+        "N": 15,
+        "O": 22
+      }
+    },
+    "inactive_closed": {
+      "atom_count": 968,
+      "bond_edge_count": 986,
+      "chimerax_structure_session_version": 19,
+      "compared_pdb": "nnc2215-closed-model.pdb",
+      "computed_idatm_type_counts_all_atoms": {
+        "C2": 63,
+        "C3": 175,
+        "Cac": 9,
+        "Car": 80,
+        "H": 98,
+        "HC": 361,
+        "N2": 2,
+        "N3+": 1,
+        "Ng+": 3,
+        "Npl": 73,
+        "O2": 62,
+        "O2-": 18,
+        "O3": 17,
+        "S3": 6
+      },
+      "computed_idatm_type_counts_by_target_residue": {
+        "LYX": {
+          "C2": 1,
+          "C3": 5,
+          "Car": 2,
+          "HC": 10,
+          "N2": 2,
+          "Npl": 1,
+          "O2": 1,
+          "O3": 1
+        },
+        "MC": {
+          "C2": 6,
+          "C3": 17,
+          "Cac": 3,
+          "Car": 30,
+          "H": 12,
+          "HC": 48,
+          "Npl": 12,
+          "O2": 6,
+          "O2-": 6
+        },
+        "PHX": {
+          "C2": 1,
+          "C3": 9,
+          "H": 5,
+          "HC": 13,
+          "O2": 1,
+          "O3": 7
+        }
+      },
+      "element_counts_by_target_residue": {
+        "LYX": {
+          "C": 8,
+          "H": 10,
+          "N": 3,
+          "O": 2
+        },
+        "MC": {
+          "C": 56,
+          "H": 60,
+          "N": 12,
+          "O": 12
+        },
+        "PHX": {
+          "C": 10,
+          "H": 18,
+          "O": 8
+        }
+      },
+      "explicit_idatm_type_counts_all_atoms": {},
+      "explicit_idatm_type_counts_by_target_residue": {
+        "LYX": {},
+        "MC": {},
+        "PHX": {}
+      },
+      "model_name": "2215_inactive_correctaminoacids.pdb",
+      "pdb_atom_identity_name_aliases_applied": {
+        "BGLC": "BGL"
+      },
+      "pdb_atom_identity_sequence_match": true,
+      "pdb_atom_identity_sequence_match_before_alias": true,
+      "pdb_coordinate_atom_count": 968,
+      "pdb_link_records": [
+        "LINK         C31 MC  C   1                 C   LYX B  30     1555   1555  1.55",
+        "LINK         CD1 LYX B  30                 NZ  LYS B  29     1555   1555  1.38"
+      ],
+      "residue_count": 53,
+      "source_title_records": [
+        "TITLE     2215_from2205moe                                                      "
+      ],
+      "state": "inactive_closed",
+      "target_attachment_heavy_atom_counts": {
+        "C": 74,
+        "N": 15,
+        "O": 22
+      }
+    }
+  },
+  "readiness": {
+    "bond_orders_authoritatively_resolved": false,
+    "clinical_use": false,
+    "explicit_idatm_types_present_for_target_residues": false,
+    "force_field_parameters_validated": false,
+    "model_coordinates_match_pdb_atom_identity_order": true,
+    "production_md_ready": false,
+    "target_binding_md_started": false,
+    "two_carbon_discrepancy_resolved": false
+  },
+  "run": {
+    "created_at_utc": "2026-10-18T04:42:00.181924+00:00",
+    "msgpack_version": "1.2.3",
+    "nvidia_gpu_used": false,
+    "run_id": "DHO-NNC2215-CXS-20261018T044200Z",
+    "runtime_python": "3.14.4",
+    "script": "research/audit_nnc2215_chimerax_session.py",
+    "script_sha256": "3a95ec99ca3b49f8ab19e93e0402819de9d24add1c7b35630cb34f78dd3d1b85"
+  },
+  "schema": "dia-health-one.nnc2215-chimerax-session-audit.v1",
+  "serialization_findings": {
+    "basis": "At the pinned ChimeraX source commit, Structure::session_info serializes the number of bonds followed by endpoint atom-index pairs and then Bond session state; Bond has no bond-order property. Atom session state stores computed and explicit IDATM type strings separately.",
+    "bond_edges_saved_as_atom_index_pairs": true,
+    "bond_order_field_saved": false,
+    "source_files": [
+      "https://github.com/RBVI/ChimeraX/blob/b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f/src/bundles/atomic_lib/atomic_cpp/atomstruct_cpp/Structure.cpp",
+      "https://github.com/RBVI/ChimeraX/blob/b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f/src/bundles/atomic_lib/atomic_cpp/atomstruct_cpp/Bond.h",
+      "https://github.com/RBVI/ChimeraX/blob/b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f/src/bundles/atomic_lib/atomic_cpp/atomstruct_cpp/Atom.cpp"
+    ]
+  },
+  "source": {
+    "chimerax_atom_source": "https://github.com/RBVI/ChimeraX/blob/b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f/src/bundles/atomic_lib/atomic_cpp/atomstruct_cpp/Atom.cpp",
+    "chimerax_bond_source": "https://github.com/RBVI/ChimeraX/blob/b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f/src/bundles/atomic_lib/atomic_cpp/atomstruct_cpp/Bond.h",
+    "chimerax_residue_source": "https://github.com/RBVI/ChimeraX/blob/b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f/src/bundles/atomic_lib/atomic_cpp/atomstruct_cpp/Residue.h",
+    "chimerax_source_commit": "b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f",
+    "chimerax_structure_source": "https://github.com/RBVI/ChimeraX/blob/b18ee9afe9a1536d0044139dcdc4c0ea539d2f7f/src/bundles/atomic_lib/atomic_cpp/atomstruct_cpp/Structure.cpp",
+    "dataset_doi": "10.6084/m9.figshare.26526460.v1",
+    "dataset_license": "CC BY 4.0",
+    "dataset_url": "https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460",
+    "decompressed_session_bytes": 111053522,
+    "decompressed_session_sha256": "c660b040ca4383ed6b51b752b6668f48cf9773b018bcb2595367ae62111934a3",
+    "local_cxs_digest": {
+      "bytes": 79145092,
+      "md5": "33143f4fad4e80bf4accd09718339aa7",
+      "sha256": "bcfd37935142cec08a84271f12b172b84911c7e6e4adb3411801e37ea4d65fb3"
+    },
+    "local_cxs_md5_matches_published": true,
+    "published_file_bytes": 79145092,
+    "published_file_md5": "33143f4fad4e80bf4accd09718339aa7",
+    "session_download_url": "https://ndownloader.figshare.com/files/48308389",
+    "session_file_id": 48308389,
+    "session_filename": "NNC2215 in open and closed forms docked into insulin receptor.cxs"
+  }
+}
