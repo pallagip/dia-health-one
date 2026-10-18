@@ -1,0 +1,447 @@
+{
+  "schema": "dia-health-one.nnc2215-linker-mapping-audit.v1",
+  "run": {
+    "run_id": "DHO-NNC2215-LINK-MAP-20261018T061903Z",
+    "created_at_utc": "2026-10-18T06:19:03.100786+00:00",
+    "script": "research/audit_nnc2215_linker_mapping.py",
+    "script_sha256": "777194a5369b4a30d5a44016c1730967e7b259dcd2a532ec5e2be0c6f52b0ac0",
+    "nvidia_gpu_used": false
+  },
+  "sources": {
+    "paper_doi": "10.1038/s41586-024-08042-3",
+    "figure_7a_b29_alkyne_linker_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig12_ESM.jpg",
+    "figure_8i_macrocycle_roof_propyl_azide_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig13_ESM.jpg",
+    "figure_caption_evidence": "Figure 7a numbers carbons 3\u20138 in O-succinimidyl pentyn-1-oxycarbonyl; Figure 8i numbers the macrocycle roof propyl-azide chain carbons 21\u201323.",
+    "source_b29_linker_formula_after_nhs_departure": "C6H6O2",
+    "source_macrocycle_roof_propyl_azide_formula": "C56H63N15O12",
+    "expected_b29_attachment_heavy_elements_after_click": {
+      "C": 62,
+      "N": 15,
+      "O": 14
+    }
+  },
+  "states": [
+    {
+      "state": "active_open",
+      "model_file": "structures/nnc2215-open-model.pdb",
+      "sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+      "candidate_source_to_model_atom_map": {
+        "insulin_lys_b29_nz": {
+          "pdb_atom": {
+            "name": "NZ",
+            "residue": "LYS",
+            "chain": "B",
+            "residue_number": "29",
+            "element": "N"
+          },
+          "serial": 480
+        },
+        "source_b29_carbon_3_carbonyl": {
+          "pdb_atom": {
+            "name": "CD1",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 497
+        },
+        "source_b29_carbon_4": {
+          "pdb_atom": {
+            "name": "CD2",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 498
+        },
+        "source_b29_carbon_5": {
+          "pdb_atom": {
+            "name": "C1",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 505
+        },
+        "source_b29_carbon_6": {
+          "pdb_atom": {
+            "name": "C2",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 506
+        },
+        "source_b29_carbon_7_alkyne": {
+          "pdb_atom": {
+            "name": "CD3",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 499
+        },
+        "source_b29_carbon_8_alkyne": {
+          "pdb_atom": {
+            "name": "CD4",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 500
+        },
+        "source_macrocycle_c21_candidate": {
+          "pdb_atom": {
+            "name": "C31",
+            "residue": "MC",
+            "chain": "C",
+            "residue_number": "1",
+            "element": "C"
+          },
+          "serial": 861
+        },
+        "source_macrocycle_c22_candidate": {
+          "pdb_atom": {
+            "name": "CD6",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 502
+        },
+        "source_macrocycle_c23_candidate": {
+          "pdb_atom": {
+            "name": "CD5",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 501
+        },
+        "source_azide_n_attached_to_c23_candidate": {
+          "pdb_atom": {
+            "name": "ND3",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "N"
+          },
+          "serial": 496
+        },
+        "source_macrocycle_ring_anchor_candidate": {
+          "pdb_atom": {
+            "name": "C71",
+            "residue": "MC",
+            "chain": "C",
+            "residue_number": "1",
+            "element": "C"
+          },
+          "serial": 901
+        },
+        "source_b29_carbonyl_oxygen": {
+          "pdb_atom": {
+            "name": "OD",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "O"
+          },
+          "serial": 503
+        },
+        "source_b29_oxygen_link": {
+          "pdb_atom": {
+            "name": "O1",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "O"
+          },
+          "serial": 504
+        },
+        "source_triazole_n1_candidate": {
+          "pdb_atom": {
+            "name": "ND1",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "N"
+          },
+          "serial": 494
+        },
+        "source_triazole_n2_candidate": {
+          "pdb_atom": {
+            "name": "ND2",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "N"
+          },
+          "serial": 495
+        }
+      },
+      "candidate_adjacency_edges_verified": 16,
+      "candidate_adjacency_edges_missing": [],
+      "observed_element_counts_by_model_residue": {
+        "LYX": {
+          "C": 8,
+          "H": 11,
+          "N": 3,
+          "O": 2
+        },
+        "MC": {
+          "C": 56,
+          "H": 60,
+          "N": 12,
+          "O": 12
+        }
+      },
+      "observed_b29_pool_heavy_elements": {
+        "C": 64,
+        "N": 15,
+        "O": 14
+      },
+      "source_b29_pool_heavy_elements": {
+        "C": 62,
+        "N": 15,
+        "O": 14
+      },
+      "observed_minus_source_heavy_element_delta": {
+        "C": 2
+      },
+      "candidate_macrocycle_partition": {
+        "source_macrocycle_c21_c23_tail_atoms": 3,
+        "candidate_tail_atoms_in_lyx": 2,
+        "candidate_tail_atom_in_mc": 1,
+        "source_macrocycle_carbons_expected_in_mc_after_split": 54,
+        "observed_mc_carbon_records": 56,
+        "candidate_mc_carbon_excess": 2
+      }
+    },
+    {
+      "state": "inactive_closed",
+      "model_file": "structures/nnc2215-closed-model.pdb",
+      "sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+      "candidate_source_to_model_atom_map": {
+        "insulin_lys_b29_nz": {
+          "pdb_atom": {
+            "name": "NZ",
+            "residue": "LYS",
+            "chain": "B",
+            "residue_number": "29",
+            "element": "N"
+          },
+          "serial": 794
+        },
+        "source_b29_carbon_3_carbonyl": {
+          "pdb_atom": {
+            "name": "CD1",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 812
+        },
+        "source_b29_carbon_4": {
+          "pdb_atom": {
+            "name": "CD2",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 813
+        },
+        "source_b29_carbon_5": {
+          "pdb_atom": {
+            "name": "C1",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 820
+        },
+        "source_b29_carbon_6": {
+          "pdb_atom": {
+            "name": "C2",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 821
+        },
+        "source_b29_carbon_7_alkyne": {
+          "pdb_atom": {
+            "name": "CD3",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 814
+        },
+        "source_b29_carbon_8_alkyne": {
+          "pdb_atom": {
+            "name": "CD4",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 815
+        },
+        "source_macrocycle_c21_candidate": {
+          "pdb_atom": {
+            "name": "C31",
+            "residue": "MC",
+            "chain": "C",
+            "residue_number": "1",
+            "element": "C"
+          },
+          "serial": 862
+        },
+        "source_macrocycle_c22_candidate": {
+          "pdb_atom": {
+            "name": "C",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 817
+        },
+        "source_macrocycle_c23_candidate": {
+          "pdb_atom": {
+            "name": "CD5",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "C"
+          },
+          "serial": 816
+        },
+        "source_azide_n_attached_to_c23_candidate": {
+          "pdb_atom": {
+            "name": "ND3",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "N"
+          },
+          "serial": 811
+        },
+        "source_macrocycle_ring_anchor_candidate": {
+          "pdb_atom": {
+            "name": "C71",
+            "residue": "MC",
+            "chain": "C",
+            "residue_number": "1",
+            "element": "C"
+          },
+          "serial": 902
+        },
+        "source_b29_carbonyl_oxygen": {
+          "pdb_atom": {
+            "name": "O",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "O"
+          },
+          "serial": 818
+        },
+        "source_b29_oxygen_link": {
+          "pdb_atom": {
+            "name": "O1",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "O"
+          },
+          "serial": 819
+        },
+        "source_triazole_n1_candidate": {
+          "pdb_atom": {
+            "name": "ND1",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "N"
+          },
+          "serial": 809
+        },
+        "source_triazole_n2_candidate": {
+          "pdb_atom": {
+            "name": "ND2",
+            "residue": "LYX",
+            "chain": "B",
+            "residue_number": "30",
+            "element": "N"
+          },
+          "serial": 810
+        }
+      },
+      "candidate_adjacency_edges_verified": 16,
+      "candidate_adjacency_edges_missing": [],
+      "observed_element_counts_by_model_residue": {
+        "LYX": {
+          "C": 8,
+          "H": 10,
+          "N": 3,
+          "O": 2
+        },
+        "MC": {
+          "C": 56,
+          "H": 60,
+          "N": 12,
+          "O": 12
+        }
+      },
+      "observed_b29_pool_heavy_elements": {
+        "C": 64,
+        "N": 15,
+        "O": 14
+      },
+      "source_b29_pool_heavy_elements": {
+        "C": 62,
+        "N": 15,
+        "O": 14
+      },
+      "observed_minus_source_heavy_element_delta": {
+        "C": 2
+      },
+      "candidate_macrocycle_partition": {
+        "source_macrocycle_c21_c23_tail_atoms": 3,
+        "candidate_tail_atoms_in_lyx": 2,
+        "candidate_tail_atom_in_mc": 1,
+        "source_macrocycle_carbons_expected_in_mc_after_split": 54,
+        "observed_mc_carbon_records": 56,
+        "candidate_mc_carbon_excess": 2
+      }
+    }
+  ],
+  "assessment": {
+    "candidate_b29_linker_mapping_supported_by_pdb_adjacency": true,
+    "candidate_roof_propyl_tail_mapping_supported_by_pdb_adjacency": true,
+    "interpretation": "The numbered source schemes and serial-level PDB adjacency support a candidate map for the six-carbon B29 alkyne linker and the three-carbon macrocycle propyl-azide tail. Under this map, two propyl-tail carbons are in LYX and one is in MC; the source macrocycle formula therefore leaves 54 carbons expected in the MC residue, while both model files contain 56. The two-carbon inventory surplus is localized to the MC residue under this candidate partition, but the two unsupported/duplicated MC atom records are not identified.",
+    "not_established": [
+      "a complete atom-mapped graph for either conjugate state",
+      "which individual MC carbon records account for the two-carbon excess",
+      "bond orders, formal charges, stereochemistry, or protonation",
+      "parameter quality or force-field compatibility",
+      "production-MD readiness"
+    ],
+    "target_binding_md_started": false,
+    "clinical_use": false
+  }
+}

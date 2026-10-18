@@ -1,7 +1,8 @@
 # NNC2215–PaG reproducibility milestone report
 
-**Date:** 2026-10-18 04:48 CEST (02:48 UTC)
-**Status:** Published-data reanalysis and Hill-fit identifiability check complete; PaG-only and generic T4 preflights complete; NVIDIA catalog requests remain pending at partner review; no production GPU allocation; target binding MD not started.
+**Updated:** 2026-10-18 08:22 CEST (06:22 UTC)
+**Repository file:** [`research/MILESTONE_REPORT.md`](https://github.com/pallagip/dia-health-one/blob/feat/reproducibility-dashboard/research/MILESTONE_REPORT.md) on branch `feat/reproducibility-dashboard` · [Live Markdown report](https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/MILESTONE_REPORT.md)
+**Status:** Published-data reanalysis and Hill-fit identifiability check complete; generic Tesla T4 throughput preflight complete. The separate PaG-only T4 portability preflight is waiting at Colab’s human verification step. NVIDIA partner requests remain pending with no project allocation. Target binding MD has not started; the public study seed coordinates and validated NNC2215 conjugate chemistry/parameters remain unresolved.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
 
 ## Complete
@@ -225,3 +226,12 @@ The Hill fit first ran in a temporary Python 3.13.13 environment, then was repea
 The user-provided Drive project folder was inventoried; it contains no additional NNC2215 coordinates, PaG starting pose, or trajectory beyond the running project record. Public search and the official ACS article/SI review likewise did not produce the original in-house macrocycle seed coordinates. The exact 2026 MD rerun therefore remains unavailable from inputs currently accessible to the project.
 
 A new free Colab T4 runtime request is waiting at Colab’s human “I’m not a robot” challenge. It has not been completed by the agent and no new GPU run has started. The earlier generic 1UBQ T4 throughput benchmark remains the only completed NVIDIA-device run; the PaG-in-water portability runner is separate from target binding MD and remains unrun. The tab is left open for the user to complete the check before runtime allocation can continue.
+
+
+## Candidate linker and tail mapping audit — 18 October 2026, 06:19 UTC
+
+`research/audit_nnc2215_linker_mapping.py` checks 16 serial-level CONECT edges in each public NNC2215 model against the numbered Nature Extended Data Fig. 7a B29 linker and Fig. 8i macrocycle roof propyl-azide tail. The candidate B29 linker map is source C3–C8 to LYX CD1, CD2, C1, C2, CD3, and CD4. The candidate macrocycle-tail map is source C21 to MC C31, C22 to open LYX CD6 / closed LYX C, and C23 to LYX CD5; the chain connects onward to the triazole nitrogen and the MC ring anchor. This accounts for the open/closed atom-name difference through the documented adjacency path.
+
+Under that candidate partition, two source macrocycle tail carbons reside in LYX and one in MC, so 54 carbons from the source C56 macrocycle are expected in the MC residue. Both PDB models contain 56 MC carbon records. The existing +2-carbon B29-pool mismatch is therefore localized to the MC residue under this candidate partition, rather than left only at the combined LYX/MC pool level. The individual surplus MC atom records remain unidentified, and the numbered-to-PDB assignment is inferred from a unique connectivity pattern; it is not a complete authoritative atom map. No coordinates or atoms were changed, no bond orders or charges were assigned, and no parameterization or target MD was attempted. This narrows the structural blocker but does not clear it.
+
+The machine-readable output is [`nnc2215-linker-mapping-audit.json`](data/nnc2215-linker-mapping-audit.json). Recreate it with `python3 research/audit_nnc2215_linker_mapping.py`. The official numbered schemes are [Extended Data Fig. 7](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig12_ESM.jpg) and [Extended Data Fig. 8](https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig13_ESM.jpg) from DOI `10.1038/s41586-024-08042-3`.
