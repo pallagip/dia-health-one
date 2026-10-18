@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="research.css" />
   <link rel="stylesheet" href="structure-audit.css?v=20261018-3" />
+  <link rel="stylesheet" href="structure-viewer.css?v=20261018-1" />
 </head>
 <body>
   <header class="site-header">
@@ -139,6 +140,37 @@
           <figcaption><span>ARCHITECTURE</span> B29 Lys Nε: glucose-binding macrocycle attached through a linker and triazole. B-chain PheB1: short-linker O1-glucoside. <span>MODEL STATUS</span> Publisher-supplied open and closed NNC2215 PDB models are now catalogued below. They are model-built coordinates, not experimentally resolved NNC2215 structures; this diagram remains conceptual.</figcaption>
         </figure>
         <div class="switch-foot"><span>REFERENCE STRUCTURES</span><a href="https://www.rcsb.org/structure/6PXV" target="_blank" rel="noreferrer">PDB 6PXV ↗</a><a href="https://www.rcsb.org/structure/2VJZ" target="_blank" rel="noreferrer">PDB 2VJZ ↗</a><span class="switch-disclaimer">Used as modelling references in the paper; neither is an experimentally solved NNC2215 switch-state structure.</span></div>
+        <section class="structure-viewer" aria-labelledby="structure-viewer-title" data-structure-viewer>
+          <div class="structure-viewer-heading">
+            <div>
+              <div class="section-kicker">PUBLISHER-SUPPLIED COORDINATES · INTERACTIVE 3D</div>
+              <h3 id="structure-viewer-title">Inspect the open and closed model-built snapshots.</h3>
+              <p>Drag to rotate and scroll to zoom. Each view reads the original PDB coordinates; the color palette separates insulin, the B29 macrocycle, and the B1 glucoside.</p>
+            </div>
+            <div class="structure-viewer-tools"><span class="structure-viewer-status" data-viewer-status role="status" aria-live="polite">Loading structures</span><button type="button" class="structure-viewer-reset" data-viewer-reset>Reset views</button></div>
+          </div>
+          <div class="structure-viewer-legend" aria-label="Structure color key">
+            <span><i class="legend-insulin"></i>Insulin chains A / B</span>
+            <span><i class="legend-macrocycle"></i>B29 macrocycle</span>
+            <span><i class="legend-glucoside"></i>B1 glucoside</span>
+            <span><i class="legend-glucose"></i>Free glucose in open model</span>
+          </div>
+          <div class="structure-viewer-grid">
+            <article class="structure-model-card">
+              <div class="structure-model-heading"><div><span>OPEN STATE</span><strong>Publisher model</strong></div><b>990 atoms</b></div>
+              <div class="structure-model-canvas" id="nnc-open-viewer" role="img" aria-label="Interactive 3D rendering of the publisher-supplied open-like NNC2215 model coordinates"></div>
+              <div class="structure-model-caption">Free glucose is recorded as chain D. No insulin receptor is included.</div>
+            </article>
+            <article class="structure-model-card">
+              <div class="structure-model-heading"><div><span>CLOSED STATE</span><strong>Publisher model</strong></div><b>968 atoms</b></div>
+              <div class="structure-model-canvas" id="nnc-closed-viewer" role="img" aria-label="Interactive 3D rendering of the publisher-supplied closed-like NNC2215 model coordinates"></div>
+              <div class="structure-model-caption">No free glucose is recorded in this model. No insulin receptor is included.</div>
+            </article>
+          </div>
+          <div class="structure-viewer-note"><b>MODEL STATUS</b><p>These are author-supplied, model-built coordinates, not experimentally solved NNC2215 switch states or simulation outputs. The display does not validate atom mapping, bond orders, stereochemistry, protonation, charges, or force-field parameters. Use the download links to inspect the source files.</p></div>
+          <div class="structure-viewer-links"><a href="structures/nnc2215-open-model.pdb" download>Open model PDB ↓</a><a href="structures/nnc2215-closed-model.pdb" download>Closed model PDB ↓</a><a href="data/structure-manifest.json" download>Source checksums ↓</a><a href="data/structure-viewer-library.json" download>Viewer version &amp; license ↓</a><a href="https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460" target="_blank" rel="noreferrer">Publisher source ↗</a></div>
+          <noscript><p class="structure-viewer-fallback">JavaScript is required for the interactive view. <a href="structures/nnc2215-open-model.pdb">Download the open model</a> or <a href="structures/nnc2215-closed-model.pdb">download the closed model</a>.</p></noscript>
+        </section>
       </div>
     </section>
 
@@ -470,6 +502,8 @@
   </main>
 
   <footer class="site-footer"><div class="wrap footer-inner"><a class="brand" href="/"><span class="brand-mark">D</span><span>DIA HEALTH ONE</span></a><span>COMPUTATIONAL RESEARCH · EVIDENCE STATUS SHOWN</span><span>© 2026</span></div></footer>
+  <script src="assets/vendor/3Dmol-2.5.5.min.js" defer></script>
+  <script src="structure-viewer.js?v=20261018-1" defer></script>
   <script src="research.js?v=20261018-1" defer></script>
 </body>
 </html>

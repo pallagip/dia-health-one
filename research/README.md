@@ -127,6 +127,8 @@ The open model places free D-glucose in the B29 macrocycle; the closed model pla
 
 Run `python3 research/inspect_structure_models.py` to verify the local PDB checksums and produce `data/structure-preflight.json`. This inventory records coordinate counts, chain/residue labels, disulfide and covalent-link records, and nonstandard residue names. It is a file/record preflight, not chemical-graph or force-field validation.
 
+The dashboard includes an interactive side-by-side view of the publisher's open and closed PDB coordinates. It uses the vendored 3Dmol.js 2.5.5 browser bundle under BSD-3-Clause; `data/structure-viewer-library.json` records its registry integrity, SHA-256, version, and license, and the matching license text is in `assets/vendor/3Dmol-2.5.5-LICENSE.txt`. The viewer renders source coordinates for inspection and provides no chemical or simulation validation. It does not change the target MD readiness gate.
+
 ### ChimeraX receptor-session audit
 
 The same Figshare dataset also provides the 79 MB ChimeraX session [“NNC2215 in open and closed forms docked into insulin receptor.cxs”](https://ndownloader.figshare.com/files/48308389). The audit verifies its MD5 against the publisher's file metadata and parses the embedded active/open and inactive/closed NNC2215 snapshots. Their atom-identity sequences match the corresponding public PDB coordinate records after applying the documented `BGLC` → `BGL` alias to the open model. The session contains 990 atoms / 1,010 bond edges in the open snapshot and 968 atoms / 986 bond edges in the closed snapshot.
