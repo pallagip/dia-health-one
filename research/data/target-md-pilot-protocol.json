@@ -20,7 +20,7 @@
     "license": "CC BY 4.0",
     "model_status": "Publisher-supplied model-built coordinates; not experimentally resolved NNC2215 coordinates.",
     "system_boundary": "NNC2215 and its macrocycle site only; no insulin receptor. Public model geometry differs from the 2026 macrocycle-analogue crystal input, so results would be a proxy study.",
-    "coordinate_search": "The 2026 article/SI and associated public model materials were reviewed; no original seed coordinate file was found. Study authors have not yet been contacted.",
+    "coordinate_search": "The 2026 article/SI and associated public model materials were reviewed; no original seed coordinate file was found. Patrik said on 2026-10-17 he would contact the study authors; no author response or original coordinates had been received by the 2026-10-18 10:01 UTC inbox check.",
     "before_run_blockers": [
       "Resolve duplicate atom names in PHX, LYX, and MC residues against authoritative chemical graphs.",
       "Reconcile open-state MC C31–LYX CD6 versus closed-state MC C31–LYX C LINK records.",

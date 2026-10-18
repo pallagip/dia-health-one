@@ -1,9 +1,9 @@
 {
   "schema": "dia-health-one.compute-access-status.v1",
   "checked_date_utc": "2026-10-18",
-  "portal_status_checked_at_utc": "2026-10-18T08:44:00Z",
+  "portal_status_checked_at_utc": "2026-10-18T09:59:00Z",
   "portal_status_evidence": {
-    "source": "Authenticated NVIDIA Inception Benefits and Products pages rechecked in Chrome at approximately 2026-10-18T08:44:00Z; the public Benefits Catalog was searched at approximately 2026-10-18T08:46:00Z.",
+    "source": "Authenticated NVIDIA Inception Products and Benefits pages rechecked around 2026-10-18T09:59:00Z. The last completed public Innovation Lab catalog search was at approximately 09:53 UTC and returned zero results; the latest direct catalog page view did not complete a searchable state.",
     "visible_requests": [
       "$1,000 in Lambda Cloud Credits — benefit request pending",
       "$10,000 in AWS Cloud Credits — benefit request pending",
@@ -12,7 +12,7 @@
       "$2,000-$350,000 in Google Cloud Credits — benefit request pending",
       "€40,000 in Scaleway Cloud Credits — benefit request pending"
     ],
-    "portal_message": "The authenticated Benefits page still lists all six catalog requests as pending and shows no GPU allocation. The Products page contains two Developing / Not Accelerated Dia Health products; NVIDIA's published one-product prerequisite is met. NVIDIA receipts describe separate partner review/application steps; none is an award.",
+    "portal_message": "Two Developing products meet NVIDIA's published one-product prerequisite; the latest completed Innovation Lab search returned zero results. No Innovation Lab application, award, or GPU allocation is confirmed.",
     "catalog_search": {
       "query": "Innovation Lab",
       "result_count": 0,
@@ -87,6 +87,48 @@
       "portal_conclusion": "Six NVIDIA Inception catalog benefit requests remain pending referrals, not credit awards or compute allocations. No NVIDIA or partner GPU allocation is shown."
     },
     "latest_recheck": {
+      "checked_at_utc": "2026-10-18T09:59:00Z",
+      "authenticated_portal": "Authenticated NVIDIA Inception Benefits page rechecked in Chrome at approximately 09:59 UTC; all six catalog benefit requests remain pending and no GPU allocation is shown.",
+      "pending_requests": [
+        "$1,000 in Lambda Cloud Credits — benefit request pending",
+        "$10,000 in AWS Cloud Credits — benefit request pending",
+        "$5,000 in Microsoft Azure Cloud Credits — benefit request pending",
+        "Up to 50K GPU Hours + AI Services for Accelerating European Startups — benefit request pending",
+        "$2,000-$350,000 in Google Cloud Credits — benefit request pending",
+        "€40,000 in Scaleway Cloud Credits — benefit request pending"
+      ],
+      "product_records": [
+        {
+          "name": "Dia Health computational insulin discovery platform",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "BioNeMo Framework",
+            "CUDA Toolkit"
+          ]
+        },
+        {
+          "name": "Dia Health One Research Dashboard",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "CUDA Toolkit"
+          ]
+        }
+      ],
+      "published_one_product_prerequisite_met": true,
+      "latest_completed_innovation_lab_catalog_search": {
+        "query": "Innovation Lab",
+        "result_count": 0,
+        "checked_at_utc": "2026-10-18T09:53:00Z",
+        "url": "https://www.nvidia.com/programs/benefits/",
+        "observed_result": "The last completed catalog search returned zero Innovation Lab results. The separately opened catalog page in the current check did not finish rendering a searchable result state, so it is not counted as a newer completed search."
+      },
+      "innovation_lab_application_submitted": false,
+      "nvidia_gpu_allocation_confirmed": false,
+      "conclusion": "Two Developing products meet NVIDIA's published one-product prerequisite; the latest completed Innovation Lab search returned zero results. No Innovation Lab application, award, or GPU allocation is confirmed."
+    },
+    "previous_completed_recheck_2026-10-18T0844Z": {
       "checked_at_utc": "2026-10-18T08:44:00Z",
       "authenticated_portal": "Signed-in NVIDIA Inception Benefits page showed six partner-benefit requests pending, no GPU allocation, and the Products page listed two Developing / Not Accelerated products.",
       "pending_requests": [
@@ -205,24 +247,24 @@
     "gpu_allocated": false
   },
   "nvidia_innovation_lab": {
-    "status": "Two Developing product records meet NVIDIA's published one-product prerequisite; the completed Innovation Lab catalog search returned zero results, and no application or GPU allocation is confirmed.",
+    "status": "Two Developing products meet NVIDIA's published one-product prerequisite; the latest completed Innovation Lab search returned zero results. No Innovation Lab application, award, or GPU allocation is confirmed.",
     "application_submitted": false,
     "catalog_check": {
       "checked_date_utc": "2026-10-18",
       "search_query": "Innovation Lab",
       "results": 0,
-      "checked_at_utc": "2026-10-18T08:46:00Z",
+      "checked_at_utc": "2026-10-18T09:53:00Z",
       "url": "https://www.nvidia.com/programs/benefits/",
-      "observed_result": "After applying the search, the public NVIDIA Benefits Catalog displayed ‘Showing 0 Results’ and ‘Sorry, we couldn’t find any results for this search.’ No Innovation Lab benefit card was present.",
+      "observed_result": "The last completed catalog search returned zero Innovation Lab results. The separately opened catalog page in the current check did not finish rendering a searchable result state, so it is not counted as a newer completed search.",
       "account_prerequisite": "Two Developing / Not Accelerated product records are present; the official one-product prerequisite is met."
     },
     "support_request": {
       "recipient": "inceptionprogram@nvidia.com",
       "sent_date_utc": "2026-10-17",
       "subject": "Innovation Lab benefit tile missing",
-      "response_status": "No reply to the NVIDIA Innovation Lab support request was found in Gmail through 2026-10-18T08:48:20Z.",
-      "last_mailbox_check_at_utc": "2026-10-18T08:48:20Z",
-      "last_checked_at_utc": "2026-10-18T08:48:20Z"
+      "response_status": "No reply was found through the Gmail check at approximately 2026-10-18T10:01:00Z.",
+      "last_mailbox_check_at_utc": "2026-10-18T10:01:00Z",
+      "last_checked_at_utc": "2026-10-18T10:01:00Z"
     },
     "duration_days": 60,
     "selection_required": true,
@@ -247,7 +289,7 @@
       "public_use_case_relevant_to_project": "Dynamic simulations",
       "official_url": "https://www.nvidia.com/en-us/data-center/innovation-lab/",
       "molecular_dynamics_use_case": "The official Innovation Lab page lists molecular dynamics/protein folding and drug-discovery pipelines under GPU-accelerated simulations and modeling.",
-      "last_verified_at_utc": "2026-10-18T08:48:20Z",
+      "last_verified_at_utc": "2026-10-18T09:53:00Z",
       "official_application_steps": [
         "In the Inception Portal, use Profile > Add product and complete at least one product profile.",
         "Go to Benefits > Explore Benefits and select the Innovation Lab tile.",
@@ -403,6 +445,28 @@
       "script": "research/audit_pag_assay_source.py",
       "license": "CC BY-NC-ND 4.0",
       "target_binding_simulation": false
+    },
+    "latest_source_reproduction_run": {
+      "run_id": "DHO-NNC2215-FIG3D-20261018T095820Z",
+      "completed_at_utc": "2026-10-18T09:58:20.148776Z",
+      "archive": "research/data/analysis-runs/DHO-NNC2215-FIG3D-20261018T095820Z.json",
+      "archive_sha256": "a32d4f2e332654b714900f3462bb1323643d033d908b7329049202266b2372c4",
+      "source_csv_sha256": "b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f",
+      "source_workbook_sha256": "09a9b6aa4103f9d61af7df03886d59f16d6b09f69f2fe768260548061c7dc81d",
+      "source_cells_verified_directly": 30,
+      "fold_change_3_to_20_mmol_l_mean": 3.1576292375508266,
+      "fold_change_3_to_20_mmol_l_sample_sd": 0.27864647185235664,
+      "fold_change_0_to_20_mmol_l_mean": 12.47202312276347,
+      "fold_change_0_to_20_mmol_l_sample_sd": 1.6985014166246462,
+      "engine": "Python 3.14.4 standard library on Apple M4 CPU",
+      "gpu_simulation": false
+    },
+    "latest_colab_pag_portability_attempt": {
+      "observed_at_utc": "2026-10-18T10:01:00Z",
+      "status": "Not started; Colab requested an interactive reCAPTCHA presence check while connecting to a free T4 runtime.",
+      "artifact": "https://colab.research.google.com/drive/1ImHF0tk_wGSWfPwtuZjC04cFN7i4fCmt?authuser=1",
+      "target_binding_md": false,
+      "inception_or_partner_allocation": false
     }
   },
   "sources": [
@@ -464,8 +528,8 @@
     "google_for_startups": "The Google for Startups Cloud Program application is received and pending review; no credit award or GPU allocation is confirmed."
   },
   "latest_inception_catalog_check": {
-    "checked_at_utc": "2026-10-18T08:06:43Z",
-    "authenticated_portal": "The signed-in NVIDIA Inception Benefits page was refreshed at approximately 08:06 UTC. All six listed partner-benefit requests remain pending; no GPU allocation is shown.",
+    "checked_at_utc": "2026-10-18T09:59:00Z",
+    "authenticated_portal": "Authenticated NVIDIA Inception Benefits page rechecked in Chrome at approximately 09:59 UTC; all six catalog benefit requests remain pending and no GPU allocation is shown.",
     "pending_requests": [
       "$1,000 in Lambda Cloud Credits — benefit request pending",
       "$10,000 in AWS Cloud Credits — benefit request pending",
@@ -478,15 +542,15 @@
       "required": "At least one product record",
       "observed_count": 2,
       "met": true,
-      "checked_at_utc": "2026-10-18T03:37:37Z",
+      "checked_at_utc": "2026-10-18T09:57:00Z",
       "source": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
     },
     "public_benefits_catalog_search": {
       "query": "Innovation Lab",
       "result_count": 0,
-      "checked_at_utc": "2026-10-18T08:06:43Z",
+      "checked_at_utc": "2026-10-18T09:53:00Z",
       "url": "https://www.nvidia.com/programs/benefits/",
-      "observed_result": "After applying the query in the public NVIDIA Benefits Catalog, the page displayed ‘Showing 0 Results’ and ‘Sorry, we couldn’t find any results for this search.’ No matching Innovation Lab benefit card was present."
+      "observed_result": "The last completed catalog search returned zero Innovation Lab results. A direct catalog page view during the 10:00 UTC check did not finish rendering a searchable result state and is not counted as a newer completed search."
     },
     "additional_gpu_offer_screening": {
       "checked_at_utc": "2026-10-18T03:53:00Z",
@@ -548,15 +612,16 @@
       "checked_at_utc": "2026-10-18T08:06:43Z",
       "url": "https://www.nvidia.com/programs/benefits/",
       "observed_result": "After applying the query in the public NVIDIA Benefits Catalog, the page displayed ‘Showing 0 Results’ and ‘Sorry, we couldn’t find any results for this search.’ No matching Innovation Lab benefit card was present."
-    }
+    },
+    "current_access_conclusion": "Two Developing products meet NVIDIA's published one-product prerequisite, but no Innovation Lab tile is present in the latest completed search. Six partner requests remain pending and no NVIDIA or partner GPU allocation is confirmed."
   },
   "latest_inbox_check": {
-    "checked_at_utc": "2026-10-18T08:48:20Z",
+    "checked_at_utc": "2026-10-18T10:01:00Z",
     "nvidia_innovation_lab_support": {
       "new_reply_found": false,
-      "search": "from:inceptionprogram@nvidia.com \"Innovation Lab\" newer_than:7d",
-      "last_checked_at_utc": "2026-10-18T08:48:20Z",
-      "response_status": "No human reply to the NVIDIA Innovation Lab support request was found in the Gmail search through 2026-10-18T08:48:20Z; the latest visible NVIDIA mail remains a benefit-request acknowledgement."
+      "search": "from:inceptionprogram@nvidia.com \"Innovation Lab\" newer_than:3d",
+      "last_checked_at_utc": "2026-10-18T10:01:00Z",
+      "response_status": "Gmail search through approximately 10:01 UTC found no reply to the Innovation Lab support request."
     },
     "new_catalog_acknowledgements": [
       {
@@ -573,7 +638,7 @@
         "message_id": "1a14d1c34f39ab81"
       }
     ],
-    "scope_note": "Gmail searches through 2026-10-18T08:48:20Z found no reply to the NVIDIA Innovation Lab support request and no incoming Patrik email newer than his 17 October 21:01:27 UTC message. A corrected Markdown report path and attached report were sent to Patrik at 08:45 UTC. NVIDIA benefit acknowledgements remain partner referrals, not awards or allocations.",
+    "scope_note": "Gmail searches through approximately 2026-10-18T10:01:00Z found no new Patrik reply after 2026-10-17T21:01:27Z and no response to the NVIDIA Innovation Lab support request. The scheduled monitor remains hourly polling, not Gmail push; the latest recorded automated poll is 03:58 UTC.",
     "google_for_startups": {
       "initial_program_application_received_at_utc": "2026-10-15T20:27:42Z",
       "initial_program_application_status": "Google confirmed receipt on 2026-10-15T20:27:42Z; pending review. The separate company-account application page displayed receipt confirmation on 2026-10-18.",
@@ -582,11 +647,48 @@
     },
     "patrik": {
       "latest_inbound_at_utc": "2026-10-17T21:01:27Z",
-      "latest_inbound_summary": "Patrik's latest inbound asked for the corrected report reference and said he would contact the study authors. The full GitHub/raw links were verified and the Markdown report was attached in the 18 October 08:45 UTC reply.",
-      "corrected_report_link_reply_at_utc": "2026-10-18T06:52:57Z",
-      "corrected_report_link_reply": "The invalid GitHub branch reference was answered in-thread with the slash-corrected branch and live Markdown report links.",
-      "report_attachment_reply_at_utc": "2026-10-18T08:45:00Z",
-      "report_attachment_reply_message_id": "1a14e2f8c26897f5"
+      "latest_inbound_summary": "Patrik said he would contact the study authors; no newer incoming Patrik message was found in the 18 October 10:01 UTC search.",
+      "search": "from:patrik@diahealth.one newer_than:3d",
+      "last_checked_at_utc": "2026-10-18T10:01:00Z"
+    },
+    "previous_check_2026-10-18T084820Z": {
+      "checked_at_utc": "2026-10-18T08:48:20Z",
+      "nvidia_innovation_lab_support": {
+        "new_reply_found": false,
+        "search": "from:inceptionprogram@nvidia.com \"Innovation Lab\" newer_than:7d",
+        "last_checked_at_utc": "2026-10-18T08:48:20Z",
+        "response_status": "No human reply to the NVIDIA Innovation Lab support request was found in the Gmail search through 2026-10-18T08:48:20Z; the latest visible NVIDIA mail remains a benefit-request acknowledgement."
+      },
+      "new_catalog_acknowledgements": [
+        {
+          "benefit": "AI Factory France up to 50K GPU hours",
+          "received_at_utc": "2026-10-18T00:48:56Z"
+        },
+        {
+          "benefit": "Google Cloud credits",
+          "received_at_utc": "2026-10-18T00:53:38Z"
+        },
+        {
+          "benefit": "Scaleway €40,000 Inception catalog request",
+          "received_at_utc": "2026-10-18T03:44:15Z",
+          "message_id": "1a14d1c34f39ab81"
+        }
+      ],
+      "scope_note": "Gmail searches through 2026-10-18T08:48:20Z found no reply to the NVIDIA Innovation Lab support request and no incoming Patrik email newer than his 17 October 21:01:27 UTC message. A corrected Markdown report path and attached report were sent to Patrik at 08:45 UTC. NVIDIA benefit acknowledgements remain partner referrals, not awards or allocations.",
+      "google_for_startups": {
+        "initial_program_application_received_at_utc": "2026-10-15T20:27:42Z",
+        "initial_program_application_status": "Google confirmed receipt on 2026-10-15T20:27:42Z; pending review. The separate company-account application page displayed receipt confirmation on 2026-10-18.",
+        "separate_credits_application_submitted": true,
+        "credit_award_confirmed": false
+      },
+      "patrik": {
+        "latest_inbound_at_utc": "2026-10-17T21:01:27Z",
+        "latest_inbound_summary": "Patrik's latest inbound asked for the corrected report reference and said he would contact the study authors. The full GitHub/raw links were verified and the Markdown report was attached in the 18 October 08:45 UTC reply.",
+        "corrected_report_link_reply_at_utc": "2026-10-18T06:52:57Z",
+        "corrected_report_link_reply": "The invalid GitHub branch reference was answered in-thread with the slash-corrected branch and live Markdown report links.",
+        "report_attachment_reply_at_utc": "2026-10-18T08:45:00Z",
+        "report_attachment_reply_message_id": "1a14e2f8c26897f5"
+      }
     }
   },
   "ai_factory_france_gpu_hours": {
@@ -744,5 +846,16 @@
     "partner_application_source": "https://www.scaleway.com/en/startup-program/",
     "approval_confirmed": false,
     "gpu_allocated": false
+  },
+  "current_session_checkpoint": {
+    "recorded_at_utc": "2026-10-18T10:01:00Z",
+    "research_run_id": "DHO-NNC2215-FIG3D-20261018T095820Z",
+    "source_workbook_verified": true,
+    "nvidia_portal_check_at_utc": "2026-10-18T09:59:00Z",
+    "catalog_search_last_completed_at_utc": "2026-10-18T09:53:00Z",
+    "inbox_check_at_utc": "2026-10-18T10:01:00Z",
+    "target_binding_md_started": false,
+    "gpu_allocation_confirmed": false,
+    "colab_pag_only_portability_run": "waiting for user to complete Colab interactive reCAPTCHA; no run started"
   }
 }
