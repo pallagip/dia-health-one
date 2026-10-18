@@ -244,3 +244,18 @@ Four published-data analysis scripts were rerun locally on CPU. The Nature Figur
 A fresh authenticated NVIDIA Inception Benefits page loaded at approximately 07:15 UTC still showed all six partner requests pending and no GPU allocation. The Innovation Lab catalog search was last run at 04:54 UTC and returned zero results; no new application path or approval was observed. Gmail searches through approximately 07:13 UTC found no new Patrik reply, NVIDIA support reply, or HunAIFA/AI Factory response. The local gcloud CLI remains associated with a LabWired identity rather than Dia Health One; no cloud resource or billing setting was changed.
 
 These analyses refresh literature-derived calculations only. They do not run the target NNC2215–PaG molecular system. Target MD remains gated on resolution of the two surplus macrocycle carbon records, validation of the full conjugate chemistry and parameters, and a defensible PaG pose. No NVIDIA or partner GPU allocation is confirmed.
+
+## NVIDIA access refresh — 18 October 2026, 07:26 UTC
+
+A fresh authenticated Inception portal page at approximately 07:22 UTC still lists all six catalog benefit requests as pending; no GPU allocation is shown. NVIDIA receipts for AI Factory France, Google Cloud and Scaleway confirm that the partner review and any partner-site application are separate from the Inception catalog request. The independent Google for Startups Cloud Program application is received and pending review. No credit or compute award is confirmed.
+
+The official NVIDIA Innovation Lab page was rechecked at 07:24 UTC. It describes a two-month program for selected Inception members and lists molecular dynamics and drug-discovery pipelines among simulation use cases. The account’s two product records meet the stated one-product prerequisite, but the Innovation Lab catalog tile is still unavailable. The last completed search at 04:54 UTC returned zero results; a 07:22 follow-up remained on a loading indicator and is not treated as a completed search.
+
+No NVIDIA or partner allocation is confirmed. The target NNC2215–PaG simulation remains gated on an authoritative conjugate graph, validated parameters and a defensible PaG pose. None of the existing generic engine or solvent checks measures target binding.
+
+
+## Live demo run and NVIDIA access recheck — 18 October 2026, 07:34 UTC
+
+The dashboard’s browser “Run reproduction” action was executed at 07:32:23 UTC. Run `DHO-NNC2215-FIG3D-20261018073223` used the Figure 3d source data (SHA-256 `b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f`) and reproduced paired fold changes of 3.157629 ± 0.278646 (3→20 mmol/L) and 12.472023 ± 1.698501 (0→20 mmol/L). Both round to the paper’s reported 3.2× and 12.5× values. The browser-generated manifest is archived at `research/data/browser-runs/DHO-NNC2215-FIG3D-20261018073223.json`; the dashboard links to it. This was JavaScript arithmetic over published measurements, not molecular dynamics.
+
+At approximately 07:31 UTC, the authenticated NVIDIA Benefits page still showed all six requests pending and no GPU allocation. At 07:33 UTC, the public Innovation Lab search visibly returned zero results. Gmail searches through 07:34 UTC found no NVIDIA support reply, no incoming Patrik email, and no HunAIFA/AI Factory response. No target NNC2215–PaG MD or GPU allocation is confirmed.
