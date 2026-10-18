@@ -1,9 +1,9 @@
 {
   "schema": "dia-health-one.compute-access-status.v1",
   "checked_date_utc": "2026-10-18",
-  "portal_status_checked_at_utc": "2026-10-18T03:53:00Z",
+  "portal_status_checked_at_utc": "2026-10-18T04:52:00Z",
   "portal_status_evidence": {
-    "source": "Authenticated NVIDIA Inception Benefits page reloaded and observed at approximately 2026-10-18T03:53Z.",
+    "source": "Authenticated NVIDIA Inception Benefits page reloaded and observed at approximately 2026-10-18T04:52Z.",
     "visible_requests": [
       "$1,000 in Lambda Cloud Credits — benefit request pending",
       "$10,000 in AWS Cloud Credits — benefit request pending",
@@ -16,13 +16,13 @@
     "catalog_search": {
       "query": "Innovation Lab",
       "result_count": 0,
-      "checked_at_utc": "2026-10-18T03:45:48Z",
+      "checked_at_utc": "2026-10-18T04:54:00Z",
       "url": "https://www.nvidia.com/programs/benefits/",
-      "observed_result": "The NVIDIA Benefits Catalog displayed “Showing 0 Results” and “Sorry, we couldn't find any results for this search.”"
+      "observed_result": "The NVIDIA Benefits Catalog displayed “Showing 0 Results” and “Sorry, we couldn’t find any results for this search.”"
     },
     "explore_benefits_control": {
       "status": "The authenticated Explore Benefits action opened the public Benefits Catalog in a new tab after the documented short delay.",
-      "checked_at_utc": "2026-10-18T03:45:48Z",
+      "checked_at_utc": "2026-10-18T04:54:00Z",
       "catalog_query": "Innovation Lab",
       "catalog_result_count": 0,
       "catalog_tile_conclusion": "The published one-product prerequisite is met, but the required Innovation Lab catalog tile is still not available; no application was submitted."
@@ -53,7 +53,7 @@
       "prerequisite_source": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
     },
     "latest_observation": {
-      "checked_at_utc": "2026-10-18T03:53:00Z",
+      "checked_at_utc": "2026-10-18T04:52:00Z",
       "benefit_requests": [
         {
           "benefit": "$1,000 in Lambda Cloud Credits",
@@ -82,7 +82,7 @@
       ],
       "innovation_lab_request_visible": false,
       "nvidia_gpu_allocation_confirmed": false,
-      "portal_conclusion": "Six NVIDIA Inception catalog benefit requests are pending referrals, not credit awards or compute allocations. The new Scaleway catalog request is pending; its partner-site completion is not confirmed."
+      "portal_conclusion": "Six NVIDIA Inception catalog benefit requests remain pending referrals, not credit awards or compute allocations. No NVIDIA or partner GPU allocation is shown."
     }
   },
   "nvidia_inception": {
@@ -168,18 +168,18 @@
       "checked_date_utc": "2026-10-18",
       "search_query": "Innovation Lab",
       "results": 0,
-      "checked_at_utc": "2026-10-18T03:45:48Z",
+      "checked_at_utc": "2026-10-18T04:54:00Z",
       "url": "https://www.nvidia.com/programs/benefits/",
-      "observed_result": "The public NVIDIA Benefits Catalog displayed “Showing 0 Results” and no matching benefit card.",
+      "observed_result": "The public NVIDIA Benefits Catalog displayed “Showing 0 Results” and “Sorry, we couldn’t find any results for this search.” No matching Innovation Lab benefit card was present.",
       "account_prerequisite": "Two Developing product records are present; the published one-product prerequisite is met."
     },
     "support_request": {
       "recipient": "inceptionprogram@nvidia.com",
       "sent_date_utc": "2026-10-17",
       "subject": "Innovation Lab benefit tile missing",
-      "response_status": "No reply from NVIDIA Inception support found as of 2026-10-18T03:38:03Z.",
-      "last_mailbox_check_at_utc": "2026-10-18T03:55:36Z",
-      "last_checked_at_utc": "2026-10-18T03:55:36Z"
+      "response_status": "No reply to the Innovation Lab support request appeared in the Gmail search through 2026-10-18T04:56:34Z.",
+      "last_mailbox_check_at_utc": "2026-10-18T04:56:34Z",
+      "last_checked_at_utc": "2026-10-18T04:56:34Z"
     },
     "duration_days": 60,
     "selection_required": true,
@@ -402,20 +402,20 @@
     }
   ],
   "latest_verification": {
-    "checked_at_utc": "2026-10-18T03:53:00Z",
-    "authenticated_nvidia_portal": "The refreshed Inception page lists six pending benefit requests, including €40,000 in Scaleway Cloud Credits; no GPU allocation is shown.",
-    "innovation_lab": "The minimum one-product prerequisite is met. The supported Explore Benefits flow opens the public catalog, where Innovation Lab returned 0 results. No application submitted.",
+    "checked_at_utc": "2026-10-18T04:56:34Z",
+    "authenticated_nvidia_portal": "The refreshed Inception Benefits page at approximately 04:52 UTC lists the same six benefit requests as pending; no GPU allocation is shown.",
+    "innovation_lab": "The authenticated Explore Benefits flow opened the public catalog. A fresh search at approximately 04:54 UTC returned 0 results; no application submitted.",
     "alternative_gpu_offers": "Nebius was not pursued because the company profile does not meet its published funding minimum. The Scaleway Inception catalog request was submitted at 03:44:15 UTC and is pending; the direct Scaleway partner application remains unsubmitted.",
     "hun_aifa": "HunAIFA support intake submitted; a return visit shows the survey confirmation. It requests Hungarian/European AI Factory access guidance and a possible referral. No AI Factory France compute application or GPU allocation is confirmed.",
     "ai_factory_france_eligibility": "A cross-border referral through HunAIFA remains unconfirmed.",
-    "inbox": "Gmail check at 2026-10-18T03:55:36Z found no new NVIDIA Innovation Lab response or incoming Patrik update. NVIDIA receipts for AI Factory France, Google Cloud, and Scaleway say partner processes are separate.",
+    "inbox": "Gmail searches through 2026-10-18T04:56:34Z found no reply to the NVIDIA Innovation Lab support request and no newer email from Patrik. Patrik’s latest project message remains at 2026-10-17T21:01:27Z.",
     "compute": "No NVIDIA or partner allocation, project compute spend, or target NNC2215-PaG MD. The temporary free T4 result remains a generic 1UBQ preflight.",
     "scientific_gate": "Target NNC2215-PaG MD remains unstarted pending complete validated conjugate chemistry, parameters, and a defensible pose.",
     "google_for_startups": "The Google for Startups Cloud Program application is received and pending review; no credit award or GPU allocation is confirmed."
   },
   "latest_inception_catalog_check": {
-    "checked_at_utc": "2026-10-18T03:53:00Z",
-    "authenticated_portal": "At approximately 03:53 UTC on 2026-10-18, the refreshed authenticated page listed six benefit requests as pending, including the new €40,000 Scaleway request; no GPU allocation was shown. Two Developing / Not Accelerated product records remain verified.",
+    "checked_at_utc": "2026-10-18T04:54:00Z",
+    "authenticated_portal": "At approximately 04:52 UTC on 2026-10-18, the refreshed authenticated page listed six benefit requests as pending, including the €40,000 Scaleway request; no GPU allocation was shown. Two Developing / Not Accelerated product records remain verified.",
     "pending_requests": [
       "$1,000 in Lambda Cloud Credits — benefit request pending",
       "$10,000 in AWS Cloud Credits — benefit request pending",
@@ -434,8 +434,8 @@
     "public_benefits_catalog_search": {
       "query": "Innovation Lab",
       "result_count": 0,
-      "checked_at_utc": "2026-10-18T03:45:48Z",
-      "observed_result": "Showing 0 Results; no matching benefit card.",
+      "checked_at_utc": "2026-10-18T04:54:00Z",
+      "observed_result": "Showing 0 Results; no matching Innovation Lab benefit card.",
       "url": "https://www.nvidia.com/programs/benefits/"
     },
     "additional_gpu_offer_screening": {
@@ -479,7 +479,7 @@
     "project_compute_spend_usd": 0,
     "explore_benefits_control": {
       "status": "The authenticated Explore Benefits action opened the public Benefits Catalog in a new tab after the documented short delay.",
-      "checked_at_utc": "2026-10-18T03:45:48Z",
+      "checked_at_utc": "2026-10-18T04:54:00Z",
       "catalog_query": "Innovation Lab",
       "catalog_result_count": 0,
       "catalog_tile_conclusion": "The published one-product prerequisite is met, but the required Innovation Lab catalog tile is still not available; no application was submitted."

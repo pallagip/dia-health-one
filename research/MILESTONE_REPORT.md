@@ -205,3 +205,12 @@ Inspection of ChimeraX serializers at pinned commit `b18ee9afe9a1536d0044139dcdc
 New local artifacts: `research/audit_nnc2215_chimerax_session.py`, `research/chimerax-session-audit-requirements.txt`, and `research/data/nnc2215-chimerax-session-audit.json`. The dashboard now contains a compact audit panel with open/closed inventory counts, the identity-match result, the three unresolved chemistry checks, and links to the JSON, script, and original CXS. It distinguishes checksum/identity verification from topology validation. The dashboard and report edits are local and not yet deployed at the time of this entry.
 
 Reproduction: decompress the Figshare CXS with `lz4 -d -f <session.cxs> <session.raw>`, install the pinned audit requirement, then run `python research/audit_nnc2215_chimerax_session.py --session <session.raw> --cxs <session.cxs>`. The JSON records the publisher's expected MD5 and the SHA-256 checksums. No chemistry or atom mapping was inferred from the ChimeraX session.
+
+
+## NVIDIA access and inbox recheck — 18 October 2026, 06:56 CEST
+
+The authenticated NVIDIA Inception Benefits page was refreshed at approximately 04:52 UTC. The same six catalog requests remain pending: Lambda ($1,000), AWS ($10,000), Microsoft Azure ($5,000), AI Factory France (up to 50K GPU hours), Google Cloud ($2,000–$350,000), and Scaleway (€40,000). The page shows no GPU allocation. The authenticated Explore Benefits action opened the public catalog; a fresh “Innovation Lab” search showed 0 results at approximately 04:54 UTC. No Innovation Lab application was submitted.
+
+A Gmail search through 04:56 UTC found no reply to the NVIDIA Innovation Lab support request and no newer email from Patrik. Patrik’s latest project email remains the 17 October message at 21:01:27 UTC saying he would contact the study authors. This is a point-in-time inbox check; the hourly monitor remains the recurring check.
+
+A source-scheme review of Nature Extended Data Figure 8i and the open/closed PDB connectivity records did not resolve the B29-linked attachment mismatch. The publisher’s synthesis scheme supports the B29 alkyne–macrocycle azide click route, while the PDB models still contain C74N15O22 in the attached PHX/LYX/MC records versus the C72N15O22 source-derived expectation. The PDB records lack authoritative bond orders, and the open/closed LYX attachment labels differ. The atom-mapped conjugate graph, full charge/protonation model, and force-field parameters remain unvalidated. No target NNC2215–PaG MD or affinity calculation was run.
