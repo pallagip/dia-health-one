@@ -1,8 +1,8 @@
 {
   "schema": "dia-health-one.nnc2215-connectivity-audit.v1",
   "run": {
-    "run_id": "DHO-NNC2215-CONNECTIVITY-20261018T012856Z",
-    "created_at_utc": "2026-10-18T01:28:56.142175+00:00",
+    "run_id": "DHO-NNC2215-CONNECTIVITY-20261018T033024Z",
+    "created_at_utc": "2026-10-18T03:30:24.351899+00:00",
     "script": "research/audit_nnc2215_connectivity.py",
     "script_sha256": "9cf37220d46e72a4719ab3aa4ccab2c83376151e78ea10f8597a9cf1ff69912e",
     "runtime_python": "3.14.4",

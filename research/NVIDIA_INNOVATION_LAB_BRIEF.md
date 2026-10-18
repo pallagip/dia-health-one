@@ -1,7 +1,7 @@
 # NVIDIA Innovation Lab application brief
 
 **Company:** Dia Health One  
-**Inception product:** Dia Health One Research Dashboard (Developing)  
+**Inception products:** Dia Health One Research Dashboard and Dia Health computational insulin discovery platform (both Developing / Not Accelerated)  
 **NVIDIA account email:** andrii@diahealth.one  
 **Request:** One CUDA-capable GPU environment for a 60-day molecular-dynamics research pilot and target-system benchmark.
 
@@ -32,7 +32,9 @@ Access to the Innovation Lab's 60-day GPU environment and technical guidance for
 
 ## NVIDIA program fit and sources
 
-NVIDIA's public Innovation Lab description lists dynamic simulations as a use case and describes GPU access as a separate, selection-based 60-day program for Inception members. The Inception profile and product are already set up; the Innovation Lab tile is currently absent from the accessible catalog, so this brief is prepared for the application and no application has been submitted.
+NVIDIA's public Innovation Lab description lists dynamic simulations as a use case and describes GPU access as a separate, selection-based 60-day program for Inception members. The authenticated profile was rechecked on 18 October 2026: two Developing / Not Accelerated product records are present, meeting NVIDIA’s published one-product prerequisite. The supported Explore Benefits action opens the public Benefits Catalog; searching “Innovation Lab” returned 0 results at 03:45:48 UTC. No Innovation Lab application has been submitted. A refreshed portal check lists six pending NVIDIA benefit requests, including the €40,000 Scaleway request acknowledged at 03:44:15 UTC; Scaleway’s separate partner process remains incomplete. The support request remained unanswered at the latest inbox check.
+
+Partner-offer screening: Nebius requires at least $5 million raised and VC/accelerator backing, which the current company profile does not meet. The Scaleway offer lists up to €42,000 but eligibility and current-customer status are unverified; its partner form requires verified identity, and no application was submitted.
 
 - NVIDIA Innovation Lab: https://www.nvidia.com/en-us/data-center/innovation-lab/
 - Inception portal: https://programs.nvidia.com/phoenix/benefits

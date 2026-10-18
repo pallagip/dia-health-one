@@ -2,8 +2,8 @@
   "record_type": "published_pag_binding_summary_reanalysis",
   "schema": "dia-health-one.pag-binding-summary-reproduction.v1",
   "run": {
-    "run_id": "DHO-PAG-BINDING-SUMMARY-20261018T023952Z",
-    "created_at_utc": "2026-10-18T02:39:52.055901+00:00",
+    "run_id": "DHO-PAG-BINDING-SUMMARY-20261018T033024Z",
+    "created_at_utc": "2026-10-18T03:30:24.514294+00:00",
     "script": "research/reproduce_pag_binding_summary.py",
     "script_sha256": "473896f420e67620a4cdd31458d706e3502cffca4d28e15e15f761c772cdcb63",
     "input": "research/data/pag-binding-summary.csv",

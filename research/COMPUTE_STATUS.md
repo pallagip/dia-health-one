@@ -56,7 +56,7 @@ The reviewed 2026 article/SI and associated public model materials do not includ
 - Dia Health One's NVIDIA Inception membership was approved on 2026-10-15. Membership does not allocate a GPU.
 - NVIDIA's [Innovation Lab](https://www.nvidia.com/en-us/data-center/innovation-lab/) is a separate 60-day program for selected Inception members. A request must be submitted through the Inception Portal; NVIDIA reviews applications on a rolling basis and states that approval depends on availability and fit.
 - NVIDIA's current Innovation Lab page explicitly lists molecular dynamics, protein folding, and drug-discovery pipelines among GPU-accelerated simulation use cases. The scientific workload fits the stated use case; selection and allocation remain outstanding.
-- The authenticated Inception account now contains the product profile **Dia Health One Research Dashboard** (Developing). The pre-existing computational-insulin product entry was left unchanged.
+- The authenticated Inception account contains two product records: **Dia Health One Research Dashboard** and **Dia Health computational insulin discovery platform**, both Developing / Not Accelerated. This meets the published prerequisite of at least one product record.
 - The portal's **Benefits → Explore Benefits** catalog was checked after saving the product. Searching “Innovation Lab” returned zero results, so the program application tile is not available in the current account view.
 - A concise support request was sent to `inceptionprogram@nvidia.com` on 2026-10-17, identifying the Dia Health One account and product and asking NVIDIA to enable the tile or provide the right application link. No reply was present at the latest inbox check. The Innovation Lab application itself has not been submitted.
 - At 2026-10-17 21:40 UTC, the authenticated portal listed three pending requests: `$1,000 in Lambda Cloud Credits`, `$10,000 in AWS Cloud Credits`, and `$5,000 in Microsoft Azure Cloud Credits`. The portal states that each is pending and directs the applicant to the partner for eligibility and approval. This is not evidence of a credit award or usable compute.
@@ -134,3 +134,24 @@ Google’s first-step email arrived at 2026-10-15 20:05:16 UTC and directed the 
 - Regular Access is open to industry and scientific fields but is intended for larger allocation needs and has a longer review-to-access path; it is a later possibility after validating the system and resource estimate.
 
 No target NNC2215–PaG binding MD started during this access review. Full conjugate connectivity, protonation/charge and parameters remain unvalidated, and the 2026 in-house simulation seed coordinates are not present in the reviewed public SI. The temporary free Colab T4 benchmark remains a generic 1UBQ engine preflight only.
+
+
+## Latest access and offer review — 18 October 2026, 03:45 UTC
+
+The authenticated Benefits page at 03:37:56 UTC still showed the five pending partner requests listed above. The two product records satisfy the published one-product prerequisite. The Explore Benefits route opens the public catalog; its “Innovation Lab” search displayed zero results at 03:45:48 UTC, so no Innovation Lab application was submitted.
+
+Nebius was screened out because its listed GPU-credit offer requires at least $5 million raised and VC/accelerator backing, while the current profile does not meet the funding threshold. Scaleway lists up to €42,000 in credits, but the NVIDIA listing targets a post-product scaling stage and the company’s age, account status, and other eligibility facts are not verified. Its public startup form requires verified identity. No fields or identity details were entered and no application was submitted.
+
+No NVIDIA or partner allocation, project compute spend, or target NNC2215–PaG MD is confirmed. Current source and account evidence is in data/nvidia-access-status.json.
+
+
+## Portal refresh — 18 October 2026, approximately 03:53 UTC
+
+The authenticated NVIDIA Inception Benefits page was reloaded and now lists six pending catalog requests, adding €40,000 in Scaleway Cloud Credits to the five requests recorded at 03:37 UTC. NVIDIA’s 03:44:15 UTC receipt confirms the Scaleway catalog request and says partner processing is handled by Scaleway; the direct partner application may still be required. The separate Scaleway form has not been submitted and no identity details were transmitted. This is a pending request, not an award or GPU allocation.
+
+The NVIDIA receipts for AI Factory France and Google Cloud also instruct applicants to complete partner processes separately. The Google for Startups Cloud Program application was separately received on 15 October and remains pending. The public Innovation Lab search still returned zero results at 03:45:48 UTC, so no Innovation Lab application was submitted. No target NNC2215–PaG MD has run.
+
+
+## Referral intake status correction — 18 October 2026, 03:55 UTC
+
+The HunAIFA support intake is submitted. A return visit to the form displays “Thank you! Your survey responses have been recorded.” The 03:15:40 UTC project email to Patrik also records the submission and confirmation. This is a request for Hungarian/European AI Factory access guidance and a possible referral; it is not an AI Factory France compute application, an approval, or an allocation.

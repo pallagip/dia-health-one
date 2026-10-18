@@ -2,8 +2,8 @@
   "record_type": "nnc2215_source_model_validation",
   "schema": "dia-health-one.nnc2215-model-validation.v1",
   "run": {
-    "run_id": "DHO-NNC2215-MODEL-VALIDATION-20261018T011151Z",
-    "created_at_utc": "2026-10-18T01:11:51.334815+00:00",
+    "run_id": "DHO-NNC2215-MODEL-VALIDATION-20261018T033024Z",
+    "created_at_utc": "2026-10-18T03:30:24.457123+00:00",
     "script": "research/validate_nnc2215_models.py",
     "script_sha256": "e72f4751c9e1e053669017680a106e0c61597772d178f1dad18348b41ac17ad6",
     "python_version": "3.14.4",
