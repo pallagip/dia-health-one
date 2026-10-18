@@ -154,8 +154,15 @@ The refreshed source-data outputs and access-status manifest are local at this p
 
 The NVIDIA catalog state is unchanged: five benefit requests remain pending, with no GPU allocation or target NNC2215–PaG MD. A read-only Gmail search found NVIDIA request receipts but no reply to the Innovation Lab support thread.
 
-Google confirmed receipt of the initial Google for Startups Cloud Program application on 15 October at 20:27:42 UTC, following a message that marked the first step complete. The separate credits-application form linked from the NVIDIA catalog request remains unsubmitted; Google has not confirmed credits or an award. The dashboard and manifest now distinguish the received program application from the outstanding credit application.
+Google confirmed receipt of the Google for Startups Cloud Program application on 15 October at 20:27:42 UTC, following a first-step email at 20:05:16 UTC. A later authenticated check of the Dia Health One company account page displays the application receipt and says a response is expected within 3–5 business days. The application is submitted and pending review; no credit award is confirmed. An earlier read-only inspection under a mismatched personal Google account was not submitted. The NVIDIA catalog request for Google Cloud credits remains pending separately.
 
 The NVIDIA Innovation Lab support thread still has no reply in the latest point-in-time check. The public report excludes private founder correspondence and monitoring details; those remain in the internal Drive progress record.
 
 The local host remains an Apple M4 without `nvidia-smi`, `nvcc`, GROMACS, OpenMM or RDKit. The temporary Colab T4 remains a generic 1UBQ preflight only. No NVIDIA GPU award, project compute spend or target molecular simulation is confirmed. The target MD gate still requires a validated atom-mapped conjugate topology, stereochemistry, protonation, charges, force-field coverage and a reproducible PaG pose.
+
+
+## Update — 18 October 2026, 05:20 CEST
+
+The NVIDIA Inception Benefits page was rechecked at 03:20:39 UTC: the same five partner requests remain pending, no Innovation Lab request is listed, and no GPU allocation is shown. The company account and Google application page were also checked. Google confirms the Cloud Program application was received on 15 October and is pending review; it has not awarded credits. This corrects the earlier interpretation that the credit application was still unsubmitted. The separate read-only inspection under a personal account remained untouched.
+
+HunAIFA’s support intake is submitted and awaiting a response; it is not an AI Factory referral or allocation. The latest Gmail search found no NVIDIA Innovation Lab reply and no Patrik message after 17 October at 21:01:27 UTC. No target NNC2215–PaG binding MD is running: full conjugate atom mapping, stereochemistry, protonation, charges and force-field parameters remain unresolved, and no NVIDIA or partner GPU is allocated. The free T4 measurement remains a generic 1UBQ engine preflight.

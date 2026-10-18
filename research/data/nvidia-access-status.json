@@ -1,9 +1,9 @@
 {
   "schema": "dia-health-one.compute-access-status.v1",
   "checked_date_utc": "2026-10-18",
-  "portal_status_checked_at_utc": "2026-10-18T03:12:16Z",
+  "portal_status_checked_at_utc": "2026-10-18T03:20:39Z",
   "portal_status_evidence": {
-    "source": "Authenticated NVIDIA Inception Benefits page observed at 2026-10-18T03:12:16Z.",
+    "source": "Authenticated NVIDIA Inception Benefits page observed at 2026-10-18T03:20:39Z.",
     "visible_requests": [
       "$1,000 in Lambda Cloud Credits — benefit request pending",
       "$10,000 in AWS Cloud Credits — benefit request pending",
@@ -60,7 +60,7 @@
       "interpretation": "Two non-EOL Developing product rows exist; neither is marked NVIDIA-accelerated. This does not establish an active NVIDIA GPU workload or an award."
     },
     "latest_observation": {
-      "checked_at_utc": "2026-10-18T03:12:16Z",
+      "checked_at_utc": "2026-10-18T03:20:39Z",
       "benefit_requests": [
         {
           "benefit": "$1,000 in Lambda Cloud Credits",
@@ -80,7 +80,7 @@
         },
         {
           "benefit": "$2,000-$350,000 in Google Cloud Credits",
-          "status": "Pending; separate credits application incomplete."
+          "status": "NVIDIA catalog request pending; Google for Startups application received 2026-10-15 and review pending."
         }
       ],
       "innovation_lab_request_visible": false,
@@ -411,11 +411,11 @@
     "inbox": "Latest point-in-time Gmail searches found no new NVIDIA Innovation Lab reply and no Patrik message newer than 2026-10-17T21:01:27Z. A project update was sent to Patrik at 2026-10-18T03:04:09Z.",
     "compute": "No NVIDIA allocation, project compute spend, or target NNC2215-PaG MD. The temporary free T4 result remains only a generic 1UBQ preflight.",
     "scientific_gate": "Target NNC2215-PaG MD remains unstarted pending full conjugate connectivity, stereochemistry, protonation, charges, parameters and a defensible pose.",
-    "google_for_startups": "Google confirmed receipt of an initial Cloud Program application on 2026-10-15T20:27:42Z and stated that credits would be deposited only if approved. The separate credits application remains unsubmitted; no credit award is confirmed."
+    "google_for_startups": "Google application receipt email at 2026-10-15T20:27:42Z and the authenticated company-account application page at 2026-10-18T03:20:41Z confirm the Google for Startups Cloud Program application was received and is pending review. No credit award is confirmed."
   },
   "latest_inception_catalog_check": {
-    "checked_at_utc": "2026-10-18T03:12:16Z",
-    "authenticated_portal": "Welcome to Inception, Andrii; the refreshed Benefits page at 2026-10-18T03:12:16Z lists the same five pending catalog requests. No Innovation Lab request appears in the table.",
+    "checked_at_utc": "2026-10-18T03:20:39Z",
+    "authenticated_portal": "Welcome to Inception, Andrii; the refreshed Benefits page at 2026-10-18T03:20:39Z lists the same five pending catalog requests. No Innovation Lab request appears in the table.",
     "pending_requests": [
       "$1,000 in Lambda Cloud Credits",
       "$10,000 in AWS Cloud Credits",
@@ -457,8 +457,8 @@
     "scope_note": "Point-in-time support and program-status checks at 2026-10-18T03:12:16Z. This public manifest records program-access state only; private founder correspondence and inbox-monitoring details are kept in the internal progress record.",
     "google_for_startups": {
       "initial_program_application_received_at_utc": "2026-10-15T20:27:42Z",
-      "initial_program_application_status": "Google confirmed receipt; review outcome not found in latest search.",
-      "separate_credits_application_submitted": false,
+      "initial_program_application_status": "Google confirmed receipt on 2026-10-15T20:27:42Z; pending review. The separate company-account application page displayed receipt confirmation on 2026-10-18.",
+      "separate_credits_application_submitted": true,
       "credit_award_confirmed": false
     },
     "patrik_project_thread": {
@@ -529,7 +529,7 @@
     }
   },
   "google_cloud_startups": {
-    "status": "NVIDIA catalog request pending; Google confirmed receipt of the initial Google for Startups Cloud Program application on 2026-10-15; the separate credits application remains unsubmitted and no credit award is confirmed.",
+    "status": "NVIDIA catalog request remains pending; Google for Startups Cloud Program application was submitted and received on 2026-10-15 and is pending review. No credit award or GPU allocation is confirmed.",
     "offer_amount_usd": "2000-350000; actual tier and award decided by Google",
     "request_channel": "NVIDIA Inception Benefits Catalog",
     "request_acknowledgement": {
@@ -537,11 +537,11 @@
       "subject": "Your Request for $2,000-$350,000 in Google Cloud Credits",
       "received_at_utc": "2026-10-18T00:53:38Z"
     },
-    "partner_application_submitted": false,
+    "partner_application_submitted": true,
     "partner_application_url": "https://cloud.google.com/startup/apply",
     "application_form_review": {
-      "checked_at_utc": "2026-10-18T00:54:30Z",
-      "status": "The separate Google credits-application page was inspected only; no fields were edited or submitted there. Gmail separately confirms receipt of the initial Cloud Program application on 2026-10-15.",
+      "checked_at_utc": "2026-10-18T03:20:41Z",
+      "status": "The authenticated Dia Health One Google account page displayed “Thank you! We’ve received your application” and stated that a response is expected within 3–5 business days. Gmail confirms the receipt at 2026-10-15T20:27:42Z. The earlier read-only inspection under a mismatched personal Google account was not submitted and does not change the company-account application status.",
       "required_information_observed": [
         "Google Cloud billing account ID",
         "business email and phone",
@@ -550,22 +550,24 @@
         "country and headquarters address",
         "acceptance of Google Cloud and startup-program terms"
       ],
-      "account_profile_issue": "The separate credit form was signed in with a personal Google account and showed prefilled business details that did not match Dia Health One. No personal or mismatched values were transmitted through that form.",
-      "submission_gate": "The initial program application was received, but the separate credits application remains unsubmitted. Use the Dia Health One Google Workspace identity and verified company/billing details; review terms and obtain explicit user confirmation immediately before final submission."
+      "account_profile_issue": "A prior read-only view under the personal Google account showed mismatched prefilled details and was left untouched. The Dia Health One company-account application was separately submitted and received; no personal-account or mismatched form values were transmitted.",
+      "submission_gate": "Application submitted and pending review. Do not submit a duplicate. Confirm the Google Cloud Billing Account ID on the original application if Google requests it; no credits are awarded until Google approves."
     },
     "gpu_allocated": false,
     "source": "https://cloud.google.com/startup/benefits",
     "initial_program_application": {
-      "status": "received_pending_review",
+      "status": "submitted_pending_review",
       "received_at_utc": "2026-10-15T20:27:42Z",
       "subject": "We've received your application to the Google for Startups Cloud Program!",
-      "evidence": "Google confirmed receipt and said it would provide application status in the next few business days. It says credits are deposited only if approved."
+      "evidence": "Google confirmed receipt and said it would provide application status in the next few business days. The authenticated company-account confirmation page says credits will be deposited only if approved."
     },
     "first_step_completion": {
       "received_at_utc": "2026-10-15T20:05:16Z",
       "subject": "Google for Startups Cloud Program: First step for application completed",
       "evidence": "Google says the first step is complete and directs the applicant to apply separately for credits."
-    }
+    },
+    "credits_application_submitted": true,
+    "credits_application_received_at_utc": "2026-10-15T20:27:42Z"
   },
   "european_compute_access": {
     "eurohpc_development_access": {
