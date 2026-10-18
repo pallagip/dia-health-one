@@ -1,7 +1,7 @@
 {
   "schema": "dia-health-one.pag-sensitivity.v1",
   "run": {
-    "created_at_utc": "2026-10-18T05:36:02.459019+00:00",
+    "created_at_utc": "2026-10-18T07:15:00.490622+00:00",
     "analysis": "published Equation 4b applied to published PaG concentration anchors",
     "scenarios_sha256": "fc319736f7e6f345556d1d4186de9ee744f12154e0e46b82ac4460f58437f94d",
     "parameters_sha256": "1145d230f49d06ae3d7ead9cce7ff70144f9b99c9acdf2b4dc77af3af5914b44",
