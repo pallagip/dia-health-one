@@ -275,6 +275,268 @@ def audit_model(model: dict[str, object]) -> dict[str, object]:
     }
 
 
+def load_serial_graph(model: dict[str, object]) -> tuple[dict[int, dict[str, object]], set[tuple[int, int]], set[tuple[int, int]]]:
+    """Load atom records, CONECT pairs, and LINK-augmented adjacency for comparison."""
+    pdb_path = ROOT / str(model["path"])
+    atoms: dict[int, dict[str, object]] = {}
+    conect_pairs: set[tuple[int, int]] = set()
+    link_records: list[str] = []
+    with pdb_path.open(encoding="ascii") as stream:
+        for line in stream:
+            if line.startswith(("ATOM  ", "HETATM")):
+                atom = parse_atom(line)
+                atoms[int(atom["serial"])] = atom
+            elif line.startswith("CONECT"):
+                values = [
+                    int(line[offset : offset + 5])
+                    for offset in range(6, len(line), 5)
+                    if line[offset : offset + 5].strip()
+                ]
+                if values:
+                    conect_pairs.update(
+                        tuple(sorted((values[0], target)))
+                        for target in values[1:]
+                    )
+            elif line.startswith("LINK  "):
+                link_records.append(line.rstrip("\n"))
+
+    all_pairs = set(conect_pairs)
+    for line in link_records:
+        first = endpoint_matches(atoms, parse_link_endpoint(line, True))
+        second = endpoint_matches(atoms, parse_link_endpoint(line, False))
+        if len(first) == 1 and len(second) == 1:
+            all_pairs.add(tuple(sorted((first[0], second[0]))))
+    return atoms, conect_pairs, all_pairs
+
+
+def named_atom(
+    atoms: dict[int, dict[str, object]],
+    chain: str,
+    residue_number: str,
+    residue: str,
+    atom_name: str,
+) -> dict[str, object]:
+    matches = [
+        atom for atom in atoms.values()
+        if atom["chain"] == chain
+        and atom["residue_number"] == residue_number
+        and atom["residue"] == residue
+        and atom["name"] == atom_name
+    ]
+    if len(matches) != 1:
+        raise ValueError(
+            f"Expected one {chain}:{residue_number} {residue} {atom_name}; found {len(matches)}."
+        )
+    return matches[0]
+
+
+def cross_state_atom_record_comparison(
+    models: list[dict[str, object]],
+) -> dict[str, object]:
+    """Compare the linker roof and N-terminal hydrogen records across model states."""
+    by_state = {str(model["state"]): model for model in models}
+    open_atoms, open_conect, open_graph = load_serial_graph(by_state["active_open"])
+    closed_atoms, closed_conect, closed_graph = load_serial_graph(by_state["inactive_closed"])
+
+    def neighborhood(
+        atoms: dict[int, dict[str, object]],
+        graph: set[tuple[int, int]],
+        target: dict[str, object],
+    ) -> list[dict[str, object]]:
+        serial = int(target["serial"])
+        neighbors = []
+        for left, right in graph:
+            neighbor_serial = right if left == serial else left if right == serial else None
+            if neighbor_serial is None:
+                continue
+            atom = atoms[neighbor_serial]
+            neighbors.append(
+                {
+                    "serial": neighbor_serial,
+                    "atom_name": atom["name"],
+                    "residue": atom["residue"],
+                    "element": atom["element"],
+                }
+            )
+        return sorted(neighbors, key=lambda item: (str(item["residue"]), str(item["atom_name"]), int(item["serial"])))
+
+    open_roof = named_atom(open_atoms, "B", "30", "LYX", "CD6")
+    closed_roof = named_atom(closed_atoms, "B", "30", "LYX", "C")
+    open_roof_neighbors = neighborhood(open_atoms, open_graph, open_roof)
+    closed_roof_neighbors = neighborhood(closed_atoms, closed_graph, closed_roof)
+    open_roof_elements = sorted(str(item["element"]) for item in open_roof_neighbors)
+    closed_roof_elements = sorted(str(item["element"]) for item in closed_roof_neighbors)
+
+    def nearest_hydrogen_to_phenyl_n(
+        atoms: dict[int, dict[str, object]], conect: set[tuple[int, int]]
+    ) -> dict[str, object]:
+        nitrogen = named_atom(atoms, "B", "1", "PHE", "N")
+        hydrogen = min(
+            (atom for atom in atoms.values() if atom["element"] == "H"),
+            key=lambda atom: math.dist(nitrogen["xyz_angstrom"], atom["xyz_angstrom"]),
+        )
+        pair = tuple(sorted((int(nitrogen["serial"]), int(hydrogen["serial"]))))
+        return {
+            "nitrogen": {
+                "serial": nitrogen["serial"],
+                "residue": nitrogen["residue"],
+                "atom_name": nitrogen["name"],
+            },
+            "nearest_hydrogen": {
+                "serial": hydrogen["serial"],
+                "record": hydrogen["record"],
+                "residue": hydrogen["residue"],
+                "residue_number": hydrogen["residue_number"],
+                "atom_name": hydrogen["name"],
+            },
+            "distance_angstrom": round(
+                math.dist(nitrogen["xyz_angstrom"], hydrogen["xyz_angstrom"]), 3
+            ),
+            "covalent_adjacency_recorded_in_conect": pair in conect,
+        }
+
+    def lyx_cd2_hydrogens(
+        atoms: dict[int, dict[str, object]], conect: set[tuple[int, int]]
+    ) -> list[dict[str, object]]:
+        carbon = named_atom(atoms, "B", "30", "LYX", "CD2")
+        serial = int(carbon["serial"])
+        return sorted(
+            [
+                {
+                    "serial": neighbor_serial,
+                    "atom_name": atoms[neighbor_serial]["name"],
+                }
+                for left, right in conect
+                if (neighbor_serial := (right if left == serial else left if right == serial else None)) is not None
+                and atoms[neighbor_serial]["element"] == "H"
+            ],
+            key=lambda item: (str(item["atom_name"]), int(item["serial"])),
+        )
+
+    open_hydrogens = lyx_cd2_hydrogens(open_atoms, open_conect)
+    closed_hydrogens = lyx_cd2_hydrogens(closed_atoms, closed_conect)
+    open_n_terminal_h = nearest_hydrogen_to_phenyl_n(open_atoms, open_conect)
+    closed_n_terminal_h = nearest_hydrogen_to_phenyl_n(closed_atoms, closed_conect)
+
+    return {
+        "macrocycle_roof_local_neighborhood": {
+            "open": {
+                "atom": {"serial": open_roof["serial"], "name": open_roof["name"], "element": open_roof["element"]},
+                "neighbors_including_link_records": open_roof_neighbors,
+            },
+            "closed": {
+                "atom": {"serial": closed_roof["serial"], "name": closed_roof["name"], "element": closed_roof["element"]},
+                "neighbors_including_link_records": closed_roof_neighbors,
+            },
+            "neighbor_element_multisets_match": open_roof_elements == closed_roof_elements,
+            "interpretation": (
+                "The open CD6 and closed C endpoint labels have the same local element-neighbor pattern, "
+                "including the MC C31 LINK. This supports a local atom-label correspondence but does not "
+                "prove full conjugate graph equivalence."
+            ),
+        },
+        "phenyl_b1_n_terminal_hydrogen_record": {
+            "open": open_n_terminal_h,
+            "closed": closed_n_terminal_h,
+            "interpretation": (
+                "The nearest H to PheB1 N occupies the corresponding local position in both models, "
+                "but the closed PDB assigns it to PHX and omits a CONECT edge while the open PDB "
+                "records it as PHE B1 H2 with an N-H CONECT edge. Treat this as a model-record "
+                "discrepancy pending source-level reconciliation, not as validated topology."
+            ),
+        },
+        "lyx_cd2_hydrogen_neighbors": {
+            "open": open_hydrogens,
+            "closed": closed_hydrogens,
+            "counts_match": len(open_hydrogens) == len(closed_hydrogens),
+            "interpretation": (
+                "The open model records two CONECT hydrogen neighbors for LYX CD2; the closed model "
+                "records one. The source coordinates do not establish whether the missing neighbor "
+                "was omitted or assigned elsewhere."
+            ),
+        },
+        "full_model_topology_equivalence_established": False,
+    }
+
+
+def selected_heavy_atom_adjacency_comparison(
+    models: list[dict[str, object]],
+) -> dict[str, object]:
+    """Compare CONECT/LINK heavy-atom adjacency with explicit LYX label aliases.
+
+    The comparison covers PHX, LYX, and MC heavy atoms plus the PheB1 nitrogen
+    and LysB29 NZ attachment atoms. It excludes hydrogens and free glucose.
+    """
+    by_state = {str(model["state"]): model for model in models}
+    aliases = {
+        "active_open": {
+            ("LYX", "CD6"): "roof_carbon_linked_to_MC_C31",
+            ("LYX", "OD"): "terminal_oxygen_with_CD1_neighbor",
+        },
+        "inactive_closed": {
+            ("LYX", "C"): "roof_carbon_linked_to_MC_C31",
+            ("LYX", "O"): "terminal_oxygen_with_CD1_neighbor",
+        },
+    }
+
+    def graph_for_state(state: str) -> tuple[set[tuple[str, ...]], set[tuple[tuple[str, ...], tuple[str, ...]]]]:
+        atoms, _, graph = load_serial_graph(by_state[state])
+        serial_to_key: dict[int, tuple[str, ...]] = {}
+        for serial, atom in atoms.items():
+            residue = str(atom["residue"])
+            chain = str(atom["chain"])
+            residue_number = str(atom["residue_number"])
+            element = str(atom["element"])
+            is_modified_heavy_atom = residue in {"PHX", "LYX", "MC"} and element != "H"
+            is_b1_anchor = residue == "PHE" and chain == "B" and residue_number == "1" and atom["name"] == "N"
+            is_b29_anchor = residue == "LYS" and chain == "B" and residue_number == "29" and atom["name"] == "NZ"
+            if not (is_modified_heavy_atom or is_b1_anchor or is_b29_anchor):
+                continue
+            atom_name = str(atom["name"])
+            atom_name = aliases[state].get((residue, atom_name), atom_name)
+            key = (chain, residue_number, residue, atom_name, element)
+            if key in serial_to_key.values():
+                raise ValueError(f"Duplicate normalized heavy-atom key in {state}: {key}")
+            serial_to_key[serial] = key
+
+        node_keys = set(serial_to_key.values())
+        edge_keys = {
+            tuple(sorted((serial_to_key[left], serial_to_key[right])))
+            for left, right in graph
+            if left in serial_to_key and right in serial_to_key
+        }
+        return node_keys, edge_keys
+
+    open_nodes, open_edges = graph_for_state("active_open")
+    closed_nodes, closed_edges = graph_for_state("inactive_closed")
+    nodes_match = open_nodes == closed_nodes
+    edges_match = open_edges == closed_edges
+    return {
+        "scope": (
+            "PHX, LYX, and MC heavy atoms plus PheB1 N and LysB29 NZ; excludes all hydrogens, "
+            "free glucose, and the remainder of the insulin protein."
+        ),
+        "explicit_atom_name_aliases": [
+            {"open": "LYX B30 CD6", "closed": "LYX B30 C", "basis": "same element-neighbor pattern and MC C31 LINK"},
+            {"open": "LYX B30 OD", "closed": "LYX B30 O", "basis": "same element and sole heavy-atom neighbor LYX CD1"},
+        ],
+        "open_node_count": len(open_nodes),
+        "closed_node_count": len(closed_nodes),
+        "open_adjacency_edge_count": len(open_edges),
+        "closed_adjacency_edge_count": len(closed_edges),
+        "normalized_node_sets_match": nodes_match,
+        "normalized_adjacency_edge_sets_match": edges_match,
+        "selected_heavy_atom_adjacency_matches": nodes_match and edges_match,
+        "interpretation": (
+            "The selected 113-node heavy-atom CONECT/LINK adjacency graph matches after the two "
+            "explicit LYX atom-name aliases. This is an adjacency comparison only; it does not "
+            "validate bond orders, stereochemistry, protonation, formal charges, or force-field parameters."
+            if nodes_match and edges_match
+            else "The selected heavy-atom node or adjacency sets differ after the explicit LYX atom-name aliases."
+        ),
+    }
+
+
 def main() -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     model_records = manifest["files"]
@@ -327,16 +589,22 @@ def main() -> None:
                 != links_by_state.get("inactive_closed", [])[0:1]
             ),
             "interpretation": (
-                "The PDB LINK records uniquely identify endpoints within each file, "
-                "but the macrocycle-to-LYX atom label differs between open and closed "
-                "models and must be reconciled against the source chemical graph."
+                "The PDB LINK records identify endpoints within each file. The macrocycle-to-LYX "
+                "atom label differs, but the selected heavy-atom CONECT/LINK adjacency graphs "
+                "match after the documented local LYX label aliases. This does not establish "
+                "bond orders or a force-field-ready chemical graph."
             ),
         },
+        "cross_state_atom_record_comparison": cross_state_atom_record_comparison(model_records),
+        "selected_heavy_atom_adjacency_comparison": selected_heavy_atom_adjacency_comparison(model_records),
         "models": results,
         "assessment": (
             "Atom-serial CONECT records and LINK endpoints recover a traceable "
-            "adjacency graph for the modified components despite repeated atom labels. "
-            "The closed model contains one HETATM hydrogen with no CONECT neighbor. "
+            "selected heavy-atom adjacency graph for the modified components despite repeated atom labels. "
+            "After explicit normalization of two LYX atom-name differences, the open and closed "
+            "selected heavy-atom node and edge sets match. Hydrogen-level correspondence remains "
+            "unresolved: the closed model assigns the PheB1 N-terminal H to PHX without a CONECT "
+            "edge and records one fewer hydrogen neighbor on LYX CD2. Full topology equivalence is not established. "
             "Bond orders, protonation, formal charges, stereochemical validation, and "
             "force-field parameters remain unresolved; the models are not production-MD-ready."
         ),
@@ -375,6 +643,19 @@ def main() -> None:
                 "macrocycle_attachment_labels_differ": output[
                     "open_closed_link_comparison"
                 ]["macrocycle_to_lyx_link_differs"],
+                "macrocycle_attachment_local_neighbor_pattern_matches": output[
+                    "cross_state_atom_record_comparison"
+                ]["macrocycle_roof_local_neighborhood"]["neighbor_element_multisets_match"],
+                "selected_heavy_atom_adjacency": output[
+                    "selected_heavy_atom_adjacency_comparison"
+                ],
+                "open_closed_phe_b1_nearest_hydrogen": output[
+                    "cross_state_atom_record_comparison"
+                ]["phenyl_b1_n_terminal_hydrogen_record"],
+                "lyx_cd2_hydrogen_neighbor_counts": {
+                    "open": len(output["cross_state_atom_record_comparison"]["lyx_cd2_hydrogen_neighbors"]["open"]),
+                    "closed": len(output["cross_state_atom_record_comparison"]["lyx_cd2_hydrogen_neighbors"]["closed"]),
+                },
             },
             indent=2,
         )

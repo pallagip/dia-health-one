@@ -1,6 +1,6 @@
 {
   "schema": "dia-health-one.pag-assay-source-audit.v1",
-  "recorded_at_utc": "2026-10-17T23:47:41Z",
+  "recorded_at_utc": "2026-10-18T01:11:51Z",
   "run": {
     "script": "research/audit_pag_assay_source.py",
     "script_sha256": "32540f010ff3d91408ae6063e771b70da5f6910ac89b7545471b745fc616187d",

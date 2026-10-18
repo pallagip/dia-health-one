@@ -1,10 +1,10 @@
 {
   "schema": "dia-health-one.nnc2215-connectivity-audit.v1",
   "run": {
-    "run_id": "DHO-NNC2215-CONNECTIVITY-20261017T230923Z",
-    "created_at_utc": "2026-10-17T23:09:23.960343+00:00",
+    "run_id": "DHO-NNC2215-CONNECTIVITY-20261018T012856Z",
+    "created_at_utc": "2026-10-18T01:28:56.142175+00:00",
     "script": "research/audit_nnc2215_connectivity.py",
-    "script_sha256": "c45faeb5d875069b3127dcb50a17704a530dbee327546c407fe2c33893902cb7",
+    "script_sha256": "9cf37220d46e72a4719ab3aa4ccab2c83376151e78ea10f8597a9cf1ff69912e",
     "runtime_python": "3.14.4",
     "nvidia_gpu_used": false
   },
@@ -62,7 +62,158 @@
       ]
     ],
     "macrocycle_to_lyx_link_differs": true,
-    "interpretation": "The PDB LINK records uniquely identify endpoints within each file, but the macrocycle-to-LYX atom label differs between open and closed models and must be reconciled against the source chemical graph."
+    "interpretation": "The PDB LINK records identify endpoints within each file. The macrocycle-to-LYX atom label differs, but the selected heavy-atom CONECT/LINK adjacency graphs match after the documented local LYX label aliases. This does not establish bond orders or a force-field-ready chemical graph."
+  },
+  "cross_state_atom_record_comparison": {
+    "macrocycle_roof_local_neighborhood": {
+      "open": {
+        "atom": {
+          "serial": 502,
+          "name": "CD6",
+          "element": "C"
+        },
+        "neighbors_including_link_records": [
+          {
+            "serial": 501,
+            "atom_name": "CD5",
+            "residue": "LYX",
+            "element": "C"
+          },
+          {
+            "serial": 517,
+            "atom_name": "HX22",
+            "residue": "LYX",
+            "element": "H"
+          },
+          {
+            "serial": 516,
+            "atom_name": "HX31",
+            "residue": "LYX",
+            "element": "H"
+          },
+          {
+            "serial": 861,
+            "atom_name": "C31",
+            "residue": "MC",
+            "element": "C"
+          }
+        ]
+      },
+      "closed": {
+        "atom": {
+          "serial": 817,
+          "name": "C",
+          "element": "C"
+        },
+        "neighbors_including_link_records": [
+          {
+            "serial": 816,
+            "atom_name": "CD5",
+            "residue": "LYX",
+            "element": "C"
+          },
+          {
+            "serial": 823,
+            "atom_name": "HC",
+            "residue": "LYX",
+            "element": "H"
+          },
+          {
+            "serial": 824,
+            "atom_name": "HC",
+            "residue": "LYX",
+            "element": "H"
+          },
+          {
+            "serial": 862,
+            "atom_name": "C31",
+            "residue": "MC",
+            "element": "C"
+          }
+        ]
+      },
+      "neighbor_element_multisets_match": true,
+      "interpretation": "The open CD6 and closed C endpoint labels have the same local element-neighbor pattern, including the MC C31 LINK. This supports a local atom-label correspondence but does not prove full conjugate graph equivalence."
+    },
+    "phenyl_b1_n_terminal_hydrogen_record": {
+      "open": {
+        "nitrogen": {
+          "serial": 37,
+          "residue": "PHE",
+          "atom_name": "N"
+        },
+        "nearest_hydrogen": {
+          "serial": 48,
+          "record": "ATOM",
+          "residue": "PHE",
+          "residue_number": "1",
+          "atom_name": "H2"
+        },
+        "distance_angstrom": 1.012,
+        "covalent_adjacency_recorded_in_conect": true
+      },
+      "closed": {
+        "nitrogen": {
+          "serial": 351,
+          "residue": "PHE",
+          "atom_name": "N"
+        },
+        "nearest_hydrogen": {
+          "serial": 332,
+          "record": "HETATM",
+          "residue": "PHX",
+          "residue_number": "0",
+          "atom_name": "H2"
+        },
+        "distance_angstrom": 1.006,
+        "covalent_adjacency_recorded_in_conect": false
+      },
+      "interpretation": "The nearest H to PheB1 N occupies the corresponding local position in both models, but the closed PDB assigns it to PHX and omits a CONECT edge while the open PDB records it as PHE B1 H2 with an N-H CONECT edge. Treat this as a model-record discrepancy pending source-level reconciliation, not as validated topology."
+    },
+    "lyx_cd2_hydrogen_neighbors": {
+      "open": [
+        {
+          "serial": 507,
+          "atom_name": "HC1"
+        },
+        {
+          "serial": 510,
+          "atom_name": "HXT"
+        }
+      ],
+      "closed": [
+        {
+          "serial": 826,
+          "atom_name": "HXT"
+        }
+      ],
+      "counts_match": false,
+      "interpretation": "The open model records two CONECT hydrogen neighbors for LYX CD2; the closed model records one. The source coordinates do not establish whether the missing neighbor was omitted or assigned elsewhere."
+    },
+    "full_model_topology_equivalence_established": false
+  },
+  "selected_heavy_atom_adjacency_comparison": {
+    "scope": "PHX, LYX, and MC heavy atoms plus PheB1 N and LysB29 NZ; excludes all hydrogens, free glucose, and the remainder of the insulin protein.",
+    "explicit_atom_name_aliases": [
+      {
+        "open": "LYX B30 CD6",
+        "closed": "LYX B30 C",
+        "basis": "same element-neighbor pattern and MC C31 LINK"
+      },
+      {
+        "open": "LYX B30 OD",
+        "closed": "LYX B30 O",
+        "basis": "same element and sole heavy-atom neighbor LYX CD1"
+      }
+    ],
+    "open_node_count": 113,
+    "closed_node_count": 113,
+    "open_adjacency_edge_count": 120,
+    "closed_adjacency_edge_count": 120,
+    "normalized_node_sets_match": true,
+    "normalized_adjacency_edge_sets_match": true,
+    "selected_heavy_atom_adjacency_matches": true,
+    "interpretation": "The selected 113-node heavy-atom CONECT/LINK adjacency graph matches after the two explicit LYX atom-name aliases. This is an adjacency comparison only; it does not validate bond orders, stereochemistry, protonation, formal charges, or force-field parameters."
   },
   "models": [
     {
@@ -1102,7 +1253,7 @@
       }
     }
   ],
-  "assessment": "Atom-serial CONECT records and LINK endpoints recover a traceable adjacency graph for the modified components despite repeated atom labels. The closed model contains one HETATM hydrogen with no CONECT neighbor. Bond orders, protonation, formal charges, stereochemical validation, and force-field parameters remain unresolved; the models are not production-MD-ready.",
+  "assessment": "Atom-serial CONECT records and LINK endpoints recover a traceable selected heavy-atom adjacency graph for the modified components despite repeated atom labels. After explicit normalization of two LYX atom-name differences, the open and closed selected heavy-atom node and edge sets match. Hydrogen-level correspondence remains unresolved: the closed model assigns the PheB1 N-terminal H to PHX without a CONECT edge and records one fewer hydrogen neighbor on LYX CD2. Full topology equivalence is not established. Bond orders, protonation, formal charges, stereochemical validation, and force-field parameters remain unresolved; the models are not production-MD-ready.",
   "target_binding_md_started": false,
   "clinical_use": false
 }
