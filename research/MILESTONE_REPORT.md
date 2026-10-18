@@ -1,8 +1,8 @@
 # NNC2215–PaG reproducibility milestone report
 
-**Updated:** 2026-10-18 10:48 CEST (08:48 UTC; authenticated NVIDIA portal and inbox rechecked)
+**Updated:** 2026-10-18 11:19 CEST (09:19 UTC; branch-preview viewer deployment verified)
 **Repository file:** [`research/MILESTONE_REPORT.md`](https://github.com/pallagip/dia-health-one/blob/feat/reproducibility-dashboard/research/MILESTONE_REPORT.md) on branch `feat/reproducibility-dashboard` · [Live Markdown report](https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/MILESTONE_REPORT.md)
-**Status:** Published-data reanalysis and Hill-fit identifiability check complete; generic Tesla T4 throughput preflight complete. The latest local CPU source-data rerun at 08:35 UTC again matches the reported Figure 3d fold changes. The separate PaG-only T4 portability preflight remains unrun. The authenticated NVIDIA portal check at 08:44 UTC showed six partner requests pending and no GPU allocation; the completed Innovation Lab catalog search at 08:46 UTC returned zero results despite two product records meeting the published prerequisite. NVIDIA support had not replied by 08:48 UTC. Target binding MD has not started; the public study seed coordinates and validated NNC2215 conjugate chemistry/parameters remain unresolved.
+**Status:** Published-data reanalysis and Hill-fit identifiability check complete; generic Tesla T4 throughput preflight complete. An interactive side-by-side view of the publisher's open and closed NNC2215 model coordinates is now deployed on the feature-branch preview. The viewer does not validate chemistry or simulate binding. NVIDIA's six partner requests remain pending with no GPU allocation; the Innovation Lab catalog search returned zero results. Target binding MD has not started; the public study seed coordinates and validated NNC2215 conjugate chemistry/parameters remain unresolved.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
 
 ## Complete
@@ -38,8 +38,17 @@ The two-week pilot/report estimate starts only when the necessary structural inp
 | Conjugate chemistry | Atom-mapped residue/linker graphs, bond orders, stereochemistry, protonation states, charge totals, and parameter validation | Blocked |
 | Original-method reproducibility | Original macrocycle-analogue seed coordinates and compatible Desmond/OPLS4 setup, or explicitly labelled proxy inputs | Blocked for exact rerun |
 | Pilot stability | Minimized valid system; finite energies; stable temperature/volume; no clashes/crashes; three independent seeds and consistent structural observables | Not run |
+
 | GPU performance/cost | Target-system benchmark on allocated hardware with versions and measured ns/day | Generic T4 preflight complete; target-system performance/cost not measured; no production allocation |
 | Binding inference | A validated free-energy/affinity method with convergence diagnostics and appropriate controls | Not part of the initial pilot |
+
+## Interactive structure viewer — 18 October 2026, 09:19 UTC
+
+Commit `708dbe41521c521fbb96c16949cfe2522aa4d5f7` adds a side-by-side interactive browser view of the publisher-supplied open and closed NNC2215 PDB models. It uses vendored 3Dmol.js 2.5.5 under BSD-3-Clause; the version, registry integrity, bundle checksum, and license are recorded in `research/data/structure-viewer-library.json` and `research/assets/vendor/3Dmol-2.5.5-LICENSE.txt`. The panel includes a chain/component color key, rotation/zoom/reset controls, PDB downloads, source checksums, and the publisher dataset link.
+
+Cloudflare deployment workflow [39114794946](https://github.com/pallagip/dia-health-one/actions/runs/39114794946) completed successfully at 09:18:35 UTC. The feature preview is [available here](https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/). At 09:19 UTC, the live browser showed both source models loaded and rendered. The dashboard, viewer JavaScript/CSS, vendored library (537,792 bytes), source PDBs, library manifest, and updated README returned HTTP 200. This was a visual/source-file verification; no automated test suite was run.
+
+These are author-supplied, model-built coordinates rather than experimentally solved NNC2215 switch states. The viewer does not validate the unresolved conjugate atom mapping, bond orders, stereochemistry, protonation, charges, or force-field parameters. No NNC2215–PaG target MD, affinity/free-energy calculation, clinical model, or NVIDIA/partner allocation resulted from this dashboard update. The company's production website was not changed.
 
 
 ## Update — 18 October 2026, 01:10 CEST
