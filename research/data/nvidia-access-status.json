@@ -179,8 +179,9 @@
       "recipient": "inceptionprogram@nvidia.com",
       "sent_date_utc": "2026-10-17",
       "subject": "Innovation Lab benefit tile missing",
-      "response_status": "No reply from NVIDIA Inception support found as of 2026-10-18T03:12:16Z.",
-      "last_mailbox_check_at_utc": "2026-10-18T03:12:16Z"
+      "response_status": "No reply from NVIDIA Inception support found as of 2026-10-18T03:24:52Z.",
+      "last_mailbox_check_at_utc": "2026-10-18T03:12:16Z",
+      "last_checked_at_utc": "2026-10-18T03:24:52Z"
     },
     "duration_days": 60,
     "selection_required": true,
@@ -408,7 +409,7 @@
     "innovation_lab": "No application tile or request is visible in the refreshed Inception Benefits table. Last separate public-catalog search for Innovation Lab returned zero results at 2026-10-18T00:54:30Z; NVIDIA support reply not found in the latest inbox search.",
     "hun_aifa": "Support intake submitted on 2026-10-18 requesting guidance on Hungarian/European AI Factory GPU/HPC access, referrals, and OpenMM/GROMACS expertise. Confirmation screen received; reply and allocation pending.",
     "ai_factory_france_eligibility": "The NVIDIA catalog detail permits possible EU partner-country eligibility only with agreement between AI2F and that country's AI Factory. HunAIFA is the relevant Hungarian referral route. Eligibility is not established.",
-    "inbox": "Latest point-in-time Gmail searches found no new NVIDIA Innovation Lab reply and no Patrik message newer than 2026-10-17T21:01:27Z. A project update was sent to Patrik at 2026-10-18T03:04:09Z.",
+    "inbox": "Gmail search at 2026-10-18T03:24:52Z found no incoming NVIDIA Innovation Lab response.",
     "compute": "No NVIDIA allocation, project compute spend, or target NNC2215-PaG MD. The temporary free T4 result remains only a generic 1UBQ preflight.",
     "scientific_gate": "Target NNC2215-PaG MD remains unstarted pending full conjugate connectivity, stereochemistry, protonation, charges, parameters and a defensible pose.",
     "google_for_startups": "Google application receipt email at 2026-10-15T20:27:42Z and the authenticated company-account application page at 2026-10-18T03:20:41Z confirm the Google for Startups Cloud Program application was received and is pending review. No credit award is confirmed."
@@ -437,11 +438,11 @@
     }
   },
   "latest_inbox_check": {
-    "checked_at_utc": "2026-10-18T03:12:16Z",
+    "checked_at_utc": "2026-10-18T03:24:52Z",
     "nvidia_innovation_lab_support": {
       "new_reply_found": false,
       "search": "in:anywhere \"Innovation Lab\" newer_than:7d",
-      "last_checked_at_utc": "2026-10-18T03:12:16Z",
+      "last_checked_at_utc": "2026-10-18T03:24:52Z",
       "response_status": "No incoming NVIDIA Innovation Lab response found in the latest point-in-time Gmail search."
     },
     "new_catalog_acknowledgements": [
@@ -454,18 +455,12 @@
         "received_at_utc": "2026-10-18T00:53:38Z"
       }
     ],
-    "scope_note": "Point-in-time support and program-status checks at 2026-10-18T03:12:16Z. This public manifest records program-access state only; private founder correspondence and inbox-monitoring details are kept in the internal progress record.",
+    "scope_note": "Point-in-time support and program-status checks at 2026-10-18T03:24:52Z. This public manifest records program-access state only; private founder correspondence and inbox-monitoring details are kept in the internal progress record.",
     "google_for_startups": {
       "initial_program_application_received_at_utc": "2026-10-15T20:27:42Z",
       "initial_program_application_status": "Google confirmed receipt on 2026-10-15T20:27:42Z; pending review. The separate company-account application page displayed receipt confirmation on 2026-10-18.",
       "separate_credits_application_submitted": true,
       "credit_award_confirmed": false
-    },
-    "patrik_project_thread": {
-      "latest_incoming_message_at_utc": "2026-10-17T21:01:27Z",
-      "newer_incoming_message_found": false,
-      "latest_sent_update_at_utc": "2026-10-18T03:04:09Z",
-      "status": "No newer inbound message found in the latest point-in-time Gmail search."
     }
   },
   "ai_factory_france_gpu_hours": {
