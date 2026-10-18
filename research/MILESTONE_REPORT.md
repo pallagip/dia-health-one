@@ -1,8 +1,8 @@
 # NNC2215–PaG reproducibility milestone report
 
-**Updated:** 2026-10-18 10:14 CEST (08:14 UTC)
+**Updated:** 2026-10-18 10:39 CEST (08:39 UTC; latest local literature analyses rerun at 08:35 UTC)
 **Repository file:** [`research/MILESTONE_REPORT.md`](https://github.com/pallagip/dia-health-one/blob/feat/reproducibility-dashboard/research/MILESTONE_REPORT.md) on branch `feat/reproducibility-dashboard` · [Live Markdown report](https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/MILESTONE_REPORT.md)
-**Status:** Published-data reanalysis and Hill-fit identifiability check complete; generic Tesla T4 throughput preflight complete. The separate PaG-only T4 portability preflight is waiting at Colab’s human verification step. NVIDIA partner requests remain pending with no project allocation; a fresh portal recheck at 08:06 UTC still showed all six requests pending, with no allocation. The public Innovation Lab catalog search again returned zero results. Target binding MD has not started; the public study seed coordinates and validated NNC2215 conjugate chemistry/parameters remain unresolved.
+**Status:** Published-data reanalysis and Hill-fit identifiability check complete; generic Tesla T4 throughput preflight complete. The latest local CPU source-data rerun at 08:35 UTC again matches the reported Figure 3d fold changes. The separate PaG-only T4 portability preflight remains unrun; no active Colab notebook tab is open. NVIDIA partner requests remain pending with no project allocation; the last authenticated portal check at 08:06 UTC still showed all six requests pending. The public Innovation Lab catalog search returned zero results at that check. Target binding MD has not started; the public study seed coordinates and validated NNC2215 conjugate chemistry/parameters remain unresolved.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
 
 ## Complete
