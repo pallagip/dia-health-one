@@ -369,21 +369,6 @@ def main() -> None:
         handlelength=1.7,
         columnspacing=1.2,
     )
-    axis.text(
-        0.99,
-        0.95,
-        (
-            f"EC50 {ec50:.1f} mM · upper bootstrap tail hits {EC50_UPPER_BOUND_MM:.0f} mM fit ceiling"
-            if ec50_upper_hit_fraction > 0
-            else f"EC50 {ec50:.1f} mM · bootstrap range {ec50_range['lower_2_5_percent']:.1f}–{ec50_range['upper_97_5_percent']:.0f} mM"
-        ),
-        transform=axis.transAxes,
-        ha="right",
-        va="top",
-        fontsize=8,
-        color="#503a82",
-        bbox={"boxstyle": "round,pad=0.55", "facecolor": "#f1eef6", "edgecolor": "#ded9e8", "linewidth": 0.7},
-    )
     figure.savefig(PLOT, format="svg", facecolor=figure.get_facecolor())
     plt.close(figure)
 

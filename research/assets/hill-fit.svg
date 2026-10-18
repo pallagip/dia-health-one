@@ -743,7 +743,6 @@ Q 392.240547 30.680806 396.640547 30.680806
 z
 " style="fill: #f1eef6; stroke: #ded9e8; stroke-width: 0.7; stroke-linejoin: miter"/>
     </g>
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #503a82" x="638.944297" y="24.358931" transform="rotate(-0 638.944297 24.358931)">EC50 13.4 mM · upper bootstrap tail hits 1000 mM fit ceiling</text>
    </g>
    <g id="LineCollection_1">
     <path d="M 56.591546 291.154456 
