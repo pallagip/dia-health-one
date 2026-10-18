@@ -72,6 +72,21 @@ micromamba run -p /tmp/dho-pag-chem python research/run_pag_solvation_preflight.
 micromamba run -p /tmp/dho-pag-chem python research/plot_pag_solvation_preflight.py
 ```
 
+### NVIDIA portability preflight
+
+`run_pag_gpu_portability.py` loads the checksum-tracked initial PDB and serialized OpenMM system from the Apple M4 PaG-only pilot, then repeats its short NPT setup on an NVIDIA OpenCL device. It records the GPU/driver, OpenMM and Python versions, input hashes, two independent seeds, thermodynamic summaries, and output hashes. The committed inputs have SHA-256 values `1b5bf3cff8f6c433069d621636e89150000e5fc3dd7a3c5d76e15d9d8436fd4b` (initial PDB) and `1c5d1de602db30728bb342cc2607c5b3720c93421fe7bace6a103eb6a632082f` (System XML).
+
+With an NVIDIA runtime that provides `nvidia-smi` and OpenMM 8.6.1, run:
+
+```sh
+python research/run_pag_gpu_portability.py \
+  --input-pdb https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z-initial.pdb \
+  --system-xml https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/data/pag-solvation-preflight/DHO-PAG-SOLVATION-20261017T191929Z-system.xml \
+  --output-dir /content/pag-t4-preflight
+```
+
+This is a planned portability run until its manifest is present under `data/pag-t4-preflight/`. It contains one PaG molecule in solvent and no insulin or receptor. It checks GPU execution and short-term system stability only; it cannot reproduce PaG binding, the reported 500 ns Desmond study, or an affinity value. A free temporary GPU runtime is not an NVIDIA Inception allocation.
+
 The scripts write a chemistry preflight, timestamped run manifest, raw per-replicate logs and final coordinates, production-only analysis JSON, and SVG figure. The latest run pointer is `data/pag-solvation-preflight/latest.json`. Raw logs and hashes are retained; earlier pilot attempts are marked superseded in their manifests.
 
 ## Source and extraction
