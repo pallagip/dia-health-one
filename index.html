@@ -44,7 +44,7 @@
         "name": "Patrik Pallagi",
         "jobTitle": "Founder and CEO",
         "url": "https://www.diahealth.one/team/patrik-pallagi/",
-        "sameAs": "https://github.com/pallagip",
+        "sameAs": ["https://github.com/pallagip", "https://hu.linkedin.com/in/pallagi2025"],
         "image": "https://avatars.githubusercontent.com/u/113801545?v=4"
       },
       {
@@ -58,8 +58,15 @@
     ],
     "employee": {
       "@type": "Person",
-      "name": "Adam",
-      "jobTitle": "Chief Scientific Officer"
+      "@id": "https://www.diahealth.one/team/adam-urmos/#person",
+      "name": "Ádám Ürmös",
+      "jobTitle": "Chief Scientific Officer",
+      "url": "https://www.diahealth.one/team/adam-urmos/",
+      "sameAs": "https://uk.linkedin.com/in/adam-urmos-41a65a197",
+      "image": "https://www.diahealth.one/assets/adam-urmos.jpg",
+      "worksFor": {"@id": "https://www.diahealth.one/#organization"},
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "Cambridge University"},
+      "description": "Chief Scientific Officer at Dia Health One. The team pitch deck lists Cambridge University and BSc Chemistry."
     }
   },
   {
@@ -173,6 +180,7 @@
     .founder-card h3 { margin: 2px 0 4px; font-size: 21px; letter-spacing: -.04em; }
     .founder-role { margin: 0; color: var(--purple-dark); font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
     .founder-card p { margin: 14px 0 17px; color: #66636e; font-size: 12px; line-height: 1.7; }
+    .profile-links { display: flex; flex-wrap: wrap; gap: 13px; }
     .profile-link { color: var(--purple-dark); font-size: 11px; font-weight: 800; }
     .profile-link span { padding-left: 5px; }
     .team-more { display: inline-flex; margin-top: 25px; color: var(--purple-dark); font-size: 12px; font-weight: 800; }
@@ -316,15 +324,15 @@
         <div class="team-grid">
           <article class="founder-card">
             <img class="founder-avatar" src="https://avatars.githubusercontent.com/u/113801545?v=4" alt="Patrik Pallagi" width="76" height="76" loading="lazy" />
-            <div><h3>Patrik Pallagi</h3><div class="founder-role">Founder &amp; CEO</div><p>Seven years with the New York Academy of Sciences; BSc in Physics from the University of Toronto.</p><a class="profile-link" href="/team/patrik-pallagi/">Founder profile <span>↗</span></a></div>
+            <div><h3>Patrik Pallagi</h3><div class="founder-role">Founder &amp; CEO</div><p>Seven years with the New York Academy of Sciences; BSc in Physics from the University of Toronto.</p><div class="profile-links"><a class="profile-link" href="/team/patrik-pallagi/">Profile <span>↗</span></a><a class="profile-link" href="https://hu.linkedin.com/in/pallagi2025" target="_blank" rel="me noopener noreferrer">LinkedIn <span>↗</span></a></div></div>
           </article>
           <article class="founder-card">
             <img class="founder-avatar" src="https://avatars.githubusercontent.com/u/14119286?v=4" alt="Andrii Shylenko" width="76" height="76" loading="lazy" />
-            <div><h3>Andrii Shylenko</h3><div class="founder-role">Chief Technology Officer</div><p>More than a decade of experience across industrial hardware, agentic AI, and machine learning.</p><a class="profile-link" href="/team/andrii-shylenko/">Founder profile <span>↗</span></a></div>
+            <div><h3>Andrii Shylenko</h3><div class="founder-role">Chief Technology Officer</div><p>More than a decade of experience across industrial hardware, agentic AI, and machine learning.</p><div class="profile-links"><a class="profile-link" href="/team/andrii-shylenko/">Profile <span>↗</span></a><a class="profile-link" href="https://hu.linkedin.com/in/shylenko" target="_blank" rel="me noopener noreferrer">LinkedIn <span>↗</span></a></div></div>
           </article>
           <article class="founder-card">
-            <div class="founder-avatar founder-avatar-initial" aria-hidden="true">A</div>
-            <div><h3>Adam</h3><div class="founder-role">Chief Scientific Officer</div><p>Provides scientific leadership for Dia Health One’s research.</p></div>
+            <img class="founder-avatar" src="/assets/adam-urmos.jpg" alt="Ádám Ürmös" width="76" height="76" loading="lazy" />
+            <div><h3>Ádám Ürmös</h3><div class="founder-role">Chief Scientific Officer</div><p>Cambridge University; BSc Chemistry.</p><div class="profile-links"><a class="profile-link" href="/team/adam-urmos/">Profile <span>↗</span></a><a class="profile-link" href="https://uk.linkedin.com/in/adam-urmos-41a65a197" target="_blank" rel="me noopener noreferrer">LinkedIn <span>↗</span></a></div></div>
           </article>
         </div>
         <a class="team-more" href="/team/">Meet the team <span>↗</span></a>
