@@ -32,7 +32,7 @@ jobs:
           for directory in assets images research; do
             if [ -d "$directory" ]; then cp -R "$directory" "_site/$directory"; fi
           done
-          rm -f _site/research/data/nvidia-access-status.json
+          rm -f _site/research/data/nvidia-access-status.json _site/research/COMPUTE_STATUS.md _site/research/MILESTONE_REPORT.md
           for file in favicon.ico robots.txt sitemap.xml; do
             if [ -f "$file" ]; then cp "$file" "_site/$file"; fi
           done
