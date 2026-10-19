@@ -55,7 +55,12 @@
         "sameAs": ["https://github.com/w1ne", "https://hu.linkedin.com/in/shylenko"],
         "image": "https://avatars.githubusercontent.com/u/14119286?v=4"
       }
-    ]
+    ],
+    "employee": {
+      "@type": "Person",
+      "name": "Adam",
+      "jobTitle": "Chief Scientific Officer"
+    }
   },
   {
     "@context": "https://schema.org",
@@ -161,9 +166,10 @@
     .team-heading { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 42px; }
     .team-heading h2 { margin: 18px 0 0; max-width: 610px; font-size: clamp(38px, 5vw, 62px); line-height: 1.03; letter-spacing: -.065em; font-weight: 600; }
     .team-intro { max-width: 350px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
-    .team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .founder-card { padding: 28px; border: 1px solid #dfd9eb; border-radius: 16px; background: #fff; display: grid; grid-template-columns: 76px 1fr; gap: 22px; align-items: start; }
     .founder-avatar { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; background: var(--lavender); }
+    .founder-avatar-initial { display: grid; place-items: center; color: var(--purple-dark); font-size: 27px; font-weight: 700; }
     .founder-card h3 { margin: 2px 0 4px; font-size: 21px; letter-spacing: -.04em; }
     .founder-role { margin: 0; color: var(--purple-dark); font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
     .founder-card p { margin: 14px 0 17px; color: #66636e; font-size: 12px; line-height: 1.7; }
@@ -183,8 +189,11 @@
     .reveal { opacity: 1; transform: none; }
     @keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(2deg); } }
     @keyframes marquee { to { transform: translateX(-50%); } }
+    @media (max-width: 1040px) {
+      .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
     @media (max-width: 760px) {
-      .shell { width: min(100% - 40px, 560px); }
+      .shell { width: min(calc(100% - 40px), 560px); }
       .topbar { height: 68px; }
       .wordmark { font-size: 10px; letter-spacing: .11em; }
       .nav-center { display: none; }
@@ -302,7 +311,7 @@
       <div class="shell">
         <div class="team-heading">
           <div><div class="section-label">04 / The team</div><h2>Built by people who think in systems.</h2></div>
-          <p class="team-intro">A founder-led team bringing together scientific thinking, computational research, and engineering.</p>
+          <p class="team-intro">Our team combines company-building, scientific leadership, computational research, and engineering.</p>
         </div>
         <div class="team-grid">
           <article class="founder-card">
@@ -313,8 +322,12 @@
             <img class="founder-avatar" src="https://avatars.githubusercontent.com/u/14119286?v=4" alt="Andrii Shylenko" width="76" height="76" loading="lazy" />
             <div><h3>Andrii Shylenko</h3><div class="founder-role">Chief Technology Officer</div><p>More than a decade of experience across industrial hardware, agentic AI, and machine learning.</p><a class="profile-link" href="/team/andrii-shylenko/">Founder profile <span>↗</span></a></div>
           </article>
+          <article class="founder-card">
+            <div class="founder-avatar founder-avatar-initial" aria-hidden="true">A</div>
+            <div><h3>Adam</h3><div class="founder-role">Chief Scientific Officer</div><p>Provides scientific leadership for Dia Health One’s research.</p></div>
+          </article>
         </div>
-        <a class="team-more" href="/team/">Meet the founding team <span>↗</span></a>
+        <a class="team-more" href="/team/">Meet the team <span>↗</span></a>
       </div>
     </section>
 
