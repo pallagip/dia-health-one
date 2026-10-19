@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Dia Health One mark</title>
+  <rect width="512" height="512" rx="132" fill="#7155bd"/>
+  <path d="M138 112h105c91 0 145 56 145 144S334 400 243 400H138V112Zm76 67v154h29c45 0 70-27 70-77s-25-77-70-77h-29Z" fill="#fff"/>
+  <circle cx="374" cy="138" r="28" fill="#c8e5a8"/>
+</svg>
