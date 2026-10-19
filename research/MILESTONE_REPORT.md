@@ -1,9 +1,13 @@
 # NNC2215–PaG reproducibility milestone report
 
-**Updated:** 2026-10-18 12:01 CEST (10:01 UTC; 09:58 source-data rerun and fresh compute-access checks recorded)
+**Updated:** 2026-10-19 16:35 CEST (14:35 UTC; Google application rejection reviewed and reprocessing reply prepared)
 **Repository file:** [`research/MILESTONE_REPORT.md`](https://github.com/pallagip/dia-health-one/blob/feat/reproducibility-dashboard/research/MILESTONE_REPORT.md) on branch `feat/reproducibility-dashboard` · [Live Markdown report](https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/MILESTONE_REPORT.md)
 **Status:** Published-data reanalysis is reproducible; a fresh run directly rechecked all 30 Nature source cells against the publisher workbook. The Dia Health One dashboard preview and structure viewer remain live. NVIDIA's six partner requests remain pending with no GPU allocation; the last completed Innovation Lab catalog search returned zero results. Target binding MD has not started because the study seed coordinates and validated conjugate chemistry/parameters remain unavailable.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
+
+## Google Cloud application update — 19 October 2026
+
+Google rejected the separate Google for Startups Cloud Program application because the company website was inaccessible or inactive when it was reviewed. The public company site is now reachable, and a reply requesting re-processing was sent on 19 October with the public company site and Research Demo links. The NVIDIA Inception catalog request for Google Cloud credits remains a separate pending partner request; no credits or GPU allocation are confirmed.
 
 ## Complete
 

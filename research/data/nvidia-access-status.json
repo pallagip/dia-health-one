@@ -75,7 +75,7 @@
         },
         {
           "benefit": "$2,000-$350,000 in Google Cloud Credits",
-          "status": "NVIDIA catalog request pending; separate Google for Startups application received 2026-10-15 and review pending."
+          "status": "NVIDIA catalog request pending; separate Google for Startups application was rejected 2026-10-19 because the website was inaccessible/inactive and is ready for reprocessing."
         },
         {
           "benefit": "€40,000 in Scaleway Cloud Credits",
@@ -525,7 +525,7 @@
     "inbox": "Gmail searches through 2026-10-18T07:34:03Z found no new message from Patrik, no reply from inceptionprogram@nvidia.com to the Innovation Lab inquiry, and no incoming HunAIFA/AI Factory response. The latest NVIDIA catalog emails are partner referrals, not awards.",
     "compute": "No NVIDIA or partner allocation, project compute spend, or target NNC2215-PaG MD. The archived browser run and the temporary free T4 result are not target binding simulations.",
     "scientific_gate": "Target NNC2215-PaG MD remains unstarted pending complete validated conjugate chemistry, parameters, and a defensible pose.",
-    "google_for_startups": "The Google for Startups Cloud Program application is received and pending review; no credit award or GPU allocation is confirmed."
+    "google_for_startups": "Google rejected the Google for Startups Cloud Program application on 2026-10-19 because the website was inaccessible/inactive; the site is now reachable and a reprocessing reply was sent on 2026-10-19. No credit award or GPU allocation is confirmed."
   },
   "latest_inception_catalog_check": {
     "checked_at_utc": "2026-10-18T09:59:00Z",
@@ -759,7 +759,7 @@
     }
   },
   "google_cloud_startups": {
-    "status": "NVIDIA catalog request remains pending; Google for Startups Cloud Program application was submitted and received on 2026-10-15 and is pending review. No credit award or GPU allocation is confirmed.",
+    "status": "NVIDIA catalog request remains pending; Google rejected the separate Google for Startups Cloud Program application on 2026-10-19 because the company website was inaccessible or inactive at review time. The public site is now reachable and a reprocessing reply was sent on 2026-10-19. No credit award or GPU allocation is confirmed.",
     "offer_amount_usd": "2000-350000; actual tier and award decided by Google",
     "request_channel": "NVIDIA Inception Benefits Catalog",
     "request_acknowledgement": {
@@ -770,8 +770,8 @@
     "partner_application_submitted": true,
     "partner_application_url": "https://cloud.google.com/startup/apply",
     "application_form_review": {
-      "checked_at_utc": "2026-10-18T03:20:41Z",
-      "status": "The authenticated Dia Health One Google account page displayed “Thank you! We’ve received your application” and stated that a response is expected within 3–5 business days. Gmail confirms the receipt at 2026-10-15T20:27:42Z. The earlier read-only inspection under a mismatched personal Google account was not submitted and does not change the company-account application status.",
+      "checked_at_utc": "2026-10-19T13:50:30Z",
+      "status": "Google emailed that the application could not be approved because the company website was inaccessible or inactive. Google says it will re-process the application after the website is active; the message does not indicate a scientific or billing rejection.",
       "required_information_observed": [
         "Google Cloud billing account ID",
         "business email and phone",
@@ -780,16 +780,18 @@
         "country and headquarters address",
         "acceptance of Google Cloud and startup-program terms"
       ],
-      "account_profile_issue": "A prior read-only view under the personal Google account showed mismatched prefilled details and was left untouched. The Dia Health One company-account application was separately submitted and received; no personal-account or mismatched form values were transmitted.",
-      "submission_gate": "Application submitted and pending review. Do not submit a duplicate. Confirm the Google Cloud Billing Account ID on the original application if Google requests it; no credits are awarded until Google approves."
+      "account_profile_issue": "A prior read-only view under the personal Google account showed mismatched prefilled details and was left untouched. No personal-account or mismatched form values were transmitted.",
+      "submission_gate": "Do not submit a duplicate application. Reply to Google after confirming the public website is active and ask them to re-process the existing application; no credits are awarded until Google approves."
     },
     "gpu_allocated": false,
     "source": "https://cloud.google.com/startup/benefits",
     "initial_program_application": {
-      "status": "submitted_pending_review",
+      "status": "rejected_website_inactive_reprocess_requested",
       "received_at_utc": "2026-10-15T20:27:42Z",
       "subject": "We've received your application to the Google for Startups Cloud Program!",
-      "evidence": "Google confirmed receipt and said it would provide application status in the next few business days. The authenticated company-account confirmation page says credits will be deposited only if approved."
+      "rejected_at_utc": "2026-10-19T13:50:30Z",
+      "rejection_reason": "Company website was inaccessible or inactive at review time.",
+      "evidence": "Google's application-update email says the application can be re-processed once the website is active and publicly accessible."
     },
     "first_step_completion": {
       "received_at_utc": "2026-10-15T20:05:16Z",
@@ -797,7 +799,14 @@
       "evidence": "Google says the first step is complete and directs the applicant to apply separately for credits."
     },
     "credits_application_submitted": true,
-    "credits_application_received_at_utc": "2026-10-15T20:27:42Z"
+    "credits_application_received_at_utc": "2026-10-15T20:27:42Z",
+    "reprocess_request": {
+      "status": "sent",
+      "prepared_at_utc": "2026-10-19T14:32:35Z",
+      "sent_on_date": "2026-10-19",
+      "recipient": "cloudstartupsupport@google.com",
+      "next_action": "Wait for Google's re-processing response; monitor the thread for approval or a further request."
+    }
   },
   "european_compute_access": {
     "eurohpc_development_access": {
