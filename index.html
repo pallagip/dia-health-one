@@ -33,6 +33,10 @@
     .nav-center { display: flex; gap: 34px; font-size: 12px; color: #65636f; }
     .nav-center a { transition: color .2s ease; }
     .nav-center a:hover { color: var(--purple); }
+    .topbar-actions { display: flex; align-items: center; gap: 22px; }
+    .research-link { color: var(--purple-dark); font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
+    .research-link::after { content: "↗"; font-size: 15px; color: var(--purple); transition: transform .2s ease; }
+    .research-link:hover::after { transform: translate(3px,-3px); }
     .contact-link { font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; }
     .contact-link::after { content: "↗"; font-size: 15px; color: var(--purple); transition: transform .2s ease; }
     .contact-link:hover::after { transform: translate(3px,-3px); }
@@ -111,7 +115,8 @@
       .topbar { height: 68px; }
       .wordmark { font-size: 10px; letter-spacing: .11em; }
       .nav-center { display: none; }
-      .contact-link { font-size: 11px; }
+      .topbar-actions { gap: 12px; }
+      .research-link, .contact-link { font-size: 10px; }
       .hero { min-height: 0; display: flex; flex-direction: column; align-items: stretch; gap: 18px; padding: 65px 0 50px; }
       .hero-copy { position: relative; z-index: 2; }
       .eyebrow { margin-bottom: 22px; font-size: 9px; }
@@ -150,7 +155,10 @@
       <a href="#challenge">The challenge</a>
       <a href="#approach">Our approach</a>
     </nav>
-    <a class="contact-link" href="mailto:patrik@diahealth.one?subject=DIA%20HEALTH%20ONE%20%E2%80%94%20Hello">Contact</a>
+    <div class="topbar-actions">
+      <a class="research-link" href="https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/" target="_blank" rel="noreferrer">Research Demo</a>
+      <a class="contact-link" href="mailto:patrik@diahealth.one?subject=DIA%20HEALTH%20ONE%20%E2%80%94%20Hello">Contact</a>
+    </div>
   </header>
 
   <main id="top">
