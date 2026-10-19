@@ -1,0 +1,9 @@
+parameter,estimate,unit,estimate_cv_percent,interindividual_cv_percent,description,source_location
+CoeffPaG,0.7784,% increase from SIbase per umol/L PaG,5.5,,Percent increase from baseline insulin sensitivity per umol/L PaG,Supporting Information Table S2
+CoeffL-glu,41.2,% increase from SIbase per mmol/L L-glucose,5.1,,Percent increase from baseline insulin sensitivity per mmol/L L-glucose,Supporting Information Table S2
+GIRBase,1,mg/kg/min,,,Fixed glucose infusion rate at time zero,Supporting Information Table S2
+SIbase,0.000588,not specified in table,6.3,84,Insulin sensitivity at zero glucose,Supporting Information Table S2
+p2,0.209,1/h,2.6,85,Rate constant for loss of insulin action,Supporting Information Table S2
+GIRAdd,1.72,mg/kg/min,7.1,,Additional GIR initialized at 300 min,Supporting Information Table S2
+kdelay,1.92,1/h,5.6,,Delay rate constant for GIRAdd,Supporting Information Table S2
+Additive residual error,0.705,mg/kg/min,5.7,,Additive residual error,Supporting Information Table S2

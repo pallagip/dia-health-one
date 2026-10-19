@@ -1,0 +1,62 @@
+{
+  "record_type": "pag_small_molecule_parameterization_preflight",
+  "created_at_utc": "2026-10-17T22:32:33.602330+00:00",
+  "source": {
+    "pubchem_cid": 83944,
+    "url": "https://pubchem.ncbi.nlm.nih.gov/compound/83944",
+    "file": "pag-pubchem-cid83944-2d.sdf",
+    "sha256": "412ff847d07966ddaa6cfc7237f26faac6051ada040fad393b7b606e82abf69f",
+    "formula": "C14H17NO8",
+    "formal_charge": 0,
+    "coordinates": "2D source coordinates; not used as a simulation conformer"
+  },
+  "modeled_ligand": {
+    "name": "paracetamol glucuronide carboxylate",
+    "formula": "C14H16NO8-",
+    "formal_charge": -1,
+    "protonation_assumption": "deprotonated glucuronic-acid carboxyl group near physiological pH",
+    "stereochemistry_cip_before_after": [
+      [
+        9,
+        "S"
+      ],
+      [
+        10,
+        "S"
+      ],
+      [
+        11,
+        "R"
+      ],
+      [
+        12,
+        "S"
+      ],
+      [
+        13,
+        "S"
+      ]
+    ],
+    "coordinates": "RDKit ETKDGv3 seed 2215, MMFF94s minimized",
+    "output_sdf": "pag-pubchem-cid83944-carboxylate-3d.sdf",
+    "output_sha256": "bdc61656a6d6a8f067adb64375d3376101f701f3ed692bd4c0aea2b7520e3411",
+    "partial_charge_method": "AM1-BCC",
+    "partial_charge_sum_e": -0.999999999999999,
+    "force_field": "openff-2.3.0.offxml",
+    "force_field_parameterization": "OpenFF toolkit small-molecule system creation completed",
+    "openmm_particles": 39,
+    "not_checked": [
+      "NNC2215 macrocycle/linker/glucoside parameters",
+      "protein\u2013ligand compatibility",
+      "PaG binding affinity",
+      "published 500 ns receptor-surrogate simulation",
+      "clinical exposure or response"
+    ]
+  },
+  "software": {
+    "rdkit": "2026.03.1",
+    "openff_toolkit": "0.19.0",
+    "openmm": "8.6.1"
+  },
+  "clinical_use": false
+}

@@ -31,15 +31,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: true
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Prepare public website
+        run: |
+          test -s index.html
+          mkdir _site
+          cp index.html _site/index.html
+          for directory in assets images team; do
+            if [ -d "$directory" ]; then cp -R "$directory" "_site/$directory"; fi
+          done
+          tar -C . --exclude=research/data/nvidia-access-status.json --exclude=research/COMPUTE_STATUS.md --exclude=research/MILESTONE_REPORT.md -cf - research | tar -C _site -xf -
+          for file in favicon.ico robots.txt sitemap.xml; do
+            if [ -f "$file" ]; then cp "$file" "_site/$file"; fi
+          done
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

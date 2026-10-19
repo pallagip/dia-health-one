@@ -1,0 +1,870 @@
+{
+  "schema": "dia-health-one.compute-access-status.v1",
+  "checked_date_utc": "2026-10-18",
+  "portal_status_checked_at_utc": "2026-10-18T09:59:00Z",
+  "portal_status_evidence": {
+    "source": "Authenticated NVIDIA Inception Products and Benefits pages rechecked around 2026-10-18T09:59:00Z. The last completed public Innovation Lab catalog search was at approximately 09:53 UTC and returned zero results; the latest direct catalog page view did not complete a searchable state.",
+    "visible_requests": [
+      "$1,000 in Lambda Cloud Credits — benefit request pending",
+      "$10,000 in AWS Cloud Credits — benefit request pending",
+      "$5,000 in Microsoft Azure Cloud Credits — benefit request pending",
+      "Up to 50K GPU Hours + AI Services for Accelerating European Startups — benefit request pending",
+      "$2,000-$350,000 in Google Cloud Credits — benefit request pending",
+      "€40,000 in Scaleway Cloud Credits — benefit request pending"
+    ],
+    "portal_message": "Two Developing products meet NVIDIA's published one-product prerequisite; the latest completed Innovation Lab search returned zero results. No Innovation Lab application, award, or GPU allocation is confirmed.",
+    "catalog_search": {
+      "query": "Innovation Lab",
+      "result_count": 0,
+      "checked_at_utc": "2026-10-18T08:46:00Z",
+      "url": "https://www.nvidia.com/programs/benefits/",
+      "observed_result": "After applying the search, the public NVIDIA Benefits Catalog displayed ‘Showing 0 Results’ and ‘Sorry, we couldn’t find any results for this search.’ No Innovation Lab benefit card was present."
+    },
+    "explore_benefits_control": {
+      "status": "The signed-in Inception Explore Benefits action opened the public Benefits Catalog in a new tab. The completed catalog search returned zero Innovation Lab results.",
+      "checked_at_utc": "2026-10-18T08:46:00Z",
+      "catalog_query": "Innovation Lab",
+      "catalog_result_count": 0,
+      "catalog_tile_conclusion": "Two Developing product records meet NVIDIA's published one-product prerequisite, but the official Innovation Lab benefit tile and Request Benefit action remain unavailable; no application was submitted.",
+      "official_application_route": "Inception Portal > Profile > Add product > Benefits > Explore Benefits > Innovation Lab > Request Benefit > application form",
+      "official_route_source": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    "product_records_observed": {
+      "checked_at_utc": "2026-10-18T08:44:00Z",
+      "count": 2,
+      "records": [
+        {
+          "name": "Dia Health computational insulin discovery platform",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "BioNeMo Framework",
+            "CUDA Toolkit"
+          ]
+        },
+        {
+          "name": "Dia Health One Research Dashboard",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "CUDA Toolkit"
+          ]
+        }
+      ],
+      "published_one_product_prerequisite_met": true,
+      "prerequisite_source": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    "latest_observation": {
+      "checked_at_utc": "2026-10-18T04:52:00Z",
+      "benefit_requests": [
+        {
+          "benefit": "$1,000 in Lambda Cloud Credits",
+          "status": "NVIDIA catalog request pending; direct Lambda partner application remains separate."
+        },
+        {
+          "benefit": "$10,000 in AWS Cloud Credits",
+          "status": "NVIDIA catalog request pending; direct AWS Activate application remains separate."
+        },
+        {
+          "benefit": "$5,000 in Microsoft Azure Cloud Credits",
+          "status": "NVIDIA catalog request pending; direct Microsoft for Startups application remains separate."
+        },
+        {
+          "benefit": "Up to 50K GPU Hours + AI Services for Accelerating European Startups",
+          "status": "NVIDIA catalog request pending; AI Factory France directs applicants to its separate partner process."
+        },
+        {
+          "benefit": "$2,000-$350,000 in Google Cloud Credits",
+          "status": "NVIDIA catalog request pending; separate Google for Startups application was rejected 2026-10-19 because the website was inaccessible/inactive and is ready for reprocessing."
+        },
+        {
+          "benefit": "€40,000 in Scaleway Cloud Credits",
+          "status": "NVIDIA catalog request submitted 2026-10-18T03:44:15Z and now listed pending; Scaleway says its partner process is separate."
+        }
+      ],
+      "innovation_lab_request_visible": false,
+      "nvidia_gpu_allocation_confirmed": false,
+      "portal_conclusion": "Six NVIDIA Inception catalog benefit requests remain pending referrals, not credit awards or compute allocations. No NVIDIA or partner GPU allocation is shown."
+    },
+    "latest_recheck": {
+      "checked_at_utc": "2026-10-18T09:59:00Z",
+      "authenticated_portal": "Authenticated NVIDIA Inception Benefits page rechecked in Chrome at approximately 09:59 UTC; all six catalog benefit requests remain pending and no GPU allocation is shown.",
+      "pending_requests": [
+        "$1,000 in Lambda Cloud Credits — benefit request pending",
+        "$10,000 in AWS Cloud Credits — benefit request pending",
+        "$5,000 in Microsoft Azure Cloud Credits — benefit request pending",
+        "Up to 50K GPU Hours + AI Services for Accelerating European Startups — benefit request pending",
+        "$2,000-$350,000 in Google Cloud Credits — benefit request pending",
+        "€40,000 in Scaleway Cloud Credits — benefit request pending"
+      ],
+      "product_records": [
+        {
+          "name": "Dia Health computational insulin discovery platform",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "BioNeMo Framework",
+            "CUDA Toolkit"
+          ]
+        },
+        {
+          "name": "Dia Health One Research Dashboard",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "CUDA Toolkit"
+          ]
+        }
+      ],
+      "published_one_product_prerequisite_met": true,
+      "latest_completed_innovation_lab_catalog_search": {
+        "query": "Innovation Lab",
+        "result_count": 0,
+        "checked_at_utc": "2026-10-18T09:53:00Z",
+        "url": "https://www.nvidia.com/programs/benefits/",
+        "observed_result": "The last completed catalog search returned zero Innovation Lab results. The separately opened catalog page in the current check did not finish rendering a searchable result state, so it is not counted as a newer completed search."
+      },
+      "innovation_lab_application_submitted": false,
+      "nvidia_gpu_allocation_confirmed": false,
+      "conclusion": "Two Developing products meet NVIDIA's published one-product prerequisite; the latest completed Innovation Lab search returned zero results. No Innovation Lab application, award, or GPU allocation is confirmed."
+    },
+    "previous_completed_recheck_2026-10-18T0844Z": {
+      "checked_at_utc": "2026-10-18T08:44:00Z",
+      "authenticated_portal": "Signed-in NVIDIA Inception Benefits page showed six partner-benefit requests pending, no GPU allocation, and the Products page listed two Developing / Not Accelerated products.",
+      "pending_requests": [
+        "$1,000 in Lambda Cloud Credits — benefit request pending",
+        "$10,000 in AWS Cloud Credits — benefit request pending",
+        "$5,000 in Microsoft Azure Cloud Credits — benefit request pending",
+        "Up to 50K GPU Hours + AI Services for Accelerating European Startups — benefit request pending",
+        "$2,000-$350,000 in Google Cloud Credits — benefit request pending",
+        "€40,000 in Scaleway Cloud Credits — benefit request pending"
+      ],
+      "product_records": [
+        {
+          "name": "Dia Health computational insulin discovery platform",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "BioNeMo Framework",
+            "CUDA Toolkit"
+          ]
+        },
+        {
+          "name": "Dia Health One Research Dashboard",
+          "stage": "Developing",
+          "acceleration": "Not Accelerated",
+          "technologies_listed_as_used": [
+            "CUDA Toolkit"
+          ]
+        }
+      ],
+      "nvidia_compute_allocation_confirmed": false,
+      "project_compute_spend_usd": 0,
+      "innovation_lab_catalog_search": {
+        "query": "Innovation Lab",
+        "result_count": 0,
+        "checked_at_utc": "2026-10-18T08:46:00Z",
+        "url": "https://www.nvidia.com/programs/benefits/",
+        "observed_result": "After applying the search, the public NVIDIA Benefits Catalog displayed ‘Showing 0 Results’ and ‘Sorry, we couldn’t find any results for this search.’ No Innovation Lab benefit card was present."
+      },
+      "application_submitted": false
+    }
+  },
+  "nvidia_inception": {
+    "status": "approved",
+    "approval_date": "2026-10-15",
+    "evidence": "NVIDIA Inception approval email in the company account",
+    "product_profile_status": "saved",
+    "product_profile_name": "Dia Health One Research Dashboard",
+    "product_profile_stage": "Developing"
+  },
+  "lambda_cloud_credits": {
+    "status": "NVIDIA Inception catalog request acknowledged; separate Lambda partner application not submitted",
+    "requested_amount_usd": 1000,
+    "requested_date_utc": "2026-10-17",
+    "request_channel": "NVIDIA Inception Benefits Catalog",
+    "confirmation_evidence": {
+      "sender": "inceptionprogram@nvidia.com",
+      "subject": "Your Request for $1,000 in Lambda Cloud Credits",
+      "received_at_utc": "2026-10-17T18:25:07Z"
+    },
+    "partner_reviewed_by": "Lambda, after its separate application is submitted",
+    "partner_application_submitted": false,
+    "partner_application_url": "https://lambda.ai/nvidia-inception",
+    "partner_application_form": {
+      "status": "Official partner form inspected; no application-specific values were entered manually and no submission was made. A redacted value appeared in the phone field on page load; a clear attempt did not remove the redacted state, so the tab was closed.",
+      "checked_at_utc": "2026-10-17T22:09:07Z",
+      "required_fields_observed": [
+        "first and last name",
+        "business email",
+        "business phone",
+        "company and website",
+        "job role and title",
+        "country of residence",
+        "country of payment card",
+        "compute goals and GPU types",
+        "estimated GPU-hours/month over the next six months",
+        "funding",
+        "other cloud use and goals",
+        "machine-learning team size and past projects",
+        "live users/traffic, revenue, and growth"
+      ],
+      "valid_payment_card_required": true,
+      "review_started": false,
+      "eligible_location_rule": "Applicant must be located in and pay with a card from a supported country; the page lists EU countries except Lithuania among supported locations.",
+      "user_inputs_still_needed": [
+        "business phone (must be confirmed by user; do not reuse the redacted prefill)",
+        "residence country",
+        "payment-card country",
+        "GPU-hours/month estimate",
+        "machine-learning engineer count and relevant projects",
+        "current user/traffic/revenue/growth metrics"
+      ],
+      "phone_field_observation": "The browser accessibility view showed a redacted phone-field value before any manual entry. The value could not be inspected; the form was not submitted and the review tab was closed."
+    },
+    "approval_confirmed": false,
+    "gpu_allocated": false,
+    "partner_application_status": "NVIDIA confirms Lambda processes partner offers separately. The Lambda form was opened but not completed or submitted, so Lambda has not begun reviewing this application."
+  },
+  "aws_activate_credits": {
+    "status": "NVIDIA email directs the applicant to AWS for a separate Activate application; no AWS application submitted",
+    "potential_amount_usd": 10000,
+    "application_submitted": false,
+    "aws_account_and_prior_credit_eligibility_confirmed": false,
+    "eligibility_question_pending": true,
+    "reviewed_email_received_at_utc": "2026-10-17T20:14:00Z",
+    "reviewed_email_sender": "inceptionprogram@nvidia.com",
+    "reviewed_email_subject": "AWS Cloud Credits"
+  },
+  "microsoft_azure_cloud_credits": {
+    "status": "NVIDIA Inception catalog request pending; Microsoft partner application not submitted",
+    "requested_amount_usd": 5000,
+    "requested_date_utc": "2026-10-17",
+    "request_channel": "NVIDIA Inception Benefits Catalog",
+    "partner_application_submitted": false,
+    "partner_application_status": "The Microsoft for Startups link was opened, but its sign-in requested multi-factor authentication for an identity different from Dia Health One's company account. No code was entered and no application was submitted.",
+    "approval_confirmed": false,
+    "gpu_allocated": false
+  },
+  "nvidia_innovation_lab": {
+    "status": "Two Developing products meet NVIDIA's published one-product prerequisite; the latest completed Innovation Lab search returned zero results. No Innovation Lab application, award, or GPU allocation is confirmed.",
+    "application_submitted": false,
+    "catalog_check": {
+      "checked_date_utc": "2026-10-18",
+      "search_query": "Innovation Lab",
+      "results": 0,
+      "checked_at_utc": "2026-10-18T09:53:00Z",
+      "url": "https://www.nvidia.com/programs/benefits/",
+      "observed_result": "The last completed catalog search returned zero Innovation Lab results. The separately opened catalog page in the current check did not finish rendering a searchable result state, so it is not counted as a newer completed search.",
+      "account_prerequisite": "Two Developing / Not Accelerated product records are present; the official one-product prerequisite is met."
+    },
+    "support_request": {
+      "recipient": "inceptionprogram@nvidia.com",
+      "sent_date_utc": "2026-10-17",
+      "subject": "Innovation Lab benefit tile missing",
+      "response_status": "No reply was found through the Gmail check at approximately 2026-10-18T10:01:00Z.",
+      "last_mailbox_check_at_utc": "2026-10-18T10:01:00Z",
+      "last_checked_at_utc": "2026-10-18T10:01:00Z"
+    },
+    "duration_days": 60,
+    "selection_required": true,
+    "review": "Rolling review; approval subject to availability and fit",
+    "portal_sign_in_required": true,
+    "application_steps": [
+      "In the Inception Portal, open Profile > Add product and complete at least one product profile",
+      "Open Benefits > Explore Benefits > Innovation Lab",
+      "Select Request Benefit and complete the application"
+    ],
+    "portal_url": "https://programs.nvidia.com/phoenix/application?program=inception",
+    "official_program_url": "https://www.nvidia.com/en-us/data-center/innovation-lab/",
+    "direct_request_path_check": {
+      "checked_at_utc": "2026-10-17T22:05:51Z",
+      "url": "https://programs.nvidia.com/phoenix/application?program=inception",
+      "observed": "This route opens the generic NVIDIA Inception Program Application sign-in page, not an Innovation Lab-specific request form. No fields were entered and no submission was made."
+    },
+    "official_program_details": {
+      "program_duration_days": 60,
+      "selection_required": true,
+      "separate_application_required": true,
+      "public_use_case_relevant_to_project": "Dynamic simulations",
+      "official_url": "https://www.nvidia.com/en-us/data-center/innovation-lab/",
+      "molecular_dynamics_use_case": "The official Innovation Lab page lists molecular dynamics/protein folding and drug-discovery pipelines under GPU-accelerated simulations and modeling.",
+      "last_verified_at_utc": "2026-10-18T09:53:00Z",
+      "official_application_steps": [
+        "In the Inception Portal, use Profile > Add product and complete at least one product profile.",
+        "Go to Benefits > Explore Benefits and select the Innovation Lab tile.",
+        "Click Request Benefit and complete the application form."
+      ],
+      "eligibility_note": "NVIDIA describes the Innovation Lab as a selective 60-day program, reviewed on a rolling basis subject to availability and fit. The public page lists molecular dynamics, protein folding, and drug-discovery pipelines as GPU-accelerated simulation use cases."
+    },
+    "application_brief": {
+      "file": "research/NVIDIA_INNOVATION_LAB_BRIEF.md",
+      "status": "prepared_not_submitted",
+      "requested_compute": "one CUDA-capable GPU environment for target-system benchmark and proposed pilot",
+      "proposed_production_ns": 450,
+      "target_gpu_hours_estimated": false,
+      "reason": "Generic 1UBQ T4 throughput is not transferable; estimate only after a valid target system is prepared and benchmarked."
+    }
+  },
+  "local_compute": {
+    "host": "Apple M4",
+    "operating_system": "macOS 26.3 arm64",
+    "nvidia_gpu_available": false,
+    "nvidia_smi_available": false,
+    "nvidia_inception_or_partner_instance_or_job": false,
+    "temporary_google_colab_gpu_job": true,
+    "nvidia_inception_or_partner_allocation": false,
+    "free_colab_t4_preflight_completed": true,
+    "nvidia_compute_spend_for_this_project": 0,
+    "system_openmm_installed": false,
+    "system_gromacs_installed": false,
+    "system_desmond_installed": false,
+    "isolated_engine_preflight": {
+      "environment_file": "research/engine-benchmark-environment.yml",
+      "software": {
+        "openmm": "8.6.1",
+        "gromacs": "2026.3",
+        "python": "3.13.16"
+      },
+      "openmm_platforms_used": [
+        "CPU",
+        "OpenCL"
+      ],
+      "gromacs_gpu_support": false,
+      "nvidia_gpu_used": false,
+      "target_nnc2215_pag_md_run": false,
+      "record": "research/data/engine-preflight.json",
+      "run_id": "DHO-ENGINE-PREFLIGHT-20261017T190112Z",
+      "measurements_ns_per_day": {
+        "gromacs_cpu": 37.42,
+        "openmm_cpu": 11.141,
+        "openmm_opencl": 126.274
+      }
+    },
+    "colab_t4_preflight": {
+      "status": "completed; temporary free Colab runtime, not an Inception or partner allocation",
+      "notebook_url": "https://colab.research.google.com/drive/1ImHF0tk_wGSWfPwtuZjC04cFN7i4fCmt?authuser=1",
+      "record": "research/data/nvidia-engine-preflight.json",
+      "gpu_model": "Tesla T4",
+      "gpu_memory": "15360 MiB",
+      "openmm": "8.6.1",
+      "platform": "OpenCL",
+      "median_ns_per_day": 270.175,
+      "replicate_range_ns_per_day": [
+        257.885,
+        282.691
+      ],
+      "atom_count": 17764,
+      "generic_1ubq_only": true,
+      "target_nnc2215_pag_md": false,
+      "compute_spend_usd": 0,
+      "completed_at_utc": "2026-10-17T22:44:55.701102+00:00"
+    },
+    "last_checked_at_utc": "2026-10-18T01:29:33Z"
+  },
+  "research_status": {
+    "source_data_reanalyses_completed": 4,
+    "hill_response_fit": {
+      "status": "completed; EC50 weakly identified and bootstrap upper tail censored",
+      "record": "research/data/hill-fit-summary.json",
+      "script": "research/fit_nnc2215_hill_response.py",
+      "best_fit_ec50_mmol_L": 13.433438921678832,
+      "best_fit_apparent_hill_coefficient": 1.1152239311250571,
+      "bootstrap_resamples": 2000,
+      "ec50_upper_bound_hits": 64,
+      "ec50_fit_ceiling_mmol_L": 1000,
+      "gpu_used": false
+    },
+    "nature_source_cells_verified": 30,
+    "pag_molecular_dynamics_started": true,
+    "pag_seed_coordinates_public": false,
+    "conjugate_force_field_validated": false,
+    "clinical_model": false,
+    "pag_molecular_dynamics_scope": "PaG-only explicit-water compatibility pilot; not target binding MD",
+    "pag_solvent_only_pilot": {
+      "status": "completed",
+      "run_id": "DHO-PAG-SOLVATION-20261017T191929Z",
+      "production_replicates": 2,
+      "production_ps_per_replicate": 100,
+      "engine": "OpenMM 8.6.1 OpenCL on Apple M4",
+      "nvidia_gpu_used": false
+    },
+    "nvidia_generic_engine_preflight": {
+      "status": "completed",
+      "record": "research/data/nvidia-engine-preflight.json",
+      "notebook_url": "https://colab.research.google.com/drive/1ImHF0tk_wGSWfPwtuZjC04cFN7i4fCmt?authuser=1",
+      "run_id": "DHO-NVIDIA-OPENMM-20261017T224308Z",
+      "gpu": "Tesla T4",
+      "engine": "OpenMM 8.6.1 OpenCL",
+      "median_ns_per_day": 270.175,
+      "replicates": 3,
+      "target_binding_simulation": false,
+      "temporary_free_runtime": true
+    },
+    "target_nnc2215_pag_binding_md_started": false,
+    "public_nnc2215_model_audit": {
+      "status": "Sequence, backbone, disulfide, and modification-link checks complete; selected heavy-atom adjacency matches after two explicit LYX aliases, while full chemistry and topology remain unresolved.",
+      "record": "research/data/nnc2215-model-validation.json",
+      "run_id": "DHO-NNC2215-MODEL-VALIDATION-20261017T215147Z",
+      "model_pdb_hashes_match": true,
+      "full_conjugate_parameters_validated": false,
+      "target_binding_simulation_ready": false,
+      "script_sha256": "e72f4751c9e1e053669017680a106e0c61597772d178f1dad18348b41ac17ad6",
+      "latest_connectivity_audit": {
+        "record": "research/data/nnc2215-connectivity-audit.json",
+        "run_id": "DHO-NNC2215-CONNECTIVITY-20261018T012856Z",
+        "nvidia_gpu_used": false,
+        "selected_heavy_atom_nodes_per_state": 113,
+        "selected_conect_link_edges_per_state": 120,
+        "normalized_node_sets_match": true,
+        "normalized_edge_sets_match": true,
+        "full_topology_equivalence_established": false
+      }
+    },
+    "target_pilot_protocol": {
+      "status": "proposed_not_run",
+      "record": "research/data/target-md-pilot-protocol.json",
+      "conditions": [
+        "apo",
+        "glucose reference",
+        "PaG"
+      ],
+      "independent_replicates_per_condition": 3,
+      "production_ns_per_replicate": 50,
+      "gpu_hours_estimated": false
+    },
+    "chemistry_source_audit": {
+      "status": "Nature synthesis route and total formula documented; model-specific atom mapping and parameters remain unvalidated",
+      "record": "research/data/nnc2215-chemistry-source-audit.json",
+      "checked_at_utc": "2026-10-17T22:05:51Z",
+      "production_simulation_ready": false
+    },
+    "pag_assay_source_audit": {
+      "status": "complete; exact article-text values and data-availability boundary recorded; no figure digitization or curve fit",
+      "record": "research/data/pag-assay-source-audit.json",
+      "script": "research/audit_pag_assay_source.py",
+      "license": "CC BY-NC-ND 4.0",
+      "target_binding_simulation": false
+    },
+    "latest_source_reproduction_run": {
+      "run_id": "DHO-NNC2215-FIG3D-20261018T095820Z",
+      "completed_at_utc": "2026-10-18T09:58:20.148776Z",
+      "archive": "research/data/analysis-runs/DHO-NNC2215-FIG3D-20261018T095820Z.json",
+      "archive_sha256": "a32d4f2e332654b714900f3462bb1323643d033d908b7329049202266b2372c4",
+      "source_csv_sha256": "b7d5bddb7c6e5d2e1b3f016e98f3f18c073681654d23b9a314d6a91c4d13ba4f",
+      "source_workbook_sha256": "09a9b6aa4103f9d61af7df03886d59f16d6b09f69f2fe768260548061c7dc81d",
+      "source_cells_verified_directly": 30,
+      "fold_change_3_to_20_mmol_l_mean": 3.1576292375508266,
+      "fold_change_3_to_20_mmol_l_sample_sd": 0.27864647185235664,
+      "fold_change_0_to_20_mmol_l_mean": 12.47202312276347,
+      "fold_change_0_to_20_mmol_l_sample_sd": 1.6985014166246462,
+      "engine": "Python 3.14.4 standard library on Apple M4 CPU",
+      "gpu_simulation": false
+    },
+    "latest_colab_pag_portability_attempt": {
+      "observed_at_utc": "2026-10-18T10:01:00Z",
+      "status": "Not started; Colab requested an interactive reCAPTCHA presence check while connecting to a free T4 runtime.",
+      "artifact": "https://colab.research.google.com/drive/1ImHF0tk_wGSWfPwtuZjC04cFN7i4fCmt?authuser=1",
+      "target_binding_md": false,
+      "inception_or_partner_allocation": false
+    }
+  },
+  "sources": [
+    {
+      "claim": "NVIDIA Innovation Lab is a 60-day program for selected Inception members; a separate application is required and approval is subject to availability and fit.",
+      "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    {
+      "claim": "NVIDIA lists molecular dynamics, protein folding, and drug-discovery pipelines among Innovation Lab simulation use cases.",
+      "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    {
+      "claim": "Innovation Lab access requires a separate application through the Inception benefits tile; selection and availability apply.",
+      "url": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    {
+      "claim": "The $1,000 Lambda benefit requires a separate partner application; Lambda's offer page says a valid payment card is required and lists supported countries.",
+      "url": "https://lambda.ai/nvidia-inception"
+    },
+    {
+      "claim": "The 2026 PaG paper's in-house starting structure coordinates are not supplied in the publication materials reviewed.",
+      "url": "https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700"
+    },
+    {
+      "claim": "The 2024 supplementary methods document the B29 alkyne, B1 O-glucoside, macrocycle roof propyl azide click reaction, and final NNC2215 formula.",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf"
+    },
+    {
+      "claim": "RCSB PHX and LYX Chemical Component Dictionary entries are unrelated to the model-specific coordinate residue compositions and cannot define these residues.",
+      "url": "https://www.rcsb.org/ligand/PHX; https://www.rcsb.org/ligand/LYX"
+    },
+    {
+      "claim": "AI Factory France free-compute eligibility requires France-based R&D and open research with a publication commitment; cross-border eligibility requires agreement between AI factories.",
+      "url": "https://aifactory-france.eu/faq/"
+    },
+    {
+      "claim": "EuroHPC Development Access supports HPC application development/testing/optimization; the current call lists a 1 November 2026 cutoff and up to 2-3 weeks to resource access.",
+      "url": "https://www.eurohpc-ju.europa.eu/eurohpc-ju-call-proposals-development-access_en"
+    },
+    {
+      "claim": "EuroHPC Fast Lane offers up to 50,000 GPU hours for SMEs/startups performing AI activities, for up to three months.",
+      "url": "https://www.eurohpc-ju.europa.eu/ai-factories/ai-factories-access-modes/fast-lane-access-ai-factories_en"
+    },
+    {
+      "claim": "Google for Startups Cloud Program tiers and eligibility are decided by Google; application needs a Google Cloud billing account ID and separate partner application.",
+      "url": "https://cloud.google.com/startup/benefits"
+    }
+  ],
+  "latest_verification": {
+    "checked_at_utc": "2026-10-18T07:34:03Z",
+    "authenticated_nvidia_portal": "The authenticated Inception Benefits page was rechecked at approximately 07:31 UTC: all six requests are pending and no GPU allocation is visible. A completed public Benefits Catalog search at 2026-10-18T07:33:26Z returned zero Innovation Lab results; the earlier 07:22 loading attempt remains recorded as incomplete.",
+    "innovation_lab": "NVIDIA official program page rechecked at 07:24 UTC; it describes a two-month selected-member program and molecular dynamics/drug-discovery use cases. Two product records meet the published one-product prerequisite. The public catalog search at 2026-10-18T07:33:26Z returned zero results; no application was submitted.",
+    "alternative_gpu_offers": "Nebius was not pursued because the company profile does not meet its published funding minimum. The Scaleway Inception catalog request was submitted at 03:44:15 UTC and is pending; the direct Scaleway partner application remains unsubmitted.",
+    "hun_aifa": "HunAIFA support intake submitted; a return visit shows the survey confirmation. It requests Hungarian/European AI Factory access guidance and a possible referral. No AI Factory France compute application or GPU allocation is confirmed.",
+    "ai_factory_france_eligibility": "A cross-border referral through HunAIFA remains unconfirmed.",
+    "inbox": "Gmail searches through 2026-10-18T07:34:03Z found no new message from Patrik, no reply from inceptionprogram@nvidia.com to the Innovation Lab inquiry, and no incoming HunAIFA/AI Factory response. The latest NVIDIA catalog emails are partner referrals, not awards.",
+    "compute": "No NVIDIA or partner allocation, project compute spend, or target NNC2215-PaG MD. The archived browser run and the temporary free T4 result are not target binding simulations.",
+    "scientific_gate": "Target NNC2215-PaG MD remains unstarted pending complete validated conjugate chemistry, parameters, and a defensible pose.",
+    "google_for_startups": "Google rejected the Google for Startups Cloud Program application on 2026-10-19 because the website was inaccessible/inactive; the site is now reachable and a reprocessing reply was sent on 2026-10-19. No credit award or GPU allocation is confirmed."
+  },
+  "latest_inception_catalog_check": {
+    "checked_at_utc": "2026-10-18T09:59:00Z",
+    "authenticated_portal": "Authenticated NVIDIA Inception Benefits page rechecked in Chrome at approximately 09:59 UTC; all six catalog benefit requests remain pending and no GPU allocation is shown.",
+    "pending_requests": [
+      "$1,000 in Lambda Cloud Credits — benefit request pending",
+      "$10,000 in AWS Cloud Credits — benefit request pending",
+      "$5,000 in Microsoft Azure Cloud Credits — benefit request pending",
+      "Up to 50K GPU Hours + AI Services for Accelerating European Startups — benefit request pending",
+      "$2,000-$350,000 in Google Cloud Credits — benefit request pending",
+      "€40,000 in Scaleway Cloud Credits — benefit request pending"
+    ],
+    "product_prerequisite": {
+      "required": "At least one product record",
+      "observed_count": 2,
+      "met": true,
+      "checked_at_utc": "2026-10-18T09:57:00Z",
+      "source": "https://www.nvidia.com/en-us/data-center/innovation-lab/"
+    },
+    "public_benefits_catalog_search": {
+      "query": "Innovation Lab",
+      "result_count": 0,
+      "checked_at_utc": "2026-10-18T09:53:00Z",
+      "url": "https://www.nvidia.com/programs/benefits/",
+      "observed_result": "The last completed catalog search returned zero Innovation Lab results. A direct catalog page view during the 10:00 UTC check did not finish rendering a searchable result state and is not counted as a newer completed search."
+    },
+    "additional_gpu_offer_screening": {
+      "checked_at_utc": "2026-10-18T03:53:00Z",
+      "nebius": {
+        "offer": "Up to $5,000 cloud credits and up to $150,000 in future GPU savings",
+        "eligibility": "Current verified NVIDIA Inception membership, VC or accelerator backing, at least $5 million raised, an AI-enabled product, and other company criteria.",
+        "profile_assessment": "The current company profile records no funding raised, below the published $5 million minimum.",
+        "application_submitted": false,
+        "decision": "Not pursued because the profile does not meet the published funding threshold.",
+        "source": "https://nebius.com/startups"
+      },
+      "scaleway": {
+        "offer": "Catalog title: €40,000; catalog detail: up to €42,000 in cloud credits, subject to Scaleway review.",
+        "catalog_eligibility": [
+          "Pre-Series A",
+          "3–5 years in operation",
+          "Maximum 50 employees",
+          "Post-product development and ready to scale",
+          "Actively pursuing EU go-to-market"
+        ],
+        "partner_application_requirements_observed": [
+          "Less than 5 years old",
+          "Less than 50 employees",
+          "Not already a Scaleway customer",
+          "Verified identity required before committee review"
+        ],
+        "profile_assessment": "Eligibility and current Scaleway-customer status are not verified; the NVIDIA offer targets a post-product scaling stage while the current product profiles are marked Developing.",
+        "application_route": "The NVIDIA Request Benefit action submitted the Inception catalog request; NVIDIA receipt dated 2026-10-18T03:44:15Z says Scaleway reviews it and partner requests must be completed on the Scaleway website. The separate Scaleway partner application has not been submitted; no identity details were transmitted.",
+        "source": "https://www.scaleway.com/en/scaleway-startup-program-for-nvidia-inception-members/",
+        "partner_application_source": "https://www.scaleway.com/en/startup-program/",
+        "checked_at_utc": "2026-10-18T03:53:00Z",
+        "nvidia_catalog_request_submitted": true,
+        "catalog_request_status": "NVIDIA Inception catalog request submitted; portal lists €40,000 in Scaleway Cloud Credits as pending.",
+        "catalog_receipt_received_at_utc": "2026-10-18T03:44:15Z",
+        "catalog_receipt_message_id": "1a14d1c34f39ab81",
+        "partner_application_submitted": false
+      }
+    },
+    "nvidia_compute_allocation_confirmed": false,
+    "project_compute_spend_usd": 0,
+    "explore_benefits_control": {
+      "status": "The authenticated Explore Benefits action opened the public Benefits Catalog in a new tab after the documented short delay.",
+      "checked_at_utc": "2026-10-18T04:54:00Z",
+      "catalog_query": "Innovation Lab",
+      "catalog_result_count": 0,
+      "catalog_tile_conclusion": "The published one-product prerequisite is met, but the required Innovation Lab catalog tile is still not available; no application was submitted."
+    },
+    "followup_search_attempt": {
+      "checked_at_utc": "2026-10-18T07:22:00Z",
+      "query": "Innovation Lab",
+      "status": "incomplete_loading",
+      "result_count": null,
+      "note": "The public catalog showed a persistent loading indicator after the query. Preserve the last completed search result (0 results at 04:54 UTC) as the latest valid catalog result.",
+      "superseded_by_completed_search_at_utc": "2026-10-18T07:33:26Z"
+    },
+    "latest_completed_search": {
+      "query": "Innovation Lab",
+      "result_count": 0,
+      "checked_at_utc": "2026-10-18T08:06:43Z",
+      "url": "https://www.nvidia.com/programs/benefits/",
+      "observed_result": "After applying the query in the public NVIDIA Benefits Catalog, the page displayed ‘Showing 0 Results’ and ‘Sorry, we couldn’t find any results for this search.’ No matching Innovation Lab benefit card was present."
+    },
+    "current_access_conclusion": "Two Developing products meet NVIDIA's published one-product prerequisite, but no Innovation Lab tile is present in the latest completed search. Six partner requests remain pending and no NVIDIA or partner GPU allocation is confirmed."
+  },
+  "latest_inbox_check": {
+    "checked_at_utc": "2026-10-18T10:01:00Z",
+    "nvidia_innovation_lab_support": {
+      "new_reply_found": false,
+      "search": "from:inceptionprogram@nvidia.com \"Innovation Lab\" newer_than:3d",
+      "last_checked_at_utc": "2026-10-18T10:01:00Z",
+      "response_status": "Gmail search through approximately 10:01 UTC found no reply to the Innovation Lab support request."
+    },
+    "new_catalog_acknowledgements": [
+      {
+        "benefit": "AI Factory France up to 50K GPU hours",
+        "received_at_utc": "2026-10-18T00:48:56Z"
+      },
+      {
+        "benefit": "Google Cloud credits",
+        "received_at_utc": "2026-10-18T00:53:38Z"
+      },
+      {
+        "benefit": "Scaleway €40,000 Inception catalog request",
+        "received_at_utc": "2026-10-18T03:44:15Z",
+        "message_id": "1a14d1c34f39ab81"
+      }
+    ],
+    "scope_note": "Gmail searches through approximately 2026-10-18T10:01:00Z found no new Patrik reply after 2026-10-17T21:01:27Z and no response to the NVIDIA Innovation Lab support request. The scheduled monitor remains hourly polling, not Gmail push; the latest recorded automated poll is 03:58 UTC.",
+    "google_for_startups": {
+      "initial_program_application_received_at_utc": "2026-10-15T20:27:42Z",
+      "initial_program_application_status": "Google confirmed receipt on 2026-10-15T20:27:42Z; pending review. The separate company-account application page displayed receipt confirmation on 2026-10-18.",
+      "separate_credits_application_submitted": true,
+      "credit_award_confirmed": false
+    },
+    "patrik": {
+      "latest_inbound_at_utc": "2026-10-17T21:01:27Z",
+      "latest_inbound_summary": "Patrik said he would contact the study authors; no newer incoming Patrik message was found in the 18 October 10:01 UTC search.",
+      "search": "from:patrik@diahealth.one newer_than:3d",
+      "last_checked_at_utc": "2026-10-18T10:01:00Z"
+    },
+    "previous_check_2026-10-18T084820Z": {
+      "checked_at_utc": "2026-10-18T08:48:20Z",
+      "nvidia_innovation_lab_support": {
+        "new_reply_found": false,
+        "search": "from:inceptionprogram@nvidia.com \"Innovation Lab\" newer_than:7d",
+        "last_checked_at_utc": "2026-10-18T08:48:20Z",
+        "response_status": "No human reply to the NVIDIA Innovation Lab support request was found in the Gmail search through 2026-10-18T08:48:20Z; the latest visible NVIDIA mail remains a benefit-request acknowledgement."
+      },
+      "new_catalog_acknowledgements": [
+        {
+          "benefit": "AI Factory France up to 50K GPU hours",
+          "received_at_utc": "2026-10-18T00:48:56Z"
+        },
+        {
+          "benefit": "Google Cloud credits",
+          "received_at_utc": "2026-10-18T00:53:38Z"
+        },
+        {
+          "benefit": "Scaleway €40,000 Inception catalog request",
+          "received_at_utc": "2026-10-18T03:44:15Z",
+          "message_id": "1a14d1c34f39ab81"
+        }
+      ],
+      "scope_note": "Gmail searches through 2026-10-18T08:48:20Z found no reply to the NVIDIA Innovation Lab support request and no incoming Patrik email newer than his 17 October 21:01:27 UTC message. A corrected Markdown report path and attached report were sent to Patrik at 08:45 UTC. NVIDIA benefit acknowledgements remain partner referrals, not awards or allocations.",
+      "google_for_startups": {
+        "initial_program_application_received_at_utc": "2026-10-15T20:27:42Z",
+        "initial_program_application_status": "Google confirmed receipt on 2026-10-15T20:27:42Z; pending review. The separate company-account application page displayed receipt confirmation on 2026-10-18.",
+        "separate_credits_application_submitted": true,
+        "credit_award_confirmed": false
+      },
+      "patrik": {
+        "latest_inbound_at_utc": "2026-10-17T21:01:27Z",
+        "latest_inbound_summary": "Patrik's latest inbound asked for the corrected report reference and said he would contact the study authors. The full GitHub/raw links were verified and the Markdown report was attached in the 18 October 08:45 UTC reply.",
+        "corrected_report_link_reply_at_utc": "2026-10-18T06:52:57Z",
+        "corrected_report_link_reply": "The invalid GitHub branch reference was answered in-thread with the slash-corrected branch and live Markdown report links.",
+        "report_attachment_reply_at_utc": "2026-10-18T08:45:00Z",
+        "report_attachment_reply_message_id": "1a14e2f8c26897f5"
+      }
+    }
+  },
+  "ai_factory_france_gpu_hours": {
+    "status": "NVIDIA catalog request acknowledged; HunAIFA support intake submitted for cross-border guidance; AI Factory France compute application and allocation not submitted.",
+    "benefit": "Up to 50K GPU Hours + AI Services for Accelerating European Startups",
+    "partner": "AI Factory France",
+    "request_channel": "NVIDIA Inception Benefits Catalog",
+    "request_acknowledgement": {
+      "sender": "inceptionprogram@nvidia.com",
+      "subject": "Your Request for Up to 50K GPU Hours + AI Services for Accelerating European Startups",
+      "received_at_utc": "2026-10-18T00:48:56Z",
+      "status": "Acknowledged by NVIDIA at 2026-10-18T00:48:56Z; NVIDIA directs the applicant to a separate AI Factory France partner application and says AI Factory France will review/process it."
+    },
+    "partner_application_submitted": false,
+    "partner_application_url": "https://aifactory-france.eu/our-services/",
+    "application_route_review": "The benefit link opened AI Factory France services; the compute-service section links to the DARI access portal. No partner application or DARI request was submitted.",
+    "eligibility": {
+      "france_route": "AI Factory France FAQ says free compute requires the applicant R&D department to be based in France and use open research with a commitment to publish results.",
+      "cross_border_route": "An EU startup outside France may require agreement between AI Factory France and the applicant country AI Factory. Eligibility for Dia Health One has not been confirmed.",
+      "hungary_context": "The Inception company profile lists Dia Health One headquarters as Hungary. The NVIDIA benefit description says startups doing R&D in an EU country partnered with AI2F may qualify by agreement and should request a referral from their country AI Factory. EuroHPC lists HunAIFA as the Hungarian AI Factory Antenna linked to JUPITER AI Factory.",
+      "portal_response": "NVIDIA acknowledgement is a catalog referral only; it is not an AI Factory France application, approval, or GPU allocation."
+    },
+    "user_inputs_still_needed": [
+      "User authorization before entering Andrii Shylenko, Dia Health One, Inc., and the Dia Health One business email in HunAIFA's intake form",
+      "User authorization to share a concise public-scope NNC2215/PaG research summary with HunAIFA",
+      "Confirm the R&D location if it differs from the Hungary headquarters listed in NVIDIA's profile",
+      "No approval or allocation has been granted; any referral and publication requirement remain subject to review"
+    ],
+    "gpu_allocated": false,
+    "sources": [
+      "https://aifactory-france.eu/faq/",
+      "https://www.eurohpc-ju.europa.eu/ai-factory-antennas_en"
+    ],
+    "last_reviewed_at_utc": "2026-10-18T02:36:21Z",
+    "hungarian_referral_route": {
+      "status": "Submitted; return visit shows “Thank you! Your survey responses have been recorded.” This is a support/guidance request, not an AI Factory France compute application or award.",
+      "official_site": "https://hunaifa.eu/",
+      "intake_form_url": "https://limesurvey.sztaki.hu/index.php?r=survey/index&sid=565358&newtest=Y&lang=en",
+      "purpose": "Ask HunAIFA about GPU/HPC access and whether it can refer a Hungary-based startup to AI Factory France for the NVIDIA Inception GPU-hours offer.",
+      "form_progress": {
+        "organization_type": "Startup selected",
+        "support_areas": [
+          "Computing infrastructure",
+          "Technical expertise",
+          "European partnerships"
+        ],
+        "contact_fields_entered": true,
+        "project_details_entered": true,
+        "submitted": true,
+        "current_page_fields": [
+          "Surname",
+          "First name",
+          "Organization",
+          "Email address",
+          "Tell us more about your needs"
+        ],
+        "note": "The completed support intake included contact and project details. Private form responses are not reproduced in this public access manifest; the confirmation shows receipt, not eligibility or a GPU allocation.",
+        "confirmation_visible_on_return_visit": true,
+        "submission_evidence": "The HunAIFA survey return page displayed “Thank you! Your survey responses have been recorded.” The 2026-10-18 03:15:40Z project email to Patrik also recorded that submission and confirmation."
+      },
+      "privacy_notice": "https://hunaifa.eu/privacy-policy",
+      "reviewed_at_utc": "2026-10-18T02:36:21Z",
+      "last_verified_at_utc": "2026-10-18T03:55:36Z",
+      "user_inputs_still_needed": [
+        "HunAIFA response is still needed to confirm whether a Hungary-to-France referral is possible.",
+        "The submitted intake requests guidance only; a separate AI Factory France compute application, approval, and allocation remain outstanding."
+      ]
+    }
+  },
+  "google_cloud_startups": {
+    "status": "NVIDIA catalog request remains pending; Google rejected the separate Google for Startups Cloud Program application on 2026-10-19 because the company website was inaccessible or inactive at review time. The public site is now reachable and a reprocessing reply was sent on 2026-10-19. No credit award or GPU allocation is confirmed.",
+    "offer_amount_usd": "2000-350000; actual tier and award decided by Google",
+    "request_channel": "NVIDIA Inception Benefits Catalog",
+    "request_acknowledgement": {
+      "sender": "inceptionprogram@nvidia.com",
+      "subject": "Your Request for $2,000-$350,000 in Google Cloud Credits",
+      "received_at_utc": "2026-10-18T00:53:38Z"
+    },
+    "partner_application_submitted": true,
+    "partner_application_url": "https://cloud.google.com/startup/apply",
+    "application_form_review": {
+      "checked_at_utc": "2026-10-19T13:50:30Z",
+      "status": "Google emailed that the application could not be approved because the company website was inaccessible or inactive. Google says it will re-process the application after the website is active; the message does not indicate a scientific or billing rejection.",
+      "required_information_observed": [
+        "Google Cloud billing account ID",
+        "business email and phone",
+        "startup legal name and website domain",
+        "funding stage and founding period",
+        "country and headquarters address",
+        "acceptance of Google Cloud and startup-program terms"
+      ],
+      "account_profile_issue": "A prior read-only view under the personal Google account showed mismatched prefilled details and was left untouched. No personal-account or mismatched form values were transmitted.",
+      "submission_gate": "Do not submit a duplicate application. Reply to Google after confirming the public website is active and ask them to re-process the existing application; no credits are awarded until Google approves."
+    },
+    "gpu_allocated": false,
+    "source": "https://cloud.google.com/startup/benefits",
+    "initial_program_application": {
+      "status": "rejected_website_inactive_reprocess_requested",
+      "received_at_utc": "2026-10-15T20:27:42Z",
+      "subject": "We've received your application to the Google for Startups Cloud Program!",
+      "rejected_at_utc": "2026-10-19T13:50:30Z",
+      "rejection_reason": "Company website was inaccessible or inactive at review time.",
+      "evidence": "Google's application-update email says the application can be re-processed once the website is active and publicly accessible."
+    },
+    "first_step_completion": {
+      "received_at_utc": "2026-10-15T20:05:16Z",
+      "subject": "Google for Startups Cloud Program: First step for application completed",
+      "evidence": "Google says the first step is complete and directs the applicant to apply separately for credits."
+    },
+    "credits_application_submitted": true,
+    "credits_application_received_at_utc": "2026-10-15T20:27:42Z",
+    "reprocess_request": {
+      "status": "sent",
+      "prepared_at_utc": "2026-10-19T14:32:35Z",
+      "sent_on_date": "2026-10-19",
+      "recipient": "cloudstartupsupport@google.com",
+      "next_action": "Wait for Google's re-processing response; monitor the thread for approval or a further request."
+    }
+  },
+  "european_compute_access": {
+    "eurohpc_development_access": {
+      "status": "Potential route identified; application not submitted",
+      "use_case_fit": "Potentially appropriate for OpenMM/GROMACS code porting, testing, and optimization; this does not allocate production simulation time automatically.",
+      "next_listed_cutoff": "2026-11-01",
+      "published_maximum_time_to_access": "2-3 weeks after submission",
+      "source": "https://www.eurohpc-ju.europa.eu/eurohpc-ju-call-proposals-development-access_en"
+    },
+    "eurohpc_fast_lane": {
+      "status": "Eligibility/use-case fit not established; no application submitted",
+      "published_scope": "Up to 50,000 GPU hours for up to three months for SMEs/startups performing AI activities.",
+      "current_project_scope": "Classical molecular dynamics; no AI activity has been established for this reproduction workload.",
+      "source": "https://www.eurohpc-ju.europa.eu/ai-factories/ai-factories-access-modes/fast-lane-access-ai-factories_en"
+    },
+    "hunaifa": {
+      "status": "Support intake submitted; awaiting response",
+      "country": "Hungary",
+      "role": "AI Factory Antenna providing guidance to Hungarian companies and a route into the European AI Factories ecosystem",
+      "official_site": "https://hunaifa.eu/",
+      "officially_listed_link": "JUPITER AI Factory (JAIF)",
+      "source": "https://www.eurohpc-ju.europa.eu/ai-factory-antennas_en",
+      "support_request": {
+        "submitted_date_utc": "2026-10-18",
+        "intake_form_url": "https://limesurvey.sztaki.hu/index.php?r=survey/index&sid=565358&lang=en",
+        "organization_type": "Startup",
+        "support_areas": [
+          "Computing infrastructure",
+          "Technical expertise",
+          "European partnerships"
+        ],
+        "request_scope": "Advice on eligible Hungarian/European AI Factory GPU/HPC access and referral routes, plus OpenMM/GROMACS technical guidance.",
+        "submission_receipt": "The form displayed “Thank you! Your survey responses have been recorded.”",
+        "response_status": "Awaiting response; no GPU allocation confirmed.",
+        "gpu_allocated": false
+      }
+    }
+  },
+  "scaleway_cloud_credits": {
+    "benefit_request_status": "NVIDIA Inception catalog request submitted; pending in portal; Scaleway partner review/application remains separate.",
+    "requested_amount_eur": 40000,
+    "requested_at_utc": "2026-10-18T03:44:15Z",
+    "request_channel": "NVIDIA Inception Benefits Catalog",
+    "receipt_message_id": "1a14d1c34f39ab81",
+    "partner_application_submitted": false,
+    "partner_application_source": "https://www.scaleway.com/en/startup-program/",
+    "approval_confirmed": false,
+    "gpu_allocated": false
+  },
+  "current_session_checkpoint": {
+    "recorded_at_utc": "2026-10-18T10:01:00Z",
+    "research_run_id": "DHO-NNC2215-FIG3D-20261018T095820Z",
+    "source_workbook_verified": true,
+    "nvidia_portal_check_at_utc": "2026-10-18T09:59:00Z",
+    "catalog_search_last_completed_at_utc": "2026-10-18T09:53:00Z",
+    "inbox_check_at_utc": "2026-10-18T10:01:00Z",
+    "target_binding_md_started": false,
+    "gpu_allocation_confirmed": false,
+    "colab_pag_only_portability_run": "waiting for user to complete Colab interactive reCAPTCHA; no run started"
+  }
+}

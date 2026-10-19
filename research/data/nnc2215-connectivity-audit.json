@@ -1,0 +1,1259 @@
+{
+  "schema": "dia-health-one.nnc2215-connectivity-audit.v1",
+  "run": {
+    "run_id": "DHO-NNC2215-CONNECTIVITY-20261018T033024Z",
+    "created_at_utc": "2026-10-18T03:30:24.351899+00:00",
+    "script": "research/audit_nnc2215_connectivity.py",
+    "script_sha256": "9cf37220d46e72a4719ab3aa4ccab2c83376151e78ea10f8597a9cf1ff69912e",
+    "runtime_python": "3.14.4",
+    "nvidia_gpu_used": false
+  },
+  "source": {
+    "manifest": "research/data/structure-manifest.json",
+    "dataset_doi": "10.6084/m9.figshare.26526460.v1",
+    "dataset_url": "https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460",
+    "wwpdb_pdb_connectivity_spec": "https://www.wwpdb.org/documentation/file-format-content/format23/sect10.html"
+  },
+  "bond_order_and_charge_evidence": {
+    "conect_encodes_bond_order": false,
+    "conect_encodes_formal_charge": false,
+    "source_basis": "The wwPDB PDB v2.3 connectivity specification defines CONECT as atom-serial adjacency and states that it does not distinguish atoms with excess positive or negative charge.",
+    "production_bond_order_inference_performed": false
+  },
+  "open_closed_link_comparison": {
+    "open_links": [
+      [
+        "MC",
+        "C31",
+        "LYX",
+        "CD6"
+      ],
+      [
+        "LYX",
+        "CD1",
+        "LYS",
+        "NZ"
+      ],
+      [
+        "PHE",
+        "N",
+        "PHX",
+        "C2"
+      ]
+    ],
+    "closed_links": [
+      [
+        "MC",
+        "C31",
+        "LYX",
+        "C"
+      ],
+      [
+        "LYX",
+        "CD1",
+        "LYS",
+        "NZ"
+      ],
+      [
+        "PHE",
+        "N",
+        "PHX",
+        "C2"
+      ]
+    ],
+    "macrocycle_to_lyx_link_differs": true,
+    "interpretation": "The PDB LINK records identify endpoints within each file. The macrocycle-to-LYX atom label differs, but the selected heavy-atom CONECT/LINK adjacency graphs match after the documented local LYX label aliases. This does not establish bond orders or a force-field-ready chemical graph."
+  },
+  "cross_state_atom_record_comparison": {
+    "macrocycle_roof_local_neighborhood": {
+      "open": {
+        "atom": {
+          "serial": 502,
+          "name": "CD6",
+          "element": "C"
+        },
+        "neighbors_including_link_records": [
+          {
+            "serial": 501,
+            "atom_name": "CD5",
+            "residue": "LYX",
+            "element": "C"
+          },
+          {
+            "serial": 517,
+            "atom_name": "HX22",
+            "residue": "LYX",
+            "element": "H"
+          },
+          {
+            "serial": 516,
+            "atom_name": "HX31",
+            "residue": "LYX",
+            "element": "H"
+          },
+          {
+            "serial": 861,
+            "atom_name": "C31",
+            "residue": "MC",
+            "element": "C"
+          }
+        ]
+      },
+      "closed": {
+        "atom": {
+          "serial": 817,
+          "name": "C",
+          "element": "C"
+        },
+        "neighbors_including_link_records": [
+          {
+            "serial": 816,
+            "atom_name": "CD5",
+            "residue": "LYX",
+            "element": "C"
+          },
+          {
+            "serial": 823,
+            "atom_name": "HC",
+            "residue": "LYX",
+            "element": "H"
+          },
+          {
+            "serial": 824,
+            "atom_name": "HC",
+            "residue": "LYX",
+            "element": "H"
+          },
+          {
+            "serial": 862,
+            "atom_name": "C31",
+            "residue": "MC",
+            "element": "C"
+          }
+        ]
+      },
+      "neighbor_element_multisets_match": true,
+      "interpretation": "The open CD6 and closed C endpoint labels have the same local element-neighbor pattern, including the MC C31 LINK. This supports a local atom-label correspondence but does not prove full conjugate graph equivalence."
+    },
+    "phenyl_b1_n_terminal_hydrogen_record": {
+      "open": {
+        "nitrogen": {
+          "serial": 37,
+          "residue": "PHE",
+          "atom_name": "N"
+        },
+        "nearest_hydrogen": {
+          "serial": 48,
+          "record": "ATOM",
+          "residue": "PHE",
+          "residue_number": "1",
+          "atom_name": "H2"
+        },
+        "distance_angstrom": 1.012,
+        "covalent_adjacency_recorded_in_conect": true
+      },
+      "closed": {
+        "nitrogen": {
+          "serial": 351,
+          "residue": "PHE",
+          "atom_name": "N"
+        },
+        "nearest_hydrogen": {
+          "serial": 332,
+          "record": "HETATM",
+          "residue": "PHX",
+          "residue_number": "0",
+          "atom_name": "H2"
+        },
+        "distance_angstrom": 1.006,
+        "covalent_adjacency_recorded_in_conect": false
+      },
+      "interpretation": "The nearest H to PheB1 N occupies the corresponding local position in both models, but the closed PDB assigns it to PHX and omits a CONECT edge while the open PDB records it as PHE B1 H2 with an N-H CONECT edge. Treat this as a model-record discrepancy pending source-level reconciliation, not as validated topology."
+    },
+    "lyx_cd2_hydrogen_neighbors": {
+      "open": [
+        {
+          "serial": 507,
+          "atom_name": "HC1"
+        },
+        {
+          "serial": 510,
+          "atom_name": "HXT"
+        }
+      ],
+      "closed": [
+        {
+          "serial": 826,
+          "atom_name": "HXT"
+        }
+      ],
+      "counts_match": false,
+      "interpretation": "The open model records two CONECT hydrogen neighbors for LYX CD2; the closed model records one. The source coordinates do not establish whether the missing neighbor was omitted or assigned elsewhere."
+    },
+    "full_model_topology_equivalence_established": false
+  },
+  "selected_heavy_atom_adjacency_comparison": {
+    "scope": "PHX, LYX, and MC heavy atoms plus PheB1 N and LysB29 NZ; excludes all hydrogens, free glucose, and the remainder of the insulin protein.",
+    "explicit_atom_name_aliases": [
+      {
+        "open": "LYX B30 CD6",
+        "closed": "LYX B30 C",
+        "basis": "same element-neighbor pattern and MC C31 LINK"
+      },
+      {
+        "open": "LYX B30 OD",
+        "closed": "LYX B30 O",
+        "basis": "same element and sole heavy-atom neighbor LYX CD1"
+      }
+    ],
+    "open_node_count": 113,
+    "closed_node_count": 113,
+    "open_adjacency_edge_count": 120,
+    "closed_adjacency_edge_count": 120,
+    "normalized_node_sets_match": true,
+    "normalized_adjacency_edge_sets_match": true,
+    "selected_heavy_atom_adjacency_matches": true,
+    "interpretation": "The selected 113-node heavy-atom CONECT/LINK adjacency graph matches after the two explicit LYX atom-name aliases. This is an adjacency comparison only; it does not validate bond orders, stereochemistry, protonation, formal charges, or force-field parameters."
+  },
+  "models": [
+    {
+      "state": "active_open",
+      "file": "structures/nnc2215-open-model.pdb",
+      "sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+      "atom_serials_unique": true,
+      "coordinate_atom_count": 990,
+      "hetero_atom_count": 223,
+      "hetero_elements_by_residue": {
+        "BGL": {
+          "C": 6,
+          "H": 12,
+          "O": 6
+        },
+        "LYX": {
+          "C": 8,
+          "H": 11,
+          "N": 3,
+          "O": 2
+        },
+        "MC": {
+          "C": 56,
+          "H": 60,
+          "N": 12,
+          "O": 12
+        },
+        "PHX": {
+          "C": 10,
+          "H": 17,
+          "O": 8
+        }
+      },
+      "conect": {
+        "directed_reference_count": 548,
+        "unique_undirected_pair_count": 279,
+        "hetero_atoms_with_at_least_one_conect_neighbor": 223,
+        "hetero_atoms_with_no_conect_neighbor": [],
+        "interpretation": "CONECT identifies bonded atom serials. Repeated atom labels do not erase this serial-level adjacency, but CONECT does not supply bond orders or formal charges."
+      },
+      "duplicate_atom_labels": {
+        "duplicate_name_group_count": 11,
+        "instances_in_duplicate_groups": 22,
+        "all_instances_have_serial_connectivity": true,
+        "groups": [
+          {
+            "residue_key": [
+              "B",
+              "30",
+              "",
+              "LYX"
+            ],
+            "atom_name": "H2",
+            "serial_instances": [
+              {
+                "serial": 512,
+                "neighbors": [
+                  {
+                    "serial": 505,
+                    "atom_name": "C1",
+                    "residue": "LYX"
+                  }
+                ]
+              },
+              {
+                "serial": 514,
+                "neighbors": [
+                  {
+                    "serial": 506,
+                    "atom_name": "C2",
+                    "residue": "LYX"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "B",
+              "30",
+              "",
+              "LYX"
+            ],
+            "atom_name": "HXT",
+            "serial_instances": [
+              {
+                "serial": 510,
+                "neighbors": [
+                  {
+                    "serial": 498,
+                    "atom_name": "CD2",
+                    "residue": "LYX"
+                  }
+                ]
+              },
+              {
+                "serial": 515,
+                "neighbors": [
+                  {
+                    "serial": 500,
+                    "atom_name": "CD4",
+                    "residue": "LYX"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H11",
+            "serial_instances": [
+              {
+                "serial": 920,
+                "neighbors": [
+                  {
+                    "serial": 836,
+                    "atom_name": "N6",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 923,
+                "neighbors": [
+                  {
+                    "serial": 841,
+                    "atom_name": "C11",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H12",
+            "serial_instances": [
+              {
+                "serial": 921,
+                "neighbors": [
+                  {
+                    "serial": 837,
+                    "atom_name": "C7",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 924,
+                "neighbors": [
+                  {
+                    "serial": 842,
+                    "atom_name": "C12",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H19",
+            "serial_instances": [
+              {
+                "serial": 927,
+                "neighbors": [
+                  {
+                    "serial": 849,
+                    "atom_name": "N19",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 928,
+                "neighbors": [
+                  {
+                    "serial": 850,
+                    "atom_name": "N20",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H23",
+            "serial_instances": [
+              {
+                "serial": 930,
+                "neighbors": [
+                  {
+                    "serial": 853,
+                    "atom_name": "C23",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 932,
+                "neighbors": [
+                  {
+                    "serial": 857,
+                    "atom_name": "C27",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H26",
+            "serial_instances": [
+              {
+                "serial": 931,
+                "neighbors": [
+                  {
+                    "serial": 856,
+                    "atom_name": "C26",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 935,
+                "neighbors": [
+                  {
+                    "serial": 858,
+                    "atom_name": "C28",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H4",
+            "serial_instances": [
+              {
+                "serial": 913,
+                "neighbors": [
+                  {
+                    "serial": 831,
+                    "atom_name": "C1",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 918,
+                "neighbors": [
+                  {
+                    "serial": 834,
+                    "atom_name": "N4",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H50",
+            "serial_instances": [
+              {
+                "serial": 959,
+                "neighbors": [
+                  {
+                    "serial": 873,
+                    "atom_name": "C43",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 966,
+                "neighbors": [
+                  {
+                    "serial": 880,
+                    "atom_name": "N50",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H51",
+            "serial_instances": [
+              {
+                "serial": 960,
+                "neighbors": [
+                  {
+                    "serial": 873,
+                    "atom_name": "C43",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 967,
+                "neighbors": [
+                  {
+                    "serial": 881,
+                    "atom_name": "N51",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H60",
+            "serial_instances": [
+              {
+                "serial": 969,
+                "neighbors": [
+                  {
+                    "serial": 889,
+                    "atom_name": "N59",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 970,
+                "neighbors": [
+                  {
+                    "serial": 890,
+                    "atom_name": "N60",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          }
+        ]
+      },
+      "link_records": {
+        "count": 3,
+        "resolved_unique_endpoint_count": 3,
+        "ambiguous_or_missing_endpoint_count": 0,
+        "resolved": [
+          {
+            "record": "LINK        C31  MC  C   1                CD6  LYX B  30     1555   1555  1.56",
+            "first_endpoint": [
+              "C",
+              "1",
+              "",
+              "MC",
+              "C31",
+              ""
+            ],
+            "second_endpoint": [
+              "B",
+              "30",
+              "",
+              "LYX",
+              "CD6",
+              ""
+            ],
+            "first_serial_matches": [
+              861
+            ],
+            "second_serial_matches": [
+              502
+            ],
+            "endpoint_resolution": "unique",
+            "actual_coordinate_distance_angstrom": 1.561,
+            "pdb_annotated_distance_angstrom": 1.56,
+            "both_endpoints_nonstandard": true
+          },
+          {
+            "record": "LINK        CD1  LYX B  30                NZ   LYS B  29     1555   1555  1.38",
+            "first_endpoint": [
+              "B",
+              "30",
+              "",
+              "LYX",
+              "CD1",
+              ""
+            ],
+            "second_endpoint": [
+              "B",
+              "29",
+              "",
+              "LYS",
+              "NZ",
+              ""
+            ],
+            "first_serial_matches": [
+              497
+            ],
+            "second_serial_matches": [
+              480
+            ],
+            "endpoint_resolution": "unique",
+            "actual_coordinate_distance_angstrom": 1.377,
+            "pdb_annotated_distance_angstrom": 1.38,
+            "both_endpoints_nonstandard": false
+          },
+          {
+            "record": "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.34",
+            "first_endpoint": [
+              "B",
+              "1",
+              "",
+              "PHE",
+              "N",
+              ""
+            ],
+            "second_endpoint": [
+              "B",
+              "0",
+              "",
+              "PHX",
+              "C2",
+              ""
+            ],
+            "first_serial_matches": [
+              37
+            ],
+            "second_serial_matches": [
+              3
+            ],
+            "endpoint_resolution": "unique",
+            "actual_coordinate_distance_angstrom": 1.336,
+            "pdb_annotated_distance_angstrom": 1.34,
+            "both_endpoints_nonstandard": false
+          }
+        ],
+        "ambiguous_or_missing": []
+      }
+    },
+    {
+      "state": "inactive_closed",
+      "file": "structures/nnc2215-closed-model.pdb",
+      "sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+      "atom_serials_unique": true,
+      "coordinate_atom_count": 968,
+      "hetero_atom_count": 199,
+      "hetero_elements_by_residue": {
+        "LYX": {
+          "C": 8,
+          "H": 10,
+          "N": 3,
+          "O": 2
+        },
+        "MC": {
+          "C": 56,
+          "H": 60,
+          "N": 12,
+          "O": 12
+        },
+        "PHX": {
+          "C": 10,
+          "H": 18,
+          "O": 8
+        }
+      },
+      "conect": {
+        "directed_reference_count": 468,
+        "unique_undirected_pair_count": 238,
+        "hetero_atoms_with_at_least_one_conect_neighbor": 198,
+        "hetero_atoms_with_no_conect_neighbor": [
+          {
+            "serial": 332,
+            "atom_name": "H2",
+            "residue": "PHX",
+            "chain": "B",
+            "residue_number": "0",
+            "element": "H"
+          }
+        ],
+        "interpretation": "CONECT identifies bonded atom serials. Repeated atom labels do not erase this serial-level adjacency, but CONECT does not supply bond orders or formal charges."
+      },
+      "duplicate_atom_labels": {
+        "duplicate_name_group_count": 12,
+        "instances_in_duplicate_groups": 26,
+        "all_instances_have_serial_connectivity": false,
+        "groups": [
+          {
+            "residue_key": [
+              "B",
+              "0",
+              "",
+              "PHX"
+            ],
+            "atom_name": "H2",
+            "serial_instances": [
+              {
+                "serial": 332,
+                "neighbors": []
+              },
+              {
+                "serial": 336,
+                "neighbors": [
+                  {
+                    "serial": 321,
+                    "atom_name": "C233",
+                    "residue": "PHX"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": false
+          },
+          {
+            "residue_key": [
+              "B",
+              "30",
+              "",
+              "LYX"
+            ],
+            "atom_name": "HC",
+            "serial_instances": [
+              {
+                "serial": 822,
+                "neighbors": [
+                  {
+                    "serial": 816,
+                    "atom_name": "CD5",
+                    "residue": "LYX"
+                  }
+                ]
+              },
+              {
+                "serial": 823,
+                "neighbors": [
+                  {
+                    "serial": 817,
+                    "atom_name": "C",
+                    "residue": "LYX"
+                  }
+                ]
+              },
+              {
+                "serial": 824,
+                "neighbors": [
+                  {
+                    "serial": 817,
+                    "atom_name": "C",
+                    "residue": "LYX"
+                  }
+                ]
+              },
+              {
+                "serial": 825,
+                "neighbors": [
+                  {
+                    "serial": 816,
+                    "atom_name": "CD5",
+                    "residue": "LYX"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "B",
+              "30",
+              "",
+              "LYX"
+            ],
+            "atom_name": "HXT",
+            "serial_instances": [
+              {
+                "serial": 826,
+                "neighbors": [
+                  {
+                    "serial": 813,
+                    "atom_name": "CD2",
+                    "residue": "LYX"
+                  }
+                ]
+              },
+              {
+                "serial": 831,
+                "neighbors": [
+                  {
+                    "serial": 815,
+                    "atom_name": "CD4",
+                    "residue": "LYX"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H11",
+            "serial_instances": [
+              {
+                "serial": 921,
+                "neighbors": [
+                  {
+                    "serial": 837,
+                    "atom_name": "N6",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 924,
+                "neighbors": [
+                  {
+                    "serial": 842,
+                    "atom_name": "C11",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H12",
+            "serial_instances": [
+              {
+                "serial": 922,
+                "neighbors": [
+                  {
+                    "serial": 838,
+                    "atom_name": "C7",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 925,
+                "neighbors": [
+                  {
+                    "serial": 843,
+                    "atom_name": "C12",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H19",
+            "serial_instances": [
+              {
+                "serial": 928,
+                "neighbors": [
+                  {
+                    "serial": 850,
+                    "atom_name": "N19",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 929,
+                "neighbors": [
+                  {
+                    "serial": 851,
+                    "atom_name": "N20",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H23",
+            "serial_instances": [
+              {
+                "serial": 931,
+                "neighbors": [
+                  {
+                    "serial": 854,
+                    "atom_name": "C23",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 933,
+                "neighbors": [
+                  {
+                    "serial": 858,
+                    "atom_name": "C27",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H26",
+            "serial_instances": [
+              {
+                "serial": 932,
+                "neighbors": [
+                  {
+                    "serial": 857,
+                    "atom_name": "C26",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 936,
+                "neighbors": [
+                  {
+                    "serial": 859,
+                    "atom_name": "C28",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H4",
+            "serial_instances": [
+              {
+                "serial": 914,
+                "neighbors": [
+                  {
+                    "serial": 832,
+                    "atom_name": "C1",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 919,
+                "neighbors": [
+                  {
+                    "serial": 835,
+                    "atom_name": "N4",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H50",
+            "serial_instances": [
+              {
+                "serial": 960,
+                "neighbors": [
+                  {
+                    "serial": 874,
+                    "atom_name": "C43",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 967,
+                "neighbors": [
+                  {
+                    "serial": 881,
+                    "atom_name": "N50",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H51",
+            "serial_instances": [
+              {
+                "serial": 961,
+                "neighbors": [
+                  {
+                    "serial": 874,
+                    "atom_name": "C43",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 968,
+                "neighbors": [
+                  {
+                    "serial": 882,
+                    "atom_name": "N51",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          },
+          {
+            "residue_key": [
+              "C",
+              "1",
+              "",
+              "MC"
+            ],
+            "atom_name": "H60",
+            "serial_instances": [
+              {
+                "serial": 970,
+                "neighbors": [
+                  {
+                    "serial": 890,
+                    "atom_name": "N59",
+                    "residue": "MC"
+                  }
+                ]
+              },
+              {
+                "serial": 971,
+                "neighbors": [
+                  {
+                    "serial": 891,
+                    "atom_name": "N60",
+                    "residue": "MC"
+                  }
+                ]
+              }
+            ],
+            "serial_connectivity_disambiguates_instances": true
+          }
+        ]
+      },
+      "link_records": {
+        "count": 3,
+        "resolved_unique_endpoint_count": 3,
+        "ambiguous_or_missing_endpoint_count": 0,
+        "resolved": [
+          {
+            "record": "LINK        C31  MC  C   1                C    LYX B  30     1555   1555  1.55",
+            "first_endpoint": [
+              "C",
+              "1",
+              "",
+              "MC",
+              "C31",
+              ""
+            ],
+            "second_endpoint": [
+              "B",
+              "30",
+              "",
+              "LYX",
+              "C",
+              ""
+            ],
+            "first_serial_matches": [
+              862
+            ],
+            "second_serial_matches": [
+              817
+            ],
+            "endpoint_resolution": "unique",
+            "actual_coordinate_distance_angstrom": 1.555,
+            "pdb_annotated_distance_angstrom": 1.55,
+            "both_endpoints_nonstandard": true
+          },
+          {
+            "record": "LINK        CD1  LYX B  30                NZ   LYS B  29     1555   1555  1.37",
+            "first_endpoint": [
+              "B",
+              "30",
+              "",
+              "LYX",
+              "CD1",
+              ""
+            ],
+            "second_endpoint": [
+              "B",
+              "29",
+              "",
+              "LYS",
+              "NZ",
+              ""
+            ],
+            "first_serial_matches": [
+              812
+            ],
+            "second_serial_matches": [
+              794
+            ],
+            "endpoint_resolution": "unique",
+            "actual_coordinate_distance_angstrom": 1.374,
+            "pdb_annotated_distance_angstrom": 1.37,
+            "both_endpoints_nonstandard": false
+          },
+          {
+            "record": "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.35",
+            "first_endpoint": [
+              "B",
+              "1",
+              "",
+              "PHE",
+              "N",
+              ""
+            ],
+            "second_endpoint": [
+              "B",
+              "0",
+              "",
+              "PHX",
+              "C2",
+              ""
+            ],
+            "first_serial_matches": [
+              351
+            ],
+            "second_serial_matches": [
+              316
+            ],
+            "endpoint_resolution": "unique",
+            "actual_coordinate_distance_angstrom": 1.346,
+            "pdb_annotated_distance_angstrom": 1.35,
+            "both_endpoints_nonstandard": false
+          }
+        ],
+        "ambiguous_or_missing": []
+      }
+    }
+  ],
+  "assessment": "Atom-serial CONECT records and LINK endpoints recover a traceable selected heavy-atom adjacency graph for the modified components despite repeated atom labels. After explicit normalization of two LYX atom-name differences, the open and closed selected heavy-atom node and edge sets match. Hydrogen-level correspondence remains unresolved: the closed model assigns the PheB1 N-terminal H to PHX without a CONECT edge and records one fewer hydrogen neighbor on LYX CD2. Full topology equivalence is not established. Bond orders, protonation, formal charges, stereochemical validation, and force-field parameters remain unresolved; the models are not production-MD-ready.",
+  "target_binding_md_started": false,
+  "clinical_use": false
+}

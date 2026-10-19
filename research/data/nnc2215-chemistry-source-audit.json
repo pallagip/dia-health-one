@@ -1,0 +1,99 @@
+{
+  "record_type": "source_chemistry_audit",
+  "checked_at_utc": "2026-10-17T22:05:51Z",
+  "source": {
+    "title": "Glucose-sensitive insulin with attenuation of hypoglycaemia — Supplementary Information",
+    "doi": "10.1038/s41586-024-08042-3",
+    "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+    "section": "Methods §4, Preparation of insulin conjugate NNC2215 (PDF pp. 9–10)",
+    "scope_note": "The supplement text documents synthesis and the final molecular formula; this audit does not claim that the nonstandard-residue atom graph has been reconstructed."
+  },
+  "reported_synthesis_evidence": {
+    "protein": "desB30 human insulin",
+    "b29_modification": "O-succinimidyl pentyn-1-oxycarbonyl is reacted with insulin to produce B29-alkyne insulin.",
+    "b1_modification": "A beta-carboxymethyl-oxyethyl-O-peracetyl-D-glucoside active ester is coupled to produce the B1 O-peracetyl glycoside, followed by saponification to obtain the B1 glycoside.",
+    "macrocycle_attachment": "The B1-glycoside/B29-alkyne insulin is coupled to macrocycle roof propyl azide by Cu(I)-catalysed azide–alkyne click chemistry.",
+    "reported_formula": "C325H461N79O97S6",
+    "reported_hrms_m_plus_4h": {
+      "observed_mz": 1805.5,
+      "calculated_mz": 1805.8
+    },
+    "reported_high_resolution_mass": {
+      "observed": 7214.1821,
+      "calculated": 7214.1894
+    }
+  },
+  "model_residue_inventory": {
+    "basis": "Element counts from HETATM coordinate records; these are not independently assigned protonation or formal-charge states.",
+    "open": {
+      "PHX": {
+        "C": 10,
+        "H": 17,
+        "O": 8
+      },
+      "LYX": {
+        "C": 8,
+        "H": 11,
+        "N": 3,
+        "O": 2
+      },
+      "MC": {
+        "C": 56,
+        "H": 60,
+        "N": 12,
+        "O": 12
+      }
+    },
+    "closed": {
+      "PHX": {
+        "C": 10,
+        "H": 18,
+        "O": 8
+      },
+      "LYX": {
+        "C": 8,
+        "H": 10,
+        "N": 3,
+        "O": 2
+      },
+      "MC": {
+        "C": 56,
+        "H": 60,
+        "N": 12,
+        "O": 12
+      }
+    }
+  },
+  "component_code_lookup_check": [
+    {
+      "code": "PHX",
+      "model_residue_composition": "C10H17O8 (open); C10H18O8 (closed)",
+      "rcsb_component_name": "4-{[(Z)-(5-oxo-2-phenyl-1,3-oxazol-4(5H)-ylidene)methyl]amino}butanoic acid",
+      "rcsb_formula": "C14H14N2O4",
+      "rcsb_url": "https://www.rcsb.org/ligand/PHX"
+    },
+    {
+      "code": "LYX",
+      "model_residue_composition": "C8H11N3O2 (open); C8H10N3O2 (closed)",
+      "rcsb_component_name": "N''-(2-coenzyme A)-propanoyl-L-lysine",
+      "rcsb_formula": "C30H52N9O19P3S",
+      "rcsb_url": "https://www.rcsb.org/ligand/LYX"
+    }
+  ],
+  "structural_findings": {
+    "native_attachment_records_present": true,
+    "b29_link_record": "Lys B29 NZ to LYX CD1 in both models",
+    "b1_link_record": "Phe B1 N to PHX C2 in both models",
+    "macrocycle_link_label": "MC C31 to LYX CD6 in the open model; MC C31 to LYX C in the closed model",
+    "duplicate_atom_names_present": true
+  },
+  "interpretation": "The Nature supplement strengthens the documented architecture and total-formula evidence. The three-letter labels PHX and LYX resolve to unrelated Chemical Component Dictionary entries with different compositions, so those lookup entries cannot be used as the chemistry definition for these model residues. The source formula and synthesis do not supply an atom-mapped graph, protonation, partial charges, or a validated force field.",
+  "readiness": {
+    "atom_mapped_graph_validated": false,
+    "protonation_and_charge_validated": false,
+    "force_field_validated": false,
+    "production_md_ready": false,
+    "target_binding_md_started": false
+  },
+  "clinical_use": false
+}

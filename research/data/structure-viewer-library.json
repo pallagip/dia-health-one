@@ -1,0 +1,19 @@
+{
+  "schema": "dia-health-one.structure-viewer-library.v1",
+  "package": "3dmol",
+  "version": "2.5.5",
+  "license": "BSD-3-Clause",
+  "source": {
+    "registry_tarball": "https://registry.npmjs.org/3dmol/-/3dmol-2.5.5.tgz",
+    "registry_integrity": "sha512-kqNHouGqq3YfW58174tdERvm0XYTmP0tavQKOqIw1ouc2OJ7epkXEFrtEkVXV0clBZT2Ze2xHRC/qxX0u0qCdw==",
+    "official_documentation": "https://3dmol.csb.pitt.edu/doc/GLViewer.html",
+    "repository": "https://github.com/3dmol/3Dmol.js"
+  },
+  "bundle": {
+    "path": "assets/vendor/3Dmol-2.5.5.min.js",
+    "sha256": "f7cc78921ae72e7623e89cdd111434f58c2efddd2ffda1cd212644b406fb8016",
+    "bytes": 537792
+  },
+  "license_file": "assets/vendor/3Dmol-2.5.5-LICENSE.txt",
+  "used_for": "Interactive rendering of the publisher-supplied open and closed NNC2215 PDB coordinate models. It does not prepare or validate simulation chemistry."
+}

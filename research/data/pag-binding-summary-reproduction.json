@@ -1,0 +1,83 @@
+{
+  "record_type": "published_pag_binding_summary_reanalysis",
+  "schema": "dia-health-one.pag-binding-summary-reproduction.v1",
+  "run": {
+    "run_id": "DHO-PAG-BINDING-SUMMARY-20261018T111522Z",
+    "created_at_utc": "2026-10-18T11:15:22.326502+00:00",
+    "script": "research/reproduce_pag_binding_summary.py",
+    "script_sha256": "473896f420e67620a4cdd31458d706e3502cffca4d28e15e15f761c772cdcb63",
+    "input": "research/data/pag-binding-summary.csv",
+    "input_sha256": "085800395b4eec8283064c5621fbe332e0760cfc6d1ebece65537b439da1c7ff"
+  },
+  "source": {
+    "doi": "10.1021/acsptsci.6c00069",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/",
+    "basis": "Published Kd estimates and rounded zero-glucose receptor-affinity means transcribed from the article."
+  },
+  "reported_values": [
+    {
+      "measure": "Kd",
+      "condition": "D-glucose binding to NNC2215",
+      "reported_value": "1.91",
+      "reported_standard_error": "0.10",
+      "uncertainty_status": "standard error",
+      "unit": "mmol/L",
+      "source_section": "Results: Binding of Glucose and PaG to NNC2215 In Vitro",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/"
+    },
+    {
+      "measure": "Kd",
+      "condition": "PaG binding to NNC2215",
+      "reported_value": "0.17",
+      "reported_standard_error": "0.01",
+      "uncertainty_status": "standard error",
+      "unit": "mmol/L",
+      "source_section": "Results: Binding of Glucose and PaG to NNC2215 In Vitro",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/"
+    },
+    {
+      "measure": "Relative insulin-receptor affinity",
+      "condition": "zero d-glucose without PaG",
+      "reported_value": "0.9",
+      "reported_standard_error": "",
+      "uncertainty_status": "rounded published mean; uncertainty not transcribed",
+      "unit": "percent of human insulin",
+      "source_section": "Results: Glucose- and PaG-Sensitive Binding of NNC2215 to the Insulin Receptor In Vitro",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/"
+    },
+    {
+      "measure": "Relative insulin-receptor affinity",
+      "condition": "zero d-glucose with 70 umol/L PaG",
+      "reported_value": "5.4",
+      "reported_standard_error": "",
+      "uncertainty_status": "rounded published mean; uncertainty not transcribed",
+      "unit": "percent of human insulin",
+      "source_section": "Results: Glucose- and PaG-Sensitive Binding of NNC2215 to the Insulin Receptor In Vitro",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/"
+    }
+  ],
+  "derived": {
+    "pag_lower_kd_fold_vs_glucose": {
+      "value": 11.235294117647058,
+      "equation": "Kd_glucose / Kd_PaG",
+      "unit": "fold",
+      "interpretation": "Ratio of reported Kd means; a lower Kd indicates stronger binding."
+    },
+    "pag_receptor_affinity_fold_at_zero_glucose": {
+      "value": 6.0,
+      "equation": "relative_affinity_70uM_PaG / relative_affinity_no_PaG",
+      "unit": "fold",
+      "interpretation": "Ratio of rounded, published hIR-A relative-affinity means."
+    },
+    "pag_receptor_affinity_change_at_zero_glucose": {
+      "value": 4.5,
+      "equation": "relative_affinity_70uM_PaG - relative_affinity_no_PaG",
+      "unit": "percentage points of human-insulin relative affinity"
+    }
+  },
+  "limits": [
+    "These calculations redivide published summary values; they do not fit the native-MS or receptor-binding data.",
+    "The receptor-affinity inputs are rounded means. No uncertainty is calculated because the underlying replicate values and covariance are not transcribed here.",
+    "This is an in-vitro summary reanalysis, not a molecular simulation or patient-specific prediction."
+  ]
+}

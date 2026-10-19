@@ -1,0 +1,71 @@
+{
+  "schema": "dia-health-one.pag-assay-source-audit.v1",
+  "recorded_at_utc": "2026-10-18T03:30:49Z",
+  "run": {
+    "script": "research/audit_pag_assay_source.py",
+    "script_sha256": "32540f010ff3d91408ae6063e771b70da5f6910ac89b7545471b745fc616187d",
+    "article_full_text_xml_sha256": "49d5344005a35ee079691c0256579c0a795eaafa221b96ff44acff003039d2db",
+    "supporting_information_audit": "research/data/pag-si-source-audit.json",
+    "supporting_information_audit_sha256": "53e3bdea9dbeec9d4480069e2503a9d14604e224617e42afdbc643a2bd60fffb"
+  },
+  "source": {
+    "title": "Interaction between Paracetamol Glucuronide and a Glucose-Sensitive Insulin Molecule (NNC2215): Increased Risk of Hypoglycemia",
+    "doi": "10.1021/acsptsci.6c00069",
+    "pmcid": "PMC13270365",
+    "article_url": "https://pubs.acs.org/doi/10.1021/acsptsci.6c00069",
+    "full_text_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13270365/fullTextXML",
+    "pmc_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/",
+    "license": {
+      "name": "CC BY-NC-ND 4.0",
+      "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "source_xml_statement_verified": true
+    }
+  },
+  "assay": {
+    "target": "NNC2215 binding to human insulin receptor isoform A (hIR-A)",
+    "matrix": "1.5% human serum albumin",
+    "pag_condition_umol_l": 70,
+    "figure_caption_summary": "Figure 3 reports mean and SD error bars from three independent experiments.",
+    "reported_two_way_anova_p": "<0.0001",
+    "p_value_recalculated": false
+  },
+  "exact_article_text_values": [
+    {
+      "glucose_mmol_l": 0,
+      "pag_umol_l": 0,
+      "relative_affinity_percent_of_human_insulin": 0.9,
+      "evidence_status": "value quoted in article text"
+    },
+    {
+      "glucose_mmol_l": 0,
+      "pag_umol_l": 70,
+      "relative_affinity_percent_of_human_insulin": 5.4,
+      "evidence_status": "value quoted in article text"
+    }
+  ],
+  "derived_from_exact_text_values": {
+    "pag_to_no_pag_fold_change_at_zero_glucose": 6.0,
+    "absolute_change_percentage_points": 4.5,
+    "source_uncertainty_recalculated": false
+  },
+  "source_data_availability": {
+    "figure_3_has_visual_mean_sd_points": true,
+    "machine_readable_curve_means_found_in_reviewed_article_or_si": false,
+    "machine_readable_numeric_sd_values_found_in_reviewed_article_or_si": false,
+    "individual_replicate_values_found_in_reviewed_article_or_si": false,
+    "supporting_information_file_count": 1,
+    "supporting_information_file": "pt6c00069_si_001.pdf",
+    "supporting_information_pages": 24
+  },
+  "public_demo_reuse_decision": {
+    "figure_embedded_or_adapted": false,
+    "figure_digitized_for_public_dashboard": false,
+    "reason": "The reviewed source is licensed CC BY-NC-ND 4.0 and does not provide a machine-readable point table. The demo links the publisher source and displays only the exact article-text values recorded above."
+  },
+  "limits": [
+    "The 0.9% and 5.4% values are rounded published means; the underlying replicate values and exact numerical SDs were not found in the reviewed public files.",
+    "The reported p-value is the paper's two-way ANOVA result and was not recalculated.",
+    "The derived 6.0-fold ratio uses only the two rounded article-text values; it is not a molecular simulation or patient-specific effect."
+  ],
+  "clinical_use": false
+}

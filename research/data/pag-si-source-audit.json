@@ -1,0 +1,46 @@
+{
+  "schema": "dia-health-one.pag-si-source-audit.v1",
+  "recorded_at_utc": "2026-10-17T22:54:36Z",
+  "source": {
+    "title": "Interaction between Paracetamol Glucuronide and a Glucose-Sensitive Insulin Molecule (NNC2215): Increased Risk of Hypoglycemia — Supporting Information",
+    "article_doi": "10.1021/acsptsci.6c00069",
+    "supporting_information_doi": "10.1021/acsptsci.6c00069.s001",
+    "figshare_item_id": 32292700,
+    "figshare_item_url": "https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700",
+    "figshare_api_url": "https://api.figshare.com/v2/articles/32292700",
+    "accessed_at_utc": "2026-10-17T22:54:36Z",
+    "files_listed": 1,
+    "file": {
+      "id": 64563187,
+      "name": "pt6c00069_si_001.pdf",
+      "size_bytes": 2870120,
+      "mime_type": "application/pdf",
+      "download_url": "https://ndownloader.figshare.com/files/64563187",
+      "md5_figshare_supplied": "c87fafa63a891bd1f5aec832e51182ea",
+      "md5_download_verified": "c87fafa63a891bd1f5aec832e51182ea",
+      "sha256_downloaded_copy": "f3d279ef9169666cef211ad9849fa0ea1ca807820eb4e3993944417b51936db2",
+      "page_count": 24
+    }
+  },
+  "method_evidence": {
+    "location": "Appendix S2, Molecular dynamics and NMR experiments, SI page S-18",
+    "engine": "Desmond 6.6",
+    "starting_system_description": "An in-house crystal structure of a macrocycle similar to the macrocycle in NNC2215 bound to glucose",
+    "water_model": "SPC",
+    "salt_concentration_mol_l": 0.15,
+    "force_field": "OPLS4",
+    "production_duration_ns": 500,
+    "pag_pose_generation": "A representative snapshot from the 500 ns macrocycle–glucose production trajectory was used to generate an initial macrocycle–PaG configuration in Maestro; the PaG complex was then subjected to the same MD protocol.",
+    "equilibration_description": "The SI refers to a standard equilibration protocol without enumerating its full settings in Appendix S2."
+  },
+  "public_record_availability": {
+    "figshare_item_file_count": 1,
+    "only_listed_file_is_pdf": true,
+    "machine_readable_starting_coordinates_listed": false,
+    "trajectory_or_snapshot_files_listed": false,
+    "desmond_project_or_system_files_listed": false,
+    "assessment": "The official ACS Figshare item record exposes a single 24-page supporting-information PDF. It does not list the in-house crystal coordinates, Desmond system, trajectory, or extracted snapshot as machine-readable files. This is a finding about the public item checked, not a claim that the authors do not retain those materials."
+  },
+  "reproduction_implication": "An exact rerun from the cited public item is currently blocked by the missing machine-readable starting structure and trajectory/snapshot files. Any study using the public 2024 NNC2215 models or another macrocycle structure must be labelled and evaluated as a separate proxy study.",
+  "clinical_use": false
+}

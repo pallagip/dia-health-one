@@ -1,0 +1,5 @@
+treatment,dose,auc_gir_300_420_mg_kg,sem_mg_kg,n,p_value_vs_saline,source_location
+Low-dose PaG,0.5 g,684.3,107.5,8,0.16,Main article Table 1
+High-dose PaG,2.0 g,849.0,178.5,7,0.04,Main article Table 1
+L-glucose,0.3 g/kg,790.1,120.2,8,0.01,Main article Table 1
+Saline,vehicle,596.8,85.9,8,,Main article Table 1

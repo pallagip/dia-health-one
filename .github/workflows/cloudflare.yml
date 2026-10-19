@@ -20,8 +20,6 @@ jobs:
     steps:
       - name: Check out website
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-        with:
-          submodules: true
       - name: Set up Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
@@ -31,9 +29,10 @@ jobs:
           test -s index.html
           mkdir _site
           cp index.html _site/index.html
-          for directory in assets images team research; do
+          for directory in assets images team; do
             if [ -d "$directory" ]; then cp -R "$directory" "_site/$directory"; fi
           done
+          tar -C . --exclude=research/data/nvidia-access-status.json --exclude=research/COMPUTE_STATUS.md --exclude=research/MILESTONE_REPORT.md -cf - research | tar -C _site -xf -
           for file in favicon.ico robots.txt sitemap.xml; do
             if [ -f "$file" ]; then cp "$file" "_site/$file"; fi
           done

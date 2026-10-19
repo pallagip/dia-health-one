@@ -1,0 +1,177 @@
+{
+  "record_type": "structure_coordinate_preflight",
+  "schema": "dia-health-one.structure-preflight.v1",
+  "run": {
+    "created_at_utc": "2026-10-17T21:51:47.027725+00:00",
+    "script": "research/inspect_structure_models.py",
+    "script_sha256": "899d4d817d56c0a3bf28b243ce91f791b3716df2bcf6d748975e0c66afb966fe",
+    "runtime": "3.14.4"
+  },
+  "source_manifest": "research/data/structure-manifest.json",
+  "source_dataset_doi": "10.6084/m9.figshare.26526460.v1",
+  "structures": [
+    {
+      "state": "active_open",
+      "file": "structures/nnc2215-open-model.pdb",
+      "sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+      "coordinate_atom_records": 990,
+      "atom_records_by_type": {
+        "ATOM": 767,
+        "HETATM": 223
+      },
+      "chain_atom_record_counts": {
+        "A": 311,
+        "B": 515,
+        "C": 140,
+        "D": 24
+      },
+      "residue_count_by_chain": {
+        "A": 21,
+        "B": 31,
+        "C": 1,
+        "D": 1
+      },
+      "residue_names_by_chain": {
+        "A": [
+          "ASN",
+          "CYS",
+          "GLN",
+          "GLU",
+          "GLY",
+          "ILE",
+          "LEU",
+          "SER",
+          "THR",
+          "TYR",
+          "VAL"
+        ],
+        "B": [
+          "ALA",
+          "ARG",
+          "ASN",
+          "CYS",
+          "GLN",
+          "GLU",
+          "GLY",
+          "HIS",
+          "LEU",
+          "LYS",
+          "LYX",
+          "PHE",
+          "PHX",
+          "PRO",
+          "SER",
+          "THR",
+          "TYR",
+          "VAL"
+        ],
+        "C": [
+          "MC"
+        ],
+        "D": [
+          "BGL"
+        ]
+      },
+      "nonstandard_hetero_residue_names": [
+        "BGL",
+        "LYX",
+        "MC",
+        "PHX"
+      ],
+      "connectivity_record_counts": {
+        "SSBOND": 3,
+        "LINK": 3,
+        "CONECT": 266
+      },
+      "ssbond_records": [
+        "SSBOND   1 CYS A    6    CYS A   11                          1555   1555  2.03",
+        "SSBOND   2 CYS A    7    CYS B    7                          1555   1555  2.04",
+        "SSBOND   3 CYS A   20    CYS B   19                          1555   1555  2.02"
+      ],
+      "link_records": [
+        "LINK        C31  MC  C   1                CD6  LYX B  30     1555   1555  1.56",
+        "LINK        CD1  LYX B  30                NZ   LYS B  29     1555   1555  1.38",
+        "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.34"
+      ]
+    },
+    {
+      "state": "inactive_closed",
+      "file": "structures/nnc2215-closed-model.pdb",
+      "sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+      "coordinate_atom_records": 968,
+      "atom_records_by_type": {
+        "ATOM": 769,
+        "HETATM": 199
+      },
+      "chain_atom_record_counts": {
+        "A": 312,
+        "B": 516,
+        "C": 140
+      },
+      "residue_count_by_chain": {
+        "A": 21,
+        "B": 31,
+        "C": 1
+      },
+      "residue_names_by_chain": {
+        "A": [
+          "ASN",
+          "CYS",
+          "GLN",
+          "GLU",
+          "GLY",
+          "ILE",
+          "LEU",
+          "SER",
+          "THR",
+          "TYR",
+          "VAL"
+        ],
+        "B": [
+          "ALA",
+          "ARG",
+          "ASN",
+          "CYS",
+          "GLN",
+          "GLU",
+          "GLY",
+          "HIS",
+          "LEU",
+          "LYS",
+          "LYX",
+          "PHE",
+          "PHX",
+          "PRO",
+          "SER",
+          "THR",
+          "TYR",
+          "VAL"
+        ],
+        "C": [
+          "MC"
+        ]
+      },
+      "nonstandard_hetero_residue_names": [
+        "LYX",
+        "MC",
+        "PHX"
+      ],
+      "connectivity_record_counts": {
+        "SSBOND": 3,
+        "LINK": 3,
+        "CONECT": 226
+      },
+      "ssbond_records": [
+        "SSBOND   1 CYS A    6    CYS A   11                          1555   1555  2.07",
+        "SSBOND   2 CYS A    7    CYS B    7                          1555   1555  2.04",
+        "SSBOND   3 CYS A   20    CYS B   19                          1555   1555  1.97"
+      ],
+      "link_records": [
+        "LINK        C31  MC  C   1                C    LYX B  30     1555   1555  1.55",
+        "LINK        CD1  LYX B  30                NZ   LYS B  29     1555   1555  1.37",
+        "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.35"
+      ]
+    }
+  ],
+  "interpretation": "This is a coordinate and PDB-record inventory cross-checked against the source manifest. It does not validate chemical graphs, missing atoms, protonation states, force-field parameters, or simulation readiness."
+}

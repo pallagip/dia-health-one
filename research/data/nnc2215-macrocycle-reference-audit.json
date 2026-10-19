@@ -1,0 +1,36 @@
+{
+  "schema": "dia-health-one.nnc2215-macrocycle-reference-audit.v1",
+  "checked_at_utc": "2026-10-18T01:29:33Z",
+  "purpose": "Trace the primary-source lineage for the glucose-binding macrocycle used in NNC2215 and determine whether the references resolve the public model residue graph.",
+  "sources": [
+    {
+      "role": "NNC2215 primary paper",
+      "title": "Glucose-sensitive insulin with attenuation of hypoglycaemia",
+      "doi": "10.1038/s41586-024-08042-3",
+      "article_url": "https://www.nature.com/articles/s41586-024-08042-3",
+      "supporting_information_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+      "specific_evidence": "The paper identifies the glucose-binding macrocycle as its cited prior receptor, describes a roof propyl azide coupled by triazole formation to the B29 Lys alkyne linker, and provides a numbered chemical structure for the roof propyl azide in Extended Data Figure 8i. The SI provides its synthesis and NMR characterization."
+    },
+    {
+      "role": "cited macrocycle reference",
+      "title": "A biomimetic receptor for glucose",
+      "doi": "10.1038/s41557-018-0155-z",
+      "article_url": "https://www.nature.com/articles/s41557-018-0155-z",
+      "supporting_information_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41557-018-0155-z/MediaObjects/41557_2018_155_MOESM46_ESM.pdf",
+      "specific_evidence": "The supporting information includes synthesis and characterization of receptor 2 and a modelling section. Its free-receptor calculation uses a nonacarboxylate D surrogate because the full receptor structure caused software errors; results are figures and methods rather than machine-readable coordinates."
+    }
+  ],
+  "interpretation": {
+    "lineage_supported": true,
+    "exact_pdb_residue_atom_mapping_resolved": false,
+    "full_nnc2215_conjugate_graph_resolved": false,
+    "bond_orders_and_stereochemistry_validated": false,
+    "protonation_and_partial_charges_validated": false,
+    "force_field_validated": false,
+    "production_md_ready": false,
+    "notes": "These sources materially improve the chemical provenance for the macrocycle scaffold and roof linker. They do not, by themselves, assign every atom in the model-built NNC2215 PDBs to an authoritative atom-mapped graph or validate the B1/B29 conjugate topology and force-field parameters. The 2019 receptor model is a related precursor/reference, not the complete NNC2215 conjugate."
+  },
+  "next_validation_step": "Build a candidate atom-mapped graph from the 2024 numbered roof-azide scheme, synthesis/SI, and the cited receptor structure; map it to the public PDB coordinates; then check total formula, valence, stereochemistry, linker bonds, and open/closed consistency before parameterization.",
+  "nvidia_gpu_used": false,
+  "clinical_use": false
+}

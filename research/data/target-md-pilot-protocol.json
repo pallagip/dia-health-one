@@ -1,0 +1,87 @@
+{
+  "schema": "dia-health-one.target-md-pilot-protocol.v1",
+  "status": "proposed_not_run",
+  "run_id": null,
+  "created_at_utc": "2026-10-17T20:25:00Z",
+  "scientific_scope": "A public-input, macrocycle-site pose-stability pilot for PaG versus glucose. This would not be an exact rerun of the 2026 MD, a binding-affinity calculation, a receptor assay, or a clinical prediction.",
+  "published_method": {
+    "engine": "Desmond 6.6",
+    "suite_version": "Schrodinger 2021-2",
+    "force_field": "OPLS4",
+    "water": "SPC",
+    "salt_molar": 0.15,
+    "production_ns": 500,
+    "starting_coordinates": "In-house crystal structure of a related glucose-bound macrocycle; not supplied in the reviewed public Supporting Information.",
+    "source_url": "https://acs.figshare.com/articles/journal_contribution/Interaction_between_Paracetamol_Glucuronide_and_a_Glucose-Sensitive_Insulin_Molecule_NNC2215_Increased_Risk_of_Hypoglycemia/32292700"
+  },
+  "proxy_input": {
+    "structure_source": "2024 Springer Nature Figshare author-supplied NNC2215 open/closed model PDBs",
+    "source_url": "https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460",
+    "license": "CC BY 4.0",
+    "model_status": "Publisher-supplied model-built coordinates; not experimentally resolved NNC2215 coordinates.",
+    "system_boundary": "NNC2215 and its macrocycle site only; no insulin receptor. Public model geometry differs from the 2026 macrocycle-analogue crystal input, so results would be a proxy study.",
+    "coordinate_search": "The 2026 article/SI and associated public model materials were reviewed; no original seed coordinate file was found. Patrik said on 2026-10-17 he would contact the study authors; no author response or original coordinates had been received by the 2026-10-18 10:01 UTC inbox check.",
+    "before_run_blockers": [
+      "Resolve duplicate atom names in PHX, LYX, and MC residues against authoritative chemical graphs.",
+      "Reconcile open-state MC C31–LYX CD6 versus closed-state MC C31–LYX C LINK records.",
+      "Validate complete conjugate bond orders, stereochemistry, protonation, partial charges, and force-field compatibility.",
+      "Document a reproducible PaG pose-generation procedure; do not use docking scores as affinity estimates.",
+      "Select one consistent force-field strategy and validate all nonstandard components before system preparation."
+    ]
+  },
+  "design": {
+    "base_state": "Public open-state NNC2215 model, with any removal or replacement of the modelled free glucose documented as an explicit model edit.",
+    "conditions": [
+      {
+        "id": "apo",
+        "role": "No-free-ligand baseline",
+        "composition": "NNC2215 macrocycle-site model without free glucose or PaG"
+      },
+      {
+        "id": "glucose_control",
+        "role": "Positive/reference ligand condition",
+        "composition": "Same model with the source-model glucose pose retained or rebuilt and documented"
+      },
+      {
+        "id": "pag_test",
+        "role": "Primary PaG condition",
+        "composition": "Same model with PaG placed using the documented pose-generation protocol"
+      }
+    ],
+    "independent_replicates_per_condition": 3,
+    "initial_production_ns_per_replicate": 50,
+    "initial_total_production_ns": 450,
+    "temperature_kelvin": 298.15,
+    "pH_assumption": "Physiological target pH 7.4 represented by explicit protonation assignments; a pH label alone does not change a conventional fixed-protonation MD system.",
+    "pag_protonation": "Glucuronate carboxylate deprotonated, net ligand charge -1, subject to full conjugate/solvent charge validation.",
+    "water_and_salt": "Use the documented 2026 SPC water and 0.15 M NaCl only if supported and validated in the selected engine/force-field combination.",
+    "concentration_interpretation": "One seeded ligand in a periodic box is a pose-stability condition, not a 70 μM bulk-concentration reproduction. Box composition, finite-size effects, and initial occupancy must be reported."
+  },
+  "observables": [
+    "Macrocycle heavy-atom RMSD after alignment to the initial model",
+    "Ligand heavy-atom RMSD and retention in the starting pocket",
+    "Ligand–macrocycle contact occupancy and hydrogen-bond geometry",
+    "Water-mediated contacts and key pocket distances",
+    "Temperature, pressure, volume, total/potential energy, and structural integrity",
+    "Between-replicate variability and sensitivity to documented pose/preparation choices"
+  ],
+  "success_criteria": [
+    "All structure and parameterization blockers above pass with versioned evidence before production starts.",
+    "All replicas complete without crashes, non-finite energies, severe geometry failures, or sustained ensemble drift.",
+    "Qualitative ligand-pose stability results are reported across independent seeds with uncertainty; loss of pose is reported as inconclusive rather than proof of non-binding.",
+    "No affinity, free energy, or receptor-activity claim is made from contact counts or short pose-stability runs."
+  ],
+  "stop_criteria": [
+    "Any unresolved atom mapping, bond order, stereochemistry, charge, protonation, or force-field incompatibility.",
+    "Unstable preparation or simulation diagnostics.",
+    "No reproducible PaG pose protocol or no independent replicate agreement in a qualitative observable."
+  ],
+  "compute_plan": {
+    "allocation_status": "No NVIDIA GPU currently allocated.",
+    "benchmark": "Measure the prepared target system on the allocated GPU before estimating hours or cost; local 1UBQ Apple M4 results are not transferable.",
+    "gpu_hours_formula": "450 ns / measured target-system ns-per-day * 24, plus separately measured setup and analysis overhead.",
+    "cost_estimate": null,
+    "scale_up_rule": "Consider the paper's 500 ns production scale only after the 50 ns pilot passes diagnostics and the measured budget is approved."
+  },
+  "clinical_use": false
+}

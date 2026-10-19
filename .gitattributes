@@ -1,0 +1,5 @@
+# PDB records are fixed-width and intentionally padded; generated SDF records
+# and Matplotlib SVG path data also preserve producer formatting at line ends.
+research/**/*.pdb whitespace=-blank-at-eol
+research/**/*.sdf whitespace=-blank-at-eol
+research/assets/*.svg whitespace=-blank-at-eol

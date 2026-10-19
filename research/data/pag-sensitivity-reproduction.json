@@ -1,0 +1,51 @@
+{
+  "schema": "dia-health-one.pag-sensitivity.v1",
+  "run": {
+    "created_at_utc": "2026-10-18T11:15:22.328012+00:00",
+    "analysis": "published Equation 4b applied to published PaG concentration anchors",
+    "scenarios_sha256": "fc319736f7e6f345556d1d4186de9ee744f12154e0e46b82ac4460f58437f94d",
+    "parameters_sha256": "1145d230f49d06ae3d7ead9cce7ff70144f9b99c9acdf2b4dc77af3af5914b44",
+    "script_sha256": "008cf9a037d8f814fb85f029445e42bd20848e4211d276c083b92874fb3d7d76",
+    "compute": "CPU arithmetic",
+    "clinical_use": false
+  },
+  "source": {
+    "doi": "10.1021/acsptsci.6c00069",
+    "article": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13270365/",
+    "model_equation": "SI = SIbase * (1 + ConcPaG * CoeffPaG / 100), Appendix S4 Equation 4b",
+    "coefficient": 0.7784,
+    "coefficient_unit": "% increase from SIbase per umol/L PaG",
+    "coefficient_estimate_cv_percent": 5.5,
+    "coefficient_source": "Supporting Information Table S2"
+  },
+  "results": [
+    {
+      "scenario": "Human after 1000 mg oral paracetamol",
+      "concentration_umol_l": 70.0,
+      "source_class": "estimated mean maximum",
+      "source_context": "Estimated mean maximum plasma PaG after 1000 mg oral paracetamol",
+      "source_location": "Main article Introduction",
+      "model_implied_si_increase_percent": 54.488,
+      "model_implied_si_multiplier": 1.54488
+    },
+    {
+      "scenario": "Pig low-dose IV PaG",
+      "concentration_umol_l": 102.0,
+      "source_class": "reported mean maximum",
+      "source_context": "Mean maximum plasma PaG after 0.5 g IV PaG",
+      "source_location": "Main article Results",
+      "model_implied_si_increase_percent": 79.3968,
+      "model_implied_si_multiplier": 1.793968
+    },
+    {
+      "scenario": "Pig high-dose IV PaG",
+      "concentration_umol_l": 426.0,
+      "source_class": "reported mean maximum",
+      "source_context": "Mean maximum plasma PaG after 2.0 g IV PaG",
+      "source_location": "Main article Results",
+      "model_implied_si_increase_percent": 331.59839999999997,
+      "model_implied_si_multiplier": 4.315984
+    }
+  ],
+  "interpretation": "These values are the fitted model's linear SI component evaluated at published PaG concentration anchors. They are not receptor-affinity measurements, GIR predictions, or individual-patient outcomes."
+}

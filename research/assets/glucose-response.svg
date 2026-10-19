@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-labelledby="title desc">
+<title id="title">NNC2215 insulin receptor affinity across glucose concentrations</title>
+<desc id="desc">Three independent experiment values and mean with sample standard deviation at five glucose concentrations. Insulin degludec values are listed in the adjacent control summary.</desc>
+<rect width="100%" height="100%" fill="#fbfaf8"/>
+<g font-family="Arial, sans-serif" fill="#292633">
+<text x="84" y="27" font-size="12" letter-spacing="2" fill="#706b7c">PUBLISHED SOURCE DATA · FIGURE 3D</text>
+<line x1="84" y1="374.0" x2="856" y2="374.0" stroke="#e9e6e1" stroke-width="1"/>
+<text x="67" y="378.0" text-anchor="end" font-size="12" fill="#817d88">0</text>
+<line x1="84" y1="318.3" x2="856" y2="318.3" stroke="#e9e6e1" stroke-width="1"/>
+<text x="67" y="322.3" text-anchor="end" font-size="12" fill="#817d88">2</text>
+<line x1="84" y1="262.7" x2="856" y2="262.7" stroke="#e9e6e1" stroke-width="1"/>
+<text x="67" y="266.7" text-anchor="end" font-size="12" fill="#817d88">4</text>
+<line x1="84" y1="207.0" x2="856" y2="207.0" stroke="#e9e6e1" stroke-width="1"/>
+<text x="67" y="211.0" text-anchor="end" font-size="12" fill="#817d88">6</text>
+<line x1="84" y1="151.4" x2="856" y2="151.4" stroke="#e9e6e1" stroke-width="1"/>
+<text x="67" y="155.4" text-anchor="end" font-size="12" fill="#817d88">8</text>
+<line x1="84" y1="95.7" x2="856" y2="95.7" stroke="#e9e6e1" stroke-width="1"/>
+<text x="67" y="99.7" text-anchor="end" font-size="12" fill="#817d88">10</text>
+<line x1="84.0" y1="54" x2="84.0" y2="374" stroke="#eeece8" stroke-width="1"/>
+<text x="84.0" y="399" text-anchor="middle" font-size="12" fill="#817d88">0</text>
+<line x1="199.8" y1="54" x2="199.8" y2="374" stroke="#eeece8" stroke-width="1"/>
+<text x="199.8" y="399" text-anchor="middle" font-size="12" fill="#817d88">3</text>
+<line x1="277.0" y1="54" x2="277.0" y2="374" stroke="#eeece8" stroke-width="1"/>
+<text x="277.0" y="399" text-anchor="middle" font-size="12" fill="#817d88">5</text>
+<line x1="470.0" y1="54" x2="470.0" y2="374" stroke="#eeece8" stroke-width="1"/>
+<text x="470.0" y="399" text-anchor="middle" font-size="12" fill="#817d88">10</text>
+<line x1="856.0" y1="54" x2="856.0" y2="374" stroke="#eeece8" stroke-width="1"/>
+<text x="856.0" y="399" text-anchor="middle" font-size="12" fill="#817d88">20</text>
+<text x="470.0" y="460" text-anchor="middle" font-size="12" fill="#6c6875">D-glucose concentration (mmol/L)</text>
+<text transform="translate(22 214.0) rotate(-90)" text-anchor="middle" font-size="12" fill="#6c6875">Relative hIR-A affinity (% of human insulin)</text>
+<polyline points="84.0,353.1 199.8,292.1 277.0,255.7 470.0,192.0 856.0,117.0" fill="none" stroke="#65509b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="77.0" cy="351.8" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 1: 0.7985%</title></circle>
+<circle cx="84.0" cy="349.8" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 2: 0.8685%</title></circle>
+<circle cx="91.0" cy="357.6" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 3: 0.5910%</title></circle>
+<line x1="84.0" y1="349.0" x2="84.0" y2="357.1" stroke="#49367a" stroke-width="1.5"/>
+<line x1="80.2" y1="349.0" x2="87.8" y2="349.0" stroke="#49367a" stroke-width="1.5"/>
+<line x1="80.2" y1="357.1" x2="87.8" y2="357.1" stroke="#49367a" stroke-width="1.5"/>
+<circle cx="84.0" cy="353.1" r="6.3" fill="#65509b" stroke="#fff" stroke-width="2"/>
+<circle cx="192.8" cy="287.9" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 1: 3.0947%</title></circle>
+<circle cx="199.8" cy="283.2" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 2: 3.2627%</title></circle>
+<circle cx="206.8" cy="305.2" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 3: 2.4739%</title></circle>
+<line x1="199.8" y1="280.5" x2="199.8" y2="303.6" stroke="#49367a" stroke-width="1.5"/>
+<line x1="196.0" y1="280.5" x2="203.6" y2="280.5" stroke="#49367a" stroke-width="1.5"/>
+<line x1="196.0" y1="303.6" x2="203.6" y2="303.6" stroke="#49367a" stroke-width="1.5"/>
+<circle cx="199.8" cy="292.1" r="6.3" fill="#65509b" stroke="#fff" stroke-width="2"/>
+<circle cx="270.0" cy="247.2" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 1: 4.5555%</title></circle>
+<circle cx="277.0" cy="251.0" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 2: 4.4218%</title></circle>
+<circle cx="284.0" cy="269.0" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 3: 3.7751%</title></circle>
+<line x1="277.0" y1="244.1" x2="277.0" y2="267.3" stroke="#49367a" stroke-width="1.5"/>
+<line x1="273.2" y1="244.1" x2="280.8" y2="244.1" stroke="#49367a" stroke-width="1.5"/>
+<line x1="273.2" y1="267.3" x2="280.8" y2="267.3" stroke="#49367a" stroke-width="1.5"/>
+<circle cx="277.0" cy="255.7" r="6.3" fill="#65509b" stroke="#fff" stroke-width="2"/>
+<circle cx="463.0" cy="159.4" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 1: 7.7123%</title></circle>
+<circle cx="470.0" cy="203.2" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 2: 6.1365%</title></circle>
+<circle cx="477.0" cy="213.4" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 3: 5.7712%</title></circle>
+<line x1="470.0" y1="163.3" x2="470.0" y2="220.7" stroke="#49367a" stroke-width="1.5"/>
+<line x1="466.2" y1="163.3" x2="473.8" y2="163.3" stroke="#49367a" stroke-width="1.5"/>
+<line x1="466.2" y1="220.7" x2="473.8" y2="220.7" stroke="#49367a" stroke-width="1.5"/>
+<circle cx="470.0" cy="192.0" r="6.3" fill="#65509b" stroke="#fff" stroke-width="2"/>
+<circle cx="849.0" cy="91.4" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 1: 10.1563%</title></circle>
+<circle cx="856.0" cy="116.3" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 2: 9.2611%</title></circle>
+<circle cx="863.0" cy="143.2" r="4.2" fill="#c7bce0" stroke="#fff" stroke-width="1.4"><title>Experiment 3: 8.2938%</title></circle>
+<line x1="856.0" y1="91.0" x2="856.0" y2="142.9" stroke="#49367a" stroke-width="1.5"/>
+<line x1="852.2" y1="91.0" x2="859.8" y2="91.0" stroke="#49367a" stroke-width="1.5"/>
+<line x1="852.2" y1="142.9" x2="859.8" y2="142.9" stroke="#49367a" stroke-width="1.5"/>
+<circle cx="856.0" cy="117.0" r="6.3" fill="#65509b" stroke="#fff" stroke-width="2"/>
+<circle cx="84" cy="431" r="4" fill="#c7bce0"/>
+<text x="96" y="435" font-size="11" fill="#6c6875">Independent experiments (n=3)</text>
+<line x1="326" y1="431" x2="354" y2="431" stroke="#49367a" stroke-width="1.5"/>
+<circle cx="340" cy="431" r="5.5" fill="#65509b" stroke="#fff" stroke-width="1.5"/>
+<text x="365" y="435" font-size="11" fill="#6c6875">Mean ± sample SD</text>
+</g></svg>

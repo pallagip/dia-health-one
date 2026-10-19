@@ -1,0 +1,710 @@
+{
+  "schema": "dia-health-one.nnc2215-model-formula-audit.v1",
+  "run": {
+    "run_id": "DHO-NNC2215-FORMULA-20261018T033024Z",
+    "created_at_utc": "2026-10-18T03:30:24.402497+00:00",
+    "script": "research/audit_nnc2215_model_formula.py",
+    "script_sha256": "3cdaccd5c69a4a232730885bbbdc91b0af3f3e915b125911fc2afbe1233f8f68",
+    "nvidia_gpu_used": false
+  },
+  "published_reference": {
+    "paper_doi": "10.1038/s41586-024-08042-3",
+    "supporting_information_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+    "location": "Methods §4, Preparation of insulin conjugate NNC2215, PDF pp. 10–11",
+    "reported_hrms_formula": "C325H461N79O97S6",
+    "reported_formula_element_counts": {
+      "C": 325,
+      "H": 461,
+      "N": 79,
+      "O": 97,
+      "S": 6
+    }
+  },
+  "source_component_decomposition": {
+    "sources": [
+      {
+        "role": "NNC2215 synthesis and component formulae",
+        "title": "Glucose-sensitive insulin with attenuation of hypoglycaemia — Supplementary Information",
+        "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+        "locations": [
+          "Methods §§1–4, PDF pp. 2–11",
+          "B1 peracetyl glycoside acid formula C18H26O13, p. 3",
+          "B29 active ester formula C10H11NO5, p. 2",
+          "Macrocycle roof propyl azide formula C56H63N15O12, p. 10",
+          "NNC2215 formula C325H461N79O97S6, p. 11"
+        ]
+      },
+      {
+        "role": "Independent synthesis-description cross-check",
+        "publication": "WO2023144240A1, Example 2",
+        "url": "https://patents.google.com/patent/WO2023144240A1/en",
+        "reported_product": "B1-glucoside-EG-Ac B29-MC-propyl-triazole-propanoxycarbonyl desB30 human insulin (INS2)",
+        "reported_calculated_ions": {
+          "m_plus_4h_mz": 1805.8,
+          "m_plus_5h_mz": 1444.8
+        },
+        "interpretation": "The patent describes the same named B1/B29 building blocks and reports the same calculated mass-to-charge values as the Nature SI. This supports product-identity cross-checking; it does not supply an atom-mapped topology for the PDB residues."
+      }
+    ],
+    "derivation": {
+      "b1_peracetyl_acid_formula": "C18H26O13",
+      "b1_deacetylation_count": 4,
+      "formula_removed_per_o_deacetylation": "C2H2O",
+      "b1_deacetylated_acid_formula": "C10H18O9",
+      "b1_net_attachment_formula_after_condensation": "C10H16O8",
+      "b1_net_attachment_element_counts": {
+        "C": 10,
+        "H": 16,
+        "O": 8
+      },
+      "b29_active_ester_formula": "C10H11NO5",
+      "n_hydroxysuccinimide_leaving_group_formula": "C4H5NO3",
+      "b29_linker_formula_after_nhs_departure": "C6H6O2",
+      "macrocycle_roof_propyl_azide_formula": "C56H63N15O12",
+      "b29_net_attachment_formula_after_click": "C62H69N15O14",
+      "b29_net_attachment_element_counts": {
+        "C": 62,
+        "H": 69,
+        "N": 15,
+        "O": 14
+      },
+      "expected_total_attachment_formula": "C72H85N15O22",
+      "expected_total_attachment_element_counts": {
+        "C": 72,
+        "H": 85,
+        "N": 15,
+        "O": 22
+      },
+      "published_formula_minus_derived_parent_formula": "C72H85N15O22",
+      "published_formula_minus_derived_parent_element_counts": {
+        "C": 72,
+        "H": 85,
+        "N": 15,
+        "O": 22
+      },
+      "source_decomposition_matches_published_formula_difference": true,
+      "assumptions": [
+        "Four O-acetyl groups are removed during the reported saponification.",
+        "B1 amide formation removes H2O from the deacetylated acid and insulin amino group.",
+        "The B29 NHS active ester transfers the C6H6O2 linker composition after NHS leaves.",
+        "The azide–alkyne cycloaddition incorporates both source molecules without atom loss."
+      ]
+    }
+  },
+  "source_structure_manifest": "research/data/structure-manifest.json",
+  "derived_parent_reference": {
+    "label": "desB30 human insulin before the two conjugations",
+    "chain_sequences": {
+      "A": "GIVEQCCTSICSLYQLENYCN",
+      "B": "FVNQHLCGSHLVEALYLVCGERGFFYTPK"
+    },
+    "formula": "C253H376N64O75S6",
+    "formula_element_counts": {
+      "C": 253,
+      "H": 376,
+      "N": 64,
+      "O": 75,
+      "S": 6
+    },
+    "disulfide_bond_count_from_each_pdb": 3,
+    "method": "Sum standard neutral amino-acid formulas for the 21-residue A chain and 29-residue desB30 B chain; subtract H2O for each peptide bond within each chain; subtract two H atoms per SSBOND record. This is a sequence-derived reference, not a separately measured value in the cited SI."
+  },
+  "attachment_group_heavy_atom_comparison": {
+    "expected_from_published_formula_minus_derived_parent": {
+      "C": 72,
+      "N": 15,
+      "O": 22
+    },
+    "model_non_bgl_hetero_heavy_element_counts_by_state": {
+      "active_open": {
+        "C": 74,
+        "O": 22,
+        "N": 15
+      },
+      "inactive_closed": {
+        "C": 74,
+        "O": 22,
+        "N": 15
+      }
+    },
+    "model_minus_expected_heavy_element_deltas_by_state": {
+      "active_open": {
+        "C": 2
+      },
+      "inactive_closed": {
+        "C": 2
+      }
+    },
+    "interpretation": "The source-reported B1 and B29 building-block formulae sum to the published attachment difference C72H85N15O22. The PDB PHX heavy-element inventory matches the source-derived B1 attachment C10O8. The B29-linked PDB LYX/MC pool contains C64N15O14 versus source-derived C62N15O14: nitrogen and oxygen match, with two excess carbon coordinate records. This narrows the inventory discrepancy to the B29-linked component pool, but does not establish which atom records are unsupported or missing from the source atom mapping."
+  },
+  "model_source_component_count_comparison": [
+    {
+      "state": "active_open",
+      "b1_source_component_vs_pdb_phx": {
+        "source_expected_heavy_element_counts": {
+          "C": 10,
+          "O": 8
+        },
+        "pdb_heavy_element_counts": {
+          "C": 10,
+          "O": 8
+        },
+        "pdb_minus_source_delta": {}
+      },
+      "b29_source_component_vs_pdb_lyx_mc_pool": {
+        "source_expected_heavy_element_counts": {
+          "C": 62,
+          "N": 15,
+          "O": 14
+        },
+        "pdb_heavy_element_counts": {
+          "C": 64,
+          "N": 15,
+          "O": 14
+        },
+        "pdb_minus_source_delta": {
+          "C": 2
+        },
+        "scope_note": "Residue labels group the B29-linked pool for element-count comparison only; this is not an atom-by-atom graph mapping."
+      }
+    },
+    {
+      "state": "inactive_closed",
+      "b1_source_component_vs_pdb_phx": {
+        "source_expected_heavy_element_counts": {
+          "C": 10,
+          "O": 8
+        },
+        "pdb_heavy_element_counts": {
+          "C": 10,
+          "O": 8
+        },
+        "pdb_minus_source_delta": {}
+      },
+      "b29_source_component_vs_pdb_lyx_mc_pool": {
+        "source_expected_heavy_element_counts": {
+          "C": 62,
+          "N": 15,
+          "O": 14
+        },
+        "pdb_heavy_element_counts": {
+          "C": 64,
+          "N": 15,
+          "O": 14
+        },
+        "pdb_minus_source_delta": {
+          "C": 2
+        },
+        "scope_note": "Residue labels group the B29-linked pool for element-count comparison only; this is not an atom-by-atom graph mapping."
+      }
+    }
+  ],
+  "method": {
+    "description": "Verify source-file SHA-256 values and coordinate-record counts; count ATOM/HETATM element fields; derive the desB30 parent formula from validated chain sequences and three disulfides; calculate attachment formulae from source-reported building-block compositions and reaction stoichiometry; and exclude the explicitly modelled free-glucose BGL residue before comparing model component inventories.",
+    "chemistry_inference": false,
+    "source_formula_arithmetic_performed": true,
+    "bond_order_or_charge_assignment": false,
+    "hydrogen_counts_interpreted_as_formula_validation": false,
+    "limitation": "This combines source-reported building-block formula arithmetic with PDB coordinate-record counts; it is not a validated molecular graph or atom map. The count comparison narrows the two-carbon residual to the B29-linked LYX/MC component pool but does not identify the specific atom records, establish which model atoms are chemically intended, or validate bond orders, stereochemistry, protonation, charges, or parameters. Hydrogen coordinate counts are not used as formula-validation evidence."
+  },
+  "model_results": [
+    {
+      "state": "active_open",
+      "file": "structures/nnc2215-open-model.pdb",
+      "sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+      "coordinate_atom_record_count_including_free_glucose": 990,
+      "excluded_residue": {
+        "label": "BGL",
+        "reason": "Free D-glucose is modelled in the open state but is not part of the NNC2215 molecule.",
+        "element_counts": {
+          "C": 6,
+          "H": 12,
+          "O": 6
+        }
+      },
+      "model_molecule_atom_inventory": {
+        "formula_from_records": "C327H458N79O96S6",
+        "element_counts": {
+          "C": 327,
+          "H": 458,
+          "N": 79,
+          "O": 96,
+          "S": 6
+        },
+        "heavy_atom_formula_from_records": "C327N79O96S6",
+        "heavy_element_counts": {
+          "C": 327,
+          "N": 79,
+          "O": 96,
+          "S": 6
+        },
+        "by_record_type": {
+          "ATOM": {
+            "C": 253,
+            "H": 370,
+            "N": 64,
+            "O": 74,
+            "S": 6
+          },
+          "HETATM": {
+            "C": 74,
+            "H": 88,
+            "N": 15,
+            "O": 22
+          }
+        },
+        "by_residue": {
+          "ALA": {
+            "C": 3,
+            "H": 5,
+            "N": 1,
+            "O": 1
+          },
+          "ARG": {
+            "C": 6,
+            "H": 13,
+            "N": 4,
+            "O": 1
+          },
+          "ASN": {
+            "C": 12,
+            "H": 19,
+            "N": 6,
+            "O": 6
+          },
+          "CYS": {
+            "C": 18,
+            "H": 24,
+            "N": 6,
+            "O": 6,
+            "S": 6
+          },
+          "GLN": {
+            "C": 15,
+            "H": 24,
+            "N": 6,
+            "O": 6
+          },
+          "GLU": {
+            "C": 20,
+            "H": 24,
+            "N": 4,
+            "O": 12
+          },
+          "GLY": {
+            "C": 8,
+            "H": 13,
+            "N": 4,
+            "O": 4
+          },
+          "HIS": {
+            "C": 12,
+            "H": 14,
+            "N": 6,
+            "O": 2
+          },
+          "ILE": {
+            "C": 12,
+            "H": 22,
+            "N": 2,
+            "O": 2
+          },
+          "LEU": {
+            "C": 36,
+            "H": 66,
+            "N": 6,
+            "O": 6
+          },
+          "LYS": {
+            "C": 6,
+            "H": 11,
+            "N": 2,
+            "O": 2
+          },
+          "LYX": {
+            "C": 8,
+            "H": 11,
+            "N": 3,
+            "O": 2
+          },
+          "MC": {
+            "C": 56,
+            "H": 60,
+            "N": 12,
+            "O": 12
+          },
+          "PHE": {
+            "C": 27,
+            "H": 27,
+            "N": 3,
+            "O": 3
+          },
+          "PHX": {
+            "C": 10,
+            "H": 17,
+            "O": 8
+          },
+          "PRO": {
+            "C": 5,
+            "H": 7,
+            "N": 1,
+            "O": 1
+          },
+          "SER": {
+            "C": 9,
+            "H": 15,
+            "N": 3,
+            "O": 6
+          },
+          "THR": {
+            "C": 8,
+            "H": 14,
+            "N": 2,
+            "O": 4
+          },
+          "TYR": {
+            "C": 36,
+            "H": 36,
+            "N": 4,
+            "O": 8
+          },
+          "VAL": {
+            "C": 20,
+            "H": 36,
+            "N": 4,
+            "O": 4
+          }
+        },
+        "protein_atom_records": {
+          "element_counts": {
+            "C": 253,
+            "H": 370,
+            "N": 64,
+            "O": 74,
+            "S": 6
+          },
+          "heavy_element_counts": {
+            "N": 64,
+            "C": 253,
+            "O": 74,
+            "S": 6
+          },
+          "chain_sequences": {
+            "B": "FVNQHLCGSHLVEALYLVCGERGFFYTPK",
+            "A": "GIVEQCCTSICSLYQLENYCN"
+          },
+          "disulfide_bond_count": 3,
+          "disulfide_records": [
+            "SSBOND   1 CYS A    6    CYS A   11                          1555   1555  2.03",
+            "SSBOND   2 CYS A    7    CYS B    7                          1555   1555  2.04",
+            "SSBOND   3 CYS A   20    CYS B   19                          1555   1555  2.02"
+          ],
+          "chain_a_asn21_oxt_present": false,
+          "oxt_atoms": [
+            {
+              "chain": "B",
+              "residue": "LYS",
+              "residue_number": "29",
+              "element": "O"
+            }
+          ]
+        },
+        "covalent_nonstandard_hetero_atom_records_excluding_free_glucose": {
+          "element_counts": {
+            "C": 74,
+            "H": 88,
+            "N": 15,
+            "O": 22
+          },
+          "heavy_element_counts": {
+            "C": 74,
+            "O": 22,
+            "N": 15
+          },
+          "by_residue": {
+            "LYX": {
+              "C": 8,
+              "N": 3,
+              "O": 2
+            },
+            "MC": {
+              "C": 56,
+              "N": 12,
+              "O": 12
+            },
+            "PHX": {
+              "C": 10,
+              "O": 8
+            }
+          }
+        }
+      },
+      "difference_from_published_formula": {
+        "element_count_delta_model_minus_source": {
+          "C": 2,
+          "H": -3,
+          "O": -1
+        },
+        "heavy_element_count_delta_model_minus_source": {
+          "C": 2,
+          "O": -1
+        }
+      }
+    },
+    {
+      "state": "inactive_closed",
+      "file": "structures/nnc2215-closed-model.pdb",
+      "sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+      "coordinate_atom_record_count_including_free_glucose": 968,
+      "excluded_residue": {
+        "label": "BGL",
+        "reason": "Free D-glucose is modelled in the open state but is not part of the NNC2215 molecule.",
+        "element_counts": {}
+      },
+      "model_molecule_atom_inventory": {
+        "formula_from_records": "C327H459N79O97S6",
+        "element_counts": {
+          "C": 327,
+          "H": 459,
+          "N": 79,
+          "O": 97,
+          "S": 6
+        },
+        "heavy_atom_formula_from_records": "C327N79O97S6",
+        "heavy_element_counts": {
+          "C": 327,
+          "N": 79,
+          "O": 97,
+          "S": 6
+        },
+        "by_record_type": {
+          "ATOM": {
+            "C": 253,
+            "H": 371,
+            "N": 64,
+            "O": 75,
+            "S": 6
+          },
+          "HETATM": {
+            "C": 74,
+            "H": 88,
+            "N": 15,
+            "O": 22
+          }
+        },
+        "by_residue": {
+          "ALA": {
+            "C": 3,
+            "H": 5,
+            "N": 1,
+            "O": 1
+          },
+          "ARG": {
+            "C": 6,
+            "H": 13,
+            "N": 4,
+            "O": 1
+          },
+          "ASN": {
+            "C": 12,
+            "H": 18,
+            "N": 6,
+            "O": 7
+          },
+          "CYS": {
+            "C": 18,
+            "H": 24,
+            "N": 6,
+            "O": 6,
+            "S": 6
+          },
+          "GLN": {
+            "C": 15,
+            "H": 24,
+            "N": 6,
+            "O": 6
+          },
+          "GLU": {
+            "C": 20,
+            "H": 24,
+            "N": 4,
+            "O": 12
+          },
+          "GLY": {
+            "C": 8,
+            "H": 14,
+            "N": 4,
+            "O": 4
+          },
+          "HIS": {
+            "C": 12,
+            "H": 15,
+            "N": 6,
+            "O": 2
+          },
+          "ILE": {
+            "C": 12,
+            "H": 22,
+            "N": 2,
+            "O": 2
+          },
+          "LEU": {
+            "C": 36,
+            "H": 66,
+            "N": 6,
+            "O": 6
+          },
+          "LYS": {
+            "C": 6,
+            "H": 12,
+            "N": 2,
+            "O": 2
+          },
+          "LYX": {
+            "C": 8,
+            "H": 10,
+            "N": 3,
+            "O": 2
+          },
+          "MC": {
+            "C": 56,
+            "H": 60,
+            "N": 12,
+            "O": 12
+          },
+          "PHE": {
+            "C": 27,
+            "H": 26,
+            "N": 3,
+            "O": 3
+          },
+          "PHX": {
+            "C": 10,
+            "H": 18,
+            "O": 8
+          },
+          "PRO": {
+            "C": 5,
+            "H": 7,
+            "N": 1,
+            "O": 1
+          },
+          "SER": {
+            "C": 9,
+            "H": 15,
+            "N": 3,
+            "O": 6
+          },
+          "THR": {
+            "C": 8,
+            "H": 14,
+            "N": 2,
+            "O": 4
+          },
+          "TYR": {
+            "C": 36,
+            "H": 36,
+            "N": 4,
+            "O": 8
+          },
+          "VAL": {
+            "C": 20,
+            "H": 36,
+            "N": 4,
+            "O": 4
+          }
+        },
+        "protein_atom_records": {
+          "element_counts": {
+            "C": 253,
+            "H": 371,
+            "N": 64,
+            "O": 75,
+            "S": 6
+          },
+          "heavy_element_counts": {
+            "N": 64,
+            "C": 253,
+            "O": 75,
+            "S": 6
+          },
+          "chain_sequences": {
+            "A": "GIVEQCCTSICSLYQLENYCN",
+            "B": "FVNQHLCGSHLVEALYLVCGERGFFYTPK"
+          },
+          "disulfide_bond_count": 3,
+          "disulfide_records": [
+            "SSBOND   1 CYS A    6    CYS A   11                          1555   1555  2.07",
+            "SSBOND   2 CYS A    7    CYS B    7                          1555   1555  2.04",
+            "SSBOND   3 CYS A   20    CYS B   19                          1555   1555  1.97"
+          ],
+          "chain_a_asn21_oxt_present": true,
+          "oxt_atoms": [
+            {
+              "chain": "A",
+              "residue": "ASN",
+              "residue_number": "21",
+              "element": "O"
+            },
+            {
+              "chain": "B",
+              "residue": "LYS",
+              "residue_number": "29",
+              "element": "O"
+            }
+          ]
+        },
+        "covalent_nonstandard_hetero_atom_records_excluding_free_glucose": {
+          "element_counts": {
+            "C": 74,
+            "H": 88,
+            "N": 15,
+            "O": 22
+          },
+          "heavy_element_counts": {
+            "C": 74,
+            "O": 22,
+            "N": 15
+          },
+          "by_residue": {
+            "LYX": {
+              "C": 8,
+              "N": 3,
+              "O": 2
+            },
+            "MC": {
+              "C": 56,
+              "N": 12,
+              "O": 12
+            },
+            "PHX": {
+              "C": 10,
+              "O": 8
+            }
+          }
+        }
+      },
+      "difference_from_published_formula": {
+        "element_count_delta_model_minus_source": {
+          "C": 2,
+          "H": -2
+        },
+        "heavy_element_count_delta_model_minus_source": {
+          "C": 2
+        }
+      }
+    }
+  ],
+  "assessment": {
+    "same_extra_heavy_carbon_count_in_both_states": true,
+    "unresolved_coordinate_inventory_mismatch": true,
+    "source_building_block_decomposition_matches_published_formula": true,
+    "b1_heavy_inventory_matches_source_count_in_both_states": true,
+    "b29_pool_has_two_excess_carbon_records_in_both_states": true,
+    "interpretation": "The source-reported B1/B29 building-block formula arithmetic reproduces the published NNC2215 attachment difference. The PDB PHX B1 component matches its expected heavy-element count; the PDB LYX/MC B29-linked pool has two additional carbon coordinate records, with N/O counts matching source composition. This is an element-count localization, not an atom mapping. The open model's one-oxygen shortfall is the missing ASN A21 OXT terminal record; the closed model contains it. Hydrogen counts differ between states and are not treated as formula evidence.",
+    "production_md_ready": false,
+    "target_binding_md_started": false,
+    "clinical_use": false
+  },
+  "next_gate": "Map the source-derived B1 and B29 building blocks atom by atom onto PHX/LYX/MC, reconcile the two-carbon excess in the B29-linked PDB pool and the remaining hydrogen/link-record differences, then validate the complete graph, stereochemistry, protonation, charges, and force-field parameters before target binding MD."
+}

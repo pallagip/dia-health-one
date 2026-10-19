@@ -1,0 +1,59 @@
+{
+  "record_type": "pag_solvation_preflight_postprocessing",
+  "created_at_utc": "2026-10-17T19:24:51.470975+00:00",
+  "run_id": "DHO-PAG-SOLVATION-20261017T191929Z",
+  "run_manifest": "DHO-PAG-SOLVATION-20261017T191929Z.json",
+  "run_manifest_sha256": "cf52f844a7873b6824165cad893c9fb3064f9665209f2027c61b1736774ad76f",
+  "analysis_script_sha256": "aa1c5b2efbf1cd702e3fc178aadfbadcc1e3edc594cabd0adfdf786a77add9ae",
+  "chart": "assets/pag-solvation-preflight.svg",
+  "chart_sha256": "661988e4a4319bb007b69274273542c7b87ef69d3836bf95181b92c3848e5dfc",
+  "equilibration_ps": 10.0,
+  "replicates": [
+    {
+      "replicate": 1,
+      "log_file": "DHO-PAG-SOLVATION-20261017T191929Z-replicate-01.csv",
+      "log_sha256": "2978ff61bec71d62a51ef32cac5e2c048f2ff9c15ed01ac331729d021812b5c9",
+      "all_samples": 55,
+      "equilibration_samples": 4,
+      "production_samples": 51,
+      "production_temperature_K": {
+        "mean": 298.85303213949027,
+        "min": 281.2400274018135,
+        "max": 325.307911117518,
+        "sample_sd": 8.580570992943228
+      },
+      "production_box_volume_nm3": {
+        "mean": 12.777296343459007,
+        "min": 12.413180024029602,
+        "max": 13.164916274007151,
+        "sample_sd": 0.18421997379137403
+      },
+      "temperature_target_K": 298.15,
+      "all_samples_finite": true
+    },
+    {
+      "replicate": 2,
+      "log_file": "DHO-PAG-SOLVATION-20261017T191929Z-replicate-02.csv",
+      "log_sha256": "aef1f9bf4ad56e583b4824ef0a4ae5ecd38537d607f94be146fc8187bf00c41e",
+      "all_samples": 55,
+      "equilibration_samples": 4,
+      "production_samples": 51,
+      "production_temperature_K": {
+        "mean": 297.53929455369865,
+        "min": 278.88885323045537,
+        "max": 315.41029419412075,
+        "sample_sd": 8.841716426864064
+      },
+      "production_box_volume_nm3": {
+        "mean": 12.806907395881424,
+        "min": 12.51398493841644,
+        "max": 13.11861418809516,
+        "sample_sd": 0.14883499733568586
+      },
+      "temperature_target_K": 298.15,
+      "all_samples_finite": true
+    }
+  ],
+  "interpretation": "Descriptive checks for finite thermodynamic traces and sampled temperatures after the equilibration interval. This postprocessing does not test PaG binding, conformational equilibrium, or transferability to the NNC2215 conjugate.",
+  "clinical_use": false
+}
