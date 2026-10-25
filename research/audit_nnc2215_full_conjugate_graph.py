@@ -57,6 +57,17 @@ STATE_DATA = {
         "formula_state": "inactive_closed",
     },
 }
+REQUIRED_HASH_EXPECTATION_SOURCES = {
+    "b1_graph": {"B1 topology audit", "attachment-boundary audit"},
+    "b1_map_legend": {"B1 topology audit", "attachment-boundary audit"},
+    "b29_graph": {"B29 topology audit", "B29 topology audit input integrity", "attachment-boundary audit"},
+    "b29_map_legend": {"B29 topology audit", "attachment-boundary audit"},
+    "reconciliation": {"B1 topology audit", "B29 topology audit input integrity", "attachment-boundary audit"},
+    "active_open_source_pdb": {"model formula audit", "coordinate reconciliation"},
+    "inactive_closed_source_pdb": {"model formula audit", "coordinate reconciliation"},
+    "active_open_candidate_pdb": {"coordinate reconciliation", "B1 topology audit", "B29 topology audit", "attachment-boundary audit"},
+    "inactive_closed_candidate_pdb": {"coordinate reconciliation", "B1 topology audit", "B29 topology audit", "attachment-boundary audit"},
+}
 
 EXPECTED_SEQUENCES = {
     "A": "GIVEQCCTSICSLYQLENYCN",
@@ -233,6 +244,18 @@ def validate_hashes(
             {**record, "matches": record["sha256"] == actual}
             for record in expected_values
         ]
+        required_sources = REQUIRED_HASH_EXPECTATION_SOURCES.get(key, set())
+        observed_sources = {item["recorded_by"] for item in expected_values}
+        missing_sources = sorted(required_sources - observed_sources)
+        if missing_sources:
+            raise ValueError(
+                f"Missing upstream expected SHA-256 for {relative(path)} from: "
+                + ", ".join(missing_sources)
+            )
+        has_expected_digests = bool(comparisons)
+        all_expected_digests_match = has_expected_digests and all(
+            item["matches"] for item in comparisons
+        )
         if expected_values and any(not item["matches"] for item in comparisons):
             sources = ", ".join(item["recorded_by"] for item in comparisons if not item["matches"])
             raise ValueError(f"SHA-256 mismatch for {relative(path)} against {sources}")
@@ -240,7 +263,9 @@ def validate_hashes(
             "path": relative(path),
             "observed_sha256": actual,
             "upstream_expected_sha256": comparisons,
-            "all_recorded_expected_hashes_match": all(item["matches"] for item in comparisons),
+            "has_upstream_expected_digest": has_expected_digests,
+            "all_recorded_expected_hashes_match": all_expected_digests_match,
+            "required_upstream_expectation_sources": sorted(required_sources),
             "integrity_basis": "upstream expected digests" if comparisons else "observed digest only",
         }
 
@@ -541,20 +566,29 @@ def parse_pdb(path: Path) -> dict[str, Any]:
     }
 
 
-def pdb_disulfide_pairs(records: list[dict[str, Any]]) -> set[tuple[tuple[str, int], tuple[str, int]]]:
+def pdb_disulfide_pairs(records: list[dict[str, Any]]) -> set[tuple[tuple[str, str, int, str], tuple[str, str, int, str]]]:
     pairs = set()
     for record in records:
         first = record["first"]
         second = record["second"]
-        left = (first["chain"], first["residue_number"])
-        right = (second["chain"], second["residue_number"])
+        left = (
+            first["residue_name"], first["chain"],
+            first["residue_number"], first["insertion_code"],
+        )
+        right = (
+            second["residue_name"], second["chain"],
+            second["residue_number"], second["insertion_code"],
+        )
         pairs.add(tuple(sorted((left, right))))
     return pairs
 
 
-def expected_disulfide_pairs() -> set[tuple[tuple[str, int], tuple[str, int]]]:
+def expected_disulfide_pairs() -> set[tuple[tuple[str, str, int, str], tuple[str, str, int, str]]]:
     return {
-        tuple(sorted(((left[0], left[1]), (right[0], right[1]))))
+        tuple(sorted((
+            ("CYS", left[0], left[1], ""),
+            ("CYS", right[0], right[1], ""),
+        )))
         for left, right in DISULFIDES
     }
 
@@ -564,10 +598,7 @@ def boundary_link_cross_checks(
     boundary_state: dict[str, Any],
     state: str,
 ) -> list[dict[str, Any]]:
-    joins_by_id = {
-        item.get("join_id"): item
-        for item in boundary_state.get("attachment_boundary_joins", [])
-    }
+    boundary_joins = boundary_state.get("attachment_boundary_joins", [])
     required = {
         "b1_glucoside_attachment": [1, 2],
         "b29_lys_attachment": [84, 92],
@@ -575,9 +606,10 @@ def boundary_link_cross_checks(
     }
     results: list[dict[str, Any]] = []
     for join_id, expected_maps in required.items():
-        join = joins_by_id.get(join_id)
-        if join is None:
-            raise ValueError(f"Boundary audit lacks {join_id} for {state}")
+        matching_joins = [item for item in boundary_joins if item.get("join_id") == join_id]
+        if len(matching_joins) != 1:
+            raise ValueError(f"Expected one boundary audit join {join_id} in {state}; found {len(matching_joins)}")
+        join = matching_joins[0]
         source_edge = join.get("source_graph_edge", {})
         if source_edge.get("map_ids") != expected_maps:
             raise ValueError(f"Unexpected source map edge for {join_id} in {state}")
@@ -938,8 +970,9 @@ def main() -> None:
                 for item in mapping_states
             ),
             "source_and_corrected_candidate_hashes_match_upstream_records": all(
-                item["all_recorded_expected_hashes_match"] for key, item in hash_records.items()
-                if key != "audit_record_files"
+                hash_records[key]["has_upstream_expected_digest"]
+                and hash_records[key]["all_recorded_expected_hashes_match"]
+                for key in REQUIRED_HASH_EXPECTATION_SOURCES
             ) and all(item["all_expected_hashes_match"] for item in source_file_hash_checks),
             "conditional_tri_carboxylate_remains_separate": True,
             "full_system_protonation_force_field_or_md_resolved": False,

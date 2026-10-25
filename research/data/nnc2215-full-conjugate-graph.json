@@ -2,7 +2,7 @@
   "schema": "dia-health-one.nnc2215-full-conjugate-graph.v1",
   "run": {
     "script": "research/audit_nnc2215_full_conjugate_graph.py",
-    "script_sha256": "693a3d0ff33ff98bfbf7c1efa534faa90879f708baf9bedb02ee8b77dba00e29",
+    "script_sha256": "c0fe69b50f4b3439b27863c8c54e7d9847fd0ac9ffc6c6966e14004ae022d85f",
     "python_version": "3.11.17",
     "rdkit_version": "2026.03.1",
     "coordinate_files_modified": false,
@@ -30,7 +30,9 @@
       "path": "research/data/nnc2215-model-formula-audit.json",
       "observed_sha256": "ad5cf3035fa16330239f69ef7fee95e0a2c02b6944d309f20e56219799775260",
       "upstream_expected_sha256": [],
-      "all_recorded_expected_hashes_match": true,
+      "has_upstream_expected_digest": false,
+      "all_recorded_expected_hashes_match": false,
+      "required_upstream_expectation_sources": [],
       "integrity_basis": "observed digest only"
     },
     "b1_graph": {
@@ -48,7 +50,12 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "B1 topology audit",
+        "attachment-boundary audit"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "b1_map_legend": {
@@ -66,14 +73,21 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "B1 topology audit",
+        "attachment-boundary audit"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "b1_topology_audit": {
       "path": "research/data/nnc2215-b1-topology-audit.json",
       "observed_sha256": "4ee0feac680641f60b465f343837923488877bf04ea03e927f62efad707e79ce",
       "upstream_expected_sha256": [],
-      "all_recorded_expected_hashes_match": true,
+      "has_upstream_expected_digest": false,
+      "all_recorded_expected_hashes_match": false,
+      "required_upstream_expectation_sources": [],
       "integrity_basis": "observed digest only"
     },
     "b29_graph": {
@@ -96,7 +110,13 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "B29 topology audit",
+        "B29 topology audit input integrity",
+        "attachment-boundary audit"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "b29_map_legend": {
@@ -114,14 +134,21 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "B29 topology audit",
+        "attachment-boundary audit"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "b29_topology_audit": {
       "path": "research/data/nnc2215-b29-topology-audit.json",
       "observed_sha256": "edd4d9911170e3688c80f6b8ca3f4339ebee7815c1bb596cfa2dfaca468d96c6",
       "upstream_expected_sha256": [],
-      "all_recorded_expected_hashes_match": true,
+      "has_upstream_expected_digest": false,
+      "all_recorded_expected_hashes_match": false,
+      "required_upstream_expectation_sources": [],
       "integrity_basis": "observed digest only"
     },
     "reconciliation": {
@@ -144,21 +171,31 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "B1 topology audit",
+        "B29 topology audit input integrity",
+        "attachment-boundary audit"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "boundary_audit": {
       "path": "research/data/nnc2215-attachment-boundary-audit.json",
       "observed_sha256": "0003fde2504cf31bb6513d4dd3f7db4834a7493910836bedd00cf769d7959349",
       "upstream_expected_sha256": [],
-      "all_recorded_expected_hashes_match": true,
+      "has_upstream_expected_digest": false,
+      "all_recorded_expected_hashes_match": false,
+      "required_upstream_expectation_sources": [],
       "integrity_basis": "observed digest only"
     },
     "conditional_carboxylate_audit": {
       "path": "research/data/nnc2215-b29-topology-audit.json",
       "observed_sha256": "edd4d9911170e3688c80f6b8ca3f4339ebee7815c1bb596cfa2dfaca468d96c6",
       "upstream_expected_sha256": [],
-      "all_recorded_expected_hashes_match": true,
+      "has_upstream_expected_digest": false,
+      "all_recorded_expected_hashes_match": false,
+      "required_upstream_expectation_sources": [],
       "integrity_basis": "observed digest only"
     },
     "active_open_source_pdb": {
@@ -176,7 +213,12 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "coordinate reconciliation",
+        "model formula audit"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "inactive_closed_source_pdb": {
@@ -194,7 +236,12 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "coordinate reconciliation",
+        "model formula audit"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "active_open_candidate_pdb": {
@@ -237,7 +284,14 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "B1 topology audit",
+        "B29 topology audit",
+        "attachment-boundary audit",
+        "coordinate reconciliation"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "inactive_closed_candidate_pdb": {
@@ -280,7 +334,14 @@
           "matches": true
         }
       ],
+      "has_upstream_expected_digest": true,
       "all_recorded_expected_hashes_match": true,
+      "required_upstream_expectation_sources": [
+        "B1 topology audit",
+        "B29 topology audit",
+        "attachment-boundary audit",
+        "coordinate reconciliation"
+      ],
       "integrity_basis": "upstream expected digests"
     },
     "audit_record_files": {
