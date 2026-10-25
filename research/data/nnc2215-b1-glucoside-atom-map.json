@@ -38,9 +38,10 @@
     "stereochemistry": {
       "designation": "beta-D-glucopyranoside",
       "evidence": [
-        "Extended Data Fig. 7b depicts the anomeric glycosidic substituent beta to the D-glucose C5–C6 substituent.",
+        "Extended Data Fig. 7b depicts the beta-D glucoside and its glucose C1–C6 stereochemical substituent pattern.",
         "SI §2 reports H-1 as a doublet with J=7.9 Hz, consistent with the beta-D-glucopyranoside anomer.",
-        "The beta glucoside product name in the patent's glycoside chemistry gives pyran-ring configurations (2R,3R,4S,5S,6R); these correspond to source glucose C1–C5, respectively."
+        "The detached sugar graph matches the beta-D-glucose reference structure (PubChem CID 64689; InChIKey WQZGKKKJIJFFOK-VFUOTHLCSA-N).",
+        "RDKit accurate CIP labels are used; RDKit documents its legacy CIP implementation as approximate and known to mislabel some centers."
       ],
       "rdkit_cip_by_source_glucose_carbon": {
         "C1": "R",
@@ -157,7 +158,10 @@
     "cycle_rank_E_minus_V_plus_components": 1,
     "stereocenters_by_map_id": {"9": "R", "11": "R", "13": "S", "15": "S", "17": "R"},
     "stereocenter_count": 5,
-    "stereochemistry_note": "All five glucose stereocenters C1–C5 are assigned; C6 is achiral CH2OH. CIP values are from RDKit after sanitization."
+    "stereochemistry_note": "All five glucose stereocenters C1–C5 are assigned by RDKit accurate CIP; the detached sugar graph matches the beta-D-glucose reference InChIKey WQZGKKKJIJFFOK-VFUOTHLCSA-N. C6 is achiral CH2OH.",
+    "cip_method": "RDKit accurate CIP implementation (useLegacyImplementation=False); legacy CIP is approximate and may misassign labels.",
+    "cip_method_reference_url": "https://www.rdkit.org/docs/RDKit_Book.html#assignment-of-absolute-stereochemistry",
+    "beta_d_glucose_reference": {"name": "beta-D-glucose", "pubchem_cid": 64689, "url": "https://pubchem.ncbi.nlm.nih.gov/compound/64689", "detached_graph_formula": "C6H12O6", "detached_graph_inchikey": "WQZGKKKJIJFFOK-VFUOTHLCSA-N", "match": true}
   },
   "limitations": [
     "The PheB1 N endpoint is a mapped dummy placeholder whose model-match element is N; the insulin backbone is not included.",

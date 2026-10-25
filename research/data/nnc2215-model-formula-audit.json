@@ -1,10 +1,10 @@
 {
   "schema": "dia-health-one.nnc2215-model-formula-audit.v1",
   "run": {
-    "run_id": "DHO-NNC2215-FORMULA-20261018T033024Z",
-    "created_at_utc": "2026-10-18T03:30:24.402497+00:00",
+    "run_id": "DHO-NNC2215-FORMULA-20261025T190835Z",
+    "created_at_utc": "2026-10-25T19:08:35.594111+00:00",
     "script": "research/audit_nnc2215_model_formula.py",
-    "script_sha256": "3cdaccd5c69a4a232730885bbbdc91b0af3f3e915b125911fc2afbe1233f8f68",
+    "script_sha256": "4338207283e68200b9e2f3bc28a4ac54448b0cba0d58bee6513e2a81e67e845a",
     "nvidia_gpu_used": false
   },
   "published_reference": {
@@ -706,5 +706,5 @@
     "target_binding_md_started": false,
     "clinical_use": false
   },
-  "next_gate": "Map the source-derived B1 and B29 building blocks atom by atom onto PHX/LYX/MC, reconcile the two-carbon excess in the B29-linked PDB pool and the remaining hydrogen/link-record differences, then validate the complete graph, stereochemistry, protonation, charges, and force-field parameters before target binding MD."
+  "next_gate": "Refine the ambiguous B29 source-to-coordinate mappings, resolve the two-carbon excess in the B29-linked PDB pool, and reconcile the remaining hydrogen/link-record differences; then join the audited B1 and B29 components to the insulin backbone and validate the complete graph, protonation, charges, and force-field parameters before target binding MD."
 }

@@ -1,6 +1,6 @@
 {
   "schema": "dia-health-one.nnc2215-b1-topology-audit.v1",
-  "created_at_utc": "2026-10-25T18:58:54.366726+00:00",
+  "created_at_utc": "2026-10-25T19:09:00.681007+00:00",
   "software": {
     "python_version": "3.11.17",
     "rdkit_version": "2026.03.1",
@@ -11,11 +11,11 @@
   "input_hashes_sha256": {
     "source_graph": {
       "path": "structures/nnc2215-b1-glucoside-attachment.smi",
-      "sha256": "f686bb6b2944a2287767a179c80ccd46e01193e7095f4446a75a005f4fea1a3a"
+      "sha256": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4"
     },
     "map_legend": {
       "path": "data/nnc2215-b1-glucoside-atom-map.json",
-      "sha256": "6b81d4ca6cfc73e6491e8700f731ca382bfcddc1fd14760f549a9852942d76e1"
+      "sha256": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81"
     },
     "coordinate_reconciliation": {
       "path": "data/nnc2215-carbon-reconciliation-candidate.json",
@@ -43,7 +43,7 @@
     ]
   },
   "source_graph_validation": {
-    "smiles": "[*:1][C:2](=[O:3])[CH2:4][O:5][CH2:6][CH2:7][O:8][C@H:9]1[C@@H:11]([OH:12])[C@H:13]([OH:14])[C@H:15]([OH:16])[C@H:17]([CH2:18][OH:19])[O:10]1",
+    "smiles": "[*:1][C:2](=[O:3])[CH2:4][O:5][CH2:6][CH2:7][O:8][C@H:9]1[C@H:11]([OH:12])[C@@H:13]([OH:14])[C@H:15]([OH:16])[C@@H:17]([CH2:18][OH:19])[O:10]1",
     "mapped_atom_count_including_placeholder": 19,
     "map_ids_unique_positive_exact_1_to_19": true,
     "map_legend_exact_and_element_consistent": true,
@@ -76,15 +76,15 @@
         "C4": "S",
         "C5": "R"
       },
-      "rdkit_cip_algorithm": "RDKit legacy CIP labeler (`useLegacyImplementation=True`), matching the source map artifact's recorded convention",
-      "rdkit_new_cip_engine_observation_by_source_carbon": {
+      "rdkit_cip_algorithm": "RDKit accurate CIP implementation (`useLegacyImplementation=False`)",
+      "rdkit_legacy_cip_by_source_carbon": {
         "C1": "R",
         "C2": "S",
         "C3": "R",
         "C4": "S",
         "C5": "S"
       },
-      "cip_method_difference_note": "The newer RDKit CIP engine reports different R/S labels for some centers on this same sanitized stereochemical graph. Both outputs are recorded; the source-map legend comparison uses its legacy RDKit convention. No stereochemical atom tags are changed.",
+      "cip_method_note": "RDKit documents its legacy CIP implementation as approximate and known to mislabel some centers; validation uses the accurate implementation and a beta-D-glucose reference graph.",
       "source_legend_cip_by_source_carbon": {
         "C1": "R",
         "C2": "R",
@@ -102,7 +102,15 @@
       },
       "center_count": 5,
       "all_five_expected_centers_assigned": true,
-      "C6": "not stereogenic (CH2OH)"
+      "C6": "not stereogenic (CH2OH)",
+      "detached_beta_d_glucose_reference": {
+        "reference": "PubChem beta-D-glucose, CID 64689",
+        "reference_url": "https://pubchem.ncbi.nlm.nih.gov/compound/64689",
+        "reference_inchikey": "WQZGKKKJIJFFOK-VFUOTHLCSA-N",
+        "detached_graph_formula": "C6H12O6",
+        "detached_graph_inchikey": "WQZGKKKJIJFFOK-VFUOTHLCSA-N",
+        "matches_reference": true
+      }
     },
     "graph_summary": {
       "node_count": 19,
@@ -316,8 +324,8 @@
       "candidate_pdb_sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
       "expected_candidate_pdb_sha256_from_reconciliation": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
       "candidate_pdb_hash_matches_reconciliation": true,
-      "source_graph_sha256": "f686bb6b2944a2287767a179c80ccd46e01193e7095f4446a75a005f4fea1a3a",
-      "map_legend_sha256": "6b81d4ca6cfc73e6491e8700f731ca382bfcddc1fd14760f549a9852942d76e1",
+      "source_graph_sha256": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4",
+      "map_legend_sha256": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81",
       "failure_details": [],
       "pdb_record_checks": {
         "duplicate_serials_rejected": true,
@@ -2559,8 +2567,8 @@
       "candidate_pdb_sha256": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
       "expected_candidate_pdb_sha256_from_reconciliation": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
       "candidate_pdb_hash_matches_reconciliation": true,
-      "source_graph_sha256": "f686bb6b2944a2287767a179c80ccd46e01193e7095f4446a75a005f4fea1a3a",
-      "map_legend_sha256": "6b81d4ca6cfc73e6491e8700f731ca382bfcddc1fd14760f549a9852942d76e1",
+      "source_graph_sha256": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4",
+      "map_legend_sha256": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81",
       "failure_details": [],
       "pdb_record_checks": {
         "duplicate_serials_rejected": true,
