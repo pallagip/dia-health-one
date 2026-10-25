@@ -1,0 +1,4802 @@
+{
+  "schema": "dia-health-one.nnc2215-b1-topology-audit.v1",
+  "created_at_utc": "2026-10-25T19:09:00.681007+00:00",
+  "software": {
+    "python_version": "3.11.17",
+    "rdkit_version": "2026.03.1",
+    "networkx_version": "3.6.1",
+    "operating_platform": "macOS-26.3-arm64-arm-64bit",
+    "nvidia_gpu_used": false
+  },
+  "input_hashes_sha256": {
+    "source_graph": {
+      "path": "structures/nnc2215-b1-glucoside-attachment.smi",
+      "sha256": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4"
+    },
+    "map_legend": {
+      "path": "data/nnc2215-b1-glucoside-atom-map.json",
+      "sha256": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81"
+    },
+    "coordinate_reconciliation": {
+      "path": "data/nnc2215-carbon-reconciliation-candidate.json",
+      "sha256": "7aed13e3d8bcd13d9aa8b3e468f8831b5dec322caf3de454dd67f68087d4e133"
+    },
+    "structure_manifest": {
+      "path": "data/structure-manifest.json",
+      "sha256": "ee2caeb678fcd864d0c9b97390fd540ad9ca95425a1f4ff9dfdec47faef949d9"
+    },
+    "corrected_candidate_pdbs": [
+      {
+        "state": "active_open",
+        "path": "structures/nnc2215-open-source-corrected-candidate.pdb",
+        "observed_sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+        "reconciliation_expected_sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+        "hash_matches": true
+      },
+      {
+        "state": "inactive_closed",
+        "path": "structures/nnc2215-closed-source-corrected-candidate.pdb",
+        "observed_sha256": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+        "reconciliation_expected_sha256": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+        "hash_matches": true
+      }
+    ]
+  },
+  "source_graph_validation": {
+    "smiles": "[*:1][C:2](=[O:3])[CH2:4][O:5][CH2:6][CH2:7][O:8][C@H:9]1[C@H:11]([OH:12])[C@@H:13]([OH:14])[C@H:15]([OH:16])[C@@H:17]([CH2:18][OH:19])[O:10]1",
+    "mapped_atom_count_including_placeholder": 19,
+    "map_ids_unique_positive_exact_1_to_19": true,
+    "map_legend_exact_and_element_consistent": true,
+    "rdkit_sanitization": "pass",
+    "map_1_placeholder": {
+      "map_id": 1,
+      "smiles_element": "*",
+      "target_match_element": "N",
+      "counts_toward_substituent_formula_or_inventory": false
+    },
+    "source_substituent_heavy_inventory_excluding_placeholder": {
+      "C": 10,
+      "O": 8
+    },
+    "rdkit_mapped_graph_formula_including_placeholder": "C10H17*O8",
+    "deprotected_acid_formula": "C10H18O9",
+    "net_amide_condensation_formula_increment": "C10H16O8",
+    "formula_derivation": {
+      "acid_formula": "C10H18O9",
+      "condensation_loss": "H2O",
+      "net_increment": "C10H16O8",
+      "acid_graph_construction": "Remove mapped dummy map 1, replace its bond to carbonyl C map 2 by a terminal hydroxyl oxygen, sanitize with RDKit, and count implicit hydrogens.",
+      "placeholder_formula_contribution": "zero; the PheB1 nitrogen belongs to insulin, not the substituent increment"
+    },
+    "glucose_stereochemistry": {
+      "rdkit_cip_by_source_carbon": {
+        "C1": "R",
+        "C2": "R",
+        "C3": "S",
+        "C4": "S",
+        "C5": "R"
+      },
+      "rdkit_cip_algorithm": "RDKit accurate CIP implementation (`useLegacyImplementation=False`)",
+      "rdkit_legacy_cip_by_source_carbon": {
+        "C1": "R",
+        "C2": "S",
+        "C3": "R",
+        "C4": "S",
+        "C5": "S"
+      },
+      "cip_method_note": "RDKit documents its legacy CIP implementation as approximate and known to mislabel some centers; validation uses the accurate implementation and a beta-D-glucose reference graph.",
+      "source_legend_cip_by_source_carbon": {
+        "C1": "R",
+        "C2": "R",
+        "C3": "S",
+        "C4": "S",
+        "C5": "R",
+        "C6": "not stereogenic (CH2OH)"
+      },
+      "stereocenter_atom_maps": {
+        "C1": 9,
+        "C2": 11,
+        "C3": 13,
+        "C4": 15,
+        "C5": 17
+      },
+      "center_count": 5,
+      "all_five_expected_centers_assigned": true,
+      "C6": "not stereogenic (CH2OH)",
+      "detached_beta_d_glucose_reference": {
+        "reference": "PubChem beta-D-glucose, CID 64689",
+        "reference_url": "https://pubchem.ncbi.nlm.nih.gov/compound/64689",
+        "reference_inchikey": "WQZGKKKJIJFFOK-VFUOTHLCSA-N",
+        "detached_graph_formula": "C6H12O6",
+        "detached_graph_inchikey": "WQZGKKKJIJFFOK-VFUOTHLCSA-N",
+        "matches_reference": true
+      }
+    },
+    "graph_summary": {
+      "node_count": 19,
+      "element_counts": {
+        "C": 10,
+        "N": 1,
+        "O": 8
+      },
+      "edge_count": 19,
+      "connected_component_count": 1,
+      "cycle_rank_E_minus_V_plus_components": 1
+    },
+    "map_legend_atom_roles": {
+      "1": {
+        "source_label": null,
+        "role": "Mapped protein-boundary placeholder for PheB1 N; it is joined to the B1 acyl carbonyl.",
+        "element": "N"
+      },
+      "2": {
+        "source_label": null,
+        "role": "B1 linker carbonyl carbon; amide carbonyl attached to PheB1 N.",
+        "element": "C"
+      },
+      "3": {
+        "source_label": null,
+        "role": "B1 amide carbonyl oxygen.",
+        "element": "O"
+      },
+      "4": {
+        "source_label": null,
+        "role": "Methylene alpha to the carbonyl; source NMR group OCH2C=O.",
+        "element": "C"
+      },
+      "5": {
+        "source_label": null,
+        "role": "Ether oxygen between the carbonyl-alpha methylene and the ethylene linker.",
+        "element": "O"
+      },
+      "6": {
+        "source_label": null,
+        "role": "First ethylene-linker methylene, adjacent to map 5.",
+        "element": "C"
+      },
+      "7": {
+        "source_label": null,
+        "role": "Second ethylene-linker methylene, adjacent to the glycosidic-side ether oxygen map 8.",
+        "element": "C"
+      },
+      "8": {
+        "source_label": null,
+        "role": "Glycosidic-side ether oxygen linking the ethylene linker to glucose C1.",
+        "element": "O"
+      },
+      "9": {
+        "source_label": "C1",
+        "role": "Anomeric glucose carbon; beta-D glycosidic attachment site.",
+        "element": "C"
+      },
+      "10": {
+        "source_label": null,
+        "role": "Glucopyranose ring oxygen between glucose C5 and C1.",
+        "element": "O"
+      },
+      "11": {
+        "source_label": "C2",
+        "role": "Glucose C2 stereocenter bearing a free hydroxyl at map 12.",
+        "element": "C"
+      },
+      "12": {
+        "source_label": null,
+        "role": "Free hydroxyl oxygen at glucose C2.",
+        "element": "O"
+      },
+      "13": {
+        "source_label": "C3",
+        "role": "Glucose C3 stereocenter bearing a free hydroxyl at map 14.",
+        "element": "C"
+      },
+      "14": {
+        "source_label": null,
+        "role": "Free hydroxyl oxygen at glucose C3.",
+        "element": "O"
+      },
+      "15": {
+        "source_label": "C4",
+        "role": "Glucose C4 stereocenter bearing a free hydroxyl at map 16.",
+        "element": "C"
+      },
+      "16": {
+        "source_label": null,
+        "role": "Free hydroxyl oxygen at glucose C4.",
+        "element": "O"
+      },
+      "17": {
+        "source_label": "C5",
+        "role": "Glucose C5 stereocenter; bears the C6 hydroxymethyl substituent and ring oxygen map 10.",
+        "element": "C"
+      },
+      "18": {
+        "source_label": "C6",
+        "role": "Glucose C6 hydroxymethyl carbon.",
+        "element": "C"
+      },
+      "19": {
+        "source_label": null,
+        "role": "Free hydroxyl oxygen at glucose C6.",
+        "element": "O"
+      }
+    }
+  },
+  "fragment_mass_check": {
+    "sequence": "FVNQHLCGSHLVEALYLVCGER",
+    "residue_count": 22,
+    "digestion_and_redox_assumptions": [
+      "Trypsin cleavage after ArgB22 gives a free B1 N terminus and a free B22 carboxyl terminus.",
+      "Peptide formula is the sum of neutral amino-acid formulae minus H2O for each of 21 peptide bonds.",
+      "TCEP-reduced cysteines are modeled as separate thiols; no disulfide subtraction is applied to this isolated fragment.",
+      "The B1 glycoside adds net C10H16O8 after amide condensation."
+    ],
+    "neutral_unmodified_fragment_formula": "C110H171N31O31S2",
+    "net_attachment_increment": "C10H16O8",
+    "neutral_modified_fragment_formula": "C120H187N31O39S2",
+    "neutral_monoisotopic_mass_da": 2750.30438767637,
+    "charge_state": "[M+2H]2+",
+    "monoisotopic_mass_convention": {
+      "atomic_masses_da": {
+        "C": 12.0,
+        "H": 1.00782503223,
+        "N": 14.00307400443,
+        "O": 15.99491461957,
+        "S": 31.9720711744
+      },
+      "proton_mass_da": 1.007276466621,
+      "calculation": "(neutral monoisotopic mass + 2 \u00d7 proton mass) / 2; proton mass is used directly, without an electron-mass correction"
+    },
+    "calculated_m_z": 1376.159470304806,
+    "calculated_m_z_rounded_one_decimal": 1376.2,
+    "source_calculated_m_z": 1376.2,
+    "source_observed_m_z": 1376.6,
+    "source_calculated_rounding_match": true,
+    "difference_from_source_calculated_m_z": -0.04052969519398175,
+    "benchmark_source": "Nature Supporting Information \u00a74, p. 11"
+  },
+  "source_graph_symmetry": {
+    "automorphism_count_element_and_adjacency_preserving": 1,
+    "node_orbits": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ]
+    ],
+    "bond_order_and_stereochemistry_not_used_to_select_coordinate_mapping": true
+  },
+  "candidate_states": [
+    {
+      "state": "active_open",
+      "candidate_pdb": "structures/nnc2215-open-source-corrected-candidate.pdb",
+      "candidate_pdb_sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+      "expected_candidate_pdb_sha256_from_reconciliation": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+      "candidate_pdb_hash_matches_reconciliation": true,
+      "source_graph_sha256": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4",
+      "map_legend_sha256": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81",
+      "failure_details": [],
+      "pdb_record_checks": {
+        "duplicate_serials_rejected": true,
+        "all_atom_elements_present": true,
+        "all_conect_references_resolved": true,
+        "all_link_endpoints_resolved": true,
+        "selected_atom_identities_unique": true,
+        "raw_conect_reference_count": 546,
+        "unique_undirected_conect_edge_count_filewide": 273
+      },
+      "target_graph": {
+        "node_count": 19,
+        "element_counts": {
+          "C": 10,
+          "N": 1,
+          "O": 8
+        },
+        "edge_count": 19,
+        "connected_component_count": 1,
+        "cycle_rank_E_minus_V_plus_components": 1,
+        "element_counts_by_residue": {
+          "PHX B 0": {
+            "C": 10,
+            "O": 8
+          },
+          "PHE B 1 N": {
+            "N": 1
+          }
+        },
+        "selected_atoms": [
+          {
+            "serial": 1,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C",
+            "element": "C",
+            "coordinates_angstrom": [
+              2.054,
+              6.99,
+              -10.413
+            ]
+          },
+          {
+            "serial": 2,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O",
+            "element": "O",
+            "coordinates_angstrom": [
+              2.391,
+              5.883,
+              -9.57
+            ]
+          },
+          {
+            "serial": 3,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C2",
+            "element": "C",
+            "coordinates_angstrom": [
+              0.775,
+              10.36,
+              -10.298
+            ]
+          },
+          {
+            "serial": 4,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C22",
+            "element": "C",
+            "coordinates_angstrom": [
+              0.682,
+              9.42,
+              -11.51
+            ]
+          },
+          {
+            "serial": 5,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O223",
+            "element": "O",
+            "coordinates_angstrom": [
+              0.021,
+              8.186,
+              -11.201
+            ]
+          },
+          {
+            "serial": 6,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O1",
+            "element": "O",
+            "coordinates_angstrom": [
+              1.686,
+              10.223,
+              -9.485
+            ]
+          },
+          {
+            "serial": 7,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C232",
+            "element": "C",
+            "coordinates_angstrom": [
+              3.775,
+              5.635,
+              -9.501
+            ]
+          },
+          {
+            "serial": 8,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C233",
+            "element": "C",
+            "coordinates_angstrom": [
+              4.013,
+              4.389,
+              -8.636
+            ]
+          },
+          {
+            "serial": 9,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C234",
+            "element": "C",
+            "coordinates_angstrom": [
+              5.52,
+              4.132,
+              -8.526
+            ]
+          },
+          {
+            "serial": 10,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C235",
+            "element": "C",
+            "coordinates_angstrom": [
+              6.128,
+              4.025,
+              -9.928
+            ]
+          },
+          {
+            "serial": 11,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C236",
+            "element": "C",
+            "coordinates_angstrom": [
+              5.801,
+              5.307,
+              -10.728
+            ]
+          },
+          {
+            "serial": 12,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O237",
+            "element": "O",
+            "coordinates_angstrom": [
+              4.369,
+              5.438,
+              -10.763
+            ]
+          },
+          {
+            "serial": 13,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O238",
+            "element": "O",
+            "coordinates_angstrom": [
+              3.445,
+              4.597,
+              -7.348
+            ]
+          },
+          {
+            "serial": 14,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O239",
+            "element": "O",
+            "coordinates_angstrom": [
+              5.761,
+              2.939,
+              -7.786
+            ]
+          },
+          {
+            "serial": 15,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O240",
+            "element": "O",
+            "coordinates_angstrom": [
+              7.525,
+              3.797,
+              -9.803
+            ]
+          },
+          {
+            "serial": 16,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C241",
+            "element": "C",
+            "coordinates_angstrom": [
+              6.289,
+              5.282,
+              -12.183
+            ]
+          },
+          {
+            "serial": 17,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O242",
+            "element": "O",
+            "coordinates_angstrom": [
+              5.969,
+              6.5,
+              -12.857
+            ]
+          },
+          {
+            "serial": 18,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C3",
+            "element": "C",
+            "coordinates_angstrom": [
+              0.584,
+              7.37,
+              -10.168
+            ]
+          },
+          {
+            "serial": 37,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "N",
+            "element": "N",
+            "coordinates_angstrom": [
+              -0.152,
+              11.315,
+              -10.184
+            ]
+          }
+        ],
+        "selected_adjacency_edges": [
+          {
+            "serials": [
+              1,
+              2
+            ],
+            "atom_names": [
+              "C",
+              "O"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              1,
+              18
+            ],
+            "atom_names": [
+              "C",
+              "C3"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              2,
+              7
+            ],
+            "atom_names": [
+              "O",
+              "C232"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              3,
+              4
+            ],
+            "atom_names": [
+              "C2",
+              "C22"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              3,
+              6
+            ],
+            "atom_names": [
+              "C2",
+              "O1"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              3,
+              37
+            ],
+            "atom_names": [
+              "C2",
+              "N"
+            ],
+            "adjacency_sources": [
+              "CONECT",
+              "LINK"
+            ]
+          },
+          {
+            "serials": [
+              4,
+              5
+            ],
+            "atom_names": [
+              "C22",
+              "O223"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              5,
+              18
+            ],
+            "atom_names": [
+              "O223",
+              "C3"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              7,
+              8
+            ],
+            "atom_names": [
+              "C232",
+              "C233"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              7,
+              12
+            ],
+            "atom_names": [
+              "C232",
+              "O237"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              8,
+              9
+            ],
+            "atom_names": [
+              "C233",
+              "C234"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              8,
+              13
+            ],
+            "atom_names": [
+              "C233",
+              "O238"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              9,
+              10
+            ],
+            "atom_names": [
+              "C234",
+              "C235"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              9,
+              14
+            ],
+            "atom_names": [
+              "C234",
+              "O239"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              10,
+              11
+            ],
+            "atom_names": [
+              "C235",
+              "C236"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              10,
+              15
+            ],
+            "atom_names": [
+              "C235",
+              "O240"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              11,
+              12
+            ],
+            "atom_names": [
+              "C236",
+              "O237"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              11,
+              16
+            ],
+            "atom_names": [
+              "C236",
+              "C241"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              16,
+              17
+            ],
+            "atom_names": [
+              "C241",
+              "O242"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          }
+        ],
+        "unique_n_to_c2_link": {
+          "count": 1,
+          "record": "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.34",
+          "resolved_serials_in_record_order": [
+            37,
+            3
+          ],
+          "phe_b1_n": {
+            "serial": 37,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "N",
+            "element": "N",
+            "coordinates_angstrom": [
+              -0.152,
+              11.315,
+              -10.184
+            ]
+          },
+          "phx_b0_c2": {
+            "serial": 3,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C2",
+            "element": "C",
+            "coordinates_angstrom": [
+              0.775,
+              10.36,
+              -10.298
+            ]
+          },
+          "interpretation": "LINK is adjacency-only; no bond order or charge is inferred."
+        },
+        "all_selected_resolved_links": [
+          {
+            "record": "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.34",
+            "first_endpoint": {
+              "name": "N",
+              "altloc": "",
+              "residue": "PHE",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": ""
+            },
+            "second_endpoint": {
+              "name": "C2",
+              "altloc": "",
+              "residue": "PHX",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": ""
+            },
+            "resolved_serials_in_record_order": [
+              37,
+              3
+            ],
+            "edge_pair": [
+              3,
+              37
+            ]
+          }
+        ]
+      },
+      "hydrogen_records": {
+        "phx_b0_hydrogen_record_count": 17,
+        "phx_b0_hydrogen_records": [
+          {
+            "serial": 19,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H221",
+            "element": "H",
+            "coordinates_angstrom": [
+              1.682,
+              9.232,
+              -11.903
+            ]
+          },
+          {
+            "serial": 20,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H222",
+            "element": "H",
+            "coordinates_angstrom": [
+              0.13,
+              9.912,
+              -12.312
+            ]
+          },
+          {
+            "serial": 21,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H1",
+            "element": "H",
+            "coordinates_angstrom": [
+              4.232,
+              6.537,
+              -9.067
+            ]
+          },
+          {
+            "serial": 22,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H2",
+            "element": "H",
+            "coordinates_angstrom": [
+              3.517,
+              3.541,
+              -9.111
+            ]
+          },
+          {
+            "serial": 23,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H3",
+            "element": "H",
+            "coordinates_angstrom": [
+              5.984,
+              4.966,
+              -7.997
+            ]
+          },
+          {
+            "serial": 24,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H4",
+            "element": "H",
+            "coordinates_angstrom": [
+              5.688,
+              3.168,
+              -10.442
+            ]
+          },
+          {
+            "serial": 25,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H5",
+            "element": "H",
+            "coordinates_angstrom": [
+              6.232,
+              6.179,
+              -10.23
+            ]
+          },
+          {
+            "serial": 26,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H6",
+            "element": "H",
+            "coordinates_angstrom": [
+              2.536,
+              4.901,
+              -7.502
+            ]
+          },
+          {
+            "serial": 27,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H7",
+            "element": "H",
+            "coordinates_angstrom": [
+              5.231,
+              3.029,
+              -6.976
+            ]
+          },
+          {
+            "serial": 28,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H8",
+            "element": "H",
+            "coordinates_angstrom": [
+              7.608,
+              3.102,
+              -9.126
+            ]
+          },
+          {
+            "serial": 29,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H9",
+            "element": "H",
+            "coordinates_angstrom": [
+              5.837,
+              4.445,
+              -12.717
+            ]
+          },
+          {
+            "serial": 30,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H10",
+            "element": "H",
+            "coordinates_angstrom": [
+              7.37,
+              5.134,
+              -12.211
+            ]
+          },
+          {
+            "serial": 31,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H11",
+            "element": "H",
+            "coordinates_angstrom": [
+              6.236,
+              6.423,
+              -13.783
+            ]
+          },
+          {
+            "serial": 32,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H12",
+            "element": "H",
+            "coordinates_angstrom": [
+              2.209,
+              6.703,
+              -11.454
+            ]
+          },
+          {
+            "serial": 33,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H13",
+            "element": "H",
+            "coordinates_angstrom": [
+              2.707,
+              7.837,
+              -10.198
+            ]
+          },
+          {
+            "serial": 34,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H34",
+            "element": "H",
+            "coordinates_angstrom": [
+              0.455,
+              7.806,
+              -9.182
+            ]
+          },
+          {
+            "serial": 35,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H35",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.021,
+              6.457,
+              -10.172
+            ]
+          }
+        ],
+        "phe_b1_hydrogen_record_count": 9,
+        "phe_b1_hydrogen_records": [
+          {
+            "serial": 48,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "H2",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.933,
+              11.316,
+              -10.828
+            ]
+          },
+          {
+            "serial": 49,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HA",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.336,
+              11.57,
+              -8.153
+            ]
+          },
+          {
+            "serial": 50,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HB2",
+            "element": "H",
+            "coordinates_angstrom": [
+              1.727,
+              12.857,
+              -9.423
+            ]
+          },
+          {
+            "serial": 51,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HB3",
+            "element": "H",
+            "coordinates_angstrom": [
+              0.57,
+              14.154,
+              -9.417
+            ]
+          },
+          {
+            "serial": 52,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HD2",
+            "element": "H",
+            "coordinates_angstrom": [
+              0.874,
+              15.658,
+              -7.608
+            ]
+          },
+          {
+            "serial": 53,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HD1",
+            "element": "H",
+            "coordinates_angstrom": [
+              1.771,
+              11.466,
+              -7.01
+            ]
+          },
+          {
+            "serial": 54,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HE2",
+            "element": "H",
+            "coordinates_angstrom": [
+              1.443,
+              16.108,
+              -5.236
+            ]
+          },
+          {
+            "serial": 55,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HE1",
+            "element": "H",
+            "coordinates_angstrom": [
+              2.33,
+              11.933,
+              -4.642
+            ]
+          },
+          {
+            "serial": 56,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HZ",
+            "element": "H",
+            "coordinates_angstrom": [
+              2.153,
+              14.246,
+              -3.746
+            ]
+          }
+        ],
+        "phe_b1_n_conect_hydrogen_neighbors": [
+          {
+            "serial": 48,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "H2",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.933,
+              11.316,
+              -10.828
+            ]
+          }
+        ],
+        "nearest_phx_owned_hydrogens_to_phe_b1_n": [
+          {
+            "record_owner": "PHX B 0",
+            "atom": {
+              "serial": 20,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue": "PHX",
+              "altloc": "",
+              "name": "H222",
+              "element": "H",
+              "coordinates_angstrom": [
+                0.13,
+                9.912,
+                -12.312
+              ]
+            },
+            "distance_to_phe_b1_n_angstrom": 2.5644330757498817,
+            "explicit_conect_neighbor_of_phe_b1_n": false
+          },
+          {
+            "record_owner": "PHX B 0",
+            "atom": {
+              "serial": 19,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue": "PHX",
+              "altloc": "",
+              "name": "H221",
+              "element": "H",
+              "coordinates_angstrom": [
+                1.682,
+                9.232,
+                -11.903
+              ]
+            },
+            "distance_to_phe_b1_n_angstrom": 3.264568271609587,
+            "explicit_conect_neighbor_of_phe_b1_n": false
+          },
+          {
+            "record_owner": "PHX B 0",
+            "atom": {
+              "serial": 34,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue": "PHX",
+              "altloc": "",
+              "name": "H34",
+              "element": "H",
+              "coordinates_angstrom": [
+                0.455,
+                7.806,
+                -9.182
+              ]
+            },
+            "distance_to_phe_b1_n_angstrom": 3.69939643725838,
+            "explicit_conect_neighbor_of_phe_b1_n": false
+          }
+        ],
+        "ownership_and_connectivity_interpretation": "Hydrogen ownership is the ATOM/HETATM residue record owner; explicit adjacency is reported only from CONECT. Coordinate proximity does not establish an N-H bond."
+      },
+      "correspondence_status": "exact_element_labeled_adjacency_mapping",
+      "source_graph": {
+        "node_count": 19,
+        "element_counts": {
+          "C": 10,
+          "N": 1,
+          "O": 8
+        },
+        "edge_count": 19,
+        "connected_component_count": 1,
+        "cycle_rank_E_minus_V_plus_components": 1
+      },
+      "target_graph_summary": {
+        "node_count": 19,
+        "element_counts": {
+          "C": 10,
+          "N": 1,
+          "O": 8
+        },
+        "edge_count": 19,
+        "connected_component_count": 1,
+        "cycle_rank_E_minus_V_plus_components": 1
+      },
+      "exact_mapping_count": 1,
+      "all_exact_mappings": [
+        {
+          "mapping_id": "mapping_001",
+          "map_id_to_target": {
+            "1": {
+              "target_atom": {
+                "serial": 37,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue": "PHE",
+                "altloc": "",
+                "name": "N",
+                "element": "N",
+                "coordinates_angstrom": [
+                  -0.152,
+                  11.315,
+                  -10.184
+                ]
+              },
+              "source_element": "N"
+            },
+            "2": {
+              "target_atom": {
+                "serial": 3,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C2",
+                "element": "C",
+                "coordinates_angstrom": [
+                  0.775,
+                  10.36,
+                  -10.298
+                ]
+              },
+              "source_element": "C"
+            },
+            "3": {
+              "target_atom": {
+                "serial": 6,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O1",
+                "element": "O",
+                "coordinates_angstrom": [
+                  1.686,
+                  10.223,
+                  -9.485
+                ]
+              },
+              "source_element": "O"
+            },
+            "4": {
+              "target_atom": {
+                "serial": 4,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C22",
+                "element": "C",
+                "coordinates_angstrom": [
+                  0.682,
+                  9.42,
+                  -11.51
+                ]
+              },
+              "source_element": "C"
+            },
+            "5": {
+              "target_atom": {
+                "serial": 5,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O223",
+                "element": "O",
+                "coordinates_angstrom": [
+                  0.021,
+                  8.186,
+                  -11.201
+                ]
+              },
+              "source_element": "O"
+            },
+            "6": {
+              "target_atom": {
+                "serial": 18,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C3",
+                "element": "C",
+                "coordinates_angstrom": [
+                  0.584,
+                  7.37,
+                  -10.168
+                ]
+              },
+              "source_element": "C"
+            },
+            "7": {
+              "target_atom": {
+                "serial": 1,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C",
+                "element": "C",
+                "coordinates_angstrom": [
+                  2.054,
+                  6.99,
+                  -10.413
+                ]
+              },
+              "source_element": "C"
+            },
+            "8": {
+              "target_atom": {
+                "serial": 2,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O",
+                "element": "O",
+                "coordinates_angstrom": [
+                  2.391,
+                  5.883,
+                  -9.57
+                ]
+              },
+              "source_element": "O"
+            },
+            "9": {
+              "target_atom": {
+                "serial": 7,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C232",
+                "element": "C",
+                "coordinates_angstrom": [
+                  3.775,
+                  5.635,
+                  -9.501
+                ]
+              },
+              "source_element": "C"
+            },
+            "10": {
+              "target_atom": {
+                "serial": 12,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O237",
+                "element": "O",
+                "coordinates_angstrom": [
+                  4.369,
+                  5.438,
+                  -10.763
+                ]
+              },
+              "source_element": "O"
+            },
+            "11": {
+              "target_atom": {
+                "serial": 8,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C233",
+                "element": "C",
+                "coordinates_angstrom": [
+                  4.013,
+                  4.389,
+                  -8.636
+                ]
+              },
+              "source_element": "C"
+            },
+            "12": {
+              "target_atom": {
+                "serial": 13,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O238",
+                "element": "O",
+                "coordinates_angstrom": [
+                  3.445,
+                  4.597,
+                  -7.348
+                ]
+              },
+              "source_element": "O"
+            },
+            "13": {
+              "target_atom": {
+                "serial": 9,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C234",
+                "element": "C",
+                "coordinates_angstrom": [
+                  5.52,
+                  4.132,
+                  -8.526
+                ]
+              },
+              "source_element": "C"
+            },
+            "14": {
+              "target_atom": {
+                "serial": 14,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O239",
+                "element": "O",
+                "coordinates_angstrom": [
+                  5.761,
+                  2.939,
+                  -7.786
+                ]
+              },
+              "source_element": "O"
+            },
+            "15": {
+              "target_atom": {
+                "serial": 10,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C235",
+                "element": "C",
+                "coordinates_angstrom": [
+                  6.128,
+                  4.025,
+                  -9.928
+                ]
+              },
+              "source_element": "C"
+            },
+            "16": {
+              "target_atom": {
+                "serial": 15,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O240",
+                "element": "O",
+                "coordinates_angstrom": [
+                  7.525,
+                  3.797,
+                  -9.803
+                ]
+              },
+              "source_element": "O"
+            },
+            "17": {
+              "target_atom": {
+                "serial": 11,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C236",
+                "element": "C",
+                "coordinates_angstrom": [
+                  5.801,
+                  5.307,
+                  -10.728
+                ]
+              },
+              "source_element": "C"
+            },
+            "18": {
+              "target_atom": {
+                "serial": 16,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C241",
+                "element": "C",
+                "coordinates_angstrom": [
+                  6.289,
+                  5.282,
+                  -12.183
+                ]
+              },
+              "source_element": "C"
+            },
+            "19": {
+              "target_atom": {
+                "serial": 17,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O242",
+                "element": "O",
+                "coordinates_angstrom": [
+                  5.969,
+                  6.5,
+                  -12.857
+                ]
+              },
+              "source_element": "O"
+            }
+          },
+          "mapped_source_edge_distances": [
+            {
+              "source_map_ids": [
+                1,
+                2
+              ],
+              "target_serials": [
+                37,
+                3
+              ],
+              "target_atom_names": [
+                "N",
+                "C2"
+              ],
+              "element_pair": [
+                "N",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT",
+                "LINK"
+              ],
+              "raw_distance_angstrom": 1.335795643053233,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.29,
+                1.72
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                2,
+                3
+              ],
+              "target_serials": [
+                3,
+                6
+              ],
+              "target_atom_names": [
+                "C2",
+                "O1"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "double",
+              "source_bond_order_numeric_annotation": 2.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.228681813977891,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.07,
+                1.36
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                2,
+                4
+              ],
+              "target_serials": [
+                3,
+                4
+              ],
+              "target_atom_names": [
+                "C2",
+                "C22"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5366173889423478,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                4,
+                5
+              ],
+              "target_serials": [
+                4,
+                5
+              ],
+              "target_atom_names": [
+                "C22",
+                "O223"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.433582226452323,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                5,
+                6
+              ],
+              "target_serials": [
+                5,
+                18
+              ],
+              "target_atom_names": [
+                "O223",
+                "C3"
+              ],
+              "element_pair": [
+                "O",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4317520735099365,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                6,
+                7
+              ],
+              "target_serials": [
+                18,
+                1
+              ],
+              "target_atom_names": [
+                "C3",
+                "C"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5379613129074476,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                7,
+                8
+              ],
+              "target_serials": [
+                1,
+                2
+              ],
+              "target_atom_names": [
+                "C",
+                "O"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4316658129605526,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                8,
+                9
+              ],
+              "target_serials": [
+                2,
+                7
+              ],
+              "target_atom_names": [
+                "O",
+                "C232"
+              ],
+              "element_pair": [
+                "O",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4077361258417715,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                9,
+                10
+              ],
+              "target_serials": [
+                7,
+                12
+              ],
+              "target_atom_names": [
+                "C232",
+                "O237"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4086479333034216,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                9,
+                11
+              ],
+              "target_serials": [
+                7,
+                8
+              ],
+              "target_atom_names": [
+                "C232",
+                "C233"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5353778036691812,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                17,
+                10
+              ],
+              "target_serials": [
+                11,
+                12
+              ],
+              "target_atom_names": [
+                "C236",
+                "O237"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4384053670645145,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                11,
+                12
+              ],
+              "target_serials": [
+                8,
+                13
+              ],
+              "target_atom_names": [
+                "C233",
+                "O238"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4229659166684205,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                11,
+                13
+              ],
+              "target_serials": [
+                8,
+                9
+              ],
+              "target_atom_names": [
+                "C233",
+                "C234"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.532709365796399,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                13,
+                14
+              ],
+              "target_serials": [
+                9,
+                14
+              ],
+              "target_atom_names": [
+                "C234",
+                "O239"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4244051389966268,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                13,
+                15
+              ],
+              "target_serials": [
+                9,
+                10
+              ],
+              "target_atom_names": [
+                "C234",
+                "C235"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5318998009008302,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                15,
+                16
+              ],
+              "target_serials": [
+                10,
+                15
+              ],
+              "target_atom_names": [
+                "C235",
+                "O240"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4209919070846255,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                15,
+                17
+              ],
+              "target_serials": [
+                10,
+                11
+              ],
+              "target_atom_names": [
+                "C235",
+                "C236"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5461089871027844,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                17,
+                18
+              ],
+              "target_serials": [
+                11,
+                16
+              ],
+              "target_atom_names": [
+                "C236",
+                "C241"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.534859602699869,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                18,
+                19
+              ],
+              "target_serials": [
+                16,
+                17
+              ],
+              "target_atom_names": [
+                "C241",
+                "O242"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4283556979968255,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            }
+          ],
+          "geometry_screen_summary": {
+            "edge_count": 19,
+            "in_range_count": 19,
+            "out_of_range_count": 0,
+            "minimum_distance_angstrom": 1.228681813977891,
+            "maximum_distance_angstrom": 1.5461089871027844,
+            "interpretation": "Distances are observed after graph mapping; no mapping was selected or rejected by geometry."
+          }
+        }
+      ],
+      "source_graph_symmetry": {
+        "automorphism_count_element_and_adjacency_preserving": 1,
+        "source_node_orbits": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10
+          ],
+          [
+            11
+          ],
+          [
+            12
+          ],
+          [
+            13
+          ],
+          [
+            14
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ],
+          [
+            17
+          ],
+          [
+            18
+          ],
+          [
+            19
+          ]
+        ],
+        "mapping_groups_by_source_graph_symmetry": [
+          {
+            "symmetry_group_id": "symmetry_01",
+            "mapping_ids": [
+              "mapping_001"
+            ],
+            "representative_target_serial_vector_by_sorted_source_map": [
+              37,
+              3,
+              6,
+              4,
+              5,
+              18,
+              1,
+              2,
+              7,
+              12,
+              8,
+              13,
+              9,
+              14,
+              10,
+              15,
+              11,
+              16,
+              17
+            ]
+          }
+        ],
+        "bond_orders_and_coordinates_not_used_for_symmetry_or_mapping": true
+      },
+      "source_model_context": {
+        "source_model_path": "structures/nnc2215-open-model.pdb",
+        "source_model_sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+        "coordinate_status": "Publisher-supplied model coordinates; not an experimentally resolved NNC2215 structure."
+      }
+    },
+    {
+      "state": "inactive_closed",
+      "candidate_pdb": "structures/nnc2215-closed-source-corrected-candidate.pdb",
+      "candidate_pdb_sha256": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+      "expected_candidate_pdb_sha256_from_reconciliation": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+      "candidate_pdb_hash_matches_reconciliation": true,
+      "source_graph_sha256": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4",
+      "map_legend_sha256": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81",
+      "failure_details": [],
+      "pdb_record_checks": {
+        "duplicate_serials_rejected": true,
+        "all_atom_elements_present": true,
+        "all_conect_references_resolved": true,
+        "all_link_endpoints_resolved": true,
+        "selected_atom_identities_unique": true,
+        "raw_conect_reference_count": 464,
+        "unique_undirected_conect_edge_count_filewide": 232
+      },
+      "target_graph": {
+        "node_count": 19,
+        "element_counts": {
+          "C": 10,
+          "N": 1,
+          "O": 8
+        },
+        "edge_count": 19,
+        "connected_component_count": 1,
+        "cycle_rank_E_minus_V_plus_components": 1,
+        "element_counts_by_residue": {
+          "PHX B 0": {
+            "C": 10,
+            "O": 8
+          },
+          "PHE B 1 N": {
+            "N": 1
+          }
+        },
+        "selected_atoms": [
+          {
+            "serial": 314,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C",
+            "element": "C",
+            "coordinates_angstrom": [
+              -2.413,
+              1.932,
+              -1.956
+            ]
+          },
+          {
+            "serial": 315,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O",
+            "element": "O",
+            "coordinates_angstrom": [
+              -1.741,
+              1.965,
+              -0.678
+            ]
+          },
+          {
+            "serial": 316,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C2",
+            "element": "C",
+            "coordinates_angstrom": [
+              -2.228,
+              4.336,
+              -5.674
+            ]
+          },
+          {
+            "serial": 317,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C22",
+            "element": "C",
+            "coordinates_angstrom": [
+              -2.645,
+              3.121,
+              -4.819
+            ]
+          },
+          {
+            "serial": 318,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O223",
+            "element": "O",
+            "coordinates_angstrom": [
+              -3.311,
+              3.483,
+              -3.594
+            ]
+          },
+          {
+            "serial": 319,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O1",
+            "element": "O",
+            "coordinates_angstrom": [
+              -2.641,
+              5.427,
+              -5.356
+            ]
+          },
+          {
+            "serial": 320,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C232",
+            "element": "C",
+            "coordinates_angstrom": [
+              -0.574,
+              1.144,
+              -0.553
+            ]
+          },
+          {
+            "serial": 321,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C233",
+            "element": "C",
+            "coordinates_angstrom": [
+              -0.141,
+              1.267,
+              0.925
+            ]
+          },
+          {
+            "serial": 322,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C234",
+            "element": "C",
+            "coordinates_angstrom": [
+              1.003,
+              0.266,
+              1.167
+            ]
+          },
+          {
+            "serial": 323,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C235",
+            "element": "C",
+            "coordinates_angstrom": [
+              0.509,
+              -1.169,
+              0.851
+            ]
+          },
+          {
+            "serial": 324,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C236",
+            "element": "C",
+            "coordinates_angstrom": [
+              0.058,
+              -1.208,
+              -0.626
+            ]
+          },
+          {
+            "serial": 325,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O237",
+            "element": "O",
+            "coordinates_angstrom": [
+              -1.001,
+              -0.224,
+              -0.769
+            ]
+          },
+          {
+            "serial": 326,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O238",
+            "element": "O",
+            "coordinates_angstrom": [
+              0.238,
+              2.626,
+              1.166
+            ]
+          },
+          {
+            "serial": 327,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O239",
+            "element": "O",
+            "coordinates_angstrom": [
+              1.407,
+              0.389,
+              2.527
+            ]
+          },
+          {
+            "serial": 328,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O240",
+            "element": "O",
+            "coordinates_angstrom": [
+              1.511,
+              -2.152,
+              1.109
+            ]
+          },
+          {
+            "serial": 329,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C241",
+            "element": "C",
+            "coordinates_angstrom": [
+              -0.508,
+              -2.573,
+              -1.054
+            ]
+          },
+          {
+            "serial": 330,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "O242",
+            "element": "O",
+            "coordinates_angstrom": [
+              -1.099,
+              -2.516,
+              -2.355
+            ]
+          },
+          {
+            "serial": 331,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C3",
+            "element": "C",
+            "coordinates_angstrom": [
+              -2.507,
+              3.387,
+              -2.416
+            ]
+          },
+          {
+            "serial": 351,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "N",
+            "element": "N",
+            "coordinates_angstrom": [
+              -1.515,
+              4.151,
+              -6.8
+            ]
+          }
+        ],
+        "selected_adjacency_edges": [
+          {
+            "serials": [
+              314,
+              315
+            ],
+            "atom_names": [
+              "C",
+              "O"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              314,
+              331
+            ],
+            "atom_names": [
+              "C",
+              "C3"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              315,
+              320
+            ],
+            "atom_names": [
+              "O",
+              "C232"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              316,
+              317
+            ],
+            "atom_names": [
+              "C2",
+              "C22"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              316,
+              319
+            ],
+            "atom_names": [
+              "C2",
+              "O1"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              316,
+              351
+            ],
+            "atom_names": [
+              "C2",
+              "N"
+            ],
+            "adjacency_sources": [
+              "CONECT",
+              "LINK"
+            ]
+          },
+          {
+            "serials": [
+              317,
+              318
+            ],
+            "atom_names": [
+              "C22",
+              "O223"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              318,
+              331
+            ],
+            "atom_names": [
+              "O223",
+              "C3"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              320,
+              321
+            ],
+            "atom_names": [
+              "C232",
+              "C233"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              320,
+              325
+            ],
+            "atom_names": [
+              "C232",
+              "O237"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              321,
+              322
+            ],
+            "atom_names": [
+              "C233",
+              "C234"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              321,
+              326
+            ],
+            "atom_names": [
+              "C233",
+              "O238"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              322,
+              323
+            ],
+            "atom_names": [
+              "C234",
+              "C235"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              322,
+              327
+            ],
+            "atom_names": [
+              "C234",
+              "O239"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              323,
+              324
+            ],
+            "atom_names": [
+              "C235",
+              "C236"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              323,
+              328
+            ],
+            "atom_names": [
+              "C235",
+              "O240"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              324,
+              325
+            ],
+            "atom_names": [
+              "C236",
+              "O237"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              324,
+              329
+            ],
+            "atom_names": [
+              "C236",
+              "C241"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          },
+          {
+            "serials": [
+              329,
+              330
+            ],
+            "atom_names": [
+              "C241",
+              "O242"
+            ],
+            "adjacency_sources": [
+              "CONECT"
+            ]
+          }
+        ],
+        "unique_n_to_c2_link": {
+          "count": 1,
+          "record": "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.35",
+          "resolved_serials_in_record_order": [
+            351,
+            316
+          ],
+          "phe_b1_n": {
+            "serial": 351,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "N",
+            "element": "N",
+            "coordinates_angstrom": [
+              -1.515,
+              4.151,
+              -6.8
+            ]
+          },
+          "phx_b0_c2": {
+            "serial": 316,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C2",
+            "element": "C",
+            "coordinates_angstrom": [
+              -2.228,
+              4.336,
+              -5.674
+            ]
+          },
+          "interpretation": "LINK is adjacency-only; no bond order or charge is inferred."
+        },
+        "all_selected_resolved_links": [
+          {
+            "record": "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.35",
+            "first_endpoint": {
+              "name": "N",
+              "altloc": "",
+              "residue": "PHE",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": ""
+            },
+            "second_endpoint": {
+              "name": "C2",
+              "altloc": "",
+              "residue": "PHX",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": ""
+            },
+            "resolved_serials_in_record_order": [
+              351,
+              316
+            ],
+            "edge_pair": [
+              316,
+              351
+            ]
+          }
+        ]
+      },
+      "hydrogen_records": {
+        "phx_b0_hydrogen_record_count": 18,
+        "phx_b0_hydrogen_records": [
+          {
+            "serial": 332,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H2A",
+            "element": "H",
+            "coordinates_angstrom": [
+              -1.281,
+              3.195,
+              -7.01
+            ]
+          },
+          {
+            "serial": 333,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H221",
+            "element": "H",
+            "coordinates_angstrom": [
+              -1.793,
+              2.528,
+              -4.584
+            ]
+          },
+          {
+            "serial": 334,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H222",
+            "element": "H",
+            "coordinates_angstrom": [
+              -3.302,
+              2.483,
+              -5.409
+            ]
+          },
+          {
+            "serial": 335,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H1",
+            "element": "H",
+            "coordinates_angstrom": [
+              0.214,
+              1.447,
+              -1.236
+            ]
+          },
+          {
+            "serial": 336,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H2B",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.981,
+              1.005,
+              1.573
+            ]
+          },
+          {
+            "serial": 337,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H3",
+            "element": "H",
+            "coordinates_angstrom": [
+              1.841,
+              0.513,
+              0.51
+            ]
+          },
+          {
+            "serial": 338,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H4",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.362,
+              -1.377,
+              1.476
+            ]
+          },
+          {
+            "serial": 339,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H5",
+            "element": "H",
+            "coordinates_angstrom": [
+              0.912,
+              -0.976,
+              -1.264
+            ]
+          },
+          {
+            "serial": 340,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H6",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.44,
+              3.12,
+              0.668
+            ]
+          },
+          {
+            "serial": 341,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H7",
+            "element": "H",
+            "coordinates_angstrom": [
+              1.685,
+              1.308,
+              2.649
+            ]
+          },
+          {
+            "serial": 342,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H8",
+            "element": "H",
+            "coordinates_angstrom": [
+              1.344,
+              -2.504,
+              1.997
+            ]
+          },
+          {
+            "serial": 343,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H9",
+            "element": "H",
+            "coordinates_angstrom": [
+              -1.259,
+              -2.89,
+              -0.331
+            ]
+          },
+          {
+            "serial": 344,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H10",
+            "element": "H",
+            "coordinates_angstrom": [
+              0.304,
+              -3.303,
+              -1.048
+            ]
+          },
+          {
+            "serial": 345,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H11",
+            "element": "H",
+            "coordinates_angstrom": [
+              -1.222,
+              -3.425,
+              -2.671
+            ]
+          },
+          {
+            "serial": 346,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H12",
+            "element": "H",
+            "coordinates_angstrom": [
+              -3.412,
+              1.508,
+              -1.846
+            ]
+          },
+          {
+            "serial": 347,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H13",
+            "element": "H",
+            "coordinates_angstrom": [
+              -1.84,
+              1.358,
+              -2.68
+            ]
+          },
+          {
+            "serial": 348,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H34",
+            "element": "H",
+            "coordinates_angstrom": [
+              -1.514,
+              3.814,
+              -2.543
+            ]
+          },
+          {
+            "serial": 349,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "H35",
+            "element": "H",
+            "coordinates_angstrom": [
+              -2.989,
+              3.944,
+              -1.588
+            ]
+          }
+        ],
+        "phe_b1_hydrogen_record_count": 8,
+        "phe_b1_hydrogen_records": [
+          {
+            "serial": 362,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HA",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.024,
+              5.43,
+              -7.286
+            ]
+          },
+          {
+            "serial": 363,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HB2",
+            "element": "H",
+            "coordinates_angstrom": [
+              -0.287,
+              3.58,
+              -9.004
+            ]
+          },
+          {
+            "serial": 364,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HB3",
+            "element": "H",
+            "coordinates_angstrom": [
+              -1.632,
+              4.498,
+              -9.644
+            ]
+          },
+          {
+            "serial": 365,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HD2",
+            "element": "H",
+            "coordinates_angstrom": [
+              -1.245,
+              6.264,
+              -11.215
+            ]
+          },
+          {
+            "serial": 366,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HD1",
+            "element": "H",
+            "coordinates_angstrom": [
+              2.039,
+              4.737,
+              -8.854
+            ]
+          },
+          {
+            "serial": 367,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HE2",
+            "element": "H",
+            "coordinates_angstrom": [
+              0.344,
+              7.645,
+              -12.522
+            ]
+          },
+          {
+            "serial": 368,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HE1",
+            "element": "H",
+            "coordinates_angstrom": [
+              3.621,
+              6.126,
+              -10.166
+            ]
+          },
+          {
+            "serial": 369,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "HZ",
+            "element": "H",
+            "coordinates_angstrom": [
+              2.779,
+              7.586,
+              -11.999
+            ]
+          }
+        ],
+        "phe_b1_n_conect_hydrogen_neighbors": [],
+        "nearest_phx_owned_hydrogens_to_phe_b1_n": [
+          {
+            "record_owner": "PHX B 0",
+            "atom": {
+              "serial": 332,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue": "PHX",
+              "altloc": "",
+              "name": "H2A",
+              "element": "H",
+              "coordinates_angstrom": [
+                -1.281,
+                3.195,
+                -7.01
+              ]
+            },
+            "distance_to_phe_b1_n_angstrom": 1.0063756753817135,
+            "explicit_conect_neighbor_of_phe_b1_n": false
+          },
+          {
+            "record_owner": "PHX B 0",
+            "atom": {
+              "serial": 333,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue": "PHX",
+              "altloc": "",
+              "name": "H221",
+              "element": "H",
+              "coordinates_angstrom": [
+                -1.793,
+                2.528,
+                -4.584
+              ]
+            },
+            "distance_to_phe_b1_n_angstrom": 2.760809482742335,
+            "explicit_conect_neighbor_of_phe_b1_n": false
+          },
+          {
+            "record_owner": "PHX B 0",
+            "atom": {
+              "serial": 334,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue": "PHX",
+              "altloc": "",
+              "name": "H222",
+              "element": "H",
+              "coordinates_angstrom": [
+                -3.302,
+                2.483,
+                -5.409
+              ]
+            },
+            "distance_to_phe_b1_n_angstrom": 2.8125564883216123,
+            "explicit_conect_neighbor_of_phe_b1_n": false
+          }
+        ],
+        "ownership_and_connectivity_interpretation": "Hydrogen ownership is the ATOM/HETATM residue record owner; explicit adjacency is reported only from CONECT. Coordinate proximity does not establish an N-H bond."
+      },
+      "correspondence_status": "exact_element_labeled_adjacency_mapping",
+      "source_graph": {
+        "node_count": 19,
+        "element_counts": {
+          "C": 10,
+          "N": 1,
+          "O": 8
+        },
+        "edge_count": 19,
+        "connected_component_count": 1,
+        "cycle_rank_E_minus_V_plus_components": 1
+      },
+      "target_graph_summary": {
+        "node_count": 19,
+        "element_counts": {
+          "C": 10,
+          "N": 1,
+          "O": 8
+        },
+        "edge_count": 19,
+        "connected_component_count": 1,
+        "cycle_rank_E_minus_V_plus_components": 1
+      },
+      "exact_mapping_count": 1,
+      "all_exact_mappings": [
+        {
+          "mapping_id": "mapping_001",
+          "map_id_to_target": {
+            "1": {
+              "target_atom": {
+                "serial": 351,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue": "PHE",
+                "altloc": "",
+                "name": "N",
+                "element": "N",
+                "coordinates_angstrom": [
+                  -1.515,
+                  4.151,
+                  -6.8
+                ]
+              },
+              "source_element": "N"
+            },
+            "2": {
+              "target_atom": {
+                "serial": 316,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C2",
+                "element": "C",
+                "coordinates_angstrom": [
+                  -2.228,
+                  4.336,
+                  -5.674
+                ]
+              },
+              "source_element": "C"
+            },
+            "3": {
+              "target_atom": {
+                "serial": 319,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O1",
+                "element": "O",
+                "coordinates_angstrom": [
+                  -2.641,
+                  5.427,
+                  -5.356
+                ]
+              },
+              "source_element": "O"
+            },
+            "4": {
+              "target_atom": {
+                "serial": 317,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C22",
+                "element": "C",
+                "coordinates_angstrom": [
+                  -2.645,
+                  3.121,
+                  -4.819
+                ]
+              },
+              "source_element": "C"
+            },
+            "5": {
+              "target_atom": {
+                "serial": 318,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O223",
+                "element": "O",
+                "coordinates_angstrom": [
+                  -3.311,
+                  3.483,
+                  -3.594
+                ]
+              },
+              "source_element": "O"
+            },
+            "6": {
+              "target_atom": {
+                "serial": 331,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C3",
+                "element": "C",
+                "coordinates_angstrom": [
+                  -2.507,
+                  3.387,
+                  -2.416
+                ]
+              },
+              "source_element": "C"
+            },
+            "7": {
+              "target_atom": {
+                "serial": 314,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C",
+                "element": "C",
+                "coordinates_angstrom": [
+                  -2.413,
+                  1.932,
+                  -1.956
+                ]
+              },
+              "source_element": "C"
+            },
+            "8": {
+              "target_atom": {
+                "serial": 315,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O",
+                "element": "O",
+                "coordinates_angstrom": [
+                  -1.741,
+                  1.965,
+                  -0.678
+                ]
+              },
+              "source_element": "O"
+            },
+            "9": {
+              "target_atom": {
+                "serial": 320,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C232",
+                "element": "C",
+                "coordinates_angstrom": [
+                  -0.574,
+                  1.144,
+                  -0.553
+                ]
+              },
+              "source_element": "C"
+            },
+            "10": {
+              "target_atom": {
+                "serial": 325,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O237",
+                "element": "O",
+                "coordinates_angstrom": [
+                  -1.001,
+                  -0.224,
+                  -0.769
+                ]
+              },
+              "source_element": "O"
+            },
+            "11": {
+              "target_atom": {
+                "serial": 321,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C233",
+                "element": "C",
+                "coordinates_angstrom": [
+                  -0.141,
+                  1.267,
+                  0.925
+                ]
+              },
+              "source_element": "C"
+            },
+            "12": {
+              "target_atom": {
+                "serial": 326,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O238",
+                "element": "O",
+                "coordinates_angstrom": [
+                  0.238,
+                  2.626,
+                  1.166
+                ]
+              },
+              "source_element": "O"
+            },
+            "13": {
+              "target_atom": {
+                "serial": 322,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C234",
+                "element": "C",
+                "coordinates_angstrom": [
+                  1.003,
+                  0.266,
+                  1.167
+                ]
+              },
+              "source_element": "C"
+            },
+            "14": {
+              "target_atom": {
+                "serial": 327,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O239",
+                "element": "O",
+                "coordinates_angstrom": [
+                  1.407,
+                  0.389,
+                  2.527
+                ]
+              },
+              "source_element": "O"
+            },
+            "15": {
+              "target_atom": {
+                "serial": 323,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C235",
+                "element": "C",
+                "coordinates_angstrom": [
+                  0.509,
+                  -1.169,
+                  0.851
+                ]
+              },
+              "source_element": "C"
+            },
+            "16": {
+              "target_atom": {
+                "serial": 328,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O240",
+                "element": "O",
+                "coordinates_angstrom": [
+                  1.511,
+                  -2.152,
+                  1.109
+                ]
+              },
+              "source_element": "O"
+            },
+            "17": {
+              "target_atom": {
+                "serial": 324,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C236",
+                "element": "C",
+                "coordinates_angstrom": [
+                  0.058,
+                  -1.208,
+                  -0.626
+                ]
+              },
+              "source_element": "C"
+            },
+            "18": {
+              "target_atom": {
+                "serial": 329,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "C241",
+                "element": "C",
+                "coordinates_angstrom": [
+                  -0.508,
+                  -2.573,
+                  -1.054
+                ]
+              },
+              "source_element": "C"
+            },
+            "19": {
+              "target_atom": {
+                "serial": 330,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue": "PHX",
+                "altloc": "",
+                "name": "O242",
+                "element": "O",
+                "coordinates_angstrom": [
+                  -1.099,
+                  -2.516,
+                  -2.355
+                ]
+              },
+              "source_element": "O"
+            }
+          },
+          "mapped_source_edge_distances": [
+            {
+              "source_map_ids": [
+                1,
+                2
+              ],
+              "target_serials": [
+                351,
+                316
+              ],
+              "target_atom_names": [
+                "N",
+                "C2"
+              ],
+              "element_pair": [
+                "N",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT",
+                "LINK"
+              ],
+              "raw_distance_angstrom": 1.3455370674938685,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.29,
+                1.72
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                2,
+                3
+              ],
+              "target_serials": [
+                316,
+                319
+              ],
+              "target_atom_names": [
+                "C2",
+                "O1"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "double",
+              "source_bond_order_numeric_annotation": 2.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.2091211684525247,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.07,
+                1.36
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                2,
+                4
+              ],
+              "target_serials": [
+                316,
+                317
+              ],
+              "target_atom_names": [
+                "C2",
+                "C22"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5430939699188775,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                4,
+                5
+              ],
+              "target_serials": [
+                317,
+                318
+              ],
+              "target_atom_names": [
+                "C22",
+                "O223"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4405641256119077,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                5,
+                6
+              ],
+              "target_serials": [
+                318,
+                331
+              ],
+              "target_atom_names": [
+                "O223",
+                "C3"
+              ],
+              "element_pair": [
+                "O",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4294460465509007,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                6,
+                7
+              ],
+              "target_serials": [
+                331,
+                314
+              ],
+              "target_atom_names": [
+                "C3",
+                "C"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5288757307250318,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                7,
+                8
+              ],
+              "target_serials": [
+                314,
+                315
+              ],
+              "target_atom_names": [
+                "C",
+                "O"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4442842518008703,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                8,
+                9
+              ],
+              "target_serials": [
+                315,
+                320
+              ],
+              "target_atom_names": [
+                "O",
+                "C232"
+              ],
+              "element_pair": [
+                "O",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4323250329446877,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                9,
+                10
+              ],
+              "target_serials": [
+                320,
+                325
+              ],
+              "target_atom_names": [
+                "C232",
+                "O237"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4492787861553758,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                9,
+                11
+              ],
+              "target_serials": [
+                320,
+                321
+              ],
+              "target_atom_names": [
+                "C232",
+                "C233"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5450249188928962,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                17,
+                10
+              ],
+              "target_serials": [
+                324,
+                325
+              ],
+              "target_atom_names": [
+                "C236",
+                "O237"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4526479270628516,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                11,
+                12
+              ],
+              "target_serials": [
+                321,
+                326
+              ],
+              "target_atom_names": [
+                "C233",
+                "O238"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4312941696241204,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                11,
+                13
+              ],
+              "target_serials": [
+                321,
+                322
+              ],
+              "target_atom_names": [
+                "C233",
+                "C234"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5392533904461603,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                13,
+                14
+              ],
+              "target_serials": [
+                322,
+                327
+              ],
+              "target_atom_names": [
+                "C234",
+                "O239"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4240593386513078,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                13,
+                15
+              ],
+              "target_serials": [
+                322,
+                323
+              ],
+              "target_atom_names": [
+                "C234",
+                "C235"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.550199019481047,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                15,
+                16
+              ],
+              "target_serials": [
+                323,
+                328
+              ],
+              "target_atom_names": [
+                "C235",
+                "O240"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.4271849915130133,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                15,
+                17
+              ],
+              "target_serials": [
+                323,
+                324
+              ],
+              "target_atom_names": [
+                "C235",
+                "C236"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5448142283135535,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                17,
+                18
+              ],
+              "target_serials": [
+                324,
+                329
+              ],
+              "target_atom_names": [
+                "C236",
+                "C241"
+              ],
+              "element_pair": [
+                "C",
+                "C"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.5384293938949556,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.34,
+                1.77
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            },
+            {
+              "source_map_ids": [
+                18,
+                19
+              ],
+              "target_serials": [
+                329,
+                330
+              ],
+              "target_atom_names": [
+                "C241",
+                "O242"
+              ],
+              "element_pair": [
+                "C",
+                "O"
+              ],
+              "source_bond_class_annotation": "single",
+              "source_bond_order_numeric_annotation": 1.0,
+              "target_pdb_adjacency_sources": [
+                "CONECT"
+              ],
+              "raw_distance_angstrom": 1.430080766949895,
+              "broad_heuristic_screen_interval_angstrom": [
+                1.24,
+                1.67
+              ],
+              "geometry_screen_only": true,
+              "screen_result": "in_range"
+            }
+          ],
+          "geometry_screen_summary": {
+            "edge_count": 19,
+            "in_range_count": 19,
+            "out_of_range_count": 0,
+            "minimum_distance_angstrom": 1.2091211684525247,
+            "maximum_distance_angstrom": 1.550199019481047,
+            "interpretation": "Distances are observed after graph mapping; no mapping was selected or rejected by geometry."
+          }
+        }
+      ],
+      "source_graph_symmetry": {
+        "automorphism_count_element_and_adjacency_preserving": 1,
+        "source_node_orbits": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ],
+          [
+            7
+          ],
+          [
+            8
+          ],
+          [
+            9
+          ],
+          [
+            10
+          ],
+          [
+            11
+          ],
+          [
+            12
+          ],
+          [
+            13
+          ],
+          [
+            14
+          ],
+          [
+            15
+          ],
+          [
+            16
+          ],
+          [
+            17
+          ],
+          [
+            18
+          ],
+          [
+            19
+          ]
+        ],
+        "mapping_groups_by_source_graph_symmetry": [
+          {
+            "symmetry_group_id": "symmetry_01",
+            "mapping_ids": [
+              "mapping_001"
+            ],
+            "representative_target_serial_vector_by_sorted_source_map": [
+              351,
+              316,
+              319,
+              317,
+              318,
+              331,
+              314,
+              315,
+              320,
+              325,
+              321,
+              326,
+              322,
+              327,
+              323,
+              328,
+              324,
+              329,
+              330
+            ]
+          }
+        ],
+        "bond_orders_and_coordinates_not_used_for_symmetry_or_mapping": true
+      },
+      "source_model_context": {
+        "source_model_path": "structures/nnc2215-closed-model.pdb",
+        "source_model_sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+        "coordinate_status": "Publisher-supplied model coordinates; not an experimentally resolved NNC2215 structure."
+      }
+    }
+  ],
+  "overall_correspondence_status": "both_candidates_exact",
+  "candidate_pdbs_modified_by_audit": false,
+  "limits": [
+    "The corrected candidate coordinates are derivatives of publisher-supplied author models, not experimentally resolved NNC2215 structures.",
+    "PDB LINK and CONECT records establish adjacency only; this audit does not infer their bond order, formal charge, or stereochemistry.",
+    "Source bond classes are annotations transferred after exact graph mapping. Heuristic distance intervals are a geometry screen only and do not choose mappings.",
+    "PheB1 backbone atoms beyond the N boundary endpoint are outside the B1 attachment component graph.",
+    "The B1\u2013B22 mass check is a fragment-composition benchmark under stated cleavage/reduction assumptions; it does not prove atom-by-atom coordinates.",
+    "Physiological protonation, full-conjugate graph, formal charges, custom force-field parameters, and simulation stability remain unvalidated.",
+    "No target-binding molecular dynamics readiness is established by this B1 topology audit."
+  ]
+}

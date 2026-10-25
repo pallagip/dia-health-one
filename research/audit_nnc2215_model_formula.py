@@ -474,7 +474,7 @@ def main() -> None:
             "target_binding_md_started": False,
             "clinical_use": False,
         },
-        "next_gate": "Map the source-derived B1 and B29 building blocks atom by atom onto PHX/LYX/MC, reconcile the two-carbon excess in the B29-linked PDB pool and the remaining hydrogen/link-record differences, then validate the complete graph, stereochemistry, protonation, charges, and force-field parameters before target binding MD.",
+        "next_gate": "Refine the ambiguous B29 source-to-coordinate mappings, resolve the two-carbon excess in the B29-linked PDB pool, and reconcile the remaining hydrogen/link-record differences; then join the audited B1 and B29 components to the insulin backbone and validate the complete graph, protonation, charges, and force-field parameters before target binding MD.",
     }
     OUTPUT_PATH.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps({

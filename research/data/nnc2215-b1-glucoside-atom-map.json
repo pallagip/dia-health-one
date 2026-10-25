@@ -1,0 +1,171 @@
+{
+  "schema": "dia-health-one.nnc2215-b1-glucoside-atom-map.v1",
+  "graph_file": "structures/nnc2215-b1-glucoside-attachment.smi",
+  "graph_name": "nnc2215_b1_glucoside_attachment",
+  "scope": "Source-supported deprotected B1 glucoside attachment through the PheB1 N boundary atom. The insulin backbone beyond that nitrogen, including its N–Cα peptide continuation, is outside this component graph.",
+  "sources": {
+    "nature_article": {
+      "doi": "10.1038/s41586-024-08042-3",
+      "article_url": "https://www.nature.com/articles/s41586-024-08042-3",
+      "figure_2a_product_drawing_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig2_HTML.png",
+      "locations": [
+        "Fig. 2a: NNC2215 product drawing, including the B1 glucoside connection.",
+        "Chemistry: O1-glucoside is attached through a short linker at the B-chain N-terminal amino group PheB1.",
+        "Methods, Synthesis of NNC2215: desB30 insulin is coupled at B1 with the peracetyl glucoside active ester; acetyl groups are removed by gentle saponification."
+      ]
+    },
+    "extended_data_figure_7b": {
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig12_ESM.jpg",
+      "location": "Extended Data Fig. 7b, beta-carboxymethyl-oxyethyl-O-peracetyl-D-glucoside active ester. The figure labels the glucose carbons C1–C6; linker carbons are not assigned separate numeric source labels."
+    },
+    "supporting_information": {
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+      "section_2": "pp. 2–4: synthesis of beta-carboxymethyl-oxyethyl-O-peracetyl-D-glucoside active ester; H-1 doublet J=7.9 Hz; glucose and linker NMR assignments; peracetylated acid is converted to the active ester.",
+      "section_4": "pp. 10–11: active ester coupling to B1 at pH 7.5, isolation of B1-O-peracetyl-glycoside, then saponification at pH 10.5 for 6 hours to the B1 glycoside.",
+      "mass_benchmark": "§4, p. 11: following trypsin and TCEP treatment, glucoside is reported on the B1–B22 fragment at measured 1376.6 and calculated 1376.2 [M+2H]2+."
+    },
+    "patent": {
+      "publication": "WO2023144240A1",
+      "url": "https://patents.google.com/patent/WO2023144240A1/en",
+      "location": "Example 2 (INS2): B1 glycoside active-ester coupling to B29-alkyne insulin at pH 7.5, followed by sodium-carbonate saponification of the O-acetyl esters; see paragraphs describing INS2 and the B1-O-peracetyl-glycoside intermediate."
+    }
+  },
+  "transcription": {
+    "protein_to_sugar_sequence": "PheB1 N–C(=O)–CH2–O–CH2–CH2–O–C1(beta-D-glucopyranose)",
+    "deprotected_sugar_hydroxyls": ["C2", "C3", "C4", "C6"],
+    "source_numbering": "Glucose C1–C6 labels are retained from Extended Data Fig. 7b and SI NMR assignments. The linker is mapped by its depicted OCH2C=O and OCH2CH2O groups; no linker carbon numbering is invented.",
+    "linker_orientation": "The glycosidic oxygen on glucose C1 connects to O–CH2–CH2–O–CH2–C(=O); the carbonyl carbon is attached to the PheB1 N endpoint.",
+    "stereochemistry": {
+      "designation": "beta-D-glucopyranoside",
+      "evidence": [
+        "Extended Data Fig. 7b depicts the beta-D glucoside and its glucose C1–C6 stereochemical substituent pattern.",
+        "SI §2 reports H-1 as a doublet with J=7.9 Hz, consistent with the beta-D-glucopyranoside anomer.",
+        "The detached sugar graph matches the beta-D-glucose reference structure (PubChem CID 64689; InChIKey WQZGKKKJIJFFOK-VFUOTHLCSA-N).",
+        "RDKit accurate CIP labels are used; RDKit documents its legacy CIP implementation as approximate and known to mislabel some centers."
+      ],
+      "rdkit_cip_by_source_glucose_carbon": {
+        "C1": "R",
+        "C2": "R",
+        "C3": "S",
+        "C4": "S",
+        "C5": "R",
+        "C6": "not stereogenic (CH2OH)"
+      },
+      "stereocenter_atom_maps": {"C1": 9, "C2": 11, "C3": 13, "C4": 15, "C5": 17}
+    }
+  },
+  "map_id_legend": {
+    "1": {
+      "element_in_smiles": "*",
+      "role": "Mapped protein-boundary placeholder for PheB1 N; it is joined to the B1 acyl carbonyl.",
+      "model_match_element": "N",
+      "model_match_identity": "Insulin B-chain PheB1 backbone N; this dummy is not included in substituent formulae or heavy-atom inventory."
+    },
+    "2": {"element": "C", "source_label": null, "role": "B1 linker carbonyl carbon; amide carbonyl attached to PheB1 N."},
+    "3": {"element": "O", "source_label": null, "role": "B1 amide carbonyl oxygen."},
+    "4": {"element": "C", "source_label": null, "role": "Methylene alpha to the carbonyl; source NMR group OCH2C=O."},
+    "5": {"element": "O", "source_label": null, "role": "Ether oxygen between the carbonyl-alpha methylene and the ethylene linker."},
+    "6": {"element": "C", "source_label": null, "role": "First ethylene-linker methylene, adjacent to map 5."},
+    "7": {"element": "C", "source_label": null, "role": "Second ethylene-linker methylene, adjacent to the glycosidic-side ether oxygen map 8."},
+    "8": {"element": "O", "source_label": null, "role": "Glycosidic-side ether oxygen linking the ethylene linker to glucose C1."},
+    "9": {"element": "C", "source_label": "C1", "role": "Anomeric glucose carbon; beta-D glycosidic attachment site."},
+    "10": {"element": "O", "source_label": null, "role": "Glucopyranose ring oxygen between glucose C5 and C1."},
+    "11": {"element": "C", "source_label": "C2", "role": "Glucose C2 stereocenter bearing a free hydroxyl at map 12."},
+    "12": {"element": "O", "source_label": null, "role": "Free hydroxyl oxygen at glucose C2."},
+    "13": {"element": "C", "source_label": "C3", "role": "Glucose C3 stereocenter bearing a free hydroxyl at map 14."},
+    "14": {"element": "O", "source_label": null, "role": "Free hydroxyl oxygen at glucose C3."},
+    "15": {"element": "C", "source_label": "C4", "role": "Glucose C4 stereocenter bearing a free hydroxyl at map 16."},
+    "16": {"element": "O", "source_label": null, "role": "Free hydroxyl oxygen at glucose C4."},
+    "17": {"element": "C", "source_label": "C5", "role": "Glucose C5 stereocenter; bears the C6 hydroxymethyl substituent and ring oxygen map 10."},
+    "18": {"element": "C", "source_label": "C6", "role": "Glucose C6 hydroxymethyl carbon."},
+    "19": {"element": "O", "source_label": null, "role": "Free hydroxyl oxygen at glucose C6."}
+  },
+  "key_connectivity": [
+    {"atoms": [1, 2], "bond": "single", "role": "PheB1 N–amide carbonyl C; map 1 is the N boundary placeholder."},
+    {"atoms": [2, 3], "bond": "double", "role": "Amide carbonyl."},
+    {"atoms": [2, 4], "bond": "single"},
+    {"atoms": [4, 5], "bond": "single"},
+    {"atoms": [5, 6], "bond": "single"},
+    {"atoms": [6, 7], "bond": "single"},
+    {"atoms": [7, 8], "bond": "single"},
+    {"atoms": [8, 9], "bond": "single", "role": "Glycosidic ether to glucose C1."},
+    {"atoms": [9, 11], "bond": "single"},
+    {"atoms": [11, 13], "bond": "single"},
+    {"atoms": [13, 15], "bond": "single"},
+    {"atoms": [15, 17], "bond": "single"},
+    {"atoms": [17, 10], "bond": "single"},
+    {"atoms": [10, 9], "bond": "single", "role": "Glucopyranose ring closure."},
+    {"atoms": [11, 12], "bond": "single", "role": "C2 free hydroxyl."},
+    {"atoms": [13, 14], "bond": "single", "role": "C3 free hydroxyl."},
+    {"atoms": [15, 16], "bond": "single", "role": "C4 free hydroxyl."},
+    {"atoms": [17, 18], "bond": "single"},
+    {"atoms": [18, 19], "bond": "single", "role": "C6 free hydroxyl."}
+  ],
+  "transformations": {
+    "requested_graph_path": [
+      {
+        "from": "beta-carboxymethyl-oxyethyl-O-peracetyl-D-glucoside active ester",
+        "to": "deprotected beta-carboxymethyl-oxyethyl-D-glucoside acid representation",
+        "operations": [
+          "Replace the phenolic active-ester leaving group on the terminal acyl carbon with OH.",
+          "Remove the four O-acetyl protecting groups at glucose C2, C3, C4 and C6."
+        ],
+        "deprotected_acid_formula": "C10H18O9",
+        "source_note": "This is the normalized graph intermediate used for the formula and amide mass balance. The published NNC2215 procedure does not isolate this deprotected acid before protein coupling."
+      },
+      {
+        "from": "deprotected beta-carboxymethyl-oxyethyl-D-glucoside acid",
+        "to": "PheB1 N amide",
+        "operations": ["Form PheB1 N–C(=O) bond; net loss of H2O from the acid plus insulin amino group."],
+        "net_attachment_increment": "C10H16O8"
+      }
+    ],
+    "published_procedure": [
+      "The peracetylated active ester couples to insulin at B1 to give a peracetylated B1 glycoside amide.",
+      "Saponification then removes the four sugar O-acetyl groups to give the deprotected B1 glycoside."
+    ],
+    "active_ester_to_product_leaving_group": "The active ester aryl-sulfonate group and its Br/CF3/sulfonate atoms are not part of the product graph."
+  },
+  "composition": {
+    "net_attachment_increment_relative_to_unmodified_insulin": "C10H16O8",
+    "substituent_heavy_inventory_excluding_map_1_placeholder": {"C": 10, "O": 8},
+    "placeholder_heavy_inventory_contribution": 0,
+    "inventory_note": "RDKit's mapped-dummy graph formula includes the side chain's 17 implicit hydrogens and a dummy atom. The net protein increment is one hydrogen lower because the PheB1 amino group loses one N–H as the amide bond forms."
+  },
+  "published_fragment_benchmark": {
+    "fragment": "B1–B22 glucoside-bearing insulin B-chain fragment",
+    "observed_m_z": 1376.6,
+    "calculated_m_z": 1376.2,
+    "charge_state": "[M+2H]2+",
+    "source": "Nature SI §4, p. 11.",
+    "sample_processing": [
+      "Trypsin cleaves after ArgB22 to release the B23–B29 fragment from the B1–B22 fragment.",
+      "TCEP reduces insulin disulfides to separate A and B chains.",
+      "LC–MS assigns the glucoside to B1–B22; the reported 2+ ion is a peptide-fragment composition check, not a standalone mass measurement of the substituent."
+    ]
+  },
+  "rdkit_validation": {
+    "rdkit_version": "2026.03.1",
+    "smiles_parse_and_sanitize": "pass",
+    "mapped_atom_count_including_dummy": 19,
+    "atom_map_ids_unique": true,
+    "map_id_range": [1, 19],
+    "rdkit_graph_formula_including_dummy": "C10H17*O8",
+    "rdkit_deprotected_acid_formula": "C10H18O9",
+    "formula_balance": "C10H18O9 - H2O = C10H16O8",
+    "heavy_inventory_excluding_dummy": {"C": 10, "O": 8},
+    "connected_components": 1,
+    "cycle_rank_E_minus_V_plus_components": 1,
+    "stereocenters_by_map_id": {"9": "R", "11": "R", "13": "S", "15": "S", "17": "R"},
+    "stereocenter_count": 5,
+    "stereochemistry_note": "All five glucose stereocenters C1–C5 are assigned by RDKit accurate CIP; the detached sugar graph matches the beta-D-glucose reference InChIKey WQZGKKKJIJFFOK-VFUOTHLCSA-N. C6 is achiral CH2OH.",
+    "cip_method": "RDKit accurate CIP implementation (useLegacyImplementation=False); legacy CIP is approximate and may misassign labels.",
+    "cip_method_reference_url": "https://www.rdkit.org/docs/RDKit_Book.html#assignment-of-absolute-stereochemistry",
+    "beta_d_glucose_reference": {"name": "beta-D-glucose", "pubchem_cid": 64689, "url": "https://pubchem.ncbi.nlm.nih.gov/compound/64689", "detached_graph_formula": "C6H12O6", "detached_graph_inchikey": "WQZGKKKJIJFFOK-VFUOTHLCSA-N", "match": true}
+  },
+  "limitations": [
+    "The PheB1 N endpoint is a mapped dummy placeholder whose model-match element is N; the insulin backbone is not included.",
+    "The B1–B22 fragment mass supports the modified-fragment assignment and composition but does not independently establish atom-by-atom coordinates.",
+    "The graph specifies neutral hydroxyls and an amide connectivity representation; it does not assign physiological protonation, charges, force-field parameters or a full-conjugate topology."
+  ]
+}

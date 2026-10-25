@@ -1,7 +1,7 @@
 # NNC2215 chemistry reconciliation
 
 **Updated:** 25 October 2026
-**Decision:** A source-derived B29 linker–roof product component graph now parses and sanitizes as C62N16O14, with 92 heavy atoms, 99 edges, one component, and cycle rank 8. It exactly matches the element-labeled adjacency of both corrected, model-built coordinate candidates, but each state retains 16 exact mappings and eight distinct source bond-label transfer classes. Map IDs 78–92 are fixed across those mappings; the complete source-to-coordinate assignment is not unique. The Nature product drawing supports the 1,4 click regiochemistry. This component audit does not validate the full insulin conjugate, simulation chemistry, or a production model.
+**Decision:** Source-derived B1 glucoside and B29 linker–roof product components now match the element-labeled adjacency in both corrected, model-built coordinate candidates. The B1 component has one exact mapping per state and matches the beta-D-glucose reference graph; its B1–B22 fragment mass rounds to the Nature SI value. The B29 component has 16 mappings per state and eight distinct source bond-label transfer classes, so its full assignment is not unique. Neither component audit validates the complete insulin conjugate, PDB bond orders, protonation, charges, force-field parameters, or a production model.
 
 ## Evidence reviewed
 
@@ -45,6 +45,12 @@ The full graph audit is in [`data/nnc2215-b29-topology-audit.json`](data/nnc2215
 
 The [Nature Fig. 2a product drawing](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig2_HTML.png) places the roof substituent at triazole N1 and the B29 linker at C4, supporting the source-derived 1,4-disubstituted 1,2,3-triazole assignment. This assignment comes from the product drawing, not PDB adjacency or distances. The PDB CONECT/LINK records encode adjacency only; they do not establish bond order, formal charge, or stereochemistry.
 
+## B1 beta-D-glucoside graph and candidate audit — 25 October 2026
+
+The mapped B1 component is recorded in [`structures/nnc2215-b1-glucoside-attachment.smi`](structures/nnc2215-b1-glucoside-attachment.smi), with source roles and graph evidence in [`data/nnc2215-b1-glucoside-atom-map.json`](data/nnc2215-b1-glucoside-atom-map.json). It contains 19 mapped atoms including the PheB1 N boundary placeholder and 19 edges. Removing the linker while retaining and protonating the glycosidic oxygen yields C6H12O6 and matches the beta-D-glucose PubChem reference InChIKey WQZGKKKJIJFFOK-VFUOTHLCSA-N. Accurate RDKit CIP labels by source glucose carbons C1–C5 are R/R/S/S/R. This comparison caught and corrected three inverted SMILES tags at glucose C2, C3, and C5.
+
+The B1 audit in [`data/nnc2215-b1-topology-audit.json`](data/nnc2215-b1-topology-audit.json) finds one exact element-labeled adjacency mapping for each of the open and closed candidates. From the B1–B22 sequence, reduced cysteines, free peptide termini, and net B1 attachment increment C10H16O8, it derives C120H187N31O39S2 and [M+2H]2+ 1376.15947, which rounds to the SI's calculated 1376.2. The reported measured value is 1376.6. These are graph and fragment-composition checks; the model PDBs do not establish bond orders, formal charge, protonation, or stereochemistry. The N–H record also differs between candidates: the open PheB1 N has an explicit CONECT hydrogen, while the closed model has no CONECT edge to its nearby PHX H2A record (1.006 Å away). Re-run with [`audit_nnc2215_b1_topology.py`](audit_nnc2215_b1_topology.py) using `micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/audit_nnc2215_b1_topology.py`.
+
 For each state, the audit records 1,584 mapped edge-distance measurements (99 edges across 16 mappings). Distances span 1.2116–1.5611 Å in the open candidate and 1.2116–1.5548 Å in the closed candidate. Fourteen of 16 mappings per state have one to three heuristic short carboxyl C–O distances outside broad plausibility intervals; two mappings per state are fully within the screen. The intervals use covalent-radius sums with disclosed heuristic bond-class offsets, based on Cordero et al., “Covalent radii revisited” (2008), [DOI 10.1039/B801115J](https://doi.org/10.1039/B801115J). These distances neither establish bond order nor select a mapping.
 
 Hydrogen-neighbor records differ at roof C22/C23 and linker C4–C6. At map 85 (linker C4), the open candidate records HC1 and HXTA while the closed candidate records HXTA only, one fewer hydrogen record. At roof maps 79/80 and linker maps 86/87, the recorded hydrogen names differ while counts match. These are CONECT-record observations, not validated hydrogen chemistry.
@@ -56,7 +62,7 @@ The inputs are corrected candidate PDB derivatives of publisher-supplied model-b
 These are source-informed expectations for a future graph review, not final force-field assignments:
 
 - The B29 Lys ε-amino group is converted to a carbamate in the pentynyl linker. The source product drawing supports the 1,4-disubstituted 1,2,3-triazole; the candidate PDBs do not independently establish that bond labeling.
-- The B1 Phe α-amino group is acylated by the glucoside linker and is neutral in that conjugated form. The glucoside is the deprotected D-glucoside specified by the synthesis scheme; its anomer and every mapped stereocentre must be explicitly verified from the source drawing, rather than inferred from PDB coordinates.
+- The B1 Phe α-amino group is acylated by the glucoside linker and is neutral in that conjugated form. The deprotected β-D-glucoside graph and mapped C1–C5 stereochemistry are now verified against the source scheme, the SI anomeric coupling, and a beta-D-glucose reference structure. PDB adjacency does not establish stereochemistry.
 - The macrocycle has three reported carboxylic-acid groups. Their likely dominant state near pH 7.4 is three carboxylates, but the complete charge assignment must be computed from the resolved graph and checked against pKa/microstate assumptions.
 - The existing isolated PaG audit supports the singly deprotonated glucuronate, net charge −1, and five CIP labels S, S, R, S, S. It validates the isolated ligand files only; it does not validate the NNC2215 conjugate.
 - The full insulin system requires an explicit pH 7.4 protonation inventory, including terminal groups, ionizable side chains, disulfides, and the conjugation sites. A pH label alone does not define that inventory.
@@ -65,9 +71,9 @@ The current PDB records also disagree around hydrogen ownership: the closed mode
 
 ## Evidence required to close chemistry
 
-1. A complete atom-mapped graph for B1, the insulin attachment sites, and the full conjugate, extending the source-derived B29 linker–roof component already recorded here; independently check it against the synthesis schemes and patent.
-2. Independent chemistry review of the candidate MC C27/C29 removal and C28/C30 aryl-methyl mapping, plus a one-to-one graph-to-coordinate mapping for both states that explains the differing hydrogen/link records.
-3. Explicit bond orders, aromaticity, stereochemistry, protonation microstates, formal-charge ledger and integer total charge for each simulated condition. The source drawing supports the 1,4 CuAAC regiochemistry, while the candidate coordinates do not resolve scaffold bond-label transfer.
+1. Join the source-mapped B1 and B29 attachment components to the insulin backbone and modification sites in a complete atom-mapped conjugate graph; independently check the complete graph against the synthesis schemes and patent.
+2. Independently review the candidate MC C27/C29 removal and C28/C30 aryl-methyl mapping, refine the ambiguous B29 graph-to-coordinate mappings, and reconcile the differing hydrogen/link records. The B1 component already has a one-to-one adjacency mapping in each state.
+3. Explicit bond orders, aromaticity, remaining complete-conjugate stereochemistry, protonation microstates, formal-charge ledger and integer total charge for each simulated condition. The source drawing supports the 1,4 CuAAC regiochemistry, while the candidate coordinates do not resolve scaffold bond-label transfer.
 4. A versioned structure file with the validated graph, atom names and source links. Compare the mapped source graph against the reported formula and HRMS.
 5. Only after items 1–4 pass: select one force-field family and validate custom macrocycle/linker parameters, carbohydrate compatibility, PaG, torsions/conformers, charge sums and prepared-system energies.
 
