@@ -1,0 +1,215 @@
+{
+  "schema": "dia-health-one.nnc2215-b29-linker-roof-product-map.v1",
+  "graph_file": "structures/nnc2215-b29-linker-roof-product.smi",
+  "graph_sha256": "b677316c1fced61045d2eebab4de85cdb2f1ef956280d18ab9d610df1181bd40",
+  "graph_name": "nnc2215_b29_linker_roof_product",
+  "scope": "Source-mapped roof macrocycle plus B29 linker through the LysB29 NZ endpoint; this is not the complete insulin conjugate.",
+  "sources": {
+    "article_doi": "10.1038/s41586-024-08042-3",
+    "article_url": "https://www.nature.com/articles/s41586-024-08042-3",
+    "article_pdf_url": "https://www.nature.com/articles/s41586-024-08042-3.pdf",
+    "figure_2a_product_drawing_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig2_HTML.png",
+    "extended_data_figure_7a_linker_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig12_ESM.jpg",
+    "extended_data_figure_8i_roof_azide_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig13_ESM.jpg",
+    "supporting_information_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+    "supporting_information_method": "§4, Preparation of insulin conjugate NNC2215",
+    "cited_click_chemistry_reference": "Meldal, M. & Tornøe, C. W. Cu-catalyzed azide-alkyne cycloaddition. Chemical Reviews 108, 2952–3015 (2008), cited as reference 17 in the article."
+  },
+  "source_transcription": {
+    "b29_linker": {
+      "name": "O-succinimidyl pentyn-1-oxycarbonyl",
+      "evidence": "Extended Data Fig. 7a numbers linker carbons C3–C8; the article Methods and Supporting Information §4 describe coupling it to desB30 human insulin at B29 and displacement of the succinimidyl leaving group.",
+      "transferred_product_sequence": "LysB29 NZ–C3(=O)–O–C4H2–C5H2–C6H2–C7≡C8H before click; C3–C8 labels are source labels."
+    },
+    "roof_azide": {
+      "evidence": "Extended Data Fig. 8i numbers the roof propyl chain C21–C23 and shows terminal N3; the inherited graph maps C21–C23 to 78–80 and the azide nitrogens to 81–83.",
+      "preserved_roof_map_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83]
+    },
+    "click_product": {
+      "reaction": "Cu(I)-catalysed azide–alkyne cycloaddition, as described in the article Methods and Supporting Information.",
+      "regiochemistry_status": "source-supported 1,4-disubstituted 1,2,3-triazole",
+      "evidence": "Nature Fig. 2a directly draws the product with the roof propyl substituent bonded to triazole N1 and the B29 linker substituent bonded to C4. This assigns source azide N attached to C23 as N1, internal alkyne carbon C7 as C4, and terminal alkyne carbon C8 as C5. The atom assignment follows the primary product drawing, not PDB adjacency or distances.",
+      "product_map_assignments": {
+        "roof_chain_C23_map": 80,
+        "roof_substituent_triazole_N1_map": 81,
+        "triazole_N2_map": 82,
+        "triazole_N3_map": 83,
+        "linker_internal_alkyne_C7_becomes_triazole_C4_map": 88,
+        "linker_terminal_alkyne_C8_becomes_triazole_C5_map": 89
+      }
+    }
+  },
+  "input_audit_files": {
+    "roof_graph": {
+      "path": "structures/nnc2215-roof-propyl-azide.smi",
+      "sha256": "ed4340362d1436fc7518bfc577d6d23ac4b8434d3b60f40492b2bb36fd394325"
+    },
+    "roof_atom_map_legend": {
+      "path": "data/nnc2215-roof-macrocycle-atom-map.json",
+      "sha256": "48f716a63696d01f89339d0e6da009d9794ffd03e8349dc9a3fd471248e75ec8"
+    },
+    "linker_mapping_audit": {
+      "path": "data/nnc2215-linker-mapping-audit.json",
+      "sha256": "1c39ec94156c7047e1316d429c31875675c6d8cf43dc9dc98c424e8efcbd0c97"
+    },
+    "source_chemistry_audit": {
+      "path": "data/nnc2215-chemistry-source-audit.json",
+      "sha256": "3e8918bfe088575cd7c6870d8e1b4ae20a32b933c97afa43e8566b5c25c4b31e"
+    }
+  },
+  "map_id_legend": {
+    "inherited_roof_map_ids_1_to_83": {
+      "floor_aromatic_ring": [1, 2, 3, 4, 5, 6],
+      "roof_aromatic_ring": [7, 8, 9, 10, 11, 12],
+      "three_spacer_aromatic_rings_in_graph_order": [[13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30]],
+      "three_floor_ethyl_substituents": [[31, 32], [33, 34], [35, 36]],
+      "floor_to_spacer_urea_bridges": [37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+      "three_carboxyl_groups": [[52, 53, 54], [60, 61, 62], [68, 69, 70]],
+      "spacer_to_roof_urea_bridges": [[55, 56, 57, 58, 59], [63, 64, 65, 66, 67], [71, 72, 73, 74, 75]],
+      "roof_methyl_substituents": [76, 77],
+      "roof_tail_source_C21_C22_C23": {"C21": 78, "C22": 79, "C23": 80},
+      "azide_precursor_nitrogens_now_triazole_N1_N2_N3": [81, 82, 83]
+    },
+    "added_product_atoms_84_to_92": {
+      "84": "source linker C3, carbamate carbonyl carbon",
+      "85": "source linker C4, oxygen-linked methylene",
+      "86": "source linker C5 methylene",
+      "87": "source linker C6 methylene adjacent to C7",
+      "88": "source linker C7 internal alkyne carbon; product triazole C4",
+      "89": "source linker C8 terminal alkyne carbon; product triazole C5",
+      "90": "linker carbamate carbonyl oxygen",
+      "91": "linker carbamate ether oxygen",
+      "92": "LysB29 NZ attachment endpoint"
+    }
+  },
+  "added_atom_assignments": [
+    {
+      "map_id": 84,
+      "element": "C",
+      "source_label": "C3",
+      "source_role": "Carbonyl carbon of O-succinimidyl pentyn-1-oxycarbonyl; product carbamate carbonyl carbon.",
+      "candidate_pdb_atom_names": {"open": "LYX B30 CD1", "closed": "LYX B30 CD1"},
+      "candidate_label_status": "Candidate coordinate-map labels only; not source-authoritative."
+    },
+    {
+      "map_id": 85,
+      "element": "C",
+      "source_label": "C4",
+      "source_role": "Methylene directly bonded to the linker ether oxygen.",
+      "candidate_pdb_atom_names": {"open": "LYX B30 CD2", "closed": "LYX B30 CD2"},
+      "candidate_label_status": "Candidate coordinate-map labels only; not source-authoritative."
+    },
+    {
+      "map_id": 86,
+      "element": "C",
+      "source_label": "C5",
+      "source_role": "Linker methylene between source carbons C4 and C6.",
+      "candidate_pdb_atom_names": {"open": "LYX B30 C1", "closed": "LYX B30 C1"},
+      "candidate_label_status": "Candidate coordinate-map labels only; not source-authoritative."
+    },
+    {
+      "map_id": 87,
+      "element": "C",
+      "source_label": "C6",
+      "source_role": "Linker methylene adjacent to internal alkyne carbon C7.",
+      "candidate_pdb_atom_names": {"open": "LYX B30 C2", "closed": "LYX B30 C2"},
+      "candidate_label_status": "Candidate coordinate-map labels only; not source-authoritative."
+    },
+    {
+      "map_id": 88,
+      "element": "C",
+      "source_label": "C7",
+      "source_role": "Internal alkyne carbon; becomes linker-substituted triazole C4 in the Fig. 2a product.",
+      "candidate_pdb_atom_names": {"open": "LYX B30 CD3", "closed": "LYX B30 CD3"},
+      "candidate_label_status": "Candidate coordinate-map labels only; not source-authoritative."
+    },
+    {
+      "map_id": 89,
+      "element": "C",
+      "source_label": "C8",
+      "source_role": "Terminal alkyne carbon; becomes triazole C5 and retains one carbon-bound hydrogen in the neutral product representation.",
+      "candidate_pdb_atom_names": {"open": "LYX B30 CD4", "closed": "LYX B30 CD4"},
+      "candidate_label_status": "Candidate coordinate-map labels only; not source-authoritative."
+    },
+    {
+      "map_id": 90,
+      "element": "O",
+      "source_label": null,
+      "source_role": "Double-bond oxygen of the C3 carbamate carbonyl.",
+      "candidate_pdb_atom_names": {"open": "LYX B30 OD", "closed": "LYX B30 O"},
+      "candidate_label_status": "Candidate coordinate-map labels only; the open/closed names differ in the input models."
+    },
+    {
+      "map_id": 91,
+      "element": "O",
+      "source_label": null,
+      "source_role": "Ether oxygen between carbonyl carbon C3 and source linker carbon C4.",
+      "candidate_pdb_atom_names": {"open": "LYX B30 O1", "closed": "LYX B30 O1"},
+      "candidate_label_status": "Candidate coordinate-map labels only; not source-authoritative."
+    },
+    {
+      "map_id": 92,
+      "element": "N",
+      "source_label": "LysB29 NZ",
+      "source_role": "B29 lysine epsilon nitrogen attached to carbamate carbonyl C3; represented as an NH2-capped component boundary because CE and the remaining lysine/insulin continuation are omitted.",
+      "candidate_pdb_atom_names": {"open": "LYS B29 NZ", "closed": "LYS B29 NZ"},
+      "candidate_label_status": "Candidate coordinate-map labels only; endpoint identity and atom names are observed in the model records, but no authority is claimed for the inferred full conjugate graph from PDB adjacency."
+    }
+  ],
+  "bond_order_representation": {
+    "smiles_bond_form": "Explicit Kekulé single/double bonds are written for the new linker and click ring; RDKit sanitization perceives the triazole ring as aromatic.",
+    "carbamate_connectivity": [
+      {"atoms": [92, 84], "bond": "single", "description": "LysB29 NZ–C3"},
+      {"atoms": [84, 90], "bond": "double", "description": "C3=carbonyl O"},
+      {"atoms": [84, 91], "bond": "single", "description": "C3–ether O"},
+      {"atoms": [91, 85], "bond": "single", "description": "ether O–C4"}
+    ],
+    "linker_chain_connectivity": [
+      {"atoms": [85, 86], "bond": "single"},
+      {"atoms": [86, 87], "bond": "single"},
+      {"atoms": [87, 88], "bond": "single"}
+    ],
+    "click_ring_kekule_connectivity": [
+      {"atoms": [80, 81], "bond": "single", "description": "roof C23–azide-derived triazole N1"},
+      {"atoms": [81, 82], "bond": "single"},
+      {"atoms": [82, 83], "bond": "double"},
+      {"atoms": [83, 88], "bond": "single"},
+      {"atoms": [88, 89], "bond": "double"},
+      {"atoms": [89, 81], "bond": "single"}
+    ],
+    "consumed_terminal_alkyne": "The precursor C7≡C8 triple bond is consumed; C7 map 88 and C8 map 89 are triazole ring atoms in the product."
+  },
+  "representation_boundaries": {
+    "roof_carboxyl_groups": "All three macrocycle carboxyl groups retain the neutral COOH form drawn in the source: map groups [52,53,54], [60,61,62], and [68,69,70]. This is a graph representation choice, not a physiological protonation assignment.",
+    "lys_b29_cut": "Map 92 is the NZ endpoint, represented as NH2 to cap the isolated graph and satisfy valence. The LysB29 CE continuation and all other insulin atoms are outside this graph. The computed total-hydrogen formula therefore describes this capped graph and is not the hydrogen formula of the actual conjugate.",
+    "stereochemistry": "No stereochemistry is introduced beyond the source graph; the product drawing does not define additional stereocentres at the B29 linker or triazole."
+  },
+  "validation": {
+    "software": {"rdkit_version": "2026.03.1"},
+    "rdkit_parse": "pass",
+    "rdkit_sanitization_and_valence": "pass",
+    "heavy_element_inventory": {"C": 62, "N": 16, "O": 14},
+    "heavy_atom_count": 92,
+    "adjacency_edge_count": 99,
+    "connected_components": 1,
+    "cycle_rank_E_minus_V_plus_components": 8,
+    "computed_formula_with_NZ_NH2_cap": "C62H72N16O14",
+    "computed_formula_is_actual_conjugate_formula": false,
+    "atom_maps": {"count": 92, "unique": true, "complete_range": [1, 92]},
+    "carbamate_connectivity": "pass",
+    "terminal_alkyne_consumed": "pass",
+    "triazole_ring": {
+      "membership_map_ids": [81, 82, 83, 88, 89],
+      "atom_count": 5,
+      "all_three_nitrogens_and_both_alkyne_carbons_share_same_ring": true,
+      "RDKit_aromaticity_perceived": true
+    },
+    "rdkit_ring_info_atom_ring_count": 9,
+    "ring_count_note": "RingInfo atom-ring count is reported separately from graph cycle rank; acceptance uses the independently computed E−V+components cycle rank."
+  },
+  "limitations": [
+    "The mapped PDB atom names are candidate labels from prior coordinate-mapping audits and are not source-authoritative chemical atom names.",
+    "The graph does not include the LysB29 CE continuation, the remaining insulin atoms, or the separate B1 glucoside.",
+    "The neutral-acid and NH2-cap hydrogen assignments do not establish physiological protonation, partial charges, force-field parameters, or simulation readiness."
+  ]
+}
