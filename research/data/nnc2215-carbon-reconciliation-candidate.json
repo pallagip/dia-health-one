@@ -1,0 +1,843 @@
+{
+  "schema": "dia-health-one.nnc2215-coordinate-reconciliation-candidate.v2",
+  "created_at_utc": "2026-10-25T15:51:01.550913+00:00",
+  "source_chemistry": {
+    "paper_doi": "10.1038/s41586-024-08042-3",
+    "figure": "Extended Data Fig. 8i",
+    "supplementary_formula": "C56H63N15O12",
+    "nmr_assignment": "6H, H-18, corresponding to the two aryl methyl substituents",
+    "source_formula_and_synthesis": "C325H461N79O97S6 for NNC2215; B29 linker C6H6O2; macrocycle roof propyl azide C56H63N15O12",
+    "coordinate_source": {
+      "authors": "Eva Johansson; Daniele Granata",
+      "title": "3D models of NNC2215",
+      "doi": "10.6084/m9.figshare.26526460",
+      "license": "CC BY 4.0",
+      "modification_note": "Candidate PDBs are modified derivatives of the author-supplied model coordinates, not original or experimentally solved structures."
+    },
+    "sources": [
+      "https://www.nature.com/articles/s41586-024-08042-3",
+      "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+      "https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460"
+    ]
+  },
+  "mapping_inference": {
+    "pdb_extra_atoms": [
+      "MC C27",
+      "MC C29"
+    ],
+    "source_methyl_atoms": [
+      "MC C28",
+      "MC C30"
+    ],
+    "source_aryl_atoms": [
+      "MC C73",
+      "MC C75"
+    ],
+    "candidate_correction": "Delete C27/C29 and their four hydrogens; connect C28/C30 directly to C73/C75; retain C28/C30 as methyl carbons and rebuild their hydrogen coordinates.",
+    "basis": "The source 2D chemical structure depicts two direct ring methyls, the SI assigns a six-proton H-18 signal to the two methyl groups, and this correction brings the B29 linked heavy-atom pool to the source-derived C62N15O14 in both models.",
+    "status": "source-supported mapping inference; requires independent chemistry review before production parameterization"
+  },
+  "models": [
+    {
+      "state": "active_open",
+      "source_file": "structures/nnc2215-open-model.pdb",
+      "source_sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+      "output_file": "structures/nnc2215-open-source-corrected-candidate.pdb",
+      "output_sha256": "c5d98a6efd29f418232343f24b859944619c5e851ebbc624ad7ec61da9848d69",
+      "source_heavy_inventory_excluding_free_glucose": {
+        "C": 327,
+        "N": 79,
+        "O": 96,
+        "S": 6
+      },
+      "corrected_heavy_inventory_excluding_free_glucose": {
+        "C": 325,
+        "N": 79,
+        "O": 97,
+        "S": 6
+      },
+      "corrected_b29_linked_pool": {
+        "C": 62,
+        "N": 15,
+        "O": 14
+      },
+      "corrections": [
+        {
+          "removed_extra_atom": {
+            "name": "C27",
+            "serial": 857,
+            "element": "C",
+            "removed_hydrogens": [
+              "H23",
+              "H24"
+            ]
+          },
+          "source_methyl_atom": {
+            "name": "C28",
+            "serial": 858
+          },
+          "methyl_hydrogen_serials": [
+            934,
+            935,
+            936
+          ],
+          "aryl_atom": {
+            "name": "C73",
+            "serial": 903
+          },
+          "new_bond": [
+            "C73",
+            "C28"
+          ],
+          "methyl_hydrogens_retained": [
+            "H25",
+            "H26",
+            "H27"
+          ],
+          "new_aryl_methyl_distance_angstrom": 1.5,
+          "methyl_c_h_distances_angstrom": [
+            1.09,
+            1.09,
+            1.09
+          ],
+          "methyl_hydrogen_phase_degrees": 48.0,
+          "closest_local_contacts_below_screening_cutoffs": []
+        },
+        {
+          "removed_extra_atom": {
+            "name": "C29",
+            "serial": 859,
+            "element": "C",
+            "removed_hydrogens": [
+              "H28",
+              "H29"
+            ]
+          },
+          "source_methyl_atom": {
+            "name": "C30",
+            "serial": 860
+          },
+          "methyl_hydrogen_serials": [
+            939,
+            940,
+            941
+          ],
+          "aryl_atom": {
+            "name": "C75",
+            "serial": 905
+          },
+          "new_bond": [
+            "C75",
+            "C30"
+          ],
+          "methyl_hydrogens_retained": [
+            "H30",
+            "H31",
+            "H32"
+          ],
+          "new_aryl_methyl_distance_angstrom": 1.5,
+          "methyl_c_h_distances_angstrom": [
+            1.09,
+            1.09,
+            1.09
+          ],
+          "methyl_hydrogen_phase_degrees": 67.0,
+          "closest_local_contacts_below_screening_cutoffs": []
+        }
+      ],
+      "duplicate_atom_name_mapping": [
+        {
+          "serial": 512,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "H2",
+          "candidate_atom_name": "H2A"
+        },
+        {
+          "serial": 514,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "H2",
+          "candidate_atom_name": "H2B"
+        },
+        {
+          "serial": 510,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "HXT",
+          "candidate_atom_name": "HXTA"
+        },
+        {
+          "serial": 515,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "HXT",
+          "candidate_atom_name": "HXTB"
+        },
+        {
+          "serial": 920,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H11",
+          "candidate_atom_name": "H11A"
+        },
+        {
+          "serial": 923,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H11",
+          "candidate_atom_name": "H11B"
+        },
+        {
+          "serial": 921,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H12",
+          "candidate_atom_name": "H12A"
+        },
+        {
+          "serial": 924,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H12",
+          "candidate_atom_name": "H12B"
+        },
+        {
+          "serial": 927,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H19",
+          "candidate_atom_name": "H19A"
+        },
+        {
+          "serial": 928,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H19",
+          "candidate_atom_name": "H19B"
+        },
+        {
+          "serial": 931,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H26",
+          "candidate_atom_name": "H26A"
+        },
+        {
+          "serial": 935,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H26",
+          "candidate_atom_name": "H26B"
+        },
+        {
+          "serial": 913,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H4",
+          "candidate_atom_name": "H4A"
+        },
+        {
+          "serial": 918,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H4",
+          "candidate_atom_name": "H4B"
+        },
+        {
+          "serial": 959,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H50",
+          "candidate_atom_name": "H50A"
+        },
+        {
+          "serial": 966,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H50",
+          "candidate_atom_name": "H50B"
+        },
+        {
+          "serial": 960,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H51",
+          "candidate_atom_name": "H51A"
+        },
+        {
+          "serial": 967,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H51",
+          "candidate_atom_name": "H51B"
+        },
+        {
+          "serial": 969,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H60",
+          "candidate_atom_name": "H60A"
+        },
+        {
+          "serial": 970,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H60",
+          "candidate_atom_name": "H60B"
+        }
+      ],
+      "terminal_oxygen_reconstruction": {
+        "removed_source_atom": "ASN A21 HXT",
+        "removed_source_element": "H",
+        "source_C_HXT_distance_angstrom": 1.08,
+        "added_atom": "ASN A21 OXT",
+        "added_serial": 830,
+        "added_element": "O",
+        "reconstruction": "placed in the CA-C-O plane opposite the CA and O vectors, at a 1.25 \u00c5 C-OXT distance",
+        "new_C_OXT_distance_angstrom": 1.25,
+        "O_C_OXT_angle_degrees": 119.66,
+        "protonation_assumption": "terminal carboxylate; no terminal OXT hydrogen"
+      },
+      "coordinate_candidate_checks": {
+        "serialized_pdb_reopened": true,
+        "atom_count": 984,
+        "atom_serials_strictly_increasing": true,
+        "pdb_records_at_most_80_columns": true,
+        "conect_link_ssbond_references_valid": true,
+        "heavy_inventory_matches_reported_formula": true,
+        "duplicate_atom_names_within_residue": 0,
+        "aryl_methyl_geometry": [
+          {
+            "aryl_methyl_distance_angstrom": 1.5,
+            "methyl_c_h_distances_angstrom": [
+              1.09,
+              1.09,
+              1.089
+            ],
+            "bond_record_present": true,
+            "methyl_hydrogen_overlap_screen_passed": true
+          },
+          {
+            "aryl_methyl_distance_angstrom": 1.5,
+            "methyl_c_h_distances_angstrom": [
+              1.09,
+              1.09,
+              1.09
+            ],
+            "bond_record_present": true,
+            "methyl_hydrogen_overlap_screen_passed": true
+          }
+        ],
+        "asn_a21_terminal_oxygen": {
+          "C_OXT_distance_angstrom": 1.25,
+          "O_C_OXT_angle_degrees": 119.66,
+          "OXT_bond_record_present": true,
+          "source_HXT_removed": true
+        }
+      },
+      "full_conjugate_heavy_inventory_difference": {
+        "source_formula_expected": {
+          "C": 325,
+          "N": 79,
+          "O": 97,
+          "S": 6
+        },
+        "coordinate_model_excluding_free_glucose": {
+          "C": 325,
+          "N": 79,
+          "O": 97,
+          "S": 6
+        },
+        "difference": {
+          "C": 0,
+          "N": 0,
+          "O": 0,
+          "S": 0
+        }
+      }
+    },
+    {
+      "state": "inactive_closed",
+      "source_file": "structures/nnc2215-closed-model.pdb",
+      "source_sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+      "output_file": "structures/nnc2215-closed-source-corrected-candidate.pdb",
+      "output_sha256": "5f02635426b891ccf523dba83717c574e09fa36849fcc40083703e09f046923c",
+      "source_heavy_inventory_excluding_free_glucose": {
+        "C": 327,
+        "N": 79,
+        "O": 97,
+        "S": 6
+      },
+      "corrected_heavy_inventory_excluding_free_glucose": {
+        "C": 325,
+        "N": 79,
+        "O": 97,
+        "S": 6
+      },
+      "corrected_b29_linked_pool": {
+        "C": 62,
+        "N": 15,
+        "O": 14
+      },
+      "corrections": [
+        {
+          "removed_extra_atom": {
+            "name": "C27",
+            "serial": 858,
+            "element": "C",
+            "removed_hydrogens": [
+              "H23",
+              "H24"
+            ]
+          },
+          "source_methyl_atom": {
+            "name": "C28",
+            "serial": 859
+          },
+          "methyl_hydrogen_serials": [
+            935,
+            936,
+            937
+          ],
+          "aryl_atom": {
+            "name": "C73",
+            "serial": 904
+          },
+          "new_bond": [
+            "C73",
+            "C28"
+          ],
+          "methyl_hydrogens_retained": [
+            "H25",
+            "H26",
+            "H27"
+          ],
+          "new_aryl_methyl_distance_angstrom": 1.5,
+          "methyl_c_h_distances_angstrom": [
+            1.09,
+            1.09,
+            1.09
+          ],
+          "methyl_hydrogen_phase_degrees": 0.0,
+          "closest_local_contacts_below_screening_cutoffs": []
+        },
+        {
+          "removed_extra_atom": {
+            "name": "C29",
+            "serial": 860,
+            "element": "C",
+            "removed_hydrogens": [
+              "H28",
+              "H29"
+            ]
+          },
+          "source_methyl_atom": {
+            "name": "C30",
+            "serial": 861
+          },
+          "methyl_hydrogen_serials": [
+            940,
+            941,
+            942
+          ],
+          "aryl_atom": {
+            "name": "C75",
+            "serial": 906
+          },
+          "new_bond": [
+            "C75",
+            "C30"
+          ],
+          "methyl_hydrogens_retained": [
+            "H30",
+            "H31",
+            "H32"
+          ],
+          "new_aryl_methyl_distance_angstrom": 1.5,
+          "methyl_c_h_distances_angstrom": [
+            1.09,
+            1.09,
+            1.09
+          ],
+          "methyl_hydrogen_phase_degrees": 40.0,
+          "closest_local_contacts_below_screening_cutoffs": []
+        }
+      ],
+      "duplicate_atom_name_mapping": [
+        {
+          "serial": 332,
+          "residue": [
+            "B",
+            "PHX",
+            "0"
+          ],
+          "source_atom_name": "H2",
+          "candidate_atom_name": "H2A"
+        },
+        {
+          "serial": 336,
+          "residue": [
+            "B",
+            "PHX",
+            "0"
+          ],
+          "source_atom_name": "H2",
+          "candidate_atom_name": "H2B"
+        },
+        {
+          "serial": 822,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "HC",
+          "candidate_atom_name": "HCA"
+        },
+        {
+          "serial": 823,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "HC",
+          "candidate_atom_name": "HCB"
+        },
+        {
+          "serial": 824,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "HC",
+          "candidate_atom_name": "HCC"
+        },
+        {
+          "serial": 825,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "HC",
+          "candidate_atom_name": "HCD"
+        },
+        {
+          "serial": 826,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "HXT",
+          "candidate_atom_name": "HXTA"
+        },
+        {
+          "serial": 831,
+          "residue": [
+            "B",
+            "LYX",
+            "30"
+          ],
+          "source_atom_name": "HXT",
+          "candidate_atom_name": "HXTB"
+        },
+        {
+          "serial": 921,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H11",
+          "candidate_atom_name": "H11A"
+        },
+        {
+          "serial": 924,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H11",
+          "candidate_atom_name": "H11B"
+        },
+        {
+          "serial": 922,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H12",
+          "candidate_atom_name": "H12A"
+        },
+        {
+          "serial": 925,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H12",
+          "candidate_atom_name": "H12B"
+        },
+        {
+          "serial": 928,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H19",
+          "candidate_atom_name": "H19A"
+        },
+        {
+          "serial": 929,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H19",
+          "candidate_atom_name": "H19B"
+        },
+        {
+          "serial": 932,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H26",
+          "candidate_atom_name": "H26A"
+        },
+        {
+          "serial": 936,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H26",
+          "candidate_atom_name": "H26B"
+        },
+        {
+          "serial": 914,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H4",
+          "candidate_atom_name": "H4A"
+        },
+        {
+          "serial": 919,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H4",
+          "candidate_atom_name": "H4B"
+        },
+        {
+          "serial": 960,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H50",
+          "candidate_atom_name": "H50A"
+        },
+        {
+          "serial": 967,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H50",
+          "candidate_atom_name": "H50B"
+        },
+        {
+          "serial": 961,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H51",
+          "candidate_atom_name": "H51A"
+        },
+        {
+          "serial": 968,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H51",
+          "candidate_atom_name": "H51B"
+        },
+        {
+          "serial": 970,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H60",
+          "candidate_atom_name": "H60A"
+        },
+        {
+          "serial": 971,
+          "residue": [
+            "C",
+            "MC",
+            "1"
+          ],
+          "source_atom_name": "H60",
+          "candidate_atom_name": "H60B"
+        }
+      ],
+      "terminal_oxygen_reconstruction": null,
+      "coordinate_candidate_checks": {
+        "serialized_pdb_reopened": true,
+        "atom_count": 962,
+        "atom_serials_strictly_increasing": true,
+        "pdb_records_at_most_80_columns": true,
+        "conect_link_ssbond_references_valid": true,
+        "heavy_inventory_matches_reported_formula": true,
+        "duplicate_atom_names_within_residue": 0,
+        "aryl_methyl_geometry": [
+          {
+            "aryl_methyl_distance_angstrom": 1.5,
+            "methyl_c_h_distances_angstrom": [
+              1.09,
+              1.09,
+              1.09
+            ],
+            "bond_record_present": true,
+            "methyl_hydrogen_overlap_screen_passed": true
+          },
+          {
+            "aryl_methyl_distance_angstrom": 1.5,
+            "methyl_c_h_distances_angstrom": [
+              1.09,
+              1.09,
+              1.09
+            ],
+            "bond_record_present": true,
+            "methyl_hydrogen_overlap_screen_passed": true
+          }
+        ],
+        "asn_a21_terminal_oxygen": null
+      },
+      "full_conjugate_heavy_inventory_difference": {
+        "source_formula_expected": {
+          "C": 325,
+          "N": 79,
+          "O": 97,
+          "S": 6
+        },
+        "coordinate_model_excluding_free_glucose": {
+          "C": 325,
+          "N": 79,
+          "O": 97,
+          "S": 6
+        },
+        "difference": {
+          "C": 0,
+          "N": 0,
+          "O": 0,
+          "S": 0
+        }
+      }
+    }
+  ],
+  "readiness": {
+    "coordinate_candidate_checks_passed": true,
+    "two_carbon_discrepancy_resolved_as_candidate_mapping": true,
+    "reported_full_conjugate_heavy_inventory_matched": true,
+    "full_molecular_graph_validated": false,
+    "bond_orders_assigned": false,
+    "formal_charges_assigned": false,
+    "protonation_inventory_validated": false,
+    "force_field_parameters_generated": false,
+    "target_md_ready": false
+  },
+  "limitations": [
+    "PDB CONECT records provide adjacency only and do not encode bond order or formal charge.",
+    "Coordinates for the methyl hydrogens are rebuilt geometrically; heavy atom ring coordinates are retained.",
+    "The open-model ASN A21 terminal OXT was reconstructed from the CA-C-O plane after removing a misplaced HXT record at the OXT position; this geometry and the terminal carboxylate microstate are model assumptions.",
+    "Hydrogen coordinates and the full protonation inventory remain unvalidated and should be rebuilt from the resolved molecular graph.",
+    "This is a source-reconciled coordinate candidate, not a parameterized simulation system."
+  ],
+  "clinical_use": false
+}
