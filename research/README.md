@@ -135,6 +135,22 @@ This is an isolated component graph, not a completed insulin-conjugate topology.
 
 An element-labeled adjacency search maps this graph into both corrected candidate PDBs under the six candidate C21–C23/azide-tail anchors. It finds 16 embeddings per state, with 54 of 83 graph map IDs remaining ambiguous across the embeddings. Each selected LYX B30 + MC C1 fragment has 91 heavy atoms (C62N15O14); eight unmatched LYX atoms are assigned to the B29 linker only under the existing candidate partition. See [`data/nnc2215-roof-graph-coordinate-mapping-audit.json`](data/nnc2215-roof-graph-coordinate-mapping-audit.json) and recreate it with `micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/audit_nnc2215_roof_graph_coordinate_mapping.py`. PDB connectivity records do not provide authoritative bond orders. The result does not establish a unique source-to-PDB atom map, geometry, protonation, force-field parameters, or target-MD readiness. The audit verified the candidate PDB hashes and did not edit either PDB.
 
+### B29 linker–roof product graph and exact candidate audit
+
+The source-derived mapped B29 linker–roof product component is available as [`structures/nnc2215-b29-linker-roof-product.smi`](structures/nnc2215-b29-linker-roof-product.smi), with source roles and map provenance in [`data/nnc2215-b29-linker-roof-product-map.json`](data/nnc2215-b29-linker-roof-product-map.json). The selected component includes the LysB29 NZ endpoint, so its C62N16O14 heavy-element inventory (92 heavy atoms) includes one N beyond the earlier C62N15O14 linker–roof appendage count. It has 99 edges, one connected component, and cycle rank 8; Lys CE and the rest of insulin are outside the selected graph.
+
+The exact topology/coordinate audit is recorded in [`data/nnc2215-b29-topology-audit.json`](data/nnc2215-b29-topology-audit.json). Rerun from the repository root with [`audit_nnc2215_b29_topology.py`](audit_nnc2215_b29_topology.py):
+
+```sh
+micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/audit_nnc2215_b29_topology.py
+```
+
+The full source graph exactly matches the element-labeled adjacency of each corrected open and closed candidate PDB over LYX B30, MC C1, and LysB29 NZ. Each state has 16 complete mappings; map IDs 78–92 are fixed across them, while eight scaffold mapping/bond-label transfer classes remain. The source drawing in Nature Fig. 2a supports the 1,4-disubstituted triazole regiochemistry; the remaining classes do not represent alternative click regioisomers. The candidate graph and corrected PDBs are model-built coordinate work, not experimentally resolved structures, and the PDB CONECT/LINK records encode adjacency only. There is no unique full source-to-coordinate mapping, validated bond-label assignment, protonation state, charge model, or force field.
+
+The audit screens 1,584 mapped edges per state. Distances span 1.2116–1.5611 Å (open) and 1.2116–1.5548 Å (closed); 14 of 16 mappings in each state have one to three heuristic short carboxyl C–O outliers, while two mappings per state fall fully within the broad screen. These distances cannot establish bond order or choose a mapping. Model hydrogen records differ at roof C22/C23 and linker C4–C6; the closed candidate has one fewer recorded hydrogen at linker C4. Those PDB hydrogen records are not validated chemistry.
+
+This work updates a source-derived component graph and candidate-coordinate audit only. It does not establish a production model, target-binding MD, or a clinical conclusion. The audit ran on CPU and used no NVIDIA GPU allocation. Dia Health One remains an active NVIDIA Inception member; membership is separate from GPU allocation, and no allocation is confirmed.
+
 The dashboard includes an interactive side-by-side view of the publisher's open and closed PDB coordinates. It uses the vendored 3Dmol.js 2.5.5 browser bundle under BSD-3-Clause; `data/structure-viewer-library.json` records its registry integrity, SHA-256, version, and license, and the matching license text is in `assets/vendor/3Dmol-2.5.5-LICENSE.txt`. The viewer renders source coordinates for inspection and provides no chemical or simulation validation. It does not change the target MD readiness gate.
 
 ### ChimeraX receptor-session audit
