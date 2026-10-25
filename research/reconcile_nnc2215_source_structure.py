@@ -13,6 +13,7 @@ force-field terms.
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+import copy
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -341,6 +342,7 @@ def apply_state(label: str, state: dict, expected_sha: str) -> dict:
                     "serial": extra,
                     "element": atoms[extra]["element"],
                     "removed_hydrogens": sorted(atoms[serial]["name"] for serial in extra_h),
+                    "removed_hydrogen_source_serials": sorted(extra_h),
                 },
                 "source_methyl_atom": {"name": methyl_name, "serial": methyl},
                 "methyl_hydrogen_serials": sorted(methyl_h),
@@ -419,6 +421,7 @@ def apply_state(label: str, state: dict, expected_sha: str) -> dict:
         new_edges.add(tuple(sorted((c_serial, oxt_serial))))
         terminal_oxygen_reconstruction = {
             "removed_source_atom": "ASN A21 HXT",
+            "removed_source_serial": hxt_serial,
             "removed_source_element": "H",
             "source_C_HXT_distance_angstrom": round(hxt_c_distance, 3),
             "added_atom": "ASN A21 OXT",
@@ -539,6 +542,10 @@ def apply_state(label: str, state: dict, expected_sha: str) -> dict:
         )
     ]
     remarks = [
+        "REMARK 950 SOURCE AUTHORS: JOHANSSON AND GRANATA (2024)",
+        "REMARK 950 FIGSHARE DOI: 10.6084/M9.FIGSHARE.26526460",
+        "REMARK 950 LICENSE: CC BY 4.0; MODIFIED COORDINATE CANDIDATE",
+        "REMARK 950 MODEL-BUILT, NOT EXPERIMENTALLY SOLVED",
         "REMARK 950 SOURCE-BASED CANDIDATE: removed two excess MC methylenes.",
         "REMARK 950 Reconnected MC C28/C30 directly to MC C73/C75 as methyls.",
         "REMARK 950 Rebuilt methyl H geometry; unique names assigned within residues.",
@@ -547,7 +554,15 @@ def apply_state(label: str, state: dict, expected_sha: str) -> dict:
     ]
     if terminal_oxygen_reconstruction is not None:
         remarks.insert(3, "REMARK 950 Open ASN A21 OXT rebuilt from the CA-C-O plane.")
-    insert_at = next((i for i, line in enumerate(retained) if line.startswith("ATOM  ") or line.startswith("HETATM")), 0)
+    header_record_prefixes = (
+        "DBREF", "SEQADV", "SEQRES", "MODRES", "HET ", "FORMUL", "HELIX",
+        "SHEET", "TURN", "SSBOND", "LINK", "CISPEP", "SITE", "CRYST1",
+        "ORIGX", "SCALE", "MTRIX", "MODEL", "ATOM  ", "HETATM",
+    )
+    insert_at = next(
+        (i for i, line in enumerate(retained) if line.startswith(header_record_prefixes)),
+        0,
+    )
     retained[insert_at:insert_at] = remarks
     for index, line in enumerate(retained):
         if line.startswith(("ATOM  ", "HETATM")):
@@ -618,6 +633,25 @@ def apply_state(label: str, state: dict, expected_sha: str) -> dict:
     if max_line_length > 80:
         raise ValueError(f"Written candidate has a {max_line_length}-column PDB record")
 
+    # Confirm the serialized output serial/name mapping against the candidate
+    # atoms, including the inserted OXT and any renamed duplicate atoms.
+    expected_output_atom_names = {
+        output_serial_map[source_serial]: atom["name"]
+        for source_serial, atom in output_atoms.items()
+    }
+    if set(expected_output_atom_names) != set(written_atoms):
+        raise ValueError("Written atom serials do not match the candidate serial map")
+    mismatched_names = {
+        serial: (expected, written_atoms[serial]["name"])
+        for serial, expected in expected_output_atom_names.items()
+        if written_atoms[serial]["name"] != expected
+    }
+    if mismatched_names:
+        raise ValueError(
+            "Written output serial/name mapping differs from candidate atoms: "
+            f"{mismatched_names}"
+        )
+
     methyl_bond_checks = []
     for correction in moved:
         ring_serial = output_serial_map[correction["aryl_atom"]["serial"]]
@@ -674,12 +708,108 @@ def apply_state(label: str, state: dict, expected_sha: str) -> dict:
         "atom_count": len(written_atoms),
         "atom_serials_strictly_increasing": serials_monotonic,
         "pdb_records_at_most_80_columns": max_line_length <= 80,
+        "output_serial_name_map_matches_candidate": True,
+        "audit_output_serial_name_references_verified": True,
         "conect_link_ssbond_references_valid": True,
         "heavy_inventory_matches_reported_formula": True,
         "duplicate_atom_names_within_residue": written_duplicate_names,
         "aryl_methyl_geometry": methyl_bond_checks,
         "asn_a21_terminal_oxygen": terminal_oxygen_check,
     }
+
+    # The open-model OXT insertion shifts output PDB serials after ASN A21.
+    # Keep source and output serial namespaces explicit in the published audit.
+    source_name_by_serial = {
+        mapping["serial"]: mapping["source_atom_name"] for mapping in atom_name_mapping
+    }
+    audit_corrections = []
+    for correction in moved:
+        item = copy.deepcopy(correction)
+        removed = item["removed_extra_atom"]
+        removed["source_serial"] = removed.pop("serial")
+        removed_hydrogen_serials = removed.pop("removed_hydrogen_source_serials")
+        removed["removed_hydrogen_atoms"] = [
+            {"name": atoms[serial]["name"], "source_serial": serial}
+            for serial in removed_hydrogen_serials
+        ]
+
+        methyl = item["source_methyl_atom"]
+        methyl_source_serial = methyl.pop("serial")
+        methyl["source_serial"] = methyl_source_serial
+        methyl["output_serial"] = output_serial_map[methyl_source_serial]
+
+        aryl = item["aryl_atom"]
+        aryl_source_serial = aryl.pop("serial")
+        aryl["source_serial"] = aryl_source_serial
+        aryl["output_serial"] = output_serial_map[aryl_source_serial]
+
+        hydrogen_source_serials = item.pop("methyl_hydrogen_serials")
+        item["methyl_hydrogens"] = [
+            {
+                "source_atom_name": source_name_by_serial.get(serial, atoms[serial]["name"]),
+                "candidate_atom_name": atoms[serial]["name"],
+                "source_serial": serial,
+                "output_serial": output_serial_map[serial],
+            }
+            for serial in hydrogen_source_serials
+        ]
+        item["new_bond_source_serials"] = [aryl_source_serial, methyl_source_serial]
+        item["new_bond_output_serials"] = [
+            output_serial_map[aryl_source_serial], output_serial_map[methyl_source_serial]
+        ]
+
+        for contact in item["closest_local_contacts_below_screening_cutoffs"]:
+            contact_source_serial = contact.pop("other_serial")
+            contact["source_serial"] = contact_source_serial
+            contact["output_serial"] = output_serial_map.get(contact_source_serial)
+        audit_corrections.append(item)
+
+    audit_atom_name_mapping = [
+        {
+            "source_serial": mapping["serial"],
+            "output_serial": output_serial_map[mapping["serial"]],
+            "residue": mapping["residue"],
+            "source_atom_name": mapping["source_atom_name"],
+            "candidate_atom_name": mapping["candidate_atom_name"],
+        }
+        for mapping in atom_name_mapping
+    ]
+    audit_terminal_oxygen_reconstruction = copy.deepcopy(terminal_oxygen_reconstruction)
+    if audit_terminal_oxygen_reconstruction is not None:
+        added_candidate_serial = audit_terminal_oxygen_reconstruction.pop("added_serial")
+        audit_terminal_oxygen_reconstruction["candidate_serial"] = added_candidate_serial
+        audit_terminal_oxygen_reconstruction["output_serial"] = output_serial_map[added_candidate_serial]
+
+    # Check every atom/name pair exposed by the audit against the emitted PDB.
+    audit_name_references = []
+    for correction in audit_corrections:
+        for key in ("source_methyl_atom", "aryl_atom"):
+            atom_record = correction[key]
+            audit_name_references.append(
+                (atom_record["output_serial"], atom_record["name"])
+            )
+        audit_name_references.extend(
+            (hydrogen["output_serial"], hydrogen["candidate_atom_name"])
+            for hydrogen in correction["methyl_hydrogens"]
+        )
+    audit_name_references.extend(
+        (mapping["output_serial"], mapping["candidate_atom_name"])
+        for mapping in audit_atom_name_mapping
+    )
+    if audit_terminal_oxygen_reconstruction is not None:
+        audit_name_references.append(
+            (audit_terminal_oxygen_reconstruction["output_serial"], "OXT")
+        )
+    mismatched_audit_names = [
+        (serial, expected, written_atoms.get(serial, {}).get("name"))
+        for serial, expected in audit_name_references
+        if written_atoms.get(serial, {}).get("name") != expected
+    ]
+    if mismatched_audit_names:
+        raise ValueError(
+            "Audit output_serial/candidate_atom_name references do not match "
+            f"the written PDB: {mismatched_audit_names}"
+        )
 
     return {
         "state": label,
@@ -692,9 +822,9 @@ def apply_state(label: str, state: dict, expected_sha: str) -> dict:
         },
         "corrected_heavy_inventory_excluding_free_glucose": corrected_heavy_inventory,
         "corrected_b29_linked_pool": dict(sorted(pool.items())),
-        "corrections": moved,
-        "duplicate_atom_name_mapping": atom_name_mapping,
-        "terminal_oxygen_reconstruction": terminal_oxygen_reconstruction,
+        "corrections": audit_corrections,
+        "duplicate_atom_name_mapping": audit_atom_name_mapping,
+        "terminal_oxygen_reconstruction": audit_terminal_oxygen_reconstruction,
         "coordinate_candidate_checks": coordinate_candidate_checks,
         "full_conjugate_heavy_inventory_difference": {
             "source_formula_expected": EXPECTED_NNC_HEAVY,
@@ -715,7 +845,7 @@ def main() -> None:
         relative = str(state["source"].relative_to(ROOT))
         results.append(apply_state(label, state, expected_hashes[relative]))
     result = {
-        "schema": "dia-health-one.nnc2215-coordinate-reconciliation-candidate.v2",
+        "schema": "dia-health-one.nnc2215-coordinate-reconciliation-candidate.v4",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "source_chemistry": {
             "paper_doi": "10.1038/s41586-024-08042-3",

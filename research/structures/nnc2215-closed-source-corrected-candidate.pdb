@@ -2,6 +2,15 @@ TITLE     2215_from2205moe
 REMARK   4      COMPLIES WITH FORMAT V. 3.0, 1-DEC-2006                         
 REMARK 888                                                                      
 REMARK 888 WRITTEN BY MAESTRO (A PRODUCT OF SCHRODINGER, LLC)                   
+REMARK 950 SOURCE AUTHORS: JOHANSSON AND GRANATA (2024)
+REMARK 950 FIGSHARE DOI: 10.6084/M9.FIGSHARE.26526460
+REMARK 950 LICENSE: CC BY 4.0; MODIFIED COORDINATE CANDIDATE
+REMARK 950 MODEL-BUILT, NOT EXPERIMENTALLY SOLVED
+REMARK 950 SOURCE-BASED CANDIDATE: removed two excess MC methylenes.
+REMARK 950 Reconnected MC C28/C30 directly to MC C73/C75 as methyls.
+REMARK 950 Rebuilt methyl H geometry; unique names assigned within residues.
+REMARK 950 See candidate audit JSON for source evidence and corrections.
+REMARK 950 Bond orders, charges and force-field terms remain unvalidated.
 SEQRES   1 A   21  GLY ILE VAL GLU GLN CYS CYS THR SER ILE CYS SER LEU
 SEQRES   2 A   21  TYR GLN LEU GLU ASN TYR CYS ASN
 SEQRES   1 B   29  PHE VAL ASN GLN HIS LEU CYS GLY SER HIS LEU VAL GLU
@@ -16,11 +25,6 @@ SSBOND   3 CYS A   20    CYS B   19                          1555   1555  1.97
 LINK        C31  MC  C   1                C    LYX B  30     1555   1555  1.55
 LINK        CD1  LYX B  30                NZ   LYS B  29     1555   1555  1.37
 LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.35
-REMARK 950 SOURCE-BASED CANDIDATE: removed two excess MC methylenes.
-REMARK 950 Reconnected MC C28/C30 directly to MC C73/C75 as methyls.
-REMARK 950 Rebuilt methyl H geometry; unique names assigned within residues.
-REMARK 950 See candidate audit JSON for source evidence and corrections.
-REMARK 950 Bond orders, charges and force-field terms remain unvalidated.
 ATOM      1  N   GLY A   1     -15.624  -0.555  -0.890  1.00  0.00           N
 ATOM      2  CA  GLY A   1     -14.899   0.130  -1.963  1.00  0.00           C
 ATOM      3  C   GLY A   1     -14.679   1.564  -1.597  1.00  0.00           C

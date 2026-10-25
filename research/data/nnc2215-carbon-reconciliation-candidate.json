@@ -1,6 +1,6 @@
 {
-  "schema": "dia-health-one.nnc2215-coordinate-reconciliation-candidate.v2",
-  "created_at_utc": "2026-10-25T15:51:01.550913+00:00",
+  "schema": "dia-health-one.nnc2215-coordinate-reconciliation-candidate.v4",
+  "created_at_utc": "2026-10-25T15:59:26.154926+00:00",
   "source_chemistry": {
     "paper_doi": "10.1038/s41586-024-08042-3",
     "figure": "Extended Data Fig. 8i",
@@ -43,7 +43,7 @@
       "source_file": "structures/nnc2215-open-model.pdb",
       "source_sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
       "output_file": "structures/nnc2215-open-source-corrected-candidate.pdb",
-      "output_sha256": "c5d98a6efd29f418232343f24b859944619c5e851ebbc624ad7ec61da9848d69",
+      "output_sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
       "source_heavy_inventory_excluding_free_glucose": {
         "C": 327,
         "N": 79,
@@ -65,25 +65,32 @@
         {
           "removed_extra_atom": {
             "name": "C27",
-            "serial": 857,
             "element": "C",
             "removed_hydrogens": [
               "H23",
               "H24"
+            ],
+            "source_serial": 857,
+            "removed_hydrogen_atoms": [
+              {
+                "name": "H23",
+                "source_serial": 932
+              },
+              {
+                "name": "H24",
+                "source_serial": 933
+              }
             ]
           },
           "source_methyl_atom": {
             "name": "C28",
-            "serial": 858
+            "source_serial": 858,
+            "output_serial": 859
           },
-          "methyl_hydrogen_serials": [
-            934,
-            935,
-            936
-          ],
           "aryl_atom": {
             "name": "C73",
-            "serial": 903
+            "source_serial": 903,
+            "output_serial": 904
           },
           "new_bond": [
             "C73",
@@ -101,30 +108,65 @@
             1.09
           ],
           "methyl_hydrogen_phase_degrees": 48.0,
-          "closest_local_contacts_below_screening_cutoffs": []
+          "closest_local_contacts_below_screening_cutoffs": [],
+          "methyl_hydrogens": [
+            {
+              "source_atom_name": "H25",
+              "candidate_atom_name": "H25",
+              "source_serial": 934,
+              "output_serial": 935
+            },
+            {
+              "source_atom_name": "H26",
+              "candidate_atom_name": "H26B",
+              "source_serial": 935,
+              "output_serial": 936
+            },
+            {
+              "source_atom_name": "H27",
+              "candidate_atom_name": "H27",
+              "source_serial": 936,
+              "output_serial": 937
+            }
+          ],
+          "new_bond_source_serials": [
+            903,
+            858
+          ],
+          "new_bond_output_serials": [
+            904,
+            859
+          ]
         },
         {
           "removed_extra_atom": {
             "name": "C29",
-            "serial": 859,
             "element": "C",
             "removed_hydrogens": [
               "H28",
               "H29"
+            ],
+            "source_serial": 859,
+            "removed_hydrogen_atoms": [
+              {
+                "name": "H28",
+                "source_serial": 937
+              },
+              {
+                "name": "H29",
+                "source_serial": 938
+              }
             ]
           },
           "source_methyl_atom": {
             "name": "C30",
-            "serial": 860
+            "source_serial": 860,
+            "output_serial": 861
           },
-          "methyl_hydrogen_serials": [
-            939,
-            940,
-            941
-          ],
           "aryl_atom": {
             "name": "C75",
-            "serial": 905
+            "source_serial": 905,
+            "output_serial": 906
           },
           "new_bond": [
             "C75",
@@ -142,12 +184,41 @@
             1.09
           ],
           "methyl_hydrogen_phase_degrees": 67.0,
-          "closest_local_contacts_below_screening_cutoffs": []
+          "closest_local_contacts_below_screening_cutoffs": [],
+          "methyl_hydrogens": [
+            {
+              "source_atom_name": "H30",
+              "candidate_atom_name": "H30",
+              "source_serial": 939,
+              "output_serial": 940
+            },
+            {
+              "source_atom_name": "H31",
+              "candidate_atom_name": "H31",
+              "source_serial": 940,
+              "output_serial": 941
+            },
+            {
+              "source_atom_name": "H32",
+              "candidate_atom_name": "H32",
+              "source_serial": 941,
+              "output_serial": 942
+            }
+          ],
+          "new_bond_source_serials": [
+            905,
+            860
+          ],
+          "new_bond_output_serials": [
+            906,
+            861
+          ]
         }
       ],
       "duplicate_atom_name_mapping": [
         {
-          "serial": 512,
+          "source_serial": 512,
+          "output_serial": 512,
           "residue": [
             "B",
             "LYX",
@@ -157,7 +228,8 @@
           "candidate_atom_name": "H2A"
         },
         {
-          "serial": 514,
+          "source_serial": 514,
+          "output_serial": 514,
           "residue": [
             "B",
             "LYX",
@@ -167,7 +239,8 @@
           "candidate_atom_name": "H2B"
         },
         {
-          "serial": 510,
+          "source_serial": 510,
+          "output_serial": 510,
           "residue": [
             "B",
             "LYX",
@@ -177,7 +250,8 @@
           "candidate_atom_name": "HXTA"
         },
         {
-          "serial": 515,
+          "source_serial": 515,
+          "output_serial": 515,
           "residue": [
             "B",
             "LYX",
@@ -187,7 +261,8 @@
           "candidate_atom_name": "HXTB"
         },
         {
-          "serial": 920,
+          "source_serial": 920,
+          "output_serial": 921,
           "residue": [
             "C",
             "MC",
@@ -197,7 +272,8 @@
           "candidate_atom_name": "H11A"
         },
         {
-          "serial": 923,
+          "source_serial": 923,
+          "output_serial": 924,
           "residue": [
             "C",
             "MC",
@@ -207,7 +283,8 @@
           "candidate_atom_name": "H11B"
         },
         {
-          "serial": 921,
+          "source_serial": 921,
+          "output_serial": 922,
           "residue": [
             "C",
             "MC",
@@ -217,7 +294,8 @@
           "candidate_atom_name": "H12A"
         },
         {
-          "serial": 924,
+          "source_serial": 924,
+          "output_serial": 925,
           "residue": [
             "C",
             "MC",
@@ -227,7 +305,8 @@
           "candidate_atom_name": "H12B"
         },
         {
-          "serial": 927,
+          "source_serial": 927,
+          "output_serial": 928,
           "residue": [
             "C",
             "MC",
@@ -237,7 +316,8 @@
           "candidate_atom_name": "H19A"
         },
         {
-          "serial": 928,
+          "source_serial": 928,
+          "output_serial": 929,
           "residue": [
             "C",
             "MC",
@@ -247,7 +327,8 @@
           "candidate_atom_name": "H19B"
         },
         {
-          "serial": 931,
+          "source_serial": 931,
+          "output_serial": 932,
           "residue": [
             "C",
             "MC",
@@ -257,7 +338,8 @@
           "candidate_atom_name": "H26A"
         },
         {
-          "serial": 935,
+          "source_serial": 935,
+          "output_serial": 936,
           "residue": [
             "C",
             "MC",
@@ -267,7 +349,8 @@
           "candidate_atom_name": "H26B"
         },
         {
-          "serial": 913,
+          "source_serial": 913,
+          "output_serial": 914,
           "residue": [
             "C",
             "MC",
@@ -277,7 +360,8 @@
           "candidate_atom_name": "H4A"
         },
         {
-          "serial": 918,
+          "source_serial": 918,
+          "output_serial": 919,
           "residue": [
             "C",
             "MC",
@@ -287,7 +371,8 @@
           "candidate_atom_name": "H4B"
         },
         {
-          "serial": 959,
+          "source_serial": 959,
+          "output_serial": 960,
           "residue": [
             "C",
             "MC",
@@ -297,7 +382,8 @@
           "candidate_atom_name": "H50A"
         },
         {
-          "serial": 966,
+          "source_serial": 966,
+          "output_serial": 967,
           "residue": [
             "C",
             "MC",
@@ -307,7 +393,8 @@
           "candidate_atom_name": "H50B"
         },
         {
-          "serial": 960,
+          "source_serial": 960,
+          "output_serial": 961,
           "residue": [
             "C",
             "MC",
@@ -317,7 +404,8 @@
           "candidate_atom_name": "H51A"
         },
         {
-          "serial": 967,
+          "source_serial": 967,
+          "output_serial": 968,
           "residue": [
             "C",
             "MC",
@@ -327,7 +415,8 @@
           "candidate_atom_name": "H51B"
         },
         {
-          "serial": 969,
+          "source_serial": 969,
+          "output_serial": 970,
           "residue": [
             "C",
             "MC",
@@ -337,7 +426,8 @@
           "candidate_atom_name": "H60A"
         },
         {
-          "serial": 970,
+          "source_serial": 970,
+          "output_serial": 971,
           "residue": [
             "C",
             "MC",
@@ -349,21 +439,25 @@
       ],
       "terminal_oxygen_reconstruction": {
         "removed_source_atom": "ASN A21 HXT",
+        "removed_source_serial": 825,
         "removed_source_element": "H",
         "source_C_HXT_distance_angstrom": 1.08,
         "added_atom": "ASN A21 OXT",
-        "added_serial": 830,
         "added_element": "O",
         "reconstruction": "placed in the CA-C-O plane opposite the CA and O vectors, at a 1.25 \u00c5 C-OXT distance",
         "new_C_OXT_distance_angstrom": 1.25,
         "O_C_OXT_angle_degrees": 119.66,
-        "protonation_assumption": "terminal carboxylate; no terminal OXT hydrogen"
+        "protonation_assumption": "terminal carboxylate; no terminal OXT hydrogen",
+        "candidate_serial": 830,
+        "output_serial": 830
       },
       "coordinate_candidate_checks": {
         "serialized_pdb_reopened": true,
         "atom_count": 984,
         "atom_serials_strictly_increasing": true,
         "pdb_records_at_most_80_columns": true,
+        "output_serial_name_map_matches_candidate": true,
+        "audit_output_serial_name_references_verified": true,
         "conect_link_ssbond_references_valid": true,
         "heavy_inventory_matches_reported_formula": true,
         "duplicate_atom_names_within_residue": 0,
@@ -422,7 +516,7 @@
       "source_file": "structures/nnc2215-closed-model.pdb",
       "source_sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
       "output_file": "structures/nnc2215-closed-source-corrected-candidate.pdb",
-      "output_sha256": "5f02635426b891ccf523dba83717c574e09fa36849fcc40083703e09f046923c",
+      "output_sha256": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
       "source_heavy_inventory_excluding_free_glucose": {
         "C": 327,
         "N": 79,
@@ -444,25 +538,32 @@
         {
           "removed_extra_atom": {
             "name": "C27",
-            "serial": 858,
             "element": "C",
             "removed_hydrogens": [
               "H23",
               "H24"
+            ],
+            "source_serial": 858,
+            "removed_hydrogen_atoms": [
+              {
+                "name": "H23",
+                "source_serial": 933
+              },
+              {
+                "name": "H24",
+                "source_serial": 934
+              }
             ]
           },
           "source_methyl_atom": {
             "name": "C28",
-            "serial": 859
+            "source_serial": 859,
+            "output_serial": 859
           },
-          "methyl_hydrogen_serials": [
-            935,
-            936,
-            937
-          ],
           "aryl_atom": {
             "name": "C73",
-            "serial": 904
+            "source_serial": 904,
+            "output_serial": 904
           },
           "new_bond": [
             "C73",
@@ -480,30 +581,65 @@
             1.09
           ],
           "methyl_hydrogen_phase_degrees": 0.0,
-          "closest_local_contacts_below_screening_cutoffs": []
+          "closest_local_contacts_below_screening_cutoffs": [],
+          "methyl_hydrogens": [
+            {
+              "source_atom_name": "H25",
+              "candidate_atom_name": "H25",
+              "source_serial": 935,
+              "output_serial": 935
+            },
+            {
+              "source_atom_name": "H26",
+              "candidate_atom_name": "H26B",
+              "source_serial": 936,
+              "output_serial": 936
+            },
+            {
+              "source_atom_name": "H27",
+              "candidate_atom_name": "H27",
+              "source_serial": 937,
+              "output_serial": 937
+            }
+          ],
+          "new_bond_source_serials": [
+            904,
+            859
+          ],
+          "new_bond_output_serials": [
+            904,
+            859
+          ]
         },
         {
           "removed_extra_atom": {
             "name": "C29",
-            "serial": 860,
             "element": "C",
             "removed_hydrogens": [
               "H28",
               "H29"
+            ],
+            "source_serial": 860,
+            "removed_hydrogen_atoms": [
+              {
+                "name": "H28",
+                "source_serial": 938
+              },
+              {
+                "name": "H29",
+                "source_serial": 939
+              }
             ]
           },
           "source_methyl_atom": {
             "name": "C30",
-            "serial": 861
+            "source_serial": 861,
+            "output_serial": 861
           },
-          "methyl_hydrogen_serials": [
-            940,
-            941,
-            942
-          ],
           "aryl_atom": {
             "name": "C75",
-            "serial": 906
+            "source_serial": 906,
+            "output_serial": 906
           },
           "new_bond": [
             "C75",
@@ -521,12 +657,41 @@
             1.09
           ],
           "methyl_hydrogen_phase_degrees": 40.0,
-          "closest_local_contacts_below_screening_cutoffs": []
+          "closest_local_contacts_below_screening_cutoffs": [],
+          "methyl_hydrogens": [
+            {
+              "source_atom_name": "H30",
+              "candidate_atom_name": "H30",
+              "source_serial": 940,
+              "output_serial": 940
+            },
+            {
+              "source_atom_name": "H31",
+              "candidate_atom_name": "H31",
+              "source_serial": 941,
+              "output_serial": 941
+            },
+            {
+              "source_atom_name": "H32",
+              "candidate_atom_name": "H32",
+              "source_serial": 942,
+              "output_serial": 942
+            }
+          ],
+          "new_bond_source_serials": [
+            906,
+            861
+          ],
+          "new_bond_output_serials": [
+            906,
+            861
+          ]
         }
       ],
       "duplicate_atom_name_mapping": [
         {
-          "serial": 332,
+          "source_serial": 332,
+          "output_serial": 332,
           "residue": [
             "B",
             "PHX",
@@ -536,7 +701,8 @@
           "candidate_atom_name": "H2A"
         },
         {
-          "serial": 336,
+          "source_serial": 336,
+          "output_serial": 336,
           "residue": [
             "B",
             "PHX",
@@ -546,7 +712,8 @@
           "candidate_atom_name": "H2B"
         },
         {
-          "serial": 822,
+          "source_serial": 822,
+          "output_serial": 822,
           "residue": [
             "B",
             "LYX",
@@ -556,7 +723,8 @@
           "candidate_atom_name": "HCA"
         },
         {
-          "serial": 823,
+          "source_serial": 823,
+          "output_serial": 823,
           "residue": [
             "B",
             "LYX",
@@ -566,7 +734,8 @@
           "candidate_atom_name": "HCB"
         },
         {
-          "serial": 824,
+          "source_serial": 824,
+          "output_serial": 824,
           "residue": [
             "B",
             "LYX",
@@ -576,7 +745,8 @@
           "candidate_atom_name": "HCC"
         },
         {
-          "serial": 825,
+          "source_serial": 825,
+          "output_serial": 825,
           "residue": [
             "B",
             "LYX",
@@ -586,7 +756,8 @@
           "candidate_atom_name": "HCD"
         },
         {
-          "serial": 826,
+          "source_serial": 826,
+          "output_serial": 826,
           "residue": [
             "B",
             "LYX",
@@ -596,7 +767,8 @@
           "candidate_atom_name": "HXTA"
         },
         {
-          "serial": 831,
+          "source_serial": 831,
+          "output_serial": 831,
           "residue": [
             "B",
             "LYX",
@@ -606,7 +778,8 @@
           "candidate_atom_name": "HXTB"
         },
         {
-          "serial": 921,
+          "source_serial": 921,
+          "output_serial": 921,
           "residue": [
             "C",
             "MC",
@@ -616,7 +789,8 @@
           "candidate_atom_name": "H11A"
         },
         {
-          "serial": 924,
+          "source_serial": 924,
+          "output_serial": 924,
           "residue": [
             "C",
             "MC",
@@ -626,7 +800,8 @@
           "candidate_atom_name": "H11B"
         },
         {
-          "serial": 922,
+          "source_serial": 922,
+          "output_serial": 922,
           "residue": [
             "C",
             "MC",
@@ -636,7 +811,8 @@
           "candidate_atom_name": "H12A"
         },
         {
-          "serial": 925,
+          "source_serial": 925,
+          "output_serial": 925,
           "residue": [
             "C",
             "MC",
@@ -646,7 +822,8 @@
           "candidate_atom_name": "H12B"
         },
         {
-          "serial": 928,
+          "source_serial": 928,
+          "output_serial": 928,
           "residue": [
             "C",
             "MC",
@@ -656,7 +833,8 @@
           "candidate_atom_name": "H19A"
         },
         {
-          "serial": 929,
+          "source_serial": 929,
+          "output_serial": 929,
           "residue": [
             "C",
             "MC",
@@ -666,7 +844,8 @@
           "candidate_atom_name": "H19B"
         },
         {
-          "serial": 932,
+          "source_serial": 932,
+          "output_serial": 932,
           "residue": [
             "C",
             "MC",
@@ -676,7 +855,8 @@
           "candidate_atom_name": "H26A"
         },
         {
-          "serial": 936,
+          "source_serial": 936,
+          "output_serial": 936,
           "residue": [
             "C",
             "MC",
@@ -686,7 +866,8 @@
           "candidate_atom_name": "H26B"
         },
         {
-          "serial": 914,
+          "source_serial": 914,
+          "output_serial": 914,
           "residue": [
             "C",
             "MC",
@@ -696,7 +877,8 @@
           "candidate_atom_name": "H4A"
         },
         {
-          "serial": 919,
+          "source_serial": 919,
+          "output_serial": 919,
           "residue": [
             "C",
             "MC",
@@ -706,7 +888,8 @@
           "candidate_atom_name": "H4B"
         },
         {
-          "serial": 960,
+          "source_serial": 960,
+          "output_serial": 960,
           "residue": [
             "C",
             "MC",
@@ -716,7 +899,8 @@
           "candidate_atom_name": "H50A"
         },
         {
-          "serial": 967,
+          "source_serial": 967,
+          "output_serial": 967,
           "residue": [
             "C",
             "MC",
@@ -726,7 +910,8 @@
           "candidate_atom_name": "H50B"
         },
         {
-          "serial": 961,
+          "source_serial": 961,
+          "output_serial": 961,
           "residue": [
             "C",
             "MC",
@@ -736,7 +921,8 @@
           "candidate_atom_name": "H51A"
         },
         {
-          "serial": 968,
+          "source_serial": 968,
+          "output_serial": 968,
           "residue": [
             "C",
             "MC",
@@ -746,7 +932,8 @@
           "candidate_atom_name": "H51B"
         },
         {
-          "serial": 970,
+          "source_serial": 970,
+          "output_serial": 970,
           "residue": [
             "C",
             "MC",
@@ -756,7 +943,8 @@
           "candidate_atom_name": "H60A"
         },
         {
-          "serial": 971,
+          "source_serial": 971,
+          "output_serial": 971,
           "residue": [
             "C",
             "MC",
@@ -772,6 +960,8 @@
         "atom_count": 962,
         "atom_serials_strictly_increasing": true,
         "pdb_records_at_most_80_columns": true,
+        "output_serial_name_map_matches_candidate": true,
+        "audit_output_serial_name_references_verified": true,
         "conect_link_ssbond_references_valid": true,
         "heavy_inventory_matches_reported_formula": true,
         "duplicate_atom_names_within_residue": 0,
