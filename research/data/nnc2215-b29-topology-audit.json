@@ -1,9 +1,9 @@
 {
   "schema": "dia-health-one.nnc2215-b29-topology-audit.v1",
   "run": {
-    "generated_at_utc": "2026-10-25T23:03:48.928828+00:00",
+    "generated_at_utc": "2026-10-25T23:05:58.964864+00:00",
     "script": "research/audit_nnc2215_b29_topology.py",
-    "script_sha256": "867951349e6cca500f52fb7995374b2a8c723a2ce8a019c65845c02d263b6b8a",
+    "script_sha256": "98b9679f5fb9745563302544b6842f920a8841176d89989e0ee67e219778a539",
     "python_version": "3.11.17",
     "rdkit_version": "2026.03.1",
     "networkx_version": "3.6.1",

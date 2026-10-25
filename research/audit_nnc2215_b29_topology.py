@@ -16,6 +16,7 @@ import json
 import math
 from pathlib import Path
 import platform
+import re
 from typing import Any
 
 import networkx as nx
@@ -93,6 +94,31 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def subtract_formula_hydrogens(formula: str, hydrogen_count: int) -> str:
+    tokens = list(re.finditer(r"([A-Z][a-z]?)(\d*)", formula))
+    if not tokens or "".join(token.group(0) for token in tokens) != formula:
+        raise ValueError(f"Invalid molecular formula: {formula!r}")
+    element_counts = {
+        token.group(1): int(token.group(2) or "1")
+        for token in tokens
+    }
+    if element_counts.get("H", 0) < hydrogen_count:
+        raise ValueError(
+            f"Cannot remove {hydrogen_count} hydrogens from formula {formula}"
+        )
+    element_counts["H"] = element_counts.get("H", 0) - hydrogen_count
+    if element_counts["H"] == 0:
+        del element_counts["H"]
+    element_order = ["C", "H"] + sorted(
+        element for element in element_counts if element not in {"C", "H"}
+    )
+    return "".join(
+        f"{element}{element_counts[element] if element_counts[element] != 1 else ''}"
+        for element in element_order
+        if element in element_counts
+    )
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -1434,10 +1460,16 @@ def require_carboxylate_audit_invariants(
             "The declared scenario requires a local charge delta of -3; "
             f"observed {ASSUMED_CARBOXYLATE_LOCAL_CHARGE_DELTA}"
         )
-    if EXPECTED_DEPROTONATED_FRAGMENT_FORMULA != "C62H69N16O14":
+    derived_deprotonated_formula = subtract_formula_hydrogens(
+        product_formula,
+        ASSUMED_CARBOXYLATE_PROTON_REMOVALS,
+    )
+    if EXPECTED_DEPROTONATED_FRAGMENT_FORMULA != derived_deprotonated_formula:
         raise ValueError(
-            "Three removed hydrogens from C62H72N16O14 must yield C62H69N16O14; "
-            f"configured formula is {EXPECTED_DEPROTONATED_FRAGMENT_FORMULA}"
+            "The declared proton removals do not match the expected deprotonated formula: "
+            f"derived {derived_deprotonated_formula} from {product_formula} minus "
+            f"{ASSUMED_CARBOXYLATE_PROTON_REMOVALS} hydrogens, configured "
+            f"{EXPECTED_DEPROTONATED_FRAGMENT_FORMULA}"
         )
     if not candidate_pdb_hashes_unchanged:
         raise ValueError("Corrected candidate PDB hashes changed during the audit")
