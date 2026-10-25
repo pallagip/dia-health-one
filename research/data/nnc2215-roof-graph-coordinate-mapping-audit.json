@@ -1,0 +1,6279 @@
+{
+  "schema": "dia-health-one.nnc2215-roof-graph-coordinate-mapping-audit.v1",
+  "run": {
+    "generated_at_utc": "2026-10-25T17:26:04.388465+00:00",
+    "script": "research/audit_nnc2215_roof_graph_coordinate_mapping.py",
+    "script_sha256": "07b757bb89bfaf2963767450ae5e26d042c7df858a592c55e358b579e5996eb7",
+    "python_version": "3.11.17",
+    "rdkit_version": "2026.03.1",
+    "networkx_version": "3.6.1",
+    "gpu_used": false,
+    "coordinate_files_modified": false
+  },
+  "inputs": {
+    "mapped_graph_file": "structures/nnc2215-roof-propyl-azide.smi",
+    "mapped_graph_sha256": "ed4340362d1436fc7518bfc577d6d23ac4b8434d3b60f40492b2bb36fd394325",
+    "atom_map_legend_file": "data/nnc2215-roof-macrocycle-atom-map.json",
+    "atom_map_legend_sha256": "48f716a63696d01f89339d0e6da009d9794ffd03e8349dc9a3fd471248e75ec8",
+    "graph_validation_audit_file": "data/nnc2215-roof-macrocycle-graph-audit.json",
+    "graph_validation_audit_sha256": "cefc4c622c2d8d49e2c2fe072024d2b37ccdf3546b3a4e067b3f5c9f98af5810",
+    "coordinate_reconciliation_audit_file": "data/nnc2215-carbon-reconciliation-candidate.json",
+    "coordinate_reconciliation_audit_sha256": "7aed13e3d8bcd13d9aa8b3e468f8831b5dec322caf3de454dd67f68087d4e133",
+    "anchor_mapping_audit_file": "data/nnc2215-linker-mapping-audit.json",
+    "anchor_mapping_audit_sha256": "1c39ec94156c7047e1316d429c31875675c6d8cf43dc9dc98c424e8efcbd0c97"
+  },
+  "source_graph": {
+    "article_doi": "10.1038/s41586-024-08042-3",
+    "figure": "Extended Data Fig. 8i",
+    "formula": "C56H63N15O12",
+    "heavy_atom_count": 83,
+    "adjacency_edge_count": 89,
+    "connected_component_count": 1,
+    "cycle_rank": 7,
+    "map_id_count": 83,
+    "tail_source_numbering": "C21-C23"
+  },
+  "states": [
+    {
+      "state": "active_open",
+      "coordinate_candidate_file": "structures/nnc2215-open-source-corrected-candidate.pdb",
+      "coordinate_candidate_sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+      "coordinate_candidate_sha256_expected_by_reconciliation_audit": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+      "selected_residues": [
+        "LYX B30",
+        "MC C1"
+      ],
+      "selected_heavy_atom_count": 91,
+      "selected_heavy_element_counts": {
+        "C": 62,
+        "N": 15,
+        "O": 14
+      },
+      "selected_adjacency_edge_count": 98,
+      "selected_connected_component_count": 1,
+      "selected_target_atom_inventory": {
+        "494": {
+          "serial": 494,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "ND1",
+          "element": "N"
+        },
+        "495": {
+          "serial": 495,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "ND2",
+          "element": "N"
+        },
+        "496": {
+          "serial": 496,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "ND3",
+          "element": "N"
+        },
+        "497": {
+          "serial": 497,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD1",
+          "element": "C"
+        },
+        "498": {
+          "serial": 498,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD2",
+          "element": "C"
+        },
+        "499": {
+          "serial": 499,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD3",
+          "element": "C"
+        },
+        "500": {
+          "serial": 500,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD4",
+          "element": "C"
+        },
+        "501": {
+          "serial": 501,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD5",
+          "element": "C"
+        },
+        "502": {
+          "serial": 502,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD6",
+          "element": "C"
+        },
+        "503": {
+          "serial": 503,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "OD",
+          "element": "O"
+        },
+        "504": {
+          "serial": 504,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "O1",
+          "element": "O"
+        },
+        "505": {
+          "serial": 505,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C1",
+          "element": "C"
+        },
+        "506": {
+          "serial": 506,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C2",
+          "element": "C"
+        },
+        "832": {
+          "serial": 832,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C1",
+          "element": "C"
+        },
+        "833": {
+          "serial": 833,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C2",
+          "element": "C"
+        },
+        "834": {
+          "serial": 834,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N3",
+          "element": "N"
+        },
+        "835": {
+          "serial": 835,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N4",
+          "element": "N"
+        },
+        "836": {
+          "serial": 836,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N5",
+          "element": "N"
+        },
+        "837": {
+          "serial": 837,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N6",
+          "element": "N"
+        },
+        "838": {
+          "serial": 838,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C7",
+          "element": "C"
+        },
+        "839": {
+          "serial": 839,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C8",
+          "element": "C"
+        },
+        "840": {
+          "serial": 840,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C9",
+          "element": "C"
+        },
+        "841": {
+          "serial": 841,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C10",
+          "element": "C"
+        },
+        "842": {
+          "serial": 842,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C11",
+          "element": "C"
+        },
+        "843": {
+          "serial": 843,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C12",
+          "element": "C"
+        },
+        "844": {
+          "serial": 844,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C13",
+          "element": "C"
+        },
+        "845": {
+          "serial": 845,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C14",
+          "element": "C"
+        },
+        "846": {
+          "serial": 846,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C15",
+          "element": "C"
+        },
+        "847": {
+          "serial": 847,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C16",
+          "element": "C"
+        },
+        "848": {
+          "serial": 848,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C17",
+          "element": "C"
+        },
+        "849": {
+          "serial": 849,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C18",
+          "element": "C"
+        },
+        "850": {
+          "serial": 850,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N19",
+          "element": "N"
+        },
+        "851": {
+          "serial": 851,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N20",
+          "element": "N"
+        },
+        "852": {
+          "serial": 852,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C21",
+          "element": "C"
+        },
+        "853": {
+          "serial": 853,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C22",
+          "element": "C"
+        },
+        "854": {
+          "serial": 854,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C23",
+          "element": "C"
+        },
+        "855": {
+          "serial": 855,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C24",
+          "element": "C"
+        },
+        "856": {
+          "serial": 856,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C25",
+          "element": "C"
+        },
+        "857": {
+          "serial": 857,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C26",
+          "element": "C"
+        },
+        "859": {
+          "serial": 859,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C28",
+          "element": "C"
+        },
+        "861": {
+          "serial": 861,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C30",
+          "element": "C"
+        },
+        "862": {
+          "serial": 862,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C31",
+          "element": "C"
+        },
+        "863": {
+          "serial": 863,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C32",
+          "element": "C"
+        },
+        "864": {
+          "serial": 864,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C33",
+          "element": "C"
+        },
+        "865": {
+          "serial": 865,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C34",
+          "element": "C"
+        },
+        "866": {
+          "serial": 866,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C35",
+          "element": "C"
+        },
+        "867": {
+          "serial": 867,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C36",
+          "element": "C"
+        },
+        "868": {
+          "serial": 868,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C37",
+          "element": "C"
+        },
+        "869": {
+          "serial": 869,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C38",
+          "element": "C"
+        },
+        "870": {
+          "serial": 870,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C39",
+          "element": "C"
+        },
+        "871": {
+          "serial": 871,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O40",
+          "element": "O"
+        },
+        "872": {
+          "serial": 872,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O41",
+          "element": "O"
+        },
+        "873": {
+          "serial": 873,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C42",
+          "element": "C"
+        },
+        "874": {
+          "serial": 874,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C43",
+          "element": "C"
+        },
+        "875": {
+          "serial": 875,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C44",
+          "element": "C"
+        },
+        "876": {
+          "serial": 876,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C45",
+          "element": "C"
+        },
+        "877": {
+          "serial": 877,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C46",
+          "element": "C"
+        },
+        "878": {
+          "serial": 878,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C47",
+          "element": "C"
+        },
+        "879": {
+          "serial": 879,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C48",
+          "element": "C"
+        },
+        "880": {
+          "serial": 880,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N49",
+          "element": "N"
+        },
+        "881": {
+          "serial": 881,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N50",
+          "element": "N"
+        },
+        "882": {
+          "serial": 882,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N51",
+          "element": "N"
+        },
+        "883": {
+          "serial": 883,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O52",
+          "element": "O"
+        },
+        "884": {
+          "serial": 884,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O53",
+          "element": "O"
+        },
+        "885": {
+          "serial": 885,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O54",
+          "element": "O"
+        },
+        "886": {
+          "serial": 886,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C55",
+          "element": "C"
+        },
+        "887": {
+          "serial": 887,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C56",
+          "element": "C"
+        },
+        "888": {
+          "serial": 888,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C57",
+          "element": "C"
+        },
+        "889": {
+          "serial": 889,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N58",
+          "element": "N"
+        },
+        "890": {
+          "serial": 890,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N59",
+          "element": "N"
+        },
+        "891": {
+          "serial": 891,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N60",
+          "element": "N"
+        },
+        "892": {
+          "serial": 892,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O61",
+          "element": "O"
+        },
+        "893": {
+          "serial": 893,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O62",
+          "element": "O"
+        },
+        "894": {
+          "serial": 894,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O63",
+          "element": "O"
+        },
+        "895": {
+          "serial": 895,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C64",
+          "element": "C"
+        },
+        "896": {
+          "serial": 896,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C65",
+          "element": "C"
+        },
+        "897": {
+          "serial": 897,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C66",
+          "element": "C"
+        },
+        "898": {
+          "serial": 898,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C67",
+          "element": "C"
+        },
+        "899": {
+          "serial": 899,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C68",
+          "element": "C"
+        },
+        "900": {
+          "serial": 900,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C69",
+          "element": "C"
+        },
+        "901": {
+          "serial": 901,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C70",
+          "element": "C"
+        },
+        "902": {
+          "serial": 902,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C71",
+          "element": "C"
+        },
+        "903": {
+          "serial": 903,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C72",
+          "element": "C"
+        },
+        "904": {
+          "serial": 904,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C73",
+          "element": "C"
+        },
+        "905": {
+          "serial": 905,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C74",
+          "element": "C"
+        },
+        "906": {
+          "serial": 906,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C75",
+          "element": "C"
+        },
+        "907": {
+          "serial": 907,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O76",
+          "element": "O"
+        },
+        "908": {
+          "serial": 908,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O77",
+          "element": "O"
+        },
+        "909": {
+          "serial": 909,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C78",
+          "element": "C"
+        },
+        "910": {
+          "serial": 910,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O79",
+          "element": "O"
+        },
+        "911": {
+          "serial": 911,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O80",
+          "element": "O"
+        }
+      },
+      "source_graph_heavy_atom_count": 83,
+      "source_graph_adjacency_edge_count": 89,
+      "anchor_provenance": {
+        "audit_file": "data/nnc2215-linker-mapping-audit.json",
+        "state": "active_open",
+        "anchors_by_map_id": {
+          "78": {
+            "source_graph_label": "C21",
+            "source_anchor_key": "source_macrocycle_c21_candidate",
+            "source_model_atom": {
+              "name": "C31",
+              "residue": "MC",
+              "chain": "C",
+              "residue_number": "1",
+              "element": "C"
+            },
+            "source_model_serial": 861,
+            "corrected_candidate_atom": {
+              "serial": 862,
+              "chain": "C",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue": "MC",
+              "name": "C31",
+              "element": "C"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "79": {
+            "source_graph_label": "C22",
+            "source_anchor_key": "source_macrocycle_c22_candidate",
+            "source_model_atom": {
+              "name": "CD6",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "C"
+            },
+            "source_model_serial": 502,
+            "corrected_candidate_atom": {
+              "serial": 502,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "CD6",
+              "element": "C"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "80": {
+            "source_graph_label": "C23",
+            "source_anchor_key": "source_macrocycle_c23_candidate",
+            "source_model_atom": {
+              "name": "CD5",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "C"
+            },
+            "source_model_serial": 501,
+            "corrected_candidate_atom": {
+              "serial": 501,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "CD5",
+              "element": "C"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "81": {
+            "source_graph_label": "azide N attached to C23",
+            "source_anchor_key": "source_azide_n_attached_to_c23_candidate",
+            "source_model_atom": {
+              "name": "ND3",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "N"
+            },
+            "source_model_serial": 496,
+            "corrected_candidate_atom": {
+              "serial": 496,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "ND3",
+              "element": "N"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "82": {
+            "source_graph_label": "azide N 2",
+            "source_anchor_key": "source_triazole_n2_candidate",
+            "source_model_atom": {
+              "name": "ND2",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "N"
+            },
+            "source_model_serial": 495,
+            "corrected_candidate_atom": {
+              "serial": 495,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "ND2",
+              "element": "N"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "83": {
+            "source_graph_label": "azide N 3",
+            "source_anchor_key": "source_triazole_n1_candidate",
+            "source_model_atom": {
+              "name": "ND1",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "N"
+            },
+            "source_model_serial": 494,
+            "corrected_candidate_atom": {
+              "serial": 494,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "ND1",
+              "element": "N"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          }
+        }
+      },
+      "anchored_embedding_count": 16,
+      "embeddings": [
+        {
+          "embedding_id": "embedding_01",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 872,
+            "54": 908,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 910,
+            "70": 911,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_02",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 872,
+            "54": 908,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 911,
+            "70": 910,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_03",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 872,
+            "54": 908,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 910,
+            "70": 911,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_04",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 872,
+            "54": 908,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 911,
+            "70": 910,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_05",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 908,
+            "54": 872,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 910,
+            "70": 911,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_06",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 908,
+            "54": 872,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 911,
+            "70": 910,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_07",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 908,
+            "54": 872,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 910,
+            "70": 911,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_08",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 908,
+            "54": 872,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 911,
+            "70": 910,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_09",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 910,
+            "54": 911,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 872,
+            "70": 908,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_10",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 910,
+            "54": 911,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 908,
+            "70": 872,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_11",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 910,
+            "54": 911,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 872,
+            "70": 908,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_12",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 910,
+            "54": 911,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 908,
+            "70": 872,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_13",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 911,
+            "54": 910,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 872,
+            "70": 908,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_14",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 911,
+            "54": 910,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 908,
+            "70": 872,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_15",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 911,
+            "54": 910,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 872,
+            "70": 908,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        },
+        {
+          "embedding_id": "embedding_16",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 911,
+            "54": 910,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 908,
+            "70": 872,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 502,
+            "80": 501,
+            "81": 496,
+            "82": 495,
+            "83": 494
+          }
+        }
+      ],
+      "embedding_map_encoding": "Each embedding stores map_id_to_pdb_serial; resolve serials through selected_target_atom_inventory.",
+      "map_id_ambiguity": {
+        "1": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            896
+          ]
+        },
+        "2": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            895,
+            897
+          ]
+        },
+        "3": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            898,
+            900
+          ]
+        },
+        "4": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            899
+          ]
+        },
+        "5": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            898,
+            900
+          ]
+        },
+        "6": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            895,
+            897
+          ]
+        },
+        "7": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            902
+          ]
+        },
+        "8": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            901,
+            903
+          ]
+        },
+        "9": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            904,
+            906
+          ]
+        },
+        "10": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            905
+          ]
+        },
+        "11": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            904,
+            906
+          ]
+        },
+        "12": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            901,
+            903
+          ]
+        },
+        "13": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            846,
+            847
+          ]
+        },
+        "14": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            848,
+            849
+          ]
+        },
+        "15": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            838,
+            839
+          ]
+        },
+        "16": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            840,
+            841
+          ]
+        },
+        "17": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            842,
+            843
+          ]
+        },
+        "18": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            844,
+            845
+          ]
+        },
+        "19": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            856
+          ]
+        },
+        "20": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            857
+          ]
+        },
+        "21": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            852
+          ]
+        },
+        "22": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            853
+          ]
+        },
+        "23": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            854
+          ]
+        },
+        "24": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            855
+          ]
+        },
+        "25": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            846,
+            847
+          ]
+        },
+        "26": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            848,
+            849
+          ]
+        },
+        "27": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            838,
+            839
+          ]
+        },
+        "28": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            840,
+            841
+          ]
+        },
+        "29": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            842,
+            843
+          ]
+        },
+        "30": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            844,
+            845
+          ]
+        },
+        "31": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            865
+          ]
+        },
+        "32": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            866
+          ]
+        },
+        "33": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            863,
+            867
+          ]
+        },
+        "34": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            864,
+            868
+          ]
+        },
+        "35": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            863,
+            867
+          ]
+        },
+        "36": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            864,
+            868
+          ]
+        },
+        "37": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            873,
+            874
+          ]
+        },
+        "38": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            889,
+            891
+          ]
+        },
+        "39": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            886,
+            888
+          ]
+        },
+        "40": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            892,
+            894
+          ]
+        },
+        "41": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            836,
+            837
+          ]
+        },
+        "42": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            832
+          ]
+        },
+        "43": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            890
+          ]
+        },
+        "44": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            887
+          ]
+        },
+        "45": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            893
+          ]
+        },
+        "46": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            851
+          ]
+        },
+        "47": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            873,
+            874
+          ]
+        },
+        "48": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            889,
+            891
+          ]
+        },
+        "49": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            886,
+            888
+          ]
+        },
+        "50": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            892,
+            894
+          ]
+        },
+        "51": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            836,
+            837
+          ]
+        },
+        "52": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            870,
+            909
+          ]
+        },
+        "53": {
+          "candidate_count": 4,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            872,
+            908,
+            910,
+            911
+          ]
+        },
+        "54": {
+          "candidate_count": 4,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            872,
+            908,
+            910,
+            911
+          ]
+        },
+        "55": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            834,
+            835
+          ]
+        },
+        "56": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            877,
+            879
+          ]
+        },
+        "57": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            883,
+            885
+          ]
+        },
+        "58": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            880,
+            882
+          ]
+        },
+        "59": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            875,
+            876
+          ]
+        },
+        "60": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            869
+          ]
+        },
+        "61": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            871,
+            907
+          ]
+        },
+        "62": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            871,
+            907
+          ]
+        },
+        "63": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            850
+          ]
+        },
+        "64": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            878
+          ]
+        },
+        "65": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            884
+          ]
+        },
+        "66": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            881
+          ]
+        },
+        "67": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            833
+          ]
+        },
+        "68": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            870,
+            909
+          ]
+        },
+        "69": {
+          "candidate_count": 4,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            872,
+            908,
+            910,
+            911
+          ]
+        },
+        "70": {
+          "candidate_count": 4,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            872,
+            908,
+            910,
+            911
+          ]
+        },
+        "71": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            834,
+            835
+          ]
+        },
+        "72": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            877,
+            879
+          ]
+        },
+        "73": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            883,
+            885
+          ]
+        },
+        "74": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            880,
+            882
+          ]
+        },
+        "75": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            875,
+            876
+          ]
+        },
+        "76": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            859,
+            861
+          ]
+        },
+        "77": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            859,
+            861
+          ]
+        },
+        "78": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            862
+          ]
+        },
+        "79": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            502
+          ]
+        },
+        "80": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            501
+          ]
+        },
+        "81": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            496
+          ]
+        },
+        "82": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            495
+          ]
+        },
+        "83": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            494
+          ]
+        }
+      },
+      "ambiguous_graph_map_id_count": 54,
+      "unmatched_target_fragment_atoms": [
+        {
+          "serial": 505,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C1",
+          "element": "C"
+        },
+        {
+          "serial": 506,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C2",
+          "element": "C"
+        },
+        {
+          "serial": 497,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD1",
+          "element": "C"
+        },
+        {
+          "serial": 498,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD2",
+          "element": "C"
+        },
+        {
+          "serial": 499,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD3",
+          "element": "C"
+        },
+        {
+          "serial": 500,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD4",
+          "element": "C"
+        },
+        {
+          "serial": 504,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "O1",
+          "element": "O"
+        },
+        {
+          "serial": 503,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "OD",
+          "element": "O"
+        }
+      ],
+      "unmatched_fragment_interpretation": "Eight LYX B30 atoms attributed to the previously mapped six-carbon B29 linker (C6O2) under the candidate linker map; this audit does not independently prove that chemical interpretation.",
+      "graph_match_scope": "Element-labeled graph monomorphism using CONECT/LINK adjacency only; extra target edges are allowed and bond orders are ignored."
+    },
+    {
+      "state": "inactive_closed",
+      "coordinate_candidate_file": "structures/nnc2215-closed-source-corrected-candidate.pdb",
+      "coordinate_candidate_sha256": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+      "coordinate_candidate_sha256_expected_by_reconciliation_audit": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+      "selected_residues": [
+        "LYX B30",
+        "MC C1"
+      ],
+      "selected_heavy_atom_count": 91,
+      "selected_heavy_element_counts": {
+        "C": 62,
+        "N": 15,
+        "O": 14
+      },
+      "selected_adjacency_edge_count": 98,
+      "selected_connected_component_count": 1,
+      "selected_target_atom_inventory": {
+        "809": {
+          "serial": 809,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "ND1",
+          "element": "N"
+        },
+        "810": {
+          "serial": 810,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "ND2",
+          "element": "N"
+        },
+        "811": {
+          "serial": 811,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "ND3",
+          "element": "N"
+        },
+        "812": {
+          "serial": 812,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD1",
+          "element": "C"
+        },
+        "813": {
+          "serial": 813,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD2",
+          "element": "C"
+        },
+        "814": {
+          "serial": 814,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD3",
+          "element": "C"
+        },
+        "815": {
+          "serial": 815,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD4",
+          "element": "C"
+        },
+        "816": {
+          "serial": 816,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD5",
+          "element": "C"
+        },
+        "817": {
+          "serial": 817,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C",
+          "element": "C"
+        },
+        "818": {
+          "serial": 818,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "O",
+          "element": "O"
+        },
+        "819": {
+          "serial": 819,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "O1",
+          "element": "O"
+        },
+        "820": {
+          "serial": 820,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C1",
+          "element": "C"
+        },
+        "821": {
+          "serial": 821,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C2",
+          "element": "C"
+        },
+        "832": {
+          "serial": 832,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C1",
+          "element": "C"
+        },
+        "833": {
+          "serial": 833,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C2",
+          "element": "C"
+        },
+        "834": {
+          "serial": 834,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N3",
+          "element": "N"
+        },
+        "835": {
+          "serial": 835,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N4",
+          "element": "N"
+        },
+        "836": {
+          "serial": 836,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N5",
+          "element": "N"
+        },
+        "837": {
+          "serial": 837,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N6",
+          "element": "N"
+        },
+        "838": {
+          "serial": 838,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C7",
+          "element": "C"
+        },
+        "839": {
+          "serial": 839,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C8",
+          "element": "C"
+        },
+        "840": {
+          "serial": 840,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C9",
+          "element": "C"
+        },
+        "841": {
+          "serial": 841,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C10",
+          "element": "C"
+        },
+        "842": {
+          "serial": 842,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C11",
+          "element": "C"
+        },
+        "843": {
+          "serial": 843,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C12",
+          "element": "C"
+        },
+        "844": {
+          "serial": 844,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C13",
+          "element": "C"
+        },
+        "845": {
+          "serial": 845,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C14",
+          "element": "C"
+        },
+        "846": {
+          "serial": 846,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C15",
+          "element": "C"
+        },
+        "847": {
+          "serial": 847,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C16",
+          "element": "C"
+        },
+        "848": {
+          "serial": 848,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C17",
+          "element": "C"
+        },
+        "849": {
+          "serial": 849,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C18",
+          "element": "C"
+        },
+        "850": {
+          "serial": 850,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N19",
+          "element": "N"
+        },
+        "851": {
+          "serial": 851,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N20",
+          "element": "N"
+        },
+        "852": {
+          "serial": 852,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C21",
+          "element": "C"
+        },
+        "853": {
+          "serial": 853,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C22",
+          "element": "C"
+        },
+        "854": {
+          "serial": 854,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C23",
+          "element": "C"
+        },
+        "855": {
+          "serial": 855,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C24",
+          "element": "C"
+        },
+        "856": {
+          "serial": 856,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C25",
+          "element": "C"
+        },
+        "857": {
+          "serial": 857,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C26",
+          "element": "C"
+        },
+        "859": {
+          "serial": 859,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C28",
+          "element": "C"
+        },
+        "861": {
+          "serial": 861,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C30",
+          "element": "C"
+        },
+        "862": {
+          "serial": 862,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C31",
+          "element": "C"
+        },
+        "863": {
+          "serial": 863,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C32",
+          "element": "C"
+        },
+        "864": {
+          "serial": 864,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C33",
+          "element": "C"
+        },
+        "865": {
+          "serial": 865,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C34",
+          "element": "C"
+        },
+        "866": {
+          "serial": 866,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C35",
+          "element": "C"
+        },
+        "867": {
+          "serial": 867,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C36",
+          "element": "C"
+        },
+        "868": {
+          "serial": 868,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C37",
+          "element": "C"
+        },
+        "869": {
+          "serial": 869,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C38",
+          "element": "C"
+        },
+        "870": {
+          "serial": 870,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C39",
+          "element": "C"
+        },
+        "871": {
+          "serial": 871,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O40",
+          "element": "O"
+        },
+        "872": {
+          "serial": 872,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O41",
+          "element": "O"
+        },
+        "873": {
+          "serial": 873,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C42",
+          "element": "C"
+        },
+        "874": {
+          "serial": 874,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C43",
+          "element": "C"
+        },
+        "875": {
+          "serial": 875,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C44",
+          "element": "C"
+        },
+        "876": {
+          "serial": 876,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C45",
+          "element": "C"
+        },
+        "877": {
+          "serial": 877,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C46",
+          "element": "C"
+        },
+        "878": {
+          "serial": 878,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C47",
+          "element": "C"
+        },
+        "879": {
+          "serial": 879,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C48",
+          "element": "C"
+        },
+        "880": {
+          "serial": 880,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N49",
+          "element": "N"
+        },
+        "881": {
+          "serial": 881,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N50",
+          "element": "N"
+        },
+        "882": {
+          "serial": 882,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N51",
+          "element": "N"
+        },
+        "883": {
+          "serial": 883,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O52",
+          "element": "O"
+        },
+        "884": {
+          "serial": 884,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O53",
+          "element": "O"
+        },
+        "885": {
+          "serial": 885,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O54",
+          "element": "O"
+        },
+        "886": {
+          "serial": 886,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C55",
+          "element": "C"
+        },
+        "887": {
+          "serial": 887,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C56",
+          "element": "C"
+        },
+        "888": {
+          "serial": 888,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C57",
+          "element": "C"
+        },
+        "889": {
+          "serial": 889,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N58",
+          "element": "N"
+        },
+        "890": {
+          "serial": 890,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N59",
+          "element": "N"
+        },
+        "891": {
+          "serial": 891,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "N60",
+          "element": "N"
+        },
+        "892": {
+          "serial": 892,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O61",
+          "element": "O"
+        },
+        "893": {
+          "serial": 893,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O62",
+          "element": "O"
+        },
+        "894": {
+          "serial": 894,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O63",
+          "element": "O"
+        },
+        "895": {
+          "serial": 895,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C64",
+          "element": "C"
+        },
+        "896": {
+          "serial": 896,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C65",
+          "element": "C"
+        },
+        "897": {
+          "serial": 897,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C66",
+          "element": "C"
+        },
+        "898": {
+          "serial": 898,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C67",
+          "element": "C"
+        },
+        "899": {
+          "serial": 899,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C68",
+          "element": "C"
+        },
+        "900": {
+          "serial": 900,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C69",
+          "element": "C"
+        },
+        "901": {
+          "serial": 901,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C70",
+          "element": "C"
+        },
+        "902": {
+          "serial": 902,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C71",
+          "element": "C"
+        },
+        "903": {
+          "serial": 903,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C72",
+          "element": "C"
+        },
+        "904": {
+          "serial": 904,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C73",
+          "element": "C"
+        },
+        "905": {
+          "serial": 905,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C74",
+          "element": "C"
+        },
+        "906": {
+          "serial": 906,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C75",
+          "element": "C"
+        },
+        "907": {
+          "serial": 907,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O76",
+          "element": "O"
+        },
+        "908": {
+          "serial": 908,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O77",
+          "element": "O"
+        },
+        "909": {
+          "serial": 909,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "C78",
+          "element": "C"
+        },
+        "910": {
+          "serial": 910,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O79",
+          "element": "O"
+        },
+        "911": {
+          "serial": 911,
+          "chain": "C",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue": "MC",
+          "name": "O80",
+          "element": "O"
+        }
+      },
+      "source_graph_heavy_atom_count": 83,
+      "source_graph_adjacency_edge_count": 89,
+      "anchor_provenance": {
+        "audit_file": "data/nnc2215-linker-mapping-audit.json",
+        "state": "inactive_closed",
+        "anchors_by_map_id": {
+          "78": {
+            "source_graph_label": "C21",
+            "source_anchor_key": "source_macrocycle_c21_candidate",
+            "source_model_atom": {
+              "name": "C31",
+              "residue": "MC",
+              "chain": "C",
+              "residue_number": "1",
+              "element": "C"
+            },
+            "source_model_serial": 862,
+            "corrected_candidate_atom": {
+              "serial": 862,
+              "chain": "C",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue": "MC",
+              "name": "C31",
+              "element": "C"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "79": {
+            "source_graph_label": "C22",
+            "source_anchor_key": "source_macrocycle_c22_candidate",
+            "source_model_atom": {
+              "name": "C",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "C"
+            },
+            "source_model_serial": 817,
+            "corrected_candidate_atom": {
+              "serial": 817,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "C",
+              "element": "C"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "80": {
+            "source_graph_label": "C23",
+            "source_anchor_key": "source_macrocycle_c23_candidate",
+            "source_model_atom": {
+              "name": "CD5",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "C"
+            },
+            "source_model_serial": 816,
+            "corrected_candidate_atom": {
+              "serial": 816,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "CD5",
+              "element": "C"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "81": {
+            "source_graph_label": "azide N attached to C23",
+            "source_anchor_key": "source_azide_n_attached_to_c23_candidate",
+            "source_model_atom": {
+              "name": "ND3",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "N"
+            },
+            "source_model_serial": 811,
+            "corrected_candidate_atom": {
+              "serial": 811,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "ND3",
+              "element": "N"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "82": {
+            "source_graph_label": "azide N 2",
+            "source_anchor_key": "source_triazole_n2_candidate",
+            "source_model_atom": {
+              "name": "ND2",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "N"
+            },
+            "source_model_serial": 810,
+            "corrected_candidate_atom": {
+              "serial": 810,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "ND2",
+              "element": "N"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          },
+          "83": {
+            "source_graph_label": "azide N 3",
+            "source_anchor_key": "source_triazole_n1_candidate",
+            "source_model_atom": {
+              "name": "ND1",
+              "residue": "LYX",
+              "chain": "B",
+              "residue_number": "30",
+              "element": "N"
+            },
+            "source_model_serial": 809,
+            "corrected_candidate_atom": {
+              "serial": 809,
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue": "LYX",
+              "name": "ND1",
+              "element": "N"
+            },
+            "anchor_basis": "Previously documented candidate linker/tail map from data/nnc2215-linker-mapping-audit.json; fixed for this subgraph search, not independently established here."
+          }
+        }
+      },
+      "anchored_embedding_count": 16,
+      "embeddings": [
+        {
+          "embedding_id": "embedding_01",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 872,
+            "54": 908,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 910,
+            "70": 911,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_02",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 872,
+            "54": 908,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 911,
+            "70": 910,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_03",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 872,
+            "54": 908,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 910,
+            "70": 911,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_04",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 872,
+            "54": 908,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 911,
+            "70": 910,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_05",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 908,
+            "54": 872,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 910,
+            "70": 911,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_06",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 908,
+            "54": 872,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 911,
+            "70": 910,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_07",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 908,
+            "54": 872,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 910,
+            "70": 911,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_08",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 895,
+            "3": 900,
+            "4": 899,
+            "5": 898,
+            "6": 897,
+            "7": 902,
+            "8": 901,
+            "9": 906,
+            "10": 905,
+            "11": 904,
+            "12": 903,
+            "13": 847,
+            "14": 849,
+            "15": 839,
+            "16": 841,
+            "17": 843,
+            "18": 845,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 846,
+            "26": 848,
+            "27": 838,
+            "28": 840,
+            "29": 842,
+            "30": 844,
+            "31": 865,
+            "32": 866,
+            "33": 867,
+            "34": 868,
+            "35": 863,
+            "36": 864,
+            "37": 874,
+            "38": 891,
+            "39": 888,
+            "40": 894,
+            "41": 837,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 873,
+            "48": 889,
+            "49": 886,
+            "50": 892,
+            "51": 836,
+            "52": 870,
+            "53": 908,
+            "54": 872,
+            "55": 835,
+            "56": 879,
+            "57": 885,
+            "58": 882,
+            "59": 876,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 909,
+            "69": 911,
+            "70": 910,
+            "71": 834,
+            "72": 877,
+            "73": 883,
+            "74": 880,
+            "75": 875,
+            "76": 861,
+            "77": 859,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_09",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 910,
+            "54": 911,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 872,
+            "70": 908,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_10",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 910,
+            "54": 911,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 908,
+            "70": 872,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_11",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 910,
+            "54": 911,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 872,
+            "70": 908,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_12",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 910,
+            "54": 911,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 908,
+            "70": 872,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_13",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 911,
+            "54": 910,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 872,
+            "70": 908,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_14",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 911,
+            "54": 910,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 871,
+            "62": 907,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 908,
+            "70": 872,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_15",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 911,
+            "54": 910,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 872,
+            "70": 908,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        },
+        {
+          "embedding_id": "embedding_16",
+          "map_id_to_pdb_serial": {
+            "1": 896,
+            "2": 897,
+            "3": 898,
+            "4": 899,
+            "5": 900,
+            "6": 895,
+            "7": 902,
+            "8": 903,
+            "9": 904,
+            "10": 905,
+            "11": 906,
+            "12": 901,
+            "13": 846,
+            "14": 848,
+            "15": 838,
+            "16": 840,
+            "17": 842,
+            "18": 844,
+            "19": 856,
+            "20": 857,
+            "21": 852,
+            "22": 853,
+            "23": 854,
+            "24": 855,
+            "25": 847,
+            "26": 849,
+            "27": 839,
+            "28": 841,
+            "29": 843,
+            "30": 845,
+            "31": 865,
+            "32": 866,
+            "33": 863,
+            "34": 864,
+            "35": 867,
+            "36": 868,
+            "37": 873,
+            "38": 889,
+            "39": 886,
+            "40": 892,
+            "41": 836,
+            "42": 832,
+            "43": 890,
+            "44": 887,
+            "45": 893,
+            "46": 851,
+            "47": 874,
+            "48": 891,
+            "49": 888,
+            "50": 894,
+            "51": 837,
+            "52": 909,
+            "53": 911,
+            "54": 910,
+            "55": 834,
+            "56": 877,
+            "57": 883,
+            "58": 880,
+            "59": 875,
+            "60": 869,
+            "61": 907,
+            "62": 871,
+            "63": 850,
+            "64": 878,
+            "65": 884,
+            "66": 881,
+            "67": 833,
+            "68": 870,
+            "69": 908,
+            "70": 872,
+            "71": 835,
+            "72": 879,
+            "73": 885,
+            "74": 882,
+            "75": 876,
+            "76": 859,
+            "77": 861,
+            "78": 862,
+            "79": 817,
+            "80": 816,
+            "81": 811,
+            "82": 810,
+            "83": 809
+          }
+        }
+      ],
+      "embedding_map_encoding": "Each embedding stores map_id_to_pdb_serial; resolve serials through selected_target_atom_inventory.",
+      "map_id_ambiguity": {
+        "1": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            896
+          ]
+        },
+        "2": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            895,
+            897
+          ]
+        },
+        "3": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            898,
+            900
+          ]
+        },
+        "4": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            899
+          ]
+        },
+        "5": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            898,
+            900
+          ]
+        },
+        "6": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            895,
+            897
+          ]
+        },
+        "7": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            902
+          ]
+        },
+        "8": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            901,
+            903
+          ]
+        },
+        "9": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            904,
+            906
+          ]
+        },
+        "10": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            905
+          ]
+        },
+        "11": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            904,
+            906
+          ]
+        },
+        "12": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            901,
+            903
+          ]
+        },
+        "13": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            846,
+            847
+          ]
+        },
+        "14": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            848,
+            849
+          ]
+        },
+        "15": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            838,
+            839
+          ]
+        },
+        "16": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            840,
+            841
+          ]
+        },
+        "17": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            842,
+            843
+          ]
+        },
+        "18": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            844,
+            845
+          ]
+        },
+        "19": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            856
+          ]
+        },
+        "20": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            857
+          ]
+        },
+        "21": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            852
+          ]
+        },
+        "22": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            853
+          ]
+        },
+        "23": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            854
+          ]
+        },
+        "24": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            855
+          ]
+        },
+        "25": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            846,
+            847
+          ]
+        },
+        "26": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            848,
+            849
+          ]
+        },
+        "27": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            838,
+            839
+          ]
+        },
+        "28": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            840,
+            841
+          ]
+        },
+        "29": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            842,
+            843
+          ]
+        },
+        "30": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            844,
+            845
+          ]
+        },
+        "31": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            865
+          ]
+        },
+        "32": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            866
+          ]
+        },
+        "33": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            863,
+            867
+          ]
+        },
+        "34": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            864,
+            868
+          ]
+        },
+        "35": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            863,
+            867
+          ]
+        },
+        "36": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            864,
+            868
+          ]
+        },
+        "37": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            873,
+            874
+          ]
+        },
+        "38": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            889,
+            891
+          ]
+        },
+        "39": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            886,
+            888
+          ]
+        },
+        "40": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            892,
+            894
+          ]
+        },
+        "41": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            836,
+            837
+          ]
+        },
+        "42": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            832
+          ]
+        },
+        "43": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            890
+          ]
+        },
+        "44": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            887
+          ]
+        },
+        "45": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            893
+          ]
+        },
+        "46": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            851
+          ]
+        },
+        "47": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            873,
+            874
+          ]
+        },
+        "48": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            889,
+            891
+          ]
+        },
+        "49": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            886,
+            888
+          ]
+        },
+        "50": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            892,
+            894
+          ]
+        },
+        "51": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            836,
+            837
+          ]
+        },
+        "52": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            870,
+            909
+          ]
+        },
+        "53": {
+          "candidate_count": 4,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            872,
+            908,
+            910,
+            911
+          ]
+        },
+        "54": {
+          "candidate_count": 4,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            872,
+            908,
+            910,
+            911
+          ]
+        },
+        "55": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            834,
+            835
+          ]
+        },
+        "56": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            877,
+            879
+          ]
+        },
+        "57": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            883,
+            885
+          ]
+        },
+        "58": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            880,
+            882
+          ]
+        },
+        "59": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            875,
+            876
+          ]
+        },
+        "60": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            869
+          ]
+        },
+        "61": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            871,
+            907
+          ]
+        },
+        "62": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            871,
+            907
+          ]
+        },
+        "63": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            850
+          ]
+        },
+        "64": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            878
+          ]
+        },
+        "65": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            884
+          ]
+        },
+        "66": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            881
+          ]
+        },
+        "67": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            833
+          ]
+        },
+        "68": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            870,
+            909
+          ]
+        },
+        "69": {
+          "candidate_count": 4,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            872,
+            908,
+            910,
+            911
+          ]
+        },
+        "70": {
+          "candidate_count": 4,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            872,
+            908,
+            910,
+            911
+          ]
+        },
+        "71": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            834,
+            835
+          ]
+        },
+        "72": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            877,
+            879
+          ]
+        },
+        "73": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            883,
+            885
+          ]
+        },
+        "74": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            880,
+            882
+          ]
+        },
+        "75": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            875,
+            876
+          ]
+        },
+        "76": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            859,
+            861
+          ]
+        },
+        "77": {
+          "candidate_count": 2,
+          "unique_across_all_embeddings": false,
+          "candidate_pdb_serials": [
+            859,
+            861
+          ]
+        },
+        "78": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            862
+          ]
+        },
+        "79": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            817
+          ]
+        },
+        "80": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            816
+          ]
+        },
+        "81": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            811
+          ]
+        },
+        "82": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            810
+          ]
+        },
+        "83": {
+          "candidate_count": 1,
+          "unique_across_all_embeddings": true,
+          "candidate_pdb_serials": [
+            809
+          ]
+        }
+      },
+      "ambiguous_graph_map_id_count": 54,
+      "unmatched_target_fragment_atoms": [
+        {
+          "serial": 820,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C1",
+          "element": "C"
+        },
+        {
+          "serial": 821,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "C2",
+          "element": "C"
+        },
+        {
+          "serial": 812,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD1",
+          "element": "C"
+        },
+        {
+          "serial": 813,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD2",
+          "element": "C"
+        },
+        {
+          "serial": 814,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD3",
+          "element": "C"
+        },
+        {
+          "serial": 815,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "CD4",
+          "element": "C"
+        },
+        {
+          "serial": 818,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "O",
+          "element": "O"
+        },
+        {
+          "serial": 819,
+          "chain": "B",
+          "residue_number": "30",
+          "insertion_code": "",
+          "residue": "LYX",
+          "name": "O1",
+          "element": "O"
+        }
+      ],
+      "unmatched_fragment_interpretation": "Eight LYX B30 atoms attributed to the previously mapped six-carbon B29 linker (C6O2) under the candidate linker map; this audit does not independently prove that chemical interpretation.",
+      "graph_match_scope": "Element-labeled graph monomorphism using CONECT/LINK adjacency only; extra target edges are allowed and bond orders are ignored."
+    }
+  ],
+  "assessment": {
+    "both_coordinate_candidates_contain_anchored_roof_graph": true,
+    "one_authoritative_full_graph_to_pdb_map_established": false,
+    "unmatched_b29_linker_atoms_per_state": 8,
+    "interpretation": "The isolated 83-heavy-atom source roof graph embeds in each corrected coordinate candidate with 16 element-matched, edge-preserving mappings after fixing the six previously documented C21-C23/azide-tail anchors. The six anchors are assumptions imported from the candidate linker map. Many remaining graph map IDs have multiple PDB atom candidates; no unique full graph-to-PDB atom map follows.",
+    "limitations": [
+      "The check compares element labels and adjacency from PDB CONECT/LINK records only; PDB records do not encode authoritative bond orders or formal charges.",
+      "Subgraph monomorphism allows additional target edges, including adjacency introduced when the source azide is clicked into the B29 alkyne linker.",
+      "The six fixed tail anchors come from the previously documented candidate map and are not independently proven by this search.",
+      "No coordinate fitting, geometry validation, stereochemical assignment, protonation assignment, partial-charge assignment, or force-field validation was performed.",
+      "The source graph is an isolated roof macrocycle component, not the complete NNC2215 insulin conjugate.",
+      "The eight unmatched LYX atoms are identified as the B29 linker only under the existing candidate partition; this audit does not independently prove that partition.",
+      "The corrected PDB files remain candidate derivatives of published model coordinates; this audit does not promote them to experimental structures or production simulation inputs."
+    ]
+  }
+}
