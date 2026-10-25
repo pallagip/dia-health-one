@@ -1,5 +1,16 @@
 {
   "schema": "dia-health-one.compute-access-status.v1",
+  "membership_update": {
+    "confirmed_active": true,
+    "confirmed_by": "NVIDIA Inception support",
+    "confirmed_on_utc_date": "2026-10-19",
+    "innovation_lab_status": "NVIDIA support stated DGX Cloud Innovation Lab is no longer available.",
+    "source_scope": "Email confirmation; it is not a fresh authenticated benefits-portal check.",
+    "last_portal_check_at_utc": "2026-10-18T09:59:00Z",
+    "last_portal_observation": "Six partner-benefit requests were pending.",
+    "gpu_allocation_confirmed": false,
+    "credit_award_confirmed": false
+  },
   "checked_date_utc": "2026-10-18",
   "portal_status_checked_at_utc": "2026-10-18T09:59:00Z",
   "portal_status_evidence": {

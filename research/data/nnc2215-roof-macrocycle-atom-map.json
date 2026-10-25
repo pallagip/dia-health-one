@@ -1,0 +1,36 @@
+{
+  "schema": "dia-health-one.nnc2215-roof-macrocycle-atom-map.v1",
+  "source": {
+    "article_doi": "10.1038/s41586-024-08042-3",
+    "article_url": "https://www.nature.com/articles/s41586-024-08042-3",
+    "supporting_information_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+    "figure": "Extended Data Fig. 8i",
+    "numbered_figure_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig13_ESM.jpg",
+    "reported_component_formula": "C56H63N15O12",
+    "tail_source_numbering": "C21-C23"
+  },
+  "graph_file": "structures/nnc2215-roof-propyl-azide.smi",
+  "map_id_legend": {
+    "floor_aromatic_ring": [1, 2, 3, 4, 5, 6],
+    "roof_aromatic_ring": [7, 8, 9, 10, 11, 12],
+    "three_spacer_aromatic_rings_in_graph_order": [[13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30]],
+    "three_floor_ethyl_substituents": [[31, 32], [33, 34], [35, 36]],
+    "floor_to_spacer_urea_bridges": [37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+    "three_carboxyl_groups": [[52, 53, 54], [60, 61, 62], [68, 69, 70]],
+    "spacer_to_roof_urea_bridges": [[55, 56, 57, 58, 59], [63, 64, 65, 66, 67], [71, 72, 73, 74, 75]],
+    "roof_methyl_substituents": [76, 77],
+    "roof_tail_source_C21_C22_C23": {"C21": 78, "C22": 79, "C23": 80},
+    "azide_nitrogens": [81, 82, 83]
+  },
+  "representation_assumptions": [
+    "The three carboxyl groups use the neutral COOH form depicted in the source drawing; their physiological protonation states are unresolved.",
+    "The source labels the terminal substituent N3. The SMILES uses the conventional resonance form C-N=N+=N-; this is a representation choice, not a distinct regioisomer claim.",
+    "Map IDs 1-83 provide stable identifiers for this graph. Only the roof-tail carbons C21-C23 inherit explicit numbering from the source figure; the remaining IDs are graph identifiers, not authoritative PDB atom names.",
+    "The source 2D drawing does not assign atom stereocentres; no atom stereochemistry is added."
+  ],
+  "limitations": [
+    "This is an isolated roof macrocycle propyl-azide graph, not the complete NNC2215 insulin conjugate.",
+    "The graph has not been mapped one-to-one to either public NNC2215 PDB model.",
+    "Simulation-pH protonation, partial charges, force-field parameters, and target-MD readiness remain unresolved."
+  ]
+}
