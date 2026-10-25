@@ -151,6 +151,12 @@ The source-derived full graph exactly matches the element-labeled adjacency of e
 
 The pH 7.4 carboxylate result is a declared graph scenario, not a pKa calculation or measured microstate. The isolated B29 component changes from C62H72N16O14 to C62H69N16O14 with three removed protons and local charge change −3. No coordinates or PDB oxygen labels are changed; the rest of insulin is outside this audit. Details and machine-readable results are in `data/nnc2215-b29-topology-audit.json`.
 
+### B1/B29 attachment-boundary audit — 26 October 2026
+
+[`data/nnc2215-attachment-boundary-audit.json`](data/nnc2215-attachment-boundary-audit.json) reconciles the source component boundary edges with the local insulin contexts in both corrected, model-built candidate PDBs. It checks B1 map 1–2 at PheB1 N–PHX C2, B29 map 84–92 at LysB29 NZ–LYX B30 CD1, and roof maps 78–79 at MC C31–LYX B30 CD6 (open) / C (closed), plus native PheB1 N–CA and LysB29 CE–NZ adjacency. Rerun from the repository root with `micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/audit_nnc2215_attachment_boundaries.py`.
+
+The coordinate records show the PheB1 N hydrogen discrepancy: the open candidate has a CONECT neighbor H2; the closed candidate has no hydrogen neighbor at N, while PHX H2A is 1.006 Å away without a CONECT edge. LysB29 NZ has the recorded HZ2 neighbor in both states. These are connectivity and proximity observations, not validated hydrogen ownership. The audit closes only the local heavy-atom attachment boundaries; it leaves the 16 B29 mappings per state, oxygen-label ambiguity, complete conjugate graph and stereochemistry, full-system protonation/charge, force-field parameters, and target MD open. It does not edit coordinates or assign the disputed hydrogen.
+
 The neutral-graph geometry screen covers 1,584 mapped edges per state. Distances span 1.2116–1.5611 Å (open) and 1.2116–1.5548 Å (closed); 14 of 16 mappings in each state have one to three heuristic short carboxyl C–O outliers, while two mappings per state fall fully within the broad screen. These distances cannot establish bond order or choose a mapping. Model hydrogen records differ at roof C22/C23 and linker C4–C6; the closed candidate has one fewer recorded hydrogen at linker C4. Those PDB hydrogen records are not validated chemistry.
 
 This work updates a source-derived component graph and candidate-coordinate audit only. It does not establish a production model, target-binding MD, or a clinical conclusion. The audit ran on CPU.

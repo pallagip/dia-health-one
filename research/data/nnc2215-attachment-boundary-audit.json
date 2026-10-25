@@ -1,0 +1,1800 @@
+{
+  "schema": "dia-health-one.nnc2215-attachment-boundary-audit.v1",
+  "run": {
+    "generated_at_utc": "2026-10-25T23:27:29.658919+00:00",
+    "script": "research/audit_nnc2215_attachment_boundaries.py",
+    "script_sha256": "c8b696279cdb076b919eebe0cf7500b8252dd7b7b737716a7fe9034d9e4350d3",
+    "python_version": "3.11.17",
+    "rdkit_version": "2026.03.1",
+    "coordinate_files_modified": false,
+    "hydrogen_or_coordinate_records_modified": false
+  },
+  "inputs": {
+    "sha256_file_integrity_records": {
+      "coordinate_reconciliation": {
+        "path": "research/data/nnc2215-carbon-reconciliation-candidate.json",
+        "sha256_observed": "7aed13e3d8bcd13d9aa8b3e468f8831b5dec322caf3de454dd67f68087d4e133",
+        "sha256_expected": "7aed13e3d8bcd13d9aa8b3e468f8831b5dec322caf3de454dd67f68087d4e133",
+        "expected_hash_source": "B1 topology-audit input hash",
+        "hash_check": "pass"
+      },
+      "b1_source_graph": {
+        "path": "research/structures/nnc2215-b1-glucoside-attachment.smi",
+        "sha256_observed": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4",
+        "sha256_expected": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4",
+        "expected_hash_source": "B1 topology-audit input hash",
+        "hash_check": "pass"
+      },
+      "b1_map_legend": {
+        "path": "research/data/nnc2215-b1-glucoside-atom-map.json",
+        "sha256_observed": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81",
+        "sha256_expected": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81",
+        "expected_hash_source": "B1 topology-audit input hash",
+        "hash_check": "pass"
+      },
+      "b1_topology_audit": {
+        "path": "research/data/nnc2215-b1-topology-audit.json",
+        "sha256_observed": "4ee0feac680641f60b465f343837923488877bf04ea03e927f62efad707e79ce",
+        "sha256_expected": null,
+        "expected_hash_source": null,
+        "hash_check": "recorded_only_no_independent_expected_hash"
+      },
+      "b29_source_graph": {
+        "path": "research/structures/nnc2215-b29-linker-roof-product.smi",
+        "sha256_observed": "b677316c1fced61045d2eebab4de85cdb2f1ef956280d18ab9d610df1181bd40",
+        "sha256_expected": "b677316c1fced61045d2eebab4de85cdb2f1ef956280d18ab9d610df1181bd40",
+        "expected_hash_source": "B29 product map legend graph_sha256",
+        "hash_check": "pass"
+      },
+      "b29_map_legend": {
+        "path": "research/data/nnc2215-b29-linker-roof-product-map.json",
+        "sha256_observed": "eb028433748cf294744ac02f381e909f029f79916484a2e05dfbf966f7faa0c5",
+        "sha256_expected": "eb028433748cf294744ac02f381e909f029f79916484a2e05dfbf966f7faa0c5",
+        "expected_hash_source": "B29 topology-audit source_product_graph hash",
+        "hash_check": "pass"
+      },
+      "b29_topology_audit": {
+        "path": "research/data/nnc2215-b29-topology-audit.json",
+        "sha256_observed": "edd4d9911170e3688c80f6b8ca3f4339ebee7815c1bb596cfa2dfaca468d96c6",
+        "sha256_expected": null,
+        "expected_hash_source": null,
+        "hash_check": "recorded_only_no_independent_expected_hash"
+      },
+      "roof_source_graph": {
+        "path": "research/structures/nnc2215-roof-propyl-azide.smi",
+        "sha256_observed": "ed4340362d1436fc7518bfc577d6d23ac4b8434d3b60f40492b2bb36fd394325",
+        "sha256_expected": "ed4340362d1436fc7518bfc577d6d23ac4b8434d3b60f40492b2bb36fd394325",
+        "expected_hash_source": "B29 product map legend input hash",
+        "hash_check": "pass"
+      },
+      "roof_map_legend": {
+        "path": "research/data/nnc2215-roof-macrocycle-atom-map.json",
+        "sha256_observed": "48f716a63696d01f89339d0e6da009d9794ffd03e8349dc9a3fd471248e75ec8",
+        "sha256_expected": "48f716a63696d01f89339d0e6da009d9794ffd03e8349dc9a3fd471248e75ec8",
+        "expected_hash_source": "B29 product map legend input hash",
+        "hash_check": "pass"
+      },
+      "active_open_candidate": {
+        "path": "research/structures/nnc2215-open-source-corrected-candidate.pdb",
+        "sha256_observed": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+        "sha256_expected": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+        "expected_hash_source": "coordinate reconciliation candidate output hash",
+        "hash_check": "pass"
+      },
+      "inactive_closed_candidate": {
+        "path": "research/structures/nnc2215-closed-source-corrected-candidate.pdb",
+        "sha256_observed": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+        "sha256_expected": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+        "expected_hash_source": "coordinate reconciliation candidate output hash",
+        "hash_check": "pass"
+      },
+      "audit_script": {
+        "path": "research/audit_nnc2215_attachment_boundaries.py",
+        "sha256_observed": "c8b696279cdb076b919eebe0cf7500b8252dd7b7b737716a7fe9034d9e4350d3",
+        "sha256_expected": null,
+        "expected_hash_source": null,
+        "hash_check": "recorded_only_no_independent_expected_hash"
+      }
+    },
+    "candidate_pdb_before_after_hashes": {
+      "active_open": {
+        "path": "research/structures/nnc2215-open-source-corrected-candidate.pdb",
+        "sha256_before_parsing": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+        "sha256_expected_by_reconciliation": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+        "sha256_expected_by_existing_topology_audits": {
+          "b1_topology_audit": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+          "b29_topology_audit_before": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+          "b29_topology_audit_after": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc"
+        },
+        "sha256_after_parsing": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+        "unchanged_during_audit": true
+      },
+      "inactive_closed": {
+        "path": "research/structures/nnc2215-closed-source-corrected-candidate.pdb",
+        "sha256_before_parsing": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+        "sha256_expected_by_reconciliation": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+        "sha256_expected_by_existing_topology_audits": {
+          "b1_topology_audit": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+          "b29_topology_audit_before": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+          "b29_topology_audit_after": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e"
+        },
+        "sha256_after_parsing": "2da23e028fef992f097ad06d5899caba30826fbf7cfde22d2fd2862cd790f07e",
+        "unchanged_during_audit": true
+      }
+    }
+  },
+  "source_graph_boundary_edges": {
+    "b1_maps_1_2": {
+      "graph_path": "research/structures/nnc2215-b1-glucoside-attachment.smi",
+      "legend_path": "research/data/nnc2215-b1-glucoside-atom-map.json",
+      "map_ids": [
+        1,
+        2
+      ],
+      "source_bond_class": "single",
+      "source_graph_adjacency": true,
+      "provenance": "mapped source SMILES plus map legend",
+      "map_legend_roles": {
+        "1": "Mapped protein-boundary placeholder for PheB1 N; it is joined to the B1 acyl carbonyl.",
+        "2": "B1 linker carbonyl carbon; amide carbonyl attached to PheB1 N."
+      }
+    },
+    "b29_maps_84_92": {
+      "graph_path": "research/structures/nnc2215-b29-linker-roof-product.smi",
+      "legend_path": "research/data/nnc2215-b29-linker-roof-product-map.json",
+      "map_ids": [
+        84,
+        92
+      ],
+      "source_bond_class": "single",
+      "source_graph_adjacency": true,
+      "provenance": "mapped source SMILES plus map legend",
+      "map_legend_roles": {
+        "84": "source linker C3, carbamate carbonyl carbon",
+        "92": "LysB29 NZ attachment endpoint"
+      }
+    },
+    "roof_tail_maps_78_79": {
+      "graph_path": "research/structures/nnc2215-roof-propyl-azide.smi",
+      "legend_path": "research/data/nnc2215-roof-macrocycle-atom-map.json",
+      "map_ids": [
+        78,
+        79
+      ],
+      "source_bond_class": "single",
+      "source_graph_adjacency": true,
+      "provenance": "mapped source SMILES plus map legend",
+      "also_present_in_b29_product_graph": true,
+      "map_legend_roles": {
+        "78": "source macrocycle C21",
+        "79": "source macrocycle C22"
+      }
+    }
+  },
+  "states": [
+    {
+      "state": "active_open",
+      "candidate_pdb": "research/structures/nnc2215-open-source-corrected-candidate.pdb",
+      "mapping_cross_checks": {
+        "b1_topology_audit": {
+          "exact_mapping_count": 1,
+          "source_graph_summary": {
+            "node_count": 19,
+            "element_counts": {
+              "C": 10,
+              "N": 1,
+              "O": 8
+            },
+            "edge_count": 19,
+            "connected_component_count": 1,
+            "cycle_rank_E_minus_V_plus_components": 1
+          },
+          "map_1_target_atom": {
+            "serial": 37,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "N",
+            "element": "N",
+            "coordinates_angstrom": [
+              -0.152,
+              11.315,
+              -10.184
+            ]
+          },
+          "map_2_target_atom": {
+            "serial": 3,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C2",
+            "element": "C",
+            "coordinates_angstrom": [
+              0.775,
+              10.36,
+              -10.298
+            ]
+          }
+        },
+        "b29_topology_audit": {
+          "exact_mapping_count": 16,
+          "full_ambiguity_preserved": true,
+          "source_map_serials_invariant_across_all_mappings": {
+            "78": 862,
+            "79": 502,
+            "84": 497,
+            "92": 480
+          },
+          "source_graph_summary": {
+            "node_count": 92,
+            "edge_count": 99,
+            "connected_component_count": 1,
+            "cycle_rank_E_minus_V_plus_components": 8
+          }
+        }
+      },
+      "attachment_boundary_joins": [
+        {
+          "join_id": "b1_glucoside_attachment",
+          "join_type": "b1_component_boundary",
+          "state": "active_open",
+          "atom_identities": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "N",
+              "altloc": "",
+              "element": "N",
+              "serial": 37,
+              "coordinates_angstrom": [
+                -0.152,
+                11.315,
+                -10.184
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 3,
+              "coordinates_angstrom": [
+                0.775,
+                10.36,
+                -10.298
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT",
+            "LINK"
+          ],
+          "distance_angstrom": 1.335796,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment",
+          "source_graph_edge": {
+            "map_ids": [
+              1,
+              2
+            ],
+            "source_bond_class": "single",
+            "source_graph_adjacency": true,
+            "provenance": "mapped source SMILES plus map legend"
+          },
+          "link_record_count_for_resolved_pair": 1,
+          "link_records": [
+            {
+              "line_number": 28,
+              "record": "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.34"
+            }
+          ]
+        },
+        {
+          "join_id": "b29_lys_attachment",
+          "join_type": "b29_component_boundary",
+          "state": "active_open",
+          "atom_identities": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD1",
+              "altloc": "",
+              "element": "C",
+              "serial": 497,
+              "coordinates_angstrom": [
+                -28.183,
+                -10.829,
+                -7.5
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "NZ",
+              "altloc": "",
+              "element": "N",
+              "serial": 480,
+              "coordinates_angstrom": [
+                -27.823,
+                -9.517,
+                -7.714
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT",
+            "LINK"
+          ],
+          "distance_angstrom": 1.377222,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment",
+          "source_graph_edge": {
+            "map_ids": [
+              84,
+              92
+            ],
+            "source_bond_class": "single",
+            "source_graph_adjacency": true,
+            "provenance": "mapped source SMILES plus map legend"
+          },
+          "link_record_count_for_resolved_pair": 1,
+          "link_records": [
+            {
+              "line_number": 27,
+              "record": "LINK        CD1  LYX B  30                NZ   LYS B  29     1555   1555  1.38"
+            }
+          ]
+        },
+        {
+          "join_id": "roof_tail_attachment",
+          "join_type": "roof_tail_inter_residue_boundary",
+          "state": "active_open",
+          "atom_identities": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "C",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "MC",
+              "atom_name": "C31",
+              "altloc": "",
+              "element": "C",
+              "serial": 862,
+              "coordinates_angstrom": [
+                -20.996,
+                -17.411,
+                -13.398
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD6",
+              "altloc": "",
+              "element": "C",
+              "serial": 502,
+              "coordinates_angstrom": [
+                -22.005,
+                -16.22,
+                -13.417
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT",
+            "LINK"
+          ],
+          "distance_angstrom": 1.561065,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment",
+          "source_graph_edge": {
+            "map_ids": [
+              78,
+              79
+            ],
+            "source_bond_class": "single",
+            "source_graph_adjacency": true,
+            "provenance": "mapped source SMILES plus map legend"
+          },
+          "link_record_count_for_resolved_pair": 1,
+          "link_records": [
+            {
+              "line_number": 26,
+              "record": "LINK        C31  MC  C   1                CD6  LYX B  30     1555   1555  1.56"
+            }
+          ]
+        }
+      ],
+      "native_context_joins": [
+        {
+          "join_id": "pheb1_n_ca_context",
+          "join_type": "native_residue_context",
+          "state": "active_open",
+          "atom_identities": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "N",
+              "altloc": "",
+              "element": "N",
+              "serial": 37,
+              "coordinates_angstrom": [
+                -0.152,
+                11.315,
+                -10.184
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "CA",
+              "altloc": "",
+              "element": "C",
+              "serial": 38,
+              "coordinates_angstrom": [
+                -0.328,
+                12.205,
+                -9.041
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT"
+          ],
+          "distance_angstrom": 1.459289,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment"
+        },
+        {
+          "join_id": "lysb29_ce_nz_context",
+          "join_type": "native_residue_context",
+          "state": "active_open",
+          "atom_identities": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "CE",
+              "altloc": "",
+              "element": "C",
+              "serial": 479,
+              "coordinates_angstrom": [
+                -28.145,
+                -8.424,
+                -6.81
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "NZ",
+              "altloc": "",
+              "element": "N",
+              "serial": 480,
+              "coordinates_angstrom": [
+                -27.823,
+                -9.517,
+                -7.714
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT"
+          ],
+          "distance_angstrom": 1.454493,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment"
+        }
+      ],
+      "local_attachment_neighborhoods": {
+        "pheB1_N": {
+          "center_atom": {
+            "state": "active_open",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "N",
+            "altloc": "",
+            "element": "N",
+            "serial": 37,
+            "coordinates_angstrom": [
+              -0.152,
+              11.315,
+              -10.184
+            ]
+          },
+          "conect_neighbors": {
+            "heavy_atom_identities": [
+              {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue_name": "PHX",
+                "atom_name": "C2",
+                "altloc": "",
+                "element": "C",
+                "serial": 3,
+                "coordinates_angstrom": [
+                  0.775,
+                  10.36,
+                  -10.298
+                ]
+              },
+              {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue_name": "PHE",
+                "atom_name": "CA",
+                "altloc": "",
+                "element": "C",
+                "serial": 38,
+                "coordinates_angstrom": [
+                  -0.328,
+                  12.205,
+                  -9.041
+                ]
+              }
+            ],
+            "hydrogen_atom_identities": [
+              {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue_name": "PHE",
+                "atom_name": "H2",
+                "altloc": "",
+                "element": "H",
+                "serial": 48,
+                "coordinates_angstrom": [
+                  -0.933,
+                  11.316,
+                  -10.828
+                ]
+              }
+            ]
+          },
+          "link_neighbors": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 3,
+              "coordinates_angstrom": [
+                0.775,
+                10.36,
+                -10.298
+              ]
+            }
+          ],
+          "adjacent_heavy_atom_identities_from_conect_or_link": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 3,
+              "coordinates_angstrom": [
+                0.775,
+                10.36,
+                -10.298
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "CA",
+              "altloc": "",
+              "element": "C",
+              "serial": 38,
+              "coordinates_angstrom": [
+                -0.328,
+                12.205,
+                -9.041
+              ]
+            }
+          ],
+          "adjacency_sources_by_neighbor_serial": {
+            "3": [
+              "CONECT",
+              "LINK"
+            ],
+            "38": [
+              "CONECT"
+            ],
+            "48": [
+              "CONECT"
+            ]
+          }
+        },
+        "lysB29_NZ": {
+          "center_atom": {
+            "state": "active_open",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "29",
+            "insertion_code": "",
+            "residue_name": "LYS",
+            "atom_name": "NZ",
+            "altloc": "",
+            "element": "N",
+            "serial": 480,
+            "coordinates_angstrom": [
+              -27.823,
+              -9.517,
+              -7.714
+            ]
+          },
+          "conect_neighbors": {
+            "heavy_atom_identities": [
+              {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "29",
+                "insertion_code": "",
+                "residue_name": "LYS",
+                "atom_name": "CE",
+                "altloc": "",
+                "element": "C",
+                "serial": 479,
+                "coordinates_angstrom": [
+                  -28.145,
+                  -8.424,
+                  -6.81
+                ]
+              },
+              {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "30",
+                "insertion_code": "",
+                "residue_name": "LYX",
+                "atom_name": "CD1",
+                "altloc": "",
+                "element": "C",
+                "serial": 497,
+                "coordinates_angstrom": [
+                  -28.183,
+                  -10.829,
+                  -7.5
+                ]
+              }
+            ],
+            "hydrogen_atom_identities": [
+              {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "29",
+                "insertion_code": "",
+                "residue_name": "LYS",
+                "atom_name": "HZ2",
+                "altloc": "",
+                "element": "H",
+                "serial": 492,
+                "coordinates_angstrom": [
+                  -27.305,
+                  -9.33,
+                  -8.559
+                ]
+              }
+            ]
+          },
+          "link_neighbors": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD1",
+              "altloc": "",
+              "element": "C",
+              "serial": 497,
+              "coordinates_angstrom": [
+                -28.183,
+                -10.829,
+                -7.5
+              ]
+            }
+          ],
+          "adjacent_heavy_atom_identities_from_conect_or_link": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "CE",
+              "altloc": "",
+              "element": "C",
+              "serial": 479,
+              "coordinates_angstrom": [
+                -28.145,
+                -8.424,
+                -6.81
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD1",
+              "altloc": "",
+              "element": "C",
+              "serial": 497,
+              "coordinates_angstrom": [
+                -28.183,
+                -10.829,
+                -7.5
+              ]
+            }
+          ],
+          "adjacency_sources_by_neighbor_serial": {
+            "479": [
+              "CONECT"
+            ],
+            "492": [
+              "CONECT"
+            ],
+            "497": [
+              "CONECT",
+              "LINK"
+            ]
+          }
+        }
+      },
+      "expected_neutral_local_boundary_record_patterns": {
+        "pheB1_N": {
+          "expected_heavy_neighbors": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "CA",
+              "altloc": "",
+              "element": "C",
+              "serial": 38,
+              "coordinates_angstrom": [
+                -0.328,
+                12.205,
+                -9.041
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 3,
+              "coordinates_angstrom": [
+                0.775,
+                10.36,
+                -10.298
+              ]
+            }
+          ],
+          "expected_conect_hydrogen_neighbor_count": 1,
+          "observed_conect_hydrogen_neighbors": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "H2",
+              "altloc": "",
+              "element": "H",
+              "serial": 48,
+              "coordinates_angstrom": [
+                -0.933,
+                11.316,
+                -10.828
+              ]
+            }
+          ],
+          "record_pattern_status": "matches_expected",
+          "chemistry_validation": "not_established by coordinate-file connectivity"
+        },
+        "lysB29_NZ": {
+          "expected_heavy_neighbors": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "CE",
+              "altloc": "",
+              "element": "C",
+              "serial": 479,
+              "coordinates_angstrom": [
+                -28.145,
+                -8.424,
+                -6.81
+              ]
+            },
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD1",
+              "altloc": "",
+              "element": "C",
+              "serial": 497,
+              "coordinates_angstrom": [
+                -28.183,
+                -10.829,
+                -7.5
+              ]
+            }
+          ],
+          "expected_conect_hydrogen_neighbor_count": 1,
+          "observed_conect_hydrogen_neighbors": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "HZ2",
+              "altloc": "",
+              "element": "H",
+              "serial": 492,
+              "coordinates_angstrom": [
+                -27.305,
+                -9.33,
+                -8.559
+              ]
+            }
+          ],
+          "record_pattern_status": "matches_expected_record_count",
+          "chemistry_validation": "not_established by coordinate-file connectivity"
+        }
+      },
+      "pheB1_H2A_proximity_observation": null
+    },
+    {
+      "state": "inactive_closed",
+      "candidate_pdb": "research/structures/nnc2215-closed-source-corrected-candidate.pdb",
+      "mapping_cross_checks": {
+        "b1_topology_audit": {
+          "exact_mapping_count": 1,
+          "source_graph_summary": {
+            "node_count": 19,
+            "element_counts": {
+              "C": 10,
+              "N": 1,
+              "O": 8
+            },
+            "edge_count": 19,
+            "connected_component_count": 1,
+            "cycle_rank_E_minus_V_plus_components": 1
+          },
+          "map_1_target_atom": {
+            "serial": 351,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue": "PHE",
+            "altloc": "",
+            "name": "N",
+            "element": "N",
+            "coordinates_angstrom": [
+              -1.515,
+              4.151,
+              -6.8
+            ]
+          },
+          "map_2_target_atom": {
+            "serial": 316,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue": "PHX",
+            "altloc": "",
+            "name": "C2",
+            "element": "C",
+            "coordinates_angstrom": [
+              -2.228,
+              4.336,
+              -5.674
+            ]
+          }
+        },
+        "b29_topology_audit": {
+          "exact_mapping_count": 16,
+          "full_ambiguity_preserved": true,
+          "source_map_serials_invariant_across_all_mappings": {
+            "78": 862,
+            "79": 817,
+            "84": 812,
+            "92": 794
+          },
+          "source_graph_summary": {
+            "node_count": 92,
+            "edge_count": 99,
+            "connected_component_count": 1,
+            "cycle_rank_E_minus_V_plus_components": 8
+          }
+        }
+      },
+      "attachment_boundary_joins": [
+        {
+          "join_id": "b1_glucoside_attachment",
+          "join_type": "b1_component_boundary",
+          "state": "inactive_closed",
+          "atom_identities": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "N",
+              "altloc": "",
+              "element": "N",
+              "serial": 351,
+              "coordinates_angstrom": [
+                -1.515,
+                4.151,
+                -6.8
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 316,
+              "coordinates_angstrom": [
+                -2.228,
+                4.336,
+                -5.674
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT",
+            "LINK"
+          ],
+          "distance_angstrom": 1.345537,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment",
+          "source_graph_edge": {
+            "map_ids": [
+              1,
+              2
+            ],
+            "source_bond_class": "single",
+            "source_graph_adjacency": true,
+            "provenance": "mapped source SMILES plus map legend"
+          },
+          "link_record_count_for_resolved_pair": 1,
+          "link_records": [
+            {
+              "line_number": 27,
+              "record": "LINK        N    PHE B   1                C2   PHX B   0     1555   1555  1.35"
+            }
+          ]
+        },
+        {
+          "join_id": "b29_lys_attachment",
+          "join_type": "b29_component_boundary",
+          "state": "inactive_closed",
+          "atom_identities": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD1",
+              "altloc": "",
+              "element": "C",
+              "serial": 812,
+              "coordinates_angstrom": [
+                -13.371,
+                -3.749,
+                5.111
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "NZ",
+              "altloc": "",
+              "element": "N",
+              "serial": 794,
+              "coordinates_angstrom": [
+                -14.403,
+                -3.56,
+                4.224
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT",
+            "LINK"
+          ],
+          "distance_angstrom": 1.373868,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment",
+          "source_graph_edge": {
+            "map_ids": [
+              84,
+              92
+            ],
+            "source_bond_class": "single",
+            "source_graph_adjacency": true,
+            "provenance": "mapped source SMILES plus map legend"
+          },
+          "link_record_count_for_resolved_pair": 1,
+          "link_records": [
+            {
+              "line_number": 26,
+              "record": "LINK        CD1  LYX B  30                NZ   LYS B  29     1555   1555  1.37"
+            }
+          ]
+        },
+        {
+          "join_id": "roof_tail_attachment",
+          "join_type": "roof_tail_inter_residue_boundary",
+          "state": "inactive_closed",
+          "atom_identities": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "C",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "MC",
+              "atom_name": "C31",
+              "altloc": "",
+              "element": "C",
+              "serial": 862,
+              "coordinates_angstrom": [
+                -4.808,
+                1.041,
+                1.536
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "C",
+              "altloc": "",
+              "element": "C",
+              "serial": 817,
+              "coordinates_angstrom": [
+                -6.329,
+                0.89,
+                1.821
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT",
+            "LINK"
+          ],
+          "distance_angstrom": 1.554821,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment",
+          "source_graph_edge": {
+            "map_ids": [
+              78,
+              79
+            ],
+            "source_bond_class": "single",
+            "source_graph_adjacency": true,
+            "provenance": "mapped source SMILES plus map legend"
+          },
+          "link_record_count_for_resolved_pair": 1,
+          "link_records": [
+            {
+              "line_number": 25,
+              "record": "LINK        C31  MC  C   1                C    LYX B  30     1555   1555  1.55"
+            }
+          ]
+        }
+      ],
+      "native_context_joins": [
+        {
+          "join_id": "pheb1_n_ca_context",
+          "join_type": "native_residue_context",
+          "state": "inactive_closed",
+          "atom_identities": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "N",
+              "altloc": "",
+              "element": "N",
+              "serial": 351,
+              "coordinates_angstrom": [
+                -1.515,
+                4.151,
+                -6.8
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "CA",
+              "altloc": "",
+              "element": "C",
+              "serial": 352,
+              "coordinates_angstrom": [
+                -0.991,
+                5.192,
+                -7.726
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT"
+          ],
+          "distance_angstrom": 1.488534,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment"
+        },
+        {
+          "join_id": "lysb29_ce_nz_context",
+          "join_type": "native_residue_context",
+          "state": "inactive_closed",
+          "atom_identities": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "CE",
+              "altloc": "",
+              "element": "C",
+              "serial": 793,
+              "coordinates_angstrom": [
+                -14.855,
+                -4.579,
+                3.292
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "NZ",
+              "altloc": "",
+              "element": "N",
+              "serial": 794,
+              "coordinates_angstrom": [
+                -14.403,
+                -3.56,
+                4.224
+              ]
+            }
+          ],
+          "adjacency_record_sources": [
+            "CONECT"
+          ],
+          "distance_angstrom": 1.453028,
+          "distance_interpretation": "coordinate observation only; not used for identity, mapping, bond-order, or hydrogen assignment"
+        }
+      ],
+      "local_attachment_neighborhoods": {
+        "pheB1_N": {
+          "center_atom": {
+            "state": "inactive_closed",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "N",
+            "altloc": "",
+            "element": "N",
+            "serial": 351,
+            "coordinates_angstrom": [
+              -1.515,
+              4.151,
+              -6.8
+            ]
+          },
+          "conect_neighbors": {
+            "heavy_atom_identities": [
+              {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue_name": "PHX",
+                "atom_name": "C2",
+                "altloc": "",
+                "element": "C",
+                "serial": 316,
+                "coordinates_angstrom": [
+                  -2.228,
+                  4.336,
+                  -5.674
+                ]
+              },
+              {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue_name": "PHE",
+                "atom_name": "CA",
+                "altloc": "",
+                "element": "C",
+                "serial": 352,
+                "coordinates_angstrom": [
+                  -0.991,
+                  5.192,
+                  -7.726
+                ]
+              }
+            ],
+            "hydrogen_atom_identities": []
+          },
+          "link_neighbors": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 316,
+              "coordinates_angstrom": [
+                -2.228,
+                4.336,
+                -5.674
+              ]
+            }
+          ],
+          "adjacent_heavy_atom_identities_from_conect_or_link": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 316,
+              "coordinates_angstrom": [
+                -2.228,
+                4.336,
+                -5.674
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "CA",
+              "altloc": "",
+              "element": "C",
+              "serial": 352,
+              "coordinates_angstrom": [
+                -0.991,
+                5.192,
+                -7.726
+              ]
+            }
+          ],
+          "adjacency_sources_by_neighbor_serial": {
+            "316": [
+              "CONECT",
+              "LINK"
+            ],
+            "352": [
+              "CONECT"
+            ]
+          }
+        },
+        "lysB29_NZ": {
+          "center_atom": {
+            "state": "inactive_closed",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "29",
+            "insertion_code": "",
+            "residue_name": "LYS",
+            "atom_name": "NZ",
+            "altloc": "",
+            "element": "N",
+            "serial": 794,
+            "coordinates_angstrom": [
+              -14.403,
+              -3.56,
+              4.224
+            ]
+          },
+          "conect_neighbors": {
+            "heavy_atom_identities": [
+              {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "29",
+                "insertion_code": "",
+                "residue_name": "LYS",
+                "atom_name": "CE",
+                "altloc": "",
+                "element": "C",
+                "serial": 793,
+                "coordinates_angstrom": [
+                  -14.855,
+                  -4.579,
+                  3.292
+                ]
+              },
+              {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "30",
+                "insertion_code": "",
+                "residue_name": "LYX",
+                "atom_name": "CD1",
+                "altloc": "",
+                "element": "C",
+                "serial": 812,
+                "coordinates_angstrom": [
+                  -13.371,
+                  -3.749,
+                  5.111
+                ]
+              }
+            ],
+            "hydrogen_atom_identities": [
+              {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "29",
+                "insertion_code": "",
+                "residue_name": "LYS",
+                "atom_name": "HZ2",
+                "altloc": "",
+                "element": "H",
+                "serial": 807,
+                "coordinates_angstrom": [
+                  -14.713,
+                  -2.583,
+                  4.112
+                ]
+              }
+            ]
+          },
+          "link_neighbors": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD1",
+              "altloc": "",
+              "element": "C",
+              "serial": 812,
+              "coordinates_angstrom": [
+                -13.371,
+                -3.749,
+                5.111
+              ]
+            }
+          ],
+          "adjacent_heavy_atom_identities_from_conect_or_link": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "CE",
+              "altloc": "",
+              "element": "C",
+              "serial": 793,
+              "coordinates_angstrom": [
+                -14.855,
+                -4.579,
+                3.292
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD1",
+              "altloc": "",
+              "element": "C",
+              "serial": 812,
+              "coordinates_angstrom": [
+                -13.371,
+                -3.749,
+                5.111
+              ]
+            }
+          ],
+          "adjacency_sources_by_neighbor_serial": {
+            "793": [
+              "CONECT"
+            ],
+            "807": [
+              "CONECT"
+            ],
+            "812": [
+              "CONECT",
+              "LINK"
+            ]
+          }
+        }
+      },
+      "expected_neutral_local_boundary_record_patterns": {
+        "pheB1_N": {
+          "expected_heavy_neighbors": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "CA",
+              "altloc": "",
+              "element": "C",
+              "serial": 352,
+              "coordinates_angstrom": [
+                -0.991,
+                5.192,
+                -7.726
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 316,
+              "coordinates_angstrom": [
+                -2.228,
+                4.336,
+                -5.674
+              ]
+            }
+          ],
+          "expected_conect_hydrogen_neighbor_count": 1,
+          "observed_conect_hydrogen_neighbors": [],
+          "record_pattern_status": "hydrogen_record_discrepancy",
+          "chemistry_validation": "not_established by coordinate-file connectivity"
+        },
+        "lysB29_NZ": {
+          "expected_heavy_neighbors": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "CE",
+              "altloc": "",
+              "element": "C",
+              "serial": 793,
+              "coordinates_angstrom": [
+                -14.855,
+                -4.579,
+                3.292
+              ]
+            },
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "30",
+              "insertion_code": "",
+              "residue_name": "LYX",
+              "atom_name": "CD1",
+              "altloc": "",
+              "element": "C",
+              "serial": 812,
+              "coordinates_angstrom": [
+                -13.371,
+                -3.749,
+                5.111
+              ]
+            }
+          ],
+          "expected_conect_hydrogen_neighbor_count": 1,
+          "observed_conect_hydrogen_neighbors": [
+            {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "29",
+              "insertion_code": "",
+              "residue_name": "LYS",
+              "atom_name": "HZ2",
+              "altloc": "",
+              "element": "H",
+              "serial": 807,
+              "coordinates_angstrom": [
+                -14.713,
+                -2.583,
+                4.112
+              ]
+            }
+          ],
+          "record_pattern_status": "matches_expected_record_count",
+          "chemistry_validation": "not_established by coordinate-file connectivity"
+        }
+      },
+      "pheB1_H2A_proximity_observation": {
+        "atom_identity": {
+          "state": "inactive_closed",
+          "model_number": 1,
+          "record_type": "HETATM",
+          "chain": "B",
+          "residue_number": "0",
+          "insertion_code": "",
+          "residue_name": "PHX",
+          "atom_name": "H2A",
+          "altloc": "",
+          "element": "H",
+          "serial": 332,
+          "coordinates_angstrom": [
+            -1.281,
+            3.195,
+            -7.01
+          ]
+        },
+        "distance_from_pheB1_N_angstrom": 1.006376,
+        "has_pheB1_N_conect_edge": false,
+        "interpretation": "distance observation only; no hydrogen ownership is assigned"
+      }
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "pheB1_N_hydrogen_connectivity_open_closed_difference",
+      "state": "inactive_closed",
+      "expected_neutral_local_pattern": "PheB1 N has one hydrogen neighbor in addition to CA and the B1 carbonyl carbon",
+      "observed_pdb_connectivity": "PheB1 N has no CONECT hydrogen neighbor in the closed candidate; the open candidate records H2 as a CONECT neighbor",
+      "nearby_observation": {
+        "atom_identity": {
+          "state": "inactive_closed",
+          "model_number": 1,
+          "record_type": "HETATM",
+          "chain": "B",
+          "residue_number": "0",
+          "insertion_code": "",
+          "residue_name": "PHX",
+          "atom_name": "H2A",
+          "altloc": "",
+          "element": "H",
+          "serial": 332,
+          "coordinates_angstrom": [
+            -1.281,
+            3.195,
+            -7.01
+          ]
+        },
+        "distance_from_pheB1_N_angstrom": 1.006376,
+        "has_pheB1_N_conect_edge": false,
+        "interpretation": "distance observation only; no hydrogen ownership is assigned"
+      },
+      "interpretation": "PHX H2A is 1.006 \u00c5 from PheB1 N but has no CONECT edge to it. The coordinate file does not establish hydrogen ownership; no reassignment or repair was made.",
+      "heavy_atom_boundary_closure_affected": false
+    }
+  ],
+  "assessment": {
+    "heavy_atom_boundary_closure": "pass",
+    "unique_attachment_LINK_count": 6,
+    "unique_native_context_join_count": 4,
+    "all_source_boundary_edges_cross_checked": true,
+    "b1_exact_mappings_per_state_preserved": 1,
+    "b29_exact_mappings_per_state_preserved": 16,
+    "b29_ambiguity_resolved_by_coordinates": false,
+    "hydrogen_record_chemistry_resolved": false,
+    "full_conjugate_graph_bond_orders_stereochemistry_resolved": false,
+    "whole_insulin_protonation_or_charge_resolved": false,
+    "force_field_validated": false,
+    "target_binding_md_run": false,
+    "clinical_readiness_established": false,
+    "interpretation": "The three named heavy-atom attachment boundaries and two native residue context joins per state resolve by source-map and PDB record evidence in corrected model-built candidates. Distances are observations only. The PheB1 hydrogen-record discrepancy and broader chemistry/model gates remain open."
+  },
+  "limits": [
+    "Corrected candidate PDBs are model-built derivatives, not experimentally solved NNC2215 structures.",
+    "PDB LINK and CONECT records provide adjacency evidence only; they do not validate bond order, formal charge, stereochemistry, protonation, or hydrogen ownership.",
+    "The 16 exact B29 source-to-candidate mappings per state are preserved; this audit does not choose a unique full B29 map or resolve carboxyl oxygen-label ambiguity.",
+    "This local boundary audit does not establish the complete conjugate graph, full insulin charge/protonation, force-field parameters, target-binding MD readiness, or clinical readiness."
+  ]
+}
