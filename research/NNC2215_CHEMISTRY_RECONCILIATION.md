@@ -19,6 +19,12 @@ The isolated roof propyl-azide structure from Extended Data Fig. 8i is recorded 
 
 This graph uses the neutral COOH form shown in the source drawing and one conventional C–N=N+=N− azide resonance form. It is an isolated component graph, not the complete insulin conjugate. PDB correspondence, protonation at simulation pH, charges, force-field parameters, and production-MD readiness remain unvalidated. The source drawing's positional labels around C16/C17 should be checked against the high-resolution figure before using those labels as coordinate atom names.
 
+## Candidate graph-to-coordinate embeddings — 25 October 2026
+
+The mapped 83-heavy-atom roof graph embeds in both corrected open and closed coordinate candidates under the six previously documented C21–C23/azide-tail anchors. Each state has 16 element-matched adjacency embeddings; 54 of the 83 graph map IDs have more than one candidate PDB atom across those embeddings. This does not produce a unique full graph-to-PDB atom map. The state-by-state mappings, ambiguity counts, anchor provenance, candidate PDB hashes, and unmatched atoms are in [`data/nnc2215-roof-graph-coordinate-mapping-audit.json`](data/nnc2215-roof-graph-coordinate-mapping-audit.json); regenerate it with [`audit_nnc2215_roof_graph_coordinate_mapping.py`](audit_nnc2215_roof_graph_coordinate_mapping.py).
+
+Each selected LYX B30 + MC C1 fragment contains 91 heavy atoms (C62N15O14). Eight unmatched LYX atoms—CD1, CD2, C1, C2, CD3, CD4, O/OD, and O1—are attributed to the B29 linker under the existing candidate partition. The matching uses element labels and CONECT/LINK adjacency only; it does not check bond orders, use a geometric fit, validate stereochemistry, or independently prove the six anchors or the linker interpretation. The audit confirms the corrected PDB input hashes and does not modify either coordinate file.
+
 ## Two-carbon discrepancy
 
 Both source model states contain 64 carbon, 15 nitrogen and 14 oxygen records in the LYX/MC B29-linked pool, against 62 carbon, 15 nitrogen and 14 oxygen expected from the synthesis-derived formula. The two-carbon surplus is present in both open and closed models.
