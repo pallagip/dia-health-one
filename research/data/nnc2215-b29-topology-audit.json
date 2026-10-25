@@ -1,7 +1,7 @@
 {
   "schema": "dia-health-one.nnc2215-b29-topology-audit.v1",
   "run": {
-    "generated_at_utc": "2026-10-25T18:21:22.908512+00:00",
+    "generated_at_utc": "2026-10-25T18:22:26.631240+00:00",
     "script": "research/audit_nnc2215_b29_topology.py",
     "script_sha256": "b47936dda8228c3da306316d9f4cbef84689c531e6e1d416a0dd1373d602a583",
     "python_version": "3.11.17",
