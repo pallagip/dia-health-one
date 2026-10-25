@@ -1,6 +1,7 @@
 # NNC2215 B29 Topology Audit Design
 
-**Date:** 2026-10-25  
+**Date:** 2026-10-25
+
 **Status:** User approved this scope; review this design before implementation.
 
 ## Goal
