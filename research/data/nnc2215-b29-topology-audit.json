@@ -1,9 +1,9 @@
 {
   "schema": "dia-health-one.nnc2215-b29-topology-audit.v1",
   "run": {
-    "generated_at_utc": "2026-10-25T18:15:43.303933+00:00",
+    "generated_at_utc": "2026-10-25T18:21:22.908512+00:00",
     "script": "research/audit_nnc2215_b29_topology.py",
-    "script_sha256": "672d69ce8d5ccae9edc5f5a793296cc5604966abeb280e67981297ff86edf8e7",
+    "script_sha256": "b47936dda8228c3da306316d9f4cbef84689c531e6e1d416a0dd1373d602a583",
     "python_version": "3.11.17",
     "rdkit_version": "2026.03.1",
     "networkx_version": "3.6.1",
@@ -2294,7 +2294,7 @@
         "preliminary_only": true,
         "interpretation": "The anchored roof-only embeddings reproduce the precursor search. They are not complete-product assignments."
       },
-      "selected_pdb_link_records": [
+      "resolved_pdb_link_records": [
         {
           "record": "LINK        C31  MC  C   1                CD6  LYX B  30     1555   1555  1.56",
           "first_endpoint": {
@@ -4193,12 +4193,12 @@
         "distinct_bond_label_transfer_pattern_count": 8,
         "multiple_bond_label_transfer_patterns_remain": true,
         "topology_assignment_status": "exact_element_adjacency_match_but_multiple_bond_label_mapping_classes_remain",
-        "unresolved_bond_label_or_regioisomer_assignment_report": {
+        "unresolved_scaffold_mapping_and_bond_label_transfer_report": {
           "exact_unlabeled_element_adjacency_match": true,
           "multiple_bond_label_mapping_classes_remain": true,
           "distinct_source_bond_label_transfer_patterns": 8,
           "unique_topology_or_bond_label_assignment_claimed": false,
-          "details": "If more than one bond-label-preserving source symmetry class remains, multiple source bond-label transfers onto the unlabeled PDB adjacency remain. PDB coordinates and adjacency are not used to choose among them."
+          "details": "The source drawing supports the reported 1,4-disubstituted click regiochemistry. The remaining symmetry classes concern scaffold-to-coordinate mapping and source bond-label transfer; they do not represent alternative click regioisomer claims. PDB coordinates and adjacency are not used to choose among these assignments."
         },
         "map_id_ambiguity": {
           "1": {
@@ -77592,7 +77592,7 @@
         "preliminary_only": true,
         "interpretation": "The anchored roof-only embeddings reproduce the precursor search. They are not complete-product assignments."
       },
-      "selected_pdb_link_records": [
+      "resolved_pdb_link_records": [
         {
           "record": "LINK        C31  MC  C   1                C    LYX B  30     1555   1555  1.55",
           "first_endpoint": {
@@ -79491,12 +79491,12 @@
         "distinct_bond_label_transfer_pattern_count": 8,
         "multiple_bond_label_transfer_patterns_remain": true,
         "topology_assignment_status": "exact_element_adjacency_match_but_multiple_bond_label_mapping_classes_remain",
-        "unresolved_bond_label_or_regioisomer_assignment_report": {
+        "unresolved_scaffold_mapping_and_bond_label_transfer_report": {
           "exact_unlabeled_element_adjacency_match": true,
           "multiple_bond_label_mapping_classes_remain": true,
           "distinct_source_bond_label_transfer_patterns": 8,
           "unique_topology_or_bond_label_assignment_claimed": false,
-          "details": "If more than one bond-label-preserving source symmetry class remains, multiple source bond-label transfers onto the unlabeled PDB adjacency remain. PDB coordinates and adjacency are not used to choose among them."
+          "details": "The source drawing supports the reported 1,4-disubstituted click regiochemistry. The remaining symmetry classes concern scaffold-to-coordinate mapping and source bond-label transfer; they do not represent alternative click regioisomer claims. PDB coordinates and adjacency are not used to choose among these assignments."
         },
         "map_id_ambiguity": {
           "1": {
@@ -152143,8 +152143,8 @@
     "corrected_candidate_pdbs_unchanged": true,
     "complete_source_to_pdb_atom_map_unique": false,
     "unique_topology_claimed": false,
-    "interpretation": "The complete 92-node, 99-edge source product graph has an exact element-labeled adjacency isomorphism to each selected corrected PDB target. Each state has 16 exact map-to-coordinate assignments; map IDs 78-92 are consistent and unique across them, while roof/scaffold map IDs retain ambiguity. The two bond-label-preserving source roof automorphisms are reported as a precursor result. Source bond labels are transferred only after mapping and the PDB records remain adjacency-only. Coordinates are screened against disclosed broad heuristic intervals and do not validate bond order or mapping. The source drawing supports the 1,4-disubstituted product graph; the PDB adjacency alone does not independently establish bond order or distinguish bond-label/regioisomer assignments where multiple symmetry classes remain.",
-    "mismatch_handling": "If any exact isomorphism is absent, or unmatched target atoms/edges remain, the corresponding state reports the unmatched inventory and cannot support a unique topology assignment. If multiple source bond-label mapping classes remain, the audit reports unresolved bond-label/regioisomer assignment ambiguity and does not claim a unique topology.",
+    "interpretation": "The complete 92-node, 99-edge source product graph has an exact element-labeled adjacency isomorphism to each selected corrected PDB target. Each state has 16 exact map-to-coordinate assignments; map IDs 78-92 are consistent and unique across them, while roof/scaffold map IDs retain ambiguity. The two bond-label-preserving source roof automorphisms are reported as a precursor result. Source bond labels are transferred only after mapping and the PDB records remain adjacency-only. Coordinates are screened against disclosed broad heuristic intervals and do not validate bond order or mapping. The source drawing supports 1,4-disubstituted click regiochemistry. The 8 remaining bond-label symmetry classes per state represent unresolved scaffold-to-coordinate mapping and bond-label transfer; they are not alternative click regioisomer claims.",
+    "mismatch_handling": "If any exact isomorphism is absent, or unmatched target atoms/edges remain, the corresponding state reports the unmatched inventory and cannot support a unique topology assignment. Here, multiple source bond-label mapping classes are reported as unresolved scaffold-to-coordinate mapping and bond-label transfer; they do not challenge the source-drawing 1,4 click regiochemistry.",
     "bond_order_or_regiochemistry_validated_from_pdb_coordinates": false,
     "pdb_hydrogen_records_validated_as_chemistry": false,
     "simulation_readiness_established": false,
@@ -152152,7 +152152,7 @@
       "Corrected candidate PDBs are model-coordinate derivatives, not experimentally resolved NNC2215 structures.",
       "PDB CONECT and LINK records are adjacency-only; bond orders, formal charges, stereochemistry, and protonation are not validated here.",
       "The source product graph represents the source-supported click product connectivity and does not establish simulation-pH protonation or force-field parameters.",
-      "The geometry intervals are intentionally broad heuristic screens and do not establish chemical bonds or regioisomer identity.",
+      "The geometry intervals are intentionally broad heuristic screens and do not establish chemical bonds, mapping, or click regiochemistry.",
       "Hydrogen neighbor labels and counts reproduce model CONECT records and are not validated chemistry."
     ]
   }
