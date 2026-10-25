@@ -127,6 +127,12 @@ The open model places free D-glucose in the B29 macrocycle; the closed model pla
 
 Run `python3 research/inspect_structure_models.py` to verify the local PDB checksums and produce `data/structure-preflight.json`. This inventory records coordinate counts, chain/residue labels, disulfide and covalent-link records, and nonstandard residue names. It is a file/record preflight, not chemical-graph or force-field validation.
 
+### Source-derived roof macrocycle graph
+
+The numbered roof propyl-azide drawing in Nature Extended Data Fig. 8i has been transcribed as [`structures/nnc2215-roof-propyl-azide.smi`](structures/nnc2215-roof-propyl-azide.smi). RDKit 2026.03.1 parses and sanitizes the graph as C56H63N15O12 with 83 heavy atoms, 83 unique atom-map IDs, and formal charge 0 in the neutral-acid drawing form. [`data/nnc2215-roof-macrocycle-atom-map.json`](data/nnc2215-roof-macrocycle-atom-map.json) explains the map IDs and source numbering; [`data/nnc2215-roof-macrocycle-graph-audit.json`](data/nnc2215-roof-macrocycle-graph-audit.json) records the source, checks, and hashes. Recreate the audit with `micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/validate_nnc2215_roof_macrocycle_graph.py`.
+
+This is an isolated component graph, not a completed insulin-conjugate topology. The azide is represented in one conventional resonance form, the source drawing does not assign stereocentres, and graph map IDs do not establish PDB atom correspondence. Simulation-pH protonation, charges, force-field parameters, and target-MD readiness remain unresolved.
+
 The dashboard includes an interactive side-by-side view of the publisher's open and closed PDB coordinates. It uses the vendored 3Dmol.js 2.5.5 browser bundle under BSD-3-Clause; `data/structure-viewer-library.json` records its registry integrity, SHA-256, version, and license, and the matching license text is in `assets/vendor/3Dmol-2.5.5-LICENSE.txt`. The viewer renders source coordinates for inspection and provides no chemical or simulation validation. It does not change the target MD readiness gate.
 
 ### ChimeraX receptor-session audit

@@ -1,7 +1,7 @@
 # NNC2215 chemistry reconciliation
 
 **Updated:** 25 October 2026
-**Decision:** A source-supported coordinate correction candidate now matches the reported heavy-atom formula and passes serialized-coordinate checks. The full molecular graph and force-field chemistry remain unresolved; do not generate production parameters or start target MD.
+**Decision:** A source-derived isolated roof macrocycle graph now parses and sanitizes in RDKit with the reported C56H63N15O12 formula, 83 heavy atoms, and 83 unique map IDs. The source-supported coordinate correction candidate also matches the reported full heavy-atom formula and passes serialized-coordinate checks. These milestones do not complete the NNC2215 conjugate graph or its PDB atom map; protonation, force-field chemistry, and target-MD readiness remain unresolved.
 
 ## Evidence reviewed
 
@@ -12,6 +12,12 @@ The coordinate inputs are the author-supplied, model-built open and closed struc
 The numbered schemes identify six B29 linker carbons (source C3–C8) and the three-carbon roof propyl-azide tail (source C21–C23). Formula arithmetic in [the existing audit](data/nnc2215-model-formula-audit.json) gives a desB30 insulin parent of C253H376N64O75S6 and an attachment difference of C72H85N15O22. The B1 attachment accounts for C10O8 heavy atoms. The B29 component consists of the reported C56H63N15O12 macrocycle roof propyl azide plus the C6H6O2 B29 linker after the NHS leaving group departs, giving C62N15O14 heavy atoms after conjugation.
 
 The publisher's model PDBs have a 113-node/120-edge heavy-atom adjacency match for the selected PHX/LYX/MC and attachment scope, after documented open/closed LYX name aliases. [The connectivity audit](data/nnc2215-connectivity-audit.json) confirms that these records give adjacency only; PDB CONECT/LINK data do not encode bond order or formal charge.
+
+## Source-derived roof macrocycle graph — 25 October 2026
+
+The isolated roof propyl-azide structure from Extended Data Fig. 8i is recorded as an atom-mapped SMILES in [`structures/nnc2215-roof-propyl-azide.smi`](structures/nnc2215-roof-propyl-azide.smi), with a graph-ID legend in [`data/nnc2215-roof-macrocycle-atom-map.json`](data/nnc2215-roof-macrocycle-atom-map.json). The RDKit audit [`data/nnc2215-roof-macrocycle-graph-audit.json`](data/nnc2215-roof-macrocycle-graph-audit.json) reports C56H63N15O12, 83 heavy atoms, 83 unique map IDs, formal charge 0, and RDKit 2026.03.1. The numbered roof tail C21–C23 is explicitly associated with map IDs 78–80; other IDs are stable graph identifiers, not authoritative PDB atom names.
+
+This graph uses the neutral COOH form shown in the source drawing and one conventional C–N=N+=N− azide resonance form. It is an isolated component graph, not the complete insulin conjugate. PDB correspondence, protonation at simulation pH, charges, force-field parameters, and production-MD readiness remain unvalidated. The source drawing's positional labels around C16/C17 should be checked against the high-resolution figure before using those labels as coordinate atom names.
 
 ## Two-carbon discrepancy
 

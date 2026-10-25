@@ -1,0 +1,63 @@
+{
+  "schema": "dia-health-one.nnc2215-roof-macrocycle-graph-audit.v1",
+  "generated_at_utc": "2026-10-25T17:14:04Z",
+  "molecule_name": "roof_propyl_azide",
+  "source": {
+    "article_doi": "10.1038/s41586-024-08042-3",
+    "article_url": "https://www.nature.com/articles/s41586-024-08042-3",
+    "supporting_information_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_MOESM1_ESM.pdf",
+    "figure": "Extended Data Fig. 8i",
+    "numbered_figure_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig13_ESM.jpg",
+    "reported_component_formula": "C56H63N15O12",
+    "tail_source_numbering": "C21-C23"
+  },
+  "input": {
+    "graph_file": "structures/nnc2215-roof-propyl-azide.smi",
+    "graph_sha256": "ed4340362d1436fc7518bfc577d6d23ac4b8434d3b60f40492b2bb36fd394325",
+    "atom_map_file": "data/nnc2215-roof-macrocycle-atom-map.json",
+    "atom_map_sha256": "48f716a63696d01f89339d0e6da009d9794ffd03e8349dc9a3fd471248e75ec8",
+    "canonical_mapped_smiles": "[c:1]1([CH2:31][CH3:32])[c:2]2[c:3]([CH2:33][CH3:34])[c:4]3[c:5]([CH2:35][CH3:36])[c:6]1[CH2:47][NH:48][C:49](=[O:50])[NH:51][c:25]1[cH:26][cH:27][c:28]([C:68](=[O:69])[OH:70])[cH:29][c:30]1[NH:71][C:72](=[O:73])[NH:74][CH2:75][c:12]1[c:7]([CH2:78][CH2:79][CH2:80][N:81]=[N+:82]=[N-:83])[c:8]([c:9]([CH3:76])[c:10]([c:11]1[CH3:77])[CH2:67][NH:66][C:64](=[O:65])[NH:63][c:24]1[c:19]([cH:20][cH:21][c:22]([C:60](=[O:61])[OH:62])[cH:23]1)[NH:46][C:44](=[O:45])[NH:43][CH2:42]3)[CH2:59][NH:58][C:56](=[O:57])[NH:55][c:18]1[c:13]([cH:14][cH:15][c:16]([C:52](=[O:53])[OH:54])[cH:17]1)[NH:41][C:39](=[O:40])[NH:38][CH2:37]2"
+  },
+  "software": {
+    "rdkit_version": "2026.03.1",
+    "python_version": "3.11.17"
+  },
+  "chemistry": {
+    "formula": "C56H63N15O12",
+    "heavy_atom_count": 83,
+    "formal_charge": 0,
+    "ring_count_sssr": 8,
+    "atom_map_count": 83,
+    "atom_map_ids_unique_and_complete_1_to_83": true,
+    "specified_chiral_centers": [],
+    "unassigned_potential_chiral_centers": []
+  },
+  "representation_assumptions": [
+    "The three carboxyl groups use the neutral COOH form depicted in the source drawing; their physiological protonation states are unresolved.",
+    "The source labels the terminal substituent N3. The SMILES uses the conventional resonance form C-N=N+=N-; this is a representation choice, not a distinct regioisomer claim.",
+    "Map IDs 1-83 provide stable identifiers for this graph. Only the roof-tail carbons C21-C23 inherit explicit numbering from the source figure; the remaining IDs are graph identifiers, not authoritative PDB atom names.",
+    "The source 2D drawing does not assign atom stereocentres; no atom stereochemistry is added."
+  ],
+  "limitations": [
+    "This is an isolated roof macrocycle propyl-azide graph, not the complete NNC2215 insulin conjugate.",
+    "The graph has not been mapped one-to-one to either public NNC2215 PDB model.",
+    "Simulation-pH protonation, partial charges, force-field parameters, and target-MD readiness remain unresolved."
+  ],
+  "checks": {
+    "rdkit_parse_and_sanitize": "pass",
+    "formula_matches_source": "pass",
+    "heavy_atom_count_matches_source_graph": "pass",
+    "positive_unique_complete_atom_map_ids": "pass",
+    "neutral_formal_charge_in_depicted_form": "pass"
+  },
+  "readiness": {
+    "isolated_macrocycle_graph_candidate": true,
+    "complete_nnc2215_conjugate_graph": false,
+    "pdb_atom_mapping_validated": false,
+    "simulation_protonation_and_charges_validated": false,
+    "force_field_parameters_validated": false,
+    "production_md_ready": false
+  },
+  "clinical_use": false,
+  "nvidia_gpu_used": false
+}

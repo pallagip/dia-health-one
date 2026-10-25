@@ -1,5 +1,7 @@
 # NVIDIA Innovation Lab application brief
 
+**Archived — 25 October 2026.** NVIDIA Inception support confirmed on 19 October that Dia Health One's Inception membership is active and DGX Cloud Innovation Lab is no longer available. This brief is retained as a historical artifact and is superseded. Inception membership does not provide a GPU allocation or credit award.
+
 **Company:** Dia Health One  
 **Inception products:** Dia Health One Research Dashboard and Dia Health computational insulin discovery platform (both Developing / Not Accelerated)  
 **NVIDIA account email:** andrii@diahealth.one  
@@ -36,7 +38,7 @@ NVIDIA's public Innovation Lab description lists dynamic simulations as a use ca
 
 Partner-offer screening: Nebius requires at least $5 million raised and VC/accelerator backing, which the current company profile does not meet. The Scaleway offer lists up to €42,000 but eligibility and current-customer status are unverified; its partner form requires verified identity, and no application was submitted.
 
-- NVIDIA Innovation Lab: https://www.nvidia.com/en-us/data-center/innovation-lab/
+- Historical NVIDIA Innovation Lab page: https://www.nvidia.com/en-us/data-center/innovation-lab/
 - Inception portal: https://programs.nvidia.com/phoenix/benefits
 - Research dashboard preview: https://feat-reproducibility-dashboa.dia-health-one.pages.dev/research/
 - Pilot protocol: `data/target-md-pilot-protocol.json`
