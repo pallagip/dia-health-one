@@ -26,7 +26,7 @@ The available source record does not provide site-specific pKa measurements for 
 3. For each state, the resonance-normalized comparison reports 16 exact mappings and one chemically equivalent bond-label class.
 4. The output explicitly labels pH 7.4 and full deprotonation as a modeling assumption, not measured pKa evidence.
 5. The output keeps atom-label correspondence, complete-conjugate protonation, charges, and force-field parameters open; coordinate hashes remain unchanged.
-6. The research page and chemistry note distinguish neutral mapping classes from the conditional carboxylate equivalence result.
+6. The research page, README, and chemistry note distinguish neutral mapping classes from the conditional carboxylate equivalence result and distinguish original PDB residuals from corrected candidates.
 
 ## Risks and boundaries
 

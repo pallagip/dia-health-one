@@ -43,6 +43,12 @@ EXPECTED_ROOF_ELEMENTS = Counter({"C": 56, "N": 15, "O": 12})
 EXPECTED_ROOF_NODES = 83
 EXPECTED_ROOF_EDGES = 89
 EXPECTED_ROOF_EMBEDDINGS = 16
+CARBOXYLATE_MAP_GROUPS = ((52, 53, 54), (60, 61, 62), (68, 69, 70))
+EXPECTED_CARBOXYLATE_MAP_GROUPS = ((52, 53, 54), (60, 61, 62), (68, 69, 70))
+EXPECTED_PRODUCT_FORMULA = "C62H72N16O14"
+EXPECTED_DEPROTONATED_FRAGMENT_FORMULA = "C62H69N16O14"
+ASSUMED_CARBOXYLATE_PROTON_REMOVALS = 3
+ASSUMED_CARBOXYLATE_LOCAL_CHARGE_DELTA = -3
 STATE_ORDER = ("active_open", "inactive_closed")
 
 # Literature radii are rounded to the values specified in the audit request.
@@ -190,6 +196,90 @@ def graph_automorphisms(graph: nx.Graph, preserve_bond_labels: bool) -> list[dic
         edge_match=source_bond_match if preserve_bond_labels else None,
     )
     return [dict(mapping) for mapping in matcher.isomorphisms_iter()]
+
+
+def carboxylate_resonance_graph(source_graph: nx.Graph) -> tuple[nx.Graph, list[dict[str, Any]]]:
+    """Copy the neutral graph and normalize only the three declared carboxylate C–O pairs."""
+    if CARBOXYLATE_MAP_GROUPS != EXPECTED_CARBOXYLATE_MAP_GROUPS:
+        raise ValueError(
+            "Carboxylate map groups differ from the approved groups: "
+            f"{CARBOXYLATE_MAP_GROUPS}"
+        )
+    if len(CARBOXYLATE_MAP_GROUPS) != 3:
+        raise ValueError(
+            f"Expected exactly three carboxylate map groups; found {len(CARBOXYLATE_MAP_GROUPS)}"
+        )
+
+    normalized_graph = source_graph.copy()
+    expected_edges: set[tuple[int, int]] = set()
+    group_records: list[dict[str, Any]] = []
+    for carbon_map_id, first_oxygen_map_id, second_oxygen_map_id in CARBOXYLATE_MAP_GROUPS:
+        oxygen_map_ids = (first_oxygen_map_id, second_oxygen_map_id)
+        if len(set((carbon_map_id, *oxygen_map_ids))) != 3:
+            raise ValueError(f"Carboxylate group contains duplicate map IDs: {carbon_map_id, *oxygen_map_ids}")
+        if carbon_map_id not in source_graph or source_graph.nodes[carbon_map_id]["element"] != "C":
+            raise ValueError(f"Carboxylate map {carbon_map_id} must identify a source carbon")
+        if any(
+            oxygen_map_id not in source_graph
+            or source_graph.nodes[oxygen_map_id]["element"] != "O"
+            for oxygen_map_id in oxygen_map_ids
+        ):
+            raise ValueError(
+                f"Carboxylate carbon map {carbon_map_id} must be paired with the declared oxygen maps {oxygen_map_ids}"
+            )
+        oxygen_neighbors = {
+            neighbor
+            for neighbor in source_graph.neighbors(carbon_map_id)
+            if source_graph.nodes[neighbor]["element"] == "O"
+        }
+        if oxygen_neighbors != set(oxygen_map_ids) or any(
+            not source_graph.has_edge(carbon_map_id, oxygen_map_id)
+            for oxygen_map_id in oxygen_map_ids
+        ):
+            raise ValueError(
+                f"Carboxylate carbon map {carbon_map_id} must be bonded to exactly declared oxygen maps {oxygen_map_ids}; "
+                f"observed oxygen neighbors {sorted(oxygen_neighbors)}"
+            )
+
+        neutral_bond_labels = {
+            (
+                source_graph.edges[carbon_map_id, oxygen_map_id]["bond_class"],
+                source_graph.edges[carbon_map_id, oxygen_map_id]["bond_order"],
+            )
+            for oxygen_map_id in oxygen_map_ids
+        }
+        if neutral_bond_labels != {("single", 1.0), ("double", 2.0)}:
+            raise ValueError(
+                f"Neutral carboxylate group {carbon_map_id, *oxygen_map_ids} must contain one single and one double C–O edge; "
+                f"observed {sorted(neutral_bond_labels)}"
+            )
+
+        for oxygen_map_id in oxygen_map_ids:
+            normalized_graph.edges[carbon_map_id, oxygen_map_id]["bond_class"] = "carboxylate_resonance"
+            normalized_graph.edges[carbon_map_id, oxygen_map_id]["bond_order"] = 1.5
+            expected_edges.add(tuple(sorted((carbon_map_id, oxygen_map_id))))
+        group_records.append(
+            {
+                "carbon_map_id": carbon_map_id,
+                "oxygen_map_ids": list(oxygen_map_ids),
+                "equivalent_edge_map_ids": [
+                    [carbon_map_id, first_oxygen_map_id],
+                    [carbon_map_id, second_oxygen_map_id],
+                ],
+            }
+        )
+
+    changed_edges = {
+        tuple(sorted((left, right)))
+        for left, right in source_graph.edges
+        if source_graph.edges[left, right] != normalized_graph.edges[left, right]
+    }
+    if changed_edges != expected_edges:
+        raise ValueError(
+            "Resonance normalization must change only the six declared C–O edges; "
+            f"observed changed edges {sorted(changed_edges)}"
+        )
+    return normalized_graph, group_records
 
 
 def parse_link_endpoint(line: str, first: bool) -> dict[str, str]:
@@ -601,6 +691,7 @@ def mapping_symmetry_classes(
     embeddings: list[dict[int, int]],
     automorphisms: list[dict[int, int]],
     map_ids: list[int],
+    class_id_prefix: str = "source_bond_label_class",
 ) -> list[dict[str, Any]]:
     groups: dict[tuple[int, ...], list[int]] = defaultdict(list)
     embedding_index: dict[int, dict[int, int]] = {}
@@ -615,7 +706,7 @@ def mapping_symmetry_classes(
     for group_index, (signature, members) in enumerate(sorted(groups.items()), start=1):
         result.append(
             {
-                "symmetry_class_id": f"source_bond_label_class_{group_index:02d}",
+                "symmetry_class_id": f"{class_id_prefix}_{group_index:02d}",
                 "embedding_ids": [f"exact_mapping_{index:02d}" for index in members],
                 "embedding_count": len(members),
                 "representative_embedding_id": f"exact_mapping_{members[0]:02d}",
@@ -693,6 +784,9 @@ def state_audit(
     linker_state: dict[str, Any],
     prior_roof_state: dict[str, Any],
     source_graph: nx.Graph,
+    normalized_source_graph: nx.Graph,
+    normalized_source_automorphisms: list[dict[int, int]],
+    normalized_carboxylate_groups: list[dict[str, Any]],
     roof_graph: nx.Graph,
     expected_elements: Counter[str],
 ) -> dict[str, Any]:
@@ -740,6 +834,49 @@ def state_audit(
         full_source_automorphisms,
         sorted(source_graph.nodes),
     ) if embeddings else []
+    normalized_symmetry_classes = mapping_symmetry_classes(
+        embeddings,
+        normalized_source_automorphisms,
+        sorted(normalized_source_graph.nodes),
+        class_id_prefix="carboxylate_equivalence_class",
+    ) if embeddings else []
+    normalized_map_ambiguity = {
+        str(map_id): {
+            "candidate_count": len({mapping[map_id] for mapping in embeddings}),
+            "unique_across_all_exact_mappings": len({mapping[map_id] for mapping in embeddings}) == 1,
+            "candidate_pdb_serials": sorted({mapping[map_id] for mapping in embeddings}),
+        }
+        for map_id in sorted(normalized_source_graph.nodes)
+    }
+    normalized_comparison = {
+        "comparison_type": "Separate graph-equivalence analysis for the declared fully deprotonated tri-carboxylate scenario.",
+        "normalized_graph": {
+            "heavy_atom_count": normalized_source_graph.number_of_nodes(),
+            "adjacency_edge_count": normalized_source_graph.number_of_edges(),
+            "normalized_carboxylate_groups": normalized_carboxylate_groups,
+            "normalization_rule": "Only the six declared C–O edges are assigned shared carboxylate_resonance labels with numeric bond order 1.5; every other source edge label remains unchanged.",
+        },
+        "exact_mapping_count": len(embeddings),
+        "exact_mappings": [
+            {
+                "mapping_id": f"exact_mapping_{index:02d}",
+                "map_id_to_pdb_serial": {
+                    str(map_id): serial for map_id, serial in sorted(mapping.items())
+                },
+            }
+            for index, mapping in enumerate(embeddings, start=1)
+        ],
+        "normalized_source_automorphism_count": len(normalized_source_automorphisms),
+        "symmetry_equivalence_rule": "Two exact coordinate mappings share a normalized class when composition with an element- and normalized-bond-label-preserving automorphism of the copied graph yields the other.",
+        "symmetry_classes": normalized_symmetry_classes,
+        "distinct_chemically_equivalent_class_count": len(normalized_symmetry_classes),
+        "map_id_ambiguity": normalized_map_ambiguity,
+        "interpretation_limits": [
+            "This graph normalization represents equivalence of the two C–O edges in each assumed carboxylate; it does not assign PDB oxygen names.",
+            "The exact coordinate mappings are reused without ranking or selection by coordinates or distances.",
+            "The normalized graph is not a pKa or protonation validation and does not establish partial charges or force-field parameters.",
+        ],
+    }
 
     if embeddings:
         used_nodes = set(embeddings[0].values())
@@ -978,6 +1115,7 @@ def state_audit(
             "exact_mappings": mapping_records,
             "interpretation": "Source bond labels are attached to target adjacency edges only after each exact graph mapping has been enumerated. PDB adjacency does not carry bond order, charge, or stereochemistry.",
         },
+        "conditional_carboxylate_resonance_normalized_comparison": normalized_comparison,
         "candidate_linker_tail_anchor_consistency": anchor_consistency,
         "candidate_coordinate_aliases_and_name_collisions": {
             "state_specific_map_id_aliases": explicit_candidate_aliases,
@@ -1276,10 +1414,74 @@ def hydrogen_comparison(states: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def require_carboxylate_audit_invariants(
+    product_formula: str,
+    states: list[dict[str, Any]],
+    candidate_pdb_hashes_unchanged: bool,
+) -> None:
+    if product_formula != EXPECTED_PRODUCT_FORMULA:
+        raise ValueError(
+            "Neutral NZ-NH2-capped fragment formula must be "
+            f"{EXPECTED_PRODUCT_FORMULA}; observed {product_formula}"
+        )
+    if ASSUMED_CARBOXYLATE_PROTON_REMOVALS != 3:
+        raise ValueError(
+            "The declared scenario requires exactly three assumed proton removals; "
+            f"observed {ASSUMED_CARBOXYLATE_PROTON_REMOVALS}"
+        )
+    if ASSUMED_CARBOXYLATE_LOCAL_CHARGE_DELTA != -3:
+        raise ValueError(
+            "The declared scenario requires a local charge delta of -3; "
+            f"observed {ASSUMED_CARBOXYLATE_LOCAL_CHARGE_DELTA}"
+        )
+    if EXPECTED_DEPROTONATED_FRAGMENT_FORMULA != "C62H69N16O14":
+        raise ValueError(
+            "Three removed hydrogens from C62H72N16O14 must yield C62H69N16O14; "
+            f"configured formula is {EXPECTED_DEPROTONATED_FRAGMENT_FORMULA}"
+        )
+    if not candidate_pdb_hashes_unchanged:
+        raise ValueError("Corrected candidate PDB hashes changed during the audit")
+
+    for state in states:
+        neutral = state["complete_product_exact_graph_comparison"]
+        normalized = state["conditional_carboxylate_resonance_normalized_comparison"]
+        if neutral["exact_mapping_count"] != 16:
+            raise ValueError(
+                f"{state['state']} neutral exact mapping count must remain 16; "
+                f"observed {neutral['exact_mapping_count']}"
+            )
+        if neutral["distinct_bond_label_transfer_pattern_count"] != 8:
+            raise ValueError(
+                f"{state['state']} neutral bond-label class count must remain 8; "
+                f"observed {neutral['distinct_bond_label_transfer_pattern_count']}"
+            )
+        if normalized["exact_mapping_count"] != 16:
+            raise ValueError(
+                f"{state['state']} normalized exact mapping count must be 16; "
+                f"observed {normalized['exact_mapping_count']}"
+            )
+        if normalized["distinct_chemically_equivalent_class_count"] != 1:
+            raise ValueError(
+                f"{state['state']} carboxylate-normalized class count must be 1; "
+                f"observed {normalized['distinct_chemically_equivalent_class_count']} "
+                f"for {normalized['exact_mapping_count']} exact mappings"
+            )
+
+
 def main() -> None:
     inputs = prepare_inputs()
     product_graph: nx.Graph = inputs["product_graph"]
     roof_graph: nx.Graph = inputs["roof_graph"]
+    if inputs["product_formula"] != EXPECTED_PRODUCT_FORMULA:
+        raise ValueError(
+            "Neutral NZ-NH2-capped fragment formula must be "
+            f"{EXPECTED_PRODUCT_FORMULA}; observed {inputs['product_formula']}"
+        )
+    normalized_product_graph, normalized_carboxylate_groups = carboxylate_resonance_graph(product_graph)
+    normalized_product_autos = graph_automorphisms(
+        normalized_product_graph,
+        preserve_bond_labels=True,
+    )
     product_autos = graph_automorphisms(product_graph, preserve_bond_labels=True)
     roof_autos = graph_automorphisms(roof_graph, preserve_bond_labels=True)
     if len(roof_autos) != 2:
@@ -1293,6 +1495,9 @@ def main() -> None:
                 inputs["linker_models"][state_name],
                 inputs["prior_roof_models"][state_name],
                 product_graph,
+                normalized_product_graph,
+                normalized_product_autos,
+                normalized_carboxylate_groups,
                 roof_graph,
                 EXPECTED_PRODUCT_ELEMENTS,
             )
@@ -1308,6 +1513,11 @@ def main() -> None:
         == record["corrected_candidate_sha256"]
         for record in inputs["pdb_hashes"].values()
     ) and all(state["coordinate_candidate_unchanged_during_audit"] for state in state_results)
+    require_carboxylate_audit_invariants(
+        inputs["product_formula"],
+        state_results,
+        pdb_unchanged_all,
+    )
 
     state_isomorphisms = [
         state["complete_product_exact_graph_comparison"]["exact_element_labeled_graph_isomorphism_found"]
@@ -1378,6 +1588,33 @@ def main() -> None:
             "bond_order_representation": product_map["bond_order_representation"],
             "representation_boundaries": product_map["representation_boundaries"],
         },
+        "conditional_carboxylate_state_scenario": {
+            "declared_pH": 7.4,
+            "protonation_assumption": "All three declared macrocycle carboxyl groups are fully deprotonated in this pH 7.4 modeling scenario; site-specific pKa evidence is not available in the source record.",
+            "carboxylate_map_groups": normalized_carboxylate_groups,
+            "neutral_reference": {
+                "formula_with_lys_b29_nz_nh2_boundary_cap": EXPECTED_PRODUCT_FORMULA,
+                "formal_charge_delta_reference": "neutral source fragment before the assumed three deprotonations",
+            },
+            "conditional_fragment_delta": {
+                "assumed_removed_protons": ASSUMED_CARBOXYLATE_PROTON_REMOVALS,
+                "assumed_local_charge_delta": ASSUMED_CARBOXYLATE_LOCAL_CHARGE_DELTA,
+                "formula_with_lys_b29_nz_nh2_boundary_cap": EXPECTED_DEPROTONATED_FRAGMENT_FORMULA,
+                "formula_derivation": "C62H72N16O14 minus three assumed acid protons gives C62H69N16O14.",
+                "charge_scope": "The -3 value applies to the isolated NZ-NH2-capped B29 fragment; it is not the full conjugate charge.",
+            },
+            "graph_equivalence_rule": "For mapping equivalence only, the two C–O edges in each declared carboxylate group share bond class carboxylate_resonance and numeric order 1.5. All other source bond labels are preserved.",
+            "state_class_counts": {
+                state["state"]: state["conditional_carboxylate_resonance_normalized_comparison"]["distinct_chemically_equivalent_class_count"]
+                for state in state_results
+            },
+            "assumptions_and_limits": [
+                "pH 7.4 and full deprotonation are modeling assumptions, not measured site-specific pKa evidence.",
+                "The normalization is a graph-equivalence representation, not a validated protonation calculation.",
+                "No PDB oxygen atom names are assigned, and coordinates or distances do not select among mappings.",
+                "No partial charges or force-field parameters are created or validated; complete-conjugate protonation and charge remain open.",
+            ],
+        },
         "source_roof_graph_precursor": {
             "graph_file": inputs["roof_graph_path"].relative_to(ROOT).as_posix(),
             "graph_sha256": sha256(inputs["roof_graph_path"]),
@@ -1430,6 +1667,14 @@ def main() -> None:
                 state["state"]: state["complete_product_exact_graph_comparison"]["distinct_bond_label_transfer_pattern_count"]
                 for state in state_results
             },
+            "carboxylate_normalized_class_count_by_state": {
+                state["state"]: state["conditional_carboxylate_resonance_normalized_comparison"]["distinct_chemically_equivalent_class_count"]
+                for state in state_results
+            },
+            "all_states_have_one_carboxylate_normalized_class": all(
+                state["conditional_carboxylate_resonance_normalized_comparison"]["distinct_chemically_equivalent_class_count"] == 1
+                for state in state_results
+            ),
             "state_specific_tail_and_carbonyl_aliases_resolved_as_expected": all(
                 all(alias["unique_and_as_expected"] for alias in state["candidate_coordinate_aliases_and_name_collisions"]["state_specific_map_id_aliases"].values())
                 for state in state_results
@@ -1446,7 +1691,7 @@ def main() -> None:
                 "The complete 92-node, 99-edge source product graph has an exact element-labeled adjacency isomorphism to each selected corrected PDB target. "
                 "Each state has 16 exact map-to-coordinate assignments; map IDs 78-92 are consistent and unique across them, while roof/scaffold map IDs retain ambiguity. "
                 "The two bond-label-preserving source roof automorphisms are reported as a precursor result. Source bond labels are transferred only after mapping and the PDB records remain adjacency-only. "
-                "Coordinates are screened against disclosed broad heuristic intervals and do not validate bond order or mapping. The source drawing supports 1,4-disubstituted click regiochemistry. The 8 remaining bond-label symmetry classes per state represent unresolved scaffold-to-coordinate mapping and bond-label transfer; they are not alternative click regioisomer claims."
+                "Coordinates are screened against disclosed broad heuristic intervals and do not validate bond order or mapping. The source drawing supports 1,4-disubstituted click regiochemistry. In the neutral graph, the 8 bond-label symmetry classes per state arise from the three independent carboxyl carbonyl-O/OH label swaps; they are not alternative click regioisomer claims. Under the separate conditional tri-carboxylate graph, those paired C–O edges are resonance-equivalent and yield one chemistry-equivalent label class per state. The 16 exact coordinate mappings and source-to-PDB atom-label ambiguity remain unresolved."
             ),
             "mismatch_handling": "If any exact isomorphism is absent, or unmatched target atoms/edges remain, the corresponding state reports the unmatched inventory and cannot support a unique topology assignment. Here, multiple source bond-label mapping classes are reported as unresolved scaffold-to-coordinate mapping and bond-label transfer; they do not challenge the source-drawing 1,4 click regiochemistry.",
             "bond_order_or_regiochemistry_validated_from_pdb_coordinates": False,
@@ -1486,6 +1731,8 @@ def main() -> None:
                 "states": {
                     state["state"]: {
                         "exact_mappings": state["complete_product_exact_graph_comparison"]["exact_mapping_count"],
+                        "neutral_bond_label_classes": state["complete_product_exact_graph_comparison"]["distinct_bond_label_transfer_pattern_count"],
+                        "carboxylate_normalized_classes": state["conditional_carboxylate_resonance_normalized_comparison"]["distinct_chemically_equivalent_class_count"],
                         "roof_embeddings": state["roof_only_preliminary_result"]["candidate_anchor_embedding"]["anchored_embedding_count"],
                         "nodes": state["complete_product_exact_graph_comparison"]["target_node_count"],
                         "edges": state["complete_product_exact_graph_comparison"]["target_edge_count"],
