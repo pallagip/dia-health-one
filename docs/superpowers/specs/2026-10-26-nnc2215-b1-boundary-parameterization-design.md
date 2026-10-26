@@ -10,7 +10,7 @@ Extract one connected 37-heavy-atom local molecule from the existing neutral ful
 
 The source graph supplies the B1 stereochemistry and the pinned RDKit neutral insulin templates supply the Phe/Val stereochemistry and peptide bond orders. The retained stereocentres must match CIP S for PheB1 CA and ValB2 CA, plus R, R, S, S, R for B1 source maps 9, 11, 13, 15, 17. Reconstruct the selected graph from those audited inputs, verify that it is one connected neutral molecule with the expected atoms and bond edges, then copy active/open heavy-atom coordinates from the candidate PDB. Add hydrogens with RDKit. Do not use distances to choose atom mappings or infer bond orders.
 
-Run Antechamber with AM1-BCC, GAFF2, declared formal charge 0, and `maxcyc=0`, followed by parmchk2 with ff14SB as a lookup set. Record input and tool hashes, per-atom names/maps/serials/types/charges, charge-sum residual, generated parameter records and penalties, and raw SDF/MOL2/frcmod/log artifacts. Check the candidate PDB hash before and after the run.
+Run Antechamber with AM1-BCC, GAFF2, declared formal charge 0, and `maxcyc=0`, followed by parmchk2 with ff14SB as a lookup set. Before mapping MOL2 charges or types back to source atoms, validate sequential atom IDs, coordinate correspondence, element order, and the complete bond graph/order against the prepared SDF/RDKit molecule. Record input and tool hashes, per-atom names/maps/serials/types/charges, charge-sum residual, generated parameter records and penalties, and raw SDF/MOL2/frcmod/log artifacts. Check the candidate PDB hash before and after the run. A failed tool or output-correspondence check must yield a partial/failed report without mapped candidate parameters.
 
 ## Alternatives considered
 
