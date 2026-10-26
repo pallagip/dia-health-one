@@ -1,0 +1,1916 @@
+{
+  "antechamber": {
+    "command_template": [
+      "antechamber",
+      "-i",
+      "input.sdf",
+      "-fi",
+      "sdf",
+      "-o",
+      "output.mol2",
+      "-fo",
+      "mol2",
+      "-c",
+      "bcc",
+      "-nc",
+      "0",
+      "-at",
+      "gaff2",
+      "-pl",
+      "20",
+      "-ek",
+      "maxcyc=0",
+      "-rn",
+      "B1P",
+      "-s",
+      "1"
+    ],
+    "log": {
+      "path": "data/nnc2215-b1-gaff2-boundary-pilot/antechamber.log",
+      "sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22"
+    },
+    "returncode": 0,
+    "timed_out": false
+  },
+  "fragment": {
+    "atom_count_with_hydrogens": 74,
+    "boundary_hydrogen_counts": {
+      "AsnB3_NH2_cap_graph_hydrogens": 2,
+      "PheB1_N_graph_hydrogens": 1
+    },
+    "cap_interpretation": "The AsnB3 N is retained at its model coordinate after downstream atoms are removed; its valence is saturated as neutral NH2. This is an explicit truncation cap, not the full Asn residue environment.",
+    "connected_component_count": 1,
+    "coordinate_mapping": {
+      "exact_mapping_count": 1,
+      "heavy_atom_coordinate_count": 37,
+      "heavy_atoms": [
+        {
+          "atom_index_zero_based": 0,
+          "coordinates_angstrom": [
+            -0.152,
+            11.315,
+            -10.184
+          ],
+          "element": "N",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "N",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 37,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 1,
+          "coordinates_angstrom": [
+            -0.328,
+            12.205,
+            -9.041
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CA",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 38,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 2,
+          "coordinates_angstrom": [
+            -1.741,
+            12.814,
+            -9.132
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 39,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 3,
+          "coordinates_angstrom": [
+            -2.591,
+            12.274,
+            -9.84
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 40,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 4,
+          "coordinates_angstrom": [
+            0.839,
+            13.226,
+            -8.91
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CB",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 41,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 5,
+          "coordinates_angstrom": [
+            1.271,
+            13.527,
+            -7.48
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CG",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 42,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 6,
+          "coordinates_angstrom": [
+            1.694,
+            12.479,
+            -6.634
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CD1",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 44,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 7,
+          "coordinates_angstrom": [
+            1.191,
+            14.843,
+            -6.972
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CD2",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 43,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 8,
+          "coordinates_angstrom": [
+            2.009,
+            12.739,
+            -5.287
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CE1",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 46,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 9,
+          "coordinates_angstrom": [
+            1.507,
+            15.101,
+            -5.625
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CE2",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 45,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 10,
+          "coordinates_angstrom": [
+            1.91,
+            14.048,
+            -4.781
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CZ",
+            "chain": "B",
+            "residue_name": "PHE",
+            "residue_number": 1
+          },
+          "pdb_serial": 47,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 11,
+          "coordinates_angstrom": [
+            -1.988,
+            13.909,
+            -8.398
+          ],
+          "element": "N",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "N",
+            "chain": "B",
+            "residue_name": "VAL",
+            "residue_number": 2
+          },
+          "pdb_serial": 57,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 12,
+          "coordinates_angstrom": [
+            -3.268,
+            14.581,
+            -8.146
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CA",
+            "chain": "B",
+            "residue_name": "VAL",
+            "residue_number": 2
+          },
+          "pdb_serial": 58,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 13,
+          "coordinates_angstrom": [
+            -4.002,
+            13.797,
+            -7.037
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C",
+            "chain": "B",
+            "residue_name": "VAL",
+            "residue_number": 2
+          },
+          "pdb_serial": 59,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 14,
+          "coordinates_angstrom": [
+            -5.192,
+            13.498,
+            -7.121
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O",
+            "chain": "B",
+            "residue_name": "VAL",
+            "residue_number": 2
+          },
+          "pdb_serial": 60,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 15,
+          "coordinates_angstrom": [
+            -4.062,
+            14.957,
+            -9.439
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CB",
+            "chain": "B",
+            "residue_name": "VAL",
+            "residue_number": 2
+          },
+          "pdb_serial": 61,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 16,
+          "coordinates_angstrom": [
+            -5.27,
+            15.873,
+            -9.157
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CG1",
+            "chain": "B",
+            "residue_name": "VAL",
+            "residue_number": 2
+          },
+          "pdb_serial": 62,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 17,
+          "coordinates_angstrom": [
+            -3.169,
+            15.647,
+            -10.493
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "CG2",
+            "chain": "B",
+            "residue_name": "VAL",
+            "residue_number": 2
+          },
+          "pdb_serial": 63,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 18,
+          "coordinates_angstrom": [
+            -3.241,
+            13.404,
+            -6.006
+          ],
+          "element": "N",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "N",
+            "chain": "B",
+            "residue_name": "ASN",
+            "residue_number": 3
+          },
+          "pdb_serial": 73,
+          "source_map_id": null
+        },
+        {
+          "atom_index_zero_based": 19,
+          "coordinates_angstrom": [
+            0.775,
+            10.36,
+            -10.298
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C2",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 3,
+          "source_map_id": 2
+        },
+        {
+          "atom_index_zero_based": 20,
+          "coordinates_angstrom": [
+            1.686,
+            10.223,
+            -9.485
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O1",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 6,
+          "source_map_id": 3
+        },
+        {
+          "atom_index_zero_based": 21,
+          "coordinates_angstrom": [
+            0.682,
+            9.42,
+            -11.51
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C22",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 4,
+          "source_map_id": 4
+        },
+        {
+          "atom_index_zero_based": 22,
+          "coordinates_angstrom": [
+            0.021,
+            8.186,
+            -11.201
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O223",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 5,
+          "source_map_id": 5
+        },
+        {
+          "atom_index_zero_based": 23,
+          "coordinates_angstrom": [
+            0.584,
+            7.37,
+            -10.168
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C3",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 18,
+          "source_map_id": 6
+        },
+        {
+          "atom_index_zero_based": 24,
+          "coordinates_angstrom": [
+            2.054,
+            6.99,
+            -10.413
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 1,
+          "source_map_id": 7
+        },
+        {
+          "atom_index_zero_based": 25,
+          "coordinates_angstrom": [
+            2.391,
+            5.883,
+            -9.57
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 2,
+          "source_map_id": 8
+        },
+        {
+          "atom_index_zero_based": 26,
+          "coordinates_angstrom": [
+            3.775,
+            5.635,
+            -9.501
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C232",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 7,
+          "source_map_id": 9
+        },
+        {
+          "atom_index_zero_based": 27,
+          "coordinates_angstrom": [
+            4.013,
+            4.389,
+            -8.636
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C233",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 8,
+          "source_map_id": 11
+        },
+        {
+          "atom_index_zero_based": 28,
+          "coordinates_angstrom": [
+            3.445,
+            4.597,
+            -7.348
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O238",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 13,
+          "source_map_id": 12
+        },
+        {
+          "atom_index_zero_based": 29,
+          "coordinates_angstrom": [
+            5.52,
+            4.132,
+            -8.526
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C234",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 9,
+          "source_map_id": 13
+        },
+        {
+          "atom_index_zero_based": 30,
+          "coordinates_angstrom": [
+            5.761,
+            2.939,
+            -7.786
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O239",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 14,
+          "source_map_id": 14
+        },
+        {
+          "atom_index_zero_based": 31,
+          "coordinates_angstrom": [
+            6.128,
+            4.025,
+            -9.928
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C235",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 10,
+          "source_map_id": 15
+        },
+        {
+          "atom_index_zero_based": 32,
+          "coordinates_angstrom": [
+            7.525,
+            3.797,
+            -9.803
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O240",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 15,
+          "source_map_id": 16
+        },
+        {
+          "atom_index_zero_based": 33,
+          "coordinates_angstrom": [
+            5.801,
+            5.307,
+            -10.728
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C236",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 11,
+          "source_map_id": 17
+        },
+        {
+          "atom_index_zero_based": 34,
+          "coordinates_angstrom": [
+            6.289,
+            5.282,
+            -12.183
+          ],
+          "element": "C",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "C241",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 16,
+          "source_map_id": 18
+        },
+        {
+          "atom_index_zero_based": 35,
+          "coordinates_angstrom": [
+            5.969,
+            6.5,
+            -12.857
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O242",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 17,
+          "source_map_id": 19
+        },
+        {
+          "atom_index_zero_based": 36,
+          "coordinates_angstrom": [
+            4.369,
+            5.438,
+            -10.763
+          ],
+          "element": "O",
+          "pdb_identity": {
+            "altloc": "",
+            "atom_name": "O237",
+            "chain": "B",
+            "residue_name": "PHX",
+            "residue_number": 0
+          },
+          "pdb_serial": 12,
+          "source_map_id": 10
+        }
+      ],
+      "mapping_id": "mapping_001",
+      "mapping_index_chosen_by_geometry": false,
+      "source_map_1_is_protein_phe_n": true,
+      "state": "active_open"
+    },
+    "element_counts_heavy": {
+      "C": 24,
+      "N": 3,
+      "O": 10
+    },
+    "formal_charge": 0,
+    "formula": "C24H37N3O10",
+    "heavy_atom_count": 37,
+    "stereochemistry_cip": {
+      "B1_source_maps": {
+        "11": "R",
+        "13": "S",
+        "15": "S",
+        "17": "R",
+        "9": "R"
+      },
+      "PheB1_CA": "S",
+      "ValB2_CA": "S"
+    }
+  },
+  "frcmod": {
+    "candidate_accepted": true,
+    "generated": true,
+    "generated_parameter_record_count": 65,
+    "generated_records": [
+      {
+        "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+        "section": "DIHE"
+      },
+      {
+        "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "nt-c -c3-ns   1    0.100       180.000          -1.000      same as n -c -c3-n",
+        "section": "DIHE"
+      },
+      {
+        "line": "nt-c -c3-ns   1    2.120       180.000           2.000      same as n -c -c3-n , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+        "section": "DIHE"
+      },
+      {
+        "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "nt-c -c3-c3   1    0.000       180.000          -4.000      same as n -c -c3-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "nt-c -c3-c3   1    0.710       180.000           2.000      same as n -c -c3-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c3-os-c6   1    0.750         0.000          -3.000      same as c3-c3-os-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c3-os-c6   1    0.080         0.000          -2.000      same as c3-c3-os-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c3-os-c6   1    0.880       180.000           1.000      same as c3-c3-os-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-os-c3   1    0.750         0.000          -3.000      same as c3-c3-os-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-os-c3   1    0.080         0.000          -2.000      same as c3-c3-os-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-os-c3   1    0.880       180.000           1.000      same as c3-c3-os-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "os-c6-os-c3   1    0.850         0.000          -3.000      same as os-c3-os-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "os-c6-os-c3   1    0.850         0.000          -2.000      same as os-c3-os-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "os-c6-os-c3   1    0.460       180.000           1.000      same as os-c3-os-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h2-c6-os-c3   3    1.150         0.000           3.000      same as X -c3-os-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "oh-c6-c6-os   1    1.070         0.000          -3.000      same as oh-c3-c6-os",
+        "section": "DIHE"
+      },
+      {
+        "line": "oh-c6-c6-os   1    0.730       180.000          -2.000      same as oh-c3-c6-os",
+        "section": "DIHE"
+      },
+      {
+        "line": "oh-c6-c6-os   1    0.670       180.000           1.000      same as oh-c3-c6-os, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-c6-os   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c6-c6-os   1    0.000         0.000          -3.000      same as h1-c3-c3-os",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c6-c6-os   1    0.250         0.000           1.000      same as h1-c3-c3-os, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-oh-ho   1    0.060         0.000           3.000      same as c3-c3-oh-ho, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-c6-oh   1    0.180         0.000           3.000      same as c3-c3-c3-oh, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-c6-c6   1    0.520         0.000           3.000      same as c3-c3-c3-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-c6-h1   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "oh-c6-c6-oh   1    1.440         0.000          -3.000      same as oh-c3-c3-oh",
+        "section": "DIHE"
+      },
+      {
+        "line": "oh-c6-c6-oh   1    1.000         0.000           1.000      same as oh-c3-c3-oh, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c6-c6-oh   1    0.000         0.000          -3.000      same as h1-c3-c3-oh",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c6-c6-oh   1    0.250         0.000           1.000      same as h1-c3-c3-oh, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c6-c6-c6   1    0.520         0.000           3.000      same as c3-c3-c3-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "oh-c3-c6-c6   1    0.180         0.000           3.000      same as c3-c3-c3-oh, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c3-c6-c6   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c6-c6-oh   1    0.180         0.000           3.000      same as c3-c3-c3-oh, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c3-oh-ho   1    0.060         0.000           3.000      same as c3-c3-oh-ho, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c6-os-c6   1    0.750         0.000          -3.000      same as c3-c3-os-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c6-os-c6   1    0.080         0.000          -2.000      same as c3-c3-os-c3",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c6-os-c6   1    0.880       180.000           1.000      same as c3-c3-os-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c3-c6-os   1    0.000         0.000          -3.000      same as h1-c3-c3-os",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c3-c6-os   1    0.250         0.000           1.000      same as h1-c3-c3-os, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c -c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c3-os-c6   1    0.337         0.000           3.000      same as h1-c3-os-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h2-c6-c6-oh   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c6-c6-c6-h2   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c6-c6-h2   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h2-c6-os-c6   3    1.150         0.000           3.000      same as X -c3-os-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c6-oh-ho   1    0.123         0.000           3.000      same as h1-c3-oh-ho, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c6-c6-h1   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c3-c6-c6-h1   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "oh-c3-c6-h1   1    0.000         0.000          -3.000      same as h1-c3-c3-oh",
+        "section": "DIHE"
+      },
+      {
+        "line": "oh-c3-c6-h1   1    0.250         0.000           1.000      same as h1-c3-c3-oh, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c3-c6-h1   9    1.400         0.000           3.000      same as X -c3-c3-X , penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "h1-c6-os-c6   1    0.337         0.000           3.000      same as h1-c3-os-c3, penalty score=  0.0",
+        "section": "DIHE"
+      },
+      {
+        "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+        "section": "IMPROPER"
+      },
+      {
+        "line": "c3-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+        "section": "IMPROPER"
+      },
+      {
+        "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+        "section": "IMPROPER"
+      },
+      {
+        "line": "c3-nt-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+        "section": "IMPROPER"
+      },
+      {
+        "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+        "section": "IMPROPER"
+      }
+    ],
+    "maximum_penalty_score": 6.0,
+    "path": "data/nnc2215-b1-gaff2-boundary-pilot/b1_boundary_fragment.frcmod",
+    "penalty_score_record_count": 46,
+    "records_with_attention_marker": 0,
+    "records_with_penalty_score_at_least_20": 0,
+    "sha256": "622e2ebedd410b847f1ad89a83947c790442d65ae20c2e8c15fbd52afd02924a",
+    "validation_status": "tool_and_MOL2_correspondence_checks_passed"
+  },
+  "inputs": {
+    "active_open_model_candidate": {
+      "hash_unchanged_after_run": true,
+      "path": "structures/nnc2215-open-source-corrected-candidate.pdb",
+      "sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+      "sha256_expected_by_b1_topology_audit": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc"
+    },
+    "ambertools_lock": {
+      "path": "pag-chemistry-environment-macos-arm64.lock.txt",
+      "sha256": "608d83e646a04e939b5b6b38619337b2822966113beb60c8368f90ecba803d6d"
+    },
+    "ambertools_package": {
+      "package_md5": "b1ece4272978a9c2e5e261fd57c36222",
+      "version_build": "26.0-cuda_None_nompi_py312h52216ed_100"
+    },
+    "audit_script": {
+      "path": "audit_nnc2215_b1_ambertools_parameterization_pilot.py",
+      "sha256": "0971500b4c54e3c5a5c88e878c2e29b866070455bdabcba8be1244918bf353c4"
+    },
+    "b1_topology_audit": {
+      "path": "data/nnc2215-b1-topology-audit.json",
+      "sha256": "4ee0feac680641f60b465f343837923488877bf04ea03e927f62efad707e79ce"
+    },
+    "b29_graph_and_map": {
+      "graph": {
+        "path": "structures/nnc2215-b29-linker-roof-product.smi",
+        "sha256": "b677316c1fced61045d2eebab4de85cdb2f1ef956280d18ab9d610df1181bd40"
+      },
+      "map_legend": {
+        "path": "data/nnc2215-b29-linker-roof-product-map.json",
+        "sha256": "eb028433748cf294744ac02f381e909f029f79916484a2e05dfbf966f7faa0c5"
+      },
+      "purpose": "Input required by the existing full-graph builder; the selected fragment contains no B29 atoms."
+    },
+    "coordinate_reconciliation": {
+      "path": "data/nnc2215-carbon-reconciliation-candidate.json",
+      "sha256": "7aed13e3d8bcd13d9aa8b3e468f8831b5dec322caf3de454dd67f68087d4e133"
+    },
+    "formula_audit": {
+      "path": "data/nnc2215-model-formula-audit.json",
+      "sha256": "ad5cf3035fa16330239f69ef7fee95e0a2c02b6944d309f20e56219799775260"
+    },
+    "full_conjugate_graph": {
+      "path": "data/nnc2215-full-conjugate-graph.json",
+      "sha256": "fb9feaed3537196515c62656d890c0e92b42c9b7da15955dd516b1d82dd178dc"
+    },
+    "full_graph_builder": {
+      "path": "audit_nnc2215_full_conjugate_graph.py",
+      "sha256": "c0fe69b50f4b3439b27863c8c54e7d9847fd0ac9ffc6c6966e14004ae022d85f"
+    },
+    "parameterization_helper_script": {
+      "path": "audit_nnc2215_ambertools_parameterization_pilot.py",
+      "sha256": "358ee8115de0eed9e7c3010f770c07bcc73a30b17cf689472d4b3bfd8315d8a0"
+    },
+    "source_graph": {
+      "path": "structures/nnc2215-b1-glucoside-attachment.smi",
+      "sha256": "94ef8ea011bc968beb3fb4a3e8846b64182c602faf7fe041461cd33c4e5a02b4"
+    },
+    "source_map_legend": {
+      "path": "data/nnc2215-b1-glucoside-atom-map.json",
+      "sha256": "a45953599aa2eb490275da3cfe595a3b702148da690a6baf17c6751925878e81"
+    }
+  },
+  "limits": [
+    "The active/open coordinates are model-built, and the pilot does not establish that this conformation is experimentally resolved.",
+    "The AsnB3 NH2 cap omits the remaining AsnB3 environment and makes the AM1-BCC charges cap-dependent.",
+    "The PheB1 hydrogen-record discrepancy is not resolved; PDB hydrogens are not used for proton placement.",
+    "Generated GAFF2 types, AM1-BCC charges, and parmchk2 terms are feasibility outputs only and are not validated for transferability or protein-bound cross-boundary use.",
+    "B29 mapping/protonation, full insulin microstate and total charge, complete force-field construction, target pose, MD, affinity, and clinical outcome remain unresolved."
+  ],
+  "method": {
+    "antechamber_charge_method": "AM1-BCC (Antechamber bcc)",
+    "atom_type_set": "GAFF2",
+    "bonded_parameter_lookup": "ff14SB available to parmchk2 as a comparison set; generated terms are not validated",
+    "declared_formal_charge": 0,
+    "fragment_definition": "B1 source maps 2\u201319 + PheB1 + ValB2 + AsnB3 N as a neutral NH2 cap",
+    "geometry_optimization": "disabled with maxcyc=0",
+    "input_geometry": "active/open publisher-supplied model-built heavy-atom coordinates; no geometry optimization; explicit hydrogens added by RDKit",
+    "nvidia_gpu_used": false,
+    "pdb_hydrogen_records_used": false
+  },
+  "mol2": {
+    "atom_count": 74,
+    "atom_parameters": [
+      {
+        "atom_index_zero_based": 0,
+        "element": "N",
+        "gaff2_type": "ns",
+        "mol2_atom_name": "N1",
+        "partial_charge_e": -0.1469,
+        "pdb_identity": "B:1:PHE:N",
+        "pdb_serial": 37
+      },
+      {
+        "atom_index_zero_based": 1,
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C1",
+        "partial_charge_e": -0.0653,
+        "pdb_identity": "B:1:PHE:CA",
+        "pdb_serial": 38
+      },
+      {
+        "atom_index_zero_based": 2,
+        "element": "C",
+        "gaff2_type": "c",
+        "mol2_atom_name": "C2",
+        "partial_charge_e": 0.5751,
+        "pdb_identity": "B:1:PHE:C",
+        "pdb_serial": 39
+      },
+      {
+        "atom_index_zero_based": 3,
+        "element": "O",
+        "gaff2_type": "o",
+        "mol2_atom_name": "O1",
+        "partial_charge_e": -0.6281,
+        "pdb_identity": "B:1:PHE:O",
+        "pdb_serial": 40
+      },
+      {
+        "atom_index_zero_based": 4,
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C3",
+        "partial_charge_e": 0.0139,
+        "pdb_identity": "B:1:PHE:CB",
+        "pdb_serial": 41
+      },
+      {
+        "atom_index_zero_based": 5,
+        "element": "C",
+        "gaff2_type": "ca",
+        "mol2_atom_name": "C4",
+        "partial_charge_e": -0.1063,
+        "pdb_identity": "B:1:PHE:CG",
+        "pdb_serial": 42
+      },
+      {
+        "atom_index_zero_based": 6,
+        "element": "C",
+        "gaff2_type": "ca",
+        "mol2_atom_name": "C5",
+        "partial_charge_e": -0.1065,
+        "pdb_identity": "B:1:PHE:CD1",
+        "pdb_serial": 44
+      },
+      {
+        "atom_index_zero_based": 7,
+        "element": "C",
+        "gaff2_type": "ca",
+        "mol2_atom_name": "C6",
+        "partial_charge_e": -0.1065,
+        "pdb_identity": "B:1:PHE:CD2",
+        "pdb_serial": 43
+      },
+      {
+        "atom_index_zero_based": 8,
+        "element": "C",
+        "gaff2_type": "ca",
+        "mol2_atom_name": "C7",
+        "partial_charge_e": -0.099,
+        "pdb_identity": "B:1:PHE:CE1",
+        "pdb_serial": 46
+      },
+      {
+        "atom_index_zero_based": 9,
+        "element": "C",
+        "gaff2_type": "ca",
+        "mol2_atom_name": "C8",
+        "partial_charge_e": -0.099,
+        "pdb_identity": "B:1:PHE:CE2",
+        "pdb_serial": 45
+      },
+      {
+        "atom_index_zero_based": 10,
+        "element": "C",
+        "gaff2_type": "ca",
+        "mol2_atom_name": "C9",
+        "partial_charge_e": -0.102,
+        "pdb_identity": "B:1:PHE:CZ",
+        "pdb_serial": 47
+      },
+      {
+        "atom_index_zero_based": 11,
+        "element": "N",
+        "gaff2_type": "ns",
+        "mol2_atom_name": "N2",
+        "partial_charge_e": -0.1889,
+        "pdb_identity": "B:2:VAL:N",
+        "pdb_serial": 57
+      },
+      {
+        "atom_index_zero_based": 12,
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C10",
+        "partial_charge_e": -0.0423,
+        "pdb_identity": "B:2:VAL:CA",
+        "pdb_serial": 58
+      },
+      {
+        "atom_index_zero_based": 13,
+        "element": "C",
+        "gaff2_type": "c",
+        "mol2_atom_name": "C11",
+        "partial_charge_e": 0.5561,
+        "pdb_identity": "B:2:VAL:C",
+        "pdb_serial": 59
+      },
+      {
+        "atom_index_zero_based": 14,
+        "element": "O",
+        "gaff2_type": "o",
+        "mol2_atom_name": "O2",
+        "partial_charge_e": -0.6211,
+        "pdb_identity": "B:2:VAL:O",
+        "pdb_serial": 60
+      },
+      {
+        "atom_index_zero_based": 15,
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C12",
+        "partial_charge_e": -0.0517,
+        "pdb_identity": "B:2:VAL:CB",
+        "pdb_serial": 61
+      },
+      {
+        "atom_index_zero_based": 16,
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C13",
+        "partial_charge_e": 0.0064,
+        "pdb_identity": "B:2:VAL:CG1",
+        "pdb_serial": 62
+      },
+      {
+        "atom_index_zero_based": 17,
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C14",
+        "partial_charge_e": 0.0064,
+        "pdb_identity": "B:2:VAL:CG2",
+        "pdb_serial": 63
+      },
+      {
+        "atom_index_zero_based": 18,
+        "element": "N",
+        "gaff2_type": "nt",
+        "mol2_atom_name": "N3",
+        "partial_charge_e": -0.227,
+        "pdb_identity": "B:3:ASN:N",
+        "pdb_serial": 73
+      },
+      {
+        "atom_index_zero_based": 19,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c",
+        "mol2_atom_name": "C15",
+        "partial_charge_e": 0.5351,
+        "pdb_identity": "B:0:PHX:C2",
+        "pdb_serial": 3,
+        "source_map_id": 2,
+        "source_map_role": "B1 linker carbonyl carbon; amide carbonyl attached to PheB1 N."
+      },
+      {
+        "atom_index_zero_based": 20,
+        "component": "B1",
+        "element": "O",
+        "gaff2_type": "o",
+        "mol2_atom_name": "O3",
+        "partial_charge_e": -0.6711,
+        "pdb_identity": "B:0:PHX:O1",
+        "pdb_serial": 6,
+        "source_map_id": 3,
+        "source_map_role": "B1 amide carbonyl oxygen."
+      },
+      {
+        "atom_index_zero_based": 21,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C16",
+        "partial_charge_e": 0.1414,
+        "pdb_identity": "B:0:PHX:C22",
+        "pdb_serial": 4,
+        "source_map_id": 4,
+        "source_map_role": "Methylene alpha to the carbonyl; source NMR group OCH2C=O."
+      },
+      {
+        "atom_index_zero_based": 22,
+        "component": "B1",
+        "element": "O",
+        "gaff2_type": "os",
+        "mol2_atom_name": "O4",
+        "partial_charge_e": -0.3936,
+        "pdb_identity": "B:0:PHX:O223",
+        "pdb_serial": 5,
+        "source_map_id": 5,
+        "source_map_role": "Ether oxygen between the carbonyl-alpha methylene and the ethylene linker."
+      },
+      {
+        "atom_index_zero_based": 23,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C17",
+        "partial_charge_e": 0.1994,
+        "pdb_identity": "B:0:PHX:C3",
+        "pdb_serial": 18,
+        "source_map_id": 6,
+        "source_map_role": "First ethylene-linker methylene, adjacent to map 5."
+      },
+      {
+        "atom_index_zero_based": 24,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C18",
+        "partial_charge_e": 0.1534,
+        "pdb_identity": "B:0:PHX:C",
+        "pdb_serial": 1,
+        "source_map_id": 7,
+        "source_map_role": "Second ethylene-linker methylene, adjacent to the glycosidic-side ether oxygen map 8."
+      },
+      {
+        "atom_index_zero_based": 25,
+        "component": "B1",
+        "element": "O",
+        "gaff2_type": "os",
+        "mol2_atom_name": "O5",
+        "partial_charge_e": -0.3726,
+        "pdb_identity": "B:0:PHX:O",
+        "pdb_serial": 2,
+        "source_map_id": 8,
+        "source_map_role": "Glycosidic-side ether oxygen linking the ethylene linker to glucose C1."
+      },
+      {
+        "atom_index_zero_based": 26,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c6",
+        "mol2_atom_name": "C19",
+        "partial_charge_e": 0.3899,
+        "pdb_identity": "B:0:PHX:C232",
+        "pdb_serial": 7,
+        "source_map_id": 9,
+        "source_map_role": "Anomeric glucose carbon; beta-D glycosidic attachment site."
+      },
+      {
+        "atom_index_zero_based": 27,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c6",
+        "mol2_atom_name": "C20",
+        "partial_charge_e": 0.1281,
+        "pdb_identity": "B:0:PHX:C233",
+        "pdb_serial": 8,
+        "source_map_id": 11,
+        "source_map_role": "Glucose C2 stereocenter bearing a free hydroxyl at map 12."
+      },
+      {
+        "atom_index_zero_based": 28,
+        "component": "B1",
+        "element": "O",
+        "gaff2_type": "oh",
+        "mol2_atom_name": "O6",
+        "partial_charge_e": -0.5608,
+        "pdb_identity": "B:0:PHX:O238",
+        "pdb_serial": 13,
+        "source_map_id": 12,
+        "source_map_role": "Free hydroxyl oxygen at glucose C2."
+      },
+      {
+        "atom_index_zero_based": 29,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c6",
+        "mol2_atom_name": "C21",
+        "partial_charge_e": 0.1091,
+        "pdb_identity": "B:0:PHX:C234",
+        "pdb_serial": 9,
+        "source_map_id": 13,
+        "source_map_role": "Glucose C3 stereocenter bearing a free hydroxyl at map 14."
+      },
+      {
+        "atom_index_zero_based": 30,
+        "component": "B1",
+        "element": "O",
+        "gaff2_type": "oh",
+        "mol2_atom_name": "O7",
+        "partial_charge_e": -0.5698,
+        "pdb_identity": "B:0:PHX:O239",
+        "pdb_serial": 14,
+        "source_map_id": 14,
+        "source_map_role": "Free hydroxyl oxygen at glucose C3."
+      },
+      {
+        "atom_index_zero_based": 31,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c6",
+        "mol2_atom_name": "C22",
+        "partial_charge_e": 0.1641,
+        "pdb_identity": "B:0:PHX:C235",
+        "pdb_serial": 10,
+        "source_map_id": 15,
+        "source_map_role": "Glucose C4 stereocenter bearing a free hydroxyl at map 16."
+      },
+      {
+        "atom_index_zero_based": 32,
+        "component": "B1",
+        "element": "O",
+        "gaff2_type": "oh",
+        "mol2_atom_name": "O8",
+        "partial_charge_e": -0.5828,
+        "pdb_identity": "B:0:PHX:O240",
+        "pdb_serial": 15,
+        "source_map_id": 16,
+        "source_map_role": "Free hydroxyl oxygen at glucose C4."
+      },
+      {
+        "atom_index_zero_based": 33,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c6",
+        "mol2_atom_name": "C23",
+        "partial_charge_e": 0.1271,
+        "pdb_identity": "B:0:PHX:C236",
+        "pdb_serial": 11,
+        "source_map_id": 17,
+        "source_map_role": "Glucose C5 stereocenter; bears the C6 hydroxymethyl substituent and ring oxygen map 10."
+      },
+      {
+        "atom_index_zero_based": 34,
+        "component": "B1",
+        "element": "C",
+        "gaff2_type": "c3",
+        "mol2_atom_name": "C24",
+        "partial_charge_e": 0.2264,
+        "pdb_identity": "B:0:PHX:C241",
+        "pdb_serial": 16,
+        "source_map_id": 18,
+        "source_map_role": "Glucose C6 hydroxymethyl carbon."
+      },
+      {
+        "atom_index_zero_based": 35,
+        "component": "B1",
+        "element": "O",
+        "gaff2_type": "oh",
+        "mol2_atom_name": "O9",
+        "partial_charge_e": -0.5878,
+        "pdb_identity": "B:0:PHX:O242",
+        "pdb_serial": 17,
+        "source_map_id": 19,
+        "source_map_role": "Free hydroxyl oxygen at glucose C6."
+      },
+      {
+        "atom_index_zero_based": 36,
+        "component": "B1",
+        "element": "O",
+        "gaff2_type": "os",
+        "mol2_atom_name": "O10",
+        "partial_charge_e": -0.4186,
+        "pdb_identity": "B:0:PHX:O237",
+        "pdb_serial": 12,
+        "source_map_id": 10,
+        "source_map_role": "Glucopyranose ring oxygen between glucose C5 and C1."
+      },
+      {
+        "atom_index_zero_based": 37,
+        "element": "H",
+        "gaff2_type": "hn",
+        "mol2_atom_name": "H1",
+        "parent_atom_index_zero_based": 0,
+        "parent_pdb_serial": 37,
+        "partial_charge_e": 0.2015
+      },
+      {
+        "atom_index_zero_based": 38,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H2",
+        "parent_atom_index_zero_based": 1,
+        "parent_pdb_serial": 38,
+        "partial_charge_e": 0.0597
+      },
+      {
+        "atom_index_zero_based": 39,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H3",
+        "parent_atom_index_zero_based": 4,
+        "parent_pdb_serial": 41,
+        "partial_charge_e": 0.0372
+      },
+      {
+        "atom_index_zero_based": 40,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H4",
+        "parent_atom_index_zero_based": 4,
+        "parent_pdb_serial": 41,
+        "partial_charge_e": 0.0372
+      },
+      {
+        "atom_index_zero_based": 41,
+        "element": "H",
+        "gaff2_type": "ha",
+        "mol2_atom_name": "H5",
+        "parent_atom_index_zero_based": 6,
+        "parent_pdb_serial": 44,
+        "partial_charge_e": 0.1195
+      },
+      {
+        "atom_index_zero_based": 42,
+        "element": "H",
+        "gaff2_type": "ha",
+        "mol2_atom_name": "H6",
+        "parent_atom_index_zero_based": 7,
+        "parent_pdb_serial": 43,
+        "partial_charge_e": 0.1195
+      },
+      {
+        "atom_index_zero_based": 43,
+        "element": "H",
+        "gaff2_type": "ha",
+        "mol2_atom_name": "H7",
+        "parent_atom_index_zero_based": 8,
+        "parent_pdb_serial": 46,
+        "partial_charge_e": 0.108
+      },
+      {
+        "atom_index_zero_based": 44,
+        "element": "H",
+        "gaff2_type": "ha",
+        "mol2_atom_name": "H8",
+        "parent_atom_index_zero_based": 9,
+        "parent_pdb_serial": 45,
+        "partial_charge_e": 0.108
+      },
+      {
+        "atom_index_zero_based": 45,
+        "element": "H",
+        "gaff2_type": "ha",
+        "mol2_atom_name": "H9",
+        "parent_atom_index_zero_based": 10,
+        "parent_pdb_serial": 47,
+        "partial_charge_e": 0.107
+      },
+      {
+        "atom_index_zero_based": 46,
+        "element": "H",
+        "gaff2_type": "hn",
+        "mol2_atom_name": "H10",
+        "parent_atom_index_zero_based": 11,
+        "parent_pdb_serial": 57,
+        "partial_charge_e": 0.1825
+      },
+      {
+        "atom_index_zero_based": 47,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H11",
+        "parent_atom_index_zero_based": 12,
+        "parent_pdb_serial": 58,
+        "partial_charge_e": 0.0357
+      },
+      {
+        "atom_index_zero_based": 48,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H12",
+        "parent_atom_index_zero_based": 15,
+        "parent_pdb_serial": 61,
+        "partial_charge_e": 0.0617
+      },
+      {
+        "atom_index_zero_based": 49,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H13",
+        "parent_atom_index_zero_based": 16,
+        "parent_pdb_serial": 62,
+        "partial_charge_e": 0.007367
+      },
+      {
+        "atom_index_zero_based": 50,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H14",
+        "parent_atom_index_zero_based": 16,
+        "parent_pdb_serial": 62,
+        "partial_charge_e": 0.007367
+      },
+      {
+        "atom_index_zero_based": 51,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H15",
+        "parent_atom_index_zero_based": 16,
+        "parent_pdb_serial": 62,
+        "partial_charge_e": 0.007367
+      },
+      {
+        "atom_index_zero_based": 52,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H16",
+        "parent_atom_index_zero_based": 17,
+        "parent_pdb_serial": 63,
+        "partial_charge_e": 0.007367
+      },
+      {
+        "atom_index_zero_based": 53,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H17",
+        "parent_atom_index_zero_based": 17,
+        "parent_pdb_serial": 63,
+        "partial_charge_e": 0.007367
+      },
+      {
+        "atom_index_zero_based": 54,
+        "element": "H",
+        "gaff2_type": "hc",
+        "mol2_atom_name": "H18",
+        "parent_atom_index_zero_based": 17,
+        "parent_pdb_serial": 63,
+        "partial_charge_e": 0.007367
+      },
+      {
+        "atom_index_zero_based": 55,
+        "element": "H",
+        "gaff2_type": "hn",
+        "mol2_atom_name": "H19",
+        "parent_atom_index_zero_based": 18,
+        "parent_pdb_serial": 73,
+        "partial_charge_e": 0.1645
+      },
+      {
+        "atom_index_zero_based": 56,
+        "element": "H",
+        "gaff2_type": "hn",
+        "mol2_atom_name": "H20",
+        "parent_atom_index_zero_based": 18,
+        "parent_pdb_serial": 73,
+        "partial_charge_e": 0.1645
+      },
+      {
+        "atom_index_zero_based": 57,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H21",
+        "parent_atom_index_zero_based": 21,
+        "parent_pdb_serial": 4,
+        "parent_source_map_id": 4,
+        "partial_charge_e": 0.0262
+      },
+      {
+        "atom_index_zero_based": 58,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H22",
+        "parent_atom_index_zero_based": 21,
+        "parent_pdb_serial": 4,
+        "parent_source_map_id": 4,
+        "partial_charge_e": 0.0262
+      },
+      {
+        "atom_index_zero_based": 59,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H23",
+        "parent_atom_index_zero_based": 23,
+        "parent_pdb_serial": 18,
+        "parent_source_map_id": 6,
+        "partial_charge_e": 0.0267
+      },
+      {
+        "atom_index_zero_based": 60,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H24",
+        "parent_atom_index_zero_based": 23,
+        "parent_pdb_serial": 18,
+        "parent_source_map_id": 6,
+        "partial_charge_e": 0.0267
+      },
+      {
+        "atom_index_zero_based": 61,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H25",
+        "parent_atom_index_zero_based": 24,
+        "parent_pdb_serial": 1,
+        "parent_source_map_id": 7,
+        "partial_charge_e": 0.0147
+      },
+      {
+        "atom_index_zero_based": 62,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H26",
+        "parent_atom_index_zero_based": 24,
+        "parent_pdb_serial": 1,
+        "parent_source_map_id": 7,
+        "partial_charge_e": 0.0147
+      },
+      {
+        "atom_index_zero_based": 63,
+        "element": "H",
+        "gaff2_type": "h2",
+        "mol2_atom_name": "H27",
+        "parent_atom_index_zero_based": 26,
+        "parent_pdb_serial": 7,
+        "parent_source_map_id": 9,
+        "partial_charge_e": -0.0093
+      },
+      {
+        "atom_index_zero_based": 64,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H28",
+        "parent_atom_index_zero_based": 27,
+        "parent_pdb_serial": 8,
+        "parent_source_map_id": 11,
+        "partial_charge_e": 0.0567
+      },
+      {
+        "atom_index_zero_based": 65,
+        "element": "H",
+        "gaff2_type": "ho",
+        "mol2_atom_name": "H29",
+        "parent_atom_index_zero_based": 28,
+        "parent_pdb_serial": 13,
+        "parent_source_map_id": 12,
+        "partial_charge_e": 0.379
+      },
+      {
+        "atom_index_zero_based": 66,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H30",
+        "parent_atom_index_zero_based": 29,
+        "parent_pdb_serial": 9,
+        "parent_source_map_id": 13,
+        "partial_charge_e": 0.0097
+      },
+      {
+        "atom_index_zero_based": 67,
+        "element": "H",
+        "gaff2_type": "ho",
+        "mol2_atom_name": "H31",
+        "parent_atom_index_zero_based": 30,
+        "parent_pdb_serial": 14,
+        "parent_source_map_id": 14,
+        "partial_charge_e": 0.395
+      },
+      {
+        "atom_index_zero_based": 68,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H32",
+        "parent_atom_index_zero_based": 31,
+        "parent_pdb_serial": 10,
+        "parent_source_map_id": 15,
+        "partial_charge_e": 0.0497
+      },
+      {
+        "atom_index_zero_based": 69,
+        "element": "H",
+        "gaff2_type": "ho",
+        "mol2_atom_name": "H33",
+        "parent_atom_index_zero_based": 32,
+        "parent_pdb_serial": 15,
+        "parent_source_map_id": 16,
+        "partial_charge_e": 0.404
+      },
+      {
+        "atom_index_zero_based": 70,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H34",
+        "parent_atom_index_zero_based": 33,
+        "parent_pdb_serial": 11,
+        "parent_source_map_id": 17,
+        "partial_charge_e": 0.0127
+      },
+      {
+        "atom_index_zero_based": 71,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H35",
+        "parent_atom_index_zero_based": 34,
+        "parent_pdb_serial": 16,
+        "parent_source_map_id": 18,
+        "partial_charge_e": 0.0217
+      },
+      {
+        "atom_index_zero_based": 72,
+        "element": "H",
+        "gaff2_type": "h1",
+        "mol2_atom_name": "H36",
+        "parent_atom_index_zero_based": 34,
+        "parent_pdb_serial": 16,
+        "parent_source_map_id": 18,
+        "partial_charge_e": 0.0217
+      },
+      {
+        "atom_index_zero_based": 73,
+        "element": "H",
+        "gaff2_type": "ho",
+        "mol2_atom_name": "H37",
+        "parent_atom_index_zero_based": 35,
+        "parent_pdb_serial": 17,
+        "parent_source_map_id": 19,
+        "partial_charge_e": 0.392
+      }
+    ],
+    "bond_count": 75,
+    "candidate_accepted": true,
+    "charge_correction_applied": false,
+    "charge_sum_within_0_01e_tolerance": true,
+    "gaff2_atom_type_counts": {
+      "c": 3,
+      "c3": 10,
+      "c6": 5,
+      "ca": 6,
+      "h1": 14,
+      "h2": 1,
+      "ha": 5,
+      "hc": 9,
+      "hn": 4,
+      "ho": 4,
+      "ns": 2,
+      "nt": 1,
+      "o": 3,
+      "oh": 4,
+      "os": 3
+    },
+    "generated": true,
+    "heavy_atom_count": 37,
+    "mapping_validation": {
+      "atom_coordinates_match_prepared_sdf": true,
+      "atom_ids_sequential_in_prepared_sdf_order": true,
+      "bond_graph_and_orders_match_prepared_sdf": true,
+      "coordinate_tolerance_angstrom": 0.002,
+      "element_order_matches_prepared_sdf": true,
+      "maximum_coordinate_delta_angstrom": 0.000733
+    },
+    "net_charge_residual_e": 0.003002,
+    "partial_charge_sum_e": 0.003002,
+    "path": "data/nnc2215-b1-gaff2-boundary-pilot/b1_boundary_fragment.mol2",
+    "sha256": "cd6bb91f1da0545d5604a13915f98bf1b2af3528db620f07f2c136f29f8c415a",
+    "validation_status": "passed"
+  },
+  "output_validation_error": null,
+  "parmchk2": {
+    "command_template": [
+      "parmchk2",
+      "-i",
+      "output.mol2",
+      "-f",
+      "mol2",
+      "-o",
+      "output.frcmod",
+      "-s",
+      "2",
+      "-frc",
+      "ff14SB"
+    ],
+    "log": {
+      "path": "data/nnc2215-b1-gaff2-boundary-pilot/parmchk2.log",
+      "sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72"
+    },
+    "returncode": 0,
+    "timed_out": false
+  },
+  "partial_charge_bookkeeping": {
+    "charge_correction_applied": false,
+    "formal_charge": 0,
+    "interpretation": "AM1-BCC result for this fragment geometry and declared cap; not a validated final charge assignment.",
+    "partial_charge_sum_e": 0.003002,
+    "residual_e": 0.003002
+  },
+  "purpose": "Test pinned AmberTools GAFF2/AM1-BCC feasibility for a source-mapped B1 glucoside in a local PheB1/ValB2 peptide context.",
+  "schema": "dia-health-one.nnc2215-b1-gaff2-boundary-pilot.v1",
+  "sdf": {
+    "path": "data/nnc2215-b1-gaff2-boundary-pilot/b1_boundary_fragment.sdf",
+    "sha256": "9c72be390bf06337c5e6b1e4b68c0e84c5ad0f64b7da58fdc80998765746c189"
+  },
+  "software": {
+    "amberhome": "/private/tmp/dia-target-tools-pinned",
+    "antechamber_path": "/private/tmp/dia-target-tools-pinned/bin/antechamber",
+    "parmchk2_path": "/private/tmp/dia-target-tools-pinned/bin/parmchk2",
+    "python_version": "3.12.15",
+    "rdkit_version": "2026.03.1"
+  },
+  "status": "PILOT_ONLY; COMPLETE_CONJUGATE_FORCE_FIELD_NOT_VALIDATED",
+  "validated_conjugate_force_field_count": 0
+}

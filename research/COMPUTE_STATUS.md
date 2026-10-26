@@ -38,6 +38,12 @@ The follow-on audit ran all 16 exact active/open model-coordinate mappings with 
 
 This shows that the generated bonded-term file and heavy-atom types did not change across these candidate mappings, while the AM1-BCC heavy-atom charges retain small mapping dependence. It does not authorize selecting one of the 16 maps, map RDKit-added hydrogens to physical PDB hydrogens, resolve the NH2 cap at LysB29, or validate the partial charges or parameters. The mapped coordinate candidate remained unchanged. The result JSON records each map, variant, output hash, and per-serial charge range; reproduce with `micromamba run -p <environment-created-from-lock> python research/audit_nnc2215_b29_mapping_sensitivity.py --max-workers 4`.
 
+## B1 local-context GAFF2 parameterization pilot — 26 October 2026
+
+The B1 pilot uses the unique active/open B1 mapping and a 37-heavy-atom local fragment: the B1 glucoside, PheB1, ValB2, and an AsnB3-NH2 truncation cap. The neutral input formula is C24H37N3O10; all 74 atoms received GAFF2 types. AmberTools 26 Antechamber/parmchk2 returned successfully. The raw AM1-BCC charge sum is +0.003002 e from formal zero, within the 0.01 e bookkeeping tolerance; no correction was applied. `parmchk2` emitted 65 additional parameter records, none with an `ATTN` marker and none at penalty ≥20; the maximum recorded penalty is 6.0.
+
+The input uses model-built active/open coordinates, retains the source-derived B1 stereochemistry and neutral RDKit Phe/Val context, and does not use PDB hydrogens. The AsnB3 nitrogen is capped as NH2 after truncation, so charges depend on this local boundary model. This does not validate the B1 charges or generated terms, parameterize the complete B1 residue in protein context, resolve the PheB1 hydrogen-record discrepancy, cover B29 or cross-boundary terms, or create a full system. Artifacts are in `research/data/nnc2215-b1-gaff2-boundary-pilot/`; reproduce with `micromamba run -p <environment-created-from-lock> python research/audit_nnc2215_b1_ambertools_parameterization_pilot.py`. The validated-conjugate-force-field count remains zero.
+
 ## Reproductions completed
 
 Five Python analyses completed on the Apple M4 host:

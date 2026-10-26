@@ -107,6 +107,14 @@ The [mapping sensitivity audit](data/nnc2215-b29-gaff2-mapping-sensitivity.json)
 
 The bonded parameter candidate and heavy-atom types are invariant across the tested mappings, while the partial charges retain small dependence on which exact graph embedding assigns source maps to coordinates. This does not make any embedding authoritative. Hydrogen charge ownership is not compared by PDB serial because explicit hydrogens were generated with RDKit; the NH2 cap remains different from protein-bound LysB29 NZ. No full topology, validated conjugate force field, OpenMM system, MD, affinity result, or clinical conclusion was produced; the validated-force-field count remains zero.
 
+## B1 local-context GAFF2 parameterization pilot — 26 October 2026
+
+The [B1 boundary pilot audit](data/nnc2215-b1-gaff2-boundary-pilot.json) used the unique active/open B1 topology mapping to construct a 37-heavy-atom neutral fragment (C24H37N3O10): B1 maps 2–19, PheB1, ValB2, and the AsnB3 N atom as a neutral NH2 truncation cap. The source graph and pinned RDKit neutral insulin templates give seven assigned stereocentres. All 37 heavy-atom coordinates were copied from the active/open model-built candidate; RDKit added explicit hydrogens, and no PDB hydrogen records or geometry optimization were used.
+
+AmberTools 26 Antechamber and parmchk2 completed with GAFF2 and AM1-BCC. The raw partial-charge sum is +0.003002 e from formal zero, within the 0.01 e bookkeeping tolerance; no correction was applied. `parmchk2` emitted 65 parameter records, none with an `ATTN` marker and none with penalty score ≥20; the maximum recorded penalty is 6.0. SDF/MOL2/frcmod inputs and logs are retained in [`data/nnc2215-b1-gaff2-boundary-pilot/`](data/nnc2215-b1-gaff2-boundary-pilot/); reproduce with `micromamba run -p <environment-created-from-lock> python research/audit_nnc2215_b1_ambertools_parameterization_pilot.py`.
+
+This is a provisional local-fragment result, not a validated B1 force field. Charges depend on the active/open model geometry and the AsnB3 NH2 cap; the cap omits the rest of AsnB3 and surrounding protein. The PheB1 hydrogen-record discrepancy, protein-bound cross-boundary terms, B29 mapping and charge state, full-system protonation, and hybrid force-field compatibility remain unresolved. No complete topology, OpenMM system, MD, affinity result, or clinical conclusion was produced; the validated-conjugate-force-field count remains zero.
+
 ## Provisional chemical assignments
 
 These are source-informed expectations for further chemistry review, not final force-field assignments:
