@@ -1,9 +1,18 @@
 # NNC2215–PaG reproducibility milestone report
 
-**Updated:** 2026-10-26 00:39 UTC
+**Updated:** 2026-10-26 14:47 UTC
 **Repository file:** [`research/MILESTONE_REPORT.md`](https://github.com/pallagip/dia-health-one/blob/main/research/MILESTONE_REPORT.md) on `main` · [Live research dashboard](https://dia-health-one.pages.dev/research/)
-**Status:** Published-data reanalysis is reproducible; a fresh run directly rechecked all 30 Nature source cells against the publisher workbook. OpenFF Sage 2.3.0 now labels the source-derived neutral full graph and all eight isolated roof-fragment carboxyl protonation combinations in the pinned environment. This is label coverage only: partial charges and validated hybrid parameters remain unavailable, and target-binding MD has not started. NVIDIA's six partner requests remain pending with no GPU allocation at the last recorded portal check.
+**Status:** Published-data reanalysis and source-derived heavy-atom mapping are complete. The 507-heavy-atom graph maps to both corrected model-built candidates, with one B1 and 16 B29 mappings per state. OpenFF Sage label coverage, Amber template feasibility, and capped B1/B29 GAFF2 pilots are recorded, but none is a validated full-conjugate force field. No OpenMM target system, target-binding MD, affinity estimate, or clinical result exists. NVIDIA's six partner requests were pending with no GPU allocation at the last recorded portal check.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
+
+## Current model-readiness update — 26 October 2026
+
+- PR [#17](https://github.com/pallagip/dia-health-one/pull/17) merged as `d5c5909`; the main-branch Cloudflare deployment and HTTPS readback passed. The [research dashboard](https://www.diahealth.one/research/) now reports the PheB1 hydrogen geometry comparison.
+- The read-only comparison measures open PheB1 H2 at 1.012274 Å from N and closed PHX H2A at 1.006376 Å. Their two N-centered angles differ by 3.047° and 3.436°. The closed H2A has no PheB1 N `CONECT` edge, so the geometry is compatibility evidence only. No atom ownership or PDB edit was made.
+- The full graph-to-coordinate ledger retains all 16 B29 mappings per state and all 527 source-edge distances per mapping. B29 fragment charge results vary slightly across mappings; no map is selected as authoritative.
+- The current chemistry and parameter evidence is collected in [`NNC2215_FORCE_FIELD_REVIEW.md`](NNC2215_FORCE_FIELD_REVIEW.md). It is a review packet, not a force-field approval. The immediate gate is independent chemistry and parameter review before a full OpenMM system is assembled.
+
+NNC2215 is an existing published candidate. This milestone advances model readiness and does not constitute discovery of a new drug.
 
 ## Google Cloud application update — 19 October 2026
 
@@ -30,7 +39,7 @@ The record-level evidence is in [`nnc2215-model-validation.json`](data/nnc2215-m
 
 ## Proposed next deliverable
 
-Reconcile the existing serial-level atom adjacency and open/closed LINK difference against authoritative chemistry; assign and validate bond orders, protonation, stereochemistry, partial charges, and force-field compatibility for the full conjugate and PaG; and document how a PaG pose is initialized. If those checks pass, benchmark the selected engine on the allocated GPU using the prepared target system, then run the small three-condition stability pilot described in the protocol. If any chemistry or parameter check fails, stop before target MD and report the evidence still needed.
+Obtain an independent review of the atom-mapped chemistry, full-system microstate, B1/B29 custom-residue charges and bonded terms, and cross-boundary interactions using the linked review packet. If that review approves a specific model, assemble it in OpenMM and record complete atom/parameter coverage, formal charge, clashes, and energy checks. Only after a valid system and a documented PaG-pose method pass review should the short restrained stability pilot begin; GPU benchmarking and the three-condition pilot follow that gate. Stop before target MD if any chemistry or parameter check fails.
 
 The two-week pilot/report estimate starts only when the necessary structural inputs, validated parameters, and compute are available. A later replicated/convergence study remains a separate four-to-eight-week planning estimate after the pilot is justified.
 
@@ -38,12 +47,13 @@ The two-week pilot/report estimate starts only when the necessary structural inp
 
 | Gate | Evidence required | Current result |
 |---|---|---|
-| Public structure provenance | Source DOI/URL, licence, checksums, sequence/backbone/disulfide/link audit | Partial pass; model-built input, nonstandard-residue discrepancies open |
-| Conjugate chemistry | Atom-mapped residue/linker graphs, bond orders, stereochemistry, protonation states, charge totals, and parameter validation | Blocked |
-| Original-method reproducibility | Original macrocycle-analogue seed coordinates and compatible Desmond/OPLS4 setup, or explicitly labelled proxy inputs | Blocked for exact rerun |
-| Pilot stability | Minimized valid system; finite energies; stable temperature/volume; no clashes/crashes; three independent seeds and consistent structural observables | Not run |
-
-| GPU performance/cost | Target-system benchmark on allocated hardware with versions and measured ns/day | Generic T4 preflight complete; target-system performance/cost not measured; no production allocation |
+| Public structure provenance | Source DOI/URL, licence, checksums, sequence/backbone/disulfide/link audit | Source and coordinate ledgers complete for model-built candidates |
+| Full-conjugate chemistry | Atom-mapped graph, bond orders, stereochemistry, microstate, hydrogen ownership, charge totals | Graph/adjacency evidence available; independent chemistry review remains open |
+| Hybrid force field | Reviewed charges, custom-residue bonded terms, cross-boundary terms, and protein-force-field compatibility | Capped fragment pilots only; zero validated full-conjugate force fields |
+| OpenMM system | Complete parameter coverage, expected atom count/formal charge, no severe clashes, finite energy | Not built |
+| Original-method reproducibility | Original macrocycle-analogue seed coordinates and compatible Desmond/OPLS4 setup, or explicitly labelled proxy inputs | Blocked for exact rerun; public candidates support only a labelled proxy |
+| Pilot stability | Valid system; minimization/equilibration; finite energies; sensible temperature/volume; independent seeds | Not run |
+| GPU performance/cost | Target-system benchmark on allocated hardware with versions and measured ns/day | Generic T4 preflight complete; no target-system benchmark or confirmed production allocation |
 | Binding inference | A validated free-energy/affinity method with convergence diagnostics and appropriate controls | Not part of the initial pilot |
 
 ## Interactive structure viewer — 18 October 2026, 09:19 UTC
