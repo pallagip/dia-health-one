@@ -1,7 +1,7 @@
 # NNC2215–PaG reproducibility milestone report
 
 **Updated:** 2026-10-26 00:39 UTC
-**Repository file:** [`research/MILESTONE_REPORT.md`](https://github.com/pallagip/dia-health-one/blob/main/research/MILESTONE_REPORT.md) on `main` · [Live Markdown report](https://dia-health-one.pages.dev/research/MILESTONE_REPORT.md)
+**Repository file:** [`research/MILESTONE_REPORT.md`](https://github.com/pallagip/dia-health-one/blob/main/research/MILESTONE_REPORT.md) on `main` · [Live research dashboard](https://dia-health-one.pages.dev/research/)
 **Status:** Published-data reanalysis is reproducible; a fresh run directly rechecked all 30 Nature source cells against the publisher workbook. OpenFF Sage 2.3.0 now labels the source-derived neutral full graph and all eight isolated roof-fragment carboxyl protonation combinations in the pinned environment. This is label coverage only: partial charges and validated hybrid parameters remain unavailable, and target-binding MD has not started. NVIDIA's six partner requests remain pending with no GPU allocation at the last recorded portal check.
 **Scope:** Evidence review and readiness audit for the reported paracetamol-glucuronide (PaG) interaction with NNC2215. This is a computational research report, not a clinical model.
 
