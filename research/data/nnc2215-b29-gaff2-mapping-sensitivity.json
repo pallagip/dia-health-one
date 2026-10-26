@@ -1,0 +1,4536 @@
+{
+  "assessment": {
+    "all_16_mappings_completed": true,
+    "all_8_carboxylate_labelings_completed_per_mapping": true,
+    "all_charge_sums_within_0_01e_tolerance_of_formal_minus_3": true,
+    "clinical_use": false,
+    "completed_variant_run_count": 128,
+    "full_insulin_topology_or_openmm_system_created": false,
+    "limits": [
+      "The compared coordinate candidate is publisher-supplied and model-built; the source-to-coordinate atom assignment remains ambiguous.",
+      "The B29 endpoint is an NH2 cap rather than the protein-bound LysB29 NZ residue environment, so junction charges remain provisional.",
+      "Antechamber/parmchk2 outputs are candidate assignments; high-penalty terms and charge reconciliation still require expert review.",
+      "The PheB1 junction, insulin termini, cross-boundary terms, full topology, solvent, target complex, MD, affinity, and clinical inference are outside this audit."
+    ],
+    "maximum_heavy_atom_charge_range_by_pdb_serial_e": 0.0034999999999999892,
+    "md_run": false,
+    "net_charge_residual_e_range": [
+      0.002998999999999974,
+      0.003995000000000193
+    ],
+    "one_frcmod_hash_across_all_128_runs": true,
+    "one_mol2_hash_per_mapping_across_eight_resonance_labelings": true,
+    "partial_charge_sum_e_range": [
+      -2.997001,
+      -2.996005
+    ],
+    "pdb_serial_count_with_charge_or_type_variation": 19,
+    "pdb_serial_count_with_gaff2_atom_type_variation": 0,
+    "pdb_serials_with_charge_or_type_variation": [
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0287,
+        "minimum_partial_charge_e": 0.0282,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0005000000000000004,
+        "pdb_serial": 859,
+        "source_map_ids_seen": [
+          76,
+          77
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0287,
+        "minimum_partial_charge_e": 0.0282,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0005000000000000004,
+        "pdb_serial": 861,
+        "source_map_ids_seen": [
+          76,
+          77
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": -0.0151,
+        "minimum_partial_charge_e": -0.0161,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0009999999999999992,
+        "pdb_serial": 865,
+        "source_map_ids_seen": [
+          31
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1108,
+        "minimum_partial_charge_e": 0.1073,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0034999999999999892,
+        "pdb_serial": 873,
+        "source_map_ids_seen": [
+          37,
+          47
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1108,
+        "minimum_partial_charge_e": 0.1073,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0034999999999999892,
+        "pdb_serial": 874,
+        "source_map_ids_seen": [
+          37,
+          47
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1048,
+        "minimum_partial_charge_e": 0.1038,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 875,
+        "source_map_ids_seen": [
+          59,
+          75
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1048,
+        "minimum_partial_charge_e": 0.1038,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 876,
+        "source_map_ids_seen": [
+          59,
+          75
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2639,
+        "minimum_partial_charge_e": -0.2649,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 881,
+        "source_map_ids_seen": [
+          66
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.5936,
+        "minimum_partial_charge_e": 0.5926,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 886,
+        "source_map_ids_seen": [
+          39,
+          49
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.5936,
+        "minimum_partial_charge_e": 0.5926,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 888,
+        "source_map_ids_seen": [
+          39,
+          49
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2649,
+        "minimum_partial_charge_e": -0.2659,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 889,
+        "source_map_ids_seen": [
+          38,
+          48
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2649,
+        "minimum_partial_charge_e": -0.2659,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 891,
+        "source_map_ids_seen": [
+          38,
+          48
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1303,
+        "minimum_partial_charge_e": -0.1323,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0020000000000000018,
+        "pdb_serial": 895,
+        "source_map_ids_seen": [
+          2,
+          6
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0223,
+        "minimum_partial_charge_e": -0.0233,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 896,
+        "source_map_ids_seen": [
+          1
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1303,
+        "minimum_partial_charge_e": -0.1323,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0020000000000000018,
+        "pdb_serial": 897,
+        "source_map_ids_seen": [
+          2,
+          6
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1323,
+        "minimum_partial_charge_e": -0.1333,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 901,
+        "source_map_ids_seen": [
+          8,
+          12
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1323,
+        "minimum_partial_charge_e": -0.1333,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 903,
+        "source_map_ids_seen": [
+          8,
+          12
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0513,
+        "minimum_partial_charge_e": -0.0518,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0005000000000000004,
+        "pdb_serial": 904,
+        "source_map_ids_seen": [
+          9,
+          11
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0513,
+        "minimum_partial_charge_e": -0.0518,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0005000000000000004,
+        "pdb_serial": 906,
+        "source_map_ids_seen": [
+          9,
+          11
+        ]
+      }
+    ],
+    "physical_atom_charge_comparison": [
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "nt"
+        ],
+        "maximum_partial_charge_e": -0.247,
+        "minimum_partial_charge_e": -0.247,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 480,
+        "source_map_ids_seen": [
+          92
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "nd"
+        ],
+        "maximum_partial_charge_e": -0.322,
+        "minimum_partial_charge_e": -0.322,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 494,
+        "source_map_ids_seen": [
+          83
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "nc"
+        ],
+        "maximum_partial_charge_e": -0.3358,
+        "minimum_partial_charge_e": -0.3358,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 495,
+        "source_map_ids_seen": [
+          82
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "na"
+        ],
+        "maximum_partial_charge_e": 0.5134,
+        "minimum_partial_charge_e": 0.5134,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 496,
+        "source_map_ids_seen": [
+          81
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.6901,
+        "minimum_partial_charge_e": 0.6901,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 497,
+        "source_map_ids_seen": [
+          84
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.2254,
+        "minimum_partial_charge_e": 0.2254,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 498,
+        "source_map_ids_seen": [
+          85
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "cd"
+        ],
+        "maximum_partial_charge_e": 0.2196,
+        "minimum_partial_charge_e": 0.2196,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 499,
+        "source_map_ids_seen": [
+          88
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "cc"
+        ],
+        "maximum_partial_charge_e": -0.3516,
+        "minimum_partial_charge_e": -0.3516,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 500,
+        "source_map_ids_seen": [
+          89
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": -0.0597,
+        "minimum_partial_charge_e": -0.0597,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 501,
+        "source_map_ids_seen": [
+          80
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": -0.0304,
+        "minimum_partial_charge_e": -0.0304,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 502,
+        "source_map_ids_seen": [
+          79
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.642,
+        "minimum_partial_charge_e": -0.642,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 503,
+        "source_map_ids_seen": [
+          90
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "os"
+        ],
+        "maximum_partial_charge_e": -0.4249,
+        "minimum_partial_charge_e": -0.4249,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 504,
+        "source_map_ids_seen": [
+          91
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": -0.0474,
+        "minimum_partial_charge_e": -0.0474,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 505,
+        "source_map_ids_seen": [
+          86
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": -0.0187,
+        "minimum_partial_charge_e": -0.0187,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 506,
+        "source_map_ids_seen": [
+          87
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1043,
+        "minimum_partial_charge_e": 0.1043,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 832,
+        "source_map_ids_seen": [
+          42
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1253,
+        "minimum_partial_charge_e": 0.1253,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 833,
+        "source_map_ids_seen": [
+          67
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.0861,
+        "minimum_partial_charge_e": -0.0861,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 834,
+        "source_map_ids_seen": [
+          55,
+          71
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.0861,
+        "minimum_partial_charge_e": -0.0861,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 835,
+        "source_map_ids_seen": [
+          55,
+          71
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.0721,
+        "minimum_partial_charge_e": -0.0721,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 836,
+        "source_map_ids_seen": [
+          41,
+          51
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.0721,
+        "minimum_partial_charge_e": -0.0721,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 837,
+        "source_map_ids_seen": [
+          41,
+          51
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.082,
+        "minimum_partial_charge_e": -0.082,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 838,
+        "source_map_ids_seen": [
+          15,
+          27
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.082,
+        "minimum_partial_charge_e": -0.082,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 839,
+        "source_map_ids_seen": [
+          15,
+          27
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0691,
+        "minimum_partial_charge_e": -0.0691,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 840,
+        "source_map_ids_seen": [
+          16,
+          28
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0691,
+        "minimum_partial_charge_e": -0.0691,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 841,
+        "source_map_ids_seen": [
+          16,
+          28
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0445,
+        "minimum_partial_charge_e": -0.0445,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 842,
+        "source_map_ids_seen": [
+          17,
+          29
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0445,
+        "minimum_partial_charge_e": -0.0445,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 843,
+        "source_map_ids_seen": [
+          17,
+          29
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1359,
+        "minimum_partial_charge_e": -0.1359,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 844,
+        "source_map_ids_seen": [
+          18,
+          30
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1359,
+        "minimum_partial_charge_e": -0.1359,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 845,
+        "source_map_ids_seen": [
+          18,
+          30
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1229,
+        "minimum_partial_charge_e": -0.1229,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 846,
+        "source_map_ids_seen": [
+          13,
+          25
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1229,
+        "minimum_partial_charge_e": -0.1229,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 847,
+        "source_map_ids_seen": [
+          13,
+          25
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.125,
+        "minimum_partial_charge_e": -0.125,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 848,
+        "source_map_ids_seen": [
+          14,
+          26
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.125,
+        "minimum_partial_charge_e": -0.125,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 849,
+        "source_map_ids_seen": [
+          14,
+          26
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.0901,
+        "minimum_partial_charge_e": -0.0901,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 850,
+        "source_map_ids_seen": [
+          63
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.0761,
+        "minimum_partial_charge_e": -0.0761,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 851,
+        "source_map_ids_seen": [
+          46
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.074,
+        "minimum_partial_charge_e": -0.074,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 852,
+        "source_map_ids_seen": [
+          21
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0606,
+        "minimum_partial_charge_e": -0.0606,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 853,
+        "source_map_ids_seen": [
+          22
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.071,
+        "minimum_partial_charge_e": -0.071,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 854,
+        "source_map_ids_seen": [
+          23
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1174,
+        "minimum_partial_charge_e": -0.1174,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 855,
+        "source_map_ids_seen": [
+          24
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1424,
+        "minimum_partial_charge_e": -0.1424,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 856,
+        "source_map_ids_seen": [
+          19
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.111,
+        "minimum_partial_charge_e": -0.111,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 857,
+        "source_map_ids_seen": [
+          20
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0287,
+        "minimum_partial_charge_e": 0.0282,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0005000000000000004,
+        "pdb_serial": 859,
+        "source_map_ids_seen": [
+          76,
+          77
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0287,
+        "minimum_partial_charge_e": 0.0282,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0005000000000000004,
+        "pdb_serial": 861,
+        "source_map_ids_seen": [
+          76,
+          77
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0049,
+        "minimum_partial_charge_e": 0.0049,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 862,
+        "source_map_ids_seen": [
+          78
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0109,
+        "minimum_partial_charge_e": 0.0109,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 863,
+        "source_map_ids_seen": [
+          33,
+          35
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0019,
+        "minimum_partial_charge_e": 0.0019,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 864,
+        "source_map_ids_seen": [
+          34,
+          36
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": -0.0151,
+        "minimum_partial_charge_e": -0.0161,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0009999999999999992,
+        "pdb_serial": 865,
+        "source_map_ids_seen": [
+          31
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0099,
+        "minimum_partial_charge_e": 0.0099,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 866,
+        "source_map_ids_seen": [
+          32
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0109,
+        "minimum_partial_charge_e": 0.0109,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 867,
+        "source_map_ids_seen": [
+          33,
+          35
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.0019,
+        "minimum_partial_charge_e": 0.0019,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 868,
+        "source_map_ids_seen": [
+          34,
+          36
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.9542,
+        "minimum_partial_charge_e": 0.9542,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 869,
+        "source_map_ids_seen": [
+          60
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.9567,
+        "minimum_partial_charge_e": 0.9567,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 870,
+        "source_map_ids_seen": [
+          52,
+          68
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.8838,
+        "minimum_partial_charge_e": -0.8838,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 871,
+        "source_map_ids_seen": [
+          61,
+          62
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.8853,
+        "minimum_partial_charge_e": -0.8853,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 872,
+        "source_map_ids_seen": [
+          53,
+          54,
+          69,
+          70
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1108,
+        "minimum_partial_charge_e": 0.1073,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0034999999999999892,
+        "pdb_serial": 873,
+        "source_map_ids_seen": [
+          37,
+          47
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1108,
+        "minimum_partial_charge_e": 0.1073,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0034999999999999892,
+        "pdb_serial": 874,
+        "source_map_ids_seen": [
+          37,
+          47
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1048,
+        "minimum_partial_charge_e": 0.1038,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 875,
+        "source_map_ids_seen": [
+          59,
+          75
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c3"
+        ],
+        "maximum_partial_charge_e": 0.1048,
+        "minimum_partial_charge_e": 0.1038,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 876,
+        "source_map_ids_seen": [
+          59,
+          75
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.5916,
+        "minimum_partial_charge_e": 0.5916,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 877,
+        "source_map_ids_seen": [
+          56,
+          72
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.5861,
+        "minimum_partial_charge_e": 0.5861,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 878,
+        "source_map_ids_seen": [
+          64
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.5916,
+        "minimum_partial_charge_e": 0.5916,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 879,
+        "source_map_ids_seen": [
+          56,
+          72
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2644,
+        "minimum_partial_charge_e": -0.2644,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 880,
+        "source_map_ids_seen": [
+          58,
+          74
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2639,
+        "minimum_partial_charge_e": -0.2649,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 881,
+        "source_map_ids_seen": [
+          66
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2644,
+        "minimum_partial_charge_e": -0.2644,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 882,
+        "source_map_ids_seen": [
+          58,
+          74
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.6546,
+        "minimum_partial_charge_e": -0.6546,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 883,
+        "source_map_ids_seen": [
+          57,
+          73
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.6631,
+        "minimum_partial_charge_e": -0.6631,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 884,
+        "source_map_ids_seen": [
+          65
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.6546,
+        "minimum_partial_charge_e": -0.6546,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 885,
+        "source_map_ids_seen": [
+          57,
+          73
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.5936,
+        "minimum_partial_charge_e": 0.5926,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 886,
+        "source_map_ids_seen": [
+          39,
+          49
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.5851,
+        "minimum_partial_charge_e": 0.5851,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 887,
+        "source_map_ids_seen": [
+          44
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.5936,
+        "minimum_partial_charge_e": 0.5926,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 888,
+        "source_map_ids_seen": [
+          39,
+          49
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2649,
+        "minimum_partial_charge_e": -0.2659,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 889,
+        "source_map_ids_seen": [
+          38,
+          48
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2639,
+        "minimum_partial_charge_e": -0.2639,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 890,
+        "source_map_ids_seen": [
+          43
+        ]
+      },
+      {
+        "element_set": [
+          "N"
+        ],
+        "gaff2_atom_type_set": [
+          "ns"
+        ],
+        "maximum_partial_charge_e": -0.2649,
+        "minimum_partial_charge_e": -0.2659,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 891,
+        "source_map_ids_seen": [
+          38,
+          48
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.6766,
+        "minimum_partial_charge_e": -0.6766,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 892,
+        "source_map_ids_seen": [
+          40,
+          50
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.6821,
+        "minimum_partial_charge_e": -0.6821,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 893,
+        "source_map_ids_seen": [
+          45
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.6766,
+        "minimum_partial_charge_e": -0.6766,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 894,
+        "source_map_ids_seen": [
+          40,
+          50
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1303,
+        "minimum_partial_charge_e": -0.1323,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0020000000000000018,
+        "pdb_serial": 895,
+        "source_map_ids_seen": [
+          2,
+          6
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0223,
+        "minimum_partial_charge_e": -0.0233,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 896,
+        "source_map_ids_seen": [
+          1
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1303,
+        "minimum_partial_charge_e": -0.1323,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0020000000000000018,
+        "pdb_serial": 897,
+        "source_map_ids_seen": [
+          2,
+          6
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0538,
+        "minimum_partial_charge_e": -0.0538,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 898,
+        "source_map_ids_seen": [
+          3,
+          5
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1333,
+        "minimum_partial_charge_e": -0.1333,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 899,
+        "source_map_ids_seen": [
+          4
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0538,
+        "minimum_partial_charge_e": -0.0538,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 900,
+        "source_map_ids_seen": [
+          3,
+          5
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1323,
+        "minimum_partial_charge_e": -0.1333,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 901,
+        "source_map_ids_seen": [
+          8,
+          12
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0273,
+        "minimum_partial_charge_e": -0.0273,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 902,
+        "source_map_ids_seen": [
+          7
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1323,
+        "minimum_partial_charge_e": -0.1333,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0010000000000000009,
+        "pdb_serial": 903,
+        "source_map_ids_seen": [
+          8,
+          12
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0513,
+        "minimum_partial_charge_e": -0.0518,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0005000000000000004,
+        "pdb_serial": 904,
+        "source_map_ids_seen": [
+          9,
+          11
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.1423,
+        "minimum_partial_charge_e": -0.1423,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 905,
+        "source_map_ids_seen": [
+          10
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "ca"
+        ],
+        "maximum_partial_charge_e": -0.0513,
+        "minimum_partial_charge_e": -0.0518,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0005000000000000004,
+        "pdb_serial": 906,
+        "source_map_ids_seen": [
+          9,
+          11
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.8838,
+        "minimum_partial_charge_e": -0.8838,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 907,
+        "source_map_ids_seen": [
+          61,
+          62
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.8853,
+        "minimum_partial_charge_e": -0.8853,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 908,
+        "source_map_ids_seen": [
+          53,
+          54,
+          69,
+          70
+        ]
+      },
+      {
+        "element_set": [
+          "C"
+        ],
+        "gaff2_atom_type_set": [
+          "c"
+        ],
+        "maximum_partial_charge_e": 0.9567,
+        "minimum_partial_charge_e": 0.9567,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 909,
+        "source_map_ids_seen": [
+          52,
+          68
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.8853,
+        "minimum_partial_charge_e": -0.8853,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 910,
+        "source_map_ids_seen": [
+          53,
+          54,
+          69,
+          70
+        ]
+      },
+      {
+        "element_set": [
+          "O"
+        ],
+        "gaff2_atom_type_set": [
+          "o"
+        ],
+        "maximum_partial_charge_e": -0.8853,
+        "minimum_partial_charge_e": -0.8853,
+        "observation_count": 128,
+        "partial_charge_range_e": 0.0,
+        "pdb_serial": 911,
+        "source_map_ids_seen": [
+          53,
+          54,
+          69,
+          70
+        ]
+      }
+    ],
+    "unique_frcmod_output_hash_count": 1,
+    "unique_mol2_output_hash_count": 16,
+    "validated_conjugate_force_fields": 0
+  },
+  "failures": [],
+  "inputs": {
+    "ambertools_package": {
+      "package_md5": "b1ece4272978a9c2e5e261fd57c36222",
+      "version_build": "26.0-cuda_None_nompi_py312h52216ed_100"
+    },
+    "audit_script": {
+      "path": "audit_nnc2215_b29_mapping_sensitivity.py",
+      "sha256": "a95398ddc9fb386ceb0de94c1b8d5cf8fabfb33a1acea348ab43105d7bb0fce9"
+    },
+    "environment_lock": {
+      "path": "pag-chemistry-environment-macos-arm64.lock.txt",
+      "sha256": "608d83e646a04e939b5b6b38619337b2822966113beb60c8368f90ecba803d6d"
+    },
+    "open_model_coordinate_candidate": {
+      "all_mappings_point_to_same_coordinate_candidate": true,
+      "coordinates_are_model_built": true,
+      "path": "structures/nnc2215-open-source-corrected-candidate.pdb",
+      "sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc",
+      "sha256_expected_by_topology_audit": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc"
+    },
+    "pilot_script": {
+      "path": "audit_nnc2215_ambertools_parameterization_pilot.py",
+      "sha256": "81247b561fac3c871ccab6ddc0178290581a734782386dfa8ea1ef26464a2227"
+    },
+    "product_graph": {
+      "path": "structures/nnc2215-b29-linker-roof-product.smi",
+      "sha256": "b677316c1fced61045d2eebab4de85cdb2f1ef956280d18ab9d610df1181bd40"
+    },
+    "product_map_legend": {
+      "path": "data/nnc2215-b29-linker-roof-product-map.json",
+      "sha256": "eb028433748cf294744ac02f381e909f029f79916484a2e05dfbf966f7faa0c5"
+    },
+    "topology_audit": {
+      "path": "data/nnc2215-b29-topology-audit.json",
+      "sha256": "edd4d9911170e3688c80f6b8ca3f4339ebee7815c1bb596cfa2dfaca468d96c6"
+    }
+  },
+  "mappings": [
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 904,
+        "12": 903,
+        "13": 847,
+        "14": 849,
+        "15": 839,
+        "16": 841,
+        "17": 843,
+        "18": 845,
+        "19": 856,
+        "2": 895,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 846,
+        "26": 848,
+        "27": 838,
+        "28": 840,
+        "29": 842,
+        "3": 900,
+        "30": 844,
+        "31": 865,
+        "32": 866,
+        "33": 867,
+        "34": 868,
+        "35": 863,
+        "36": 864,
+        "37": 874,
+        "38": 891,
+        "39": 888,
+        "4": 899,
+        "40": 894,
+        "41": 837,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 873,
+        "48": 889,
+        "49": 886,
+        "5": 898,
+        "50": 892,
+        "51": 836,
+        "52": 870,
+        "53": 872,
+        "54": 908,
+        "55": 835,
+        "56": 879,
+        "57": 885,
+        "58": 882,
+        "59": 876,
+        "6": 897,
+        "60": 869,
+        "61": 871,
+        "62": 907,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 909,
+        "69": 910,
+        "7": 902,
+        "70": 911,
+        "71": 834,
+        "72": 877,
+        "73": 883,
+        "74": 880,
+        "75": 875,
+        "76": 861,
+        "77": 859,
+        "78": 862,
+        "79": 502,
+        "8": 901,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 906,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_01",
+      "mapping_index_zero_based": 0,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-pilot.json",
+      "report_sha256": "d6039af2d76698cdc086c662836c50a7759cbe7ffd9f96e9e9a17fca0736686d",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 904,
+        "12": 903,
+        "13": 847,
+        "14": 849,
+        "15": 839,
+        "16": 841,
+        "17": 843,
+        "18": 845,
+        "19": 856,
+        "2": 895,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 846,
+        "26": 848,
+        "27": 838,
+        "28": 840,
+        "29": 842,
+        "3": 900,
+        "30": 844,
+        "31": 865,
+        "32": 866,
+        "33": 867,
+        "34": 868,
+        "35": 863,
+        "36": 864,
+        "37": 874,
+        "38": 891,
+        "39": 888,
+        "4": 899,
+        "40": 894,
+        "41": 837,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 873,
+        "48": 889,
+        "49": 886,
+        "5": 898,
+        "50": 892,
+        "51": 836,
+        "52": 870,
+        "53": 872,
+        "54": 908,
+        "55": 835,
+        "56": 879,
+        "57": 885,
+        "58": 882,
+        "59": 876,
+        "6": 897,
+        "60": 869,
+        "61": 871,
+        "62": 907,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 909,
+        "69": 911,
+        "7": 902,
+        "70": 910,
+        "71": 834,
+        "72": 877,
+        "73": 883,
+        "74": 880,
+        "75": 875,
+        "76": 861,
+        "77": 859,
+        "78": 862,
+        "79": 502,
+        "8": 901,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 906,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_02",
+      "mapping_index_zero_based": 1,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_02/report.json",
+      "report_sha256": "4f90a17971a9cb15138517485ff5b5cfa513bbaf2f2e40f89e16520006ea0ace",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "e96aade4fa5bae83ac7a4619c608da602d786c1d69bbdc6dd60c4233b9db1c33"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 904,
+        "12": 903,
+        "13": 847,
+        "14": 849,
+        "15": 839,
+        "16": 841,
+        "17": 843,
+        "18": 845,
+        "19": 856,
+        "2": 895,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 846,
+        "26": 848,
+        "27": 838,
+        "28": 840,
+        "29": 842,
+        "3": 900,
+        "30": 844,
+        "31": 865,
+        "32": 866,
+        "33": 867,
+        "34": 868,
+        "35": 863,
+        "36": 864,
+        "37": 874,
+        "38": 891,
+        "39": 888,
+        "4": 899,
+        "40": 894,
+        "41": 837,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 873,
+        "48": 889,
+        "49": 886,
+        "5": 898,
+        "50": 892,
+        "51": 836,
+        "52": 870,
+        "53": 872,
+        "54": 908,
+        "55": 835,
+        "56": 879,
+        "57": 885,
+        "58": 882,
+        "59": 876,
+        "6": 897,
+        "60": 869,
+        "61": 907,
+        "62": 871,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 909,
+        "69": 910,
+        "7": 902,
+        "70": 911,
+        "71": 834,
+        "72": 877,
+        "73": 883,
+        "74": 880,
+        "75": 875,
+        "76": 861,
+        "77": 859,
+        "78": 862,
+        "79": 502,
+        "8": 901,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 906,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_03",
+      "mapping_index_zero_based": 2,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_03/report.json",
+      "report_sha256": "745707440482ed7750dc739797c8bc3f1961df2c5f84e5e2a673fce07befed57",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "f282d2d70beb9b34f497dc19d5da9dc2e52054735bfa0f0695ad93417e10ffe9"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 904,
+        "12": 903,
+        "13": 847,
+        "14": 849,
+        "15": 839,
+        "16": 841,
+        "17": 843,
+        "18": 845,
+        "19": 856,
+        "2": 895,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 846,
+        "26": 848,
+        "27": 838,
+        "28": 840,
+        "29": 842,
+        "3": 900,
+        "30": 844,
+        "31": 865,
+        "32": 866,
+        "33": 867,
+        "34": 868,
+        "35": 863,
+        "36": 864,
+        "37": 874,
+        "38": 891,
+        "39": 888,
+        "4": 899,
+        "40": 894,
+        "41": 837,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 873,
+        "48": 889,
+        "49": 886,
+        "5": 898,
+        "50": 892,
+        "51": 836,
+        "52": 870,
+        "53": 872,
+        "54": 908,
+        "55": 835,
+        "56": 879,
+        "57": 885,
+        "58": 882,
+        "59": 876,
+        "6": 897,
+        "60": 869,
+        "61": 907,
+        "62": 871,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 909,
+        "69": 911,
+        "7": 902,
+        "70": 910,
+        "71": 834,
+        "72": 877,
+        "73": 883,
+        "74": 880,
+        "75": 875,
+        "76": 861,
+        "77": 859,
+        "78": 862,
+        "79": 502,
+        "8": 901,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 906,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_04",
+      "mapping_index_zero_based": 3,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_04/report.json",
+      "report_sha256": "27ae2bbabd71ddad93b4a325cd2a7d31b6f84f581ee33811c7db8b4cfbef8360",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "356c45e1b2fcf29ce540ed5e531116e8f7a5e75d6425c1f3ef34fb0490e15fd4"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 904,
+        "12": 903,
+        "13": 847,
+        "14": 849,
+        "15": 839,
+        "16": 841,
+        "17": 843,
+        "18": 845,
+        "19": 856,
+        "2": 895,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 846,
+        "26": 848,
+        "27": 838,
+        "28": 840,
+        "29": 842,
+        "3": 900,
+        "30": 844,
+        "31": 865,
+        "32": 866,
+        "33": 867,
+        "34": 868,
+        "35": 863,
+        "36": 864,
+        "37": 874,
+        "38": 891,
+        "39": 888,
+        "4": 899,
+        "40": 894,
+        "41": 837,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 873,
+        "48": 889,
+        "49": 886,
+        "5": 898,
+        "50": 892,
+        "51": 836,
+        "52": 870,
+        "53": 908,
+        "54": 872,
+        "55": 835,
+        "56": 879,
+        "57": 885,
+        "58": 882,
+        "59": 876,
+        "6": 897,
+        "60": 869,
+        "61": 871,
+        "62": 907,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 909,
+        "69": 910,
+        "7": 902,
+        "70": 911,
+        "71": 834,
+        "72": 877,
+        "73": 883,
+        "74": 880,
+        "75": 875,
+        "76": 861,
+        "77": 859,
+        "78": 862,
+        "79": 502,
+        "8": 901,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 906,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_05",
+      "mapping_index_zero_based": 4,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_05/report.json",
+      "report_sha256": "4493566e4a41d605b22b06f97c0833c6928cfd4ba6460c8c2c49e6d4375c4a10",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "6898cd50d196856e85498355f98379685d1b10eb64d297aec8a5973669ee1b46"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 904,
+        "12": 903,
+        "13": 847,
+        "14": 849,
+        "15": 839,
+        "16": 841,
+        "17": 843,
+        "18": 845,
+        "19": 856,
+        "2": 895,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 846,
+        "26": 848,
+        "27": 838,
+        "28": 840,
+        "29": 842,
+        "3": 900,
+        "30": 844,
+        "31": 865,
+        "32": 866,
+        "33": 867,
+        "34": 868,
+        "35": 863,
+        "36": 864,
+        "37": 874,
+        "38": 891,
+        "39": 888,
+        "4": 899,
+        "40": 894,
+        "41": 837,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 873,
+        "48": 889,
+        "49": 886,
+        "5": 898,
+        "50": 892,
+        "51": 836,
+        "52": 870,
+        "53": 908,
+        "54": 872,
+        "55": 835,
+        "56": 879,
+        "57": 885,
+        "58": 882,
+        "59": 876,
+        "6": 897,
+        "60": 869,
+        "61": 871,
+        "62": 907,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 909,
+        "69": 911,
+        "7": 902,
+        "70": 910,
+        "71": 834,
+        "72": 877,
+        "73": 883,
+        "74": 880,
+        "75": 875,
+        "76": 861,
+        "77": 859,
+        "78": 862,
+        "79": 502,
+        "8": 901,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 906,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_06",
+      "mapping_index_zero_based": 5,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_06/report.json",
+      "report_sha256": "75d739d2dad62f10ef8bbb92cf1145e7b2adabfb12b58fcc1136bbaf4dd9293e",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "52e0a310e0d8f58e540705e19b8c062c55dc25e595e1e5ea1392375b6c257e13"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 904,
+        "12": 903,
+        "13": 847,
+        "14": 849,
+        "15": 839,
+        "16": 841,
+        "17": 843,
+        "18": 845,
+        "19": 856,
+        "2": 895,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 846,
+        "26": 848,
+        "27": 838,
+        "28": 840,
+        "29": 842,
+        "3": 900,
+        "30": 844,
+        "31": 865,
+        "32": 866,
+        "33": 867,
+        "34": 868,
+        "35": 863,
+        "36": 864,
+        "37": 874,
+        "38": 891,
+        "39": 888,
+        "4": 899,
+        "40": 894,
+        "41": 837,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 873,
+        "48": 889,
+        "49": 886,
+        "5": 898,
+        "50": 892,
+        "51": 836,
+        "52": 870,
+        "53": 908,
+        "54": 872,
+        "55": 835,
+        "56": 879,
+        "57": 885,
+        "58": 882,
+        "59": 876,
+        "6": 897,
+        "60": 869,
+        "61": 907,
+        "62": 871,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 909,
+        "69": 910,
+        "7": 902,
+        "70": 911,
+        "71": 834,
+        "72": 877,
+        "73": 883,
+        "74": 880,
+        "75": 875,
+        "76": 861,
+        "77": 859,
+        "78": 862,
+        "79": 502,
+        "8": 901,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 906,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_07",
+      "mapping_index_zero_based": 6,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_07/report.json",
+      "report_sha256": "cbb458ebacc595de89b271af9d3b8eb4e18010825be72a29e4cbc97566e927c5",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "aa20480c0915eb0fbfc4dd5261a426dc445928209c1ab736d363a30910fcbcf5"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 904,
+        "12": 903,
+        "13": 847,
+        "14": 849,
+        "15": 839,
+        "16": 841,
+        "17": 843,
+        "18": 845,
+        "19": 856,
+        "2": 895,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 846,
+        "26": 848,
+        "27": 838,
+        "28": 840,
+        "29": 842,
+        "3": 900,
+        "30": 844,
+        "31": 865,
+        "32": 866,
+        "33": 867,
+        "34": 868,
+        "35": 863,
+        "36": 864,
+        "37": 874,
+        "38": 891,
+        "39": 888,
+        "4": 899,
+        "40": 894,
+        "41": 837,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 873,
+        "48": 889,
+        "49": 886,
+        "5": 898,
+        "50": 892,
+        "51": 836,
+        "52": 870,
+        "53": 908,
+        "54": 872,
+        "55": 835,
+        "56": 879,
+        "57": 885,
+        "58": 882,
+        "59": 876,
+        "6": 897,
+        "60": 869,
+        "61": 907,
+        "62": 871,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 909,
+        "69": 911,
+        "7": 902,
+        "70": 910,
+        "71": 834,
+        "72": 877,
+        "73": 883,
+        "74": 880,
+        "75": 875,
+        "76": 861,
+        "77": 859,
+        "78": 862,
+        "79": 502,
+        "8": 901,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 906,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_08",
+      "mapping_index_zero_based": 7,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193,
+        0.003995000000000193
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005,
+        -2.996005
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_08/report.json",
+      "report_sha256": "0101d1df706a6a488c2116b30a189d98925b42368f4b9abb732a04766a2833df",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "192e039272f023f056cc693eac3a8ed05d5841b257dae90e133129c80809b52f"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 906,
+        "12": 901,
+        "13": 846,
+        "14": 848,
+        "15": 838,
+        "16": 840,
+        "17": 842,
+        "18": 844,
+        "19": 856,
+        "2": 897,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 847,
+        "26": 849,
+        "27": 839,
+        "28": 841,
+        "29": 843,
+        "3": 898,
+        "30": 845,
+        "31": 865,
+        "32": 866,
+        "33": 863,
+        "34": 864,
+        "35": 867,
+        "36": 868,
+        "37": 873,
+        "38": 889,
+        "39": 886,
+        "4": 899,
+        "40": 892,
+        "41": 836,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 874,
+        "48": 891,
+        "49": 888,
+        "5": 900,
+        "50": 894,
+        "51": 837,
+        "52": 909,
+        "53": 910,
+        "54": 911,
+        "55": 834,
+        "56": 877,
+        "57": 883,
+        "58": 880,
+        "59": 875,
+        "6": 895,
+        "60": 869,
+        "61": 871,
+        "62": 907,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 870,
+        "69": 872,
+        "7": 902,
+        "70": 908,
+        "71": 835,
+        "72": 879,
+        "73": 885,
+        "74": 882,
+        "75": 876,
+        "76": 859,
+        "77": 861,
+        "78": 862,
+        "79": 502,
+        "8": 903,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 904,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_09",
+      "mapping_index_zero_based": 8,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_09/report.json",
+      "report_sha256": "2394214bdb63d29edaf60f31b8850c79d92987bd436f3f3ae2e45192e1bc34bf",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "33edfe0129157c48cdbfa5a5f10c47ba980b1da43c033b7ea98089276b64ffdd"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 906,
+        "12": 901,
+        "13": 846,
+        "14": 848,
+        "15": 838,
+        "16": 840,
+        "17": 842,
+        "18": 844,
+        "19": 856,
+        "2": 897,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 847,
+        "26": 849,
+        "27": 839,
+        "28": 841,
+        "29": 843,
+        "3": 898,
+        "30": 845,
+        "31": 865,
+        "32": 866,
+        "33": 863,
+        "34": 864,
+        "35": 867,
+        "36": 868,
+        "37": 873,
+        "38": 889,
+        "39": 886,
+        "4": 899,
+        "40": 892,
+        "41": 836,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 874,
+        "48": 891,
+        "49": 888,
+        "5": 900,
+        "50": 894,
+        "51": 837,
+        "52": 909,
+        "53": 910,
+        "54": 911,
+        "55": 834,
+        "56": 877,
+        "57": 883,
+        "58": 880,
+        "59": 875,
+        "6": 895,
+        "60": 869,
+        "61": 871,
+        "62": 907,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 870,
+        "69": 908,
+        "7": 902,
+        "70": 872,
+        "71": 835,
+        "72": 879,
+        "73": 885,
+        "74": 882,
+        "75": 876,
+        "76": 859,
+        "77": 861,
+        "78": 862,
+        "79": 502,
+        "8": 903,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 904,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_10",
+      "mapping_index_zero_based": 9,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_10/report.json",
+      "report_sha256": "c64cc0f08efa264ff14659cf321d03187a23b498471e72a420caa9a252f4a50c",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "4e272e07ce3690c3d5b91a4df7a58ae2d239238220122b476657615f0aad2365"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 906,
+        "12": 901,
+        "13": 846,
+        "14": 848,
+        "15": 838,
+        "16": 840,
+        "17": 842,
+        "18": 844,
+        "19": 856,
+        "2": 897,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 847,
+        "26": 849,
+        "27": 839,
+        "28": 841,
+        "29": 843,
+        "3": 898,
+        "30": 845,
+        "31": 865,
+        "32": 866,
+        "33": 863,
+        "34": 864,
+        "35": 867,
+        "36": 868,
+        "37": 873,
+        "38": 889,
+        "39": 886,
+        "4": 899,
+        "40": 892,
+        "41": 836,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 874,
+        "48": 891,
+        "49": 888,
+        "5": 900,
+        "50": 894,
+        "51": 837,
+        "52": 909,
+        "53": 910,
+        "54": 911,
+        "55": 834,
+        "56": 877,
+        "57": 883,
+        "58": 880,
+        "59": 875,
+        "6": 895,
+        "60": 869,
+        "61": 907,
+        "62": 871,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 870,
+        "69": 872,
+        "7": 902,
+        "70": 908,
+        "71": 835,
+        "72": 879,
+        "73": 885,
+        "74": 882,
+        "75": 876,
+        "76": 859,
+        "77": 861,
+        "78": 862,
+        "79": 502,
+        "8": 903,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 904,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_11",
+      "mapping_index_zero_based": 10,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_11/report.json",
+      "report_sha256": "75732b88c602bdbe28903c15d314913cac63cfa6f3c8dbd248312aa3dfb353cb",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "5646ff1495e7e93e1a8f70403f67216aa4dfa91ed7950b90c6518f6a3ee23329"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 906,
+        "12": 901,
+        "13": 846,
+        "14": 848,
+        "15": 838,
+        "16": 840,
+        "17": 842,
+        "18": 844,
+        "19": 856,
+        "2": 897,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 847,
+        "26": 849,
+        "27": 839,
+        "28": 841,
+        "29": 843,
+        "3": 898,
+        "30": 845,
+        "31": 865,
+        "32": 866,
+        "33": 863,
+        "34": 864,
+        "35": 867,
+        "36": 868,
+        "37": 873,
+        "38": 889,
+        "39": 886,
+        "4": 899,
+        "40": 892,
+        "41": 836,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 874,
+        "48": 891,
+        "49": 888,
+        "5": 900,
+        "50": 894,
+        "51": 837,
+        "52": 909,
+        "53": 910,
+        "54": 911,
+        "55": 834,
+        "56": 877,
+        "57": 883,
+        "58": 880,
+        "59": 875,
+        "6": 895,
+        "60": 869,
+        "61": 907,
+        "62": 871,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 870,
+        "69": 908,
+        "7": 902,
+        "70": 872,
+        "71": 835,
+        "72": 879,
+        "73": 885,
+        "74": 882,
+        "75": 876,
+        "76": 859,
+        "77": 861,
+        "78": 862,
+        "79": 502,
+        "8": 903,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 904,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_12",
+      "mapping_index_zero_based": 11,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_12/report.json",
+      "report_sha256": "51fcbab55e35892dbcb274d46696c9233c90fe2ff1397ddf11da8795e3508131",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "bca461ff2350749077d59146897ecd771285fdc92bfbcc9f44281a9185387e47"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 906,
+        "12": 901,
+        "13": 846,
+        "14": 848,
+        "15": 838,
+        "16": 840,
+        "17": 842,
+        "18": 844,
+        "19": 856,
+        "2": 897,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 847,
+        "26": 849,
+        "27": 839,
+        "28": 841,
+        "29": 843,
+        "3": 898,
+        "30": 845,
+        "31": 865,
+        "32": 866,
+        "33": 863,
+        "34": 864,
+        "35": 867,
+        "36": 868,
+        "37": 873,
+        "38": 889,
+        "39": 886,
+        "4": 899,
+        "40": 892,
+        "41": 836,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 874,
+        "48": 891,
+        "49": 888,
+        "5": 900,
+        "50": 894,
+        "51": 837,
+        "52": 909,
+        "53": 911,
+        "54": 910,
+        "55": 834,
+        "56": 877,
+        "57": 883,
+        "58": 880,
+        "59": 875,
+        "6": 895,
+        "60": 869,
+        "61": 871,
+        "62": 907,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 870,
+        "69": 872,
+        "7": 902,
+        "70": 908,
+        "71": 835,
+        "72": 879,
+        "73": 885,
+        "74": 882,
+        "75": 876,
+        "76": 859,
+        "77": 861,
+        "78": 862,
+        "79": 502,
+        "8": 903,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 904,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_13",
+      "mapping_index_zero_based": 12,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_13/report.json",
+      "report_sha256": "716f205cc7a22feb2c2ab7c4bdd6cfc39ee0310a228d07904c04566e504dfcb5",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "9843354b4315b0b15cc2c6c3be1b7bddf14fe0a4d7d98a921b213b8d0c28eeb3"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 906,
+        "12": 901,
+        "13": 846,
+        "14": 848,
+        "15": 838,
+        "16": 840,
+        "17": 842,
+        "18": 844,
+        "19": 856,
+        "2": 897,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 847,
+        "26": 849,
+        "27": 839,
+        "28": 841,
+        "29": 843,
+        "3": 898,
+        "30": 845,
+        "31": 865,
+        "32": 866,
+        "33": 863,
+        "34": 864,
+        "35": 867,
+        "36": 868,
+        "37": 873,
+        "38": 889,
+        "39": 886,
+        "4": 899,
+        "40": 892,
+        "41": 836,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 874,
+        "48": 891,
+        "49": 888,
+        "5": 900,
+        "50": 894,
+        "51": 837,
+        "52": 909,
+        "53": 911,
+        "54": 910,
+        "55": 834,
+        "56": 877,
+        "57": 883,
+        "58": 880,
+        "59": 875,
+        "6": 895,
+        "60": 869,
+        "61": 871,
+        "62": 907,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 870,
+        "69": 908,
+        "7": 902,
+        "70": 872,
+        "71": 835,
+        "72": 879,
+        "73": 885,
+        "74": 882,
+        "75": 876,
+        "76": 859,
+        "77": 861,
+        "78": 862,
+        "79": 502,
+        "8": 903,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 904,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_14",
+      "mapping_index_zero_based": 13,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_14/report.json",
+      "report_sha256": "53e17287b8d8c7626e38028abc9a235c03fda870a377c5a86d0078bfa826b2c7",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "dae0f041f5420a6b6d255b878cf07333393ce19d91bb4ffb4c4928e5f7315038"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 906,
+        "12": 901,
+        "13": 846,
+        "14": 848,
+        "15": 838,
+        "16": 840,
+        "17": 842,
+        "18": 844,
+        "19": 856,
+        "2": 897,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 847,
+        "26": 849,
+        "27": 839,
+        "28": 841,
+        "29": 843,
+        "3": 898,
+        "30": 845,
+        "31": 865,
+        "32": 866,
+        "33": 863,
+        "34": 864,
+        "35": 867,
+        "36": 868,
+        "37": 873,
+        "38": 889,
+        "39": 886,
+        "4": 899,
+        "40": 892,
+        "41": 836,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 874,
+        "48": 891,
+        "49": 888,
+        "5": 900,
+        "50": 894,
+        "51": 837,
+        "52": 909,
+        "53": 911,
+        "54": 910,
+        "55": 834,
+        "56": 877,
+        "57": 883,
+        "58": 880,
+        "59": 875,
+        "6": 895,
+        "60": 869,
+        "61": 907,
+        "62": 871,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 870,
+        "69": 872,
+        "7": 902,
+        "70": 908,
+        "71": 835,
+        "72": 879,
+        "73": 885,
+        "74": 882,
+        "75": 876,
+        "76": 859,
+        "77": 861,
+        "78": 862,
+        "79": 502,
+        "8": 903,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 904,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_15",
+      "mapping_index_zero_based": 14,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_15/report.json",
+      "report_sha256": "4e698a6a6d8eadf69d4f748df747daaa86d698d085adc7ef9c572bdd212b7351",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "ffc60f86d3d431f70b45f1d2b83944c290f5c50543f9a9788bf7dbff79e0486e"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    },
+    {
+      "completed_variant_count": 8,
+      "generated_parameter_record_count_per_variant": [
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "map_id_to_pdb_serial": {
+        "1": 896,
+        "10": 905,
+        "11": 906,
+        "12": 901,
+        "13": 846,
+        "14": 848,
+        "15": 838,
+        "16": 840,
+        "17": 842,
+        "18": 844,
+        "19": 856,
+        "2": 897,
+        "20": 857,
+        "21": 852,
+        "22": 853,
+        "23": 854,
+        "24": 855,
+        "25": 847,
+        "26": 849,
+        "27": 839,
+        "28": 841,
+        "29": 843,
+        "3": 898,
+        "30": 845,
+        "31": 865,
+        "32": 866,
+        "33": 863,
+        "34": 864,
+        "35": 867,
+        "36": 868,
+        "37": 873,
+        "38": 889,
+        "39": 886,
+        "4": 899,
+        "40": 892,
+        "41": 836,
+        "42": 832,
+        "43": 890,
+        "44": 887,
+        "45": 893,
+        "46": 851,
+        "47": 874,
+        "48": 891,
+        "49": 888,
+        "5": 900,
+        "50": 894,
+        "51": 837,
+        "52": 909,
+        "53": 911,
+        "54": 910,
+        "55": 834,
+        "56": 877,
+        "57": 883,
+        "58": 880,
+        "59": 875,
+        "6": 895,
+        "60": 869,
+        "61": 907,
+        "62": 871,
+        "63": 850,
+        "64": 878,
+        "65": 884,
+        "66": 881,
+        "67": 833,
+        "68": 870,
+        "69": 908,
+        "7": 902,
+        "70": 872,
+        "71": 835,
+        "72": 879,
+        "73": 885,
+        "74": 882,
+        "75": 876,
+        "76": 859,
+        "77": 861,
+        "78": 862,
+        "79": 502,
+        "8": 903,
+        "80": 501,
+        "81": 496,
+        "82": 495,
+        "83": 494,
+        "84": 497,
+        "85": 498,
+        "86": 505,
+        "87": 506,
+        "88": 499,
+        "89": 500,
+        "9": 904,
+        "90": 503,
+        "91": 504,
+        "92": 480
+      },
+      "mapping_id": "exact_mapping_16",
+      "mapping_index_zero_based": 15,
+      "maximum_penalty_score": 41.9,
+      "partial_charge_residual_e_by_variant": [
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974,
+        0.002998999999999974
+      ],
+      "partial_charge_sum_e_by_variant": [
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001,
+        -2.997001
+      ],
+      "records_with_penalty_score_at_least_20_total_across_variants": 16,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_16/report.json",
+      "report_sha256": "893e821524acd34d39506b0774e7a9404ebe4d5ee1eac7e9df012ffd10acf6cd",
+      "unique_frcmod_sha256": [
+        "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      ],
+      "unique_frcmod_sha256_count_within_mapping": 1,
+      "unique_mol2_sha256": [
+        "dd1f11e2e069725379ca2ad7b901249315b28d277652ed7edf885e6a2e4fbc91"
+      ],
+      "unique_mol2_sha256_count_within_mapping": 1
+    }
+  ],
+  "method": {
+    "carboxylate_labelings_per_mapping_expected": 8,
+    "comparison_basis": "Heavy-atom charges and GAFF2 types are grouped by physical PDB serial using each report's explicit source-map-to-serial mapping.",
+    "mapping_count_expected": 16,
+    "max_concurrent_mapping_processes": 4,
+    "parameterization_processes": "AmberTools 26 Antechamber AM1-BCC/GAFF2 plus parmchk2; each mapping runs in an isolated child process and temporary calculation directories.",
+    "pdb_or_source_coordinates_modified": false
+  },
+  "purpose": "Compare the isolated B29 GAFF2/AM1-BCC candidate output across all exact active/open coordinate embeddings and all eight carboxylate Lewis labelings.",
+  "runs": [
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "0",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-pilot",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-pilot.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_01.driver.log",
+      "driver_log_sha256": "ec0e887d2c3d427dfa66cb1ca9380e575574bf66e15b10cd49c0b6451894e5aa",
+      "mapping_index_zero_based": 0,
+      "report_path": "data/nnc2215-b29-gaff2-pilot.json",
+      "report_sha256": "d6039af2d76698cdc086c662836c50a7759cbe7ffd9f96e9e9a17fca0736686d",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "1",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_02",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_02/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_02.driver.log",
+      "driver_log_sha256": "d50dd534b12346d8ad58e5766b82e364b09a9de69439a7549a294ec7c929a258",
+      "mapping_index_zero_based": 1,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_02/report.json",
+      "report_sha256": "4f90a17971a9cb15138517485ff5b5cfa513bbaf2f2e40f89e16520006ea0ace",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "2",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_03",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_03/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_03.driver.log",
+      "driver_log_sha256": "6b0cf409dd637318c37bedfc6f15110b61714cc5195bf149b943acebfe12d27a",
+      "mapping_index_zero_based": 2,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_03/report.json",
+      "report_sha256": "745707440482ed7750dc739797c8bc3f1961df2c5f84e5e2a673fce07befed57",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "3",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_04",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_04/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_04.driver.log",
+      "driver_log_sha256": "afd1078399b1a37b6d2a39ec69249720467d4e46fc70bd6c25387295f64782a6",
+      "mapping_index_zero_based": 3,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_04/report.json",
+      "report_sha256": "27ae2bbabd71ddad93b4a325cd2a7d31b6f84f581ee33811c7db8b4cfbef8360",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "4",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_05",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_05/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_05.driver.log",
+      "driver_log_sha256": "944f50923e1de543f435405d0bec378250c77e7e63ab3df05c1a71dcaad7815f",
+      "mapping_index_zero_based": 4,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_05/report.json",
+      "report_sha256": "4493566e4a41d605b22b06f97c0833c6928cfd4ba6460c8c2c49e6d4375c4a10",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "5",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_06",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_06/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_06.driver.log",
+      "driver_log_sha256": "234cc0ba1c03a0e16942e27470f709964f80dd52fcfb7ff35e18bc34782f5e4d",
+      "mapping_index_zero_based": 5,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_06/report.json",
+      "report_sha256": "75d739d2dad62f10ef8bbb92cf1145e7b2adabfb12b58fcc1136bbaf4dd9293e",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "6",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_07",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_07/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_07.driver.log",
+      "driver_log_sha256": "c70f7e9f21dcb1ea2926af7d5f59147ad064eb625e9f55dd88c5585dba25b104",
+      "mapping_index_zero_based": 6,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_07/report.json",
+      "report_sha256": "cbb458ebacc595de89b271af9d3b8eb4e18010825be72a29e4cbc97566e927c5",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "7",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_08",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_08/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_08.driver.log",
+      "driver_log_sha256": "786c7d7f74e54a0003a4978c52dc35ddf3ff4dc2ccc6f1d6f2af6394ec92f7a8",
+      "mapping_index_zero_based": 7,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_08/report.json",
+      "report_sha256": "0101d1df706a6a488c2116b30a189d98925b42368f4b9abb732a04766a2833df",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "8",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_09",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_09/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_09.driver.log",
+      "driver_log_sha256": "ced5559e15a379ef8a5556f215baf7176024d18db4ce31a8b2b01d86144fe333",
+      "mapping_index_zero_based": 8,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_09/report.json",
+      "report_sha256": "2394214bdb63d29edaf60f31b8850c79d92987bd436f3f3ae2e45192e1bc34bf",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "9",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_10",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_10/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_10.driver.log",
+      "driver_log_sha256": "d82586b4eb01c7e24fa0d3742383511972cee02cf585b42ba8e8233a884e7b15",
+      "mapping_index_zero_based": 9,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_10/report.json",
+      "report_sha256": "c64cc0f08efa264ff14659cf321d03187a23b498471e72a420caa9a252f4a50c",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "10",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_11",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_11/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_11.driver.log",
+      "driver_log_sha256": "d20a00009a3f863479e8f27fd8cd1f537b7f1b7a09af0118a42b384962d7f468",
+      "mapping_index_zero_based": 10,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_11/report.json",
+      "report_sha256": "75732b88c602bdbe28903c15d314913cac63cfa6f3c8dbd248312aa3dfb353cb",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "11",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_12",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_12/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_12.driver.log",
+      "driver_log_sha256": "a475dc598b1f19bf02c86648c4036099f9825dacadbe3b6f32b97577a0024010",
+      "mapping_index_zero_based": 11,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_12/report.json",
+      "report_sha256": "51fcbab55e35892dbcb274d46696c9233c90fe2ff1397ddf11da8795e3508131",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "12",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_13",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_13/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_13.driver.log",
+      "driver_log_sha256": "87c173e020c99107ea3583b712103f29023db0e22a0ab6bd492127aeee484497",
+      "mapping_index_zero_based": 12,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_13/report.json",
+      "report_sha256": "716f205cc7a22feb2c2ab7c4bdd6cfc39ee0310a228d07904c04566e504dfcb5",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "13",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_14",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_14/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_14.driver.log",
+      "driver_log_sha256": "a81e68947fab1b6b4874150907cc99d303e430ff8b6a4918e1072494473d0df7",
+      "mapping_index_zero_based": 13,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_14/report.json",
+      "report_sha256": "53e17287b8d8c7626e38028abc9a235c03fda870a377c5a86d0078bfa826b2c7",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "14",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_15",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_15/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_15.driver.log",
+      "driver_log_sha256": "e9e6f1dd267e9c4dcb3c9dd968fdcfeee8711e02fff421548cb5bdf2d032f011",
+      "mapping_index_zero_based": 14,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_15/report.json",
+      "report_sha256": "4e698a6a6d8eadf69d4f748df747daaa86d698d085adc7ef9c572bdd212b7351",
+      "returncode": 0,
+      "timed_out": false
+    },
+    {
+      "command_template": [
+        "python",
+        "audit_nnc2215_ambertools_parameterization_pilot.py",
+        "--mapping-index",
+        "15",
+        "--output-dir",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_16",
+        "--output-json",
+        "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_16/report.json",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "driver_log_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_16.driver.log",
+      "driver_log_sha256": "92c22b949976ff5f9beb77a0f4d3c7e0c34003932c52704d326a9c24f244b2df",
+      "mapping_index_zero_based": 15,
+      "report_path": "data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_16/report.json",
+      "report_sha256": "893e821524acd34d39506b0774e7a9404ebe4d5ee1eac7e9df012ffd10acf6cd",
+      "returncode": 0,
+      "timed_out": false
+    }
+  ],
+  "schema": "dia-health-one.nnc2215-b29-gaff2-mapping-sensitivity.v1",
+  "status": "MAPPING_SENSITIVITY_ONLY; COMPLETE_CONJUGATE_FORCE_FIELD_NOT_VALIDATED"
+}

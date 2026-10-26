@@ -1,0 +1,406 @@
+#!/usr/bin/env python3
+"""Measure B29 parameterization sensitivity across all exact coordinate maps."""
+
+from __future__ import annotations
+
+import argparse
+from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import sys
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parent
+DATA = ROOT / "data"
+PILOT_SCRIPT = ROOT / "audit_nnc2215_ambertools_parameterization_pilot.py"
+TOPOLOGY = DATA / "nnc2215-b29-topology-audit.json"
+OPEN_PDB = ROOT / "structures/nnc2215-open-source-corrected-candidate.pdb"
+LOCK = ROOT / "pag-chemistry-environment-macos-arm64.lock.txt"
+OUTPUT_ROOT = DATA / "nnc2215-b29-gaff2-mapping-sensitivity"
+OUTPUT_JSON = DATA / "nnc2215-b29-gaff2-mapping-sensitivity.json"
+BASE_PILOT_JSON = DATA / "nnc2215-b29-gaff2-pilot.json"
+EXPECTED_MAPPING_COUNT = 16
+EXPECTED_VARIANT_COUNT = 8
+
+
+def sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def sha256_file(path: Path) -> str:
+    return sha256_bytes(path.read_bytes())
+
+
+def read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_json(path: Path, value: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def mapping_paths(index: int) -> tuple[Path, Path]:
+    if index == 0:
+        return DATA / "nnc2215-b29-gaff2-pilot", BASE_PILOT_JSON
+    directory = OUTPUT_ROOT / f"mapping_{index + 1:02d}"
+    return directory, directory / "report.json"
+
+
+def run_mapping(index: int, per_process_timeout: int, amber_timeout: int) -> dict[str, Any]:
+    output_dir, report_path = mapping_paths(index)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    command = [
+        sys.executable,
+        str(PILOT_SCRIPT),
+        "--mapping-index", str(index),
+        "--output-dir", str(output_dir),
+        "--output-json", str(report_path),
+        "--timeout-seconds", str(amber_timeout),
+    ]
+    command_template = [
+        Path(sys.executable).name,
+        str(PILOT_SCRIPT.relative_to(ROOT)),
+        "--mapping-index", str(index),
+        "--output-dir", str(output_dir.relative_to(ROOT)),
+        "--output-json", str(report_path.relative_to(ROOT)),
+        "--timeout-seconds", str(amber_timeout),
+    ]
+    try:
+        completed = subprocess.run(
+            command,
+            cwd=ROOT,
+            env=os.environ.copy(),
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=per_process_timeout,
+        )
+        stdout, stderr, returncode, timed_out = (
+            completed.stdout, completed.stderr, completed.returncode, False
+        )
+    except subprocess.TimeoutExpired as error:
+        stdout = error.stdout.decode() if isinstance(error.stdout, bytes) else error.stdout or ""
+        stderr = error.stderr.decode() if isinstance(error.stderr, bytes) else error.stderr or ""
+        returncode, timed_out = None, True
+
+    log_path = OUTPUT_ROOT / f"mapping_{index + 1:02d}.driver.log"
+    log_path.write_text(
+        "COMMAND TEMPLATE\n" + " ".join(command_template)
+        + "\n\nSTDOUT\n" + stdout.replace(str(ROOT), "<REPO_ROOT>")
+        + "\nSTDERR\n" + stderr.replace(str(ROOT), "<REPO_ROOT>"),
+        encoding="utf-8",
+    )
+    return {
+        "mapping_index_zero_based": index,
+        "returncode": returncode,
+        "timed_out": timed_out,
+        "report_path": str(report_path.relative_to(ROOT)),
+        "report_sha256": sha256_file(report_path) if report_path.is_file() else None,
+        "driver_log_path": str(log_path.relative_to(ROOT)),
+        "driver_log_sha256": sha256_file(log_path),
+        "command_template": command_template,
+    }
+
+
+def load_successful_reports(runs: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+    reports: list[dict[str, Any]] = []
+    failures: list[str] = []
+    current_pilot_sha = sha256_file(PILOT_SCRIPT)
+    for run in sorted(runs, key=lambda item: item["mapping_index_zero_based"]):
+        index = run["mapping_index_zero_based"]
+        if run["returncode"] != 0 or run["timed_out"] or not run["report_sha256"]:
+            failures.append(f"mapping index {index}: pilot process failed or timed out")
+            continue
+        report_path = ROOT / run["report_path"]
+        report = read_json(report_path)
+        candidate = report["inputs"]["open_model_coordinate_candidate"]
+        if candidate["mapping_index_zero_based"] != index:
+            failures.append(f"mapping index {index}: child report records the wrong mapping index")
+            continue
+        if report["inputs"]["audit_script"]["sha256"] != current_pilot_sha:
+            failures.append(f"mapping index {index}: child report was not generated by the current pilot script")
+            continue
+        if report["status"] != "PILOT_ONLY; COMPLETE_CONJUGATE_FORCE_FIELD_NOT_VALIDATED":
+            failures.append(f"mapping index {index}: child report is not a complete pilot")
+            continue
+        if len(report["variants"]) != EXPECTED_VARIANT_COUNT:
+            failures.append(f"mapping index {index}: expected eight resonance variants")
+            continue
+        reports.append(report)
+    if len(reports) != EXPECTED_MAPPING_COUNT:
+        failures.append(f"expected 16 successful mapping reports, found {len(reports)}")
+    return reports, failures
+
+
+def collect_common_input_hashes(reports: list[dict[str, Any]]) -> dict[str, Any]:
+    input_keys = (
+        "product_graph",
+        "product_map_legend",
+        "topology_audit",
+        "environment_lock",
+        "ambertools_package",
+    )
+    common: dict[str, Any] = {}
+    for key in input_keys:
+        first = reports[0]["inputs"][key]
+        if any(report["inputs"][key] != first for report in reports[1:]):
+            raise ValueError(f"Input provenance differs across mapping reports for {key}")
+        common[key] = first
+    pbd_candidates = [report["inputs"]["open_model_coordinate_candidate"] for report in reports]
+    pdb_sha = pbd_candidates[0]["sha256"]
+    if any(item["sha256"] != pdb_sha for item in pbd_candidates):
+        raise ValueError("Coordinate PDB hash differs across mapping reports")
+    if any(item["sha256"] != item["sha256_expected_by_topology_audit"] for item in pbd_candidates):
+        raise ValueError("A mapping report's PDB hash does not match its topology-audit cross-check")
+    common["open_model_coordinate_candidate"] = {
+        "path": pbd_candidates[0]["path"],
+        "sha256": pdb_sha,
+        "sha256_expected_by_topology_audit": pbd_candidates[0]["sha256_expected_by_topology_audit"],
+        "coordinates_are_model_built": True,
+        "all_mappings_point_to_same_coordinate_candidate": True,
+    }
+    return common
+
+
+def collect_charge_ranges(reports: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    observations: dict[int, list[dict[str, Any]]] = defaultdict(list)
+    for report in reports:
+        candidate = report["inputs"]["open_model_coordinate_candidate"]
+        serial_by_map = candidate["map_id_to_pdb_serial"]
+        mapping_id = candidate["mapping_id"]
+        for variant in report["variants"]:
+            for atom in variant["mol2"]["charged_atoms_by_source_map"]:
+                source_map_id = atom["source_map_id"]
+                if source_map_id is None:
+                    continue
+                serial = int(serial_by_map[str(source_map_id)])
+                observations[serial].append({
+                    "mapping_id": mapping_id,
+                    "mapping_index_zero_based": candidate["mapping_index_zero_based"],
+                    "variant_id": variant["variant_id"],
+                    "source_map_id": source_map_id,
+                    "element": atom["element"],
+                    "atom_type": atom["atom_type"],
+                    "partial_charge_e": atom["partial_charge_e"],
+                })
+    if len(observations) != 92:
+        raise ValueError(f"Expected charge observations for 92 physical heavy-atom serials, found {len(observations)}")
+
+    summary: list[dict[str, Any]] = []
+    for serial, items in sorted(observations.items()):
+        charges = [item["partial_charge_e"] for item in items]
+        summary.append({
+            "pdb_serial": serial,
+            "observation_count": len(items),
+            "element_set": sorted({item["element"] for item in items}),
+            "gaff2_atom_type_set": sorted({item["atom_type"] for item in items}),
+            "source_map_ids_seen": sorted({item["source_map_id"] for item in items}),
+            "minimum_partial_charge_e": min(charges),
+            "maximum_partial_charge_e": max(charges),
+            "partial_charge_range_e": max(charges) - min(charges),
+        })
+    return summary
+
+
+def summarize_mappings(reports: list[dict[str, Any]], runs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    run_by_index = {run["mapping_index_zero_based"]: run for run in runs}
+    result = []
+    for report in sorted(reports, key=lambda item: item["inputs"]["open_model_coordinate_candidate"]["mapping_index_zero_based"]):
+        candidate = report["inputs"]["open_model_coordinate_candidate"]
+        variants = report["variants"]
+        mol2_hashes = sorted({item["mol2"]["sha256"] for item in variants})
+        frcmod_hashes = sorted({item["frcmod"]["sha256"] for item in variants})
+        records = [record for item in variants for record in item["frcmod"]["generated_records"]]
+        penalties = [
+            float(value)
+            for record in records
+            for value in re.findall(r"penalty score\s*=\s*([0-9.]+)", record["line"], flags=re.IGNORECASE)
+        ]
+        result.append({
+            "mapping_index_zero_based": candidate["mapping_index_zero_based"],
+            "mapping_id": candidate["mapping_id"],
+            "map_id_to_pdb_serial": candidate["map_id_to_pdb_serial"],
+            "report_path": run_by_index[candidate["mapping_index_zero_based"]]["report_path"],
+            "report_sha256": run_by_index[candidate["mapping_index_zero_based"]]["report_sha256"],
+            "completed_variant_count": len(variants),
+            "unique_mol2_sha256_count_within_mapping": len(mol2_hashes),
+            "unique_mol2_sha256": mol2_hashes,
+            "unique_frcmod_sha256_count_within_mapping": len(frcmod_hashes),
+            "unique_frcmod_sha256": frcmod_hashes,
+            "partial_charge_sum_e_by_variant": [item["mol2"]["partial_charge_sum_e"] for item in variants],
+            "partial_charge_residual_e_by_variant": [item["mol2"]["net_charge_residual_e"] for item in variants],
+            "generated_parameter_record_count_per_variant": [item["frcmod"]["generated_parameter_record_count"] for item in variants],
+            "records_with_penalty_score_at_least_20_total_across_variants": sum(value >= 20 for value in penalties),
+            "maximum_penalty_score": max(penalties, default=None),
+        })
+    return result
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--max-workers", type=int, default=4)
+    parser.add_argument("--amber-timeout-seconds", type=int, default=1800)
+    parser.add_argument("--process-timeout-seconds", type=int, default=15000)
+    parser.add_argument("--output-json", type=Path, default=OUTPUT_JSON)
+    args = parser.parse_args()
+    if not 1 <= args.max_workers <= EXPECTED_MAPPING_COUNT:
+        raise ValueError("--max-workers must be between 1 and 16")
+    if args.amber_timeout_seconds < 1 or args.process_timeout_seconds < 1:
+        raise ValueError("Timeouts must be positive")
+    for path in (PILOT_SCRIPT, TOPOLOGY, OPEN_PDB, LOCK):
+        if not path.is_file():
+            raise FileNotFoundError(path)
+    topology = read_json(TOPOLOGY)
+    open_state = next(state for state in topology["states"] if state["state"] == "active_open")
+    if len(open_state["complete_product_exact_graph_comparison"]["exact_mappings"]) != EXPECTED_MAPPING_COUNT:
+        raise ValueError("The active/open topology audit no longer contains exactly 16 mappings")
+
+    OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+    runs: list[dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=args.max_workers) as executor:
+        futures = {
+            executor.submit(
+                run_mapping,
+                index,
+                args.process_timeout_seconds,
+                args.amber_timeout_seconds,
+            ): index
+            for index in range(EXPECTED_MAPPING_COUNT)
+        }
+        for future in as_completed(futures):
+            runs.append(future.result())
+    runs.sort(key=lambda item: item["mapping_index_zero_based"])
+    reports, failures = load_successful_reports(runs)
+
+    report: dict[str, Any] = {
+        "schema": "dia-health-one.nnc2215-b29-gaff2-mapping-sensitivity.v1",
+        "status": "MAPPING_SENSITIVITY_ONLY; COMPLETE_CONJUGATE_FORCE_FIELD_NOT_VALIDATED",
+        "purpose": "Compare the isolated B29 GAFF2/AM1-BCC candidate output across all exact active/open coordinate embeddings and all eight carboxylate Lewis labelings.",
+        "inputs": {
+            "audit_script": {"path": str(Path(__file__).relative_to(ROOT)), "sha256": sha256_file(Path(__file__))},
+            "pilot_script": {"path": str(PILOT_SCRIPT.relative_to(ROOT)), "sha256": sha256_file(PILOT_SCRIPT)},
+            "topology_audit": {"path": str(TOPOLOGY.relative_to(ROOT)), "sha256": sha256_file(TOPOLOGY)},
+            "open_model_coordinate_candidate": {
+                "path": str(OPEN_PDB.relative_to(ROOT)),
+                "sha256": sha256_file(OPEN_PDB),
+                "sha256_expected_by_topology_audit": open_state["coordinate_candidate_sha256_expected_by_reconciliation"],
+                "hash_matches_topology_audit": sha256_file(OPEN_PDB) == open_state["coordinate_candidate_sha256_expected_by_reconciliation"],
+            },
+            "environment_lock": {"path": str(LOCK.relative_to(ROOT)), "sha256": sha256_file(LOCK)},
+        },
+        "method": {
+            "mapping_count_expected": EXPECTED_MAPPING_COUNT,
+            "carboxylate_labelings_per_mapping_expected": EXPECTED_VARIANT_COUNT,
+            "parameterization_processes": "AmberTools 26 Antechamber AM1-BCC/GAFF2 plus parmchk2; each mapping runs in an isolated child process and temporary calculation directories.",
+            "max_concurrent_mapping_processes": args.max_workers,
+            "comparison_basis": "Heavy-atom charges and GAFF2 types are grouped by physical PDB serial using each report's explicit source-map-to-serial mapping.",
+            "pdb_or_source_coordinates_modified": False,
+        },
+        "runs": runs,
+        "failures": failures,
+        "mappings": [],
+        "assessment": {
+            "all_16_mappings_completed": False,
+            "all_8_carboxylate_labelings_completed_per_mapping": False,
+            "completed_variant_run_count": sum(len(item.get("variants", [])) for item in reports),
+            "unique_mol2_output_hash_count": None,
+            "unique_frcmod_output_hash_count": None,
+            "physical_atom_charge_comparison": None,
+            "validated_conjugate_force_fields": 0,
+            "full_insulin_topology_or_openmm_system_created": False,
+            "md_run": False,
+            "clinical_use": False,
+            "limits": [
+                "The compared coordinate candidate is publisher-supplied and model-built; the source-to-coordinate atom assignment remains ambiguous.",
+                "The B29 endpoint is an NH2 cap rather than the protein-bound LysB29 NZ residue environment, so junction charges remain provisional.",
+                "Antechamber/parmchk2 outputs are candidate assignments; high-penalty terms and charge reconciliation still require expert review.",
+                "The PheB1 junction, insulin termini, cross-boundary terms, full topology, solvent, target complex, MD, affinity, and clinical inference are outside this audit.",
+            ],
+        },
+    }
+
+    if len(reports) == EXPECTED_MAPPING_COUNT and not failures:
+        common_hashes = collect_common_input_hashes(reports)
+        mapping_summaries = summarize_mappings(reports, runs)
+        if [item["mapping_index_zero_based"] for item in mapping_summaries] != list(range(EXPECTED_MAPPING_COUNT)):
+            raise ValueError("Successful reports do not cover mapping indices 0 through 15 exactly")
+        if len({item["mapping_id"] for item in mapping_summaries}) != EXPECTED_MAPPING_COUNT:
+            raise ValueError("The 16 mapping indices do not have 16 distinct topology-audit mapping IDs")
+        all_mol2 = {
+            item["mol2"]["sha256"]
+            for mapping_report in reports
+            for item in mapping_report["variants"]
+        }
+        all_frcmod = {
+            item["frcmod"]["sha256"]
+            for mapping_report in reports
+            for item in mapping_report["variants"]
+        }
+        charges_by_serial = collect_charge_ranges(reports)
+        variable_serials = [
+            item for item in charges_by_serial
+            if item["partial_charge_range_e"] > 1e-5 or len(item["gaff2_atom_type_set"]) > 1
+        ]
+        all_charge_sums = [
+            item["mol2"]["partial_charge_sum_e"]
+            for mapping_report in reports
+            for item in mapping_report["variants"]
+        ]
+        residuals = [charge_sum - (-3) for charge_sum in all_charge_sums]
+        max_charge_range = max(item["partial_charge_range_e"] for item in charges_by_serial)
+        report["inputs"].update(common_hashes)
+        report["mappings"] = mapping_summaries
+        report["assessment"].update({
+            "all_16_mappings_completed": True,
+            "all_8_carboxylate_labelings_completed_per_mapping": True,
+            "completed_variant_run_count": len(reports) * EXPECTED_VARIANT_COUNT,
+            "unique_mol2_output_hash_count": len(all_mol2),
+            "unique_frcmod_output_hash_count": len(all_frcmod),
+            "one_mol2_hash_per_mapping_across_eight_resonance_labelings": all(
+                item["unique_mol2_sha256_count_within_mapping"] == 1 for item in mapping_summaries
+            ),
+            "one_frcmod_hash_across_all_128_runs": len(all_frcmod) == 1,
+            "partial_charge_sum_e_range": [min(all_charge_sums), max(all_charge_sums)],
+            "net_charge_residual_e_range": [min(residuals), max(residuals)],
+            "all_charge_sums_within_0_01e_tolerance_of_formal_minus_3": all(
+                abs(charge_sum - (-3)) <= 0.01 for charge_sum in all_charge_sums
+            ),
+            "maximum_heavy_atom_charge_range_by_pdb_serial_e": max_charge_range,
+            "pdb_serial_count_with_charge_or_type_variation": len(variable_serials),
+            "pdb_serial_count_with_gaff2_atom_type_variation": sum(
+                len(item["gaff2_atom_type_set"]) > 1 for item in charges_by_serial
+            ),
+            "pdb_serials_with_charge_or_type_variation": variable_serials,
+            "physical_atom_charge_comparison": charges_by_serial,
+        })
+        write_json(args.output_json, report)
+        print(json.dumps({
+            "status": report["status"],
+            "mappings_completed": EXPECTED_MAPPING_COUNT,
+            "variant_runs_completed": len(reports) * EXPECTED_VARIANT_COUNT,
+            "unique_mol2_output_hash_count": len(all_mol2),
+            "unique_frcmod_output_hash_count": len(all_frcmod),
+            "maximum_heavy_atom_charge_range_by_pdb_serial_e": max_charge_range,
+            "pdb_serial_count_with_charge_or_type_variation": len(variable_serials),
+            "partial_charge_sum_e_range": [min(all_charge_sums), max(all_charge_sums)],
+            "validated_conjugate_force_fields": 0,
+            "output_json": str(args.output_json),
+        }, indent=2))
+        return 0
+
+    report["status"] = "PARTIAL_OR_FAILED_MAPPING_SENSITIVITY"
+    report["mappings"] = summarize_mappings(reports, runs) if reports else []
+    write_json(args.output_json, report)
+    print(json.dumps({"status": report["status"], "failures": failures, "output_json": str(args.output_json)}, indent=2))
+    return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -243,10 +243,13 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--output-json", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--variant-limit", type=int, default=8)
+    parser.add_argument("--mapping-index", type=int, default=0)
     parser.add_argument("--timeout-seconds", type=int, default=7200)
     args = parser.parse_args()
     if not 1 <= args.variant_limit <= 8:
         raise ValueError("--variant-limit must be between 1 and 8")
+    if not 0 <= args.mapping_index < 16:
+        raise ValueError("--mapping-index must be between 0 and 15")
 
     for path in (GRAPH_PATH, MAP_PATH, TOPOLOGY_PATH, OPEN_PDB, LOCK_PATH):
         if not path.is_file():
@@ -279,11 +282,16 @@ def main() -> None:
     exact_maps = open_state["complete_product_exact_graph_comparison"]["exact_mappings"]
     if len(exact_maps) != 16:
         raise ValueError(f"Expected 16 documented model-graph embeddings, found {len(exact_maps)}")
+    selected_mapping_entry = exact_maps[args.mapping_index]
+    selected_mapping = selected_mapping_entry["map_id_to_pdb_serial"]
+    selected_map_ids = {int(map_id) for map_id in selected_mapping}
+    selected_serials = {int(serial) for serial in selected_mapping.values()}
+    if selected_map_ids != set(range(1, 93)) or len(selected_serials) != 92:
+        raise ValueError("Selected coordinate mapping must cover maps 1..92 and 92 distinct PDB serials")
     expected_open_pdb_sha = open_state["coordinate_candidate_sha256_expected_by_reconciliation"]
     open_graph_sha = sha256(OPEN_PDB)
     if open_graph_sha != expected_open_pdb_sha:
         raise ValueError("The active/open PDB hash differs from the topology audit's coordinate candidate")
-    selected_mapping = exact_maps[0]["map_id_to_pdb_serial"]
     coordinate_audit = read_pdb_heavy_coordinates(OPEN_PDB)
 
     amberhome = Path(os.environ.get("AMBERHOME", "")).resolve()
@@ -429,6 +437,7 @@ def main() -> None:
                     {
                         "source_map_id": neutral_graph.GetAtomWithIdx(index).GetAtomMapNum()
                         if index < neutral_graph.GetNumAtoms() else None,
+                        "element": output_atoms[index]["element"],
                         "atom_type": output_atoms[index]["atom_type"],
                         "partial_charge_e": output_atoms[index]["partial_charge_e"],
                     }
@@ -498,7 +507,12 @@ def main() -> None:
                 "path": str(OPEN_PDB.relative_to(RESEARCH)),
                 "sha256": open_graph_sha,
                 "sha256_expected_by_topology_audit": expected_open_pdb_sha,
-                "mapping_id": exact_maps[0]["mapping_id"],
+                "mapping_index_zero_based": args.mapping_index,
+                "mapping_id": selected_mapping_entry["mapping_id"],
+                "map_id_to_pdb_serial": {
+                    map_id: int(selected_mapping[map_id])
+                    for map_id in sorted(selected_mapping, key=int)
+                },
                 "one_of_sixteen_graph_embeddings": True,
                 "coordinates_are_model_built": True,
                 "hash_unchanged_after_run": True,

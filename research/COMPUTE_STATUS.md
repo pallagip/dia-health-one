@@ -32,6 +32,12 @@ This demonstrates toolchain feasibility for one isolated, capped B29 fragment an
 
 The [AmberTools modified-residue tutorial](https://ambermd.org/tutorials/basic/tutorial5/index.php) documents Antechamber, prepgen, and parmchk2 as a candidate workflow and cautions that charges and generated terms need review. This pilot does not create a custom insulin residue library, an OpenMM system, or MD; the validated-conjugate-force-field count remains zero.
 
+## B29 mapping sensitivity audit — 26 October 2026
+
+The follow-on audit ran all 16 exact active/open model-coordinate mappings with all eight carboxylate Lewis labelings per mapping (128 AmberTools cases total), using four isolated workers. Within each mapping, the eight resonance labelings produced one MOL2 hash; all 128 cases shared one frcmod hash. Across mappings, there were 16 MOL2 hashes. GAFF2 atom types were constant for all mapped heavy-atom PDB serials. Partial charges varied at 19 of 92 physical heavy-atom serials, with a maximum observed range of 0.0035 e. The total partial-charge sum ranged from −2.997001 to −2.996005 e (residual +0.002999 to +0.003995 e from formal −3); every result fell within the audit's 0.01 e bookkeeping tolerance, and no correction was applied.
+
+This shows that the generated bonded-term file and heavy-atom types did not change across these candidate mappings, while the AM1-BCC heavy-atom charges retain small mapping dependence. It does not authorize selecting one of the 16 maps, map RDKit-added hydrogens to physical PDB hydrogens, resolve the NH2 cap at LysB29, or validate the partial charges or parameters. The mapped coordinate candidate remained unchanged. The result JSON records each map, variant, output hash, and per-serial charge range; reproduce with `micromamba run -p <environment-created-from-lock> python research/audit_nnc2215_b29_mapping_sensitivity.py --max-workers 4`.
+
 ## Reproductions completed
 
 Five Python analyses completed on the Apple M4 host:

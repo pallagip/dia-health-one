@@ -1,0 +1,14 @@
+COMMAND TEMPLATE
+python audit_nnc2215_ambertools_parameterization_pilot.py --mapping-index 14 --output-dir data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_15 --output-json data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_15/report.json --timeout-seconds 1800
+
+STDOUT
+{
+  "status": "PILOT_ONLY; COMPLETE_CONJUGATE_FORCE_FIELD_NOT_VALIDATED",
+  "variants_completed": 8,
+  "net_formal_charge": -3,
+  "max_charge_sensitivity_e": 0.0,
+  "validated_conjugate_force_fields": 0,
+  "output_json": "<REPO_ROOT>/data/nnc2215-b29-gaff2-mapping-sensitivity/mapping_15/report.json"
+}
+
+STDERR
