@@ -18,7 +18,7 @@
       "path": "pag-chemistry-environment-macos-arm64.lock.txt",
       "sha256": "608d83e646a04e939b5b6b38619337b2822966113beb60c8368f90ecba803d6d"
     },
-    "audit_script_sha256": "c4df551f3b671c591371c94755cf4b154bbf50ba4aef8664110a3bf771a03157"
+    "audit_script_sha256": "71bcc09825f60ac6aa22dc855e2993a6cda2c8356a66d482d4d8a83d4c339550"
   },
   "software": {
     "python_version": "3.12.15",
@@ -46,7 +46,15 @@
       "vdW": 968,
       "Electrostatics": 0
     },
-    "label_coverage": "pass",
+    "topology_expected_label_counts": {
+      "Constraints": 461,
+      "Bonds": 988,
+      "Angles": 1753,
+      "ProperTorsions": 2569,
+      "vdW": 968
+    },
+    "label_coverage": "pass_for_topology_derived_categories",
+    "improper_torsion_completeness_independently_checked": false,
     "coordinates_present": false,
     "stereochemistry_fully_specified": false
   },
@@ -73,7 +81,15 @@
           "vdW": 146,
           "Electrostatics": 0
         },
-        "label_coverage": "pass"
+        "topology_expected_label_counts": {
+          "Constraints": 63,
+          "Bonds": 152,
+          "Angles": 260,
+          "ProperTorsions": 367,
+          "vdW": 146
+        },
+        "label_coverage": "pass_for_topology_derived_categories",
+        "improper_torsion_completeness_independently_checked": false
       },
       {
         "deprotonated_acid_oxygen_map_ids": [
@@ -92,7 +108,15 @@
           "vdW": 145,
           "Electrostatics": 0
         },
-        "label_coverage": "pass"
+        "topology_expected_label_counts": {
+          "Constraints": 62,
+          "Bonds": 151,
+          "Angles": 259,
+          "ProperTorsions": 365,
+          "vdW": 145
+        },
+        "label_coverage": "pass_for_topology_derived_categories",
+        "improper_torsion_completeness_independently_checked": false
       },
       {
         "deprotonated_acid_oxygen_map_ids": [
@@ -111,7 +135,15 @@
           "vdW": 145,
           "Electrostatics": 0
         },
-        "label_coverage": "pass"
+        "topology_expected_label_counts": {
+          "Constraints": 62,
+          "Bonds": 151,
+          "Angles": 259,
+          "ProperTorsions": 365,
+          "vdW": 145
+        },
+        "label_coverage": "pass_for_topology_derived_categories",
+        "improper_torsion_completeness_independently_checked": false
       },
       {
         "deprotonated_acid_oxygen_map_ids": [
@@ -131,7 +163,15 @@
           "vdW": 144,
           "Electrostatics": 0
         },
-        "label_coverage": "pass"
+        "topology_expected_label_counts": {
+          "Constraints": 61,
+          "Bonds": 150,
+          "Angles": 258,
+          "ProperTorsions": 363,
+          "vdW": 144
+        },
+        "label_coverage": "pass_for_topology_derived_categories",
+        "improper_torsion_completeness_independently_checked": false
       },
       {
         "deprotonated_acid_oxygen_map_ids": [
@@ -150,7 +190,15 @@
           "vdW": 145,
           "Electrostatics": 0
         },
-        "label_coverage": "pass"
+        "topology_expected_label_counts": {
+          "Constraints": 62,
+          "Bonds": 151,
+          "Angles": 259,
+          "ProperTorsions": 365,
+          "vdW": 145
+        },
+        "label_coverage": "pass_for_topology_derived_categories",
+        "improper_torsion_completeness_independently_checked": false
       },
       {
         "deprotonated_acid_oxygen_map_ids": [
@@ -170,7 +218,15 @@
           "vdW": 144,
           "Electrostatics": 0
         },
-        "label_coverage": "pass"
+        "topology_expected_label_counts": {
+          "Constraints": 61,
+          "Bonds": 150,
+          "Angles": 258,
+          "ProperTorsions": 363,
+          "vdW": 144
+        },
+        "label_coverage": "pass_for_topology_derived_categories",
+        "improper_torsion_completeness_independently_checked": false
       },
       {
         "deprotonated_acid_oxygen_map_ids": [
@@ -190,7 +246,15 @@
           "vdW": 144,
           "Electrostatics": 0
         },
-        "label_coverage": "pass"
+        "topology_expected_label_counts": {
+          "Constraints": 61,
+          "Bonds": 150,
+          "Angles": 258,
+          "ProperTorsions": 363,
+          "vdW": 144
+        },
+        "label_coverage": "pass_for_topology_derived_categories",
+        "improper_torsion_completeness_independently_checked": false
       },
       {
         "deprotonated_acid_oxygen_map_ids": [
@@ -211,22 +275,33 @@
           "vdW": 143,
           "Electrostatics": 0
         },
-        "label_coverage": "pass"
+        "topology_expected_label_counts": {
+          "Constraints": 60,
+          "Bonds": 149,
+          "Angles": 257,
+          "ProperTorsions": 361,
+          "vdW": 143
+        },
+        "label_coverage": "pass_for_topology_derived_categories",
+        "improper_torsion_completeness_independently_checked": false
       }
     ],
-    "interpretation": "All eight combinations label successfully; no pKa weighting or dominant-state inference was performed."
+    "interpretation": "All eight combinations match topology-derived expected counts for constraints, bonds, angles, proper torsions, and vdW; improper-torsion counts are reported but their completeness is not independently derived. No pKa weighting or dominant-state inference was performed."
   },
   "not_established": [
     "partial atomic charges or electrostatic validation",
     "validated parameters or transferability for the insulin–conjugate hybrid",
     "compatibility of Sage conjugate parameters with the protein force-field files",
+    "completeness of improper-torsion labels beyond the returned counts",
     "complete stereochemistry, protonation, or experimental atom mapping",
     "3D coordinates, geometry quality, minimization, or an OpenMM System",
     "molecular dynamics, binding pose, affinity, or free energy",
     "pharmacological efficacy or clinical safety"
   ],
   "assessment": {
-    "status": "SAGE_LABEL_COVERAGE_ONLY",
+    "status": "SAGE_LABELS_MATCH_TOPOLOGY_COUNTS; IMPROPER_COMPLETENESS_NOT_INDEPENDENTLY_CHECKED",
+    "topology_derived_categories_match_expected_counts": true,
+    "improper_torsion_completeness_independently_checked": false,
     "partial_charges_assigned": false,
     "coordinates_created": false,
     "openmm_system_created": false,

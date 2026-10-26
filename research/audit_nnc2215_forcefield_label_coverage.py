@@ -212,7 +212,27 @@ def make_carboxylate_state(neutral: Chem.Mol, deprotonated_map_ids: tuple[int, .
     return molecule
 
 
-def count_labels(force_field: ForceField, rdkit_molecule: Chem.Mol) -> dict[str, int]:
+def topology_expected_counts(rdkit_molecule: Chem.Mol) -> dict[str, int]:
+    molecule = Chem.AddHs(rdkit_molecule)
+    atoms = list(molecule.GetAtoms())
+    angles = sum(atom.GetDegree() * (atom.GetDegree() - 1) // 2 for atom in atoms)
+    proper_torsions = 0
+    for bond in molecule.GetBonds():
+        left = bond.GetBeginAtom()
+        right = bond.GetEndAtom()
+        left_outer = {neighbor.GetIdx() for neighbor in left.GetNeighbors()} - {right.GetIdx()}
+        right_outer = {neighbor.GetIdx() for neighbor in right.GetNeighbors()} - {left.GetIdx()}
+        proper_torsions += len(left_outer) * len(right_outer) - len(left_outer & right_outer)
+    return {
+        "Constraints": sum(atom.GetAtomicNum() == 1 for atom in atoms),
+        "Bonds": molecule.GetNumBonds(),
+        "Angles": angles,
+        "ProperTorsions": proper_torsions,
+        "vdW": molecule.GetNumAtoms(),
+    }
+
+
+def count_labels(force_field: ForceField, rdkit_molecule: Chem.Mol) -> tuple[dict[str, int], dict[str, int]]:
     with_hydrogens = Chem.AddHs(rdkit_molecule)
     off_molecule = Molecule.from_rdkit(
         with_hydrogens,
@@ -227,9 +247,17 @@ def count_labels(force_field: ForceField, rdkit_molecule: Chem.Mol) -> dict[str,
         bucket: len(molecule_labels.get(bucket, {}))
         for bucket in LABEL_BUCKETS
     }
-    if counts["Bonds"] == 0 or counts["Angles"] == 0 or counts["vdW"] == 0:
-        raise ValueError(f"Sage did not return expected chemical parameter labels: {counts}")
-    return counts
+    expected = topology_expected_counts(rdkit_molecule)
+    mismatches = {
+        bucket: {"expected": value, "observed": counts[bucket]}
+        for bucket, value in expected.items()
+        if counts[bucket] != value
+    }
+    if mismatches:
+        raise ValueError(f"Sage labels do not match topology-derived expected counts: {mismatches}")
+    if counts["ImproperTorsions"] == 0:
+        raise ValueError("Sage returned no improper-torsion labels; inspect the graph and force field")
+    return counts, expected
 
 
 def main() -> int:
@@ -261,7 +289,7 @@ def main() -> int:
             raise ValueError(f"Carboxylate oxygen map IDs differ from the source map legend: {listed_oxygen_ids}")
 
         force_field = ForceField("openff-2.3.0.offxml")
-        full_counts = count_labels(force_field, full_graph)
+        full_counts, full_expected_counts = count_labels(force_field, full_graph)
 
         roof_states: list[dict[str, Any]] = []
         for mask in range(1 << len(CARBOXYLATE_OXYGEN_MAP_IDS)):
@@ -272,7 +300,7 @@ def main() -> int:
             )
             state_graph = make_carboxylate_state(roof, deprotonated)
             state_formula = rdMolDescriptors.CalcMolFormula(state_graph)
-            labels = count_labels(force_field, state_graph)
+            labels, expected_counts = count_labels(force_field, state_graph)
             formal_charge = sum(atom.GetFormalCharge() for atom in state_graph.GetAtoms())
             roof_states.append({
                 "deprotonated_acid_oxygen_map_ids": list(deprotonated),
@@ -281,10 +309,15 @@ def main() -> int:
                 "atom_count_after_hydrogen_materialization": Chem.AddHs(state_graph).GetNumAtoms(),
                 "formal_charge": formal_charge,
                 "sage_label_counts": labels,
-                "label_coverage": "pass",
+                "topology_expected_label_counts": expected_counts,
+                "label_coverage": "pass_for_topology_derived_categories",
+                "improper_torsion_completeness_independently_checked": False,
             })
 
-        failures = [state for state in roof_states if state["label_coverage"] != "pass"]
+        failures = [
+            state for state in roof_states
+            if state["label_coverage"] != "pass_for_topology_derived_categories"
+        ]
         if failures:
             raise ValueError(f"Roof fragment label coverage failed: {failures}")
 
@@ -321,7 +354,9 @@ def main() -> int:
                 "atom_count_after_hydrogen_materialization": Chem.AddHs(full_graph).GetNumAtoms(),
                 "formal_charge": sum(atom.GetFormalCharge() for atom in full_graph.GetAtoms()),
                 "sage_label_counts": full_counts,
-                "label_coverage": "pass",
+                "topology_expected_label_counts": full_expected_counts,
+                "label_coverage": "pass_for_topology_derived_categories",
+                "improper_torsion_completeness_independently_checked": False,
                 "coordinates_present": False,
                 "stereochemistry_fully_specified": False,
             },
@@ -329,19 +364,22 @@ def main() -> int:
                 "oxygen_map_ids_tested": list(CARBOXYLATE_OXYGEN_MAP_IDS),
                 "state_count": len(roof_states),
                 "states": roof_states,
-                "interpretation": "All eight combinations label successfully; no pKa weighting or dominant-state inference was performed.",
+                "interpretation": "All eight combinations match topology-derived expected counts for constraints, bonds, angles, proper torsions, and vdW; improper-torsion counts are reported but their completeness is not independently derived. No pKa weighting or dominant-state inference was performed.",
             },
             "not_established": [
                 "partial atomic charges or electrostatic validation",
                 "validated parameters or transferability for the insulin–conjugate hybrid",
                 "compatibility of Sage conjugate parameters with the protein force-field files",
+                "completeness of improper-torsion labels beyond the returned counts",
                 "complete stereochemistry, protonation, or experimental atom mapping",
                 "3D coordinates, geometry quality, minimization, or an OpenMM System",
                 "molecular dynamics, binding pose, affinity, or free energy",
                 "pharmacological efficacy or clinical safety",
             ],
             "assessment": {
-                "status": "SAGE_LABEL_COVERAGE_ONLY",
+                "status": "SAGE_LABELS_MATCH_TOPOLOGY_COUNTS; IMPROPER_COMPLETENESS_NOT_INDEPENDENTLY_CHECKED",
+                "topology_derived_categories_match_expected_counts": True,
+                "improper_torsion_completeness_independently_checked": False,
                 "partial_charges_assigned": False,
                 "coordinates_created": False,
                 "openmm_system_created": False,
@@ -358,7 +396,10 @@ def main() -> int:
             "full_graph_atom_count": output["full_neutral_constitutional_graph"]["atom_count_after_hydrogen_materialization"],
             "full_graph_label_counts": full_counts,
             "roof_state_count": len(roof_states),
-            "roof_states_all_labeled": all(state["label_coverage"] == "pass" for state in roof_states),
+            "roof_states_match_topology_expected_counts": all(
+                state["label_coverage"] == "pass_for_topology_derived_categories"
+                for state in roof_states
+            ),
             "toolkit_version": versions["openff-toolkit"],
             "sage_force_field": output["software"]["sage_force_field"],
         }, indent=2))

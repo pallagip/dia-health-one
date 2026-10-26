@@ -177,7 +177,7 @@ micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/aud
 
 ### OpenFF Sage label-coverage audit
 
-[`data/nnc2215-forcefield-label-coverage.json`](data/nnc2215-forcefield-label-coverage.json) records label coverage from OpenFF Sage 2.3.0 on the neutral 507-heavy-atom full constitutional graph and on all eight protonation combinations of the three carboxyl groups in the isolated roof macrocycle fragment. The full graph received labels for 988 bonds, 1,753 angles, 2,569 proper torsions, 225 improper torsions, and 968 vdW terms; the label operation returned no electrostatics terms. This is coverage by Sage's chemical-perception handlers, not partial-charge assignment or validation of a hybrid insulin–conjugate force field. Roof-fragment states are not pKa-weighted, and the full graph remains stereochemically incomplete and coordinate-free.
+[`data/nnc2215-forcefield-label-coverage.json`](data/nnc2215-forcefield-label-coverage.json) records label coverage from OpenFF Sage 2.3.0 on the neutral 507-heavy-atom full constitutional graph and on all eight protonation combinations of the three carboxyl groups in the isolated roof macrocycle fragment. The full graph received labels for 461 constraints, 988 bonds, 1,753 angles, 2,569 proper torsions, 225 improper torsions, and 968 vdW terms; the label operation returned no electrostatics terms. Constraint, bond, angle, proper-torsion, and vdW counts match independently derived topology expectations for the full graph and each roof state. Improper-torsion counts are recorded, but their completeness is not independently derived. This is label matching, not partial-charge assignment or validation of a hybrid insulin–conjugate force field. Roof-fragment states are not pKa-weighted, and the full graph remains stereochemically incomplete and coordinate-free.
 
 The audit records input, script, and lockfile SHA-256 values and checks exact package versions from the macOS ARM64 lock. To recreate its environment and result from the repository root:
 
@@ -186,7 +186,7 @@ micromamba create -p /tmp/dho-pag-chem --file research/pag-chemistry-environment
 micromamba run -p /tmp/dho-pag-chem python research/audit_nnc2215_forcefield_label_coverage.py
 ```
 
-The result is limited to label coverage. It does not validate atom mapping, stereochemistry, protonation populations, atom-localized charges, protein-force-field compatibility, geometry, an OpenMM system, target MD, binding affinity, or clinical activity.
+The result is limited to matching Sage labels against topology-derived expectations for constraints, bonds, angles, proper torsions, and vdW interactions; it reports but does not independently validate improper-torsion completeness. It does not validate atom mapping, stereochemistry, protonation populations, atom-localized charges, protein-force-field compatibility, geometry, an OpenMM system, target MD, binding affinity, or clinical activity.
 
 ### Conditional pH 7.4 charge-state ledger
 
