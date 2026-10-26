@@ -77,7 +77,10 @@ def read_lock_package(lock_path: Path, name: str) -> dict[str, str]:
     if len(records) != 1:
         raise ValueError(f"Expected one {name} conda package in {lock_path}, found {len(records)}")
     match = records[0]
-    return {"version_build": match.group(1), "package_sha256": match.group(2)}
+    package_md5 = match.group(2)
+    if len(package_md5) != 32:
+        raise ValueError(f"Expected a 32-character explicit-lock MD5 for {name}, found {package_md5}")
+    return {"version_build": match.group(1), "package_md5": package_md5}
 
 
 def mapped_atom_indices(molecule: Chem.Mol) -> dict[int, int]:
@@ -276,9 +279,12 @@ def main() -> None:
     exact_maps = open_state["complete_product_exact_graph_comparison"]["exact_mappings"]
     if len(exact_maps) != 16:
         raise ValueError(f"Expected 16 documented model-graph embeddings, found {len(exact_maps)}")
+    expected_open_pdb_sha = open_state["coordinate_candidate_sha256_expected_by_reconciliation"]
+    open_graph_sha = sha256(OPEN_PDB)
+    if open_graph_sha != expected_open_pdb_sha:
+        raise ValueError("The active/open PDB hash differs from the topology audit's coordinate candidate")
     selected_mapping = exact_maps[0]["map_id_to_pdb_serial"]
     coordinate_audit = read_pdb_heavy_coordinates(OPEN_PDB)
-    open_graph_sha = sha256(OPEN_PDB)
 
     amberhome = Path(os.environ.get("AMBERHOME", "")).resolve()
     antechamber = shutil.which("antechamber")
@@ -491,6 +497,7 @@ def main() -> None:
             "open_model_coordinate_candidate": {
                 "path": str(OPEN_PDB.relative_to(RESEARCH)),
                 "sha256": open_graph_sha,
+                "sha256_expected_by_topology_audit": expected_open_pdb_sha,
                 "mapping_id": exact_maps[0]["mapping_id"],
                 "one_of_sixteen_graph_embeddings": True,
                 "coordinates_are_model_built": True,
