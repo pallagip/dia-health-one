@@ -14,6 +14,10 @@ The dated access and reproduction notes below are historical observations. Where
 
 The 518 C/N/O edges are evaluated with the disclosed broad heuristic intervals; nine sulfur-containing edges are retained as unscreened. Geometry flags do not select mappings or establish bond orders. The result maps heavy atoms only: PheB1 hydrogen ownership, B29 ambiguity, neutral-graph bond-label conventions, complete microstates, custom cross-boundary parameters, a full force field, OpenMM, target MD, and affinity remain unresolved. Reproduce with `python3 research/audit_nnc2215_full_coordinate_mapping.py`.
 
+## PheB1 hydrogen geometry follow-up — 26 October 2026
+
+The attachment-boundary audit now compares the open-state PheB1 N–H2 coordinate with closed-state PHX H2A. The N–H distances are 1.012274 Å and 1.006376 Å, respectively; the two N-centered N–H angles differ by 3.047° and 3.436°. In the closed model, PheB1 N is the nearest heavy atom to H2A. This is geometry consistent with an N–H placement, but H2A has no PheB1 N `CONECT` edge, so ownership remains unresolved. The coordinate candidates were not changed; this does not resolve the full-system hydrogen inventory, force field, or simulation readiness. Results are in `research/data/nnc2215-attachment-boundary-audit.json`.
+
 ## OpenFF Sage label-coverage audit — 26 October 2026
 
 OpenFF Sage 2.3.0 label coverage was run in the macOS ARM64 environment recorded by `research/pag-chemistry-environment-macos-arm64.lock.txt` (OpenFF Toolkit 0.19.0, Interchange 0.5.5, Units 0.4.0, OpenFF force fields 2026.09.0, OpenMM 8.6.1, RDKit 2026.03.1). The reconstructed neutral constitutional graph retained formula C325H461N79O97S6 and 507 heavy atoms; after explicit hydrogen materialization it contained 968 atoms. Sage assigned labels to 461 constraints, 988 bonds, 1,753 angles, 2,569 proper torsions, 225 improper torsions, and 968 vdW entries; this method returned zero electrostatics labels. Constraint, bond, angle, proper-torsion, and vdW counts match graph-derived expectations for all nine graphs.

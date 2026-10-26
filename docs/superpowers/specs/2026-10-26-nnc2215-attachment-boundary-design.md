@@ -21,7 +21,7 @@ Audit how the source-derived B1 glucoside and B29 linker–roof components join 
 
 Add a focused audit script that reads the two corrected candidate PDBs, the source B1/B29 graph and map files, and the existing topology-audit JSONs. For each state, it will resolve the three expected heavy-atom joins by full atom identity, check that the corresponding source-boundary edges and native protein bonds are present, and calculate distances without using them to rank or select mappings.
 
-The report will include a per-state boundary ledger with source map IDs, candidate PDB atom identities, edge provenance, and measured distances. It will also record the local neighbors and CONECT hydrogen records at PheB1 N and LysB29 NZ. The expected local neutral boundary patterns are PheB1 N bonded to CA, the B1 carbonyl carbon, and one hydrogen; LysB29 NZ bonded to CE, the B29 carbamate carbonyl carbon, and one hydrogen. Any mismatch in the observed hydrogen records will be surfaced as an open item and will not be repaired or silently attributed to another atom.
+The report will include a per-state boundary ledger with source map IDs, candidate PDB atom identities, edge provenance, and measured distances. It will also record the local neighbors and CONECT hydrogen records at PheB1 N and LysB29 NZ. The expected local neutral boundary patterns are PheB1 N bonded to CA, the B1 carbonyl carbon, and one hydrogen; LysB29 NZ bonded to CE, the B29 carbamate carbonyl carbon, and one hydrogen. Any mismatch in the observed hydrogen records will be surfaced as an open item and will not be repaired or silently attributed to another atom. For the open-state PheB1 H2 and the closed-state PHX H2A coordinate, the audit may report N–H distances, local angles, and nearest heavy-atom identities as a descriptive comparison. These measurements must not create a connectivity edge or assign hydrogen ownership.
 
 ## Invariants and output
 
@@ -38,6 +38,6 @@ This audit closes only the local heavy-atom attachment boundaries and characteri
 1. Open and closed candidates each resolve the B1 attachment link, B29 Lys attachment link, and roof-tail inter-residue link by unique atom identities.
 2. Source boundary edges and native PheB1 N–CA / LysB29 CE–NZ context are shown explicitly and cross-checked against the existing B1/B29 audits.
 3. Geometry is reported as observation only; no distance is used to choose a graph mapping or hydrogen assignment.
-4. The PheB1 H2/H2A discrepancy and LysB29 NZ hydrogen neighbors are reported per state; no atom or coordinate is changed.
+4. The PheB1 H2/H2A discrepancy and LysB29 NZ hydrogen neighbors are reported per state; an optional coordinate-geometry comparison remains descriptive and does not assign an owner; no atom or coordinate is changed.
 5. Existing B1 and B29 audit results, input hashes, and B29's 16 mappings per state are preserved.
 6. The dashboard and README distinguish verified heavy-atom boundary closure from unresolved hydrogen chemistry and full-model readiness.

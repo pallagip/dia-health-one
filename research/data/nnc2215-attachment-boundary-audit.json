@@ -1,9 +1,9 @@
 {
   "schema": "dia-health-one.nnc2215-attachment-boundary-audit.v1",
   "run": {
-    "generated_at_utc": "2026-10-25T23:27:29.658919+00:00",
+    "generated_at_utc": "2026-10-26T14:09:19.258039+00:00",
     "script": "research/audit_nnc2215_attachment_boundaries.py",
-    "script_sha256": "c8b696279cdb076b919eebe0cf7500b8252dd7b7b737716a7fe9034d9e4350d3",
+    "script_sha256": "01139be3de25b37f368183384b3ab4eb3cc61949d60c4231f77f5997401acd6e",
     "python_version": "3.11.17",
     "rdkit_version": "2026.03.1",
     "coordinate_files_modified": false,
@@ -90,7 +90,7 @@
       },
       "audit_script": {
         "path": "research/audit_nnc2215_attachment_boundaries.py",
-        "sha256_observed": "c8b696279cdb076b919eebe0cf7500b8252dd7b7b737716a7fe9034d9e4350d3",
+        "sha256_observed": "01139be3de25b37f368183384b3ab4eb3cc61949d60c4231f77f5997401acd6e",
         "sha256_expected": null,
         "expected_hash_source": null,
         "hash_check": "recorded_only_no_independent_expected_hash"
@@ -835,6 +835,141 @@
             ]
           }
         }
+      },
+      "pheB1_N_hydrogen_geometry": {
+        "state": "active_open",
+        "coordinate_atom_identity": {
+          "state": "active_open",
+          "model_number": 1,
+          "record_type": "ATOM",
+          "chain": "B",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue_name": "PHE",
+          "atom_name": "H2",
+          "altloc": "",
+          "element": "H",
+          "serial": 48,
+          "coordinates_angstrom": [
+            -0.933,
+            11.316,
+            -10.828
+          ]
+        },
+        "distance_to_pheB1_N_angstrom": 1.012274,
+        "PheB1_N_hydrogen_conect_edge_present": true,
+        "hydrogen_conect_neighbor_identities": [
+          {
+            "state": "active_open",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "N",
+            "altloc": "",
+            "element": "N",
+            "serial": 37,
+            "coordinates_angstrom": [
+              -0.152,
+              11.315,
+              -10.184
+            ]
+          }
+        ],
+        "local_angles_degrees": {
+          "CA_N_H": 113.869,
+          "B1_carbonyl_C_N_H": 118.805,
+          "CA_N_B1_carbonyl_C": 125.914
+        },
+        "nearest_heavy_atoms_by_distance": [
+          {
+            "atom_identity": {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "N",
+              "altloc": "",
+              "element": "N",
+              "serial": 37,
+              "coordinates_angstrom": [
+                -0.152,
+                11.315,
+                -10.184
+              ]
+            },
+            "distance_angstrom": 1.012274
+          },
+          {
+            "atom_identity": {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 3,
+              "coordinates_angstrom": [
+                0.775,
+                10.36,
+                -10.298
+              ]
+            },
+            "distance_angstrom": 2.027831
+          },
+          {
+            "atom_identity": {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "CA",
+              "altloc": "",
+              "element": "C",
+              "serial": 38,
+              "coordinates_angstrom": [
+                -0.328,
+                12.205,
+                -9.041
+              ]
+            },
+            "distance_angstrom": 2.085597
+          },
+          {
+            "atom_identity": {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "O",
+              "altloc": "",
+              "element": "O",
+              "serial": 40,
+              "coordinates_angstrom": [
+                -2.591,
+                12.274,
+                -9.84
+              ]
+            },
+            "distance_angstrom": 2.154732
+          }
+        ],
+        "interpretation": "Coordinate geometry is descriptive only; it does not create a CONECT edge or assign hydrogen ownership."
       },
       "expected_neutral_local_boundary_record_patterns": {
         "pheB1_N": {
@@ -1608,6 +1743,122 @@
           }
         }
       },
+      "pheB1_N_hydrogen_geometry": {
+        "state": "inactive_closed",
+        "coordinate_atom_identity": {
+          "state": "inactive_closed",
+          "model_number": 1,
+          "record_type": "HETATM",
+          "chain": "B",
+          "residue_number": "0",
+          "insertion_code": "",
+          "residue_name": "PHX",
+          "atom_name": "H2A",
+          "altloc": "",
+          "element": "H",
+          "serial": 332,
+          "coordinates_angstrom": [
+            -1.281,
+            3.195,
+            -7.01
+          ]
+        },
+        "distance_to_pheB1_N_angstrom": 1.006376,
+        "PheB1_N_hydrogen_conect_edge_present": false,
+        "hydrogen_conect_neighbor_identities": [],
+        "local_angles_degrees": {
+          "CA_N_H": 116.916,
+          "B1_carbonyl_C_N_H": 115.369,
+          "CA_N_B1_carbonyl_C": 127.66
+        },
+        "nearest_heavy_atoms_by_distance": [
+          {
+            "atom_identity": {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "N",
+              "altloc": "",
+              "element": "N",
+              "serial": 351,
+              "coordinates_angstrom": [
+                -1.515,
+                4.151,
+                -6.8
+              ]
+            },
+            "distance_angstrom": 1.006376
+          },
+          {
+            "atom_identity": {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C2",
+              "altloc": "",
+              "element": "C",
+              "serial": 316,
+              "coordinates_angstrom": [
+                -2.228,
+                4.336,
+                -5.674
+              ]
+            },
+            "distance_angstrom": 1.995892
+          },
+          {
+            "atom_identity": {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "CA",
+              "altloc": "",
+              "element": "C",
+              "serial": 352,
+              "coordinates_angstrom": [
+                -0.991,
+                5.192,
+                -7.726
+              ]
+            },
+            "distance_angstrom": 2.141206
+          },
+          {
+            "atom_identity": {
+              "state": "inactive_closed",
+              "model_number": 1,
+              "record_type": "HETATM",
+              "chain": "B",
+              "residue_number": "0",
+              "insertion_code": "",
+              "residue_name": "PHX",
+              "atom_name": "C22",
+              "altloc": "",
+              "element": "C",
+              "serial": 317,
+              "coordinates_angstrom": [
+                -2.645,
+                3.121,
+                -4.819
+              ]
+            },
+            "distance_angstrom": 2.581948
+          }
+        ],
+        "interpretation": "Coordinate geometry is descriptive only; it does not create a CONECT edge or assign hydrogen ownership."
+      },
       "expected_neutral_local_boundary_record_patterns": {
         "pheB1_N": {
           "expected_heavy_neighbors": [
@@ -1742,6 +1993,266 @@
       }
     }
   ],
+  "pheB1_N_hydrogen_geometry_comparison": {
+    "open_reference": {
+      "state": "active_open",
+      "coordinate_atom_identity": {
+        "state": "active_open",
+        "model_number": 1,
+        "record_type": "ATOM",
+        "chain": "B",
+        "residue_number": "1",
+        "insertion_code": "",
+        "residue_name": "PHE",
+        "atom_name": "H2",
+        "altloc": "",
+        "element": "H",
+        "serial": 48,
+        "coordinates_angstrom": [
+          -0.933,
+          11.316,
+          -10.828
+        ]
+      },
+      "distance_to_pheB1_N_angstrom": 1.012274,
+      "PheB1_N_hydrogen_conect_edge_present": true,
+      "hydrogen_conect_neighbor_identities": [
+        {
+          "state": "active_open",
+          "model_number": 1,
+          "record_type": "ATOM",
+          "chain": "B",
+          "residue_number": "1",
+          "insertion_code": "",
+          "residue_name": "PHE",
+          "atom_name": "N",
+          "altloc": "",
+          "element": "N",
+          "serial": 37,
+          "coordinates_angstrom": [
+            -0.152,
+            11.315,
+            -10.184
+          ]
+        }
+      ],
+      "local_angles_degrees": {
+        "CA_N_H": 113.869,
+        "B1_carbonyl_C_N_H": 118.805,
+        "CA_N_B1_carbonyl_C": 125.914
+      },
+      "nearest_heavy_atoms_by_distance": [
+        {
+          "atom_identity": {
+            "state": "active_open",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "N",
+            "altloc": "",
+            "element": "N",
+            "serial": 37,
+            "coordinates_angstrom": [
+              -0.152,
+              11.315,
+              -10.184
+            ]
+          },
+          "distance_angstrom": 1.012274
+        },
+        {
+          "atom_identity": {
+            "state": "active_open",
+            "model_number": 1,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue_name": "PHX",
+            "atom_name": "C2",
+            "altloc": "",
+            "element": "C",
+            "serial": 3,
+            "coordinates_angstrom": [
+              0.775,
+              10.36,
+              -10.298
+            ]
+          },
+          "distance_angstrom": 2.027831
+        },
+        {
+          "atom_identity": {
+            "state": "active_open",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "CA",
+            "altloc": "",
+            "element": "C",
+            "serial": 38,
+            "coordinates_angstrom": [
+              -0.328,
+              12.205,
+              -9.041
+            ]
+          },
+          "distance_angstrom": 2.085597
+        },
+        {
+          "atom_identity": {
+            "state": "active_open",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "O",
+            "altloc": "",
+            "element": "O",
+            "serial": 40,
+            "coordinates_angstrom": [
+              -2.591,
+              12.274,
+              -9.84
+            ]
+          },
+          "distance_angstrom": 2.154732
+        }
+      ],
+      "interpretation": "Coordinate geometry is descriptive only; it does not create a CONECT edge or assign hydrogen ownership."
+    },
+    "closed_unlinked_coordinate_candidate": {
+      "state": "inactive_closed",
+      "coordinate_atom_identity": {
+        "state": "inactive_closed",
+        "model_number": 1,
+        "record_type": "HETATM",
+        "chain": "B",
+        "residue_number": "0",
+        "insertion_code": "",
+        "residue_name": "PHX",
+        "atom_name": "H2A",
+        "altloc": "",
+        "element": "H",
+        "serial": 332,
+        "coordinates_angstrom": [
+          -1.281,
+          3.195,
+          -7.01
+        ]
+      },
+      "distance_to_pheB1_N_angstrom": 1.006376,
+      "PheB1_N_hydrogen_conect_edge_present": false,
+      "hydrogen_conect_neighbor_identities": [],
+      "local_angles_degrees": {
+        "CA_N_H": 116.916,
+        "B1_carbonyl_C_N_H": 115.369,
+        "CA_N_B1_carbonyl_C": 127.66
+      },
+      "nearest_heavy_atoms_by_distance": [
+        {
+          "atom_identity": {
+            "state": "inactive_closed",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "N",
+            "altloc": "",
+            "element": "N",
+            "serial": 351,
+            "coordinates_angstrom": [
+              -1.515,
+              4.151,
+              -6.8
+            ]
+          },
+          "distance_angstrom": 1.006376
+        },
+        {
+          "atom_identity": {
+            "state": "inactive_closed",
+            "model_number": 1,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue_name": "PHX",
+            "atom_name": "C2",
+            "altloc": "",
+            "element": "C",
+            "serial": 316,
+            "coordinates_angstrom": [
+              -2.228,
+              4.336,
+              -5.674
+            ]
+          },
+          "distance_angstrom": 1.995892
+        },
+        {
+          "atom_identity": {
+            "state": "inactive_closed",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "CA",
+            "altloc": "",
+            "element": "C",
+            "serial": 352,
+            "coordinates_angstrom": [
+              -0.991,
+              5.192,
+              -7.726
+            ]
+          },
+          "distance_angstrom": 2.141206
+        },
+        {
+          "atom_identity": {
+            "state": "inactive_closed",
+            "model_number": 1,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue_name": "PHX",
+            "atom_name": "C22",
+            "altloc": "",
+            "element": "C",
+            "serial": 317,
+            "coordinates_angstrom": [
+              -2.645,
+              3.121,
+              -4.819
+            ]
+          },
+          "distance_angstrom": 2.581948
+        }
+      ],
+      "interpretation": "Coordinate geometry is descriptive only; it does not create a CONECT edge or assign hydrogen ownership."
+    },
+    "closed_minus_open_deltas": {
+      "distance_to_pheB1_N_angstrom": -0.006,
+      "CA_N_H": 3.047,
+      "B1_carbonyl_C_N_H": -3.436,
+      "CA_N_B1_carbonyl_C": 1.746
+    },
+    "interpretation": "The closed PHX H2A coordinate is geometrically similar to the open-state PheB1 N H2 record, including its N-H distance and local angles. H2A has no PheB1 N CONECT edge, so this is compatibility evidence only; no hydrogen owner is assigned and no coordinate or record is repaired."
+  },
   "discrepancies": [
     {
       "id": "pheB1_N_hydrogen_connectivity_open_closed_difference",
@@ -1771,7 +2282,267 @@
         "has_pheB1_N_conect_edge": false,
         "interpretation": "distance observation only; no hydrogen ownership is assigned"
       },
-      "interpretation": "PHX H2A is 1.006 \u00c5 from PheB1 N but has no CONECT edge to it. The coordinate file does not establish hydrogen ownership; no reassignment or repair was made.",
+      "geometry_comparison": {
+        "open_reference": {
+          "state": "active_open",
+          "coordinate_atom_identity": {
+            "state": "active_open",
+            "model_number": 1,
+            "record_type": "ATOM",
+            "chain": "B",
+            "residue_number": "1",
+            "insertion_code": "",
+            "residue_name": "PHE",
+            "atom_name": "H2",
+            "altloc": "",
+            "element": "H",
+            "serial": 48,
+            "coordinates_angstrom": [
+              -0.933,
+              11.316,
+              -10.828
+            ]
+          },
+          "distance_to_pheB1_N_angstrom": 1.012274,
+          "PheB1_N_hydrogen_conect_edge_present": true,
+          "hydrogen_conect_neighbor_identities": [
+            {
+              "state": "active_open",
+              "model_number": 1,
+              "record_type": "ATOM",
+              "chain": "B",
+              "residue_number": "1",
+              "insertion_code": "",
+              "residue_name": "PHE",
+              "atom_name": "N",
+              "altloc": "",
+              "element": "N",
+              "serial": 37,
+              "coordinates_angstrom": [
+                -0.152,
+                11.315,
+                -10.184
+              ]
+            }
+          ],
+          "local_angles_degrees": {
+            "CA_N_H": 113.869,
+            "B1_carbonyl_C_N_H": 118.805,
+            "CA_N_B1_carbonyl_C": 125.914
+          },
+          "nearest_heavy_atoms_by_distance": [
+            {
+              "atom_identity": {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue_name": "PHE",
+                "atom_name": "N",
+                "altloc": "",
+                "element": "N",
+                "serial": 37,
+                "coordinates_angstrom": [
+                  -0.152,
+                  11.315,
+                  -10.184
+                ]
+              },
+              "distance_angstrom": 1.012274
+            },
+            {
+              "atom_identity": {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue_name": "PHX",
+                "atom_name": "C2",
+                "altloc": "",
+                "element": "C",
+                "serial": 3,
+                "coordinates_angstrom": [
+                  0.775,
+                  10.36,
+                  -10.298
+                ]
+              },
+              "distance_angstrom": 2.027831
+            },
+            {
+              "atom_identity": {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue_name": "PHE",
+                "atom_name": "CA",
+                "altloc": "",
+                "element": "C",
+                "serial": 38,
+                "coordinates_angstrom": [
+                  -0.328,
+                  12.205,
+                  -9.041
+                ]
+              },
+              "distance_angstrom": 2.085597
+            },
+            {
+              "atom_identity": {
+                "state": "active_open",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue_name": "PHE",
+                "atom_name": "O",
+                "altloc": "",
+                "element": "O",
+                "serial": 40,
+                "coordinates_angstrom": [
+                  -2.591,
+                  12.274,
+                  -9.84
+                ]
+              },
+              "distance_angstrom": 2.154732
+            }
+          ],
+          "interpretation": "Coordinate geometry is descriptive only; it does not create a CONECT edge or assign hydrogen ownership."
+        },
+        "closed_unlinked_coordinate_candidate": {
+          "state": "inactive_closed",
+          "coordinate_atom_identity": {
+            "state": "inactive_closed",
+            "model_number": 1,
+            "record_type": "HETATM",
+            "chain": "B",
+            "residue_number": "0",
+            "insertion_code": "",
+            "residue_name": "PHX",
+            "atom_name": "H2A",
+            "altloc": "",
+            "element": "H",
+            "serial": 332,
+            "coordinates_angstrom": [
+              -1.281,
+              3.195,
+              -7.01
+            ]
+          },
+          "distance_to_pheB1_N_angstrom": 1.006376,
+          "PheB1_N_hydrogen_conect_edge_present": false,
+          "hydrogen_conect_neighbor_identities": [],
+          "local_angles_degrees": {
+            "CA_N_H": 116.916,
+            "B1_carbonyl_C_N_H": 115.369,
+            "CA_N_B1_carbonyl_C": 127.66
+          },
+          "nearest_heavy_atoms_by_distance": [
+            {
+              "atom_identity": {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue_name": "PHE",
+                "atom_name": "N",
+                "altloc": "",
+                "element": "N",
+                "serial": 351,
+                "coordinates_angstrom": [
+                  -1.515,
+                  4.151,
+                  -6.8
+                ]
+              },
+              "distance_angstrom": 1.006376
+            },
+            {
+              "atom_identity": {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue_name": "PHX",
+                "atom_name": "C2",
+                "altloc": "",
+                "element": "C",
+                "serial": 316,
+                "coordinates_angstrom": [
+                  -2.228,
+                  4.336,
+                  -5.674
+                ]
+              },
+              "distance_angstrom": 1.995892
+            },
+            {
+              "atom_identity": {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "ATOM",
+                "chain": "B",
+                "residue_number": "1",
+                "insertion_code": "",
+                "residue_name": "PHE",
+                "atom_name": "CA",
+                "altloc": "",
+                "element": "C",
+                "serial": 352,
+                "coordinates_angstrom": [
+                  -0.991,
+                  5.192,
+                  -7.726
+                ]
+              },
+              "distance_angstrom": 2.141206
+            },
+            {
+              "atom_identity": {
+                "state": "inactive_closed",
+                "model_number": 1,
+                "record_type": "HETATM",
+                "chain": "B",
+                "residue_number": "0",
+                "insertion_code": "",
+                "residue_name": "PHX",
+                "atom_name": "C22",
+                "altloc": "",
+                "element": "C",
+                "serial": 317,
+                "coordinates_angstrom": [
+                  -2.645,
+                  3.121,
+                  -4.819
+                ]
+              },
+              "distance_angstrom": 2.581948
+            }
+          ],
+          "interpretation": "Coordinate geometry is descriptive only; it does not create a CONECT edge or assign hydrogen ownership."
+        },
+        "closed_minus_open_deltas": {
+          "distance_to_pheB1_N_angstrom": -0.006,
+          "CA_N_H": 3.047,
+          "B1_carbonyl_C_N_H": -3.436,
+          "CA_N_B1_carbonyl_C": 1.746
+        },
+        "interpretation": "The closed PHX H2A coordinate is geometrically similar to the open-state PheB1 N H2 record, including its N-H distance and local angles. H2A has no PheB1 N CONECT edge, so this is compatibility evidence only; no hydrogen owner is assigned and no coordinate or record is repaired."
+      },
+      "interpretation": "Closed PHX H2A has local coordinates similar to the open-state H2 record at PheB1 N, but it has no CONECT edge to that N. This is compatibility evidence only; the coordinate file does not establish hydrogen ownership, and no reassignment or repair was made.",
       "heavy_atom_boundary_closure_affected": false
     }
   ],
