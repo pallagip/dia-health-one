@@ -169,8 +169,6 @@ This work updates source-derived component graphs, a neutral full-conjugate grap
 
 The current chemistry and parameter evidence is summarized for independent review in [`NNC2215_FORCE_FIELD_REVIEW.md`](NNC2215_FORCE_FIELD_REVIEW.md). The review packet records the unresolved graph, microstate, B1/B29 cap, charge, and cross-boundary decisions that must be addressed before an OpenMM target system can be approved.
 
-The internal publication-style draft is available as [PDF](manuscript/NNC2215_model_readiness_draft.pdf) and [LaTeX source](manuscript/NNC2215_model_readiness_draft.tex). It reports the current no-go for target-binding MD pending independent chemistry and parameter review; authorship, disclosures, a DOI archive, and journal-specific formatting remain open before submission. The PDF was compiled from the source with Tectonic 0.17.0 using `tectonic --keep-logs --outdir research/manuscript research/manuscript/NNC2215_model_readiness_draft.tex` from the repository root.
-
 ### Source-derived full insulin–NNC2215 neutral graph
 
 [`data/nnc2215-full-conjugate-graph.json`](data/nnc2215-full-conjugate-graph.json) records the assembled neutral constitutional graph of the full desB30 insulin–NNC2215 conjugate. It joins RDKit 2026.03.1 `MolFromFASTA` neutral residue templates for chains A and B with the mapped B1 glucoside and B29 linker–roof fragments and the three disulfides A6–A11, A7–B7, and A20–B19. The source caps are replaced at PheB1 N and LysB29 NZ as specified by the map legends. The ledger records provenance for every atom and bond: residue-template or source-map origins, explicit attachment-join operations, or declared insulin-disulfide connectivity. Hydrogens are implicit in the graph and have a per-atom ledger.
