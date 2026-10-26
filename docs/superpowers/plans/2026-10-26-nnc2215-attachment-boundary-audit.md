@@ -27,6 +27,7 @@
 - [x] Resolve the six expected candidate heavy-atom pairs by full identity in open and closed states: PheB1 N–PHX C2, LYS B29 NZ–LYX B30 CD1, and MC C31–LYX B30 CD6 (open) / C (closed). Require each named `LINK` once and each atom identity once.
 - [x] Resolve native context pairs PheB1 N–CA and LysB29 CE–NZ from candidate `CONECT`/`LINK` adjacency and assert a unique observation. Report each attachment and native-context distance as a coordinate observation after resolving identities; do not rank mappings or infer bond order from geometry.
 - [x] For PheB1 N and LysB29 NZ, record adjacent heavy-atom identities and CONECT hydrogen identities. Separately measure the PheB1 N to nearby PHX H2A distance when present. Require the observed open H2 and closed absent-neighbor/nearby H2A pattern to be explicitly surfaced as a discrepancy; do not assign the hydrogen to another atom or edit any file.
+- [x] Follow-up: compare the open PheB1 N–H2 coordinates with the closed PHX H2A coordinates using N–H distance, local N-centered angles, and nearest heavy atoms. Record the comparison as geometry only; it must not add connectivity or assign hydrogen ownership.
 - [x] Check expected neutral local boundary patterns against observed records as observations: PheB1 N context CA + B1 carbonyl + one hydrogen; LysB29 NZ context CE + carbamate carbonyl + one hydrogen. Keep incomplete or inconsistent hydrogen records separate from the heavy-atom closure result.
 - [x] Hash the candidate PDBs before and after parsing and fail if either changes. Check existing source graph/map/audit hashes or graph summaries and exact-match counts against the recorded audit inputs; fail on unexpected changes.
 - [x] Emit `dia-health-one.nnc2215-attachment-boundary-audit.v1` with source paths/hashes, state-specific boundary rows and distances, local neighbor ledgers, discrepancy list, limits, and an assessment that can pass only when all six unique heavy-atom joins and both native context joins resolve. Keep hydrogen chemistry and full conjugate readiness open.
@@ -38,6 +39,7 @@
 - [x] Add the exact rerun command for the new script, result JSON path, and dashboard download link.
 - [x] State that the three heavy-atom attachment boundaries and two native residue context edges close in the corrected model-built candidates if the generated audit supports that result.
 - [x] Report the PheB1 open/closed hydrogen-record discrepancy and nearby closed PHX H2A observation without assigning or correcting hydrogen ownership. Describe the LysB29 NZ H record as coordinate-file connectivity evidence only.
+- [x] Record the open H2 / closed PHX H2A distance and local-angle comparison, while keeping the absent closed CONECT edge and unresolved ownership explicit in the README, reconciliation notes, compute status, milestone report, and dashboard.
 - [x] Keep the 16 B29 mappings per state and existing carboxylate-label ambiguity intact. Do not imply the local boundary audit makes a unique full source-to-PDB atom map.
 - [x] Explicitly leave full conjugate graph/bond orders/stereochemistry, whole-protein protonation and charge, force-field validation, target-binding MD, and clinical readiness unresolved.
 - [x] Label the coordinate files as corrected model-built candidates, not experimentally solved structures, and avoid changing any PDB, SMILES, source map, or existing topology-audit result.
@@ -48,6 +50,7 @@
 
 - [x] Run `micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/audit_nnc2215_attachment_boundaries.py` in the configured chemistry environment.
 - [x] Confirm the audit reports six unique attachment `LINK` edges, four unique native-context joins, and the expected open/closed PheB1 hydrogen observation; verify all recorded candidate PDB hashes match the reconciliation record and are unchanged after execution.
+- [x] Confirm the closed PHX H2A is nearest to PheB1 N and that the report's geometry values remain descriptive only; verify no PDB identity, coordinates, or CONECT edges were changed.
 - [x] Inspect the JSON for resolved atom identities, coordinates/distance units, provenance, ambiguity, failure behavior, and scoped limitations; confirm no coordinates or hydrogen ownership were modified or inferred.
 - [x] Run `git diff --check` and inspect the changed README, reconciliation text, and dashboard section for accurate scope and working relative links.
 

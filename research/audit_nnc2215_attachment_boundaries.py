@@ -345,6 +345,64 @@ def pair_distance(left: Atom, right: Atom) -> float:
     return math.sqrt(sum((a - b) ** 2 for a, b in zip(left.xyz, right.xyz)))
 
 
+def angle_degrees(left: Atom, center: Atom, right: Atom) -> float:
+    left_vector = tuple(a - b for a, b in zip(left.xyz, center.xyz))
+    right_vector = tuple(a - b for a, b in zip(right.xyz, center.xyz))
+    dot = sum(a * b for a, b in zip(left_vector, right_vector))
+    left_norm = math.sqrt(sum(value * value for value in left_vector))
+    right_norm = math.sqrt(sum(value * value for value in right_vector))
+    if left_norm == 0.0 or right_norm == 0.0:
+        raise ValueError("Cannot calculate an angle from coincident coordinates")
+    cosine = max(-1.0, min(1.0, dot / (left_norm * right_norm)))
+    return math.degrees(math.acos(cosine))
+
+
+def phe_n_hydrogen_geometry(
+    state: str,
+    hydrogen: Atom,
+    phe_n: Atom,
+    phe_ca: Atom,
+    b1_carbonyl: Atom,
+    atoms: list[Atom],
+    conect_adjacency: dict[int, set[int]],
+) -> dict[str, Any]:
+    nearest_heavy_atoms = sorted(
+        (atom for atom in atoms if atom.element != "H"),
+        key=lambda atom: pair_distance(hydrogen, atom),
+    )[:4]
+    hydrogen_conect_neighbors = [
+        atom for atom in atoms
+        if atom.serial in conect_adjacency.get(hydrogen.serial, set())
+    ]
+    return {
+        "state": state,
+        "coordinate_atom_identity": hydrogen.identity(state),
+        "distance_to_pheB1_N_angstrom": round(pair_distance(hydrogen, phe_n), 6),
+        "PheB1_N_hydrogen_conect_edge_present": (
+            hydrogen.serial in conect_adjacency.get(phe_n.serial, set())
+        ),
+        "hydrogen_conect_neighbor_identities": [
+            atom.identity(state) for atom in sorted(hydrogen_conect_neighbors, key=atom_sort_key)
+        ],
+        "local_angles_degrees": {
+            "CA_N_H": round(angle_degrees(phe_ca, phe_n, hydrogen), 3),
+            "B1_carbonyl_C_N_H": round(angle_degrees(b1_carbonyl, phe_n, hydrogen), 3),
+            "CA_N_B1_carbonyl_C": round(angle_degrees(phe_ca, phe_n, b1_carbonyl), 3),
+        },
+        "nearest_heavy_atoms_by_distance": [
+            {
+                "atom_identity": atom.identity(state),
+                "distance_angstrom": round(pair_distance(hydrogen, atom), 6),
+            }
+            for atom in nearest_heavy_atoms
+        ],
+        "interpretation": (
+            "Coordinate geometry is descriptive only; it does not create a CONECT edge "
+            "or assign hydrogen ownership."
+        ),
+    }
+
+
 def atom_sort_key(atom: Atom) -> tuple[Any, ...]:
     return atom.model_number, atom.chain, atom.residue_number, atom.insertion_code, atom.residue, atom.name, atom.serial
 
@@ -751,6 +809,22 @@ def main() -> None:
         if len(lys_hydrogens) != 1 or lys_hydrogens[0]["atom_name"] != "HZ2":
             raise ValueError(f"LysB29 NZ must have the recorded HZ2 CONECT hydrogen neighbor in {state}")
 
+        if state == "active_open":
+            phe_hydrogen = atoms_by_serial[phe_hydrogens[0]["serial"]]
+        else:
+            if h2a is None:
+                raise ValueError("Closed candidate must retain the observed PHX H2A coordinate record")
+            phe_hydrogen = h2a
+        phe_hydrogen_geometry = phe_n_hydrogen_geometry(
+            state,
+            phe_hydrogen,
+            resolved["phe_n"],
+            resolved["phe_ca"],
+            resolved["b1_carbonyl"],
+            atoms,
+            conect_adjacency,
+        )
+
         h2a_observation = None
         if h2a is not None:
             h2a_distance = pair_distance(resolved["phe_n"], h2a)
@@ -791,6 +865,7 @@ def main() -> None:
                 "pheB1_N": phe_neighbors,
                 "lysB29_NZ": lys_neighbors,
             },
+            "pheB1_N_hydrogen_geometry": phe_hydrogen_geometry,
             "expected_neutral_local_boundary_record_patterns": expected_neutral_patterns,
             "pheB1_H2A_proximity_observation": h2a_observation,
         })
@@ -807,6 +882,41 @@ def main() -> None:
         closed_h2a["distance_from_pheB1_N_angstrom"], 1.006, abs_tol=0.001
     ):
         raise ValueError("Closed PHX H2A must remain a 1.006 Å proximity observation without PheB1 N CONECT")
+
+    open_h_geometry = open_report["pheB1_N_hydrogen_geometry"]
+    closed_h_geometry = closed_report["pheB1_N_hydrogen_geometry"]
+    geometry_parameters = (
+        "distance_to_pheB1_N_angstrom",
+        "CA_N_H",
+        "B1_carbonyl_C_N_H",
+        "CA_N_B1_carbonyl_C",
+    )
+    geometry_values = {
+        "distance_to_pheB1_N_angstrom": (
+            open_h_geometry["distance_to_pheB1_N_angstrom"],
+            closed_h_geometry["distance_to_pheB1_N_angstrom"],
+        ),
+        **{
+            angle_name: (
+                open_h_geometry["local_angles_degrees"][angle_name],
+                closed_h_geometry["local_angles_degrees"][angle_name],
+            )
+            for angle_name in geometry_parameters[1:]
+        },
+    }
+    hydrogen_geometry_comparison = {
+        "open_reference": open_h_geometry,
+        "closed_unlinked_coordinate_candidate": closed_h_geometry,
+        "closed_minus_open_deltas": {
+            key: round(closed_value - open_value, 3)
+            for key, (open_value, closed_value) in geometry_values.items()
+        },
+        "interpretation": (
+            "The closed PHX H2A coordinate is geometrically similar to the open-state PheB1 N H2 record, "
+            "including its N-H distance and local angles. H2A has no PheB1 N CONECT edge, so this is "
+            "compatibility evidence only; no hydrogen owner is assigned and no coordinate or record is repaired."
+        ),
+    }
 
     final_hashes = {key: sha256(path) for key, path in PATHS.items()}
     if final_hashes != initial_hashes:
@@ -860,13 +970,15 @@ def main() -> None:
             },
         },
         "states": state_reports,
+        "pheB1_N_hydrogen_geometry_comparison": hydrogen_geometry_comparison,
         "discrepancies": [{
             "id": "pheB1_N_hydrogen_connectivity_open_closed_difference",
             "state": "inactive_closed",
             "expected_neutral_local_pattern": "PheB1 N has one hydrogen neighbor in addition to CA and the B1 carbonyl carbon",
             "observed_pdb_connectivity": "PheB1 N has no CONECT hydrogen neighbor in the closed candidate; the open candidate records H2 as a CONECT neighbor",
             "nearby_observation": closed_h2a,
-            "interpretation": "PHX H2A is 1.006 Å from PheB1 N but has no CONECT edge to it. The coordinate file does not establish hydrogen ownership; no reassignment or repair was made.",
+            "geometry_comparison": hydrogen_geometry_comparison,
+            "interpretation": "Closed PHX H2A has local coordinates similar to the open-state H2 record at PheB1 N, but it has no CONECT edge to that N. This is compatibility evidence only; the coordinate file does not establish hydrogen ownership, and no reassignment or repair was made.",
             "heavy_atom_boundary_closure_affected": False,
         }],
         "assessment": {
