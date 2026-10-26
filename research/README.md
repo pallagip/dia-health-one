@@ -175,6 +175,19 @@ Re-run from the repository root with:
 micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/audit_nnc2215_full_conjugate_graph.py
 ```
 
+### OpenFF Sage label-coverage audit
+
+[`data/nnc2215-forcefield-label-coverage.json`](data/nnc2215-forcefield-label-coverage.json) records label coverage from OpenFF Sage 2.3.0 on the neutral 507-heavy-atom full constitutional graph and on all eight protonation combinations of the three carboxyl groups in the isolated roof macrocycle fragment. The full graph received labels for 461 constraints, 988 bonds, 1,753 angles, 2,569 proper torsions, 225 improper torsions, and 968 vdW terms; the label operation returned no electrostatics terms. Constraint, bond, angle, proper-torsion, and vdW counts match independently derived topology expectations for the full graph and each roof state. Improper-torsion counts are recorded, but their completeness is not independently derived. This is label matching, not partial-charge assignment or validation of a hybrid insulin–conjugate force field. Roof-fragment states are not pKa-weighted, and the full graph remains stereochemically incomplete and coordinate-free.
+
+The audit records input, script, and lockfile SHA-256 values and checks exact package versions from the macOS ARM64 lock. To recreate its environment and result from the repository root:
+
+```sh
+micromamba create -p /tmp/dho-pag-chem --file research/pag-chemistry-environment-macos-arm64.lock.txt
+micromamba run -p /tmp/dho-pag-chem python research/audit_nnc2215_forcefield_label_coverage.py
+```
+
+The result is limited to matching Sage labels against topology-derived expectations for constraints, bonds, angles, proper torsions, and vdW interactions; it reports but does not independently validate improper-torsion completeness. It does not validate atom mapping, stereochemistry, protonation populations, atom-localized charges, protein-force-field compatibility, geometry, an OpenMM system, target MD, binding affinity, or clinical activity.
+
 ### Conditional pH 7.4 charge-state ledger
 
 [`data/nnc2215-physiological-charge-states.json`](data/nnc2215-physiological-charge-states.json) records a group-level formal-charge envelope from the neutral graph. Its conventional starting candidate treats GluA4/GluA17/GluB13/GluB21, both chain C termini, and all three B29 macrocycle carboxyls as deprotonated; ArgB22 and the free GlyA1 N terminus are protonated; HisB5 and HisB10 retain the neutral tautomers in the pinned RDKit templates. Under those stated assumptions, the candidate is C325H454N79O97S6 with net formal charge −7.
