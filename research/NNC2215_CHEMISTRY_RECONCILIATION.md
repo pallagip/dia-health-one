@@ -115,6 +115,14 @@ AmberTools 26 Antechamber and parmchk2 completed with GAFF2 and AM1-BCC. The raw
 
 This is a provisional local-fragment result, not a validated B1 force field. Charges depend on the active/open model geometry and the AsnB3 NH2 cap; the cap omits the rest of AsnB3 and surrounding protein. The PheB1 hydrogen-record discrepancy, protein-bound cross-boundary terms, B29 mapping and charge state, full-system protonation, and hybrid force-field compatibility remain unresolved. No complete topology, OpenMM system, MD, affinity result, or clinical conclusion was produced; the validated-conjugate-force-field count remains zero.
 
+## Full insulin–NNC2215 coordinate mapping ledger — 26 October 2026
+
+The [`coordinate mapping ledger`](data/nnc2215-full-coordinate-mapping.json) joins the full 507-heavy-atom source-derived graph to each corrected, model-built candidate. It maps all 398 insulin-template atoms by exact residue identity, composes the unique B1 assignment with all 16 exact B29 assignments per state, and checks that B1 map 1 resolves to PheB1 N and B29 map 92 resolves to LysB29 NZ. B29 map 84 remains the carbamate carbonyl carbon node. Each assignment covers 507 distinct graph nodes and candidate serials; the separate open-state BGL residue contains 12 heavy atoms and has no CONECT/LINK join to the mapped graph.
+
+The report stores shared graph-atom and source-bond tables, candidate atom identity/XYZ tables, and one graph-index-to-PDB-serial vector plus 527 bond distances per mapping. This preserves each full assignment without duplicating unchanged PDB records. Of the edges, 518 C/N/O cases receive the previously disclosed broad heuristic interval screen; all nine sulfur-containing edges are unscreened. Out-of-range flags are retained without ranking or removing any map. These geometry records do not establish bond orders or chemical correctness.
+
+The script verifies the source and candidate hashes and confirms the PDB candidates remain unchanged. This is heavy-atom coordinate coverage, not an experimentally resolved structure or a validated topology. The 16 B29 mappings remain ambiguous; PheB1 hydrogen ownership, whole-system microstates, complete bond-order transfer, roof stereochemistry, custom junction parameters, full force-field validation, OpenMM, and target MD remain open. Reproduce with `python3 research/audit_nnc2215_full_coordinate_mapping.py`.
+
 ## Provisional chemical assignments
 
 These are source-informed expectations for further chemistry review, not final force-field assignments:
