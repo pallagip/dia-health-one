@@ -11,6 +11,7 @@
 - The read-only comparison measures open PheB1 H2 at 1.012274 Å from N and closed PHX H2A at 1.006376 Å. Their two N-centered angles differ by 3.047° and 3.436°. The closed H2A has no PheB1 N `CONECT` edge, so the geometry is compatibility evidence only. No atom ownership or PDB edit was made.
 - The full graph-to-coordinate ledger retains all 16 B29 mappings per state and all 527 source-edge distances per mapping. B29 fragment charge results vary slightly across mappings; no map is selected as authoritative.
 - The current chemistry and parameter evidence is collected in [`NNC2215_FORCE_FIELD_REVIEW.md`](NNC2215_FORCE_FIELD_REVIEW.md). It is a review packet, not a force-field approval. The immediate gate is independent chemistry and parameter review before a full OpenMM system is assembled.
+- Prepared an internal scientific manuscript draft with LaTeX source and PDF. It consolidates the published-data arithmetic, 507-heavy-atom coordinate mapping, conditional charge ledger, B1/B29 fragment pilots, and the independent-review gate. It is not submission-ready: author details, disclosures, DOI archiving, and journal formatting remain open. The manuscript is available from the [research dashboard](https://www.diahealth.one/research/).
 
 NNC2215 is an existing published candidate. This milestone advances model readiness and does not constitute discovery of a new drug.
 
