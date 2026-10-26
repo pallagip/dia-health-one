@@ -188,6 +188,23 @@ micromamba run -p /tmp/dho-pag-chem python research/audit_nnc2215_forcefield_lab
 
 The result is limited to matching Sage labels against topology-derived expectations for constraints, bonds, angles, proper torsions, and vdW interactions; it reports but does not independently validate improper-torsion completeness. It does not validate atom mapping, stereochemistry, protonation populations, atom-localized charges, protein-force-field compatibility, geometry, an OpenMM system, target MD, binding affinity, or clinical activity.
 
+### Hybrid Amber template feasibility inventory — 26 October 2026
+
+[`data/nnc2215-hybrid-feasibility.json`](data/nnc2215-hybrid-feasibility.json) inventories the full source-derived graph against the residue-template names in the pinned OpenMM Amber14 XML include tree. It classifies 50 insulin residues: 16 of 17 observed residue-name labels have literal Amber template names. The graph's NE2-bound histidine hydrogens support HIE as a candidate by inference; the six disulfide cysteines are CYX candidates. The source-mapped appendages contribute 109 heavy atoms, and the audit records the two cross-boundary joins: PheB1 N to B1 map 2 and LysB29 NZ to B29 map 84.
+
+This is a template-name and provenance inventory, not exact residue-template matching. Plain PHE/LYS templates do not parameterize the attached glucoside, linker, triazole, or roof, and the PheB1/LysB29 junction terms still require custom treatment. Terminal and physiological charge compatibility, atom-level charges, custom parameters, and an OpenMM system remain unresolved. Status: `AMBER_TEMPLATE_CANDIDATES_IDENTIFIED; CUSTOM_CONJUGATE_PARAMETERS_REQUIRED`; the validated conjugate-force-field count remains zero.
+
+Whole-graph NAGL charge assignment would extrapolate from its published test-size coverage: the largest reported heavy-atom test bin is 80–89 atoms, with two molecules in that bin and none above it, while this graph has 507 heavy atoms. The highest reported total-atom test bin is 160–169; the source table reports bins rather than an exact maximum. The official AmberTools modified-polymer-residue workflow is a relevant precedent, but its generated charges and types require review; the documented OpenFF Sage/ff14SB Interchange example combines separate components experimentally and does not validate this covalent conjugate. See the audit's source links for the [NAGL model](https://docs.openforcefield.org/projects/nagl-models/en/stable/models/openff-gnn-am1bcc-1.0.0/), [AmberTools tutorial](https://ambermd.org/tutorials/basic/tutorial5/index.php), and [OpenFF Interchange example](https://docs.openforcefield.org/en/latest/examples/openforcefield/openff-interchange/protein_ligand/protein_ligand.html).
+
+Recreate the audit from the repository root in an environment built from the recorded lock:
+
+```sh
+micromamba create -p /tmp/dho-hybrid-feasibility --file research/pag-chemistry-environment-macos-arm64.lock.txt
+micromamba run -p /tmp/dho-hybrid-feasibility python research/audit_nnc2215_hybrid_feasibility.py
+```
+
+The run records input, lock, and every included Amber XML checksum. It does not assign partial charges, generate force-field parameters, create coordinates or an OpenMM system, or run dynamics.
+
 ### Conditional pH 7.4 charge-state ledger
 
 [`data/nnc2215-physiological-charge-states.json`](data/nnc2215-physiological-charge-states.json) records a group-level formal-charge envelope from the neutral graph. Its conventional starting candidate treats GluA4/GluA17/GluB13/GluB21, both chain C termini, and all three B29 macrocycle carboxyls as deprotonated; ArgB22 and the free GlyA1 N terminus are protonated; HisB5 and HisB10 retain the neutral tautomers in the pinned RDKit templates. Under those stated assumptions, the candidate is C325H454N79O97S6 with net formal charge −7.

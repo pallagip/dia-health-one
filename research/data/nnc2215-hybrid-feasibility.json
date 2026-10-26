@@ -1,0 +1,2036 @@
+{
+  "amber_xml_inventory": {
+    "data_directory_basis": "openmm.app.__file__ parent / data",
+    "included_xml_files": [
+      {
+        "path": "amber14-all.xml",
+        "sha256": "96d635545c36ce248e37d23ea82fa05ce4d2e1a6a42cd6d0ec5db3cfe30ca44c"
+      },
+      {
+        "path": "amber14/DNA.OL15.xml",
+        "sha256": "200e7cd116481fb47ed50bfd29deefb84a1e488d73d262c3f3f278b36b80ffa5"
+      },
+      {
+        "path": "amber14/RNA.OL3.xml",
+        "sha256": "61b793a49ded3c9c3bd9fbab328bc1b20b2b4ce7bc2358d537892ca64b085127"
+      },
+      {
+        "path": "amber14/lipid17.xml",
+        "sha256": "f974506df14202973637cf5e1d094af5e6098eb04afd2b68c523589ffcf2e780"
+      },
+      {
+        "path": "amber14/protein.ff14SB.xml",
+        "sha256": "d9f9779c09d67cd5f8bc657692f174ffab14c469dfd06d560ac1899fa7e976b8"
+      }
+    ],
+    "residue_template_name_count": 152,
+    "residue_template_names": [
+      "A",
+      "A3",
+      "A5",
+      "ACE",
+      "ALA",
+      "AN",
+      "ARG",
+      "ASH",
+      "ASN",
+      "ASP",
+      "C",
+      "C3",
+      "C5",
+      "CALA",
+      "CARG",
+      "CASN",
+      "CASP",
+      "CCYS",
+      "CCYX",
+      "CGLN",
+      "CGLU",
+      "CGLY",
+      "CHID",
+      "CHIE",
+      "CHIP",
+      "CHL1",
+      "CHYP",
+      "CILE",
+      "CLEU",
+      "CLYS",
+      "CMET",
+      "CN",
+      "CPHE",
+      "CPRO",
+      "CSER",
+      "CTHR",
+      "CTRP",
+      "CTYR",
+      "CVAL",
+      "CYM",
+      "CYS",
+      "CYX",
+      "DA",
+      "DA3",
+      "DA5",
+      "DAN",
+      "DAPA",
+      "DAPC",
+      "DAPE",
+      "DAPG",
+      "DAPS",
+      "DC",
+      "DC3",
+      "DC5",
+      "DCN",
+      "DG",
+      "DG3",
+      "DG5",
+      "DGN",
+      "DLPA",
+      "DLPC",
+      "DLPE",
+      "DLPG",
+      "DLPS",
+      "DMPA",
+      "DMPC",
+      "DMPE",
+      "DMPG",
+      "DMPS",
+      "DOPA",
+      "DOPC",
+      "DOPE",
+      "DOPG",
+      "DOPS",
+      "DPPA",
+      "DPPC",
+      "DPPE",
+      "DPPG",
+      "DPPS",
+      "DSPA",
+      "DSPC",
+      "DSPE",
+      "DSPG",
+      "DSPS",
+      "DT",
+      "DT3",
+      "DT5",
+      "DTN",
+      "G",
+      "G3",
+      "G5",
+      "GLH",
+      "GLN",
+      "GLU",
+      "GLY",
+      "GN",
+      "HID",
+      "HIE",
+      "HIP",
+      "HYP",
+      "ILE",
+      "LEU",
+      "LYN",
+      "LYS",
+      "MET",
+      "NALA",
+      "NARG",
+      "NASN",
+      "NASP",
+      "NCYS",
+      "NCYX",
+      "NGLN",
+      "NGLU",
+      "NGLY",
+      "NHE",
+      "NHID",
+      "NHIE",
+      "NHIP",
+      "NILE",
+      "NLEU",
+      "NLYS",
+      "NME",
+      "NMET",
+      "NPHE",
+      "NPRO",
+      "NSER",
+      "NTHR",
+      "NTRP",
+      "NTYR",
+      "NVAL",
+      "OHE",
+      "PHE",
+      "POPA",
+      "POPC",
+      "POPE",
+      "POPG",
+      "POPS",
+      "PRO",
+      "SDPA",
+      "SDPC",
+      "SDPE",
+      "SDPG",
+      "SDPS",
+      "SER",
+      "THR",
+      "TRP",
+      "TYR",
+      "U",
+      "U3",
+      "U5",
+      "UN",
+      "VAL"
+    ]
+  },
+  "assessment": {
+    "coordinates_generated_or_used": false,
+    "force_field_parameters_generated": false,
+    "insulin_residue_name_labels": 17,
+    "insulin_residues_classified": 50,
+    "insulin_to_conjugate_join_count": 2,
+    "literal_template_name_labels": 16,
+    "mapped_fragment_heavy_atoms": 109,
+    "molecular_dynamics_run": false,
+    "openmm_system_generated": false,
+    "partial_charges_generated": false,
+    "status": "AMBER_TEMPLATE_CANDIDATES_IDENTIFIED; CUSTOM_CONJUGATE_PARAMETERS_REQUIRED",
+    "validated_conjugate_force_field_count": 0
+  },
+  "conjugate_scope": {
+    "custom_conjugate_parameters_required": true,
+    "insulin_to_conjugate_joins": [
+      {
+        "bond_type": "SINGLE",
+        "conjugate": {
+          "component": "B1",
+          "element": "C",
+          "map_role": "B1 linker carbonyl carbon; amide carbonyl attached to PheB1 N.",
+          "node_id": "atom_0399",
+          "source_map_id": 2
+        },
+        "edge_id": "bond_0425",
+        "protein": {
+          "atom_name": "N",
+          "chain": "B",
+          "node_id": "atom_0164",
+          "residue_name": "PHE",
+          "residue_number": 1
+        }
+      },
+      {
+        "bond_type": "SINGLE",
+        "conjugate": {
+          "component": "B29",
+          "element": "C",
+          "map_role": "source linker C3, carbamate carbonyl carbon",
+          "node_id": "atom_0461",
+          "source_map_id": 84
+        },
+        "edge_id": "bond_0524",
+        "protein": {
+          "atom_name": "NZ",
+          "chain": "B",
+          "node_id": "atom_0397",
+          "residue_name": "LYS",
+          "residue_number": 29
+        }
+      }
+    ],
+    "mapped_fragment_heavy_atom_count": 109,
+    "mapped_source_fragments_by_component": [
+      {
+        "component": "B1",
+        "heavy_atom_count": 18,
+        "mapped_atoms": [
+          {
+            "element": "C",
+            "map_role": "B1 linker carbonyl carbon; amide carbonyl attached to PheB1 N.",
+            "node_id": "atom_0399",
+            "source_map_id": 2
+          },
+          {
+            "element": "O",
+            "map_role": "B1 amide carbonyl oxygen.",
+            "node_id": "atom_0400",
+            "source_map_id": 3
+          },
+          {
+            "element": "C",
+            "map_role": "Methylene alpha to the carbonyl; source NMR group OCH2C=O.",
+            "node_id": "atom_0401",
+            "source_map_id": 4
+          },
+          {
+            "element": "O",
+            "map_role": "Ether oxygen between the carbonyl-alpha methylene and the ethylene linker.",
+            "node_id": "atom_0402",
+            "source_map_id": 5
+          },
+          {
+            "element": "C",
+            "map_role": "First ethylene-linker methylene, adjacent to map 5.",
+            "node_id": "atom_0403",
+            "source_map_id": 6
+          },
+          {
+            "element": "C",
+            "map_role": "Second ethylene-linker methylene, adjacent to the glycosidic-side ether oxygen map 8.",
+            "node_id": "atom_0404",
+            "source_map_id": 7
+          },
+          {
+            "element": "O",
+            "map_role": "Glycosidic-side ether oxygen linking the ethylene linker to glucose C1.",
+            "node_id": "atom_0405",
+            "source_map_id": 8
+          },
+          {
+            "element": "C",
+            "map_role": "Anomeric glucose carbon; beta-D glycosidic attachment site.",
+            "node_id": "atom_0406",
+            "source_map_id": 9
+          },
+          {
+            "element": "O",
+            "map_role": "Glucopyranose ring oxygen between glucose C5 and C1.",
+            "node_id": "atom_0416",
+            "source_map_id": 10
+          },
+          {
+            "element": "C",
+            "map_role": "Glucose C2 stereocenter bearing a free hydroxyl at map 12.",
+            "node_id": "atom_0407",
+            "source_map_id": 11
+          },
+          {
+            "element": "O",
+            "map_role": "Free hydroxyl oxygen at glucose C2.",
+            "node_id": "atom_0408",
+            "source_map_id": 12
+          },
+          {
+            "element": "C",
+            "map_role": "Glucose C3 stereocenter bearing a free hydroxyl at map 14.",
+            "node_id": "atom_0409",
+            "source_map_id": 13
+          },
+          {
+            "element": "O",
+            "map_role": "Free hydroxyl oxygen at glucose C3.",
+            "node_id": "atom_0410",
+            "source_map_id": 14
+          },
+          {
+            "element": "C",
+            "map_role": "Glucose C4 stereocenter bearing a free hydroxyl at map 16.",
+            "node_id": "atom_0411",
+            "source_map_id": 15
+          },
+          {
+            "element": "O",
+            "map_role": "Free hydroxyl oxygen at glucose C4.",
+            "node_id": "atom_0412",
+            "source_map_id": 16
+          },
+          {
+            "element": "C",
+            "map_role": "Glucose C5 stereocenter; bears the C6 hydroxymethyl substituent and ring oxygen map 10.",
+            "node_id": "atom_0413",
+            "source_map_id": 17
+          },
+          {
+            "element": "C",
+            "map_role": "Glucose C6 hydroxymethyl carbon.",
+            "node_id": "atom_0414",
+            "source_map_id": 18
+          },
+          {
+            "element": "O",
+            "map_role": "Free hydroxyl oxygen at glucose C6.",
+            "node_id": "atom_0415",
+            "source_map_id": 19
+          }
+        ]
+      },
+      {
+        "component": "B29",
+        "heavy_atom_count": 91,
+        "mapped_atoms": [
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_aromatic_ring",
+            "node_id": "atom_0417",
+            "source_map_id": 1
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_aromatic_ring",
+            "node_id": "atom_0420",
+            "source_map_id": 2
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_aromatic_ring",
+            "node_id": "atom_0421",
+            "source_map_id": 3
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_aromatic_ring",
+            "node_id": "atom_0424",
+            "source_map_id": 4
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_aromatic_ring",
+            "node_id": "atom_0425",
+            "source_map_id": 5
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_aromatic_ring",
+            "node_id": "atom_0428",
+            "source_map_id": 6
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_aromatic_ring",
+            "node_id": "atom_0449",
+            "source_map_id": 7
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_aromatic_ring",
+            "node_id": "atom_0464",
+            "source_map_id": 8
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_aromatic_ring",
+            "node_id": "atom_0465",
+            "source_map_id": 9
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_aromatic_ring",
+            "node_id": "atom_0467",
+            "source_map_id": 10
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_aromatic_ring",
+            "node_id": "atom_0468",
+            "source_map_id": 11
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_aromatic_ring",
+            "node_id": "atom_0448",
+            "source_map_id": 12
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0495",
+            "source_map_id": 13
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0496",
+            "source_map_id": 14
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0497",
+            "source_map_id": 15
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0498",
+            "source_map_id": 16
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0502",
+            "source_map_id": 17
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0494",
+            "source_map_id": 18
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0476",
+            "source_map_id": 19
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0477",
+            "source_map_id": 20
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0478",
+            "source_map_id": 21
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0479",
+            "source_map_id": 22
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0483",
+            "source_map_id": 23
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0475",
+            "source_map_id": 24
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0434",
+            "source_map_id": 25
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0435",
+            "source_map_id": 26
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0436",
+            "source_map_id": 27
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0437",
+            "source_map_id": 28
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0441",
+            "source_map_id": 29
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_spacer_aromatic_rings_in_graph_order",
+            "node_id": "atom_0442",
+            "source_map_id": 30
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_floor_ethyl_substituents",
+            "node_id": "atom_0418",
+            "source_map_id": 31
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_floor_ethyl_substituents",
+            "node_id": "atom_0419",
+            "source_map_id": 32
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_floor_ethyl_substituents",
+            "node_id": "atom_0422",
+            "source_map_id": 33
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_floor_ethyl_substituents",
+            "node_id": "atom_0423",
+            "source_map_id": 34
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_floor_ethyl_substituents",
+            "node_id": "atom_0426",
+            "source_map_id": 35
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_floor_ethyl_substituents",
+            "node_id": "atom_0427",
+            "source_map_id": 36
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0507",
+            "source_map_id": 37
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0506",
+            "source_map_id": 38
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0504",
+            "source_map_id": 39
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0505",
+            "source_map_id": 40
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0503",
+            "source_map_id": 41
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0488",
+            "source_map_id": 42
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0487",
+            "source_map_id": 43
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0485",
+            "source_map_id": 44
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0486",
+            "source_map_id": 45
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0484",
+            "source_map_id": 46
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0429",
+            "source_map_id": 47
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0430",
+            "source_map_id": 48
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0431",
+            "source_map_id": 49
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0432",
+            "source_map_id": 50
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/floor_to_spacer_urea_bridges",
+            "node_id": "atom_0433",
+            "source_map_id": 51
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0499",
+            "source_map_id": 52
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0500",
+            "source_map_id": 53
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0501",
+            "source_map_id": 54
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0493",
+            "source_map_id": 55
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0491",
+            "source_map_id": 56
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0492",
+            "source_map_id": 57
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0490",
+            "source_map_id": 58
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0489",
+            "source_map_id": 59
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0480",
+            "source_map_id": 60
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0481",
+            "source_map_id": 61
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0482",
+            "source_map_id": 62
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0474",
+            "source_map_id": 63
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0472",
+            "source_map_id": 64
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0473",
+            "source_map_id": 65
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0471",
+            "source_map_id": 66
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0470",
+            "source_map_id": 67
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0438",
+            "source_map_id": 68
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0439",
+            "source_map_id": 69
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/three_carboxyl_groups",
+            "node_id": "atom_0440",
+            "source_map_id": 70
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0443",
+            "source_map_id": 71
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0444",
+            "source_map_id": 72
+          },
+          {
+            "element": "O",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0445",
+            "source_map_id": 73
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0446",
+            "source_map_id": 74
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/spacer_to_roof_urea_bridges",
+            "node_id": "atom_0447",
+            "source_map_id": 75
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_methyl_substituents",
+            "node_id": "atom_0466",
+            "source_map_id": 76
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_methyl_substituents",
+            "node_id": "atom_0469",
+            "source_map_id": 77
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_tail_source_C21_C22_C23/C21",
+            "node_id": "atom_0450",
+            "source_map_id": 78
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_tail_source_C21_C22_C23/C22",
+            "node_id": "atom_0451",
+            "source_map_id": 79
+          },
+          {
+            "element": "C",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/roof_tail_source_C21_C22_C23/C23",
+            "node_id": "atom_0452",
+            "source_map_id": 80
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/azide_precursor_nitrogens_now_triazole_N1_N2_N3",
+            "node_id": "atom_0453",
+            "source_map_id": 81
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/azide_precursor_nitrogens_now_triazole_N1_N2_N3",
+            "node_id": "atom_0454",
+            "source_map_id": 82
+          },
+          {
+            "element": "N",
+            "map_role": "B29 product source map/inherited_roof_map_ids_1_to_83/azide_precursor_nitrogens_now_triazole_N1_N2_N3",
+            "node_id": "atom_0455",
+            "source_map_id": 83
+          },
+          {
+            "element": "C",
+            "map_role": "source linker C3, carbamate carbonyl carbon",
+            "node_id": "atom_0461",
+            "source_map_id": 84
+          },
+          {
+            "element": "C",
+            "map_role": "source linker C4, oxygen-linked methylene",
+            "node_id": "atom_0459",
+            "source_map_id": 85
+          },
+          {
+            "element": "C",
+            "map_role": "source linker C5 methylene",
+            "node_id": "atom_0458",
+            "source_map_id": 86
+          },
+          {
+            "element": "C",
+            "map_role": "source linker C6 methylene adjacent to C7",
+            "node_id": "atom_0457",
+            "source_map_id": 87
+          },
+          {
+            "element": "C",
+            "map_role": "source linker C7 internal alkyne carbon; product triazole C4",
+            "node_id": "atom_0456",
+            "source_map_id": 88
+          },
+          {
+            "element": "C",
+            "map_role": "source linker C8 terminal alkyne carbon; product triazole C5",
+            "node_id": "atom_0463",
+            "source_map_id": 89
+          },
+          {
+            "element": "O",
+            "map_role": "linker carbamate carbonyl oxygen",
+            "node_id": "atom_0462",
+            "source_map_id": 90
+          },
+          {
+            "element": "O",
+            "map_role": "linker carbamate ether oxygen",
+            "node_id": "atom_0460",
+            "source_map_id": 91
+          }
+        ]
+      }
+    ],
+    "ordinary_phe_or_lys_templates_parameterize_the_attached_conjugate": false
+  },
+  "custom_parameterization_precedents": {
+    "ambertools_custom_polymer_residue": {
+      "classification": "official modified-polymer-residue workflow precedent; not NNC2215 parameterization evidence",
+      "generated_charges_and_types_require_review": true,
+      "source": "https://ambermd.org/tutorials/basic/tutorial5/index.php",
+      "workflow": [
+        "Antechamber",
+        "prepgen",
+        "parmchk2",
+        "LEaP"
+      ]
+    },
+    "isolated_pag_gaff2_result": {
+      "classification": "ligand-only toolchain precedent; does not parameterize the NNC2215 conjugate or hybrid",
+      "source": "data/pag-gaff2-validation.json"
+    },
+    "openff_sage_ff14sb_interchange_example": {
+      "classification": "experimental combination example for separate protein and ligand components",
+      "demonstrates_covalent_conjugate_parameterization": false,
+      "source": "https://docs.openforcefield.org/en/latest/examples/openforcefield/openff-interchange/protein_ligand/protein_ligand.html"
+    }
+  },
+  "graph": {
+    "atom_count_after_hydrogen_expansion": 968,
+    "bond_count": 527,
+    "coordinates_present": false,
+    "formal_charge": 0,
+    "formula": "C325H461N79O97S6",
+    "heavy_atom_count": 507,
+    "representation": "source-derived neutral constitutional graph",
+    "sage_label_coverage_context": {
+      "electrostatics_label_count": 0,
+      "label_coverage": "pass_for_topology_derived_categories",
+      "partial_charges_assigned_by_this_audit": false,
+      "scope": "OpenFF Sage 2.3.0 chemical-perception label coverage only"
+    }
+  },
+  "inputs": {
+    "audit_script": {
+      "path": "audit_nnc2215_hybrid_feasibility.py",
+      "sha256": "202c7f7fb9f26209da350fc9a3936dbf884cc43a46dd9189d19111dcf4fa0170"
+    },
+    "full_conjugate_graph": {
+      "path": "data/nnc2215-full-conjugate-graph.json",
+      "sha256": "fb9feaed3537196515c62656d890c0e92b42c9b7da15955dd516b1d82dd178dc"
+    },
+    "pinned_environment_lock": {
+      "path": "pag-chemistry-environment-macos-arm64.lock.txt",
+      "sha256": "608d83e646a04e939b5b6b38619337b2822966113beb60c8368f90ecba803d6d"
+    },
+    "sage_label_coverage": {
+      "path": "data/nnc2215-forcefield-label-coverage.json",
+      "sha256": "59fc4d7ce4d87b6246fdff2d8dfe237aa7d1523f33f0d45571888edaf67dd989"
+    }
+  },
+  "insulin_template_coverage": {
+    "disulfide_cysteines": {
+      "edges": [
+        {
+          "amber_variant_candidate": "CYX",
+          "edge_id": "bond_0525",
+          "residue_1": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 6
+          },
+          "residue_2": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 11
+          }
+        },
+        {
+          "amber_variant_candidate": "CYX",
+          "edge_id": "bond_0526",
+          "residue_1": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 7
+          },
+          "residue_2": {
+            "chain": "B",
+            "residue_name": "CYS",
+            "residue_number": 7
+          }
+        },
+        {
+          "amber_variant_candidate": "CYX",
+          "edge_id": "bond_0527",
+          "residue_1": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 20
+          },
+          "residue_2": {
+            "chain": "B",
+            "residue_name": "CYS",
+            "residue_number": 19
+          }
+        }
+      ],
+      "residues": [
+        {
+          "amber_variant_candidate": "CYX",
+          "chain": "A",
+          "partner": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 11
+          },
+          "residue_name": "CYS",
+          "residue_number": 6
+        },
+        {
+          "amber_variant_candidate": "CYX",
+          "chain": "A",
+          "partner": {
+            "chain": "B",
+            "residue_name": "CYS",
+            "residue_number": 7
+          },
+          "residue_name": "CYS",
+          "residue_number": 7
+        },
+        {
+          "amber_variant_candidate": "CYX",
+          "chain": "A",
+          "partner": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 6
+          },
+          "residue_name": "CYS",
+          "residue_number": 11
+        },
+        {
+          "amber_variant_candidate": "CYX",
+          "chain": "A",
+          "partner": {
+            "chain": "B",
+            "residue_name": "CYS",
+            "residue_number": 19
+          },
+          "residue_name": "CYS",
+          "residue_number": 20
+        },
+        {
+          "amber_variant_candidate": "CYX",
+          "chain": "B",
+          "partner": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 7
+          },
+          "residue_name": "CYS",
+          "residue_number": 7
+        },
+        {
+          "amber_variant_candidate": "CYX",
+          "chain": "B",
+          "partner": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 20
+          },
+          "residue_name": "CYS",
+          "residue_number": 19
+        }
+      ],
+      "sg_sg_edge_count": 3
+    },
+    "exact_template_matching": "unresolved; name and variant candidate availability is not an exact template match",
+    "histidine_variant_candidates": {
+      "NE2_hydrogen_counts": [
+        {
+          "chain": "B",
+          "hydrogen_count": 1,
+          "residue_name": "HIS",
+          "residue_number": 5
+        },
+        {
+          "chain": "B",
+          "hydrogen_count": 1,
+          "residue_name": "HIS",
+          "residue_number": 10
+        }
+      ],
+      "available_templates": [
+        "HID",
+        "HIE",
+        "HIP"
+      ],
+      "candidate_supported_by_graph_hydrogen_ledger": "HIE",
+      "exact_template_match_established": false,
+      "observed_residues": [
+        {
+          "chain": "B",
+          "residue_name": "HIS",
+          "residue_number": 5
+        },
+        {
+          "chain": "B",
+          "residue_name": "HIS",
+          "residue_number": 10
+        }
+      ]
+    },
+    "insulin_residue_name_labels": [
+      "ALA",
+      "ARG",
+      "ASN",
+      "CYS",
+      "GLN",
+      "GLU",
+      "GLY",
+      "HIS",
+      "ILE",
+      "LEU",
+      "LYS",
+      "PHE",
+      "PRO",
+      "SER",
+      "THR",
+      "TYR",
+      "VAL"
+    ],
+    "literal_template_residue_name_label_count": 16,
+    "literal_template_residue_name_labels": [
+      "ALA",
+      "ARG",
+      "ASN",
+      "CYS",
+      "GLN",
+      "GLU",
+      "GLY",
+      "ILE",
+      "LEU",
+      "LYS",
+      "PHE",
+      "PRO",
+      "SER",
+      "THR",
+      "TYR",
+      "VAL"
+    ],
+    "modified_sites": [
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": true,
+        "literal_template_name_available": true,
+        "ordinary_residue_template_covers_attached_conjugate": false,
+        "residue_name": "PHE",
+        "residue_number": 1
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": true,
+        "literal_template_name_available": true,
+        "ordinary_residue_template_covers_attached_conjugate": false,
+        "residue_name": "LYS",
+        "residue_number": 29
+      }
+    ],
+    "observed_residue_name_label_count": 17,
+    "residue_count": 50,
+    "residues": [
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 4,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLY",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLY",
+        "residue_number": 1,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "ILE",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "ILE",
+        "residue_number": 2,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 7,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "VAL",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "VAL",
+        "residue_number": 3,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 9,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLU",
+        "residue_number": 4,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 9,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLN",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLN",
+        "residue_number": 5,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "CYS",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "CYS",
+        "residue_number": 6,
+        "variant_evidence": {
+          "graph_disulfide_partner": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 11
+          },
+          "interpretation": "CYX is a disulfide-cysteine candidate; exact residue-template matching remains unresolved."
+        },
+        "variant_template_candidates_available": [
+          "CYX"
+        ]
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "CYS",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "CYS",
+        "residue_number": 7,
+        "variant_evidence": {
+          "graph_disulfide_partner": {
+            "chain": "B",
+            "residue_name": "CYS",
+            "residue_number": 7
+          },
+          "interpretation": "CYX is a disulfide-cysteine candidate; exact residue-template matching remains unresolved."
+        },
+        "variant_template_candidates_available": [
+          "CYX"
+        ]
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 7,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "THR",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "THR",
+        "residue_number": 8,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "SER",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "SER",
+        "residue_number": 9,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "ILE",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "ILE",
+        "residue_number": 10,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "CYS",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "CYS",
+        "residue_number": 11,
+        "variant_evidence": {
+          "graph_disulfide_partner": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 6
+          },
+          "interpretation": "CYX is a disulfide-cysteine candidate; exact residue-template matching remains unresolved."
+        },
+        "variant_template_candidates_available": [
+          "CYX"
+        ]
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "SER",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "SER",
+        "residue_number": 12,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "LEU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "LEU",
+        "residue_number": 13,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 12,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "TYR",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "TYR",
+        "residue_number": 14,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 9,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLN",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLN",
+        "residue_number": 15,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "LEU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "LEU",
+        "residue_number": 16,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 9,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLU",
+        "residue_number": 17,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "ASN",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "ASN",
+        "residue_number": 18,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 12,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "TYR",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "TYR",
+        "residue_number": 19,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "CYS",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "CYS",
+        "residue_number": 20,
+        "variant_evidence": {
+          "graph_disulfide_partner": {
+            "chain": "B",
+            "residue_name": "CYS",
+            "residue_number": 19
+          },
+          "interpretation": "CYX is a disulfide-cysteine candidate; exact residue-template matching remains unresolved."
+        },
+        "variant_template_candidates_available": [
+          "CYX"
+        ]
+      },
+      {
+        "chain": "A",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 9,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "ASN",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "ASN",
+        "residue_number": 21,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": true,
+        "exact_template_match_established": false,
+        "graph_atom_count": 11,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "PHE",
+        "modified_site": true,
+        "ordinary_residue_template_covers_attached_conjugate": false,
+        "residue_name": "PHE",
+        "residue_number": 1,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 7,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "VAL",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "VAL",
+        "residue_number": 2,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "ASN",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "ASN",
+        "residue_number": 3,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 9,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLN",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLN",
+        "residue_number": 4,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 10,
+        "literal_residue_name_template_available": false,
+        "literal_template_name": null,
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "HIS",
+        "residue_number": 5,
+        "variant_evidence": {
+          "NE2_hydrogen_count_in_neutral_graph": 1,
+          "candidate_supported_by_hydrogen_ledger": "HIE",
+          "interpretation": "HIE is a candidate; the ledger does not establish an exact Amber residue-template match."
+        },
+        "variant_template_candidates_available": [
+          "HID",
+          "HIE",
+          "HIP"
+        ]
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "LEU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "LEU",
+        "residue_number": 6,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "CYS",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "CYS",
+        "residue_number": 7,
+        "variant_evidence": {
+          "graph_disulfide_partner": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 7
+          },
+          "interpretation": "CYX is a disulfide-cysteine candidate; exact residue-template matching remains unresolved."
+        },
+        "variant_template_candidates_available": [
+          "CYX"
+        ]
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 4,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLY",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLY",
+        "residue_number": 8,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "SER",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "SER",
+        "residue_number": 9,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 10,
+        "literal_residue_name_template_available": false,
+        "literal_template_name": null,
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "HIS",
+        "residue_number": 10,
+        "variant_evidence": {
+          "NE2_hydrogen_count_in_neutral_graph": 1,
+          "candidate_supported_by_hydrogen_ledger": "HIE",
+          "interpretation": "HIE is a candidate; the ledger does not establish an exact Amber residue-template match."
+        },
+        "variant_template_candidates_available": [
+          "HID",
+          "HIE",
+          "HIP"
+        ]
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "LEU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "LEU",
+        "residue_number": 11,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 7,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "VAL",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "VAL",
+        "residue_number": 12,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 9,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLU",
+        "residue_number": 13,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 5,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "ALA",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "ALA",
+        "residue_number": 14,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "LEU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "LEU",
+        "residue_number": 15,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 12,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "TYR",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "TYR",
+        "residue_number": 16,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 8,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "LEU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "LEU",
+        "residue_number": 17,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 7,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "VAL",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "VAL",
+        "residue_number": 18,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 6,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "CYS",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "CYS",
+        "residue_number": 19,
+        "variant_evidence": {
+          "graph_disulfide_partner": {
+            "chain": "A",
+            "residue_name": "CYS",
+            "residue_number": 20
+          },
+          "interpretation": "CYX is a disulfide-cysteine candidate; exact residue-template matching remains unresolved."
+        },
+        "variant_template_candidates_available": [
+          "CYX"
+        ]
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 4,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLY",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLY",
+        "residue_number": 20,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 9,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLU",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLU",
+        "residue_number": 21,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 11,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "ARG",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "ARG",
+        "residue_number": 22,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 4,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "GLY",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "GLY",
+        "residue_number": 23,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 11,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "PHE",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "PHE",
+        "residue_number": 24,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 11,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "PHE",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "PHE",
+        "residue_number": 25,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 12,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "TYR",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "TYR",
+        "residue_number": 26,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 7,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "THR",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "THR",
+        "residue_number": 27,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": false,
+        "exact_template_match_established": false,
+        "graph_atom_count": 7,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "PRO",
+        "modified_site": false,
+        "ordinary_residue_template_covers_attached_conjugate": null,
+        "residue_name": "PRO",
+        "residue_number": 28,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      },
+      {
+        "chain": "B",
+        "custom_conjugate_parameters_required": true,
+        "exact_template_match_established": false,
+        "graph_atom_count": 10,
+        "literal_residue_name_template_available": true,
+        "literal_template_name": "LYS",
+        "modified_site": true,
+        "ordinary_residue_template_covers_attached_conjugate": false,
+        "residue_name": "LYS",
+        "residue_number": 29,
+        "variant_evidence": null,
+        "variant_template_candidates_available": []
+      }
+    ],
+    "residues_with_literal_template_names": 48,
+    "termini_and_charge_compatibility": "unresolved for the source-derived neutral graph and intended physiological charge states"
+  },
+  "nagl_model_size_domain": {
+    "current_graph_atoms_after_hydrogen_expansion": 968,
+    "current_graph_heavy_atoms": 507,
+    "published_peptide_training_context": {
+      "interpretation": "This describes the peptide training subset; the model also uses non-peptide training datasets.",
+      "training_peptide_fragment_count": 22690,
+      "training_peptide_fragments": "1-4 amino-acid residues"
+    },
+    "published_test_heavy_atom_distribution": {
+      "80_to_89_heavy_atoms": 2,
+      "90_or_more_heavy_atoms": 0,
+      "highest_test_heavy_atom_bin": "80-89"
+    },
+    "published_test_total_atom_count_highest_bin": "160-169",
+    "source": "https://docs.openforcefield.org/projects/nagl-models/en/stable/models/openff-gnn-am1bcc-1.0.0/",
+    "whole_graph_nagl_use": "extrapolation beyond the published test heavy-atom size coverage"
+  },
+  "not_established": [
+    "exact Amber residue-template matching or terminal-template compatibility",
+    "physiological protonation microstate or charge-state compatibility",
+    "partial charges or validated cross-boundary force-field terms",
+    "custom parameters for PHEB1, LYSB29, or the mapped conjugate fragments",
+    "unique B29 coordinate-based atom mapping; the source graph preserves its documented mapping ambiguity",
+    "complete stereochemistry or coordinate-based geometry validation",
+    "an OpenMM System, simulation-ready topology, or molecular dynamics result",
+    "binding pose, affinity, pharmacological efficacy, or clinical inference"
+  ],
+  "schema": "dia-health-one.nnc2215-hybrid-feasibility.v1",
+  "scope": "Amber template-name and source-provenance feasibility inventory only",
+  "software": {
+    "locked_package_artifacts": {
+      "ambertools": {
+        "filename": "ambertools-26.0-cuda_None_nompi_py312h52216ed_100.conda",
+        "md5": "b1ece4272978a9c2e5e261fd57c36222"
+      },
+      "openff-forcefields": {
+        "filename": "openff-forcefields-2026.09.0-pyhd8ed1ab_0.conda",
+        "md5": "e153131b1f6f1b5748128903dd397eb2"
+      },
+      "openff-interchange": {
+        "filename": "openff-interchange-0.5.5-pyh6e64f1f_0.conda",
+        "md5": "2b2d42dca9f32bc37cecd64c1a7e9691"
+      },
+      "openff-nagl": {
+        "filename": "openff-nagl-0.6.1-pyhb28b8f6_1.conda",
+        "md5": "290a67976c9d9c019d409ffbafcdf90b"
+      },
+      "openff-nagl-models": {
+        "filename": "openff-nagl-models-2026.09.0-pyhd8ed1ab_0.conda",
+        "md5": "b2ca7b9799b385ab37ee1b69b221d281"
+      },
+      "openff-toolkit": {
+        "filename": "openff-toolkit-0.19.0-pyhd8ed1ab_1.conda",
+        "md5": "7e9b580dfa34b8bb4fde2bf80b409328"
+      },
+      "openff-units": {
+        "filename": "openff-units-0.4.0-pyhac95a24_1.conda",
+        "md5": "dfe3a840e8372cab543ccbc80054e542"
+      },
+      "openmm": {
+        "filename": "openmm-8.6.1-py312h381a2f6_0_khronos.conda",
+        "md5": "c40923f1bfb9f33e6ff346455c20c2de"
+      },
+      "python": {
+        "filename": "python-3.12.15-hd05a0c4_2_cpython.conda",
+        "md5": "12831d178a990fa6feec258e45b23056"
+      },
+      "rdkit": {
+        "filename": "rdkit-2026.03.1-py312h7e68b95_0.conda",
+        "md5": "35d80006e89b60221990a17af73ac17e"
+      }
+    },
+    "locked_package_versions": {
+      "ambertools": "26.0",
+      "openff-forcefields": "2026.09.0",
+      "openff-interchange": "0.5.5",
+      "openff-nagl": "0.6.1",
+      "openff-nagl-models": "2026.09.0",
+      "openff-toolkit": "0.19.0",
+      "openff-units": "0.4.0",
+      "openmm": "8.6.1",
+      "python": "3.12.15",
+      "rdkit": "2026.03.1"
+    },
+    "nagl_model": "openff-gnn-am1bcc-1.0.0.pt",
+    "openmm_amber_xml_root": "amber14-all.xml",
+    "python_version": "3.12.15",
+    "sage_force_field": "openff-2.3.0.offxml"
+  }
+}
