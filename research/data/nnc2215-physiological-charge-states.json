@@ -1,0 +1,3560 @@
+{
+  "schema": "dia-health-one.nnc2215-physiological-charge-states.v1",
+  "run": {
+    "audit_script": "research/audit_nnc2215_physiological_charge_states.py",
+    "input_graph": "research/data/nnc2215-full-conjugate-graph.json",
+    "input_graph_sha256": "fb9feaed3537196515c62656d890c0e92b42c9b7da15955dd516b1d82dd178dc",
+    "pH_reference": 7.4,
+    "method": "Group-level formal-charge and proton-count bookkeeping from the neutral graph; no coordinates or pKa model used."
+  },
+  "representation_boundaries": {
+    "scope": "Conditional pH 7.4 candidate charge-state ledger for the source-derived full desB30 insulin\u2013NNC2215 neutral constitutional graph.",
+    "not_a_prediction": "No pKa values, Boltzmann populations, or experimentally measured microstate are assigned.",
+    "not_force_field_ready": "Formal charges are summed at functional-group level. No atom-localized partial charges, atom types, Lennard-Jones parameters, counterions, or solvent are provided.",
+    "coordinate_usage": "No coordinate files were read or edited; coordinates do not select any atom map or site state.",
+    "oxygen_labeling": "Carboxylate charge belongs to the functional group; no carbonyl versus anionic oxygen label is selected."
+  },
+  "neutral_input": {
+    "schema": "dia-health-one.nnc2215-full-conjugate-graph.v1",
+    "formula": "C325H461N79O97S6",
+    "total_formal_charge": 0,
+    "hydrogen_count": 461
+  },
+  "fixed_conventional_assumptions": {
+    "description": "These conventional ionization assignments are fixed for this bookkeeping envelope; local protein and macrocycle pKa shifts are not modeled.",
+    "groups": [
+      {
+        "site_id": "glu_A4",
+        "label": "Glu A4 sidechain carboxyl",
+        "site_type": "fixed_carboxylate_assumption",
+        "atom_node_ids": [
+          "atom_0026",
+          "atom_0027",
+          "atom_0028"
+        ],
+        "atom_names": [
+          "CD",
+          "OE1",
+          "OE2"
+        ],
+        "source_map_ids": null,
+        "neutral_graph_site_hydrogen_count": 1,
+        "state_options": [
+          {
+            "state": "deprotonated",
+            "group_formal_charge": -1,
+            "hydrogen_delta": -1
+          }
+        ]
+      },
+      {
+        "site_id": "glu_A17",
+        "label": "Glu A17 sidechain carboxyl",
+        "site_type": "fixed_carboxylate_assumption",
+        "atom_node_ids": [
+          "atom_0126",
+          "atom_0127",
+          "atom_0128"
+        ],
+        "atom_names": [
+          "CD",
+          "OE1",
+          "OE2"
+        ],
+        "source_map_ids": null,
+        "neutral_graph_site_hydrogen_count": 1,
+        "state_options": [
+          {
+            "state": "deprotonated",
+            "group_formal_charge": -1,
+            "hydrogen_delta": -1
+          }
+        ]
+      },
+      {
+        "site_id": "glu_B13",
+        "label": "Glu B13 sidechain carboxyl",
+        "site_type": "fixed_carboxylate_assumption",
+        "atom_node_ids": [
+          "atom_0264",
+          "atom_0265",
+          "atom_0266"
+        ],
+        "atom_names": [
+          "CD",
+          "OE1",
+          "OE2"
+        ],
+        "source_map_ids": null,
+        "neutral_graph_site_hydrogen_count": 1,
+        "state_options": [
+          {
+            "state": "deprotonated",
+            "group_formal_charge": -1,
+            "hydrogen_delta": -1
+          }
+        ]
+      },
+      {
+        "site_id": "glu_B21",
+        "label": "Glu B21 sidechain carboxyl",
+        "site_type": "fixed_carboxylate_assumption",
+        "atom_node_ids": [
+          "atom_0323",
+          "atom_0324",
+          "atom_0325"
+        ],
+        "atom_names": [
+          "CD",
+          "OE1",
+          "OE2"
+        ],
+        "source_map_ids": null,
+        "neutral_graph_site_hydrogen_count": 1,
+        "state_options": [
+          {
+            "state": "deprotonated",
+            "group_formal_charge": -1,
+            "hydrogen_delta": -1
+          }
+        ]
+      },
+      {
+        "site_id": "cterm_A21",
+        "label": "Chain A C-terminal carboxyl",
+        "site_type": "fixed_carboxylate_assumption",
+        "atom_node_ids": [
+          "atom_0157",
+          "atom_0158",
+          "atom_0163"
+        ],
+        "atom_names": [
+          "C",
+          "O",
+          "OXT"
+        ],
+        "source_map_ids": null,
+        "neutral_graph_site_hydrogen_count": 1,
+        "state_options": [
+          {
+            "state": "deprotonated",
+            "group_formal_charge": -1,
+            "hydrogen_delta": -1
+          }
+        ]
+      },
+      {
+        "site_id": "cterm_B29",
+        "label": "Chain B C-terminal carboxyl",
+        "site_type": "fixed_carboxylate_assumption",
+        "atom_node_ids": [
+          "atom_0391",
+          "atom_0392",
+          "atom_0398"
+        ],
+        "atom_names": [
+          "C",
+          "O",
+          "OXT"
+        ],
+        "source_map_ids": null,
+        "neutral_graph_site_hydrogen_count": 1,
+        "state_options": [
+          {
+            "state": "deprotonated",
+            "group_formal_charge": -1,
+            "hydrogen_delta": -1
+          }
+        ]
+      },
+      {
+        "site_id": "arg_B22",
+        "label": "ArgB22 guanidinium",
+        "site_type": "fixed_protonated_base_assumption",
+        "atom_node_ids": [
+          "atom_0333",
+          "atom_0334",
+          "atom_0335",
+          "atom_0336"
+        ],
+        "atom_names": [
+          "NE",
+          "CZ",
+          "NH1",
+          "NH2"
+        ],
+        "source_map_ids": null,
+        "neutral_graph_site_hydrogen_count": 4,
+        "state_options": [
+          {
+            "state": "protonated",
+            "group_formal_charge": 1,
+            "hydrogen_delta": 1
+          }
+        ]
+      }
+    ],
+    "group_formal_charge_delta": -5,
+    "hydrogen_delta_from_neutral_graph": -5
+  },
+  "enumerated_variable_groups": [
+    {
+      "site_id": "macrocycle_carboxyl_1",
+      "label": "B29 macrocycle carboxyl 1",
+      "site_type": "variable_carboxyl_group",
+      "atom_node_ids": [
+        "atom_0499",
+        "atom_0500",
+        "atom_0501"
+      ],
+      "atom_names": null,
+      "source_map_ids": [
+        52,
+        53,
+        54
+      ],
+      "neutral_graph_site_hydrogen_count": 1,
+      "state_options": [
+        {
+          "state": "deprotonated",
+          "group_formal_charge": -1,
+          "hydrogen_delta": -1
+        },
+        {
+          "state": "protonated",
+          "group_formal_charge": 0,
+          "hydrogen_delta": 0
+        }
+      ]
+    },
+    {
+      "site_id": "macrocycle_carboxyl_2",
+      "label": "B29 macrocycle carboxyl 2",
+      "site_type": "variable_carboxyl_group",
+      "atom_node_ids": [
+        "atom_0480",
+        "atom_0481",
+        "atom_0482"
+      ],
+      "atom_names": null,
+      "source_map_ids": [
+        60,
+        61,
+        62
+      ],
+      "neutral_graph_site_hydrogen_count": 1,
+      "state_options": [
+        {
+          "state": "deprotonated",
+          "group_formal_charge": -1,
+          "hydrogen_delta": -1
+        },
+        {
+          "state": "protonated",
+          "group_formal_charge": 0,
+          "hydrogen_delta": 0
+        }
+      ]
+    },
+    {
+      "site_id": "macrocycle_carboxyl_3",
+      "label": "B29 macrocycle carboxyl 3",
+      "site_type": "variable_carboxyl_group",
+      "atom_node_ids": [
+        "atom_0438",
+        "atom_0439",
+        "atom_0440"
+      ],
+      "atom_names": null,
+      "source_map_ids": [
+        68,
+        69,
+        70
+      ],
+      "neutral_graph_site_hydrogen_count": 1,
+      "state_options": [
+        {
+          "state": "deprotonated",
+          "group_formal_charge": -1,
+          "hydrogen_delta": -1
+        },
+        {
+          "state": "protonated",
+          "group_formal_charge": 0,
+          "hydrogen_delta": 0
+        }
+      ]
+    },
+    {
+      "site_id": "nterm_A1",
+      "label": "A-chain GlyA1 N terminus",
+      "site_type": "variable_ammonium_group",
+      "atom_node_ids": [
+        "atom_0001"
+      ],
+      "atom_names": [
+        "N"
+      ],
+      "source_map_ids": null,
+      "neutral_graph_site_hydrogen_count": 2,
+      "state_options": [
+        {
+          "state": "protonated",
+          "group_formal_charge": 1,
+          "hydrogen_delta": 1
+        },
+        {
+          "state": "neutral",
+          "group_formal_charge": 0,
+          "hydrogen_delta": 0
+        }
+      ]
+    },
+    {
+      "site_id": "his_B5",
+      "label": "HisB5 imidazole",
+      "site_type": "variable_histidine_group",
+      "atom_node_ids": [
+        "atom_0204",
+        "atom_0205",
+        "atom_0206",
+        "atom_0207",
+        "atom_0208"
+      ],
+      "atom_names": [
+        "CG",
+        "ND1",
+        "CD2",
+        "CE1",
+        "NE2"
+      ],
+      "source_map_ids": null,
+      "neutral_graph_site_hydrogen_count": 3,
+      "state_options": [
+        {
+          "state": "neutral_template_tautomer",
+          "tautomer": "epsilon2",
+          "group_formal_charge": 0,
+          "hydrogen_delta": 0
+        },
+        {
+          "state": "neutral_alternate_tautomer",
+          "tautomer": "delta1",
+          "group_formal_charge": 0,
+          "hydrogen_delta": 0
+        },
+        {
+          "state": "protonated",
+          "tautomer": "both_ring_nitrogens_protonated",
+          "group_formal_charge": 1,
+          "hydrogen_delta": 1
+        }
+      ]
+    },
+    {
+      "site_id": "his_B10",
+      "label": "HisB10 imidazole",
+      "site_type": "variable_histidine_group",
+      "atom_node_ids": [
+        "atom_0238",
+        "atom_0239",
+        "atom_0240",
+        "atom_0241",
+        "atom_0242"
+      ],
+      "atom_names": [
+        "CG",
+        "ND1",
+        "CD2",
+        "CE1",
+        "NE2"
+      ],
+      "source_map_ids": null,
+      "neutral_graph_site_hydrogen_count": 3,
+      "state_options": [
+        {
+          "state": "neutral_template_tautomer",
+          "tautomer": "epsilon2",
+          "group_formal_charge": 0,
+          "hydrogen_delta": 0
+        },
+        {
+          "state": "neutral_alternate_tautomer",
+          "tautomer": "delta1",
+          "group_formal_charge": 0,
+          "hydrogen_delta": 0
+        },
+        {
+          "state": "protonated",
+          "tautomer": "both_ring_nitrogens_protonated",
+          "group_formal_charge": 1,
+          "hydrogen_delta": 1
+        }
+      ]
+    }
+  ],
+  "excluded_sites": {
+    "tyrosine_phenols": [
+      {
+        "site_id": "tyr_A14_phenol",
+        "label": "Tyr A14 phenol",
+        "atom_node_id": "atom_0102",
+        "assumed_state": "neutral",
+        "reason": "Excluded from the conventional pH 7.4 baseline; no local pKa prediction or measurement is available."
+      },
+      {
+        "site_id": "tyr_A19_phenol",
+        "label": "Tyr A19 phenol",
+        "atom_node_id": "atom_0148",
+        "assumed_state": "neutral",
+        "reason": "Excluded from the conventional pH 7.4 baseline; no local pKa prediction or measurement is available."
+      },
+      {
+        "site_id": "tyr_B16_phenol",
+        "label": "Tyr B16 phenol",
+        "atom_node_id": "atom_0291",
+        "assumed_state": "neutral",
+        "reason": "Excluded from the conventional pH 7.4 baseline; no local pKa prediction or measurement is available."
+      },
+      {
+        "site_id": "tyr_B26_phenol",
+        "label": "Tyr B26 phenol",
+        "atom_node_id": "atom_0374",
+        "assumed_state": "neutral",
+        "reason": "Excluded from the conventional pH 7.4 baseline; no local pKa prediction or measurement is available."
+      }
+    ],
+    "disulfide_cysteines": "All six cysteines are in the three declared disulfides; no free thiol state is included.",
+    "modified_conjugate_endpoints": [
+      {
+        "site_id": "conjugated_PheB1_N",
+        "atom_node_id": "atom_0164",
+        "graph_formal_charge": 0,
+        "interpretation": "Acylated B-chain N terminus; not a free amine in this graph.",
+        "hydrogen_ownership": "Unresolved in the candidate PDB records; this ledger does not change it."
+      },
+      {
+        "site_id": "conjugated_LysB29_NZ",
+        "atom_node_id": "atom_0397",
+        "graph_formal_charge": 0,
+        "interpretation": "Carbamate-bound Lys epsilon nitrogen; not a free lysine amine in this graph."
+      }
+    ],
+    "other_groups": "All remaining neutral amides, alcohols, ethers, triazole, and aromatic groups are held in their neutral graph states for this envelope."
+  },
+  "canonical_candidate": {
+    "state_id": "mcddd_a1p_h5t_h10t",
+    "pH_reference": 7.4,
+    "site_states": {
+      "macrocycle_carboxyl_1": "deprotonated",
+      "macrocycle_carboxyl_2": "deprotonated",
+      "macrocycle_carboxyl_3": "deprotonated",
+      "nterm_A1": "protonated",
+      "his_B5": "neutral_template_tautomer",
+      "his_B10": "neutral_template_tautomer"
+    },
+    "fixed_group_charge_delta": -5,
+    "net_formal_charge": -7,
+    "formula": "C325H454N79O97S6",
+    "hydrogen_count": 454,
+    "hydrogen_delta_from_neutral_graph": -7,
+    "interpretation": "Convenient conventional starting candidate under declared assumptions; it is neither a measured state nor ranked by a pKa or population calculation."
+  },
+  "enumeration": {
+    "state_count": 144,
+    "factorization": {
+      "macrocycle_carboxyl_groups": {
+        "count": 3,
+        "states_each": 2
+      },
+      "A_chain_N_terminus": {
+        "count": 1,
+        "states": [
+          "protonated",
+          "neutral"
+        ]
+      },
+      "histidines": {
+        "count": 2,
+        "states_each": [
+          "neutral_template_tautomer",
+          "neutral_alternate_tautomer",
+          "protonated"
+        ]
+      }
+    },
+    "net_formal_charge_counts": {
+      "-8": 4,
+      "-7": 20,
+      "-6": 41,
+      "-5": 44,
+      "-4": 26,
+      "-3": 8,
+      "-2": 1
+    },
+    "net_formal_charge_range": [
+      -8,
+      -2
+    ],
+    "hydrogen_count_range": [
+      453,
+      459
+    ],
+    "probabilities_assigned": false,
+    "states": [
+      {
+        "state_index": 1,
+        "state_id": "mcddd_a1p_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 2,
+        "state_id": "mcddd_a1p_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 3,
+        "state_id": "mcddd_a1p_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 4,
+        "state_id": "mcddd_a1p_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 5,
+        "state_id": "mcddd_a1p_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 6,
+        "state_id": "mcddd_a1p_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 7,
+        "state_id": "mcddd_a1p_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 8,
+        "state_id": "mcddd_a1p_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 9,
+        "state_id": "mcddd_a1p_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 10,
+        "state_id": "mcddd_a1n_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -8,
+        "hydrogen_delta_from_neutral_graph": -8,
+        "formula": "C325H453N79O97S6",
+        "hydrogen_count": 453,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 11,
+        "state_id": "mcddd_a1n_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -8,
+        "hydrogen_delta_from_neutral_graph": -8,
+        "formula": "C325H453N79O97S6",
+        "hydrogen_count": 453,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 12,
+        "state_id": "mcddd_a1n_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 13,
+        "state_id": "mcddd_a1n_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -8,
+        "hydrogen_delta_from_neutral_graph": -8,
+        "formula": "C325H453N79O97S6",
+        "hydrogen_count": 453,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 14,
+        "state_id": "mcddd_a1n_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -8,
+        "hydrogen_delta_from_neutral_graph": -8,
+        "formula": "C325H453N79O97S6",
+        "hydrogen_count": 453,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 15,
+        "state_id": "mcddd_a1n_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 16,
+        "state_id": "mcddd_a1n_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 17,
+        "state_id": "mcddd_a1n_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 18,
+        "state_id": "mcddd_a1n_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 19,
+        "state_id": "mcddp_a1p_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 20,
+        "state_id": "mcddp_a1p_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 21,
+        "state_id": "mcddp_a1p_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 22,
+        "state_id": "mcddp_a1p_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 23,
+        "state_id": "mcddp_a1p_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 24,
+        "state_id": "mcddp_a1p_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 25,
+        "state_id": "mcddp_a1p_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 26,
+        "state_id": "mcddp_a1p_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 27,
+        "state_id": "mcddp_a1p_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 28,
+        "state_id": "mcddp_a1n_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 29,
+        "state_id": "mcddp_a1n_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 30,
+        "state_id": "mcddp_a1n_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 31,
+        "state_id": "mcddp_a1n_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 32,
+        "state_id": "mcddp_a1n_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 33,
+        "state_id": "mcddp_a1n_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 34,
+        "state_id": "mcddp_a1n_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 35,
+        "state_id": "mcddp_a1n_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 36,
+        "state_id": "mcddp_a1n_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 37,
+        "state_id": "mcdpd_a1p_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 38,
+        "state_id": "mcdpd_a1p_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 39,
+        "state_id": "mcdpd_a1p_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 40,
+        "state_id": "mcdpd_a1p_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 41,
+        "state_id": "mcdpd_a1p_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 42,
+        "state_id": "mcdpd_a1p_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 43,
+        "state_id": "mcdpd_a1p_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 44,
+        "state_id": "mcdpd_a1p_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 45,
+        "state_id": "mcdpd_a1p_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 46,
+        "state_id": "mcdpd_a1n_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 47,
+        "state_id": "mcdpd_a1n_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 48,
+        "state_id": "mcdpd_a1n_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 49,
+        "state_id": "mcdpd_a1n_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 50,
+        "state_id": "mcdpd_a1n_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 51,
+        "state_id": "mcdpd_a1n_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 52,
+        "state_id": "mcdpd_a1n_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 53,
+        "state_id": "mcdpd_a1n_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 54,
+        "state_id": "mcdpd_a1n_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 55,
+        "state_id": "mcdpp_a1p_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 56,
+        "state_id": "mcdpp_a1p_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 57,
+        "state_id": "mcdpp_a1p_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 58,
+        "state_id": "mcdpp_a1p_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 59,
+        "state_id": "mcdpp_a1p_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 60,
+        "state_id": "mcdpp_a1p_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 61,
+        "state_id": "mcdpp_a1p_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 62,
+        "state_id": "mcdpp_a1p_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 63,
+        "state_id": "mcdpp_a1p_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -3,
+        "hydrogen_delta_from_neutral_graph": -3,
+        "formula": "C325H458N79O97S6",
+        "hydrogen_count": 458,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 64,
+        "state_id": "mcdpp_a1n_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 65,
+        "state_id": "mcdpp_a1n_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 66,
+        "state_id": "mcdpp_a1n_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 67,
+        "state_id": "mcdpp_a1n_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 68,
+        "state_id": "mcdpp_a1n_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 69,
+        "state_id": "mcdpp_a1n_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 70,
+        "state_id": "mcdpp_a1n_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 71,
+        "state_id": "mcdpp_a1n_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 72,
+        "state_id": "mcdpp_a1n_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "deprotonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 73,
+        "state_id": "mcpdd_a1p_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 74,
+        "state_id": "mcpdd_a1p_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 75,
+        "state_id": "mcpdd_a1p_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 76,
+        "state_id": "mcpdd_a1p_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 77,
+        "state_id": "mcpdd_a1p_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 78,
+        "state_id": "mcpdd_a1p_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 79,
+        "state_id": "mcpdd_a1p_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 80,
+        "state_id": "mcpdd_a1p_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 81,
+        "state_id": "mcpdd_a1p_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 82,
+        "state_id": "mcpdd_a1n_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 83,
+        "state_id": "mcpdd_a1n_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 84,
+        "state_id": "mcpdd_a1n_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 85,
+        "state_id": "mcpdd_a1n_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 86,
+        "state_id": "mcpdd_a1n_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -7,
+        "hydrogen_delta_from_neutral_graph": -7,
+        "formula": "C325H454N79O97S6",
+        "hydrogen_count": 454,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 87,
+        "state_id": "mcpdd_a1n_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 88,
+        "state_id": "mcpdd_a1n_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 89,
+        "state_id": "mcpdd_a1n_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 90,
+        "state_id": "mcpdd_a1n_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 91,
+        "state_id": "mcpdp_a1p_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 92,
+        "state_id": "mcpdp_a1p_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 93,
+        "state_id": "mcpdp_a1p_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 94,
+        "state_id": "mcpdp_a1p_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 95,
+        "state_id": "mcpdp_a1p_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 96,
+        "state_id": "mcpdp_a1p_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 97,
+        "state_id": "mcpdp_a1p_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 98,
+        "state_id": "mcpdp_a1p_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 99,
+        "state_id": "mcpdp_a1p_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -3,
+        "hydrogen_delta_from_neutral_graph": -3,
+        "formula": "C325H458N79O97S6",
+        "hydrogen_count": 458,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 100,
+        "state_id": "mcpdp_a1n_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 101,
+        "state_id": "mcpdp_a1n_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 102,
+        "state_id": "mcpdp_a1n_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 103,
+        "state_id": "mcpdp_a1n_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 104,
+        "state_id": "mcpdp_a1n_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 105,
+        "state_id": "mcpdp_a1n_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 106,
+        "state_id": "mcpdp_a1n_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 107,
+        "state_id": "mcpdp_a1n_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 108,
+        "state_id": "mcpdp_a1n_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "deprotonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 109,
+        "state_id": "mcppd_a1p_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 110,
+        "state_id": "mcppd_a1p_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 111,
+        "state_id": "mcppd_a1p_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 112,
+        "state_id": "mcppd_a1p_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 113,
+        "state_id": "mcppd_a1p_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 114,
+        "state_id": "mcppd_a1p_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 115,
+        "state_id": "mcppd_a1p_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 116,
+        "state_id": "mcppd_a1p_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 117,
+        "state_id": "mcppd_a1p_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -3,
+        "hydrogen_delta_from_neutral_graph": -3,
+        "formula": "C325H458N79O97S6",
+        "hydrogen_count": 458,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 118,
+        "state_id": "mcppd_a1n_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 119,
+        "state_id": "mcppd_a1n_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 120,
+        "state_id": "mcppd_a1n_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 121,
+        "state_id": "mcppd_a1n_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 122,
+        "state_id": "mcppd_a1n_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -6,
+        "hydrogen_delta_from_neutral_graph": -6,
+        "formula": "C325H455N79O97S6",
+        "hydrogen_count": 455,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 123,
+        "state_id": "mcppd_a1n_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 124,
+        "state_id": "mcppd_a1n_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 125,
+        "state_id": "mcppd_a1n_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 126,
+        "state_id": "mcppd_a1n_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "deprotonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 127,
+        "state_id": "mcppp_a1p_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 128,
+        "state_id": "mcppp_a1p_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 129,
+        "state_id": "mcppp_a1p_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -3,
+        "hydrogen_delta_from_neutral_graph": -3,
+        "formula": "C325H458N79O97S6",
+        "hydrogen_count": 458,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 130,
+        "state_id": "mcppp_a1p_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 131,
+        "state_id": "mcppp_a1p_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 132,
+        "state_id": "mcppp_a1p_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -3,
+        "hydrogen_delta_from_neutral_graph": -3,
+        "formula": "C325H458N79O97S6",
+        "hydrogen_count": 458,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 133,
+        "state_id": "mcppp_a1p_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -3,
+        "hydrogen_delta_from_neutral_graph": -3,
+        "formula": "C325H458N79O97S6",
+        "hydrogen_count": 458,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 134,
+        "state_id": "mcppp_a1p_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -3,
+        "hydrogen_delta_from_neutral_graph": -3,
+        "formula": "C325H458N79O97S6",
+        "hydrogen_count": 458,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 135,
+        "state_id": "mcppp_a1p_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "protonated",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -2,
+        "hydrogen_delta_from_neutral_graph": -2,
+        "formula": "C325H459N79O97S6",
+        "hydrogen_count": 459,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 136,
+        "state_id": "mcppp_a1n_h5t_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 137,
+        "state_id": "mcppp_a1n_h5t_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 138,
+        "state_id": "mcppp_a1n_h5t_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_template_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "epsilon2",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 139,
+        "state_id": "mcppp_a1n_h5a_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 140,
+        "state_id": "mcppp_a1n_h5a_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -5,
+        "hydrogen_delta_from_neutral_graph": -5,
+        "formula": "C325H456N79O97S6",
+        "hydrogen_count": 456,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 141,
+        "state_id": "mcppp_a1n_h5a_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "neutral_alternate_tautomer",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "delta1",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 142,
+        "state_id": "mcppp_a1n_h5p_h10t",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_template_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "epsilon2"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 143,
+        "state_id": "mcppp_a1n_h5p_h10a",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "neutral_alternate_tautomer"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "delta1"
+        },
+        "net_formal_charge": -4,
+        "hydrogen_delta_from_neutral_graph": -4,
+        "formula": "C325H457N79O97S6",
+        "hydrogen_count": 457,
+        "probability_assigned": false
+      },
+      {
+        "state_index": 144,
+        "state_id": "mcppp_a1n_h5p_h10p",
+        "variable_site_states": {
+          "macrocycle_carboxyl_1": "protonated",
+          "macrocycle_carboxyl_2": "protonated",
+          "macrocycle_carboxyl_3": "protonated",
+          "nterm_A1": "neutral",
+          "his_B5": "protonated",
+          "his_B10": "protonated"
+        },
+        "histidine_tautomers": {
+          "his_B5": "both_ring_nitrogens_protonated",
+          "his_B10": "both_ring_nitrogens_protonated"
+        },
+        "net_formal_charge": -3,
+        "hydrogen_delta_from_neutral_graph": -3,
+        "formula": "C325H458N79O97S6",
+        "hydrogen_count": 458,
+        "probability_assigned": false
+      }
+    ]
+  },
+  "checks": {
+    "input_graph_hash_recorded": true,
+    "neutral_input_formula_matches_expected": true,
+    "neutral_atom_element_counts_match_formula_ledger": true,
+    "input_chain_sequences_match_expected": true,
+    "all_neutral_input_atom_formal_charges_are_zero": true,
+    "carboxyl_groups_have_neutral_input_charge_hydrogens_and_topology": true,
+    "conjugate_join_records_and_graph_edges_match_declared_sites": true,
+    "declared_disulfides_present_with_neutral_cysteine_sulfur_states": true,
+    "four_Glu_sidechains_found": true,
+    "two_chain_C_termini_found": true,
+    "three_mapped_macrocycle_acids_found": true,
+    "A1_amine_and_ArgB22_found": true,
+    "HisB5_and_HisB10_template_tautomers_found": true,
+    "histidine_site_hydrogen_counts_include_all_five_ring_atoms": true,
+    "modified_PheB1_and_LysB29_nitrogens_remain_neutral": true,
+    "canonical_candidate_is_charge_minus_7_and_formula_C325H454N79O97S6": true,
+    "144_group_state_combinations_enumerated_without_probabilities": true,
+    "charge_and_hydrogen_ranges_match_assumptions": true,
+    "no_atom_localized_partial_charges_or_force_field_claimed": true
+  },
+  "open_gates": [
+    "local pKa shifts and measured microstate populations",
+    "atom-localized force-field charges and atom types for the NNC2215 conjugate",
+    "histidine tautomer energetics and site-specific protonation",
+    "tyrosine phenol sensitivity",
+    "PheB1 hydrogen ownership and unique B29 coordinate map",
+    "roof stereochemistry, solvent, counterions, and MD readiness"
+  ]
+}

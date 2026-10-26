@@ -45,7 +45,7 @@ The B29 product-component topology audit is in [`data/nnc2215-b29-topology-audit
 
 ### Declared pH 7.4 tri-carboxylate scenario — 26 October 2026
 
-The audit models the three macrocycle acids as deprotonated for a conditional pH 7.4 graph comparison. It removes three protons from the neutral B29 component (C62H72N16O14 to C62H69N16O14; local charge change −3) and represents each carboxylate with two equivalent C–O edges sharing a resonance label and numeric bond order 1.5. This is a graph-equivalence convention, not a literal localized bond assignment, pKa calculation, measured microstate, partial-charge assignment, or complete NNC2215 charge ledger. No PDB oxygen labels are selected, coordinates are unchanged, and the remainder of insulin is outside this component audit. The full-system protonation inventory and total charge remain open.
+The audit models the three macrocycle acids as deprotonated for a conditional pH 7.4 graph comparison. It removes three protons from the neutral B29 component (C62H72N16O14 to C62H69N16O14; local charge change −3) and represents each carboxylate with two equivalent C–O edges sharing a resonance label and numeric bond order 1.5. This is a graph-equivalence convention, not a literal localized bond assignment, pKa calculation, measured microstate, or partial-charge assignment. No PDB oxygen labels are selected and coordinates are unchanged. The separate group-level pH 7.4 ledger below includes the remainder of insulin under stated conventional assumptions; simulation-ready protonation and atom-localized charge assignments remain open.
 
 The [Nature Fig. 2a product drawing](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig2_HTML.png) places the roof substituent at triazole N1 and the B29 linker at C4, supporting the source-derived 1,4-disubstituted 1,2,3-triazole assignment. This assignment comes from the product drawing, not PDB adjacency or distances. The PDB CONECT/LINK records encode adjacency only; they do not establish bond order, formal charge, or stereochemistry.
 
@@ -79,21 +79,27 @@ The graph uses neutral termini and pinned neutral residue templates; the B1 N te
 
 Re-run with `micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/audit_nnc2215_full_conjugate_graph.py`.
 
+### Conditional pH 7.4 group charge-state ledger
+
+[`data/nnc2215-physiological-charge-states.json`](data/nnc2215-physiological-charge-states.json) makes the neutral graph's protonation boundary explicit for future parameterization. Under the conventional candidate assumptions—six insulin carboxyls (four Glu sidechains and two chain termini) and all three macrocycle carboxyls deprotonated, ArgB22 and GlyA1 N-terminal amine protonated, and both histidines neutral in their pinned RDKit template tautomers—the full conjugate has formula C325H454N79O97S6 and group-summed net formal charge −7.
+
+This is a bookkeeping candidate, not a measured microstate or pKa-derived population. The audit enumerates 144 combinations of the three macrocycle carboxyl states, GlyA1 N-terminal state, and two histidine tautomer/protonation states; group-summed net charges span −8 to −2. It does not localize carboxylate charges onto named oxygen atoms, assign partial charges or force-field atom types, or add counterions/solvent. Tyrosine ionization, local pKa shifts, PheB1 hydrogen ownership, roof stereochemistry, B29 coordinate-map ambiguity, and MD readiness remain open. Re-run from the repository root with `python3 research/audit_nnc2215_physiological_charge_states.py`.
+
 ## Provisional chemical assignments
 
 These are source-informed expectations for further chemistry review, not final force-field assignments:
 
 - The B29 Lys ε-amino group is converted to a carbamate in the pentynyl linker. The source product drawing supports the 1,4-disubstituted 1,2,3-triazole; the candidate PDBs do not independently establish that bond labeling.
 - The B1 Phe α-amino group is acylated by the glucoside linker and is neutral in that conjugated form. The deprotected β-D-glucoside graph and mapped C1–C5 stereochemistry are now verified against the source scheme, the SI anomeric coupling, and a beta-D-glucose reference structure. PDB adjacency does not establish stereochemistry.
-- The macrocycle has three reported carboxylic-acid groups. This audit models all three as carboxylates in a declared pH 7.4 scenario; that is an assumption, not a measured dominant microstate or a pKa result. The complete charge assignment still depends on the resolved graph and pKa/microstate assumptions.
+- The macrocycle has three reported carboxylic-acid groups. This audit models all three as carboxylates in a declared pH 7.4 scenario; that is an assumption, not a measured dominant microstate or a pKa result. The conditional ledger below records the group-level whole-conjugate candidate; a simulation-ready charge assignment still depends on site-specific microstate review and atom-level parameterization.
 - The existing isolated PaG audit supports the singly deprotonated glucuronate, net charge −1, and five CIP labels S, S, R, S, S. It validates the isolated ligand files only; it does not validate the NNC2215 conjugate.
-- The full insulin system requires an explicit pH 7.4 protonation inventory, including terminal groups, ionizable side chains, disulfides, and the conjugation sites. A pH label alone does not define that inventory.
+- A simulation condition requires a reviewed protonation inventory across terminal groups, ionizable side chains, disulfides, and conjugation sites. The conditional ledger below records a conventional group-level candidate but does not establish local pKa shifts, measured populations, or atom-localized charges. A pH label alone does not define a simulation-ready inventory.
 
 The current PDB records also disagree around hydrogen ownership: the closed model assigns a nearby PheB1 N hydrogen to PHX without a CONECT edge, and the LYX CD2 hydrogen-neighbour count differs between states. These are additional unresolved topology records.
 
 ## Evidence required to close chemistry
 
-1. Independently review the assembled neutral graph's RDKit residue-template and neutral-terminal conventions against the synthesis sources; develop separate, explicitly justified full-system protonation and total-charge ledgers for any simulation condition.
+1. Independently review the assembled neutral graph's RDKit residue-template and neutral-terminal conventions and the conditional group-level charge ledger against authoritative sources; extend it to an explicitly justified simulation-condition inventory before parameterization.
 2. Independently review the candidate MC C27/C29 removal and C28/C30 aryl-methyl mapping, refine the ambiguous B29 graph-to-coordinate mappings, and reconcile the differing hydrogen/link records. The B1 component already has a one-to-one adjacency mapping in each state.
 3. Explicit bond orders, aromaticity, remaining complete-conjugate stereochemistry, protonation microstates, formal-charge ledger and integer total charge for each simulated condition. The source drawing supports the 1,4 CuAAC regiochemistry, while the candidate coordinates do not resolve scaffold bond-label transfer.
 4. Independently validate atom-name, geometry, and source-to-coordinate correspondence using authoritative structural evidence. The neutral graph's formula agreement does not resolve the 16 B29 mappings or validate the model-built coordinates.
