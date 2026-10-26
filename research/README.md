@@ -129,6 +129,12 @@ The open model places free D-glucose in the B29 macrocycle; the closed model pla
 
 Run `python3 research/inspect_structure_models.py` to verify the local PDB checksums and produce `data/structure-preflight.json`. This inventory records coordinate counts, chain/residue labels, disulfide and covalent-link records, and nonstandard residue names. It is a file/record preflight, not chemical-graph or force-field validation.
 
+### Full insulin–NNC2215 coordinate mapping ledger
+
+[`data/nnc2215-full-coordinate-mapping.json`](data/nnc2215-full-coordinate-mapping.json) maps the 507-heavy-atom neutral source graph (398 protein atoms and 109 conjugate atoms) onto both corrected, model-built candidates. It composes one B1 mapping with all 16 exact B29 assignments in each state. Every assignment is a graph-index-to-PDB-serial vector joined to the shared graph provenance table and that state's PDB identity/coordinate table; all 527 source-edge distances are retained for every mapping. The open model's separate 12-heavy-atom BGL residue is recorded as an unlinked extra component. This representation is lossless and compact; distances and the broad C/N/O screens are observations only, and all nine sulfur-containing edges remain unscreened.
+
+Recreate the ledger from the repository root with `python3 research/audit_nnc2215_full_coordinate_mapping.py`. The audit verifies upstream hashes and candidate immutability. A passed coverage status does not resolve the 16 B29 assignments, PheB1 hydrogen ownership, whole-system microstates, bond orders, custom parameters, force-field readiness, OpenMM, or MD. See the [chemistry reconciliation](NNC2215_CHEMISTRY_RECONCILIATION.md) and [milestone report](MILESTONE_REPORT.md).
+
 ### Source-derived roof macrocycle graph
 
 The numbered roof propyl-azide drawing in Nature Extended Data Fig. 8i has been transcribed as [`structures/nnc2215-roof-propyl-azide.smi`](structures/nnc2215-roof-propyl-azide.smi). RDKit 2026.03.1 parses and sanitizes the graph as C56H63N15O12 with 83 heavy atoms, 83 unique atom-map IDs, and formal charge 0 in the neutral-acid drawing form. [`data/nnc2215-roof-macrocycle-atom-map.json`](data/nnc2215-roof-macrocycle-atom-map.json) explains the map IDs and source numbering; [`data/nnc2215-roof-macrocycle-graph-audit.json`](data/nnc2215-roof-macrocycle-graph-audit.json) records the source, checks, and hashes. Recreate the audit with `micromamba run -p /Users/andrii/scratch/dia-target-tools/env python research/validate_nnc2215_roof_macrocycle_graph.py`.
