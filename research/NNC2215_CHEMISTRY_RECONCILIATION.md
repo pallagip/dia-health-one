@@ -85,6 +85,14 @@ Re-run with `micromamba run -p /Users/andrii/scratch/dia-target-tools/env python
 
 This is a bookkeeping candidate, not a measured microstate or pKa-derived population. The audit enumerates 144 combinations of the three macrocycle carboxyl states, GlyA1 N-terminal state, and two histidine tautomer/protonation states; group-summed net charges span −8 to −2. It does not localize carboxylate charges onto named oxygen atoms, assign partial charges or force-field atom types, or add counterions/solvent. Tyrosine ionization, local pKa shifts, PheB1 hydrogen ownership, roof stereochemistry, B29 coordinate-map ambiguity, and MD readiness remain open. Re-run from the repository root with `python3 research/audit_nnc2215_physiological_charge_states.py`.
 
+## Hybrid Amber template feasibility inventory — 26 October 2026
+
+The checksum-recorded [hybrid feasibility audit](data/nnc2215-hybrid-feasibility.json) inventories the pinned OpenMM Amber14 template names against source-derived insulin-residue provenance. Of 17 observed residue labels across 50 residues, 16 have literal template names. The graph's NE2-bound hydrogen ledger supports HIE as a histidine candidate by inference, and its six disulfide cysteines are CYX candidates. The 109 mapped conjugate heavy atoms remain outside ordinary insulin residue templates. The graph records exactly two cross-boundary bonds: PheB1 N–B1 source map 2 and LysB29 NZ–B29 source map 84.
+
+These are candidates, not validated residue matches. PheB1 N-acyl and LysB29 NZ-carbamate environments need custom conjugate terms; ordinary PHE/LYS templates do not cover the attached components. Terminal forms and charge compatibility are unresolved. The outcome is `AMBER_TEMPLATE_CANDIDATES_IDENTIFIED; CUSTOM_CONJUGATE_PARAMETERS_REQUIRED`, with zero validated conjugate force fields. Whole-graph NAGL use would be outside the published heavy-atom test-size coverage. AmberTools' modified-polymer-residue workflow is a useful development precedent, but generated assignments require manual review. The separate-component Sage/ff14SB Interchange example is described as experimental and does not establish parameters for these covalent joins.
+
+This audit does not generate partial charges, force-field parameters, a prepared topology, coordinates, an OpenMM system, or MD. Its reproducible script and package lock are linked from `research/README.md`.
+
 ## Provisional chemical assignments
 
 These are source-informed expectations for further chemistry review, not final force-field assignments:

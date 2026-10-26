@@ -942,6 +942,10 @@
     }
   },
   "inputs": {
+    "audit_script": {
+      "path": "audit_nnc2215_hybrid_feasibility.py",
+      "sha256": "202c7f7fb9f26209da350fc9a3936dbf884cc43a46dd9189d19111dcf4fa0170"
+    },
     "full_conjugate_graph": {
       "path": "data/nnc2215-full-conjugate-graph.json",
       "sha256": "fb9feaed3537196515c62656d890c0e92b42c9b7da15955dd516b1d82dd178dc"
@@ -1953,7 +1957,7 @@
       "90_or_more_heavy_atoms": 0,
       "highest_test_heavy_atom_bin": "80-89"
     },
-    "published_test_total_atom_count_maximum": 169,
+    "published_test_total_atom_count_highest_bin": "160-169",
     "source": "https://docs.openforcefield.org/projects/nagl-models/en/stable/models/openff-gnn-am1bcc-1.0.0/",
     "whole_graph_nagl_use": "extrapolation beyond the published test heavy-atom size coverage"
   },
@@ -1970,6 +1974,48 @@
   "schema": "dia-health-one.nnc2215-hybrid-feasibility.v1",
   "scope": "Amber template-name and source-provenance feasibility inventory only",
   "software": {
+    "locked_package_artifacts": {
+      "ambertools": {
+        "filename": "ambertools-26.0-cuda_None_nompi_py312h52216ed_100.conda",
+        "md5": "b1ece4272978a9c2e5e261fd57c36222"
+      },
+      "openff-forcefields": {
+        "filename": "openff-forcefields-2026.09.0-pyhd8ed1ab_0.conda",
+        "md5": "e153131b1f6f1b5748128903dd397eb2"
+      },
+      "openff-interchange": {
+        "filename": "openff-interchange-0.5.5-pyh6e64f1f_0.conda",
+        "md5": "2b2d42dca9f32bc37cecd64c1a7e9691"
+      },
+      "openff-nagl": {
+        "filename": "openff-nagl-0.6.1-pyhb28b8f6_1.conda",
+        "md5": "290a67976c9d9c019d409ffbafcdf90b"
+      },
+      "openff-nagl-models": {
+        "filename": "openff-nagl-models-2026.09.0-pyhd8ed1ab_0.conda",
+        "md5": "b2ca7b9799b385ab37ee1b69b221d281"
+      },
+      "openff-toolkit": {
+        "filename": "openff-toolkit-0.19.0-pyhd8ed1ab_1.conda",
+        "md5": "7e9b580dfa34b8bb4fde2bf80b409328"
+      },
+      "openff-units": {
+        "filename": "openff-units-0.4.0-pyhac95a24_1.conda",
+        "md5": "dfe3a840e8372cab543ccbc80054e542"
+      },
+      "openmm": {
+        "filename": "openmm-8.6.1-py312h381a2f6_0_khronos.conda",
+        "md5": "c40923f1bfb9f33e6ff346455c20c2de"
+      },
+      "python": {
+        "filename": "python-3.12.15-hd05a0c4_2_cpython.conda",
+        "md5": "12831d178a990fa6feec258e45b23056"
+      },
+      "rdkit": {
+        "filename": "rdkit-2026.03.1-py312h7e68b95_0.conda",
+        "md5": "35d80006e89b60221990a17af73ac17e"
+      }
+    },
     "locked_package_versions": {
       "ambertools": "26.0",
       "openff-forcefields": "2026.09.0",

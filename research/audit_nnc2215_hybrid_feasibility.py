@@ -62,40 +62,48 @@ def sha256_bytes(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
 
 
-def locked_versions_from_file(raw: bytes) -> dict[str, str]:
-    filenames = []
+def locked_versions_from_file(raw: bytes) -> tuple[dict[str, str], dict[str, dict[str, str]]]:
+    package_artifacts: dict[str, list[dict[str, str]]] = defaultdict(list)
     for line in raw.decode("utf-8").splitlines():
         line = line.strip()
         if not line.startswith("http"):
             continue
-        filename = line.split("#", 1)[0].rsplit("/", 1)[-1]
+        url, separator, checksum = line.partition("#")
+        filename = url.rsplit("/", 1)[-1]
+        stem = filename
         if filename.endswith(".tar.bz2"):
-            filename = filename[:-8]
+            stem = filename[:-8]
         elif filename.endswith(".conda"):
-            filename = filename[:-6]
-        filenames.append(filename)
+            stem = filename[:-6]
+        for package in EXPECTED_LOCK_VERSIONS:
+            if stem.startswith(f"{package}-{EXPECTED_LOCK_VERSIONS[package]}-"):
+                if not separator or not checksum:
+                    raise ValueError(f"Pinned lock entry for {package} has no artifact checksum")
+                package_artifacts[package].append({"filename": filename, "md5": checksum})
 
     versions: dict[str, str] = {}
+    artifacts: dict[str, dict[str, str]] = {}
     for package, expected in EXPECTED_LOCK_VERSIONS.items():
-        matches = []
-        for filename in filenames:
-            prefix = f"{package}-"
-            if not filename.startswith(prefix):
-                continue
-            candidate = filename[len(prefix) :].split("-", 1)[0]
-            if re.fullmatch(r"[0-9][A-Za-z0-9.]*", candidate):
-                matches.append(candidate)
+        matches = package_artifacts.get(package, [])
         if len(matches) != 1:
-            raise ValueError(f"Expected one lock entry for {package}; found {matches}")
-        versions[package] = matches[0]
-        if matches[0] != expected:
+            raise ValueError(f"Expected one lock artifact for {package}; found {matches}")
+        archive_name = matches[0]["filename"].removesuffix(".conda").removesuffix(".tar.bz2")
+        prefix = f"{package}-"
+        candidate = archive_name[len(prefix) :].split("-", 1)[0]
+        if not re.fullmatch(r"[0-9][A-Za-z0-9.]*", candidate):
+            raise ValueError(f"Could not parse locked version for {package}: {archive_name}")
+        versions[package] = candidate
+        artifacts[package] = matches[0]
+        if candidate != expected:
             raise ValueError(
-                f"Pinned lock version mismatch for {package}: {matches[0]} != {expected}"
+                f"Pinned lock version mismatch for {package}: {candidate} != {expected}"
             )
-    return versions
+    return versions, artifacts
 
 
-def installed_locked_versions() -> dict[str, str]:
+def installed_locked_versions(
+    expected_artifacts: dict[str, dict[str, str]],
+) -> tuple[dict[str, str], dict[str, dict[str, str]]]:
     prefix = os.environ.get("CONDA_PREFIX")
     if not prefix:
         raise ValueError("Run this audit inside the pinned micromamba environment")
@@ -106,6 +114,7 @@ def installed_locked_versions() -> dict[str, str]:
         records.append(json.loads(path.read_text(encoding="utf-8")))
 
     installed: dict[str, str] = {}
+    installed_artifacts: dict[str, dict[str, str]] = {}
     for package, expected in EXPECTED_LOCK_VERSIONS.items():
         matches = [record for record in records if record.get("name") == package]
         if len(matches) != 1:
@@ -113,7 +122,16 @@ def installed_locked_versions() -> dict[str, str]:
         version = str(matches[0]["version"])
         if version != expected:
             raise ValueError(f"Installed {package} version {version} != pinned {expected}")
+        artifact = {
+            "filename": str(matches[0].get("fn", "")),
+            "md5": str(matches[0].get("md5", "")),
+        }
+        if artifact != expected_artifacts[package]:
+            raise ValueError(
+                f"Installed {package} artifact {artifact} != pinned {expected_artifacts[package]}"
+            )
         installed[package] = version
+        installed_artifacts[package] = artifact
 
     module_versions = {
         "openff-toolkit": openff_toolkit.__version__,
@@ -130,7 +148,7 @@ def installed_locked_versions() -> dict[str, str]:
     python_version = sys.version.split()[0]
     if python_version != installed["python"]:
         raise ValueError(f"Python runtime {python_version} != pinned {installed['python']}")
-    return installed
+    return installed, installed_artifacts
 
 
 def load_amber_templates(root_xml: Path) -> tuple[set[str], list[dict[str, str]]]:
@@ -473,14 +491,18 @@ def main() -> int:
         graph_raw = GRAPH_PATH.read_bytes()
         sage_raw = SAGE_COVERAGE_PATH.read_bytes()
         lock_raw = LOCK_PATH.read_bytes()
+        script_raw = Path(__file__).resolve().read_bytes()
         graph = json.loads(graph_raw)
         sage_coverage = json.loads(sage_raw)
-        lock_versions = locked_versions_from_file(lock_raw)
-        installed_versions = installed_locked_versions()
+        lock_versions, lock_artifacts = locked_versions_from_file(lock_raw)
+        installed_versions, installed_artifacts = installed_locked_versions(lock_artifacts)
         if lock_versions != installed_versions:
             raise ValueError("Installed packages do not match the pinned environment lock")
 
         graph_digest = sha256_bytes(graph_raw)
+        lock_digest = sha256_bytes(lock_raw)
+        if sage_coverage["inputs"]["environment_lock"]["sha256"] != lock_digest:
+            raise ValueError("Sage coverage JSON does not refer to the current environment lock")
         sage_graph_input = sage_coverage["inputs"]["full_conjugate_graph"]
         if sage_graph_input["sha256"] != graph_digest:
             raise ValueError("Sage coverage JSON does not refer to the current full-conjugate graph")
@@ -519,12 +541,17 @@ def main() -> int:
                 },
                 "pinned_environment_lock": {
                     "path": str(LOCK_PATH.relative_to(ROOT)),
-                    "sha256": sha256_bytes(lock_raw),
+                    "sha256": lock_digest,
+                },
+                "audit_script": {
+                    "path": str(Path(__file__).resolve().relative_to(ROOT)),
+                    "sha256": sha256_bytes(script_raw),
                 },
             },
             "software": {
                 "python_version": sys.version.split()[0],
                 "locked_package_versions": installed_versions,
+                "locked_package_artifacts": installed_artifacts,
                 "sage_force_field": sage_coverage["software"]["sage_force_field"],
                 "nagl_model": "openff-gnn-am1bcc-1.0.0.pt",
                 "openmm_amber_xml_root": "amber14-all.xml",
@@ -596,7 +623,7 @@ def main() -> int:
                     "90_or_more_heavy_atoms": 0,
                     "highest_test_heavy_atom_bin": "80-89",
                 },
-                "published_test_total_atom_count_maximum": 169,
+                "published_test_total_atom_count_highest_bin": "160-169",
                 "published_peptide_training_context": {
                     "training_peptide_fragments": "1-4 amino-acid residues",
                     "training_peptide_fragment_count": 22690,
