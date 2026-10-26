@@ -1,0 +1,237 @@
+{
+  "schema": "dia-health-one.nnc2215-forcefield-label-coverage.v1",
+  "scope": "OpenFF Sage 2.3.0 chemical-perception label coverage only",
+  "inputs": {
+    "full_conjugate_graph": {
+      "path": "data/nnc2215-full-conjugate-graph.json",
+      "sha256": "fb9feaed3537196515c62656d890c0e92b42c9b7da15955dd516b1d82dd178dc"
+    },
+    "roof_mapped_smiles": {
+      "path": "structures/nnc2215-roof-propyl-azide.smi",
+      "sha256": "ed4340362d1436fc7518bfc577d6d23ac4b8434d3b60f40492b2bb36fd394325"
+    },
+    "roof_atom_map_legend": {
+      "path": "data/nnc2215-roof-macrocycle-atom-map.json",
+      "sha256": "48f716a63696d01f89339d0e6da009d9794ffd03e8349dc9a3fd471248e75ec8"
+    },
+    "environment_lock": {
+      "path": "pag-chemistry-environment-macos-arm64.lock.txt",
+      "sha256": "608d83e646a04e939b5b6b38619337b2822966113beb60c8368f90ecba803d6d"
+    },
+    "audit_script_sha256": "c4df551f3b671c591371c94755cf4b154bbf50ba4aef8664110a3bf771a03157"
+  },
+  "software": {
+    "python_version": "3.12.15",
+    "locked_package_versions": {
+      "openff-toolkit": "0.19.0",
+      "openff-interchange": "0.5.5",
+      "openff-units": "0.4.0",
+      "openff-forcefields": "2026.09.0",
+      "openmm": "8.6.1",
+      "rdkit": "2026.03.1"
+    },
+    "sage_force_field": "openff-2.3.0.offxml"
+  },
+  "full_neutral_constitutional_graph": {
+    "formula": "C325H461N79O97S6",
+    "heavy_atom_count": 507,
+    "atom_count_after_hydrogen_materialization": 968,
+    "formal_charge": 0,
+    "sage_label_counts": {
+      "Constraints": 461,
+      "Bonds": 988,
+      "Angles": 1753,
+      "ProperTorsions": 2569,
+      "ImproperTorsions": 225,
+      "vdW": 968,
+      "Electrostatics": 0
+    },
+    "label_coverage": "pass",
+    "coordinates_present": false,
+    "stereochemistry_fully_specified": false
+  },
+  "roof_macrocycle_fragment_carboxyl_states": {
+    "oxygen_map_ids_tested": [
+      54,
+      62,
+      70
+    ],
+    "state_count": 8,
+    "states": [
+      {
+        "deprotonated_acid_oxygen_map_ids": [],
+        "formula_before_hydrogen_materialization": "C56H63N15O12",
+        "heavy_atom_count": 83,
+        "atom_count_after_hydrogen_materialization": 146,
+        "formal_charge": 0,
+        "sage_label_counts": {
+          "Constraints": 63,
+          "Bonds": 152,
+          "Angles": 260,
+          "ProperTorsions": 367,
+          "ImproperTorsions": 51,
+          "vdW": 146,
+          "Electrostatics": 0
+        },
+        "label_coverage": "pass"
+      },
+      {
+        "deprotonated_acid_oxygen_map_ids": [
+          54
+        ],
+        "formula_before_hydrogen_materialization": "C56H62N15O12-",
+        "heavy_atom_count": 83,
+        "atom_count_after_hydrogen_materialization": 145,
+        "formal_charge": -1,
+        "sage_label_counts": {
+          "Constraints": 62,
+          "Bonds": 151,
+          "Angles": 259,
+          "ProperTorsions": 365,
+          "ImproperTorsions": 51,
+          "vdW": 145,
+          "Electrostatics": 0
+        },
+        "label_coverage": "pass"
+      },
+      {
+        "deprotonated_acid_oxygen_map_ids": [
+          62
+        ],
+        "formula_before_hydrogen_materialization": "C56H62N15O12-",
+        "heavy_atom_count": 83,
+        "atom_count_after_hydrogen_materialization": 145,
+        "formal_charge": -1,
+        "sage_label_counts": {
+          "Constraints": 62,
+          "Bonds": 151,
+          "Angles": 259,
+          "ProperTorsions": 365,
+          "ImproperTorsions": 51,
+          "vdW": 145,
+          "Electrostatics": 0
+        },
+        "label_coverage": "pass"
+      },
+      {
+        "deprotonated_acid_oxygen_map_ids": [
+          54,
+          62
+        ],
+        "formula_before_hydrogen_materialization": "C56H61N15O12-2",
+        "heavy_atom_count": 83,
+        "atom_count_after_hydrogen_materialization": 144,
+        "formal_charge": -2,
+        "sage_label_counts": {
+          "Constraints": 61,
+          "Bonds": 150,
+          "Angles": 258,
+          "ProperTorsions": 363,
+          "ImproperTorsions": 51,
+          "vdW": 144,
+          "Electrostatics": 0
+        },
+        "label_coverage": "pass"
+      },
+      {
+        "deprotonated_acid_oxygen_map_ids": [
+          70
+        ],
+        "formula_before_hydrogen_materialization": "C56H62N15O12-",
+        "heavy_atom_count": 83,
+        "atom_count_after_hydrogen_materialization": 145,
+        "formal_charge": -1,
+        "sage_label_counts": {
+          "Constraints": 62,
+          "Bonds": 151,
+          "Angles": 259,
+          "ProperTorsions": 365,
+          "ImproperTorsions": 51,
+          "vdW": 145,
+          "Electrostatics": 0
+        },
+        "label_coverage": "pass"
+      },
+      {
+        "deprotonated_acid_oxygen_map_ids": [
+          54,
+          70
+        ],
+        "formula_before_hydrogen_materialization": "C56H61N15O12-2",
+        "heavy_atom_count": 83,
+        "atom_count_after_hydrogen_materialization": 144,
+        "formal_charge": -2,
+        "sage_label_counts": {
+          "Constraints": 61,
+          "Bonds": 150,
+          "Angles": 258,
+          "ProperTorsions": 363,
+          "ImproperTorsions": 51,
+          "vdW": 144,
+          "Electrostatics": 0
+        },
+        "label_coverage": "pass"
+      },
+      {
+        "deprotonated_acid_oxygen_map_ids": [
+          62,
+          70
+        ],
+        "formula_before_hydrogen_materialization": "C56H61N15O12-2",
+        "heavy_atom_count": 83,
+        "atom_count_after_hydrogen_materialization": 144,
+        "formal_charge": -2,
+        "sage_label_counts": {
+          "Constraints": 61,
+          "Bonds": 150,
+          "Angles": 258,
+          "ProperTorsions": 363,
+          "ImproperTorsions": 51,
+          "vdW": 144,
+          "Electrostatics": 0
+        },
+        "label_coverage": "pass"
+      },
+      {
+        "deprotonated_acid_oxygen_map_ids": [
+          54,
+          62,
+          70
+        ],
+        "formula_before_hydrogen_materialization": "C56H60N15O12-3",
+        "heavy_atom_count": 83,
+        "atom_count_after_hydrogen_materialization": 143,
+        "formal_charge": -3,
+        "sage_label_counts": {
+          "Constraints": 60,
+          "Bonds": 149,
+          "Angles": 257,
+          "ProperTorsions": 361,
+          "ImproperTorsions": 51,
+          "vdW": 143,
+          "Electrostatics": 0
+        },
+        "label_coverage": "pass"
+      }
+    ],
+    "interpretation": "All eight combinations label successfully; no pKa weighting or dominant-state inference was performed."
+  },
+  "not_established": [
+    "partial atomic charges or electrostatic validation",
+    "validated parameters or transferability for the insulin–conjugate hybrid",
+    "compatibility of Sage conjugate parameters with the protein force-field files",
+    "complete stereochemistry, protonation, or experimental atom mapping",
+    "3D coordinates, geometry quality, minimization, or an OpenMM System",
+    "molecular dynamics, binding pose, affinity, or free energy",
+    "pharmacological efficacy or clinical safety"
+  ],
+  "assessment": {
+    "status": "SAGE_LABEL_COVERAGE_ONLY",
+    "partial_charges_assigned": false,
+    "coordinates_created": false,
+    "openmm_system_created": false,
+    "molecular_dynamics_run": false,
+    "validated_hybrid_force_field": false,
+    "clinical_use": false
+  }
+}

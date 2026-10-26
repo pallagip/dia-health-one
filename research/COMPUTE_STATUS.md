@@ -1,12 +1,20 @@
 # Compute and molecular-simulation readiness
 
-**Updated:** 2026-10-25
+**Updated:** 2026-10-26
 
 **Current NVIDIA status:** Dia Health One is an active NVIDIA Inception member. NVIDIA Inception support confirmed membership on 2026-10-19 and stated that DGX Cloud Innovation Lab is no longer available. The last authenticated portal check was 2026-10-18 at approximately 09:59 UTC; it showed six partner-benefit requests pending. This is a dated portal observation, not a fresh status check. Membership and pending requests do not constitute a credit award or GPU allocation. No NVIDIA or partner GPU allocation is confirmed.
 
-**Current simulation status:** published-data analyses run reproducibly on the local CPU; generic engine preflights ran on Apple M4 OpenCL and a temporary free Colab Tesla T4; and a PaG-only explicit-water setup pilot completed as two short OpenMM OpenCL replicas. The PaG pilot checks small-molecule compatibility and the T4 run checks generic ubiquitin throughput. Neither is target-binding MD. The published PaG MD method is documented, but the in-house starting coordinates are not public and force-field readiness for the full NNC2215 conjugate remains unresolved. No target-binding MD has been run.
+**Current simulation status:** OpenFF Sage 2.3.0 labels the source-derived neutral 507-heavy-atom full graph and all eight carboxylate combinations in the isolated roof fragment under the pinned environment. This establishes parameter-label coverage only; no partial charges were assigned and no validated hybrid force field or OpenMM target system exists. Published-data analyses run reproducibly on the local CPU; generic engine preflights ran on Apple M4 OpenCL and a temporary free Colab Tesla T4; and a PaG-only explicit-water setup pilot completed as two short OpenMM OpenCL replicas. None is target-binding MD. The published PaG MD method is documented, but its in-house starting coordinates are not public. No target-binding MD has been run.
 
 The dated access and reproduction notes below are historical observations. Where they describe the Innovation Lab as an available program or say NVIDIA had not replied, the 2026-10-19 NVIDIA support response supersedes them. Google rejected the separate Cloud Program application on 19 October because the company website was inaccessible or inactive at review time; the public site is now reachable and a reprocessing reply was sent that day. The separate Lambda, AWS, Azure, and AI Factory France partner applications had not been submitted at the last recorded review. The Azure handoff stopped at a multi-factor prompt for a different identity; no code was entered. The six NVIDIA benefit requests are partner requests, not awards or allocations.
+
+## OpenFF Sage label-coverage audit — 26 October 2026
+
+OpenFF Sage 2.3.0 label coverage was run in the macOS ARM64 environment recorded by `research/pag-chemistry-environment-macos-arm64.lock.txt` (OpenFF Toolkit 0.19.0, Interchange 0.5.5, Units 0.4.0, OpenFF force fields 2026.09.0, OpenMM 8.6.1, RDKit 2026.03.1). The reconstructed neutral constitutional graph retained formula C325H461N79O97S6 and 507 heavy atoms; after explicit hydrogen materialization it contained 968 atoms. Sage assigned labels to 988 bonds, 1,753 angles, 2,569 proper torsions, 225 improper torsions, and 968 vdW entries; this method returned zero electrostatics labels.
+
+The isolated roof macrocycle fragment also labeled in all eight combinations of its carboxyl protonation states (formal charges 0 through −3). These fragment checks do not estimate pKa values or state populations and do not replace the separate full-system charge-state ledger. The machine-readable result records hashes for the graph, mapped roof SMILES, map legend, lockfile, and audit script at `research/data/nnc2215-forcefield-label-coverage.json`; reproduce it with `micromamba run -p <environment-created-from-lock> python research/audit_nnc2215_forcefield_label_coverage.py`.
+
+This result is parameter-label coverage only. No partial charges, coordinates, OpenMM system, or dynamics were produced. It does not validate atom mapping, roof stereochemistry, a physiological full-system microstate, transferability, or compatibility with the protein force field. The validated-conjugate-force-field count remains zero; target-binding MD, affinity, and clinical effects remain unestablished.
 
 ## Reproductions completed
 
