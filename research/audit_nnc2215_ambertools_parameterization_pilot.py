@@ -526,7 +526,11 @@ def main() -> None:
             "atom_type_set": "GAFF2",
             "bonded_parameter_lookups": "GAFF2 with ff14SB available as a comparison set; parmchk2-generated terms are not validated",
             "declared_charge_state": "three B29 carboxylates deprotonated; neutral NH2 source endpoint cap; net formal charge -3",
-            "input_geometry": "heavy-atom coordinates copied from the public active/open model-built candidate using the first documented exact graph embedding; explicit hydrogens added by RDKit",
+            "input_geometry": (
+                "heavy-atom coordinates copied from the public active/open model-built candidate "
+                f"using selected topology-audit embedding {selected_mapping_entry['mapping_id']} "
+                f"(zero-based index {args.mapping_index}); explicit hydrogens added by RDKit"
+            ),
             "sqm_geometry_optimization": "disabled with maxcyc=0 to avoid changing the selected model geometry in a vacuum; the resulting charges remain geometry- and model-dependent",
             "resonance_variants": 8,
             "carboxylate_map_groups": [list(group) for group in CARBOXYLATES],

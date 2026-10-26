@@ -37,7 +37,7 @@
     },
     "audit_script": {
       "path": "audit_nnc2215_ambertools_parameterization_pilot.py",
-      "sha256": "81247b561fac3c871ccab6ddc0178290581a734782386dfa8ea1ef26464a2227"
+      "sha256": "358ee8115de0eed9e7c3010f770c07bcc73a30b17cf689472d4b3bfd8315d8a0"
     },
     "environment_lock": {
       "path": "pag-chemistry-environment-macos-arm64.lock.txt",
@@ -182,7 +182,7 @@
     ],
     "charge_method": "AM1-BCC (Antechamber bcc)",
     "declared_charge_state": "three B29 carboxylates deprotonated; neutral NH2 source endpoint cap; net formal charge -3",
-    "input_geometry": "heavy-atom coordinates copied from the public active/open model-built candidate using the first documented exact graph embedding; explicit hydrogens added by RDKit",
+    "input_geometry": "heavy-atom coordinates copied from the public active/open model-built candidate using selected topology-audit embedding exact_mapping_10 (zero-based index 9); explicit hydrogens added by RDKit",
     "pdb_or_source_coordinates_modified": false,
     "rdkit_version": "2026.03.1",
     "resonance_variants": 8,
