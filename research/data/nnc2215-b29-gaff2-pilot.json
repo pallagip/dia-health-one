@@ -1,0 +1,5453 @@
+{
+  "assessment": {
+    "all_eight_variants_completed": true,
+    "bonded_parameter_gaps_inventoried": true,
+    "clinical_use": false,
+    "full_insulin_topology_or_openmm_system_created": false,
+    "gaff2_partial_charges_assigned": true,
+    "limits": [
+      "The B29 source endpoint NH2 cap is not the attached LysB29 NZ-in-residue environment; atom charges at the protein junction are therefore not final.",
+      "The chosen open coordinates are publisher-supplied model-built coordinates, and their source-to-coordinate map is one of 16 exact element-adjacency embeddings.",
+      "AM1-BCC/GAFF2 plus parmchk2 output is a candidate fragment assignment, not a reviewed force field.",
+      "The eight outputs test arbitrary carboxylate Lewis-label sensitivity; no charge averaging or atom-type normalization is performed.",
+      "Custom LysB29 boundary-residue charges and cross-boundary bonded terms remain unassigned.",
+      "PheB1/B1 fragment parameters, insulin termini, protein compatibility, full system assembly, and force-field validation remain open.",
+      "No solvent, ions, target receptor complex, MD, affinity, pharmacology, or clinical conclusion is included."
+    ],
+    "md_run": false,
+    "validated_conjugate_force_fields": 0
+  },
+  "carboxylate_resonance_charge_sensitivity": {
+    "compared_variant_count": 8,
+    "largest_per_atom_absolute_charge_range_e": 0.0,
+    "per_source_atom": []
+  },
+  "component_graph": {
+    "atom_count_with_hydrogens": 161,
+    "formal_charge": -3,
+    "formula": "C62H69N16O14-3",
+    "heavy_atom_count": 92,
+    "heavy_atom_input_mapping_is_authoritative": false,
+    "resonance_variant_count_completed": 8
+  },
+  "inputs": {
+    "ambertools_package": {
+      "package_sha256": "b1ece4272978a9c2e5e261fd57c36222",
+      "version_build": "26.0-cuda_None_nompi_py312h52216ed_100"
+    },
+    "audit_script": {
+      "path": "audit_nnc2215_ambertools_parameterization_pilot.py",
+      "sha256": "a8b16c7e9feb998cb3c305e7171fbb3b0439c17385c9cae105e14c21ebb0af4d"
+    },
+    "environment_lock": {
+      "path": "pag-chemistry-environment-macos-arm64.lock.txt",
+      "sha256": "608d83e646a04e939b5b6b38619337b2822966113beb60c8368f90ecba803d6d"
+    },
+    "open_model_coordinate_candidate": {
+      "coordinates_are_model_built": true,
+      "hash_unchanged_after_run": true,
+      "mapping_id": "exact_mapping_01",
+      "one_of_sixteen_graph_embeddings": true,
+      "path": "structures/nnc2215-open-source-corrected-candidate.pdb",
+      "sha256": "2ee2d8cb8479c1a881704725c13462a84134b6f47313fe2d78d5f8382decdccc"
+    },
+    "product_graph": {
+      "path": "structures/nnc2215-b29-linker-roof-product.smi",
+      "sha256": "b677316c1fced61045d2eebab4de85cdb2f1ef956280d18ab9d610df1181bd40"
+    },
+    "product_map_legend": {
+      "path": "data/nnc2215-b29-linker-roof-product-map.json",
+      "sha256": "eb028433748cf294744ac02f381e909f029f79916484a2e05dfbf966f7faa0c5"
+    },
+    "topology_audit": {
+      "path": "data/nnc2215-b29-topology-audit.json",
+      "sha256": "edd4d9911170e3688c80f6b8ca3f4339ebee7815c1bb596cfa2dfaca468d96c6"
+    }
+  },
+  "method": {
+    "atom_type_set": "GAFF2",
+    "bonded_parameter_lookups": "GAFF2 with ff14SB available as a comparison set; parmchk2-generated terms are not validated",
+    "carboxylate_map_groups": [
+      [
+        52,
+        53,
+        54
+      ],
+      [
+        60,
+        61,
+        62
+      ],
+      [
+        68,
+        69,
+        70
+      ]
+    ],
+    "charge_method": "AM1-BCC (Antechamber bcc)",
+    "declared_charge_state": "three B29 carboxylates deprotonated; neutral NH2 source endpoint cap; net formal charge -3",
+    "input_geometry": "heavy-atom coordinates copied from the public active/open model-built candidate using the first documented exact graph embedding; explicit hydrogens added by RDKit",
+    "pdb_or_source_coordinates_modified": false,
+    "rdkit_version": "2026.03.1",
+    "resonance_variants": 8,
+    "sqm_geometry_optimization": "disabled with maxcyc=0 to avoid changing the selected model geometry in a vacuum; the resulting charges remain geometry- and model-dependent",
+    "tools": "AmberTools 26 Antechamber and parmchk2"
+  },
+  "purpose": "Test AmberTools GAFF2/AM1-BCC feasibility on an isolated source-mapped B29 conjugate component under the conditional tri-carboxylate charge state.",
+  "schema": "dia-health-one.nnc2215-b29-gaff2-parameterization-pilot.v1",
+  "status": "PILOT_ONLY; COMPLETE_CONJUGATE_FORCE_FIELD_NOT_VALIDATED",
+  "variants": [
+    {
+      "anionic_oxygen_map_ids": [
+        53,
+        61,
+        69
+      ],
+      "antechamber": {
+        "command_template": [
+          "antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "output.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "-3",
+          "-at",
+          "gaff2",
+          "-pl",
+          "20",
+          "-ek",
+          "maxcyc=0",
+          "-rn",
+          "B29",
+          "-s",
+          "1"
+        ],
+        "log_sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "atom_count_with_hydrogens": 161,
+      "bond_count_with_hydrogens": 168,
+      "formal_charge": -3,
+      "formula": "C62H69N16O14-3",
+      "frcmod": {
+        "generated_parameter_record_count": 26,
+        "generated_records": [
+          {
+            "line": "ca-c3-ns-c    6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-ca-ns-hn   4    1.800       180.000           2.000      same as X -ca-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "os-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ns-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ns        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ca-ca        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-o -c -o          1.1          180.0         2.0          Using general improper torsional angle  X- o- c- o, penalty score=  3.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-na-nc         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-cd-nd        10.5          180.0         2.0          Using general improper torsional angle  X- X-cd- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "nt-o -c -os         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "cd-h4-cc-na        10.5          180.0         2.0          Using general improper torsional angle  X- X-cc- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          }
+        ],
+        "maximum_penalty_score": 41.9,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_01.frcmod",
+        "penalty_score_record_count": 22,
+        "records_with_attention_marker": 0,
+        "records_with_penalty_score_at_least_20": 2,
+        "sha256": "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      },
+      "input_sdf": {
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_01.sdf",
+        "sha256": "9f1a44f68ff0fdfd11e364d95803a4b59883558e00af75a0eec6a6ee6d4eadae"
+      },
+      "mol2": {
+        "atom_count": 161,
+        "atom_type_counts": {
+          "c": 10,
+          "c3": 20,
+          "ca": 30,
+          "cc": 1,
+          "cd": 1,
+          "h1": 16,
+          "h4": 1,
+          "ha": 9,
+          "hc": 29,
+          "hn": 14,
+          "na": 1,
+          "nc": 1,
+          "nd": 1,
+          "ns": 12,
+          "nt": 1,
+          "o": 13,
+          "os": 1
+        },
+        "bond_count": 168,
+        "charge_sum_within_0_01e_tolerance": true,
+        "charged_atoms_by_source_map": [
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0223,
+            "source_map_id": 1
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0151,
+            "source_map_id": 31
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0099,
+            "source_map_id": 32
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 2
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 3
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 33
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 34
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 4
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 5
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 35
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 36
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 6
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 47
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 48
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 49
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 50
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 51
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 25
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 26
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 27
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 28
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 68
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 69
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 70
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 29
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 30
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 71
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 72
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 73
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 74
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 75
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 12
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0273,
+            "source_map_id": 7
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0049,
+            "source_map_id": 78
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0304,
+            "source_map_id": 79
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0597,
+            "source_map_id": 80
+          },
+          {
+            "atom_type": "na",
+            "partial_charge_e": 0.5134,
+            "source_map_id": 81
+          },
+          {
+            "atom_type": "nc",
+            "partial_charge_e": -0.3358,
+            "source_map_id": 82
+          },
+          {
+            "atom_type": "nd",
+            "partial_charge_e": -0.322,
+            "source_map_id": 83
+          },
+          {
+            "atom_type": "cd",
+            "partial_charge_e": 0.2196,
+            "source_map_id": 88
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0187,
+            "source_map_id": 87
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0474,
+            "source_map_id": 86
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.2254,
+            "source_map_id": 85
+          },
+          {
+            "atom_type": "os",
+            "partial_charge_e": -0.4249,
+            "source_map_id": 91
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.6901,
+            "source_map_id": 84
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.642,
+            "source_map_id": 90
+          },
+          {
+            "atom_type": "nt",
+            "partial_charge_e": -0.247,
+            "source_map_id": 92
+          },
+          {
+            "atom_type": "cc",
+            "partial_charge_e": -0.3516,
+            "source_map_id": 89
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 8
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 9
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 76
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1423,
+            "source_map_id": 10
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 11
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 77
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1253,
+            "source_map_id": 67
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2649,
+            "source_map_id": 66
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5861,
+            "source_map_id": 64
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6631,
+            "source_map_id": 65
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0901,
+            "source_map_id": 63
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1174,
+            "source_map_id": 24
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1424,
+            "source_map_id": 19
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.111,
+            "source_map_id": 20
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.074,
+            "source_map_id": 21
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0606,
+            "source_map_id": 22
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9542,
+            "source_map_id": 60
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 61
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 62
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.071,
+            "source_map_id": 23
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0761,
+            "source_map_id": 46
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5851,
+            "source_map_id": 44
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6821,
+            "source_map_id": 45
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2639,
+            "source_map_id": 43
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1043,
+            "source_map_id": 42
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 59
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 58
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 56
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 57
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 55
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 18
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 13
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 14
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 15
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 16
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 52
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 53
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 54
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 17
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 41
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 39
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 40
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 38
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 37
+          }
+        ],
+        "net_charge_residual_e": 0.003995000000000193,
+        "partial_charge_sum_e": -2.996005,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_01.mol2",
+        "sha256": "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      },
+      "parmchk2": {
+        "command_template": [
+          "parmchk2",
+          "-i",
+          "output.mol2",
+          "-f",
+          "mol2",
+          "-o",
+          "output.frcmod",
+          "-s",
+          "2",
+          "-frc",
+          "ff14SB"
+        ],
+        "log_sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "variant_id": "resonance_01"
+    },
+    {
+      "anionic_oxygen_map_ids": [
+        53,
+        61,
+        70
+      ],
+      "antechamber": {
+        "command_template": [
+          "antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "output.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "-3",
+          "-at",
+          "gaff2",
+          "-pl",
+          "20",
+          "-ek",
+          "maxcyc=0",
+          "-rn",
+          "B29",
+          "-s",
+          "1"
+        ],
+        "log_sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "atom_count_with_hydrogens": 161,
+      "bond_count_with_hydrogens": 168,
+      "formal_charge": -3,
+      "formula": "C62H69N16O14-3",
+      "frcmod": {
+        "generated_parameter_record_count": 26,
+        "generated_records": [
+          {
+            "line": "ca-c3-ns-c    6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-ca-ns-hn   4    1.800       180.000           2.000      same as X -ca-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "os-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ns-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ns        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ca-ca        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-o -c -o          1.1          180.0         2.0          Using general improper torsional angle  X- o- c- o, penalty score=  3.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-na-nc         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-cd-nd        10.5          180.0         2.0          Using general improper torsional angle  X- X-cd- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "nt-o -c -os         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "cd-h4-cc-na        10.5          180.0         2.0          Using general improper torsional angle  X- X-cc- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          }
+        ],
+        "maximum_penalty_score": 41.9,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_02.frcmod",
+        "penalty_score_record_count": 22,
+        "records_with_attention_marker": 0,
+        "records_with_penalty_score_at_least_20": 2,
+        "sha256": "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      },
+      "input_sdf": {
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_02.sdf",
+        "sha256": "06b9f875182a2937531c8933d00c8bd0c83084adba9a3506cc8b5163458d57f6"
+      },
+      "mol2": {
+        "atom_count": 161,
+        "atom_type_counts": {
+          "c": 10,
+          "c3": 20,
+          "ca": 30,
+          "cc": 1,
+          "cd": 1,
+          "h1": 16,
+          "h4": 1,
+          "ha": 9,
+          "hc": 29,
+          "hn": 14,
+          "na": 1,
+          "nc": 1,
+          "nd": 1,
+          "ns": 12,
+          "nt": 1,
+          "o": 13,
+          "os": 1
+        },
+        "bond_count": 168,
+        "charge_sum_within_0_01e_tolerance": true,
+        "charged_atoms_by_source_map": [
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0223,
+            "source_map_id": 1
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0151,
+            "source_map_id": 31
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0099,
+            "source_map_id": 32
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 2
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 3
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 33
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 34
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 4
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 5
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 35
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 36
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 6
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 47
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 48
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 49
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 50
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 51
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 25
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 26
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 27
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 28
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 68
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 69
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 70
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 29
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 30
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 71
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 72
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 73
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 74
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 75
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 12
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0273,
+            "source_map_id": 7
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0049,
+            "source_map_id": 78
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0304,
+            "source_map_id": 79
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0597,
+            "source_map_id": 80
+          },
+          {
+            "atom_type": "na",
+            "partial_charge_e": 0.5134,
+            "source_map_id": 81
+          },
+          {
+            "atom_type": "nc",
+            "partial_charge_e": -0.3358,
+            "source_map_id": 82
+          },
+          {
+            "atom_type": "nd",
+            "partial_charge_e": -0.322,
+            "source_map_id": 83
+          },
+          {
+            "atom_type": "cd",
+            "partial_charge_e": 0.2196,
+            "source_map_id": 88
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0187,
+            "source_map_id": 87
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0474,
+            "source_map_id": 86
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.2254,
+            "source_map_id": 85
+          },
+          {
+            "atom_type": "os",
+            "partial_charge_e": -0.4249,
+            "source_map_id": 91
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.6901,
+            "source_map_id": 84
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.642,
+            "source_map_id": 90
+          },
+          {
+            "atom_type": "nt",
+            "partial_charge_e": -0.247,
+            "source_map_id": 92
+          },
+          {
+            "atom_type": "cc",
+            "partial_charge_e": -0.3516,
+            "source_map_id": 89
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 8
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 9
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 76
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1423,
+            "source_map_id": 10
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 11
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 77
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1253,
+            "source_map_id": 67
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2649,
+            "source_map_id": 66
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5861,
+            "source_map_id": 64
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6631,
+            "source_map_id": 65
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0901,
+            "source_map_id": 63
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1174,
+            "source_map_id": 24
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1424,
+            "source_map_id": 19
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.111,
+            "source_map_id": 20
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.074,
+            "source_map_id": 21
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0606,
+            "source_map_id": 22
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9542,
+            "source_map_id": 60
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 61
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 62
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.071,
+            "source_map_id": 23
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0761,
+            "source_map_id": 46
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5851,
+            "source_map_id": 44
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6821,
+            "source_map_id": 45
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2639,
+            "source_map_id": 43
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1043,
+            "source_map_id": 42
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 59
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 58
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 56
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 57
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 55
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 18
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 13
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 14
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 15
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 16
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 52
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 53
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 54
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 17
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 41
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 39
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 40
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 38
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 37
+          }
+        ],
+        "net_charge_residual_e": 0.003995000000000193,
+        "partial_charge_sum_e": -2.996005,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_02.mol2",
+        "sha256": "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      },
+      "parmchk2": {
+        "command_template": [
+          "parmchk2",
+          "-i",
+          "output.mol2",
+          "-f",
+          "mol2",
+          "-o",
+          "output.frcmod",
+          "-s",
+          "2",
+          "-frc",
+          "ff14SB"
+        ],
+        "log_sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "variant_id": "resonance_02"
+    },
+    {
+      "anionic_oxygen_map_ids": [
+        53,
+        62,
+        69
+      ],
+      "antechamber": {
+        "command_template": [
+          "antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "output.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "-3",
+          "-at",
+          "gaff2",
+          "-pl",
+          "20",
+          "-ek",
+          "maxcyc=0",
+          "-rn",
+          "B29",
+          "-s",
+          "1"
+        ],
+        "log_sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "atom_count_with_hydrogens": 161,
+      "bond_count_with_hydrogens": 168,
+      "formal_charge": -3,
+      "formula": "C62H69N16O14-3",
+      "frcmod": {
+        "generated_parameter_record_count": 26,
+        "generated_records": [
+          {
+            "line": "ca-c3-ns-c    6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-ca-ns-hn   4    1.800       180.000           2.000      same as X -ca-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "os-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ns-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ns        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ca-ca        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-o -c -o          1.1          180.0         2.0          Using general improper torsional angle  X- o- c- o, penalty score=  3.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-na-nc         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-cd-nd        10.5          180.0         2.0          Using general improper torsional angle  X- X-cd- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "nt-o -c -os         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "cd-h4-cc-na        10.5          180.0         2.0          Using general improper torsional angle  X- X-cc- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          }
+        ],
+        "maximum_penalty_score": 41.9,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_03.frcmod",
+        "penalty_score_record_count": 22,
+        "records_with_attention_marker": 0,
+        "records_with_penalty_score_at_least_20": 2,
+        "sha256": "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      },
+      "input_sdf": {
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_03.sdf",
+        "sha256": "bc691ac8fb222bd82cfad291438080a253e50b6dc7a2db8b1b4dcf881bbeb235"
+      },
+      "mol2": {
+        "atom_count": 161,
+        "atom_type_counts": {
+          "c": 10,
+          "c3": 20,
+          "ca": 30,
+          "cc": 1,
+          "cd": 1,
+          "h1": 16,
+          "h4": 1,
+          "ha": 9,
+          "hc": 29,
+          "hn": 14,
+          "na": 1,
+          "nc": 1,
+          "nd": 1,
+          "ns": 12,
+          "nt": 1,
+          "o": 13,
+          "os": 1
+        },
+        "bond_count": 168,
+        "charge_sum_within_0_01e_tolerance": true,
+        "charged_atoms_by_source_map": [
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0223,
+            "source_map_id": 1
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0151,
+            "source_map_id": 31
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0099,
+            "source_map_id": 32
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 2
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 3
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 33
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 34
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 4
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 5
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 35
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 36
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 6
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 47
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 48
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 49
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 50
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 51
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 25
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 26
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 27
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 28
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 68
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 69
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 70
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 29
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 30
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 71
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 72
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 73
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 74
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 75
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 12
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0273,
+            "source_map_id": 7
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0049,
+            "source_map_id": 78
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0304,
+            "source_map_id": 79
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0597,
+            "source_map_id": 80
+          },
+          {
+            "atom_type": "na",
+            "partial_charge_e": 0.5134,
+            "source_map_id": 81
+          },
+          {
+            "atom_type": "nc",
+            "partial_charge_e": -0.3358,
+            "source_map_id": 82
+          },
+          {
+            "atom_type": "nd",
+            "partial_charge_e": -0.322,
+            "source_map_id": 83
+          },
+          {
+            "atom_type": "cd",
+            "partial_charge_e": 0.2196,
+            "source_map_id": 88
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0187,
+            "source_map_id": 87
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0474,
+            "source_map_id": 86
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.2254,
+            "source_map_id": 85
+          },
+          {
+            "atom_type": "os",
+            "partial_charge_e": -0.4249,
+            "source_map_id": 91
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.6901,
+            "source_map_id": 84
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.642,
+            "source_map_id": 90
+          },
+          {
+            "atom_type": "nt",
+            "partial_charge_e": -0.247,
+            "source_map_id": 92
+          },
+          {
+            "atom_type": "cc",
+            "partial_charge_e": -0.3516,
+            "source_map_id": 89
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 8
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 9
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 76
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1423,
+            "source_map_id": 10
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 11
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 77
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1253,
+            "source_map_id": 67
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2649,
+            "source_map_id": 66
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5861,
+            "source_map_id": 64
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6631,
+            "source_map_id": 65
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0901,
+            "source_map_id": 63
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1174,
+            "source_map_id": 24
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1424,
+            "source_map_id": 19
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.111,
+            "source_map_id": 20
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.074,
+            "source_map_id": 21
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0606,
+            "source_map_id": 22
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9542,
+            "source_map_id": 60
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 61
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 62
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.071,
+            "source_map_id": 23
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0761,
+            "source_map_id": 46
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5851,
+            "source_map_id": 44
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6821,
+            "source_map_id": 45
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2639,
+            "source_map_id": 43
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1043,
+            "source_map_id": 42
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 59
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 58
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 56
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 57
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 55
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 18
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 13
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 14
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 15
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 16
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 52
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 53
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 54
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 17
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 41
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 39
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 40
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 38
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 37
+          }
+        ],
+        "net_charge_residual_e": 0.003995000000000193,
+        "partial_charge_sum_e": -2.996005,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_03.mol2",
+        "sha256": "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      },
+      "parmchk2": {
+        "command_template": [
+          "parmchk2",
+          "-i",
+          "output.mol2",
+          "-f",
+          "mol2",
+          "-o",
+          "output.frcmod",
+          "-s",
+          "2",
+          "-frc",
+          "ff14SB"
+        ],
+        "log_sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "variant_id": "resonance_03"
+    },
+    {
+      "anionic_oxygen_map_ids": [
+        53,
+        62,
+        70
+      ],
+      "antechamber": {
+        "command_template": [
+          "antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "output.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "-3",
+          "-at",
+          "gaff2",
+          "-pl",
+          "20",
+          "-ek",
+          "maxcyc=0",
+          "-rn",
+          "B29",
+          "-s",
+          "1"
+        ],
+        "log_sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "atom_count_with_hydrogens": 161,
+      "bond_count_with_hydrogens": 168,
+      "formal_charge": -3,
+      "formula": "C62H69N16O14-3",
+      "frcmod": {
+        "generated_parameter_record_count": 26,
+        "generated_records": [
+          {
+            "line": "ca-c3-ns-c    6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-ca-ns-hn   4    1.800       180.000           2.000      same as X -ca-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "os-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ns-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ns        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ca-ca        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-o -c -o          1.1          180.0         2.0          Using general improper torsional angle  X- o- c- o, penalty score=  3.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-na-nc         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-cd-nd        10.5          180.0         2.0          Using general improper torsional angle  X- X-cd- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "nt-o -c -os         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "cd-h4-cc-na        10.5          180.0         2.0          Using general improper torsional angle  X- X-cc- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          }
+        ],
+        "maximum_penalty_score": 41.9,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_04.frcmod",
+        "penalty_score_record_count": 22,
+        "records_with_attention_marker": 0,
+        "records_with_penalty_score_at_least_20": 2,
+        "sha256": "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      },
+      "input_sdf": {
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_04.sdf",
+        "sha256": "17e1a6988626583552274c0d294fcd9694a5792bfc4695f0db85c9aa9473b7eb"
+      },
+      "mol2": {
+        "atom_count": 161,
+        "atom_type_counts": {
+          "c": 10,
+          "c3": 20,
+          "ca": 30,
+          "cc": 1,
+          "cd": 1,
+          "h1": 16,
+          "h4": 1,
+          "ha": 9,
+          "hc": 29,
+          "hn": 14,
+          "na": 1,
+          "nc": 1,
+          "nd": 1,
+          "ns": 12,
+          "nt": 1,
+          "o": 13,
+          "os": 1
+        },
+        "bond_count": 168,
+        "charge_sum_within_0_01e_tolerance": true,
+        "charged_atoms_by_source_map": [
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0223,
+            "source_map_id": 1
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0151,
+            "source_map_id": 31
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0099,
+            "source_map_id": 32
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 2
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 3
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 33
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 34
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 4
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 5
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 35
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 36
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 6
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 47
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 48
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 49
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 50
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 51
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 25
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 26
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 27
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 28
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 68
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 69
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 70
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 29
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 30
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 71
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 72
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 73
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 74
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 75
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 12
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0273,
+            "source_map_id": 7
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0049,
+            "source_map_id": 78
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0304,
+            "source_map_id": 79
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0597,
+            "source_map_id": 80
+          },
+          {
+            "atom_type": "na",
+            "partial_charge_e": 0.5134,
+            "source_map_id": 81
+          },
+          {
+            "atom_type": "nc",
+            "partial_charge_e": -0.3358,
+            "source_map_id": 82
+          },
+          {
+            "atom_type": "nd",
+            "partial_charge_e": -0.322,
+            "source_map_id": 83
+          },
+          {
+            "atom_type": "cd",
+            "partial_charge_e": 0.2196,
+            "source_map_id": 88
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0187,
+            "source_map_id": 87
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0474,
+            "source_map_id": 86
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.2254,
+            "source_map_id": 85
+          },
+          {
+            "atom_type": "os",
+            "partial_charge_e": -0.4249,
+            "source_map_id": 91
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.6901,
+            "source_map_id": 84
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.642,
+            "source_map_id": 90
+          },
+          {
+            "atom_type": "nt",
+            "partial_charge_e": -0.247,
+            "source_map_id": 92
+          },
+          {
+            "atom_type": "cc",
+            "partial_charge_e": -0.3516,
+            "source_map_id": 89
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 8
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 9
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 76
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1423,
+            "source_map_id": 10
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 11
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 77
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1253,
+            "source_map_id": 67
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2649,
+            "source_map_id": 66
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5861,
+            "source_map_id": 64
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6631,
+            "source_map_id": 65
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0901,
+            "source_map_id": 63
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1174,
+            "source_map_id": 24
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1424,
+            "source_map_id": 19
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.111,
+            "source_map_id": 20
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.074,
+            "source_map_id": 21
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0606,
+            "source_map_id": 22
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9542,
+            "source_map_id": 60
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 61
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 62
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.071,
+            "source_map_id": 23
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0761,
+            "source_map_id": 46
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5851,
+            "source_map_id": 44
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6821,
+            "source_map_id": 45
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2639,
+            "source_map_id": 43
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1043,
+            "source_map_id": 42
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 59
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 58
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 56
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 57
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 55
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 18
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 13
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 14
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 15
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 16
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 52
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 53
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 54
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 17
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 41
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 39
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 40
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 38
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 37
+          }
+        ],
+        "net_charge_residual_e": 0.003995000000000193,
+        "partial_charge_sum_e": -2.996005,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_04.mol2",
+        "sha256": "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      },
+      "parmchk2": {
+        "command_template": [
+          "parmchk2",
+          "-i",
+          "output.mol2",
+          "-f",
+          "mol2",
+          "-o",
+          "output.frcmod",
+          "-s",
+          "2",
+          "-frc",
+          "ff14SB"
+        ],
+        "log_sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "variant_id": "resonance_04"
+    },
+    {
+      "anionic_oxygen_map_ids": [
+        54,
+        61,
+        69
+      ],
+      "antechamber": {
+        "command_template": [
+          "antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "output.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "-3",
+          "-at",
+          "gaff2",
+          "-pl",
+          "20",
+          "-ek",
+          "maxcyc=0",
+          "-rn",
+          "B29",
+          "-s",
+          "1"
+        ],
+        "log_sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "atom_count_with_hydrogens": 161,
+      "bond_count_with_hydrogens": 168,
+      "formal_charge": -3,
+      "formula": "C62H69N16O14-3",
+      "frcmod": {
+        "generated_parameter_record_count": 26,
+        "generated_records": [
+          {
+            "line": "ca-c3-ns-c    6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-ca-ns-hn   4    1.800       180.000           2.000      same as X -ca-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "os-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ns-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ns        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ca-ca        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-o -c -o          1.1          180.0         2.0          Using general improper torsional angle  X- o- c- o, penalty score=  3.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-na-nc         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-cd-nd        10.5          180.0         2.0          Using general improper torsional angle  X- X-cd- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "nt-o -c -os         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "cd-h4-cc-na        10.5          180.0         2.0          Using general improper torsional angle  X- X-cc- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          }
+        ],
+        "maximum_penalty_score": 41.9,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_05.frcmod",
+        "penalty_score_record_count": 22,
+        "records_with_attention_marker": 0,
+        "records_with_penalty_score_at_least_20": 2,
+        "sha256": "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      },
+      "input_sdf": {
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_05.sdf",
+        "sha256": "4d77d33dbff2ed889eda3ab38f3c9a4740d230039a55d4d1b13d0dba2e74f5ed"
+      },
+      "mol2": {
+        "atom_count": 161,
+        "atom_type_counts": {
+          "c": 10,
+          "c3": 20,
+          "ca": 30,
+          "cc": 1,
+          "cd": 1,
+          "h1": 16,
+          "h4": 1,
+          "ha": 9,
+          "hc": 29,
+          "hn": 14,
+          "na": 1,
+          "nc": 1,
+          "nd": 1,
+          "ns": 12,
+          "nt": 1,
+          "o": 13,
+          "os": 1
+        },
+        "bond_count": 168,
+        "charge_sum_within_0_01e_tolerance": true,
+        "charged_atoms_by_source_map": [
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0223,
+            "source_map_id": 1
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0151,
+            "source_map_id": 31
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0099,
+            "source_map_id": 32
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 2
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 3
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 33
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 34
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 4
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 5
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 35
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 36
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 6
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 47
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 48
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 49
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 50
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 51
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 25
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 26
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 27
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 28
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 68
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 69
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 70
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 29
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 30
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 71
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 72
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 73
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 74
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 75
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 12
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0273,
+            "source_map_id": 7
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0049,
+            "source_map_id": 78
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0304,
+            "source_map_id": 79
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0597,
+            "source_map_id": 80
+          },
+          {
+            "atom_type": "na",
+            "partial_charge_e": 0.5134,
+            "source_map_id": 81
+          },
+          {
+            "atom_type": "nc",
+            "partial_charge_e": -0.3358,
+            "source_map_id": 82
+          },
+          {
+            "atom_type": "nd",
+            "partial_charge_e": -0.322,
+            "source_map_id": 83
+          },
+          {
+            "atom_type": "cd",
+            "partial_charge_e": 0.2196,
+            "source_map_id": 88
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0187,
+            "source_map_id": 87
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0474,
+            "source_map_id": 86
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.2254,
+            "source_map_id": 85
+          },
+          {
+            "atom_type": "os",
+            "partial_charge_e": -0.4249,
+            "source_map_id": 91
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.6901,
+            "source_map_id": 84
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.642,
+            "source_map_id": 90
+          },
+          {
+            "atom_type": "nt",
+            "partial_charge_e": -0.247,
+            "source_map_id": 92
+          },
+          {
+            "atom_type": "cc",
+            "partial_charge_e": -0.3516,
+            "source_map_id": 89
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 8
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 9
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 76
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1423,
+            "source_map_id": 10
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 11
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 77
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1253,
+            "source_map_id": 67
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2649,
+            "source_map_id": 66
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5861,
+            "source_map_id": 64
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6631,
+            "source_map_id": 65
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0901,
+            "source_map_id": 63
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1174,
+            "source_map_id": 24
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1424,
+            "source_map_id": 19
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.111,
+            "source_map_id": 20
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.074,
+            "source_map_id": 21
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0606,
+            "source_map_id": 22
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9542,
+            "source_map_id": 60
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 61
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 62
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.071,
+            "source_map_id": 23
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0761,
+            "source_map_id": 46
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5851,
+            "source_map_id": 44
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6821,
+            "source_map_id": 45
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2639,
+            "source_map_id": 43
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1043,
+            "source_map_id": 42
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 59
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 58
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 56
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 57
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 55
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 18
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 13
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 14
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 15
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 16
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 52
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 53
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 54
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 17
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 41
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 39
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 40
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 38
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 37
+          }
+        ],
+        "net_charge_residual_e": 0.003995000000000193,
+        "partial_charge_sum_e": -2.996005,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_05.mol2",
+        "sha256": "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      },
+      "parmchk2": {
+        "command_template": [
+          "parmchk2",
+          "-i",
+          "output.mol2",
+          "-f",
+          "mol2",
+          "-o",
+          "output.frcmod",
+          "-s",
+          "2",
+          "-frc",
+          "ff14SB"
+        ],
+        "log_sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "variant_id": "resonance_05"
+    },
+    {
+      "anionic_oxygen_map_ids": [
+        54,
+        61,
+        70
+      ],
+      "antechamber": {
+        "command_template": [
+          "antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "output.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "-3",
+          "-at",
+          "gaff2",
+          "-pl",
+          "20",
+          "-ek",
+          "maxcyc=0",
+          "-rn",
+          "B29",
+          "-s",
+          "1"
+        ],
+        "log_sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "atom_count_with_hydrogens": 161,
+      "bond_count_with_hydrogens": 168,
+      "formal_charge": -3,
+      "formula": "C62H69N16O14-3",
+      "frcmod": {
+        "generated_parameter_record_count": 26,
+        "generated_records": [
+          {
+            "line": "ca-c3-ns-c    6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-ca-ns-hn   4    1.800       180.000           2.000      same as X -ca-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "os-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ns-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ns        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ca-ca        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-o -c -o          1.1          180.0         2.0          Using general improper torsional angle  X- o- c- o, penalty score=  3.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-na-nc         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-cd-nd        10.5          180.0         2.0          Using general improper torsional angle  X- X-cd- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "nt-o -c -os         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "cd-h4-cc-na        10.5          180.0         2.0          Using general improper torsional angle  X- X-cc- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          }
+        ],
+        "maximum_penalty_score": 41.9,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_06.frcmod",
+        "penalty_score_record_count": 22,
+        "records_with_attention_marker": 0,
+        "records_with_penalty_score_at_least_20": 2,
+        "sha256": "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      },
+      "input_sdf": {
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_06.sdf",
+        "sha256": "5661428fbd80f0f3daca614c6e2931bfdecd5a61ce1471b664a5808732c66b5f"
+      },
+      "mol2": {
+        "atom_count": 161,
+        "atom_type_counts": {
+          "c": 10,
+          "c3": 20,
+          "ca": 30,
+          "cc": 1,
+          "cd": 1,
+          "h1": 16,
+          "h4": 1,
+          "ha": 9,
+          "hc": 29,
+          "hn": 14,
+          "na": 1,
+          "nc": 1,
+          "nd": 1,
+          "ns": 12,
+          "nt": 1,
+          "o": 13,
+          "os": 1
+        },
+        "bond_count": 168,
+        "charge_sum_within_0_01e_tolerance": true,
+        "charged_atoms_by_source_map": [
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0223,
+            "source_map_id": 1
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0151,
+            "source_map_id": 31
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0099,
+            "source_map_id": 32
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 2
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 3
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 33
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 34
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 4
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 5
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 35
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 36
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 6
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 47
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 48
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 49
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 50
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 51
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 25
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 26
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 27
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 28
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 68
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 69
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 70
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 29
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 30
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 71
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 72
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 73
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 74
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 75
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 12
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0273,
+            "source_map_id": 7
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0049,
+            "source_map_id": 78
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0304,
+            "source_map_id": 79
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0597,
+            "source_map_id": 80
+          },
+          {
+            "atom_type": "na",
+            "partial_charge_e": 0.5134,
+            "source_map_id": 81
+          },
+          {
+            "atom_type": "nc",
+            "partial_charge_e": -0.3358,
+            "source_map_id": 82
+          },
+          {
+            "atom_type": "nd",
+            "partial_charge_e": -0.322,
+            "source_map_id": 83
+          },
+          {
+            "atom_type": "cd",
+            "partial_charge_e": 0.2196,
+            "source_map_id": 88
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0187,
+            "source_map_id": 87
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0474,
+            "source_map_id": 86
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.2254,
+            "source_map_id": 85
+          },
+          {
+            "atom_type": "os",
+            "partial_charge_e": -0.4249,
+            "source_map_id": 91
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.6901,
+            "source_map_id": 84
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.642,
+            "source_map_id": 90
+          },
+          {
+            "atom_type": "nt",
+            "partial_charge_e": -0.247,
+            "source_map_id": 92
+          },
+          {
+            "atom_type": "cc",
+            "partial_charge_e": -0.3516,
+            "source_map_id": 89
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 8
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 9
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 76
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1423,
+            "source_map_id": 10
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 11
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 77
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1253,
+            "source_map_id": 67
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2649,
+            "source_map_id": 66
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5861,
+            "source_map_id": 64
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6631,
+            "source_map_id": 65
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0901,
+            "source_map_id": 63
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1174,
+            "source_map_id": 24
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1424,
+            "source_map_id": 19
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.111,
+            "source_map_id": 20
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.074,
+            "source_map_id": 21
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0606,
+            "source_map_id": 22
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9542,
+            "source_map_id": 60
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 61
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 62
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.071,
+            "source_map_id": 23
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0761,
+            "source_map_id": 46
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5851,
+            "source_map_id": 44
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6821,
+            "source_map_id": 45
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2639,
+            "source_map_id": 43
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1043,
+            "source_map_id": 42
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 59
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 58
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 56
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 57
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 55
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 18
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 13
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 14
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 15
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 16
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 52
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 53
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 54
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 17
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 41
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 39
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 40
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 38
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 37
+          }
+        ],
+        "net_charge_residual_e": 0.003995000000000193,
+        "partial_charge_sum_e": -2.996005,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_06.mol2",
+        "sha256": "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      },
+      "parmchk2": {
+        "command_template": [
+          "parmchk2",
+          "-i",
+          "output.mol2",
+          "-f",
+          "mol2",
+          "-o",
+          "output.frcmod",
+          "-s",
+          "2",
+          "-frc",
+          "ff14SB"
+        ],
+        "log_sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "variant_id": "resonance_06"
+    },
+    {
+      "anionic_oxygen_map_ids": [
+        54,
+        62,
+        69
+      ],
+      "antechamber": {
+        "command_template": [
+          "antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "output.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "-3",
+          "-at",
+          "gaff2",
+          "-pl",
+          "20",
+          "-ek",
+          "maxcyc=0",
+          "-rn",
+          "B29",
+          "-s",
+          "1"
+        ],
+        "log_sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "atom_count_with_hydrogens": 161,
+      "bond_count_with_hydrogens": 168,
+      "formal_charge": -3,
+      "formula": "C62H69N16O14-3",
+      "frcmod": {
+        "generated_parameter_record_count": 26,
+        "generated_records": [
+          {
+            "line": "ca-c3-ns-c    6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-ca-ns-hn   4    1.800       180.000           2.000      same as X -ca-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "os-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ns-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ns        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ca-ca        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-o -c -o          1.1          180.0         2.0          Using general improper torsional angle  X- o- c- o, penalty score=  3.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-na-nc         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-cd-nd        10.5          180.0         2.0          Using general improper torsional angle  X- X-cd- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "nt-o -c -os         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "cd-h4-cc-na        10.5          180.0         2.0          Using general improper torsional angle  X- X-cc- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          }
+        ],
+        "maximum_penalty_score": 41.9,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_07.frcmod",
+        "penalty_score_record_count": 22,
+        "records_with_attention_marker": 0,
+        "records_with_penalty_score_at_least_20": 2,
+        "sha256": "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      },
+      "input_sdf": {
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_07.sdf",
+        "sha256": "fad6e662956003d940bcc99084f0c23d247b35093efac6810b12a56c9d729386"
+      },
+      "mol2": {
+        "atom_count": 161,
+        "atom_type_counts": {
+          "c": 10,
+          "c3": 20,
+          "ca": 30,
+          "cc": 1,
+          "cd": 1,
+          "h1": 16,
+          "h4": 1,
+          "ha": 9,
+          "hc": 29,
+          "hn": 14,
+          "na": 1,
+          "nc": 1,
+          "nd": 1,
+          "ns": 12,
+          "nt": 1,
+          "o": 13,
+          "os": 1
+        },
+        "bond_count": 168,
+        "charge_sum_within_0_01e_tolerance": true,
+        "charged_atoms_by_source_map": [
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0223,
+            "source_map_id": 1
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0151,
+            "source_map_id": 31
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0099,
+            "source_map_id": 32
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 2
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 3
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 33
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 34
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 4
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 5
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 35
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 36
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 6
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 47
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 48
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 49
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 50
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 51
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 25
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 26
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 27
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 28
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 68
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 69
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 70
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 29
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 30
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 71
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 72
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 73
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 74
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 75
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 12
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0273,
+            "source_map_id": 7
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0049,
+            "source_map_id": 78
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0304,
+            "source_map_id": 79
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0597,
+            "source_map_id": 80
+          },
+          {
+            "atom_type": "na",
+            "partial_charge_e": 0.5134,
+            "source_map_id": 81
+          },
+          {
+            "atom_type": "nc",
+            "partial_charge_e": -0.3358,
+            "source_map_id": 82
+          },
+          {
+            "atom_type": "nd",
+            "partial_charge_e": -0.322,
+            "source_map_id": 83
+          },
+          {
+            "atom_type": "cd",
+            "partial_charge_e": 0.2196,
+            "source_map_id": 88
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0187,
+            "source_map_id": 87
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0474,
+            "source_map_id": 86
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.2254,
+            "source_map_id": 85
+          },
+          {
+            "atom_type": "os",
+            "partial_charge_e": -0.4249,
+            "source_map_id": 91
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.6901,
+            "source_map_id": 84
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.642,
+            "source_map_id": 90
+          },
+          {
+            "atom_type": "nt",
+            "partial_charge_e": -0.247,
+            "source_map_id": 92
+          },
+          {
+            "atom_type": "cc",
+            "partial_charge_e": -0.3516,
+            "source_map_id": 89
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 8
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 9
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 76
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1423,
+            "source_map_id": 10
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 11
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 77
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1253,
+            "source_map_id": 67
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2649,
+            "source_map_id": 66
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5861,
+            "source_map_id": 64
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6631,
+            "source_map_id": 65
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0901,
+            "source_map_id": 63
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1174,
+            "source_map_id": 24
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1424,
+            "source_map_id": 19
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.111,
+            "source_map_id": 20
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.074,
+            "source_map_id": 21
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0606,
+            "source_map_id": 22
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9542,
+            "source_map_id": 60
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 61
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 62
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.071,
+            "source_map_id": 23
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0761,
+            "source_map_id": 46
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5851,
+            "source_map_id": 44
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6821,
+            "source_map_id": 45
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2639,
+            "source_map_id": 43
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1043,
+            "source_map_id": 42
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 59
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 58
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 56
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 57
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 55
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 18
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 13
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 14
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 15
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 16
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 52
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 53
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 54
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 17
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 41
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 39
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 40
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 38
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 37
+          }
+        ],
+        "net_charge_residual_e": 0.003995000000000193,
+        "partial_charge_sum_e": -2.996005,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_07.mol2",
+        "sha256": "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      },
+      "parmchk2": {
+        "command_template": [
+          "parmchk2",
+          "-i",
+          "output.mol2",
+          "-f",
+          "mol2",
+          "-o",
+          "output.frcmod",
+          "-s",
+          "2",
+          "-frc",
+          "ff14SB"
+        ],
+        "log_sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "variant_id": "resonance_07"
+    },
+    {
+      "anionic_oxygen_map_ids": [
+        54,
+        62,
+        70
+      ],
+      "antechamber": {
+        "command_template": [
+          "antechamber",
+          "-i",
+          "input.sdf",
+          "-fi",
+          "sdf",
+          "-o",
+          "output.mol2",
+          "-fo",
+          "mol2",
+          "-c",
+          "bcc",
+          "-nc",
+          "-3",
+          "-at",
+          "gaff2",
+          "-pl",
+          "20",
+          "-ek",
+          "maxcyc=0",
+          "-rn",
+          "B29",
+          "-s",
+          "1"
+        ],
+        "log_sha256": "56949f24b65dc41e5694029dc3c5f4966349740de17845099ace53169a9bdf22",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "atom_count_with_hydrogens": 161,
+      "bond_count_with_hydrogens": 168,
+      "formal_charge": -3,
+      "formula": "C62H69N16O14-3",
+      "frcmod": {
+        "generated_parameter_record_count": 26,
+        "generated_records": [
+          {
+            "line": "ca-c3-ns-c    6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-c3   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ns-c -ns-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-ca   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -ns-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "ca-ca-ns-hn   4    1.800       180.000           2.000      same as X -ca-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "os-c -nt-hn   4   10.000       180.000           2.000      same as X -c -n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.500       180.000          -2.000      same as o -c -n -hn",
+            "section": "DIHE"
+          },
+          {
+            "line": "o -c -nt-hn   1    2.000         0.000           1.000      same as o -c -n -hn, penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "h1-c3-ns-hn   6    0.000         0.000           2.000      same as X -c3-n -X , penalty score=  0.0",
+            "section": "DIHE"
+          },
+          {
+            "line": "c -c3-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ns-ns-c -o         10.5          180.0         2.0          Using general improper torsional angle  X- X- c- o, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ns-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ns        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -ca-ca-ca        10.5          180.0         2.0          Same as X -X -cc-X , penalty score= 41.9 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "ca-o -c -o          1.1          180.0         2.0          Using general improper torsional angle  X- o- c- o, penalty score=  3.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-na-nc         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c3-cc-cd-nd        10.5          180.0         2.0          Using general improper torsional angle  X- X-cd- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "nt-o -c -os         1.1          180.0         2.0          Using the default value",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "c -hn-nt-hn         1.1          180.0         2.0          Same as X -X -n -hn, penalty score=  6.0 (use general term))",
+            "section": "IMPROPER"
+          },
+          {
+            "line": "cd-h4-cc-na        10.5          180.0         2.0          Using general improper torsional angle  X- X-cc- X, penalty score=  9.0)",
+            "section": "IMPROPER"
+          }
+        ],
+        "maximum_penalty_score": 41.9,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_08.frcmod",
+        "penalty_score_record_count": 22,
+        "records_with_attention_marker": 0,
+        "records_with_penalty_score_at_least_20": 2,
+        "sha256": "a1d1250a4dd58612c18fadcdb01fa25d53351051c2046a6bad81507c8920fa33"
+      },
+      "input_sdf": {
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_08.sdf",
+        "sha256": "99f21b2106005266a7e74846fe557e8746fa6ddfdee299d7eae19db4399aed14"
+      },
+      "mol2": {
+        "atom_count": 161,
+        "atom_type_counts": {
+          "c": 10,
+          "c3": 20,
+          "ca": 30,
+          "cc": 1,
+          "cd": 1,
+          "h1": 16,
+          "h4": 1,
+          "ha": 9,
+          "hc": 29,
+          "hn": 14,
+          "na": 1,
+          "nc": 1,
+          "nd": 1,
+          "ns": 12,
+          "nt": 1,
+          "o": 13,
+          "os": 1
+        },
+        "bond_count": 168,
+        "charge_sum_within_0_01e_tolerance": true,
+        "charged_atoms_by_source_map": [
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0223,
+            "source_map_id": 1
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0151,
+            "source_map_id": 31
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0099,
+            "source_map_id": 32
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 2
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 3
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 33
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 34
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 4
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0538,
+            "source_map_id": 5
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0109,
+            "source_map_id": 35
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0019,
+            "source_map_id": 36
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1323,
+            "source_map_id": 6
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 47
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 48
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 49
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 50
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 51
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 25
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 26
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 27
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 28
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 68
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 69
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 70
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 29
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 30
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 71
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 72
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 73
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 74
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 75
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 12
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0273,
+            "source_map_id": 7
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0049,
+            "source_map_id": 78
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0304,
+            "source_map_id": 79
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0597,
+            "source_map_id": 80
+          },
+          {
+            "atom_type": "na",
+            "partial_charge_e": 0.5134,
+            "source_map_id": 81
+          },
+          {
+            "atom_type": "nc",
+            "partial_charge_e": -0.3358,
+            "source_map_id": 82
+          },
+          {
+            "atom_type": "nd",
+            "partial_charge_e": -0.322,
+            "source_map_id": 83
+          },
+          {
+            "atom_type": "cd",
+            "partial_charge_e": 0.2196,
+            "source_map_id": 88
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0187,
+            "source_map_id": 87
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": -0.0474,
+            "source_map_id": 86
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.2254,
+            "source_map_id": 85
+          },
+          {
+            "atom_type": "os",
+            "partial_charge_e": -0.4249,
+            "source_map_id": 91
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.6901,
+            "source_map_id": 84
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.642,
+            "source_map_id": 90
+          },
+          {
+            "atom_type": "nt",
+            "partial_charge_e": -0.247,
+            "source_map_id": 92
+          },
+          {
+            "atom_type": "cc",
+            "partial_charge_e": -0.3516,
+            "source_map_id": 89
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1333,
+            "source_map_id": 8
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 9
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 76
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1423,
+            "source_map_id": 10
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0513,
+            "source_map_id": 11
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.0282,
+            "source_map_id": 77
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1253,
+            "source_map_id": 67
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2649,
+            "source_map_id": 66
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5861,
+            "source_map_id": 64
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6631,
+            "source_map_id": 65
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0901,
+            "source_map_id": 63
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1174,
+            "source_map_id": 24
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1424,
+            "source_map_id": 19
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.111,
+            "source_map_id": 20
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.074,
+            "source_map_id": 21
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0606,
+            "source_map_id": 22
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9542,
+            "source_map_id": 60
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 61
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8838,
+            "source_map_id": 62
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.071,
+            "source_map_id": 23
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0761,
+            "source_map_id": 46
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5851,
+            "source_map_id": 44
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6821,
+            "source_map_id": 45
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2639,
+            "source_map_id": 43
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1043,
+            "source_map_id": 42
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1048,
+            "source_map_id": 59
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2644,
+            "source_map_id": 58
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5916,
+            "source_map_id": 56
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6546,
+            "source_map_id": 57
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0861,
+            "source_map_id": 55
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1359,
+            "source_map_id": 18
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.1229,
+            "source_map_id": 13
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.125,
+            "source_map_id": 14
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.082,
+            "source_map_id": 15
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0691,
+            "source_map_id": 16
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.9567,
+            "source_map_id": 52
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 53
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.8853,
+            "source_map_id": 54
+          },
+          {
+            "atom_type": "ca",
+            "partial_charge_e": -0.0445,
+            "source_map_id": 17
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.0721,
+            "source_map_id": 41
+          },
+          {
+            "atom_type": "c",
+            "partial_charge_e": 0.5926,
+            "source_map_id": 39
+          },
+          {
+            "atom_type": "o",
+            "partial_charge_e": -0.6766,
+            "source_map_id": 40
+          },
+          {
+            "atom_type": "ns",
+            "partial_charge_e": -0.2659,
+            "source_map_id": 38
+          },
+          {
+            "atom_type": "c3",
+            "partial_charge_e": 0.1108,
+            "source_map_id": 37
+          }
+        ],
+        "net_charge_residual_e": 0.003995000000000193,
+        "partial_charge_sum_e": -2.996005,
+        "path": "data/nnc2215-b29-gaff2-pilot/resonance_08.mol2",
+        "sha256": "ea04ba1c153334c74756b6c1d9b343a3fe5761c5265c5a3eb16efac1c1b5d327"
+      },
+      "parmchk2": {
+        "command_template": [
+          "parmchk2",
+          "-i",
+          "output.mol2",
+          "-f",
+          "mol2",
+          "-o",
+          "output.frcmod",
+          "-s",
+          "2",
+          "-frc",
+          "ff14SB"
+        ],
+        "log_sha256": "3cadabec897fd961a14ae0f164fbcc2d872da835fd7c259079ac6fab44594c72",
+        "returncode": 0,
+        "timed_out": false
+      },
+      "variant_id": "resonance_08"
+    }
+  ]
+}

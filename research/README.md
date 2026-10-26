@@ -203,7 +203,15 @@ micromamba create -p /tmp/dho-hybrid-feasibility --file research/pag-chemistry-e
 micromamba run -p /tmp/dho-hybrid-feasibility python research/audit_nnc2215_hybrid_feasibility.py
 ```
 
-The run records input, lock, and every included Amber XML checksum. It does not assign partial charges, generate force-field parameters, create coordinates or an OpenMM system, or run dynamics.
+The run records input, lock, and every included Amber XML checksum. It inventories template-name candidates only; it does not validate exact residue matching, assign charges, create a complete parameter set or OpenMM system, or run dynamics.
+
+### Isolated B29 GAFF2 parameterization pilot — 26 October 2026
+
+[`data/nnc2215-b29-gaff2-pilot.json`](data/nnc2215-b29-gaff2-pilot.json) records a bounded AmberTools 26 GAFF2/AM1-BCC feasibility pilot on the source-mapped B29 linker–roof component (92 heavy atoms) in the declared tri-carboxylate state, formal charge −3. It uses heavy-atom coordinates from the publisher-supplied active/open model-built candidate, with one of the 16 exact element-adjacency graph embeddings, and explicit hydrogens added by RDKit. Antechamber's SQM geometry optimization was disabled with `maxcyc=0`; the charges therefore depend on the selected model geometry.
+
+All eight carboxylate Lewis labelings produced identical MOL2 and frcmod outputs; all 161 atoms received GAFF2 types. The raw MOL2 partial-charge sum is −2.996005 e, a +0.003995 e residual from the formal −3; no correction was applied. `parmchk2` emitted 26 additional parameter records. None carries an `ATTN` marker, but two have penalty scores of 41.9 and need expert review. The raw input SDFs, MOL2 files, frcmod files, and run logs are in [`data/nnc2215-b29-gaff2-pilot/`](data/nnc2215-b29-gaff2-pilot/).
+
+This supports toolchain feasibility for the isolated capped B29 fragment only. The source NH2 cap is not the attached LysB29 NZ environment; charges at that boundary are not final. The exact map to model coordinates, B1 junction, insulin terminals, custom cross-boundary terms, full topology, and complete charge reconciliation remain open. No validated conjugate force field, OpenMM system, MD, affinity calculation, or clinical inference results from this pilot. The representative [input SDF](data/nnc2215-b29-gaff2-pilot/resonance_01.sdf), [MOL2](data/nnc2215-b29-gaff2-pilot/resonance_01.mol2), and [frcmod](data/nnc2215-b29-gaff2-pilot/resonance_01.frcmod) are available; the JSON indexes all eight variants. The official [AmberTools modified-residue tutorial](https://ambermd.org/tutorials/basic/tutorial5/index.php) describes the Antechamber/prepgen/parmchk2 workflow and cautions that generated charges and terms require review; see also the [Amber24 reference manual](https://ambermd.org/doc12/Amber24.pdf). Re-run from a lock-derived environment with `micromamba run -p <environment-created-from-lock> python research/audit_nnc2215_ambertools_parameterization_pilot.py`.
 
 ### Conditional pH 7.4 charge-state ledger
 
