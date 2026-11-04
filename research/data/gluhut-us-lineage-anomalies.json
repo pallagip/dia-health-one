@@ -1,0 +1,1350 @@
+{
+  "center_mismatches": [
+    {
+      "mapped_wham_key": "galactose/US-1",
+      "route_key": "galactose/run1b",
+      "trajectory_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "trajectory_only_centres_A": [],
+      "trajectory_window_count": 51,
+      "wham_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.25,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "wham_only_centres_A": [
+        2.25
+      ],
+      "wham_window_count": 52
+    },
+    {
+      "mapped_wham_key": "galactose/US-2",
+      "route_key": "galactose/run2b",
+      "trajectory_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "trajectory_only_centres_A": [],
+      "trajectory_window_count": 51,
+      "wham_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.25,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "wham_only_centres_A": [
+        2.25
+      ],
+      "wham_window_count": 52
+    },
+    {
+      "mapped_wham_key": "galactose/US-3",
+      "route_key": "galactose/run3b",
+      "trajectory_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "trajectory_only_centres_A": [],
+      "trajectory_window_count": 51,
+      "wham_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.25,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "wham_only_centres_A": [
+        2.25
+      ],
+      "wham_window_count": 52
+    }
+  ],
+  "complete_duplicate_route_groups": [
+    {
+      "mapped_wham_keys": [
+        "galactose/US-routeA"
+      ],
+      "route_content_signature_sha256": "40d6700004f70d60cc08e496827137a93791ab7a6cf2d436fa8f10d86c2e68f5",
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "trajectory_file_count_per_route": [
+        51
+      ]
+    }
+  ],
+  "decision": {
+    "all_center_mismatches_are_galactose_pathB_extra_2_25A": true,
+    "all_named_100_frame_files_actually_contain_100_frames": false,
+    "all_route_directory_names_cover_0_to_15_by_0_3A": true,
+    "authoritative_route_lineage_file_present": false,
+    "candidate_ranking_authorized": false,
+    "fourteen_route_directories_reduce_to_thirteen_unique_content_signatures": true,
+    "frame_failure_routes_are_exactly_fructofuranose_run2_and_run3": true,
+    "fructofuranose_run2_has_one_and_ten_frame_files": true,
+    "fructofuranose_run2_one_frame_centres_A": [
+      12.6
+    ],
+    "fructofuranose_run2_ten_frame_centres_A": [
+      0.0,
+      0.3,
+      0.6,
+      0.9,
+      1.2,
+      1.5,
+      1.8,
+      2.1,
+      2.4,
+      2.7,
+      3.0,
+      3.3,
+      3.6,
+      3.9,
+      4.2,
+      4.5,
+      4.8,
+      5.1,
+      5.4,
+      5.7,
+      6.0,
+      6.3,
+      6.6,
+      6.9,
+      7.2,
+      7.5,
+      7.8,
+      8.1,
+      8.4,
+      8.7,
+      9.0,
+      9.3,
+      9.6,
+      9.9,
+      10.2,
+      10.5,
+      10.8,
+      11.1,
+      11.4,
+      11.7,
+      12.0,
+      12.3,
+      12.9,
+      13.2,
+      13.5,
+      13.8,
+      14.1,
+      14.4,
+      14.7,
+      15.0
+    ],
+    "fructofuranose_run3_has_only_ten_frame_files": true,
+    "galactose_pathB_trajectory_archive_has_51_windows": true,
+    "galactose_pathB_wham_has_52_windows_including_2_25A": true,
+    "galactose_run1b_run2b_have_duplicate_0_0_and_0_3_files": true,
+    "galactose_run4a_run5a_complete_routes_are_exact_duplicates": true,
+    "histogram_generation_reproducible_from_us_archive": false,
+    "next_action": "request the missing full-resolution trajectories or exact frame-selection map, the galactose 2.25 A window lineage, corrected fructofuranose route files, and authoritative route-to-WHAM provenance before histogram regeneration",
+    "one_frame_visualization_file_matches_wham_short_window_center": true,
+    "parent_pag_calibration_authorized": false,
+    "pmf_recalculation_from_us_trajectories_authorized": false,
+    "umbrella_archive_contains_full_wham_histogram_frame_series": false
+  },
+  "frame_count_failures": [
+    {
+      "anomalies": [
+        {
+          "center_A": 0.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-0-0-100-frames.binpos",
+          "sha256": "d85dd26a947ead264e9a4f4666f5ab70f3ab31d4cf744fcd57c3a341186cd2a2"
+        },
+        {
+          "center_A": 0.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-0-3-100-frames.binpos",
+          "sha256": "48cee24f2a42221e8235dce71d4e9070162f53e189c3f8d7ccc08020bb63891d"
+        },
+        {
+          "center_A": 0.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-0-6-100-frames.binpos",
+          "sha256": "0de7f1c7f1526c319f0c778dd9887dad7fc8bfeec63a3269615565410b8754de"
+        },
+        {
+          "center_A": 0.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-0-9-100-frames.binpos",
+          "sha256": "19e21c9d8369f998e0445354bf8b8a39df1d8f17ce75326714d65ace3a6aaaaf"
+        },
+        {
+          "center_A": 1.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-1-2-100-frames.binpos",
+          "sha256": "90d98346a7780af6b8279632878b7b53a1e9535ef69814f03c6fdd1a74c40c01"
+        },
+        {
+          "center_A": 1.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-1-5-100-frames.binpos",
+          "sha256": "38c2f6a81bbb431a0e057124dd167c3c9859ae2adb27e6572d7c7b2b011f22a7"
+        },
+        {
+          "center_A": 1.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-1-8-100-frames.binpos",
+          "sha256": "9f748deef21fb3421724229153d5a3a832cc9753fd371ec65901af839235e630"
+        },
+        {
+          "center_A": 2.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-2-1-100-frames.binpos",
+          "sha256": "b3c80b94c9b42647aada591ce05c4616cd95e29931d9a9d1abe897903768cdd9"
+        },
+        {
+          "center_A": 2.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-2-4-100-frames.binpos",
+          "sha256": "f5cc1f112cbd4615ee7b52ff114035dfd8f740921b48a4c07c24748871c714e4"
+        },
+        {
+          "center_A": 2.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-2-7-100-frames.binpos",
+          "sha256": "5ce70144295e87a3b03144ed08286db227736adca0a6a1d38f39ce53ad13153f"
+        },
+        {
+          "center_A": 3.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-3-0-100-frames.binpos",
+          "sha256": "05e0b040268c9d43c7e44de4a7d1bb2317c109e24592b2db24510ada5167dc29"
+        },
+        {
+          "center_A": 3.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-3-3-100-frames.binpos",
+          "sha256": "8e8d0c3a59e1a3e16c3c8ea72731f10e60947ecf817d567e99652b37b4648a87"
+        },
+        {
+          "center_A": 3.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-3-6-100-frames.binpos",
+          "sha256": "3322538718d817bd960e0ae9cd1c5a4b867245104e36e564ad16a8c3c118d0e0"
+        },
+        {
+          "center_A": 3.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-3-9-100-frames.binpos",
+          "sha256": "2f954ccc7e0a658654a05a040385c73b832386e9f94c1b6fcb9d645ad1efbba0"
+        },
+        {
+          "center_A": 4.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-4-2-100-frames.binpos",
+          "sha256": "5d194ab8a43f02c8df0be4ad583ef0531004ce18db311b9c4008e326af95c3cc"
+        },
+        {
+          "center_A": 4.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-4-5-100-frames.binpos",
+          "sha256": "8aa38f5506c31a1cbbf0d414047b43fff9cbd1fc70e5bb550ef21833a979ffb7"
+        },
+        {
+          "center_A": 4.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-4-8-100-frames.binpos",
+          "sha256": "99d7bc451529d6708b272adc1b4a5d1a3d462c14df0db6ee5fab05920aa17551"
+        },
+        {
+          "center_A": 5.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-5-1-100-frames.binpos",
+          "sha256": "5716a34a4a0680b2b8a1447a7893efd126b075279184a3392b10ce0ec6fd46f8"
+        },
+        {
+          "center_A": 5.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-5-4-100-frames.binpos",
+          "sha256": "d5a0c631cf130a99b6e0a11e7fc21a95cfae2516396712e79006b6d3e1bd13d3"
+        },
+        {
+          "center_A": 5.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-5-7-100-frames.binpos",
+          "sha256": "55f389660d07a544c1a3817ab0dd0082d08f00a042899639c82ac451e5e79906"
+        },
+        {
+          "center_A": 6.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-6-0-100-frames.binpos",
+          "sha256": "937cb351dbcaa9f3a9923f2be70ad3b34f1a84238a7f0f9bd2e722b5387c042c"
+        },
+        {
+          "center_A": 6.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-6-3-100-frames.binpos",
+          "sha256": "7444df87a9f0618cba4067b35ff324ea9134b29be9f5758a15c95729ab5126e4"
+        },
+        {
+          "center_A": 6.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-6-6-100-frames.binpos",
+          "sha256": "cdb18519498d48bf56f5aeb63793d7fef525c752602fbbda385fa4da965e4666"
+        },
+        {
+          "center_A": 6.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-6-9-100-frames.binpos",
+          "sha256": "b3e7ce4d37418c0c8ab18e678c63e4e3a9ff39565cda9fbb4ab2a04958492983"
+        },
+        {
+          "center_A": 7.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-7-2-100-frames.binpos",
+          "sha256": "040ae0a354b5d09cd9085feba539a0f9ad6bb4d38787cb62ddf0c791ae82b1ef"
+        },
+        {
+          "center_A": 7.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-7-5-100-frames.binpos",
+          "sha256": "3fc1e86db71d74884e2d3f1b492ae540f70f691d53579d00a9282bd4078e3b2f"
+        },
+        {
+          "center_A": 7.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-7-8-100-frames.binpos",
+          "sha256": "b195e32422cc9d76583a476b76cdacf1ad51f75217a3b772d89148b8d4168331"
+        },
+        {
+          "center_A": 8.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-8-1-100-frames.binpos",
+          "sha256": "58d9728d41e701ce181ab2e93b7a73c43dc58e8fb866f17531a7bbad9e42b2cc"
+        },
+        {
+          "center_A": 8.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-8-4-100-frames.binpos",
+          "sha256": "b8111edbc3d6c97418a1ee4f84ee6a716b8a908870e7bcb3d057dbcba9f402c0"
+        },
+        {
+          "center_A": 8.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-8-7-100-frames.binpos",
+          "sha256": "95633bcd93a5babadd4b2183ec0897772ab82087f1328de4aa7e11f085df7660"
+        },
+        {
+          "center_A": 9.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-9-0-100-frames.binpos",
+          "sha256": "f3d09f615f266cdf739e6f8c24e99ff3e4bf0458f2aeec2c48ad74afe7bc2b8f"
+        },
+        {
+          "center_A": 9.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-9-3-100-frames.binpos",
+          "sha256": "e2c354986b6f24b99abcf4c12ae446ad64ec020f8b20745438b6edf13eee8ad1"
+        },
+        {
+          "center_A": 9.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-9-6-100-frames.binpos",
+          "sha256": "c179f4b3dae8cf135e1d4d090e66663c923b255ec6705401350bdd0123823bed"
+        },
+        {
+          "center_A": 9.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-9-9-100-frames.binpos",
+          "sha256": "98a0a6103aa26ff2875a2285e2e5a7c546fe9abe3af3d8d0156b22d21e17c7d5"
+        },
+        {
+          "center_A": 10.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-10-2-100-frames.binpos",
+          "sha256": "8a46269913640a15fe5b4f27f16e3989d4533f9700d30ee52ecf6a57bdca0919"
+        },
+        {
+          "center_A": 10.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-10-5-100-frames.binpos",
+          "sha256": "156f7b9e026bf3f89a59598519bc400ac852c314fca03d681f635b0034a48f25"
+        },
+        {
+          "center_A": 10.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-10-8-100-frames.binpos",
+          "sha256": "77577a309eb5770d7b7217d635a66758d90ec336ec0a7281046c859aafcc349c"
+        },
+        {
+          "center_A": 11.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-11-1-100-frames.binpos",
+          "sha256": "5fdf982257dfcc363a95824f327e11867207279d5caa0a5d52edd6bada9eda28"
+        },
+        {
+          "center_A": 11.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-11-4-100-frames.binpos",
+          "sha256": "7474cefcff404ac44a72717d2c60d67753301939ce7b4496378f106df909e6ab"
+        },
+        {
+          "center_A": 11.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-11-7-100-frames.binpos",
+          "sha256": "b1afdbb20150878f1f072b2ed9c501fc7ec5ded59b713665b834e5d8746e33c0"
+        },
+        {
+          "center_A": 12.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-12-0-100-frames.binpos",
+          "sha256": "a5b5a39b477c6adf6e02134138b1814a231f609bf98d17a36403c280adea3752"
+        },
+        {
+          "center_A": 12.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-12-3-100-frames.binpos",
+          "sha256": "f36a634fd217d1d6c5ccd6b201b54e9b069a545ecb0210869741259aba2a6b7a"
+        },
+        {
+          "center_A": 12.6,
+          "frame_count": 1,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-12-6-100-frames.binpos",
+          "sha256": "fd0f34f044f01d26b26b27ffbb113bf761e52768aa34f53328c0f2d1d029b1e1"
+        },
+        {
+          "center_A": 12.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-12-9-100-frames.binpos",
+          "sha256": "c46cc41437b1a4d20e4b733b78acaebccb97ecc03b2027ec18e8595e4752a885"
+        },
+        {
+          "center_A": 13.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-13-2-100-frames.binpos",
+          "sha256": "0742aa31f41b981df64a55b5680dd4cae66dbe8aaf10fe880872f4a2bb998dc8"
+        },
+        {
+          "center_A": 13.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-13-5-100-frames.binpos",
+          "sha256": "c496d944f2c72e27ee558887186ca90bc7b9e253998a829d51be439a3a444451"
+        },
+        {
+          "center_A": 13.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-13-8-100-frames.binpos",
+          "sha256": "4664aa3e47d5f9169e05163e1caf6e07ca8ad01441d9f52fa04670145506b774"
+        },
+        {
+          "center_A": 14.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-14-1-100-frames.binpos",
+          "sha256": "36482e94acbf39d2e268be844da3b74277f6895265f34dbde0bcb80ce38e5c92"
+        },
+        {
+          "center_A": 14.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-14-4-100-frames.binpos",
+          "sha256": "159befb6cbc0d56a7cb3e72acb02f0f08f052258da1f01b4b84669f07d2cde27"
+        },
+        {
+          "center_A": 14.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-14-7-100-frames.binpos",
+          "sha256": "8166ebebe6977606ac7b78c26f678e5a1a010a93814e1ba57952ee16a6b0804b"
+        },
+        {
+          "center_A": 15.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 2/prod-15-0-100-frames.binpos",
+          "sha256": "107fe23f3ff80cc664a8bd352ad014d0c20ff943a55691d0f5d4f5bfa361e0c4"
+        }
+      ],
+      "anomalous_file_count": 51,
+      "expected_frames_from_filename": 100,
+      "mapped_wham_key": "fructofuranose/US-2",
+      "modal_frame_count": 10,
+      "route_key": "fructofuranose/run2",
+      "total_file_count": 51,
+      "unique_frame_counts": [
+        1,
+        10
+      ]
+    },
+    {
+      "anomalies": [
+        {
+          "center_A": 0.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-0-0-100-frames.binpos",
+          "sha256": "416092019b4c82c0a9559899ea1b8e9d30d0ef4a6c416b9cb21ff3202143db7a"
+        },
+        {
+          "center_A": 0.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-0-3-100-frames.binpos",
+          "sha256": "8eef8e1f0211663bfb3d1ddb105210369ed357606ae009303177720e098fda36"
+        },
+        {
+          "center_A": 0.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-0-6-100-frames.binpos",
+          "sha256": "ce9c61ab801df6353b8364efc26b44a5c69d1b2ebaa7af9f7f765621a1b3770a"
+        },
+        {
+          "center_A": 0.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-0-9-100-frames.binpos",
+          "sha256": "29dd5fe952403ad1a1f272940114668030357c917d0abb081b56f52fabd18eaf"
+        },
+        {
+          "center_A": 1.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-1-2-100-frames.binpos",
+          "sha256": "7181377b138f154e3cbf952cd5f0311ba50328614e4efc5d985364a17a41a37a"
+        },
+        {
+          "center_A": 1.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-1-5-100-frames.binpos",
+          "sha256": "364f7e55c34ac3fddad4c3768d7e591563bdd3d749818111bb2b17a1c4e8b122"
+        },
+        {
+          "center_A": 1.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-1-8-100-frames.binpos",
+          "sha256": "c0a38eac1f7c425779682a49f9598d8181c122424cc36228597704178393f746"
+        },
+        {
+          "center_A": 2.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-2-1-100-frames.binpos",
+          "sha256": "a1c6bc75a30179b73325864a257a5812ce37eee546c557d0968f9d1c4f48e4fe"
+        },
+        {
+          "center_A": 2.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-2-4-100-frames.binpos",
+          "sha256": "33eb2502937d5366e5a6d43a40ae9e54d7d76ea6f1943c90e01573142ea58a4c"
+        },
+        {
+          "center_A": 2.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-2-7-100-frames.binpos",
+          "sha256": "a022eb903a14caf03d4a2e426937bb5440c7ab37e4d6bac9fb700ec7abf3cdec"
+        },
+        {
+          "center_A": 3.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-3-0-100-frames.binpos",
+          "sha256": "c0a103a39dd4473d6f66f170d2b68f9ba5563ac758dd182d0d0a98ad9ceffdfd"
+        },
+        {
+          "center_A": 3.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-3-3-100-frames.binpos",
+          "sha256": "a5b29e0fe3a616a75918450716a3049d2fd75d92abb17fa653385de5e76d1057"
+        },
+        {
+          "center_A": 3.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-3-6-100-frames.binpos",
+          "sha256": "145c64ec962b28ef9a7d9d57e8fb8cf5bc91caf5bb9908f17b5508a087a545c3"
+        },
+        {
+          "center_A": 3.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-3-9-100-frames.binpos",
+          "sha256": "52e5fd6aeff4a921ea5ff3aaa3ec9df26996ca4fb0f7bd290712bc15a91fd9fc"
+        },
+        {
+          "center_A": 4.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-4-2-100-frames.binpos",
+          "sha256": "c2e6820373e252486c8a7e605e38524a624ad3633889227478d80dcbde298746"
+        },
+        {
+          "center_A": 4.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-4-5-100-frames.binpos",
+          "sha256": "0bd014d79f193c819936bfce920bb27d58eb2c9589a3e36b7a205dcac7832436"
+        },
+        {
+          "center_A": 4.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-4-8-100-frames.binpos",
+          "sha256": "a8f4ad63eab570d8a104ef5dcfb4a4ef4faeba8a550dc72d80c7a494e28a9b4e"
+        },
+        {
+          "center_A": 5.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-5-1-100-frames.binpos",
+          "sha256": "6907a88e10bfb9c56d906a1be5d463c4a5f1494deed563f0bca8114fd108e0e6"
+        },
+        {
+          "center_A": 5.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-5-4-100-frames.binpos",
+          "sha256": "cfe02d1947a0bb9472e47a7010a6c42af8d4a3afc8cf695e5745e8c921b62dcd"
+        },
+        {
+          "center_A": 5.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-5-7-100-frames.binpos",
+          "sha256": "f357030fb2f906feee9b5df967e2a5704904413f333ebb370d4ad721237bae59"
+        },
+        {
+          "center_A": 6.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-6-0-100-frames.binpos",
+          "sha256": "65a8eab1d898768a131434314abedd4549305b05ee7dda634e103046d02e7230"
+        },
+        {
+          "center_A": 6.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-6-3-100-frames.binpos",
+          "sha256": "0ca65811ebc3d197dfdc885bcf3d3b8871b1860ddfe823689289da867b847046"
+        },
+        {
+          "center_A": 6.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-6-6-100-frames.binpos",
+          "sha256": "6ddab8ee26e8823427f12f2ebba82299fe908eefab08218d481641e80e4b9d85"
+        },
+        {
+          "center_A": 6.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-6-9-100-frames.binpos",
+          "sha256": "de5534a4b446112e331c55a19a0d2b4bed63901df0b751734b79118d4869cded"
+        },
+        {
+          "center_A": 7.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-7-2-100-frames.binpos",
+          "sha256": "35b2189dd8c883bbcce095691de8fc24ab59ab848a1b2d59c43e14654236f3df"
+        },
+        {
+          "center_A": 7.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-7-5-100-frames.binpos",
+          "sha256": "8135d0507d25d375debdf86de6837d179295e9b98ae05e9c8af241ee7057be2f"
+        },
+        {
+          "center_A": 7.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-7-8-100-frames.binpos",
+          "sha256": "f4368e23289ce9b75c01ca9f64df6ef38ff4f665dac773b650b9ef8147c66706"
+        },
+        {
+          "center_A": 8.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-8-1-100-frames.binpos",
+          "sha256": "76ad32e6edcc8697c44f4e98d93c89551d6334290b8a36025300fefa33cd62f5"
+        },
+        {
+          "center_A": 8.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-8-4-100-frames.binpos",
+          "sha256": "357aa9a19aee8969a2368359428375038e4fa26d994672065d6674d5c2dbeba1"
+        },
+        {
+          "center_A": 8.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-8-7-100-frames.binpos",
+          "sha256": "66aa88912c3d688fe19472b70b73b051cae4bb65ae90a3bcc7e2015ec5368125"
+        },
+        {
+          "center_A": 9.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-9-0-100-frames.binpos",
+          "sha256": "68f69ed0ff8b1f9d39973204d2e05b0b47813a847dc540f72ede63cf419df93f"
+        },
+        {
+          "center_A": 9.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-9-3-100-frames.binpos",
+          "sha256": "25d78dfae3875477eda01f3f8170f41aef1f129114c9de90e0f14d0ead98e807"
+        },
+        {
+          "center_A": 9.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-9-6-100-frames.binpos",
+          "sha256": "a7771e4ea2ebe2d700fefcc885acd60687e65976a97139db9eb6d09ca38802b9"
+        },
+        {
+          "center_A": 9.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-9-9-100-frames.binpos",
+          "sha256": "a3181eae48cbbe8f705dc81a91f825d19b56e079af9553d184764330812ec71a"
+        },
+        {
+          "center_A": 10.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-10-2-100-frames.binpos",
+          "sha256": "3b2401fb06c41e5c49a02c42c533262826d2d3d3a4190c55b0fc66d02f19b68b"
+        },
+        {
+          "center_A": 10.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-10-5-100-frames.binpos",
+          "sha256": "0a2092044a98ce0560b81740a8f0aea15f030efb635ac19f0a89c655a77facec"
+        },
+        {
+          "center_A": 10.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-10-8-100-frames.binpos",
+          "sha256": "4a9329fc01985d0c16e658464312a73f287139d6a4293fd130923f16d3d05403"
+        },
+        {
+          "center_A": 11.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-11-1-100-frames.binpos",
+          "sha256": "fbc336c560088b895645139baf888df3b293ebf016c990eaa0668dec05cbed7a"
+        },
+        {
+          "center_A": 11.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-11-4-100-frames.binpos",
+          "sha256": "3db4c18aa58ba8e1311e6393dd79e8bcfc162d8e5c8713e22faa3cc2b17e73d4"
+        },
+        {
+          "center_A": 11.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-11-7-100-frames.binpos",
+          "sha256": "10f19bd112a45ec160040eaa21189cd480cc137e55b1344974c022cc11f1f3bf"
+        },
+        {
+          "center_A": 12.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-12-0-100-frames.binpos",
+          "sha256": "14c98bc701e257f916e69f4bd9d01da7728b819e1b8ff49226193a80ae388310"
+        },
+        {
+          "center_A": 12.3,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-12-3-100-frames.binpos",
+          "sha256": "be5456ac04635441edc8647e8e2ed1f346150968e616981430549eff90365175"
+        },
+        {
+          "center_A": 12.6,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-12-6-100-frames.binpos",
+          "sha256": "69bef9ad1b4d120ca976c788d0e1a59a2049e867ce36a6cd0eca40b261831570"
+        },
+        {
+          "center_A": 12.9,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-12-9-100-frames.binpos",
+          "sha256": "b48d65265ad94545242640f3ff011ad26be3855093447a0b19a0c2f15d620b98"
+        },
+        {
+          "center_A": 13.2,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-13-2-100-frames.binpos",
+          "sha256": "bc8ae9ca6a0e92e8c7244d9ed2194fb2a97a6fda86fbd8b1c0b7afdf0992aad0"
+        },
+        {
+          "center_A": 13.5,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-13-5-100-frames.binpos",
+          "sha256": "cf4868d9a1307b82348faaf1dbf7dedc9578ab505a499d5fce48bb983cf4de83"
+        },
+        {
+          "center_A": 13.8,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-13-8-100-frames.binpos",
+          "sha256": "985d5a94a0a7bcd9f5ccb5ead7d6b9f2cc1ba21f40a9bbf08a10aa63aa31d37e"
+        },
+        {
+          "center_A": 14.1,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-14-1-100-frames.binpos",
+          "sha256": "9d6dfc02267fdde725a7033f21a7f7a5d104f44abd064a15fb16b74c4b74a0d5"
+        },
+        {
+          "center_A": 14.4,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-14-4-100-frames.binpos",
+          "sha256": "101e830ce29043e7d206c15c208f2f558b0d17b1bd98525faa18a96392e3129d"
+        },
+        {
+          "center_A": 14.7,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-14-7-100-frames.binpos",
+          "sha256": "8eb1fd17697589b17d0443e7787d99a2f8c39be9d35567e97d7631e1fb67789f"
+        },
+        {
+          "center_A": 15.0,
+          "frame_count": 10,
+          "path": "US_Trajectories/fructofuranose/run 3/prod-15-0-100-frames.binpos",
+          "sha256": "6a2d22c6935b14e20ba9d32d088f57b81b3fd38949b36245fad85cb70403d1fd"
+        }
+      ],
+      "anomalous_file_count": 51,
+      "expected_frames_from_filename": 100,
+      "mapped_wham_key": "fructofuranose/US-3",
+      "modal_frame_count": 10,
+      "route_key": "fructofuranose/run3",
+      "total_file_count": 51,
+      "unique_frame_counts": [
+        10
+      ]
+    }
+  ],
+  "histogram_to_visualization_ratios": [
+    {
+      "mapped_wham_key": "fructofuranose/US-1",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "fructofuranose/run1",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "fructofuranose/US-2",
+      "median_histogram_to_modal_trajectory_ratio": null,
+      "modal_trajectory_frame_count": null,
+      "route_key": "fructofuranose/run2",
+      "trajectory_frame_count_values": [
+        1,
+        10
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 205
+    },
+    {
+      "mapped_wham_key": "fructofuranose/US-3",
+      "median_histogram_to_modal_trajectory_ratio": 1500.1,
+      "modal_trajectory_frame_count": 10,
+      "route_key": "fructofuranose/run3",
+      "trajectory_frame_count_values": [
+        10
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "fructopyranose/US-1",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "fructopyranose/run1",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "fructopyranose/US-2",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "fructopyranose/run2",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "fructopyranose/US-3",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "fructopyranose/run3",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "galactose/US-1",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "galactose/run1b",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "galactose/US-2",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "galactose/run2b",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "galactose/US-3",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "galactose/run3b",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "galactose/US-routeA",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "galactose/run4a",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "galactose/US-routeA",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "galactose/run5a",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "glucose/US-1",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "glucose/run1",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "glucose/US-2",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "glucose/run2",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    },
+    {
+      "mapped_wham_key": "glucose/US-3",
+      "median_histogram_to_modal_trajectory_ratio": 150.01,
+      "modal_trajectory_frame_count": 100,
+      "route_key": "glucose/run3",
+      "trajectory_frame_count_values": [
+        100
+      ],
+      "wham_maximum_frames": 15001,
+      "wham_median_frames": 15001.0,
+      "wham_minimum_frames": 15001
+    }
+  ],
+  "inputs": {
+    "route_lineage": {
+      "path": "research/data/gluhut-us-route-lineage.json",
+      "sha256": "f49cc76a42cd5a31bc4090930f167bfd11db4291907030e1ecd2075501fd1724"
+    },
+    "umbrella_inventory": {
+      "archive": {
+        "crc_verified": true,
+        "directory_count": 20,
+        "file_count": 730,
+        "filename": "US_Trajectories.zip",
+        "md5": "c460e6a1ee97ac531fc284d8f07e381e",
+        "member_count": 750,
+        "sha256": "1e68f57ef15c3c010a767ab3c8181b5eb8df106d1ee96066f6afa4d54cb8f517",
+        "size_bytes": 123756824,
+        "total_uncompressed_bytes": 137772187
+      },
+      "path": "research/data/gluhut-us-archive-inventory.json",
+      "sha256": "ca9d5904300583e087ef96748d90484db627f25df2af1415deff359266aa0843"
+    },
+    "wham_reproduction": {
+      "archive": {
+        "filename": "WHAM_PMF.zip",
+        "md5": "dbc6723b8adcb85deb8230f63b6a51da",
+        "sha256": "e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb",
+        "size_bytes": 41560830
+      },
+      "path": "research/data/gluhut-all-sugars-wham-reproduction.json",
+      "sha256": "cfc91079806653d1b04cdd780ac2c8aef378940394da25ed4d18e5ac6a7dc19d"
+    }
+  },
+  "limitations": [
+    "Frame counts are inferred from valid 183-atom Scripps BINPOS record sizes.",
+    "A filename ending in 100-frames is not treated as evidence of the actual record count.",
+    "The archive-to-WHAM route mapping remains path-based rather than author-supplied.",
+    "The presence of the same anomalous centre in a short visualization file and short WHAM histogram does not prove direct file lineage.",
+    "No trajectory coordinate, histogram, PMF, work, affinity, or candidate calculation is performed."
+  ],
+  "not_target_claim": "not regenerated histograms, not a new PMF or affinity, not NNC2215, PaG, MC-Q1, efficacy, safety, or a drug result",
+  "schema": "dia-health-one.gluhut-us-lineage-anomalies.v1",
+  "scope": "material route/window/frame anomalies in the public GluHUT umbrella archive",
+  "status": "umbrella_archive_lineage_failures_explicit_histogram_regeneration_blocked",
+  "summary": {
+    "center_mismatch_route_count": 3,
+    "complete_duplicate_route_group_count": 1,
+    "deposited_wham_route_count": 13,
+    "frame_failure_route_count": 2,
+    "raw_route_directory_count": 14,
+    "trajectory_file_count": 714,
+    "unique_complete_route_content_signature_count": 13,
+    "within_route_duplicate_route_count": 2
+  },
+  "wham_anomalies": [
+    {
+      "center_A": 12.6,
+      "frame_count": 205,
+      "path": "WHAM_PMF/histogram-collection-fructofuranose-US-2/12-6-test-dist_vs_t.dat",
+      "size_bytes": 4100,
+      "size_fraction_of_route_median": 0.013665755616292246
+    }
+  ],
+  "within_route_duplicate_groups_by_route": {
+    "galactose/run1b": [
+      {
+        "centres_A": [
+          0.0,
+          0.3
+        ],
+        "file_count": 2,
+        "paths": [
+          "US_Trajectories/galactose/run 1 (b)/prod-0-0-100-frames.binpos",
+          "US_Trajectories/galactose/run 1 (b)/prod-0-3-100-frames.binpos"
+        ],
+        "sha256": "177c7cad3bbeb5392d97384e6c7e81a51a3006167fe9a38eef0a91c9a300a656"
+      }
+    ],
+    "galactose/run2b": [
+      {
+        "centres_A": [
+          0.0,
+          0.3
+        ],
+        "file_count": 2,
+        "paths": [
+          "US_Trajectories/galactose/run 2 (b)/prod-0-0-100-frames.binpos",
+          "US_Trajectories/galactose/run 2 (b)/prod-0-3-100-frames.binpos"
+        ],
+        "sha256": "c32f36783a381a7b03ca4bab3c6483ebf6918b77a1b04f1de257fb31994d140d"
+      }
+    ]
+  }
+}
