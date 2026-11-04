@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - analysis/gluhut-us-archive-inventory
+      - fix/gluhut-us-inventory-concurrent-push
     paths:
       - "research/audit_gluhut_us_archive.py"
       - "tests/test_audit_gluhut_us_archive.py"
@@ -98,7 +99,21 @@ jobs:
             exit 0
           fi
           git commit -m 'Record GluHUT umbrella archive inventory'
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+          # Other evidence workflows may advance main during the 124 MB download.
+          # Rebase the deterministic result onto the latest main and retry the
+          # fast-forward push instead of discarding a scientifically valid run.
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt $attempt"
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo 'Could not publish the deterministic inventory after five rebased attempts.' >&2
+          exit 1
 
       - name: Publish summary
         if: always()
