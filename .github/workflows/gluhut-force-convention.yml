@@ -1,0 +1,101 @@
+name: Resolve GluHUT force convention
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-force-convention
+      - analysis/gluhut-force-convention-rebased
+    paths:
+      - "research/audit_gluhut_force_convention.py"
+      - "tests/test_audit_gluhut_force_convention.py"
+      - "research/data/gluhut-smd-restraint-mapping.json"
+      - "research/data/gluhut-glucose-numpy-wham-crosscheck.json"
+      - ".github/workflows/gluhut-force-convention.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-force-convention-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_force_convention.py -v
+
+      - name: Resolve AMBER and WHAM coefficient conventions
+        run: |
+          python research/audit_gluhut_force_convention.py \
+            --mapping-json research/data/gluhut-smd-restraint-mapping.json \
+            --wham-json research/data/gluhut-glucose-numpy-wham-crosscheck.json \
+            --output-json research/data/gluhut-force-convention.json \
+            | tee /tmp/gluhut-force-convention-summary.json
+
+      - name: Validate bounded conclusion
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-force-convention.json').read_text())
+          decision = data['decision']
+          assert data['smd']['unique_deposited_rk2_kcal_mol_A2'] == 200.0
+          assert data['smd']['standard_harmonic_K_kcal_mol_A2'] == 400.0
+          assert data['smd']['paper_numeric_value_matches_deposited_rk2'] is True
+          assert data['smd']['paper_value_if_interpreted_as_standard_K_matches'] is False
+          assert data['umbrella']['paper_reported_numeric_value_kcal_mol_A2'] == 50.0
+          assert data['umbrella']['deposited_reproduction_wham_K_kcal_mol_A2'] == 100.0
+          assert data['umbrella']['wham_K_matches_twice_paper_value'] is True
+          assert decision['force_constant_scalar_convention_validated'] is True
+          assert decision['paper_uses_unambiguous_standard_half_k_notation'] is False
+          assert decision['new_smd_or_umbrella_generation_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          print(json.dumps({
+              'smd': data['smd'],
+              'umbrella': data['umbrella'],
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit deterministic audit output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-force-convention.json
+          if git diff --cached --quiet; then
+            echo 'No force-convention changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT force-convention audit'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT force-convention audit'
+            echo
+            if [ -f /tmp/gluhut-force-convention-summary.json ]; then
+              echo '```json'
+              cat /tmp/gluhut-force-convention-summary.json
+              echo '```'
+            else
+              echo 'No audit summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
