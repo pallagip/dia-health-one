@@ -18,10 +18,22 @@ spec.loader.exec_module(module)
 
 
 class SMDArchiveInventoryTests(unittest.TestCase):
-    def test_classification(self):
+    def test_classification_uses_rst_content(self):
         self.assertIn("topology", module.classify(".prmtop"))
         self.assertIn("parameterized_topology", module.classify(".parm7"))
-        self.assertIn("coordinate", module.classify(".rst"))
+        self.assertIn("ambiguous_rst", module.classify(".rst"))
+        self.assertIn(
+            "restraint_input",
+            module.classify(".rst", b"&rst\n iat=-1,-1,\n r1=1.0,\n/\n"),
+        )
+        self.assertIn(
+            "protocol_or_documentation",
+            module.classify(".rst", b"&rst\n iat=-1,-1,\n/\n"),
+        )
+        self.assertIn(
+            "coordinate",
+            module.classify(".rst", b"title\n2\n0 0 0 1 1 1\n"),
+        )
         self.assertIn("coordinate", module.classify(".rst7"))
         self.assertIn("source_parameter", module.classify(".frcmod"))
         self.assertIn("protocol_or_documentation", module.classify(".mdin"))
@@ -56,11 +68,11 @@ class SMDArchiveInventoryTests(unittest.TestCase):
         self.assertEqual(json.loads(output.read_text()), report)
         return report
 
-    def test_compiled_bundle_is_distinct_from_parameter_generation_provenance(self):
+    def test_compiled_trajectory_bundle_is_distinct_from_source_provenance(self):
         report = self._audit_fixture(
             {
                 "system/host.parm7": "%VERSION\n%FLAG CHARGE\n",
-                "system/host.rst": "title\n2\n0.0 0.0 0.0\n",
+                "system/distance.rst": "&rst\n iat=-1,-1,\n r1=1.0,\n/\n",
                 "system/run.in": "&cntrl\n/\n",
                 "system/traj.binpos": b"binary trajectory",
             }
@@ -68,30 +80,32 @@ class SMDArchiveInventoryTests(unittest.TestCase):
         components = report["exact_input_components"]
         self.assertTrue(components["topology_present"])
         self.assertTrue(components["parameterized_topology_present"])
-        self.assertTrue(components["coordinate_present"])
+        self.assertFalse(components["coordinate_present"])
+        self.assertTrue(components["restraint_input_present"])
         self.assertTrue(components["protocol_present"])
         self.assertTrue(components["trajectory_present"])
         self.assertFalse(components["source_parameter_files_present"])
 
-        self.assertTrue(report["compiled_system_bundle_present"])
+        self.assertTrue(report["compiled_topology_trajectory_bundle_present"])
+        self.assertFalse(report["standalone_coordinate_bundle_present"])
         self.assertFalse(report["parameter_generation_provenance_complete"])
         self.assertFalse(report["exact_reusable_input_bundle_present"])
+        self.assertTrue(report["decision"]["can_begin_compiled_topology_audit"])
         self.assertTrue(
-            report["decision"]
-            ["can_begin_compiled_topology_and_coordinate_audit_from_this_archive"]
+            report["decision"]["can_begin_compiled_topology_and_trajectory_audit"]
         )
-        self.assertTrue(
-            report["decision"]
-            ["can_begin_exact_parent_parameter_audit_from_this_archive_alone"]
+        self.assertFalse(
+            report["decision"]["can_begin_standalone_restart_coordinate_audit"]
         )
         self.assertFalse(
             report["decision"]
             ["can_reconstruct_parameter_generation_from_this_archive"]
         )
         self.assertEqual(report["classification_counts"]["trajectory"], 1)
-        self.assertEqual(report["classification_counts"]["coordinate"], 1)
+        self.assertEqual(report["classification_counts"]["restraint_input"], 1)
+        self.assertNotIn("coordinate", report["classification_counts"])
 
-    def test_source_parameter_files_complete_provenance_component(self):
+    def test_coordinate_and_source_parameters_complete_broader_bundle(self):
         report = self._audit_fixture(
             {
                 "system/host.parm7": "%VERSION\n%FLAG CHARGE\n",
@@ -101,7 +115,8 @@ class SMDArchiveInventoryTests(unittest.TestCase):
                 "system/traj.nc": b"binary trajectory",
             }
         )
-        self.assertTrue(report["compiled_system_bundle_present"])
+        self.assertTrue(report["compiled_topology_trajectory_bundle_present"])
+        self.assertTrue(report["standalone_coordinate_bundle_present"])
         self.assertTrue(report["parameter_generation_provenance_complete"])
         self.assertTrue(report["exact_reusable_input_bundle_present"])
         self.assertTrue(
