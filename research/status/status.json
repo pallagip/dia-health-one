@@ -1,5 +1,5 @@
 {
-  "schema": "dia-health-one.public-confidence-status.v9",
+  "schema": "dia-health-one.public-confidence-status.v10",
   "updated": "2026-11-04",
   "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
@@ -138,7 +138,24 @@
     "fructofuranose_candidate_record": "../GLUHUT_FRUCTOFURANOSE_RESTRAINT_CANDIDATES.md",
     "force_convention_record": "../GLUHUT_FORCE_CONVENTION.md",
     "coordinate_provenance_record": "../GLUHUT_SMD_COORDINATE_PROVENANCE.md",
-    "frame_sampling_record": "../GLUHUT_SMD_FRAME_SAMPLING.md"
+    "frame_sampling_record": "../GLUHUT_SMD_FRAME_SAMPLING.md",
+    "compiled_host_charge_vectors_identical_across_four_sugars": true,
+    "compiled_host_charge_vector_sha256": "a0a59d6dcb57afb3425fdefe94299ca3eab892f2379cd4dcec2ab31ac69a9594",
+    "parameter_labeled_heavy_graph_automorphism_count": 6,
+    "parameter_labeled_heavy_graph_orbit_count": 28,
+    "parameter_labeled_heavy_graph_nontrivial_orbit_count": 28,
+    "parameter_labeled_heavy_graph_orbit_size_distribution": {
+      "3": 28
+    },
+    "maximum_graph_equivalent_heavy_charge_range_e": 0.0,
+    "maximum_graph_equivalent_hydrogen_charge_range_e": 0.0,
+    "compiled_charges_exactly_equal_within_preserved_graph_symmetries": true,
+    "large_graph_equivalent_charge_asymmetry_detected": false,
+    "symmetry_averaging_rms_per_atom_adjustment_e": 2.433750816437806e-17,
+    "automatic_charge_symmetrisation_authorized": false,
+    "direct_compiled_charge_transfer_to_pag_or_mcq1_authorized": false,
+    "source_resp_equivalencing_constraints_available": false,
+    "charge_symmetry_record": "../GLUHUT_CHARGE_SYMMETRY.md"
   },
   "minimum_physical_experiment": [
     "MC-P0",
@@ -155,12 +172,12 @@
     "must_outperform_positional_control": true
   },
   "aws_execution": {
-    "current_gate": "AWS-1 public analysis reproduced; host architecture, force convention, all deposited coordinates, endpoint/file provenance and frame-sampling provenance audited; source parameters, full trajectories, target histories, start coordinates and parent PaG calibration pending",
+    "current_gate": "AWS-1 public analysis reproduced; host architecture, force convention, all deposited coordinates, endpoint/frame provenance, and compiled-charge symmetry audited; source RESP derivation, complete trajectory provenance, start coordinates and parent PaG calibration remain pending",
     "candidate_screen_authorized": false,
     "boltz_host_guest_affinity_authorized": false,
     "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
     "aws_credits_spent_usd": 0,
-    "next_action": "obtain original full trajectories or the exact frame-selection script and time mapping, corrected galactose A and fructofuranose inputs, RESP/GAFF/GLYCAM and start-coordinate provenance, then calibrate the parent glucose-versus-PaG system"
+    "next_action": "obtain source RESP conformers, ESP grids, equivalencing constraints and final mol2, plus full trajectory/start-coordinate provenance; then calibrate the parent glucose-versus-PaG system"
   },
   "external_execution": {
     "author_parameter_request_sent": true,
@@ -175,6 +192,7 @@
     "reply_watch_enabled": true
   },
   "next_confidence_changes": [
+    "obtain source RESP conformers, ESP grids, equivalencing constraints, final mol2 and GAFF/GLYCAM assembly provenance",
     "obtain the original full SMD trajectories or exact frame-selection script and per-frame time mapping",
     "obtain the intended independent galactose path-A trajectory and target history",
     "obtain author clarification on the reused fructose indices and intended fructofuranose SMD group",
