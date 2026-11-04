@@ -1,0 +1,114 @@
+name: Audit GluHUT SMD frame sampling
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-smd-frame-sampling
+    paths:
+      - "research/audit_gluhut_smd_frame_sampling.py"
+      - "tests/test_audit_gluhut_smd_frame_sampling.py"
+      - "research/data/gluhut-smd-archive-inventory.json"
+      - "research/data/gluhut-binpos-coordinate-audit.json"
+      - ".github/workflows/gluhut-smd-frame-sampling.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-smd-frame-sampling-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_smd_frame_sampling.py -v
+
+      - name: Audit requested versus deposited frame sampling
+        run: |
+          python research/audit_gluhut_smd_frame_sampling.py \
+            --inventory-json research/data/gluhut-smd-archive-inventory.json \
+            --coordinate-json research/data/gluhut-binpos-coordinate-audit.json \
+            --output-json research/data/gluhut-smd-frame-sampling.json \
+            | tee /tmp/frame-sampling-summary.json
+
+      - name: Validate bounded conclusions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-smd-frame-sampling.json').read_text())
+          decision = data['decision']
+          assert data['smd_control']['simulation_time_ns'] == 30.0
+          assert data['smd_control']['expected_coordinate_outputs_from_nstlim_div_ntwx'] == 15000
+          assert data['deposit']['trajectory_count'] == 20
+          assert data['deposit']['deposited_frames_per_trajectory'] == 1000
+          assert data['deposit']['total_deposited_frames'] == 20000
+          assert data['deposit']['requested_output_to_deposited_frame_ratio'] == 15.0
+          assert data['deposit']['uniform_downsampling_provenance_available'] is False
+          assert data['deposit']['frame_time_mapping_available'] is False
+          assert data['trajectory_classification']['reported_15A_consistent_count'] == 13
+          assert data['trajectory_classification']['reported_15A_inconsistent_count'] == 7
+          assert data['system_summaries']['glucose']['reported_15A_consistent_count'] == 5
+          assert data['system_summaries']['fructofuranose']['reported_15A_consistent_count'] == 5
+          assert data['system_summaries']['galactose']['reported_15A_consistent_count'] == 3
+          assert data['system_summaries']['galactose']['reported_15A_inconsistent_count'] == 2
+          assert data['system_summaries']['fructopyranose']['reported_15A_inconsistent_count'] == 5
+          assert decision['control_requests_30ns'] is True
+          assert decision['control_would_write_15000_coordinate_frames'] is True
+          assert decision['every_deposited_file_contains_1000_frames'] is True
+          assert decision['requested_to_deposited_frame_ratio_is_15'] is True
+          assert decision['deposit_proves_uniform_every_15th_frame_selection'] is False
+          assert decision['deposited_files_are_sufficient_for_time_resolved_work_reconstruction'] is False
+          assert decision['new_smd_or_umbrella_generation_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          print(json.dumps({
+              'control': data['smd_control'],
+              'deposit': data['deposit'],
+              'classification': data['trajectory_classification'],
+              'systems': data['system_summaries'],
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit deterministic sampling audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-smd-frame-sampling.json
+          if git diff --cached --quiet; then
+            echo 'No sampling-audit changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT SMD frame-sampling audit'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT SMD frame-sampling audit'
+            echo
+            if [ -f /tmp/frame-sampling-summary.json ]; then
+              echo '```json'
+              cat /tmp/frame-sampling-summary.json
+              echo '```'
+            else
+              echo 'No frame-sampling summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
