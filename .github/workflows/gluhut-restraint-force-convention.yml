@@ -1,0 +1,132 @@
+name: Audit GluHUT restraint force convention
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-restraint-force-convention
+    paths:
+      - "research/audit_gluhut_restraint_force_convention.py"
+      - "tests/test_audit_gluhut_restraint_force_convention.py"
+      - ".github/workflows/gluhut-restraint-force-convention.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-restraint-force-convention-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_restraint_force_convention.py -v
+
+      - name: Reconcile AMBER, paper, and WHAM values
+        run: |
+          python research/audit_gluhut_restraint_force_convention.py \
+            --smd-mapping research/data/gluhut-smd-restraint-mapping.json \
+            --wham-reproduction research/data/gluhut-glucose-wham-reproduction.json \
+            --output-json research/data/gluhut-restraint-force-convention.json \
+            | tee /tmp/restraint-force-summary.json
+
+      - name: Validate bounded conclusions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(
+              Path('research/data/gluhut-restraint-force-convention.json').read_text()
+          )
+          decision = data['decision']
+          smd = data['smd']
+          umbrella = data['umbrella']
+
+          assert data['definitions']['amber_distance_restraint'] == 'E = rk2 * (R - R0)^2'
+          assert data['definitions']['conventional_harmonic'] == 'E = 0.5 * K * (R - R0)^2'
+          assert data['definitions']['conversion'] == 'K = 2 * rk2'
+
+          assert smd['deposited_rk2_values_kcal_mol_A2'] == [200.0]
+          assert smd['deposited_start_target_values_A'] == [0.0]
+          assert smd['deposited_end_target_values_A'] == [15.0]
+          assert smd['conventional_half_K_kcal_mol_A2'] == 400.0
+
+          assert umbrella['article_amber_rk2_kcal_mol_A2'] == 50.0
+          assert umbrella['deposited_wham_metadata_K_kcal_mol_A2'] == 100.0
+          assert umbrella['amber_rk2_recovered_from_wham_K_kcal_mol_A2'] == 50.0
+
+          assert decision['amber_energy_form_validated_from_manual'] is True
+          assert decision['conventional_K_is_twice_amber_rk2'] is True
+          assert decision['smd_deposited_rk2_matches_article_numeric_value'] is True
+          assert decision['smd_start_and_end_match_article'] is True
+          assert decision['umbrella_wham_metadata_is_twice_article_amber_value'] is True
+          assert decision['paper_values_are_consistent_with_amber_rk2_reporting'] is True
+          assert decision['force_constant_convention_resolved'] is True
+
+          assert decision['portable_values'] == {
+              'amber_rst_smd_rk2_kcal_mol_A2': 200.0,
+              'amber_rst_umbrella_rk2_kcal_mol_A2': 50.0,
+              'half_K_package_smd_K_kcal_mol_A2': 400.0,
+              'half_K_package_umbrella_K_kcal_mol_A2': 100.0,
+              'grossfield_wham_umbrella_K_kcal_mol_A2': 100.0,
+          }
+
+          assert decision['guest_atom_selection_validated'] is False
+          assert decision['new_smd_or_umbrella_generation_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['mcq1_parameter_transfer_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+
+          for example in data['energy_equivalence_examples']:
+              assert example['smd_amber_energy_kcal_mol'] == example['smd_conventional_energy_kcal_mol']
+              assert example['umbrella_amber_energy_kcal_mol'] == example['umbrella_conventional_energy_kcal_mol']
+
+          print(json.dumps({
+              'definitions': data['definitions'],
+              'smd': smd,
+              'umbrella': umbrella,
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit audit output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-restraint-force-convention.json
+          if git diff --cached --quiet; then
+            echo 'No force-convention changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT restraint force convention'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT restraint force convention'
+            echo
+            if [ -f /tmp/restraint-force-summary.json ]; then
+              echo '```json'
+              cat /tmp/restraint-force-summary.json
+              echo '```'
+            else
+              echo 'No force-convention summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
