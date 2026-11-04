@@ -44,11 +44,15 @@
     "must_outperform_positional_control": true
   },
   "aws_execution": {
-    "current_gate": "AWS-0/AWS-1 preparation",
+    "current_gate": "AWS-1 acquisition defined; awaiting checksum-verified download and AWS access",
     "candidate_screen_authorized": false,
     "boltz_host_guest_affinity_authorized": false,
     "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
-    "next_action": "reproduce deposited GluHUT analysis before generating new trajectories"
+    "aws_credits_spent_usd": 0,
+    "initial_download_size_display": "41.6 MB plus 1.8 kB README",
+    "source_dataset_doi": "10.5281/zenodo.19664426",
+    "source_dataset_manifest": "../GLUHUT_AWS1_DATASET_MANIFEST.md",
+    "next_action": "download and checksum-verify README.txt and WHAM_PMF.zip, then reproduce glucose US-1"
   },
   "next_confidence_changes": [
     "reproduce public GluHUT PMF analysis",
