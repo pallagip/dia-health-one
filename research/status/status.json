@@ -1,5 +1,5 @@
 {
-  "schema": "dia-health-one.public-confidence-status.v8",
+  "schema": "dia-health-one.public-confidence-status.v9",
   "updated": "2026-11-04",
   "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
@@ -109,6 +109,18 @@
     "galactose_path_A_periodic_imaging_explanation_supported": false,
     "galactose_path_A_different_or_mislabeled_path_supported": true,
     "smd_endpoint_protocol_uniform_across_deposit": false,
+    "smd_control_simulation_time_ns": 30.0,
+    "smd_control_requested_coordinate_outputs_per_run": 15000,
+    "deposited_binpos_frames_per_trajectory": 1000,
+    "requested_output_to_deposited_frame_ratio": 15.0,
+    "deposited_visualisation_filename_count": 15,
+    "uniform_downsampling_provenance_available": false,
+    "deposited_frame_time_mapping_available": false,
+    "smd_reported_15A_consistent_file_count": 13,
+    "smd_reported_15A_inconsistent_file_count": 7,
+    "fructopyranose_smd_mean_net_change_A": 19.907802622,
+    "galactose_path_A_net_change_A": 21.396143116,
+    "deposited_files_sufficient_for_time_resolved_work_reconstruction": false,
     "new_smd_or_umbrella_generation_authorized": false,
     "deposited_histogram_and_wham_reanalysis_remains_reproducible": true,
     "causal_link_between_H62_and_short_window_failure_established": false,
@@ -125,7 +137,8 @@
     "smd_restraint_record": "../GLUHUT_SMD_RESTRAINT_AUDIT.md",
     "fructofuranose_candidate_record": "../GLUHUT_FRUCTOFURANOSE_RESTRAINT_CANDIDATES.md",
     "force_convention_record": "../GLUHUT_FORCE_CONVENTION.md",
-    "coordinate_provenance_record": "../GLUHUT_SMD_COORDINATE_PROVENANCE.md"
+    "coordinate_provenance_record": "../GLUHUT_SMD_COORDINATE_PROVENANCE.md",
+    "frame_sampling_record": "../GLUHUT_SMD_FRAME_SAMPLING.md"
   },
   "minimum_physical_experiment": [
     "MC-P0",
@@ -142,17 +155,18 @@
     "must_outperform_positional_control": true
   },
   "aws_execution": {
-    "current_gate": "AWS-1 public analysis reproduced; host architecture, force convention and all deposited coordinate files audited; guest-coordinate intent, trajectory-file provenance, source parameter derivation, start coordinates and parent PaG calibration pending",
+    "current_gate": "AWS-1 public analysis reproduced; host architecture, force convention, all deposited coordinates, endpoint/file provenance and frame-sampling provenance audited; source parameters, full trajectories, target histories, start coordinates and parent PaG calibration pending",
     "candidate_screen_authorized": false,
     "boltz_host_guest_affinity_authorized": false,
     "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
     "aws_credits_spent_usd": 0,
-    "next_action": "obtain corrected or clarified galactose A and fructofuranose source inputs, obtain RESP/GAFF/GLYCAM and start-coordinate provenance, then calibrate the parent glucose-versus-PaG system"
+    "next_action": "obtain original full trajectories or the exact frame-selection script and time mapping, corrected galactose A and fructofuranose inputs, RESP/GAFF/GLYCAM and start-coordinate provenance, then calibrate the parent glucose-versus-PaG system"
   },
   "external_execution": {
     "author_parameter_request_sent": true,
     "author_smd_restraint_clarification_sent": true,
     "author_galactose_duplicate_endpoint_clarification_pending": true,
+    "author_full_trajectory_and_frame_mapping_request_pending": true,
     "erc_project_contact_routed_to_wayne_powell": true,
     "nnc2215_pag_source_request_sent": true,
     "carbometrics_feasibility_request_sent": true,
@@ -161,6 +175,7 @@
     "reply_watch_enabled": true
   },
   "next_confidence_changes": [
+    "obtain the original full SMD trajectories or exact frame-selection script and per-frame time mapping",
     "obtain the intended independent galactose path-A trajectory and target history",
     "obtain author clarification on the reused fructose indices and intended fructofuranose SMD group",
     "obtain RESP/GAFF/GLYCAM and start-coordinate provenance",
