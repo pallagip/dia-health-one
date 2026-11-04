@@ -6,7 +6,9 @@ on:
       - analysis/gluhut-compiled-system-audit
     paths:
       - "research/audit_gluhut_compiled_systems.py"
+      - "research/audit_gluhut_smd_archive.py"
       - "tests/test_audit_gluhut_compiled_systems.py"
+      - "tests/test_audit_gluhut_smd_archive.py"
       - ".github/workflows/gluhut-compiled-system-audit.yml"
   workflow_dispatch:
 
@@ -15,7 +17,7 @@ permissions:
 
 concurrency:
   group: gluhut-compiled-system-audit-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   audit:
@@ -34,8 +36,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run parser and comparison tests
-        run: python -m unittest tests/test_audit_gluhut_compiled_systems.py -v
+      - name: Run inventory, parser, and comparison tests
+        run: |
+          python -m unittest \
+            tests/test_audit_gluhut_smd_archive.py \
+            tests/test_audit_gluhut_compiled_systems.py -v
 
       - name: Acquire and verify public SMD archive
         run: |
@@ -45,7 +50,14 @@ jobs:
             'https://zenodo.org/api/records/19664426/files/SMD_trajectories.zip/content'
           echo "$ARCHIVE_MD5  /tmp/SMD_trajectories.zip" | md5sum --check --strict
 
-      - name: Audit compiled topologies and restart files
+      - name: Correct archive classification and inventory
+        run: |
+          python research/audit_gluhut_smd_archive.py \
+            --archive /tmp/SMD_trajectories.zip \
+            --output-json research/data/gluhut-smd-archive-inventory.json \
+            | tee /tmp/smd-inventory-summary.json
+
+      - name: Audit compiled topologies and AMBER restraint inputs
         run: |
           python research/audit_gluhut_compiled_systems.py \
             --archive /tmp/SMD_trajectories.zip \
@@ -57,33 +69,47 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
+
+          inventory = json.loads(Path('research/data/gluhut-smd-archive-inventory.json').read_text())
+          assert inventory['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert inventory['archive']['crc_verified'] is True
+          assert inventory['exact_input_components']['coordinate_present'] is False
+          assert inventory['exact_input_components']['restraint_input_present'] is True
+          assert inventory['classification_counts']['restraint_input'] == 3
+          assert inventory['decision']['candidate_ranking_authorized'] is False
+
           data = json.loads(Path('research/data/gluhut-compiled-system-audit.json').read_text())
           assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
           assert data['archive']['crc_verified'] is True
           assert data['topology_count'] == 4
+          assert data['restart_count'] == 0
+          assert data['restraint_input_count'] == 3
           assert data['decision']['candidate_ranking_authorized'] is False
           assert data['decision']['pag_parameterization_authorized'] is False
           assert data['decision']['mcq1_parameter_transfer_authorized'] is False
           assert data['decision']['source_resp_gaff_glycam_generation_reconstructable'] is False
           assert 'not NNC2215' in data['not_target_claim']
           print(json.dumps({
+              'inventory_components': inventory['exact_input_components'],
               'host_comparison': data['host_comparison'],
               'guest_and_system_summary': data['guest_and_system_summary'],
-              'restart_matches': data['restart_matches'],
+              'restraint_inputs': data['restraint_inputs'],
               'decision': data['decision'],
           }, indent=2, sort_keys=True))
           PY
 
-      - name: Commit audit result to branch
+      - name: Commit corrected inventory and compiled-system audit
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research/data/gluhut-compiled-system-audit.json
+          git add \
+            research/data/gluhut-smd-archive-inventory.json \
+            research/data/gluhut-compiled-system-audit.json
           if git diff --cached --quiet; then
             echo 'No audit changes to commit.'
             exit 0
           fi
-          git commit -m 'Record compiled GluHUT system audit'
+          git commit -m 'Record corrected GluHUT compiled-system audit'
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Publish summary
@@ -92,11 +118,11 @@ jobs:
           {
             echo '## Compiled GluHUT system audit'
             echo
-            if [ -f /tmp/compiled-system-summary.json ]; then
-              echo '```json'
-              cat /tmp/compiled-system-summary.json
-              echo '```'
-            else
-              echo 'No compiled-system summary was generated.'
-            fi
+            for file in /tmp/smd-inventory-summary.json /tmp/compiled-system-summary.json; do
+              if [ -f "$file" ]; then
+                echo '```json'
+                cat "$file"
+                echo '```'
+              fi
+            done
           } >> "$GITHUB_STEP_SUMMARY"
