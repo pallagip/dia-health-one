@@ -1,0 +1,136 @@
+{
+  "archive": {
+    "filename": "WHAM_PMF.zip",
+    "md5": "dbc6723b8adcb85deb8230f63b6a51da",
+    "sha256": "e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb",
+    "size_bytes": 41560830
+  },
+  "created_at_utc": "2026-11-04T08:14:01.063410+00:00",
+  "decision": {
+    "all_nonbaseline_variants_within_0_5_kcal_mol": false,
+    "all_sensitivity_variants_succeeded": true,
+    "candidate_ranking_authorized": false,
+    "maximum_absolute_change_kcal_mol": 0.7065514716981127,
+    "reason": "independent WHAM and PaG calibration remain required"
+  },
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, efficacy, safety, or a drug result",
+  "pre_registered_maximum_absolute_change_kcal_mol": 0.5,
+  "schema": "dia-health-one.gluhut-fructofuranose-short-window-sensitivity.v1",
+  "scope": "public GluHUT fructofuranose US-2 method sensitivity only",
+  "short_window": {
+    "archive_path": "WHAM_PMF/histogram-collection-fructofuranose-US-2/12-6-test-dist_vs_t.dat",
+    "center_A": 12.6,
+    "frame_count": 205,
+    "local_bhattacharyya_overlap": {
+      "12.3_to_12.6": 0.094415846681327,
+      "12.3_to_12.9_without_short_window": 0.00013332444503699753,
+      "12.6_to_12.9": 0.13712738121970083
+    },
+    "size_bytes": 4100
+  },
+  "status": "sensitivity_complete_pending_scientific_review",
+  "variants": [
+    {
+      "binding_free_energy_kcal_mol": -7.521242245283019,
+      "bins": 400,
+      "difference_from_baseline_kcal_mol": 0.0,
+      "discard_fraction": 0.0,
+      "excluded_short_window": false,
+      "frames_maximum_window": 15001,
+      "frames_median_window": 15001,
+      "frames_minimum_window": 205,
+      "frames_total": 750255,
+      "name": "baseline",
+      "status": "success",
+      "wham_convergence_iteration": 53660,
+      "window_count": 51,
+      "within_pre_registered_0_5_kcal_mol": true
+    },
+    {
+      "binding_free_energy_kcal_mol": -6.814690773584906,
+      "bins": 400,
+      "difference_from_baseline_kcal_mol": 0.7065514716981127,
+      "discard_fraction": 0.0,
+      "excluded_short_window": true,
+      "frames_maximum_window": 15001,
+      "frames_median_window": 15001.0,
+      "frames_minimum_window": 15001,
+      "frames_total": 750050,
+      "name": "exclude_short_12_6",
+      "status": "success",
+      "wham_convergence_iteration": 100000,
+      "window_count": 50,
+      "within_pre_registered_0_5_kcal_mol": false
+    },
+    {
+      "binding_free_energy_kcal_mol": -7.435807150943396,
+      "bins": 400,
+      "difference_from_baseline_kcal_mol": 0.08543509433962271,
+      "discard_fraction": 0.1,
+      "excluded_short_window": false,
+      "frames_maximum_window": 13501,
+      "frames_median_window": 13501,
+      "frames_minimum_window": 185,
+      "frames_total": 675235,
+      "name": "discard_first_10_percent",
+      "status": "success",
+      "wham_convergence_iteration": 53410,
+      "window_count": 51,
+      "within_pre_registered_0_5_kcal_mol": true
+    },
+    {
+      "binding_free_energy_kcal_mol": -7.77479537735849,
+      "bins": 400,
+      "difference_from_baseline_kcal_mol": -0.2535531320754716,
+      "discard_fraction": 0.2,
+      "excluded_short_window": false,
+      "frames_maximum_window": 12001,
+      "frames_median_window": 12001,
+      "frames_minimum_window": 164,
+      "frames_total": 600214,
+      "name": "discard_first_20_percent",
+      "status": "success",
+      "wham_convergence_iteration": 53870,
+      "window_count": 51,
+      "within_pre_registered_0_5_kcal_mol": true
+    },
+    {
+      "binding_free_energy_kcal_mol": -7.246405925925926,
+      "bins": 200,
+      "difference_from_baseline_kcal_mol": 0.2748363193570924,
+      "discard_fraction": 0.0,
+      "excluded_short_window": false,
+      "frames_maximum_window": 15001,
+      "frames_median_window": 15001,
+      "frames_minimum_window": 205,
+      "frames_total": 750255,
+      "name": "bins_200",
+      "status": "success",
+      "wham_convergence_iteration": 52550,
+      "window_count": 51,
+      "within_pre_registered_0_5_kcal_mol": true
+    },
+    {
+      "binding_free_energy_kcal_mol": -7.769654355140187,
+      "bins": 800,
+      "difference_from_baseline_kcal_mol": -0.24841210985716788,
+      "discard_fraction": 0.0,
+      "excluded_short_window": false,
+      "frames_maximum_window": 15001,
+      "frames_median_window": 15001,
+      "frames_minimum_window": 205,
+      "frames_total": 750255,
+      "name": "bins_800",
+      "status": "success",
+      "wham_convergence_iteration": 54600,
+      "window_count": 51,
+      "within_pre_registered_0_5_kcal_mol": true
+    }
+  ],
+  "wham": {
+    "binary_sha256": "1ff5eaade3c4242d0eefd6666f766d57a1f9d86a7bf4aa5fc4e7041606c77bf9",
+    "name": "Grossfield WHAM",
+    "source_commit": "43bdd6fcd1916ae2b169cb52ac326b7eea567abb",
+    "version": "2.0.11"
+  }
+}
