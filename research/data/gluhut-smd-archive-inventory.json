@@ -1,0 +1,1663 @@
+{
+  "archive": {
+    "crc_verified": true,
+    "directory_count": 26,
+    "file_count": 29,
+    "filename": "SMD_trajectories.zip",
+    "md5": "9f3c6733dc608d2bd37c488c560a5443",
+    "member_count": 55,
+    "sha256": "04c58666328764aeb47bac0d9f8607546f9763892cb9a333b108630df70e3943",
+    "size_bytes": 37931874,
+    "total_uncompressed_bytes": 44329109
+  },
+  "classification_counts": {
+    "coordinate": 3,
+    "parameterized_topology": 4,
+    "protocol_or_documentation": 2,
+    "topology": 4,
+    "trajectory": 20
+  },
+  "compiled_system_bundle_present": true,
+  "created_at_utc": "2026-11-04T11:41:43.685667+00:00",
+  "decision": {
+    "can_begin_compiled_topology_and_coordinate_audit_from_this_archive": true,
+    "can_begin_exact_parent_parameter_audit_from_this_archive_alone": true,
+    "can_reconstruct_parameter_generation_from_this_archive": false,
+    "candidate_ranking_authorized": false,
+    "next_action": "audit the compiled parm7/rst systems atom-by-atom and request the missing source RESP/GAFF/GLYCAM parameter-generation files"
+  },
+  "exact_input_components": {
+    "coordinate_present": true,
+    "parameterized_topology_present": true,
+    "protocol_present": true,
+    "source_parameter_files_present": false,
+    "topology_present": true,
+    "trajectory_present": true
+  },
+  "exact_reusable_input_bundle_present": false,
+  "extension_counts": {
+    ".binpos": 20,
+    ".in": 1,
+    ".parm7": 4,
+    ".rst": 3,
+    ".txt": 1
+  },
+  "limitations": [
+    "A parm7/prmtop is a compiled parameterized topology, but it does not reveal the complete RESP derivation or original frcmod/mol2/lib inputs.",
+    "An .rst file is classified as an AMBER coordinate/restart file, but each restart must still be matched to the correct topology and protocol.",
+    "File presence does not establish that topology, charges, protonation or parameters are chemically correct.",
+    "SMD inputs may describe a truncated public analogue rather than the complete NNC2215 conjugate.",
+    "No file in this audit is assumed transferable to PaG or MC-Q1 without atom-level review."
+  ],
+  "members": [
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructofuranose/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructofuranose/run 1/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1893109,
+      "crc32_hex": "b65093b3",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 1/fructofuranose-pull-1-visualisation.binpos",
+      "preview": null,
+      "sha256": "d3fa728de9cffbc0c3d9ac520c67281bb7d74874206f0952e02c0611f2ddb402",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructofuranose/run 2/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891349,
+      "crc32_hex": "aa3805ae",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 2/fructofuranose-pull-2-visualisation.binpos",
+      "preview": null,
+      "sha256": "d701f87dc2f6443a6698659957030d88db502239445c16afd122067a359fe5aa",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructofuranose/run 3/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1889730,
+      "crc32_hex": "c18d918f",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 3/fructofuranose-pull-3-visualisation.binpos",
+      "preview": null,
+      "sha256": "9782a67e8358462fced17f1956232871afd3f980e35561f78f4c4549d1c59f3a",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructofuranose/run 4/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891134,
+      "crc32_hex": "6487de73",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 4/fructofuranose-pull-4-visualisation.binpos",
+      "preview": null,
+      "sha256": "4370f94a3f83a70d6994f610e147d7f80e4a3e38295e9a2e40eb7b96e9e06f17",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructofuranose/run 5/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891864,
+      "crc32_hex": "99eeac44",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 5/fructofuranose-pull-5-visualisation.binpos",
+      "preview": null,
+      "sha256": "0c13d6ac5d65e04725a326ddc5753ba4259aa9782ad29e3e3eadc88cf17e9bb9",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "topology",
+        "parameterized_topology"
+      ],
+      "compressed_size_bytes": 12315,
+      "crc32_hex": "06504a92",
+      "extension": ".parm7",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "%VERSION  VERSION_STAMP = V0001.000  DATE = 02/20/26 16:01:16                  ",
+          "%FLAG TITLE                                                                     ",
+          "%FORMAT(20a4)                                                                   ",
+          "default_name                                                                    ",
+          "%FLAG POINTERS                                                                  ",
+          "%FORMAT(10I8)                                                                   ",
+          "     183      11      87     102     186     144     306     237       0       0",
+          "     992       3     102     144     237      17      32      27      16       0",
+          "       0       0       0       0       0       0       0       2     159       0",
+          "       0",
+          "%FLAG ATOM_NAME                                                                 ",
+          "%FORMAT(20a4)                                                                   ",
+          "C1  C2  C3  C4  C5  C6  C7  C8  C9  N1  C10 N2  C11 C12 C13 C14 C15 N3  C16 O1  ",
+          "C17 C18 N4  O2  C19 C20 C21 C22 C23 N5  C24 N6  C25 C26 C27 C28 C29 N7  C30 O3  ",
+          "C31 C32 N8  C33 N9  C34 C35 C36 C37 C38 C39 C40 N10 C41 O4  C42 C43 C44 C45 C46 ",
+          "N11 C47 N12 C48 C49 C50 C51 N13 C52 O5  C53 C54 C55 N14 C56 N15 C57 O6  O7  C58 ",
+          "C59 C60 O8  O9  H1  H2  H3  H4  H5  H6  H7  H8  H9  H10 H11 H12 H13 H14 H15 H16 ",
+          "H17 H18 H19 H20 H21 H22 H23 H24 H25 H26 H27 H28 H29 H30 H31 H32 H33 H34 H35 H36 ",
+          "H37 H38 H39 H40 H41 H42 H43 H44 H45 H46 H47 H48 H49 H50 H51 H52 H53 H54 H55 H56 ",
+          "H57 H58 H59 H60 H61 H62 H63 H64 H65 H66 H67 H68 H69 H70 H71 H72 H73 H74 H75 C2  ",
+          "O5  C5  H5  C6  H62 H61 O6  H6O C4  H4  O4  H4O C3  H3  O3  H3O C1  H12 H11 O1  ",
+          "H1O HO1 O1  ",
+          "%FLAG CHARGE                                                                    ",
+          "%FORMAT(5E16.8)                                                                 ",
+          " -2.98054872E+00  1.39003349E+00 -2.05875545E+00  6.94634076E-02 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01",
+          "  1.91901228E+01 -1.29101715E+01  6.67471916E+00 -6.61214378E+00 -6.71673978E-01",
+          " -5.46034864E+00  1.53501922E+01 -1.17780929E+01 -2.50593070E-01 -1.11968927E+01",
+          " -1.90468591E+00  2.26330077E+00 -1.22369851E+01 -1.21090281E+01 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01"
+        ],
+        "line_count": 1034,
+        "tail": [
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  7.20000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01"
+        ]
+      },
+      "sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47",
+      "uncompressed_size_bytes": 81585
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructopyranose/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructopyranose/run 1/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1896514,
+      "crc32_hex": "10f2eb0c",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 1/fructopyranose-1-visualisation.binpos",
+      "preview": null,
+      "sha256": "8543bd6165fa9aa52fae738800fe788e1d27534c597f02ccdf2ca1df29c1970c",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructopyranose/run 2/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1894721,
+      "crc32_hex": "9dbca3b4",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 2/fructopyranose-2-visualisation.binpos",
+      "preview": null,
+      "sha256": "8c9fa5b4297ae74acb772728f664f81c91fab91e2de2b3fe28ba1f16650b5dd0",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructopyranose/run 3/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1897167,
+      "crc32_hex": "4fde4488",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 3/fructopyranose-3-visualisation.binpos",
+      "preview": null,
+      "sha256": "750cb7c0ab513ec684cf716cb5b500ab82f1ddcc51bee1b18273ecf20e0fb931",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructopyranose/run 4/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1893213,
+      "crc32_hex": "2b364042",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 4/fructopyranose-4-visualisation.binpos",
+      "preview": null,
+      "sha256": "f17b4004b45deb8dc9ae139966fc7251224265faf35ca8eca1ed81173db4c167",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/fructopyranose/run 5/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1894508,
+      "crc32_hex": "7454b2cf",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 5/fructopyranose-5-visualisation.binpos",
+      "preview": null,
+      "sha256": "38faedea0517750d26cb3000151156e51bd390205995b99c5c8fa6e4208c5385",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "topology",
+        "parameterized_topology"
+      ],
+      "compressed_size_bytes": 12318,
+      "crc32_hex": "85be68de",
+      "extension": ".parm7",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "%VERSION  VERSION_STAMP = V0001.000  DATE = 02/20/26 15:57:10                  ",
+          "%FLAG TITLE                                                                     ",
+          "%FORMAT(20a4)                                                                   ",
+          "default_name                                                                    ",
+          "%FLAG POINTERS                                                                  ",
+          "%FORMAT(10I8)                                                                   ",
+          "     183      11      87     102     186     144     307     237       0       0",
+          "     993       3     102     144     237      17      32      27      16       0",
+          "       0       0       0       0       0       0       0       2     159       0",
+          "       0",
+          "%FLAG ATOM_NAME                                                                 ",
+          "%FORMAT(20a4)                                                                   ",
+          "C1  C2  C3  C4  C5  C6  C7  C8  C9  N1  C10 N2  C11 C12 C13 C14 C15 N3  C16 O1  ",
+          "C17 C18 N4  O2  C19 C20 C21 C22 C23 N5  C24 N6  C25 C26 C27 C28 C29 N7  C30 O3  ",
+          "C31 C32 N8  C33 N9  C34 C35 C36 C37 C38 C39 C40 N10 C41 O4  C42 C43 C44 C45 C46 ",
+          "N11 C47 N12 C48 C49 C50 C51 N13 C52 O5  C53 C54 C55 N14 C56 N15 C57 O6  O7  C58 ",
+          "C59 C60 O8  O9  H1  H2  H3  H4  H5  H6  H7  H8  H9  H10 H11 H12 H13 H14 H15 H16 ",
+          "H17 H18 H19 H20 H21 H22 H23 H24 H25 H26 H27 H28 H29 H30 H31 H32 H33 H34 H35 H36 ",
+          "H37 H38 H39 H40 H41 H42 H43 H44 H45 H46 H47 H48 H49 H50 H51 H52 H53 H54 H55 H56 ",
+          "H57 H58 H59 H60 H61 H62 H63 H64 H65 H66 H67 H68 H69 H70 H71 H72 H73 H74 H75 C2  ",
+          "O6  C6  H6E H6A C5  H5  O5  H5O C4  H4  O4  H4O C3  H3  O3  H3O C1  H12 H11 O1  ",
+          "H1O HO1 O1  ",
+          "%FLAG CHARGE                                                                    ",
+          "%FORMAT(5E16.8)                                                                 ",
+          " -2.98054872E+00  1.39003349E+00 -2.05875545E+00  6.94634076E-02 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01",
+          "  1.91901228E+01 -1.29101715E+01  6.67471916E+00 -6.61214378E+00 -6.71673978E-01",
+          " -5.46034864E+00  1.53501922E+01 -1.17780929E+01 -2.50593070E-01 -1.11968927E+01",
+          " -1.90468591E+00  2.26330077E+00 -1.22369851E+01 -1.21090281E+01 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01"
+        ],
+        "line_count": 1035,
+        "tail": [
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01"
+        ]
+      },
+      "sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb",
+      "uncompressed_size_bytes": 81634
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/galactose/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "protocol_or_documentation"
+      ],
+      "compressed_size_bytes": 149,
+      "crc32_hex": "900dbad6",
+      "extension": ".txt",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/README.txt",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "Note: There are two SMD run types for galactose, 'a' and 'b'. These correspond to the direction of cavity exit from the bound state, as mentioned in both the main document as well as the supplementary information."
+        ],
+        "line_count": 1,
+        "tail": []
+      },
+      "sha256": "be6bd1df8ecc4457168c36c7c3169f5d3f5e7e1f1b5d8f0346312c38d8cae07f",
+      "uncompressed_size_bytes": 213
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/galactose/run 1/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1889825,
+      "crc32_hex": "95a7f7da",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 1/galactose-pull-1-B.binpos",
+      "preview": null,
+      "sha256": "8c45c30e8321fcd77458feb2d8cbd3634c077c2ccefc280495daffd1b2069636",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/galactose/run 2/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1892360,
+      "crc32_hex": "291d11ab",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 2/galactose-pull-2-B.binpos",
+      "preview": null,
+      "sha256": "9c6acba4f2ff51e149b3d26eff618ec4a2e36499b09fda9638cacd7f5139b1cb",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/galactose/run 3/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1895630,
+      "crc32_hex": "86d3046a",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 3/galactose-pull-3-B.binpos",
+      "preview": null,
+      "sha256": "073d0618dd7042e0d10eae5a29d24053136860b99187b0c8db0b6fedb82804c6",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/galactose/run 4/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891960,
+      "crc32_hex": "eeff6183",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+      "preview": null,
+      "sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/galactose/run 5/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891960,
+      "crc32_hex": "eeff6183",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos",
+      "preview": null,
+      "sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "topology",
+        "parameterized_topology"
+      ],
+      "compressed_size_bytes": 12574,
+      "crc32_hex": "b21eef7c",
+      "extension": ".parm7",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "%VERSION  VERSION_STAMP = V0001.000  DATE = 02/20/26 15:39:14                  ",
+          "%FLAG TITLE                                                                     ",
+          "%FORMAT(20a4)                                                                   ",
+          "default_name                                                                    ",
+          "%FLAG POINTERS                                                                  ",
+          "%FORMAT(10I8)                                                                   ",
+          "     183      12      87     102     187     143     309     234       0       0",
+          "     993       3     102     143     234      18      35      28      17       0",
+          "       0       0       0       0       0       0       0       2     159       0",
+          "       0",
+          "%FLAG ATOM_NAME                                                                 ",
+          "%FORMAT(20a4)                                                                   ",
+          "C1  C2  C3  C4  C5  C6  C7  C8  C9  N1  C10 N2  C11 C12 C13 C14 C15 N3  C16 O1  ",
+          "C17 C18 N4  O2  C19 C20 C21 C22 C23 N5  C24 N6  C25 C26 C27 C28 C29 N7  C30 O3  ",
+          "C31 C32 N8  C33 N9  C34 C35 C36 C37 C38 C39 C40 N10 C41 O4  C42 C43 C44 C45 C46 ",
+          "N11 C47 N12 C48 C49 C50 C51 N13 C52 O5  C53 C54 C55 N14 C56 N15 C57 O6  O7  C58 ",
+          "C59 C60 O8  O9  H1  H2  H3  H4  H5  H6  H7  H8  H9  H10 H11 H12 H13 H14 H15 H16 ",
+          "H17 H18 H19 H20 H21 H22 H23 H24 H25 H26 H27 H28 H29 H30 H31 H32 H33 H34 H35 H36 ",
+          "H37 H38 H39 H40 H41 H42 H43 H44 H45 H46 H47 H48 H49 H50 H51 H52 H53 H54 H55 H56 ",
+          "H57 H58 H59 H60 H61 H62 H63 H64 H65 H66 H67 H68 H69 H70 H71 H72 H73 H74 H75 C1  ",
+          "H1  O5  C5  H5  C6  H62 H61 O6  H6O C4  H4  O4  H4O C3  H3  O3  H3O C2  H2  O2  ",
+          "H2O HO1 O1  ",
+          "%FLAG CHARGE                                                                    ",
+          "%FORMAT(5E16.8)                                                                 ",
+          " -2.98054872E+00  1.39003349E+00 -2.05875545E+00  6.94634076E-02 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01",
+          "  1.91901228E+01 -1.29101715E+01  6.67471916E+00 -6.61214378E+00 -6.71673978E-01",
+          " -5.46034864E+00  1.53501922E+01 -1.17780929E+01 -2.50593070E-01 -1.11968927E+01",
+          " -1.90468591E+00  2.26330077E+00 -1.22369851E+01 -1.21090281E+01 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01"
+        ],
+        "line_count": 1040,
+        "tail": [
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01"
+        ]
+      },
+      "sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58",
+      "uncompressed_size_bytes": 82391
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/glucose/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/glucose/run1/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1895683,
+      "crc32_hex": "7d75f147",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run1/glucose-pull-1-visualisation.binpos",
+      "preview": null,
+      "sha256": "8e7a41eadd1d5a978a6ff2c61b613da39d84be0f34e8ee4913f78b5f6f037a43",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/glucose/run2/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891787,
+      "crc32_hex": "7e0130b9",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run2/glucose-pull-2-visualisation.binpos",
+      "preview": null,
+      "sha256": "ab81901d95f445d2395755daeac3382654fee11708a84ce64d12ea22943a02f5",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/glucose/run3/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1893409,
+      "crc32_hex": "07cea2e2",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run3/glucose-pull-3-visualisation.binpos",
+      "preview": null,
+      "sha256": "42e6ba7d443d0967416d06a5ce8e72a17cdf990dabc65707cd23abdd8f2b5b19",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/glucose/run4/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1896324,
+      "crc32_hex": "12441921",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run4/glucose-pull-4-visualisation.binpos",
+      "preview": null,
+      "sha256": "d5db1c6c6e3fe692e6cb8ccfb92fe9e8e9bd02f23c534d70590cf08f478c462a",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/glucose/run5/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1896020,
+      "crc32_hex": "6ac3b57b",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run5/glucose-pull-5-visualisation.binpos",
+      "preview": null,
+      "sha256": "3a7ef8c26ed71f8bf75f944739b3ffdb212726680653fc7556642f32b9453034",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "topology",
+        "parameterized_topology"
+      ],
+      "compressed_size_bytes": 12573,
+      "crc32_hex": "aa0e0ce6",
+      "extension": ".parm7",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "%VERSION  VERSION_STAMP = V0001.000  DATE = 02/20/26 15:42:07                  ",
+          "%FLAG TITLE                                                                     ",
+          "%FORMAT(20a4)                                                                   ",
+          "default_name                                                                    ",
+          "%FLAG POINTERS                                                                  ",
+          "%FORMAT(10I8)                                                                   ",
+          "     183      12      87     102     187     143     309     234       0       0",
+          "     993       3     102     143     234      18      35      28      17       0",
+          "       0       0       0       0       0       0       0       2     159       0",
+          "       0",
+          "%FLAG ATOM_NAME                                                                 ",
+          "%FORMAT(20a4)                                                                   ",
+          "C1  C2  C3  C4  C5  C6  C7  C8  C9  N1  C10 N2  C11 C12 C13 C14 C15 N3  C16 O1  ",
+          "C17 C18 N4  O2  C19 C20 C21 C22 C23 N5  C24 N6  C25 C26 C27 C28 C29 N7  C30 O3  ",
+          "C31 C32 N8  C33 N9  C34 C35 C36 C37 C38 C39 C40 N10 C41 O4  C42 C43 C44 C45 C46 ",
+          "N11 C47 N12 C48 C49 C50 C51 N13 C52 O5  C53 C54 C55 N14 C56 N15 C57 O6  O7  C58 ",
+          "C59 C60 O8  O9  H1  H2  H3  H4  H5  H6  H7  H8  H9  H10 H11 H12 H13 H14 H15 H16 ",
+          "H17 H18 H19 H20 H21 H22 H23 H24 H25 H26 H27 H28 H29 H30 H31 H32 H33 H34 H35 H36 ",
+          "H37 H38 H39 H40 H41 H42 H43 H44 H45 H46 H47 H48 H49 H50 H51 H52 H53 H54 H55 H56 ",
+          "H57 H58 H59 H60 H61 H62 H63 H64 H65 H66 H67 H68 H69 H70 H71 H72 H73 H74 H75 C1  ",
+          "H1  O5  C5  H5  C6  H62 H61 O6  H6O C4  H4  O4  H4O C3  H3  O3  H3O C2  H2  O2  ",
+          "H2O HO1 O1  ",
+          "%FLAG CHARGE                                                                    ",
+          "%FORMAT(5E16.8)                                                                 ",
+          " -2.98054872E+00  1.39003349E+00 -2.05875545E+00  6.94634076E-02 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01",
+          "  1.91901228E+01 -1.29101715E+01  6.67471916E+00 -6.61214378E+00 -6.71673978E-01",
+          " -5.46034864E+00  1.53501922E+01 -1.17780929E+01 -2.50593070E-01 -1.11968927E+01",
+          " -1.90468591E+00  2.26330077E+00 -1.22369851E+01 -1.21090281E+01 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01"
+        ],
+        "line_count": 1040,
+        "tail": [
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01"
+        ]
+      },
+      "sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4",
+      "uncompressed_size_bytes": 82391
+    },
+    {
+      "classifications": [],
+      "compressed_size_bytes": 0,
+      "crc32_hex": "00000000",
+      "extension": "",
+      "kind": "directory",
+      "path": "SMD_trajectories/Input-files/",
+      "preview": null,
+      "sha256": null,
+      "uncompressed_size_bytes": 0
+    },
+    {
+      "classifications": [
+        "coordinate"
+      ],
+      "compressed_size_bytes": 98,
+      "crc32_hex": "31a3cf94",
+      "extension": ".rst",
+      "kind": "file",
+      "path": "SMD_trajectories/Input-files/Fructofuranose-SMD.RST",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "&rst",
+          "iat=-1,-1,",
+          "r2=0.0,",
+          "rk2=200.0,",
+          "r2a=15.0,",
+          "iresid=0,",
+          "igr1=47,48,51,56,59,80,3,4,5,8,25,28",
+          "igr2=160,161,162,165,169,173",
+          "/",
+          "",
+          "",
+          ""
+        ],
+        "line_count": 12,
+        "tail": []
+      },
+      "sha256": "53b4051814abf4a0a25bbc2eb9d3b62c1c557e956d4a77f6d0339e3aaff0b95c",
+      "uncompressed_size_bytes": 138
+    },
+    {
+      "classifications": [
+        "coordinate"
+      ],
+      "compressed_size_bytes": 117,
+      "crc32_hex": "434c749c",
+      "extension": ".rst",
+      "kind": "file",
+      "path": "SMD_trajectories/Input-files/Fructopyranose-SMD.RST",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "&rst",
+          "iat=-1,-1,",
+          "r2=0.0,",
+          "rk2=200.0,",
+          "r2a=15.0,",
+          "iresid=0,",
+          "fxyz=0,0,1,",
+          "outxyz=1,",
+          "igr1=47,48,51,56,59,80,3,4,5,8,25,28",
+          "igr2=160,161,162,165,169,173",
+          "/",
+          "",
+          "",
+          ""
+        ],
+        "line_count": 14,
+        "tail": []
+      },
+      "sha256": "68a2e2ea96645920e229ae7c17874ccecd47a1c1941f0325e396ff758145a941",
+      "uncompressed_size_bytes": 162
+    },
+    {
+      "classifications": [
+        "coordinate"
+      ],
+      "compressed_size_bytes": 101,
+      "crc32_hex": "71f505d6",
+      "extension": ".rst",
+      "kind": "file",
+      "path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "&rst",
+          "iat=-1,-1,",
+          "r2=0.0,",
+          "rk2=200.0,",
+          "r2a=15.0,",
+          "iresid=0,",
+          "igr1=47,48,51,56,59,80,3,4,5,8,25,28",
+          "igr2=160,178,174,170,163,162,165",
+          "/",
+          "",
+          "",
+          ""
+        ],
+        "line_count": 12,
+        "tail": []
+      },
+      "sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "uncompressed_size_bytes": 142
+    },
+    {
+      "classifications": [
+        "protocol_or_documentation"
+      ],
+      "compressed_size_bytes": 230,
+      "crc32_hex": "357e0cd4",
+      "extension": ".in",
+      "kind": "file",
+      "path": "SMD_trajectories/Input-files/SMD.in",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          " &cntrl ",
+          "   imin = 0, nstlim = 15000000, dt = 0.002,",
+          "   ntx = 1, temp0 = 300.0,",
+          "   ntt = 3, gamma_ln=5.0",
+          "   ntc = 2, ntf = 2, ntb =1,",
+          "   ntwx = 1000, ntwr = 1000, ntpr = 1000,",
+          "   cut = 10.0, ig = -1, ioutfm = 1,",
+          "   irest = 0, jar=1,",
+          " /",
+          "&wt type='DUMPFREQ', istep1=100, /",
+          "&wt type='END', /",
+          "DISANG=pull.RST",
+          "DUMPAVE=asm-1.dat",
+          "LISTIN=POUT",
+          "LISTOUT=POUT",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "line_count": 20,
+        "tail": []
+      },
+      "sha256": "1586641f381f1513adb185c1fca7a962e26d31b77f4a360b454f42dea424951d",
+      "uncompressed_size_bytes": 373
+    }
+  ],
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, affinity, efficacy, safety, or a drug result",
+  "parameter_generation_provenance_complete": false,
+  "relevant_members": [
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1893109,
+      "crc32_hex": "b65093b3",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 1/fructofuranose-pull-1-visualisation.binpos",
+      "preview": null,
+      "sha256": "d3fa728de9cffbc0c3d9ac520c67281bb7d74874206f0952e02c0611f2ddb402",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891349,
+      "crc32_hex": "aa3805ae",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 2/fructofuranose-pull-2-visualisation.binpos",
+      "preview": null,
+      "sha256": "d701f87dc2f6443a6698659957030d88db502239445c16afd122067a359fe5aa",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1889730,
+      "crc32_hex": "c18d918f",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 3/fructofuranose-pull-3-visualisation.binpos",
+      "preview": null,
+      "sha256": "9782a67e8358462fced17f1956232871afd3f980e35561f78f4c4549d1c59f3a",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891134,
+      "crc32_hex": "6487de73",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 4/fructofuranose-pull-4-visualisation.binpos",
+      "preview": null,
+      "sha256": "4370f94a3f83a70d6994f610e147d7f80e4a3e38295e9a2e40eb7b96e9e06f17",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891864,
+      "crc32_hex": "99eeac44",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/run 5/fructofuranose-pull-5-visualisation.binpos",
+      "preview": null,
+      "sha256": "0c13d6ac5d65e04725a326ddc5753ba4259aa9782ad29e3e3eadc88cf17e9bb9",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "topology",
+        "parameterized_topology"
+      ],
+      "compressed_size_bytes": 12315,
+      "crc32_hex": "06504a92",
+      "extension": ".parm7",
+      "kind": "file",
+      "path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "%VERSION  VERSION_STAMP = V0001.000  DATE = 02/20/26 16:01:16                  ",
+          "%FLAG TITLE                                                                     ",
+          "%FORMAT(20a4)                                                                   ",
+          "default_name                                                                    ",
+          "%FLAG POINTERS                                                                  ",
+          "%FORMAT(10I8)                                                                   ",
+          "     183      11      87     102     186     144     306     237       0       0",
+          "     992       3     102     144     237      17      32      27      16       0",
+          "       0       0       0       0       0       0       0       2     159       0",
+          "       0",
+          "%FLAG ATOM_NAME                                                                 ",
+          "%FORMAT(20a4)                                                                   ",
+          "C1  C2  C3  C4  C5  C6  C7  C8  C9  N1  C10 N2  C11 C12 C13 C14 C15 N3  C16 O1  ",
+          "C17 C18 N4  O2  C19 C20 C21 C22 C23 N5  C24 N6  C25 C26 C27 C28 C29 N7  C30 O3  ",
+          "C31 C32 N8  C33 N9  C34 C35 C36 C37 C38 C39 C40 N10 C41 O4  C42 C43 C44 C45 C46 ",
+          "N11 C47 N12 C48 C49 C50 C51 N13 C52 O5  C53 C54 C55 N14 C56 N15 C57 O6  O7  C58 ",
+          "C59 C60 O8  O9  H1  H2  H3  H4  H5  H6  H7  H8  H9  H10 H11 H12 H13 H14 H15 H16 ",
+          "H17 H18 H19 H20 H21 H22 H23 H24 H25 H26 H27 H28 H29 H30 H31 H32 H33 H34 H35 H36 ",
+          "H37 H38 H39 H40 H41 H42 H43 H44 H45 H46 H47 H48 H49 H50 H51 H52 H53 H54 H55 H56 ",
+          "H57 H58 H59 H60 H61 H62 H63 H64 H65 H66 H67 H68 H69 H70 H71 H72 H73 H74 H75 C2  ",
+          "O5  C5  H5  C6  H62 H61 O6  H6O C4  H4  O4  H4O C3  H3  O3  H3O C1  H12 H11 O1  ",
+          "H1O HO1 O1  ",
+          "%FLAG CHARGE                                                                    ",
+          "%FORMAT(5E16.8)                                                                 ",
+          " -2.98054872E+00  1.39003349E+00 -2.05875545E+00  6.94634076E-02 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01",
+          "  1.91901228E+01 -1.29101715E+01  6.67471916E+00 -6.61214378E+00 -6.71673978E-01",
+          " -5.46034864E+00  1.53501922E+01 -1.17780929E+01 -2.50593070E-01 -1.11968927E+01",
+          " -1.90468591E+00  2.26330077E+00 -1.22369851E+01 -1.21090281E+01 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01"
+        ],
+        "line_count": 1034,
+        "tail": [
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  7.20000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01"
+        ]
+      },
+      "sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47",
+      "uncompressed_size_bytes": 81585
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1896514,
+      "crc32_hex": "10f2eb0c",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 1/fructopyranose-1-visualisation.binpos",
+      "preview": null,
+      "sha256": "8543bd6165fa9aa52fae738800fe788e1d27534c597f02ccdf2ca1df29c1970c",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1894721,
+      "crc32_hex": "9dbca3b4",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 2/fructopyranose-2-visualisation.binpos",
+      "preview": null,
+      "sha256": "8c9fa5b4297ae74acb772728f664f81c91fab91e2de2b3fe28ba1f16650b5dd0",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1897167,
+      "crc32_hex": "4fde4488",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 3/fructopyranose-3-visualisation.binpos",
+      "preview": null,
+      "sha256": "750cb7c0ab513ec684cf716cb5b500ab82f1ddcc51bee1b18273ecf20e0fb931",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1893213,
+      "crc32_hex": "2b364042",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 4/fructopyranose-4-visualisation.binpos",
+      "preview": null,
+      "sha256": "f17b4004b45deb8dc9ae139966fc7251224265faf35ca8eca1ed81173db4c167",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1894508,
+      "crc32_hex": "7454b2cf",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/run 5/fructopyranose-5-visualisation.binpos",
+      "preview": null,
+      "sha256": "38faedea0517750d26cb3000151156e51bd390205995b99c5c8fa6e4208c5385",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "topology",
+        "parameterized_topology"
+      ],
+      "compressed_size_bytes": 12318,
+      "crc32_hex": "85be68de",
+      "extension": ".parm7",
+      "kind": "file",
+      "path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "%VERSION  VERSION_STAMP = V0001.000  DATE = 02/20/26 15:57:10                  ",
+          "%FLAG TITLE                                                                     ",
+          "%FORMAT(20a4)                                                                   ",
+          "default_name                                                                    ",
+          "%FLAG POINTERS                                                                  ",
+          "%FORMAT(10I8)                                                                   ",
+          "     183      11      87     102     186     144     307     237       0       0",
+          "     993       3     102     144     237      17      32      27      16       0",
+          "       0       0       0       0       0       0       0       2     159       0",
+          "       0",
+          "%FLAG ATOM_NAME                                                                 ",
+          "%FORMAT(20a4)                                                                   ",
+          "C1  C2  C3  C4  C5  C6  C7  C8  C9  N1  C10 N2  C11 C12 C13 C14 C15 N3  C16 O1  ",
+          "C17 C18 N4  O2  C19 C20 C21 C22 C23 N5  C24 N6  C25 C26 C27 C28 C29 N7  C30 O3  ",
+          "C31 C32 N8  C33 N9  C34 C35 C36 C37 C38 C39 C40 N10 C41 O4  C42 C43 C44 C45 C46 ",
+          "N11 C47 N12 C48 C49 C50 C51 N13 C52 O5  C53 C54 C55 N14 C56 N15 C57 O6  O7  C58 ",
+          "C59 C60 O8  O9  H1  H2  H3  H4  H5  H6  H7  H8  H9  H10 H11 H12 H13 H14 H15 H16 ",
+          "H17 H18 H19 H20 H21 H22 H23 H24 H25 H26 H27 H28 H29 H30 H31 H32 H33 H34 H35 H36 ",
+          "H37 H38 H39 H40 H41 H42 H43 H44 H45 H46 H47 H48 H49 H50 H51 H52 H53 H54 H55 H56 ",
+          "H57 H58 H59 H60 H61 H62 H63 H64 H65 H66 H67 H68 H69 H70 H71 H72 H73 H74 H75 C2  ",
+          "O6  C6  H6E H6A C5  H5  O5  H5O C4  H4  O4  H4O C3  H3  O3  H3O C1  H12 H11 O1  ",
+          "H1O HO1 O1  ",
+          "%FLAG CHARGE                                                                    ",
+          "%FORMAT(5E16.8)                                                                 ",
+          " -2.98054872E+00  1.39003349E+00 -2.05875545E+00  6.94634076E-02 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01",
+          "  1.91901228E+01 -1.29101715E+01  6.67471916E+00 -6.61214378E+00 -6.71673978E-01",
+          " -5.46034864E+00  1.53501922E+01 -1.17780929E+01 -2.50593070E-01 -1.11968927E+01",
+          " -1.90468591E+00  2.26330077E+00 -1.22369851E+01 -1.21090281E+01 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01"
+        ],
+        "line_count": 1035,
+        "tail": [
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01"
+        ]
+      },
+      "sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb",
+      "uncompressed_size_bytes": 81634
+    },
+    {
+      "classifications": [
+        "protocol_or_documentation"
+      ],
+      "compressed_size_bytes": 149,
+      "crc32_hex": "900dbad6",
+      "extension": ".txt",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/README.txt",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "Note: There are two SMD run types for galactose, 'a' and 'b'. These correspond to the direction of cavity exit from the bound state, as mentioned in both the main document as well as the supplementary information."
+        ],
+        "line_count": 1,
+        "tail": []
+      },
+      "sha256": "be6bd1df8ecc4457168c36c7c3169f5d3f5e7e1f1b5d8f0346312c38d8cae07f",
+      "uncompressed_size_bytes": 213
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1889825,
+      "crc32_hex": "95a7f7da",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 1/galactose-pull-1-B.binpos",
+      "preview": null,
+      "sha256": "8c45c30e8321fcd77458feb2d8cbd3634c077c2ccefc280495daffd1b2069636",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1892360,
+      "crc32_hex": "291d11ab",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 2/galactose-pull-2-B.binpos",
+      "preview": null,
+      "sha256": "9c6acba4f2ff51e149b3d26eff618ec4a2e36499b09fda9638cacd7f5139b1cb",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1895630,
+      "crc32_hex": "86d3046a",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 3/galactose-pull-3-B.binpos",
+      "preview": null,
+      "sha256": "073d0618dd7042e0d10eae5a29d24053136860b99187b0c8db0b6fedb82804c6",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891960,
+      "crc32_hex": "eeff6183",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+      "preview": null,
+      "sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891960,
+      "crc32_hex": "eeff6183",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos",
+      "preview": null,
+      "sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "topology",
+        "parameterized_topology"
+      ],
+      "compressed_size_bytes": 12574,
+      "crc32_hex": "b21eef7c",
+      "extension": ".parm7",
+      "kind": "file",
+      "path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "%VERSION  VERSION_STAMP = V0001.000  DATE = 02/20/26 15:39:14                  ",
+          "%FLAG TITLE                                                                     ",
+          "%FORMAT(20a4)                                                                   ",
+          "default_name                                                                    ",
+          "%FLAG POINTERS                                                                  ",
+          "%FORMAT(10I8)                                                                   ",
+          "     183      12      87     102     187     143     309     234       0       0",
+          "     993       3     102     143     234      18      35      28      17       0",
+          "       0       0       0       0       0       0       0       2     159       0",
+          "       0",
+          "%FLAG ATOM_NAME                                                                 ",
+          "%FORMAT(20a4)                                                                   ",
+          "C1  C2  C3  C4  C5  C6  C7  C8  C9  N1  C10 N2  C11 C12 C13 C14 C15 N3  C16 O1  ",
+          "C17 C18 N4  O2  C19 C20 C21 C22 C23 N5  C24 N6  C25 C26 C27 C28 C29 N7  C30 O3  ",
+          "C31 C32 N8  C33 N9  C34 C35 C36 C37 C38 C39 C40 N10 C41 O4  C42 C43 C44 C45 C46 ",
+          "N11 C47 N12 C48 C49 C50 C51 N13 C52 O5  C53 C54 C55 N14 C56 N15 C57 O6  O7  C58 ",
+          "C59 C60 O8  O9  H1  H2  H3  H4  H5  H6  H7  H8  H9  H10 H11 H12 H13 H14 H15 H16 ",
+          "H17 H18 H19 H20 H21 H22 H23 H24 H25 H26 H27 H28 H29 H30 H31 H32 H33 H34 H35 H36 ",
+          "H37 H38 H39 H40 H41 H42 H43 H44 H45 H46 H47 H48 H49 H50 H51 H52 H53 H54 H55 H56 ",
+          "H57 H58 H59 H60 H61 H62 H63 H64 H65 H66 H67 H68 H69 H70 H71 H72 H73 H74 H75 C1  ",
+          "H1  O5  C5  H5  C6  H62 H61 O6  H6O C4  H4  O4  H4O C3  H3  O3  H3O C2  H2  O2  ",
+          "H2O HO1 O1  ",
+          "%FLAG CHARGE                                                                    ",
+          "%FORMAT(5E16.8)                                                                 ",
+          " -2.98054872E+00  1.39003349E+00 -2.05875545E+00  6.94634076E-02 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01",
+          "  1.91901228E+01 -1.29101715E+01  6.67471916E+00 -6.61214378E+00 -6.71673978E-01",
+          " -5.46034864E+00  1.53501922E+01 -1.17780929E+01 -2.50593070E-01 -1.11968927E+01",
+          " -1.90468591E+00  2.26330077E+00 -1.22369851E+01 -1.21090281E+01 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01"
+        ],
+        "line_count": 1040,
+        "tail": [
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01"
+        ]
+      },
+      "sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58",
+      "uncompressed_size_bytes": 82391
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1895683,
+      "crc32_hex": "7d75f147",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run1/glucose-pull-1-visualisation.binpos",
+      "preview": null,
+      "sha256": "8e7a41eadd1d5a978a6ff2c61b613da39d84be0f34e8ee4913f78b5f6f037a43",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1891787,
+      "crc32_hex": "7e0130b9",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run2/glucose-pull-2-visualisation.binpos",
+      "preview": null,
+      "sha256": "ab81901d95f445d2395755daeac3382654fee11708a84ce64d12ea22943a02f5",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1893409,
+      "crc32_hex": "07cea2e2",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run3/glucose-pull-3-visualisation.binpos",
+      "preview": null,
+      "sha256": "42e6ba7d443d0967416d06a5ce8e72a17cdf990dabc65707cd23abdd8f2b5b19",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1896324,
+      "crc32_hex": "12441921",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run4/glucose-pull-4-visualisation.binpos",
+      "preview": null,
+      "sha256": "d5db1c6c6e3fe692e6cb8ccfb92fe9e8e9bd02f23c534d70590cf08f478c462a",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "trajectory"
+      ],
+      "compressed_size_bytes": 1896020,
+      "crc32_hex": "6ac3b57b",
+      "extension": ".binpos",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/run5/glucose-pull-5-visualisation.binpos",
+      "preview": null,
+      "sha256": "3a7ef8c26ed71f8bf75f944739b3ffdb212726680653fc7556642f32b9453034",
+      "uncompressed_size_bytes": 2200004
+    },
+    {
+      "classifications": [
+        "topology",
+        "parameterized_topology"
+      ],
+      "compressed_size_bytes": 12573,
+      "crc32_hex": "aa0e0ce6",
+      "extension": ".parm7",
+      "kind": "file",
+      "path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "%VERSION  VERSION_STAMP = V0001.000  DATE = 02/20/26 15:42:07                  ",
+          "%FLAG TITLE                                                                     ",
+          "%FORMAT(20a4)                                                                   ",
+          "default_name                                                                    ",
+          "%FLAG POINTERS                                                                  ",
+          "%FORMAT(10I8)                                                                   ",
+          "     183      12      87     102     187     143     309     234       0       0",
+          "     993       3     102     143     234      18      35      28      17       0",
+          "       0       0       0       0       0       0       0       2     159       0",
+          "       0",
+          "%FLAG ATOM_NAME                                                                 ",
+          "%FORMAT(20a4)                                                                   ",
+          "C1  C2  C3  C4  C5  C6  C7  C8  C9  N1  C10 N2  C11 C12 C13 C14 C15 N3  C16 O1  ",
+          "C17 C18 N4  O2  C19 C20 C21 C22 C23 N5  C24 N6  C25 C26 C27 C28 C29 N7  C30 O3  ",
+          "C31 C32 N8  C33 N9  C34 C35 C36 C37 C38 C39 C40 N10 C41 O4  C42 C43 C44 C45 C46 ",
+          "N11 C47 N12 C48 C49 C50 C51 N13 C52 O5  C53 C54 C55 N14 C56 N15 C57 O6  O7  C58 ",
+          "C59 C60 O8  O9  H1  H2  H3  H4  H5  H6  H7  H8  H9  H10 H11 H12 H13 H14 H15 H16 ",
+          "H17 H18 H19 H20 H21 H22 H23 H24 H25 H26 H27 H28 H29 H30 H31 H32 H33 H34 H35 H36 ",
+          "H37 H38 H39 H40 H41 H42 H43 H44 H45 H46 H47 H48 H49 H50 H51 H52 H53 H54 H55 H56 ",
+          "H57 H58 H59 H60 H61 H62 H63 H64 H65 H66 H67 H68 H69 H70 H71 H72 H73 H74 H75 C1  ",
+          "H1  O5  C5  H5  C6  H62 H61 O6  H6O C4  H4  O4  H4O C3  H3  O3  H3O C2  H2  O2  ",
+          "H2O HO1 O1  ",
+          "%FLAG CHARGE                                                                    ",
+          "%FORMAT(5E16.8)                                                                 ",
+          " -2.98054872E+00  1.39003349E+00 -2.05875545E+00  6.94634076E-02 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01",
+          "  1.91901228E+01 -1.29101715E+01  6.67471916E+00 -6.61214378E+00 -6.71673978E-01",
+          " -5.46034864E+00  1.53501922E+01 -1.17780929E+01 -2.50593070E-01 -1.11968927E+01",
+          " -1.90468591E+00  2.26330077E+00 -1.22369851E+01 -1.21090281E+01 -2.05875545E+00",
+          "  1.39003349E+00 -2.98054872E+00  6.94634076E-02  4.13463987E-01 -1.45274189E+01"
+        ],
+        "line_count": 1040,
+        "tail": [
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  7.20000000E-01  8.50000000E-01  8.50000000E-01",
+          "  8.50000000E-01  8.50000000E-01  8.50000000E-01"
+        ]
+      },
+      "sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4",
+      "uncompressed_size_bytes": 82391
+    },
+    {
+      "classifications": [
+        "coordinate"
+      ],
+      "compressed_size_bytes": 98,
+      "crc32_hex": "31a3cf94",
+      "extension": ".rst",
+      "kind": "file",
+      "path": "SMD_trajectories/Input-files/Fructofuranose-SMD.RST",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "&rst",
+          "iat=-1,-1,",
+          "r2=0.0,",
+          "rk2=200.0,",
+          "r2a=15.0,",
+          "iresid=0,",
+          "igr1=47,48,51,56,59,80,3,4,5,8,25,28",
+          "igr2=160,161,162,165,169,173",
+          "/",
+          "",
+          "",
+          ""
+        ],
+        "line_count": 12,
+        "tail": []
+      },
+      "sha256": "53b4051814abf4a0a25bbc2eb9d3b62c1c557e956d4a77f6d0339e3aaff0b95c",
+      "uncompressed_size_bytes": 138
+    },
+    {
+      "classifications": [
+        "coordinate"
+      ],
+      "compressed_size_bytes": 117,
+      "crc32_hex": "434c749c",
+      "extension": ".rst",
+      "kind": "file",
+      "path": "SMD_trajectories/Input-files/Fructopyranose-SMD.RST",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "&rst",
+          "iat=-1,-1,",
+          "r2=0.0,",
+          "rk2=200.0,",
+          "r2a=15.0,",
+          "iresid=0,",
+          "fxyz=0,0,1,",
+          "outxyz=1,",
+          "igr1=47,48,51,56,59,80,3,4,5,8,25,28",
+          "igr2=160,161,162,165,169,173",
+          "/",
+          "",
+          "",
+          ""
+        ],
+        "line_count": 14,
+        "tail": []
+      },
+      "sha256": "68a2e2ea96645920e229ae7c17874ccecd47a1c1941f0325e396ff758145a941",
+      "uncompressed_size_bytes": 162
+    },
+    {
+      "classifications": [
+        "coordinate"
+      ],
+      "compressed_size_bytes": 101,
+      "crc32_hex": "71f505d6",
+      "extension": ".rst",
+      "kind": "file",
+      "path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          "&rst",
+          "iat=-1,-1,",
+          "r2=0.0,",
+          "rk2=200.0,",
+          "r2a=15.0,",
+          "iresid=0,",
+          "igr1=47,48,51,56,59,80,3,4,5,8,25,28",
+          "igr2=160,178,174,170,163,162,165",
+          "/",
+          "",
+          "",
+          ""
+        ],
+        "line_count": 12,
+        "tail": []
+      },
+      "sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "uncompressed_size_bytes": 142
+    },
+    {
+      "classifications": [
+        "protocol_or_documentation"
+      ],
+      "compressed_size_bytes": 230,
+      "crc32_hex": "357e0cd4",
+      "extension": ".in",
+      "kind": "file",
+      "path": "SMD_trajectories/Input-files/SMD.in",
+      "preview": {
+        "encoding": "utf-8",
+        "head": [
+          " &cntrl ",
+          "   imin = 0, nstlim = 15000000, dt = 0.002,",
+          "   ntx = 1, temp0 = 300.0,",
+          "   ntt = 3, gamma_ln=5.0",
+          "   ntc = 2, ntf = 2, ntb =1,",
+          "   ntwx = 1000, ntwr = 1000, ntpr = 1000,",
+          "   cut = 10.0, ig = -1, ioutfm = 1,",
+          "   irest = 0, jar=1,",
+          " /",
+          "&wt type='DUMPFREQ', istep1=100, /",
+          "&wt type='END', /",
+          "DISANG=pull.RST",
+          "DUMPAVE=asm-1.dat",
+          "LISTIN=POUT",
+          "LISTOUT=POUT",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "line_count": 20,
+        "tail": []
+      },
+      "sha256": "1586641f381f1513adb185c1fca7a962e26d31b77f4a360b454f42dea424951d",
+      "uncompressed_size_bytes": 373
+    }
+  ],
+  "schema": "dia-health-one.gluhut-smd-archive-inventory.v2",
+  "scope": "public GluHUT steered-MD archive provenance and input discovery",
+  "status": "archive_inventory_complete_not_chemistry_validated"
+}
