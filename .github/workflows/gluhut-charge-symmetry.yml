@@ -7,7 +7,10 @@ on:
       - analysis/gluhut-charge-symmetry
     paths:
       - "research/audit_gluhut_charge_symmetry.py"
+      - "research/update_status_charge_symmetry.py"
       - "tests/test_audit_gluhut_charge_symmetry.py"
+      - "tests/test_update_status_charge_symmetry.py"
+      - "research/status/status.json"
       - ".github/workflows/gluhut-charge-symmetry.yml"
   workflow_dispatch:
 
@@ -39,7 +42,10 @@ jobs:
         run: python -m pip install --disable-pip-version-check "networkx==3.4.2"
 
       - name: Run unit tests
-        run: python -m unittest tests/test_audit_gluhut_charge_symmetry.py -v
+        run: |
+          python -m unittest \
+            tests/test_audit_gluhut_charge_symmetry.py \
+            tests/test_update_status_charge_symmetry.py -v
 
       - name: Acquire and verify public SMD archive
         run: |
@@ -56,6 +62,13 @@ jobs:
             --output-json research/data/gluhut-charge-symmetry.json \
             | tee /tmp/charge-symmetry-summary.json
 
+      - name: Update public machine-readable status
+        run: |
+          python research/update_status_charge_symmetry.py \
+            --status-json research/status/status.json \
+            --audit-json research/data/gluhut-charge-symmetry.json \
+            | tee /tmp/charge-symmetry-status-summary.json
+
       - name: Validate evidence boundary
         run: |
           python - <<'PY'
@@ -70,36 +83,74 @@ jobs:
           assert data['cross_system']['topology_count'] == 4
           assert data['cross_system']['host_charge_vectors_identical'] is True
           assert data['graph_symmetry']['heavy_atom_count'] == 84
-          assert data['graph_symmetry']['automorphism_count'] >= 2
-          assert data['graph_symmetry']['nontrivial_heavy_orbit_count'] >= 1
+          assert data['graph_symmetry']['automorphism_count'] == 6
+          assert data['graph_symmetry']['heavy_orbit_count'] == 28
+          assert data['graph_symmetry']['nontrivial_heavy_orbit_count'] == 28
+          assert data['graph_symmetry']['heavy_orbit_size_distribution'] == {'3': 28}
+          assert summary['maximum_nontrivial_heavy_orbit_charge_range_e'] == 0.0
+          assert summary['maximum_nontrivial_hydrogen_group_charge_range_e'] == 0.0
           assert decision['heavy_graph_automorphisms_enumerated'] is True
           assert decision['nontrivial_graph_symmetry_present'] is True
+          assert decision['compiled_charges_are_exactly_graph_symmetry_averaged'] is True
+          assert decision['large_graph_equivalent_charge_asymmetry_detected'] is False
           assert decision['source_resp_derivation_reconstructable'] is False
           assert decision['automatic_charge_symmetrisation_authorized'] is False
           assert decision['direct_transfer_to_pag_or_mcq1_authorized'] is False
           assert decision['parent_pag_calibration_authorized'] is False
           assert decision['candidate_ranking_authorized'] is False
           assert abs(summary['symmetry_averaging_adjustment']['total_charge_difference_e']) < 1e-12
+
+          status = json.loads(Path('research/status/status.json').read_text())
+          benchmark = status['public_benchmark_calibration']
+          assert status['schema'] == 'dia-health-one.public-confidence-status.v10'
+          assert status['working_drug_discovered'] is False
+          assert status['measured_dia_health_one_hit'] is False
+          assert status['primary_candidate']['evidence_level'] == 'E2'
+          assert benchmark['compiled_host_charge_vectors_identical_across_four_sugars'] is True
+          assert benchmark['parameter_labeled_heavy_graph_automorphism_count'] == 6
+          assert benchmark['parameter_labeled_heavy_graph_orbit_count'] == 28
+          assert benchmark['maximum_graph_equivalent_heavy_charge_range_e'] == 0.0
+          assert benchmark['maximum_graph_equivalent_hydrogen_charge_range_e'] == 0.0
+          assert benchmark['compiled_charges_exactly_equal_within_preserved_graph_symmetries'] is True
+          assert benchmark['large_graph_equivalent_charge_asymmetry_detected'] is False
+          assert benchmark['direct_compiled_charge_transfer_to_pag_or_mcq1_authorized'] is False
+          assert benchmark['pag_calibration_completed'] is False
+          assert benchmark['candidate_ranking_authorized'] is False
+
           print(json.dumps({
               'cross_system': data['cross_system'],
               'graph_symmetry': data['graph_symmetry'],
               'summary': summary,
               'decision': decision,
-              'largest_heavy_orbits': data['heavy_atom_orbits'][:10],
-              'largest_hydrogen_groups': data['hydrogen_groups'][:10],
+              'status_schema': status['schema'],
+              'status_charge_symmetry': {
+                  key: benchmark[key]
+                  for key in (
+                      'compiled_host_charge_vectors_identical_across_four_sugars',
+                      'parameter_labeled_heavy_graph_automorphism_count',
+                      'parameter_labeled_heavy_graph_orbit_count',
+                      'maximum_graph_equivalent_heavy_charge_range_e',
+                      'maximum_graph_equivalent_hydrogen_charge_range_e',
+                      'compiled_charges_exactly_equal_within_preserved_graph_symmetries',
+                      'large_graph_equivalent_charge_asymmetry_detected',
+                      'direct_compiled_charge_transfer_to_pag_or_mcq1_authorized',
+                  )
+              },
           }, indent=2, sort_keys=True))
           PY
 
-      - name: Commit deterministic audit output
+      - name: Commit deterministic audit and status
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research/data/gluhut-charge-symmetry.json
+          git add \
+            research/data/gluhut-charge-symmetry.json \
+            research/status/status.json
           if git diff --cached --quiet; then
-            echo 'No charge-symmetry changes to commit.'
+            echo 'No charge-symmetry or status changes to commit.'
             exit 0
           fi
-          git commit -m 'Record GluHUT charge-symmetry audit'
+          git commit -m 'Record GluHUT charge symmetry and public status'
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Publish summary
@@ -108,11 +159,11 @@ jobs:
           {
             echo '## GluHUT compiled charge-symmetry audit'
             echo
-            if [ -f /tmp/charge-symmetry-summary.json ]; then
-              echo '```json'
-              cat /tmp/charge-symmetry-summary.json
-              echo '```'
-            else
-              echo 'No charge-symmetry summary was generated.'
-            fi
+            for file in /tmp/charge-symmetry-summary.json /tmp/charge-symmetry-status-summary.json; do
+              if [ -f "$file" ]; then
+                echo '```json'
+                cat "$file"
+                echo '```'
+              fi
+            done
           } >> "$GITHUB_STEP_SUMMARY"
