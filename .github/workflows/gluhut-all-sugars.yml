@@ -1,0 +1,113 @@
+name: Reproduce GluHUT all-sugar PMFs
+
+on:
+  push:
+    branches:
+      - analysis/gluhut-all-sugars
+    paths:
+      - "research/reproduce_gluhut_all_sugars.py"
+      - "tests/test_reproduce_gluhut_all_sugars.py"
+      - ".github/workflows/gluhut-all-sugars.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-all-sugars-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      WHAM_COMMIT: 43bdd6fcd1916ae2b169cb52ac326b7eea567abb
+      ARCHIVE_MD5: dbc6723b8adcb85deb8230f63b6a51da
+      ARCHIVE_SHA256: e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb
+    steps:
+      - name: Check out analysis branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run local parser and metric tests
+        run: python -m unittest tests/test_reproduce_gluhut_all_sugars.py -v
+
+      - name: Acquire and verify public Zenodo archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/WHAM_PMF.zip \
+            'https://zenodo.org/api/records/19664426/files/WHAM_PMF.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/WHAM_PMF.zip" | md5sum --check --strict
+          echo "$ARCHIVE_SHA256  /tmp/WHAM_PMF.zip" | sha256sum --check --strict
+
+      - name: Build pinned Grossfield WHAM
+        run: |
+          git clone --quiet https://github.com/agrossfield/wham /tmp/grossfield-wham
+          git -C /tmp/grossfield-wham checkout --quiet "$WHAM_COMMIT"
+          make -C /tmp/grossfield-wham/wham
+          /tmp/grossfield-wham/wham/wham 2>&1 | head -20 || true
+          sha256sum /tmp/grossfield-wham/wham/wham | tee /tmp/wham-binary.sha256
+
+      - name: Reprocess every deposited sugar route
+        run: |
+          python research/reproduce_gluhut_all_sugars.py \
+            --archive /tmp/WHAM_PMF.zip \
+            --wham-binary /tmp/grossfield-wham/wham/wham \
+            --output-json research/data/gluhut-all-sugars-wham-reproduction.json \
+            --output-csv research/data/gluhut-all-sugars-wham-summary.csv | tee /tmp/gluhut-summary.txt
+
+      - name: Validate evidence boundary and route coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('research/data/gluhut-all-sugars-wham-reproduction.json')
+          data = json.loads(path.read_text())
+          assert data['decision']['candidate_ranking_authorized'] is False
+          assert data['decision']['glucose_reproduction_present'] is True
+          assert data['decision']['holdout_groups_present'] is True
+          groups = {row['group'] for row in data['group_summaries']}
+          assert groups == {
+              'glucose', 'galactose-pathA', 'galactose-pathB',
+              'fructopyranose', 'fructofuranose'
+          }
+          assert 'not NNC2215' in data['not_target_claim']
+          print(json.dumps(data['ranking'], indent=2))
+          PY
+
+      - name: Commit calibrated hold-out results to branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            research/data/gluhut-all-sugars-wham-reproduction.json \
+            research/data/gluhut-all-sugars-wham-summary.csv
+          if git diff --cached --quiet; then
+            echo 'No result changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT all-sugar WHAM hold-out analysis'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish run summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT all-sugar PMF reproduction'
+            echo
+            if [ -f /tmp/gluhut-summary.txt ]; then
+              echo '```json'
+              cat /tmp/gluhut-summary.txt
+              echo '```'
+            else
+              echo 'The analysis did not produce a summary file.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
