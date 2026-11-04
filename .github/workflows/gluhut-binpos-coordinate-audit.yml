@@ -1,0 +1,125 @@
+name: Audit GluHUT BINPOS coordinates
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-binpos-coordinate-audit
+    paths:
+      - "research/audit_gluhut_binpos_coordinates.py"
+      - "tests/test_audit_gluhut_binpos_coordinates.py"
+      - "research/data/gluhut-fructofuranose-restraint-candidates.json"
+      - ".github/workflows/gluhut-binpos-coordinate-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-binpos-coordinate-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ARCHIVE_MD5: 9f3c6733dc608d2bd37c488c560a5443
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned trajectory reader
+        run: python -m pip install --disable-pip-version-check "mdtraj==1.11.2" "numpy<2.5"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_binpos_coordinates.py -v
+
+      - name: Acquire and verify public SMD archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/SMD_trajectories.zip \
+            'https://zenodo.org/api/records/19664426/files/SMD_trajectories.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/SMD_trajectories.zip" | md5sum --check --strict
+
+      - name: Reconstruct deposited COM coordinates
+        run: |
+          python research/audit_gluhut_binpos_coordinates.py \
+            --archive /tmp/SMD_trajectories.zip \
+            --candidates-json research/data/gluhut-fructofuranose-restraint-candidates.json \
+            --output-json research/data/gluhut-binpos-coordinate-audit.json \
+            | tee /tmp/binpos-coordinate-summary.json
+
+      - name: Validate evidence boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-binpos-coordinate-audit.json').read_text())
+          decision = data['decision']
+          assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert data['archive']['crc_verified'] is True
+          assert data['software']['mdtraj'] == '1.11.2'
+          assert data['software']['binpos_low_level_return_unit'] == 'angstrom'
+          assert data['trajectory_count'] == 20
+          assert data['total_frame_count'] > 0
+          assert set(data['system_summaries']) == {
+              'glucose', 'galactose', 'fructopyranose', 'fructofuranose'
+          }
+          assert decision['all_twenty_binpos_files_read'] is True
+          assert decision['all_trajectory_atom_shapes_match_topology'] is True
+          assert decision['coordinate_unit_self_check_passed'] is True
+          assert decision['deposited_group_coordinate_reconstructed'] is True
+          assert decision['fructofuranose_alternative_coordinate_effect_quantified'] is True
+          assert decision['automatic_corrected_restraint_selected'] is False
+          assert decision['deposited_smd_work_reproduced'] is False
+          assert decision['new_smd_or_umbrella_generation_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          alternatives = data['fructofuranose_alternative_cross_run_summary']
+          assert 'omit_H62_use_five_ring_atoms' in alternatives
+          assert 'replace_H62_with_C6_atom_164' in alternatives
+          print(json.dumps({
+              'software': data['software'],
+              'trajectory_count': data['trajectory_count'],
+              'total_frame_count': data['total_frame_count'],
+              'systems': data['system_summaries'],
+              'fructofuranose_alternatives': alternatives,
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit deterministic coordinate audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-binpos-coordinate-audit.json
+          if git diff --cached --quiet; then
+            echo 'No coordinate-audit changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT BINPOS coordinate audit'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT BINPOS coordinate audit'
+            echo
+            if [ -f /tmp/binpos-coordinate-summary.json ]; then
+              echo '```json'
+              cat /tmp/binpos-coordinate-summary.json
+              echo '```'
+            else
+              echo 'No coordinate summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
