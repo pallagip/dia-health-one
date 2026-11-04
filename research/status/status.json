@@ -1,6 +1,6 @@
 {
   "schema": "dia-health-one.public-confidence-status.v10",
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
   "measured_dia_health_one_hit": false,
@@ -77,10 +77,10 @@
     ],
     "automatic_fructofuranose_restraint_correction_selected": false,
     "smd_force_constant_convention_validated": true,
-    "smd_deposited_amber_rk2_kcal_mol_A2": 200.0,
-    "smd_equivalent_standard_harmonic_K_kcal_mol_A2": 400.0,
-    "umbrella_paper_amber_rk2_kcal_mol_A2": 50.0,
-    "umbrella_grossfield_wham_K_kcal_mol_A2": 100.0,
+    "smd_deposited_amber_rk2_kcal_mol_A2": 200,
+    "smd_equivalent_standard_harmonic_K_kcal_mol_A2": 400,
+    "umbrella_paper_amber_rk2_kcal_mol_A2": 50,
+    "umbrella_grossfield_wham_K_kcal_mol_A2": 100,
     "all_deposited_binpos_files_read": true,
     "deposited_binpos_trajectory_count": 20,
     "deposited_binpos_total_frame_count": 20000,
@@ -109,10 +109,10 @@
     "galactose_path_A_periodic_imaging_explanation_supported": false,
     "galactose_path_A_different_or_mislabeled_path_supported": true,
     "smd_endpoint_protocol_uniform_across_deposit": false,
-    "smd_control_simulation_time_ns": 30.0,
+    "smd_control_simulation_time_ns": 30,
     "smd_control_requested_coordinate_outputs_per_run": 15000,
     "deposited_binpos_frames_per_trajectory": 1000,
-    "requested_output_to_deposited_frame_ratio": 15.0,
+    "requested_output_to_deposited_frame_ratio": 15,
     "deposited_visualisation_filename_count": 15,
     "uniform_downsampling_provenance_available": false,
     "deposited_frame_time_mapping_available": false,
@@ -203,7 +203,17 @@
     "reply_watch_enabled": true,
     "author_umbrella_lineage_clarification_sent": true,
     "author_umbrella_lineage_clarification_draft_created": true,
-    "author_umbrella_lineage_clarification_status": "draft_created_after_gmail_rate_limit"
+    "author_umbrella_lineage_clarification_status": "sent_confirmed_by_gmail",
+    "author_umbrella_lineage_clarification_draft_pending": false,
+    "author_umbrella_lineage_clarification_sent_message_id": "1a1a8f2999166f97",
+    "author_umbrella_lineage_clarification_sent_thread_id": "1a1a7ce37fa8d5f5",
+    "author_umbrella_lineage_clarification_sent_email_ts": "2026-11-04T23:43:53",
+    "author_umbrella_lineage_clarification_sent_to": [
+      "wayne.powell@bristol.ac.uk"
+    ],
+    "author_umbrella_lineage_clarification_sent_cc": [
+      "Anthony.Davis@bristol.ac.uk"
+    ]
   },
   "next_confidence_changes": [
     "obtain the original full-resolution umbrella trajectories or exact frame-selection and time map",

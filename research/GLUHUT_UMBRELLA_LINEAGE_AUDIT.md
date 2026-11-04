@@ -203,7 +203,13 @@ This is a provenance audit of public umbrella trajectory and WHAM files. It is n
 
 ## Delivery status
 
-The umbrella-specific provenance addendum was **not sent** on 4 November 2026 because Gmail returned an outbound rate-limit error. The complete message was saved as a draft in the existing Wayne Powell / Anthony Davis thread.
+**Delivered:** Gmail confirmed the umbrella-specific provenance addendum was sent on 4 November 2026 to Wayne Powell (CC: Anthony Davis) in the existing GluHUT reproducibility thread. The earlier 4 November Gmail rate limit was transient and the saved draft was successfully sent without editing it.
 
-Earlier source-parameter, SMD atom-selection and endpoint-provenance requests were sent successfully. The umbrella addendum remains queued and must not be represented as delivered until Gmail confirms a successful send.
+- Gmail sent-message ID: `1a1a8f2999166f97`.
+- Gmail thread ID: `1a1a7ce37fa8d5f5`.
+- Gmail-reported message timestamp: `2026-11-04T23:43:53` (provider response has no timezone suffix).
+- Delivery evidence: Gmail returned message ID, matching thread ID and `SENT` label, and the sent message was independently read back.
+- Original draft ID `r-943222025130158032` is no longer pending; the `draft_created` status field records its historical creation, not an unsent message.
+
+This is evidence of a successful **Gmail send**, not of recipient delivery confirmation, reading, author acknowledgement, or a scientific answer. All source-lineage and parameterization gaps remain open until independently resolved.
 
