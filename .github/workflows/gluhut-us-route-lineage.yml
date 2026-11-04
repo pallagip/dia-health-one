@@ -1,0 +1,148 @@
+name: Reconcile GluHUT umbrella route lineage
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-us-route-lineage
+    paths:
+      - "research/summarize_gluhut_us_route_lineage.py"
+      - "tests/test_summarize_gluhut_us_route_lineage.py"
+      - "research/data/gluhut-us-archive-inventory.json"
+      - "research/data/gluhut-all-sugars-wham-reproduction.json"
+      - ".github/workflows/gluhut-us-route-lineage.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-us-route-lineage-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_summarize_gluhut_us_route_lineage.py -v
+
+      - name: Reconcile umbrella routes and WHAM inputs
+        run: |
+          python research/summarize_gluhut_us_route_lineage.py \
+            --umbrella-inventory research/data/gluhut-us-archive-inventory.json \
+            --wham-reproduction research/data/gluhut-all-sugars-wham-reproduction.json \
+            --output-json research/data/gluhut-us-route-lineage.json \
+            | tee /tmp/us-lineage-summary.json
+
+      - name: Validate bounded conclusions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(
+              Path('research/data/gluhut-us-route-lineage.json').read_text()
+          )
+          decision = data['decision']
+          assert data['trajectory_file_count'] == 714
+          assert data['raw_route_directory_count'] == 14
+          assert data['unique_complete_route_content_signature_count'] == 13
+          assert data['deposited_wham_route_count'] == 13
+          assert data['mapped_wham_route_count'] == 13
+          assert len(data['route_summaries']) == 14
+
+          assert decision['all_714_trajectory_files_parsed'] is True
+          assert decision['expected_fourteen_route_directories_present'] is True
+          assert decision['all_routes_have_51_windows_0_to_15_by_0_3A'] is True
+          assert decision['all_trajectory_files_have_100_recorded_frames'] is True
+          assert decision['all_route_centres_match_mapped_wham_centres'] is True
+          assert decision['fourteen_route_directories_reduce_to_thirteen_unique_content_signatures'] is True
+          assert decision['thirteen_unique_route_signatures_match_thirteen_wham_routes'] is True
+          assert decision['galactose_run4a_and_run5a_are_exact_duplicate_routes'] is True
+          assert decision['galactose_routeA_has_two_archive_copies_but_one_wham_route'] is True
+          assert decision['within_route_duplicate_window_content_detected'] is True
+          assert decision['umbrella_archive_contains_full_wham_histogram_frame_series'] is False
+          assert decision['median_histogram_to_visualization_frame_ratio_is_approximately_150'] is True
+          assert decision['authoritative_route_lineage_file_present'] is False
+          assert decision['path_based_route_mapping_is_complete_but_not_authoritative'] is True
+          assert decision['histogram_generation_reproducible_from_us_archive'] is False
+          assert decision['pmf_recalculation_from_us_trajectories_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+
+          duplicate_routes = data['duplicate_complete_route_groups']
+          assert len(duplicate_routes) == 1
+          assert duplicate_routes[0]['route_keys'] == [
+              'galactose/run4a', 'galactose/run5a'
+          ]
+          within = data['within_route_duplicate_groups_by_route']
+          assert set(within) == {'galactose/run1b', 'galactose/run2b'}
+          for groups in within.values():
+              assert len(groups) == 1
+              assert groups[0]['centres_A'] == [0.0, 0.3]
+
+          route_a = data['wham_route_to_umbrella_directories'][
+              'galactose/US-routeA'
+          ]
+          assert route_a == ['galactose/run4a', 'galactose/run5a']
+
+          print(json.dumps({
+              'trajectory_file_count': data['trajectory_file_count'],
+              'raw_route_directory_count': data['raw_route_directory_count'],
+              'unique_route_signatures': data['unique_complete_route_content_signature_count'],
+              'duplicate_complete_routes': duplicate_routes,
+              'within_route_duplicates': within,
+              'wham_mapping': data['wham_route_to_umbrella_directories'],
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit lineage result
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-us-route-lineage.json
+          if git diff --cached --quiet; then
+            echo 'No route-lineage changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT umbrella route lineage'
+
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt $attempt"
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo 'Could not publish the deterministic route-lineage result.' >&2
+          exit 1
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT umbrella route and window lineage'
+            echo
+            if [ -f /tmp/us-lineage-summary.json ]; then
+              echo '```json'
+              cat /tmp/us-lineage-summary.json
+              echo '```'
+            else
+              echo 'No route-lineage summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
