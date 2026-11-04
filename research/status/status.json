@@ -1,7 +1,7 @@
 {
-  "schema": "dia-health-one.public-confidence-status.v1",
+  "schema": "dia-health-one.public-confidence-status.v2",
   "updated": "2026-11-04",
-  "program_stage": "hypothesis",
+  "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
   "measured_dia_health_one_hit": false,
   "primary_candidate": {
@@ -9,7 +9,8 @@
     "evidence_level": "E2",
     "status": "defined and computationally stress-tested; not synthesized or measured",
     "mechanism_label": "contact-site polarity/electronic/solvation hypothesis",
-    "simple_steric_block_claim_supported": false
+    "simple_steric_block_claim_supported": false,
+    "candidate_ranking_authorized": false
   },
   "published_reference": {
     "nnc2215_glucose_responsive": true,
@@ -29,6 +30,22 @@
     "distal_b_clash_free_rotamers": 52,
     "calibrated_affinity_prediction_available": false
   },
+  "public_benchmark_calibration": {
+    "dataset_doi": "10.5281/zenodo.19664426",
+    "grossfield_wham_published_group_means_reproduced": true,
+    "qualitative_sugar_order_reproduced": true,
+    "independent_numpy_glucose_max_absolute_difference_kcal_per_mol": 0.000454,
+    "common_compiled_host_across_four_sugars": true,
+    "compiled_host_atom_count": 159,
+    "compiled_host_physical_fingerprint_sha256": "78e512d17cf1a9db672f22da49a3e59f96bb0af7dae5c059e8a4d1353de46cb1",
+    "fructofuranose_us2_short_window_gate_passed": false,
+    "fructofuranose_us2_exclusion_shift_kcal_per_mol": 0.707,
+    "source_resp_gaff_glycam_generation_available": false,
+    "standalone_start_coordinates_available": false,
+    "pag_calibration_completed": false,
+    "candidate_ranking_authorized": false,
+    "record": "../AWS1_NO_AWS_RESULTS.md"
+  },
   "minimum_physical_experiment": [
     "MC-P0",
     "MC-Q1",
@@ -44,19 +61,24 @@
     "must_outperform_positional_control": true
   },
   "aws_execution": {
-    "current_gate": "AWS-1 acquisition defined; awaiting checksum-verified download and AWS access",
+    "current_gate": "AWS-1 public analysis reproduced; chemistry provenance and parent PaG calibration pending",
     "candidate_screen_authorized": false,
     "boltz_host_guest_affinity_authorized": false,
     "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
     "aws_credits_spent_usd": 0,
-    "initial_download_size_display": "41.6 MB plus 1.8 kB README",
-    "source_dataset_doi": "10.5281/zenodo.19664426",
-    "source_dataset_manifest": "../GLUHUT_AWS1_DATASET_MANIFEST.md",
-    "next_action": "download and checksum-verify README.txt and WHAM_PMF.zip, then reproduce glucose US-1"
+    "next_action": "reconcile the compiled 159-atom host with an exact chemical graph and obtain source parameter provenance before parent glucose-versus-PaG calibration"
+  },
+  "external_execution": {
+    "author_parameter_request_sent": true,
+    "nnc2215_pag_source_request_sent": true,
+    "carbometrics_feasibility_request_sent": true,
+    "spirochem_synthesis_request_sent": true,
+    "domainex_binding_request_status": "queued_after_temporary_gmail_rate_limit",
+    "reply_watch_enabled": true
   },
   "next_confidence_changes": [
-    "reproduce public GluHUT PMF analysis",
-    "validate exact chemistry and force field",
+    "reconcile the compiled GluHUT host with an exact chemical graph",
+    "obtain RESP/GAFF/GLYCAM and start-coordinate provenance",
     "calibrate a source-matched parent glucose-versus-PaG calculation",
     "obtain provider acceptance and synthesis quotation",
     "measure authenticated free-binder glucose and PaG binding"
