@@ -1,0 +1,75 @@
+/* Proxy coordinate package — model-generated macrocycle and glucose inputs */
+.proxy-section { margin-top: 26px; }
+
+.proxy-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+.proxy-head h3 { max-width: 720px; margin: 8px 0 8px; font-size: 21px; line-height: 1.22; letter-spacing: -.045em; font-weight: 600; }
+.proxy-head p { max-width: 720px; margin: 0; font-size: 10px; line-height: 1.65; color: #6c6874; }
+.proxy-badges { display: flex; flex-direction: column; align-items: flex-end; gap: 7px; flex: none; }
+.proxy-badge { padding: 7px 11px; border-radius: 24px; font: 7px var(--mono); letter-spacing: .06em; white-space: nowrap; }
+.proxy-badge.ai { background: #ede7f8; border: 1px solid #c3b3e0; color: #55427e; }
+.proxy-badge.warn { background: #fbf0dc; border: 1px solid #ddc489; color: #6d5417; }
+
+.proxy-truth { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 20px 0 0; }
+.proxy-truth-item { padding: 12px 13px; border: 1px solid #e3ddec; border-radius: 10px; background: #fff; }
+.proxy-truth-item span { display: block; font: 7px var(--mono); letter-spacing: .07em; color: #81798e; text-transform: uppercase; }
+.proxy-truth-item strong { display: block; margin-top: 6px; font-size: 13px; font-weight: 700; color: #37313f; letter-spacing: -.02em; }
+.proxy-truth-item.false strong { color: #8a3e38; }
+.proxy-truth-item.true strong { color: #35542b; }
+
+.proxy-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 16px; margin-top: 18px; align-items: start; }
+
+.proxy-viewer-card { min-width: 0; overflow: hidden; border: 1px solid #e2dce9; border-radius: 12px; background: #f6f3fa; }
+.proxy-viewer-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 13px 15px 11px; flex-wrap: wrap; }
+.proxy-viewer-top .proxy-status { padding: 6px 10px; border: 1px solid #b7c89f; border-radius: 24px; background: #edf3e5; color: #536843; font: 7px var(--mono); letter-spacing: .05em; }
+.proxy-viewer-top .proxy-status[data-state="partial"] { border-color: #ddc489; background: #fbf3e2; color: #6d5417; }
+.proxy-viewer-tools { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.proxy-toggle, .proxy-reset { padding: 7px 11px; border: 1px solid #d6cde2; border-radius: 24px; background: #fff; color: #8a8296; font: 7px var(--mono); letter-spacing: .05em; cursor: pointer; transition: all .15s ease; }
+.proxy-toggle[aria-pressed="true"] { border-color: #9885bb; background: #efe9f8; color: #55427e; font-weight: 600; }
+.proxy-toggle:hover, .proxy-reset:hover { border-color: #9885bb; }
+.proxy-toggle:focus-visible, .proxy-reset:focus-visible { outline: 2px solid #6c53a2; outline-offset: 2px; }
+.proxy-canvas { position: relative; height: 400px; min-width: 0; background: radial-gradient(ellipse at 50% 46%, #fff 0%, #fbfafc 68%, #f2eef7 100%); touch-action: none; }
+.proxy-canvas canvas { display: block; width: 100%; height: 100%; outline: none; }
+.proxy-viewer-foot { padding: 10px 15px 13px; border-top: 1px solid #eae4f1; font-size: 8px; line-height: 1.6; color: #77717e; }
+
+.proxy-assets { display: grid; gap: 12px; }
+.proxy-asset { border: 1px solid #e3ddec; border-radius: 12px; background: #fff; padding: 15px 16px; }
+.proxy-asset-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.proxy-asset-top span { font: 7px var(--mono); letter-spacing: .07em; color: var(--purple-deep); }
+.proxy-asset-top b { font: 7px var(--mono); color: #81798e; }
+.proxy-asset h4 { margin: 7px 0 8px; font-size: 14px; letter-spacing: -.03em; font-weight: 650; color: #322c3a; }
+.proxy-formula { display: inline-block; margin: 0 0 10px; padding: 5px 9px; border-radius: 6px; background: #f4f1f9; font: 10px var(--mono); color: #4d388a; }
+.proxy-asset-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 4px 0 11px; }
+.proxy-asset-stats div { padding: 8px 9px; border: 1px solid #efeaf5; border-radius: 8px; background: #fbfafd; }
+.proxy-asset-stats span { display: block; font: 6.5px var(--mono); letter-spacing: .05em; color: #8b849a; text-transform: uppercase; }
+.proxy-asset-stats strong { display: block; margin-top: 4px; font-size: 12px; color: #37313f; }
+.proxy-asset p { margin: 0 0 11px; font-size: 8.5px; line-height: 1.65; color: #6c6874; }
+.proxy-asset-links { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.proxy-asset-links a { font-size: 7.5px; font-weight: 700; color: var(--purple-deep); }
+.proxy-asset-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.proxy-asset.blocked { border-color: #e0d3cd; background: #fdfaf8; }
+.proxy-asset.blocked .proxy-asset-top span { color: #9a4b3f; }
+
+.proxy-boundary { display: grid; grid-template-columns: 130px 1fr; gap: 14px; margin-top: 18px; padding: 14px 16px; border: 1px solid #d8d1e2; border-radius: 10px; background: #ece7f3; }
+.proxy-boundary b { font: 7.5px var(--mono); letter-spacing: .07em; color: var(--purple-deep); }
+.proxy-boundary p { margin: 0; font-size: 8.5px; line-height: 1.7; color: #5f586b; }
+.proxy-boundary ul { margin: 0; padding-left: 15px; }
+.proxy-boundary li { font-size: 8.5px; line-height: 1.7; color: #5f586b; }
+
+.proxy-links-bar { display: flex; flex-wrap: wrap; gap: 9px 17px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #e6e1ee; }
+.proxy-links-bar a { font-size: 8px; font-weight: 700; color: var(--purple-deep); }
+.proxy-links-bar a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .proxy-truth { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proxy-grid { grid-template-columns: 1fr; }
+  .proxy-canvas { height: 340px; }
+}
+@media (max-width: 560px) {
+  .proxy-head { flex-direction: column; gap: 12px; }
+  .proxy-badges { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+  .proxy-head h3 { font-size: 17px; }
+  .proxy-truth { grid-template-columns: 1fr; }
+  .proxy-asset-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .proxy-boundary { grid-template-columns: 1fr; gap: 8px; }
+  .proxy-canvas { height: 300px; }
+}

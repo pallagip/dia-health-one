@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="research.css" />
   <link rel="stylesheet" href="structure-audit.css?v=20261018-3" />
   <link rel="stylesheet" href="structure-viewer.css?v=20261018-1" />
+  <link rel="stylesheet" href="proxy-package.css?v=20261104-1" />
 </head>
 <body>
   <a class="paper-banner" href="/research/nnc2215-pag-model-readiness.pdf" target="_blank" rel="noopener">
@@ -36,7 +37,7 @@
     <a class="brand" href="/" aria-label="Dia Health One home"><span class="brand-mark">D</span><span>DIA HEALTH ONE</span></a>
     <div class="header-center"><span class="header-slash">/</span> RESEARCH WORKSPACE</div>
     <nav class="header-nav" aria-label="Page navigation">
-      <a href="#evidence">Evidence</a><a href="#reproduction">Reproduction</a><a href="#readiness">Readiness</a><a href="/research/status/">Status</a>
+      <a href="#evidence">Evidence</a><a href="#proxy">Coordinates</a><a href="#reproduction">Reproduction</a><a href="#readiness">Readiness</a><a href="/research/status/">Status</a>
     </nav>
     <a class="back-link" href="/">Company <span aria-hidden="true">↗</span></a>
   </header>
@@ -184,6 +185,95 @@
           <div class="structure-viewer-links"><a href="structures/nnc2215-open-model.pdb" download>Open model PDB ↓</a><a href="structures/nnc2215-closed-model.pdb" download>Closed model PDB ↓</a><a href="data/structure-manifest.json" download>Source checksums ↓</a><a href="data/structure-viewer-library.json" download>Viewer version &amp; license ↓</a><a href="https://springernature.figshare.com/articles/dataset/3D_models_of_NNC2215/26526460" target="_blank" rel="noreferrer">Publisher source ↗</a></div>
           <noscript><p class="structure-viewer-fallback">JavaScript is required for the interactive view. <a href="structures/nnc2215-open-model.pdb">Download the open model</a> or <a href="structures/nnc2215-closed-model.pdb">download the closed model</a>.</p></noscript>
         </section>
+      </div>
+    </section>
+
+    <section class="proxy-section wrap" id="proxy" aria-labelledby="proxy-title">
+      <div class="section-heading">
+        <div><div class="section-kicker">PROXY COORDINATE PACKAGE · MODEL-GENERATED</div><h2 id="proxy-title">Our generated macrocycle and glucose inputs, published.</h2></div>
+        <div class="heading-note">Not the 2026 crystal.<br />Not full NNC2215.</div>
+      </div>
+      <div class="proxy-head">
+        <p>The 2026 study seeded its simulation from an in-house crystal structure that was never deposited. We therefore built our own proxy inputs from the public 2024 author models and the published Fig. 8i macrocycle graph, and we publish them here with their method, checksums and limits. These are geometry inputs for a clearly labelled proxy study — they are not the in-house crystal, not full NNC2215, and not a simulation output.</p>
+        <div class="proxy-badges">
+          <span class="proxy-badge ai">MODEL-GENERATED</span>
+          <span class="proxy-badge warn">NO AFFINITY RESULT</span>
+        </div>
+      </div>
+
+      <div class="proxy-truth" aria-label="What these files are and are not">
+        <div class="proxy-truth-item"><span>Objective</span><strong>Proxy geometry</strong></div>
+        <div class="proxy-truth-item false"><span>2026 in-house crystal</span><strong>No</strong></div>
+        <div class="proxy-truth-item false"><span>Full NNC2215</span><strong>No</strong></div>
+        <div class="proxy-truth-item true"><span>Public &amp; checksummed</span><strong>Yes</strong></div>
+      </div>
+
+      <div class="proxy-grid">
+        <div class="proxy-viewer-card" data-proxy-viewer>
+          <div class="proxy-viewer-top">
+            <span class="proxy-status" data-proxy-status role="status" aria-live="polite">Loading proxy inputs</span>
+            <div class="proxy-viewer-tools">
+              <button type="button" class="proxy-toggle" data-proxy-toggle="macrocycle" aria-pressed="true">Macrocycle</button>
+              <button type="button" class="proxy-toggle" data-proxy-toggle="glucose" aria-pressed="true">Glucose</button>
+              <button type="button" class="proxy-reset" data-proxy-reset>Reset view</button>
+            </div>
+          </div>
+          <div class="proxy-canvas" data-proxy-canvas role="img" aria-label="Interactive 3D view of the Dia Health One generated macrocycle proxy and the beta-D-glucose reference pose"></div>
+          <div class="proxy-viewer-foot">Both objects are shown in the open-model coordinate frame. Toggle each layer to inspect the macrocycle and the glucose reference pose. Drag to rotate, scroll to zoom. The view reads the published coordinates directly and does not prepare or validate chemistry.</div>
+        </div>
+
+        <div class="proxy-assets">
+          <article class="proxy-asset">
+            <div class="proxy-asset-top"><span>MC-PROXY · TRICARBOXYLATE</span><b>MODEL-GENERATED</b></div>
+            <h4>Macrocycle proxy</h4>
+            <span class="proxy-formula">C₅₆H₆₀N₁₅O₁₂ · charge −3</span>
+            <div class="proxy-asset-stats">
+              <div><span>Atoms</span><strong>143</strong></div>
+              <div><span>Bonds</span><strong>149</strong></div>
+              <div><span>Mapped to model</span><strong>56</strong></div>
+            </div>
+            <p>Built from the published Fig. 8i C56 neutral graph. The open-model mapped heavy atoms drive the ETKDGv3 embedding, which is Kabsch-aligned to the model frame and MMFF94-minimised with restraints. Roof methyl carbons take the model C27/C29 positions; the propyl-azide tail is newly embedded.</p>
+            <div class="proxy-asset-links"><a href="proxy/inputs/macrocycle_fig8i_tricarboxylate.sdf" download>SDF ↓</a><a href="proxy/inputs/macrocycle_fig8i_tricarboxylate.mol" download>MOL ↓</a><a href="proxy/data/nnc2215-mc-excess-carbon-audit.json" download>Excess-carbon audit ↓</a><a href="proxy/audit_mc_excess_carbons.py">Audit script ↗</a></div>
+          </article>
+
+          <article class="proxy-asset">
+            <div class="proxy-asset-top"><span>MC-PROXY · GLUCOSE REFERENCE</span><b>FROM OPEN MODEL</b></div>
+            <h4>Glucose reference pose</h4>
+            <span class="proxy-formula">C₆H₁₂O₆ · neutral</span>
+            <div class="proxy-asset-stats">
+              <div><span>Atoms</span><strong>24</strong></div>
+              <div><span>Bonds</span><strong>24</strong></div>
+              <div><span>Stereo match</span><strong>β-D</strong></div>
+            </div>
+            <p>Beta-D-glucose taken from the open-model BGLC residue. Its 3D-assigned stereochemistry canonicalises to beta-D-glucopyranose. Measured against the constrained macrocycle, the two objects overlap at this geometry (minimum heavy-atom separation 0.504 Å), which is exactly why no rigid PaG conformer survives the clash filter below.</p>
+            <div class="proxy-asset-links"><a href="proxy/inputs/glucose_model_pose.sdf" download>SDF ↓</a><a href="structures/nnc2215-open-model.pdb" download>Open model PDB ↓</a></div>
+          </article>
+
+          <article class="proxy-asset blocked">
+            <div class="proxy-asset-top"><span>PAG PLACEMENT · PRE-REGISTERED HYPOTHESIS</span><b>NOT GENERATED</b></div>
+            <h4>PaG pose: rejected, and published as a negative result</h4>
+            <p>We pre-registered a glucose-mimetic placement: align PaG's glucuronide ring onto the 11 mapped glucose ring atoms. Of 300 ETKDGv3 conformers, <strong>none</strong> cleared the 2.0 Å clash filter, and none cleared the 1.6 Å fallback. Minimum heavy-atom distances were 0.27 / 0.45 / 1.04 / 1.11 / 1.23 Å at the min, 10th, 50th, 90th and 100th percentiles. No PaG coordinate is published; the failure is the result.</p>
+            <div class="proxy-asset-links"><a href="proxy/prepare_macrocycle_proxy.py">Pose procedure &amp; script ↗</a><a href="data/nnc2215-mc-proxy-preparation.json" download>Full preparation record ↓</a></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="proxy-boundary">
+        <b>EVIDENCE BOUNDARY</b>
+        <ul>
+          <li>These coordinates do <strong>not</strong> reproduce the 2026 in-house crystal structure, and they are not full NNC2215.</li>
+          <li>Bond orders, stereochemistry, protonation, charges and force-field parameters here are <strong>not</strong> validated.</li>
+          <li>No glucose or PaG affinity, selectivity or receptor activity follows from these files.</li>
+          <li>The PaG bound pose remains an open gate; the negative placement result is retained, not discarded.</li>
+        </ul>
+      </div>
+
+      <div class="proxy-links-bar">
+        <a href="data/nnc2215-mc-proxy-preparation.json" download>Preparation record JSON ↓</a>
+        <a href="proxy/data/nnc2215-mc-excess-carbon-audit.json" download>Excess-carbon audit JSON ↓</a>
+        <a href="proxy/prepare_macrocycle_proxy.py">Re-run proxy preparation ↗</a>
+        <a href="SCIENTIST_INPUT_CHECKLIST.md">Scientist input checklist ↗</a>
+        <a href="/research/status/">Status &amp; confidence page ↗</a>
       </div>
     </section>
 
@@ -546,6 +636,7 @@
   <footer class="site-footer"><div class="wrap footer-inner"><a class="brand" href="/"><span class="brand-mark">D</span><span>DIA HEALTH ONE</span></a><span>COMPUTATIONAL RESEARCH · EVIDENCE STATUS SHOWN</span><span class="footer-affiliation">NVIDIA Inception member</span><span>© 2026</span></div></footer>
   <script src="assets/vendor/3Dmol-2.5.5.min.js" defer></script>
   <script src="structure-viewer.js?v=20261018-1" defer></script>
+  <script src="proxy-viewer.js?v=20261104-1" defer></script>
   <script src="research.js?v=20261018-1" defer></script>
 </body>
 </html>

@@ -1,0 +1,382 @@
+{
+ "schema": "dia-health-one.nnc2215-mc-excess-carbon-audit.v1",
+ "created_at_utc": "2026-10-30T22:04:32+00:00",
+ "source_reference": {
+  "figure": "Nature 2024 Extended Data Fig. 8i (41586_2024_8042_Fig13_ESM.jpg)",
+  "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig13_ESM.jpg",
+  "expected_roof": "benzene with 3 x CH2NH (C15), 2 x CH3 (C18), 1 x (CH2)3N3 (C21-C23)",
+  "expected_floor": "benzene with 3 x CH2NH (C5), 3 x CH2CH3 (C2-C1)"
+ },
+ "states": [
+  {
+   "state": "active_open",
+   "file": "structures/nnc2215-open-model.pdb",
+   "sha256": "44c29d45b28ace4ede73a75a8e076dbca62e14b34bd3938a4b495ebd1270267a",
+   "pool_heavy_counts": {
+    "N": 15,
+    "C": 64,
+    "O": 14
+   },
+   "aromatic_carbocycles": 5,
+   "hexasubstituted_rings": [
+    {
+     "ring_atoms": [
+      "C70",
+      "C75",
+      "C74",
+      "C73",
+      "C72",
+      "C71"
+     ],
+     "ring_H": 0,
+     "residues": [
+      "MC"
+     ],
+     "substituents": [
+      {
+       "ring_atom": "C70",
+       "atom": "C45",
+       "serial": 875,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C75",
+       "atom": "C29",
+       "serial": 859,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C74",
+       "atom": "C2",
+       "serial": 832,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C73",
+       "atom": "C27",
+       "serial": 857,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C72",
+       "atom": "C44",
+       "serial": 874,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C71",
+       "atom": "C31",
+       "serial": 861,
+       "el": "C",
+       "kind": "C:C",
+       "alkyl_carbons": null
+      }
+     ]
+    },
+    {
+     "ring_atoms": [
+      "C67",
+      "C66",
+      "C65",
+      "C64",
+      "C69",
+      "C68"
+     ],
+     "ring_H": 0,
+     "residues": [
+      "MC"
+     ],
+     "substituents": [
+      {
+       "ring_atom": "C67",
+       "atom": "C32",
+       "serial": 862,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C66",
+       "atom": "C42",
+       "serial": 872,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C65",
+       "atom": "C34",
+       "serial": 864,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C64",
+       "atom": "C43",
+       "serial": 873,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C69",
+       "atom": "C36",
+       "serial": 866,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C68",
+       "atom": "C1",
+       "serial": 831,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      }
+     ]
+    }
+   ],
+   "trisubstituted_aryl_rings": 3
+  },
+  {
+   "state": "inactive_closed",
+   "file": "structures/nnc2215-closed-model.pdb",
+   "sha256": "a8287b859e73b274e8403ee56cd83564bc30fd0503d852829fa805fdc777e12d",
+   "pool_heavy_counts": {
+    "N": 15,
+    "C": 64,
+    "O": 14
+   },
+   "aromatic_carbocycles": 5,
+   "hexasubstituted_rings": [
+    {
+     "ring_atoms": [
+      "C65",
+      "C64",
+      "C69",
+      "C68",
+      "C67",
+      "C66"
+     ],
+     "ring_H": 0,
+     "residues": [
+      "MC"
+     ],
+     "substituents": [
+      {
+       "ring_atom": "C65",
+       "atom": "C34",
+       "serial": 865,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C64",
+       "atom": "C43",
+       "serial": 874,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C69",
+       "atom": "C36",
+       "serial": 867,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C68",
+       "atom": "C1",
+       "serial": 832,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C67",
+       "atom": "C32",
+       "serial": 863,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C66",
+       "atom": "C42",
+       "serial": 873,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      }
+     ]
+    },
+    {
+     "ring_atoms": [
+      "C71",
+      "C72",
+      "C73",
+      "C74",
+      "C75",
+      "C70"
+     ],
+     "ring_H": 0,
+     "residues": [
+      "MC"
+     ],
+     "substituents": [
+      {
+       "ring_atom": "C71",
+       "atom": "C31",
+       "serial": 862,
+       "el": "C",
+       "kind": "C:C",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C72",
+       "atom": "C44",
+       "serial": 875,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C73",
+       "atom": "C27",
+       "serial": 858,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C74",
+       "atom": "C2",
+       "serial": 833,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      },
+      {
+       "ring_atom": "C75",
+       "atom": "C29",
+       "serial": 860,
+       "el": "C",
+       "kind": "alkyl",
+       "alkyl_carbons": 2
+      },
+      {
+       "ring_atom": "C70",
+       "atom": "C45",
+       "serial": 876,
+       "el": "C",
+       "kind": "CH2-N",
+       "alkyl_carbons": null
+      }
+     ]
+    }
+   ],
+   "trisubstituted_aryl_rings": 3
+  }
+ ],
+ "ring_summary": [
+  {
+   "state": "active_open",
+   "ring": [
+    "C70",
+    "C75",
+    "C74",
+    "C73",
+    "C72",
+    "C71"
+   ],
+   "alkyl_substituent_carbons": [
+    2,
+    2
+   ],
+   "non_alkyl": [
+    "CH2-N",
+    "CH2-N",
+    "CH2-N",
+    "C:C"
+   ]
+  },
+  {
+   "state": "active_open",
+   "ring": [
+    "C67",
+    "C66",
+    "C65",
+    "C64",
+    "C69",
+    "C68"
+   ],
+   "alkyl_substituent_carbons": [
+    2,
+    2,
+    2
+   ],
+   "non_alkyl": [
+    "CH2-N",
+    "CH2-N",
+    "CH2-N"
+   ]
+  },
+  {
+   "state": "inactive_closed",
+   "ring": [
+    "C65",
+    "C64",
+    "C69",
+    "C68",
+    "C67",
+    "C66"
+   ],
+   "alkyl_substituent_carbons": [
+    2,
+    2,
+    2
+   ],
+   "non_alkyl": [
+    "CH2-N",
+    "CH2-N",
+    "CH2-N"
+   ]
+  },
+  {
+   "state": "inactive_closed",
+   "ring": [
+    "C71",
+    "C72",
+    "C73",
+    "C74",
+    "C75",
+    "C70"
+   ],
+   "alkyl_substituent_carbons": [
+    2,
+    2
+   ],
+   "non_alkyl": [
+    "C:C",
+    "CH2-N",
+    "CH2-N",
+    "CH2-N"
+   ]
+  }
+ ]
+}
