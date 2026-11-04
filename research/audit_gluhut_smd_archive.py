@@ -2,9 +2,9 @@
 """Inventory the public GluHUT steered-MD archive for reusable chemistry inputs.
 
 The audit verifies the deposited archive, rejects unsafe members, hashes every
-file, classifies topology/coordinate/parameter/protocol artifacts, and includes
-bounded text previews. It does not execute a simulation or establish that any
-file is chemically sufficient for PaG or MC-Q1.
+file, classifies topology/coordinate/parameter/protocol artifacts using both
+extension and content, and includes bounded text previews. It does not execute a
+simulation or establish that any file is chemically sufficient for PaG or MC-Q1.
 """
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ TEXT_EXTENSIONS = {
 }
 TOPOLOGY_EXTENSIONS = {".prmtop", ".parm7", ".top", ".psf"}
 PARAMETERIZED_TOPOLOGY_EXTENSIONS = {".prmtop", ".parm7", ".top"}
-COORDINATE_EXTENSIONS = {".pdb", ".rst", ".rst7", ".inpcrd", ".crd", ".mol2"}
+COORDINATE_EXTENSIONS = {".pdb", ".rst7", ".inpcrd", ".crd", ".mol2"}
 SOURCE_PARAMETER_EXTENSIONS = {".frcmod", ".lib", ".off", ".mol2"}
 PROTOCOL_EXTENSIONS = {".in", ".mdin", ".sh", ".py", ".txt", ".md"}
 TRAJECTORY_EXTENSIONS = {".binpos", ".nc", ".mdcrd", ".dcd", ".xtc", ".trr"}
@@ -67,13 +67,37 @@ def member_kind(info: zipfile.ZipInfo) -> str:
     return "file"
 
 
-def classify(extension: str) -> list[str]:
+def looks_like_amber_restraint(payload: bytes) -> bool:
+    try:
+        text = payload.decode("utf-8")
+    except UnicodeDecodeError:
+        return False
+    nonblank = [line.strip().lower() for line in text.splitlines() if line.strip()]
+    head = "\n".join(nonblank[:40])
+    return (
+        any(line.startswith("&rst") for line in nonblank[:20])
+        or "iat=" in head
+        or "r1=" in head
+        or "r2=" in head
+        or "r3=" in head
+        or "r4=" in head
+    )
+
+
+def classify(extension: str, payload: bytes | None = None) -> list[str]:
     classes: list[str] = []
     if extension in TOPOLOGY_EXTENSIONS:
         classes.append("topology")
     if extension in PARAMETERIZED_TOPOLOGY_EXTENSIONS:
         classes.append("parameterized_topology")
-    if extension in COORDINATE_EXTENSIONS:
+    if extension == ".rst":
+        if payload is not None and looks_like_amber_restraint(payload):
+            classes.extend(["restraint_input", "protocol_or_documentation"])
+        elif payload is not None:
+            classes.append("coordinate")
+        else:
+            classes.append("ambiguous_rst")
+    elif extension in COORDINATE_EXTENSIONS:
         classes.append("coordinate")
     if extension in SOURCE_PARAMETER_EXTENSIONS:
         classes.append("source_parameter")
@@ -84,19 +108,9 @@ def classify(extension: str) -> list[str]:
     return classes or ["other"]
 
 
-def hash_member(archive: zipfile.ZipFile, info: zipfile.ZipInfo) -> str:
-    digest = hashlib.sha256()
-    with archive.open(info, "r") as handle:
-        for block in iter(lambda: handle.read(CHUNK_SIZE), b""):
-            digest.update(block)
-    return digest.hexdigest()
-
-
-def bounded_preview(archive: zipfile.ZipFile, info: zipfile.ZipInfo) -> dict | None:
-    extension = PurePosixPath(info.filename).suffix.lower()
-    if extension not in TEXT_EXTENSIONS or info.file_size > TEXT_PREVIEW_LIMIT:
+def bounded_preview(payload: bytes, extension: str) -> dict | None:
+    if extension not in TEXT_EXTENSIONS or len(payload) > TEXT_PREVIEW_LIMIT:
         return None
-    payload = archive.read(info)
     try:
         text = payload.decode("utf-8")
     except UnicodeDecodeError:
@@ -137,16 +151,23 @@ def audit(archive_path: Path, output_json: Path) -> dict:
             if kind in {"symlink", "special"}:
                 raise InventoryError(f"unsupported {kind} member: {info.filename}")
             extension = PurePosixPath(info.filename).suffix.lower()
+            payload = b"" if kind == "directory" else archive.read(info)
             row = {
                 "path": info.filename,
                 "kind": kind,
                 "extension": extension,
-                "classifications": [] if kind == "directory" else classify(extension),
+                "classifications": (
+                    [] if kind == "directory" else classify(extension, payload)
+                ),
                 "compressed_size_bytes": info.compress_size,
                 "uncompressed_size_bytes": info.file_size,
                 "crc32_hex": f"{info.CRC:08x}",
-                "sha256": None if kind == "directory" else hash_member(archive, info),
-                "preview": None if kind == "directory" else bounded_preview(archive, info),
+                "sha256": (
+                    None if kind == "directory" else hashlib.sha256(payload).hexdigest()
+                ),
+                "preview": (
+                    None if kind == "directory" else bounded_preview(payload, extension)
+                ),
             }
             rows.append(row)
 
@@ -161,6 +182,7 @@ def audit(archive_path: Path, output_json: Path) -> dict:
         "topology",
         "parameterized_topology",
         "coordinate",
+        "restraint_input",
         "source_parameter",
         "protocol_or_documentation",
         "trajectory",
@@ -176,6 +198,9 @@ def audit(archive_path: Path, output_json: Path) -> dict:
             "parameterized_topology" in row["classifications"] for row in files
         ),
         "coordinate_present": any("coordinate" in row["classifications"] for row in files),
+        "restraint_input_present": any(
+            "restraint_input" in row["classifications"] for row in files
+        ),
         "source_parameter_files_present": any(
             "source_parameter" in row["classifications"] for row in files
         ),
@@ -184,24 +209,27 @@ def audit(archive_path: Path, output_json: Path) -> dict:
         ),
         "trajectory_present": any("trajectory" in row["classifications"] for row in files),
     }
-    compiled_system_bundle_present = all(
+    compiled_topology_trajectory_bundle_present = all(
         exact_input_components[key]
         for key in (
             "topology_present",
             "parameterized_topology_present",
-            "coordinate_present",
             "protocol_present",
             "trajectory_present",
         )
+    )
+    standalone_coordinate_bundle_present = (
+        compiled_topology_trajectory_bundle_present
+        and exact_input_components["coordinate_present"]
     )
     parameter_generation_provenance_complete = exact_input_components[
         "source_parameter_files_present"
     ]
 
     report = {
-        "schema": "dia-health-one.gluhut-smd-archive-inventory.v2",
+        "schema": "dia-health-one.gluhut-smd-archive-inventory.v3",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "status": "archive_inventory_complete_not_chemistry_validated",
+        "status": "archive_inventory_corrected_rst_content_classification",
         "scope": "public GluHUT steered-MD archive provenance and input discovery",
         "not_target_claim": "not NNC2215, PaG, MC-Q1, affinity, efficacy, safety, or a drug result",
         "archive": {
@@ -218,36 +246,43 @@ def audit(archive_path: Path, output_json: Path) -> dict:
         "extension_counts": dict(sorted(type_counts.items())),
         "classification_counts": dict(sorted(class_counts.items())),
         "exact_input_components": exact_input_components,
-        "compiled_system_bundle_present": compiled_system_bundle_present,
+        "compiled_topology_trajectory_bundle_present": (
+            compiled_topology_trajectory_bundle_present
+        ),
+        "standalone_coordinate_bundle_present": standalone_coordinate_bundle_present,
         "parameter_generation_provenance_complete": parameter_generation_provenance_complete,
         "exact_reusable_input_bundle_present": (
-            compiled_system_bundle_present and parameter_generation_provenance_complete
+            standalone_coordinate_bundle_present
+            and parameter_generation_provenance_complete
         ),
         "relevant_members": relevant,
         "members": rows,
         "decision": {
-            "can_begin_compiled_topology_and_coordinate_audit_from_this_archive": (
-                compiled_system_bundle_present
+            "can_begin_compiled_topology_audit": exact_input_components[
+                "parameterized_topology_present"
+            ],
+            "can_begin_compiled_topology_and_trajectory_audit": (
+                compiled_topology_trajectory_bundle_present
+            ),
+            "can_begin_standalone_restart_coordinate_audit": (
+                exact_input_components["coordinate_present"]
             ),
             "can_reconstruct_parameter_generation_from_this_archive": (
                 parameter_generation_provenance_complete
             ),
-            "can_begin_exact_parent_parameter_audit_from_this_archive_alone": (
-                compiled_system_bundle_present
-            ),
             "candidate_ranking_authorized": False,
             "next_action": (
-                "audit the compiled parm7/rst systems atom-by-atom and request the missing source RESP/GAFF/GLYCAM parameter-generation files"
-                if compiled_system_bundle_present
-                else "inspect other deposited archives or request missing exact inputs from authors"
+                "audit the four compiled parm7 systems and matching trajectories; "
+                "request missing restart coordinates and source RESP/GAFF/GLYCAM files"
             ),
         },
         "limitations": [
-            "A parm7/prmtop is a compiled parameterized topology, but it does not reveal the complete RESP derivation or original frcmod/mol2/lib inputs.",
-            "An .rst file is classified as an AMBER coordinate/restart file, but each restart must still be matched to the correct topology and protocol.",
+            "The three deposited .rst files are AMBER NMR-style restraint-control inputs, not coordinate restart files.",
+            "A parm7 contains compiled numerical charges and terms but not the RESP derivation, quantum-chemistry inputs, atom-typing history, or original frcmod/mol2/lib files.",
+            "The binpos trajectories can be interpreted with matching topologies, but the exact simulation-start coordinates are not deposited as standalone restart files here.",
             "File presence does not establish that topology, charges, protonation or parameters are chemically correct.",
-            "SMD inputs may describe a truncated public analogue rather than the complete NNC2215 conjugate.",
-            "No file in this audit is assumed transferable to PaG or MC-Q1 without atom-level review.",
+            "The public systems describe a truncated GluHUT benchmark, not the complete NNC2215 conjugate.",
+            "No deposited parameter is assumed transferable to PaG or MC-Q1 without atom-level review.",
         ],
     }
     output_json.parent.mkdir(parents=True, exist_ok=True)

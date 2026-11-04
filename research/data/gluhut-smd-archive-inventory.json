@@ -11,25 +11,27 @@
     "total_uncompressed_bytes": 44329109
   },
   "classification_counts": {
-    "coordinate": 3,
     "parameterized_topology": 4,
-    "protocol_or_documentation": 2,
+    "protocol_or_documentation": 5,
+    "restraint_input": 3,
     "topology": 4,
     "trajectory": 20
   },
-  "compiled_system_bundle_present": true,
-  "created_at_utc": "2026-11-04T11:41:43.685667+00:00",
+  "compiled_topology_trajectory_bundle_present": true,
+  "created_at_utc": "2026-11-04T11:58:48.428026+00:00",
   "decision": {
-    "can_begin_compiled_topology_and_coordinate_audit_from_this_archive": true,
-    "can_begin_exact_parent_parameter_audit_from_this_archive_alone": true,
+    "can_begin_compiled_topology_and_trajectory_audit": true,
+    "can_begin_compiled_topology_audit": true,
+    "can_begin_standalone_restart_coordinate_audit": false,
     "can_reconstruct_parameter_generation_from_this_archive": false,
     "candidate_ranking_authorized": false,
-    "next_action": "audit the compiled parm7/rst systems atom-by-atom and request the missing source RESP/GAFF/GLYCAM parameter-generation files"
+    "next_action": "audit the four compiled parm7 systems and matching trajectories; request missing restart coordinates and source RESP/GAFF/GLYCAM files"
   },
   "exact_input_components": {
-    "coordinate_present": true,
+    "coordinate_present": false,
     "parameterized_topology_present": true,
     "protocol_present": true,
+    "restraint_input_present": true,
     "source_parameter_files_present": false,
     "topology_present": true,
     "trajectory_present": true
@@ -43,11 +45,12 @@
     ".txt": 1
   },
   "limitations": [
-    "A parm7/prmtop is a compiled parameterized topology, but it does not reveal the complete RESP derivation or original frcmod/mol2/lib inputs.",
-    "An .rst file is classified as an AMBER coordinate/restart file, but each restart must still be matched to the correct topology and protocol.",
+    "The three deposited .rst files are AMBER NMR-style restraint-control inputs, not coordinate restart files.",
+    "A parm7 contains compiled numerical charges and terms but not the RESP derivation, quantum-chemistry inputs, atom-typing history, or original frcmod/mol2/lib files.",
+    "The binpos trajectories can be interpreted with matching topologies, but the exact simulation-start coordinates are not deposited as standalone restart files here.",
     "File presence does not establish that topology, charges, protonation or parameters are chemically correct.",
-    "SMD inputs may describe a truncated public analogue rather than the complete NNC2215 conjugate.",
-    "No file in this audit is assumed transferable to PaG or MC-Q1 without atom-level review."
+    "The public systems describe a truncated GluHUT benchmark, not the complete NNC2215 conjugate.",
+    "No deposited parameter is assumed transferable to PaG or MC-Q1 without atom-level review."
   ],
   "members": [
     {
@@ -862,7 +865,8 @@
     },
     {
       "classifications": [
-        "coordinate"
+        "restraint_input",
+        "protocol_or_documentation"
       ],
       "compressed_size_bytes": 98,
       "crc32_hex": "31a3cf94",
@@ -893,7 +897,8 @@
     },
     {
       "classifications": [
-        "coordinate"
+        "restraint_input",
+        "protocol_or_documentation"
       ],
       "compressed_size_bytes": 117,
       "crc32_hex": "434c749c",
@@ -926,7 +931,8 @@
     },
     {
       "classifications": [
-        "coordinate"
+        "restraint_input",
+        "protocol_or_documentation"
       ],
       "compressed_size_bytes": 101,
       "crc32_hex": "71f505d6",
@@ -1524,7 +1530,8 @@
     },
     {
       "classifications": [
-        "coordinate"
+        "restraint_input",
+        "protocol_or_documentation"
       ],
       "compressed_size_bytes": 98,
       "crc32_hex": "31a3cf94",
@@ -1555,7 +1562,8 @@
     },
     {
       "classifications": [
-        "coordinate"
+        "restraint_input",
+        "protocol_or_documentation"
       ],
       "compressed_size_bytes": 117,
       "crc32_hex": "434c749c",
@@ -1588,7 +1596,8 @@
     },
     {
       "classifications": [
-        "coordinate"
+        "restraint_input",
+        "protocol_or_documentation"
       ],
       "compressed_size_bytes": 101,
       "crc32_hex": "71f505d6",
@@ -1657,7 +1666,8 @@
       "uncompressed_size_bytes": 373
     }
   ],
-  "schema": "dia-health-one.gluhut-smd-archive-inventory.v2",
+  "schema": "dia-health-one.gluhut-smd-archive-inventory.v3",
   "scope": "public GluHUT steered-MD archive provenance and input discovery",
-  "status": "archive_inventory_complete_not_chemistry_validated"
+  "standalone_coordinate_bundle_present": false,
+  "status": "archive_inventory_corrected_rst_content_classification"
 }
