@@ -1,0 +1,141 @@
+name: Publish GluHUT umbrella provenance
+
+on:
+  push:
+    branches:
+      - main
+      - publish/gluhut-umbrella-lineage-provenance
+    paths:
+      - "research/GLUHUT_UMBRELLA_LINEAGE_AUDIT.md"
+      - "research/publish_gluhut_umbrella_status.py"
+      - "tests/test_publish_gluhut_umbrella_status.py"
+      - "research/data/gluhut-us-lineage-anomalies.json"
+      - ".github/workflows/publish-gluhut-umbrella-status.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-gluhut-umbrella-status-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_publish_gluhut_umbrella_status.py -v
+
+      - name: Update machine and human status
+        run: |
+          python research/publish_gluhut_umbrella_status.py \
+            --status-json research/status/status.json \
+            --status-html research/status/index.html \
+            --anomaly-json research/data/gluhut-us-lineage-anomalies.json \
+            | tee /tmp/umbrella-status-summary.json
+
+      - name: Validate public evidence boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          status = json.loads(Path('research/status/status.json').read_text())
+          html = Path('research/status/index.html').read_text()
+          calibration = status['public_benchmark_calibration']
+          aws = status['aws_execution']
+          external = status['external_execution']
+
+          assert status['schema'] == 'dia-health-one.public-confidence-status.v10'
+          assert status['working_drug_discovered'] is False
+          assert status['measured_dia_health_one_hit'] is False
+          assert status['primary_candidate']['evidence_level'] == 'E2'
+          assert status['primary_candidate']['candidate_ranking_authorized'] is False
+
+          assert calibration['umbrella_archive_size_bytes'] == 123756824
+          assert calibration['umbrella_archive_md5'] == 'c460e6a1ee97ac531fc284d8f07e381e'
+          assert calibration['umbrella_trajectory_file_count'] == 714
+          assert calibration['umbrella_raw_route_directory_count'] == 14
+          assert calibration['umbrella_unique_complete_route_signature_count'] == 13
+          assert calibration['umbrella_deposited_wham_route_count'] == 13
+          assert calibration['umbrella_full_histogram_frame_series_available'] is False
+          assert calibration['umbrella_authoritative_route_lineage_available'] is False
+          assert calibration['umbrella_histogram_generation_reproducible'] is False
+          assert calibration['umbrella_pmf_recalculation_from_public_trajectory_archive_authorized'] is False
+          assert calibration['umbrella_galactose_run4a_run5a_exact_duplicate_routes'] is True
+          assert calibration['umbrella_galactose_run1b_run2b_duplicate_0_0_0_3_files'] is True
+          assert calibration['umbrella_galactose_pathB_trajectory_window_count'] == 51
+          assert calibration['umbrella_galactose_pathB_wham_window_count'] == 52
+          assert calibration['umbrella_galactose_pathB_wham_only_center_A'] == 2.25
+          assert calibration['umbrella_fructofuranose_run2_frame_count_values'] == [1, 10]
+          assert calibration['umbrella_fructofuranose_run2_one_frame_center_A'] == 12.6
+          assert calibration['umbrella_fructofuranose_run3_frame_count_values'] == [10]
+          assert calibration['umbrella_one_frame_12_6A_file_cooccurs_with_205_sample_wham_anomaly'] is True
+          assert calibration['umbrella_direct_file_lineage_to_205_sample_wham_anomaly_established'] is False
+
+          assert aws['candidate_screen_authorized'] is False
+          assert aws['aws_credits_spent_usd'] == 0
+          assert external['author_umbrella_lineage_clarification_sent'] is True
+          assert '../GLUHUT_UMBRELLA_LINEAGE_AUDIT.md' in html
+          assert Path('research/GLUHUT_UMBRELLA_LINEAGE_AUDIT.md').exists()
+          print(json.dumps({
+              'schema': status['schema'],
+              'umbrella': {
+                  key: value
+                  for key, value in calibration.items()
+                  if key.startswith('umbrella_')
+              },
+              'aws_execution': aws,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit updated status artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/status/status.json research/status/index.html
+          if git diff --cached --quiet; then
+            echo 'No public status changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Publish GluHUT umbrella provenance status'
+
+          target_branch="$GITHUB_REF_NAME"
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt $attempt to $target_branch"
+            git fetch origin "$target_branch"
+            git rebase "origin/$target_branch"
+            if git push origin "HEAD:$target_branch"; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo 'Could not publish status artifacts.' >&2
+          exit 1
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT umbrella provenance publication'
+            echo
+            if [ -f /tmp/umbrella-status-summary.json ]; then
+              echo '```json'
+              cat /tmp/umbrella-status-summary.json
+              echo '```'
+            else
+              echo 'No publication summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
