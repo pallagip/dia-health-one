@@ -74,8 +74,16 @@ class NumPyWhamCrosscheckTests(unittest.TestCase):
             module.BULK_MAXIMUM_A = original_bulk_max
 
         profile = result["pmf_profile"]
-        x = np.asarray([row["coordinate_A"] for row in profile])
-        y = np.asarray([row["relative_free_energy_kcal_mol"] for row in profile])
+        x = np.asarray([row["coordinate_A"] for row in profile], dtype=float)
+        y = np.asarray(
+            [
+                np.nan
+                if row["relative_free_energy_kcal_mol"] is None
+                else row["relative_free_energy_kcal_mol"]
+                for row in profile
+            ],
+            dtype=float,
+        )
         finite = np.isfinite(y) & (np.abs(x) <= 2.2)
         coefficient, _ = np.polyfit(x[finite] ** 2, y[finite], 1)
         self.assertAlmostEqual(coefficient, 0.5 * underlying_k, delta=0.05)
