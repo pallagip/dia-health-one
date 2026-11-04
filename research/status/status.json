@@ -1,5 +1,5 @@
 {
-  "schema": "dia-health-one.public-confidence-status.v7",
+  "schema": "dia-health-one.public-confidence-status.v8",
   "updated": "2026-11-04",
   "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
@@ -81,6 +81,34 @@
     "smd_equivalent_standard_harmonic_K_kcal_mol_A2": 400.0,
     "umbrella_paper_amber_rk2_kcal_mol_A2": 50.0,
     "umbrella_grossfield_wham_K_kcal_mol_A2": 100.0,
+    "all_deposited_binpos_files_read": true,
+    "deposited_binpos_trajectory_count": 20,
+    "deposited_binpos_total_frame_count": 20000,
+    "binpos_native_reader": "diahealthone-native-binpos-v1",
+    "deposited_com_coordinate_reconstructed": true,
+    "fructofuranose_five_ring_only_mean_absolute_coordinate_delta_A": 0.0260385335,
+    "fructofuranose_five_ring_only_mean_maximum_coordinate_delta_A": 0.0500519626,
+    "fructofuranose_C6_replacement_mean_absolute_coordinate_delta_A": 0.222467706,
+    "fructofuranose_C6_replacement_mean_maximum_coordinate_delta_A": 0.384261624,
+    "fructofuranose_posthoc_coordinate_result_selects_corrected_restraint": false,
+    "glucose_smd_unique_trajectory_count": 5,
+    "glucose_smd_mean_endpoint_A": 14.973904,
+    "fructofuranose_smd_unique_trajectory_count": 5,
+    "fructofuranose_smd_mean_endpoint_A": 14.977499,
+    "fructopyranose_smd_unique_trajectory_count": 5,
+    "fructopyranose_smd_mean_endpoint_A": 20.002387,
+    "galactose_path_B_unique_trajectory_count": 3,
+    "galactose_path_B_mean_endpoint_A": 14.999259,
+    "galactose_path_A_deposited_file_count": 2,
+    "galactose_path_A_unique_trajectory_count": 1,
+    "galactose_path_A_duplicate_file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+    "galactose_path_A_duplicate_coordinate_sha256": "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57",
+    "galactose_path_A_endpoint_A": 22.1261716144,
+    "galactose_five_files_are_independent": false,
+    "galactose_files_share_one_endpoint_protocol": false,
+    "galactose_path_A_periodic_imaging_explanation_supported": false,
+    "galactose_path_A_different_or_mislabeled_path_supported": true,
+    "smd_endpoint_protocol_uniform_across_deposit": false,
     "new_smd_or_umbrella_generation_authorized": false,
     "deposited_histogram_and_wham_reanalysis_remains_reproducible": true,
     "causal_link_between_H62_and_short_window_failure_established": false,
@@ -96,7 +124,8 @@
     "source_architecture_record": "../data/gluhut-truncated-architecture-reconciliation.json",
     "smd_restraint_record": "../GLUHUT_SMD_RESTRAINT_AUDIT.md",
     "fructofuranose_candidate_record": "../GLUHUT_FRUCTOFURANOSE_RESTRAINT_CANDIDATES.md",
-    "force_convention_record": "../GLUHUT_FORCE_CONVENTION.md"
+    "force_convention_record": "../GLUHUT_FORCE_CONVENTION.md",
+    "coordinate_provenance_record": "../GLUHUT_SMD_COORDINATE_PROVENANCE.md"
   },
   "minimum_physical_experiment": [
     "MC-P0",
@@ -113,16 +142,17 @@
     "must_outperform_positional_control": true
   },
   "aws_execution": {
-    "current_gate": "AWS-1 public analysis reproduced; compiled host architecture and force convention reconciled; guest-coordinate intent, source parameter derivation, start coordinates and parent PaG calibration pending",
+    "current_gate": "AWS-1 public analysis reproduced; host architecture, force convention and all deposited coordinate files audited; guest-coordinate intent, trajectory-file provenance, source parameter derivation, start coordinates and parent PaG calibration pending",
     "candidate_screen_authorized": false,
     "boltz_host_guest_affinity_authorized": false,
     "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
     "aws_credits_spent_usd": 0,
-    "next_action": "obtain author clarification on the reused fructose atom indices and intended fructofuranose group, obtain source RESP/GAFF/GLYCAM and start-coordinate provenance, then calibrate the parent glucose-versus-PaG system"
+    "next_action": "obtain corrected or clarified galactose A and fructofuranose source inputs, obtain RESP/GAFF/GLYCAM and start-coordinate provenance, then calibrate the parent glucose-versus-PaG system"
   },
   "external_execution": {
     "author_parameter_request_sent": true,
     "author_smd_restraint_clarification_sent": true,
+    "author_galactose_duplicate_endpoint_clarification_pending": true,
     "erc_project_contact_routed_to_wayne_powell": true,
     "nnc2215_pag_source_request_sent": true,
     "carbometrics_feasibility_request_sent": true,
@@ -131,6 +161,7 @@
     "reply_watch_enabled": true
   },
   "next_confidence_changes": [
+    "obtain the intended independent galactose path-A trajectory and target history",
     "obtain author clarification on the reused fructose indices and intended fructofuranose SMD group",
     "obtain RESP/GAFF/GLYCAM and start-coordinate provenance",
     "calibrate a source-matched parent glucose-versus-PaG calculation",
