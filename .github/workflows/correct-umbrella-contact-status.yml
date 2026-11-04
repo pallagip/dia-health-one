@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - fix/umbrella-author-contact-status
+      - docs/umbrella-lineage-delivery-20261105
     paths:
       - "research/correct_umbrella_contact_status.py"
       - "tests/test_correct_umbrella_contact_status.py"
@@ -38,14 +39,14 @@ jobs:
       - name: Run unit tests
         run: python -m unittest tests/test_correct_umbrella_contact_status.py -v
 
-      - name: Correct machine and human records
+      - name: Reconcile machine and human delivery records
         run: |
           python research/correct_umbrella_contact_status.py \
             --status-json research/status/status.json \
             --record research/GLUHUT_UMBRELLA_LINEAGE_AUDIT.md \
             | tee /tmp/contact-status-summary.json
 
-      - name: Validate exact delivery boundary
+      - name: Validate verified Gmail send boundary
         run: |
           python - <<'PY'
           import json
@@ -55,12 +56,16 @@ jobs:
           record = Path('research/GLUHUT_UMBRELLA_LINEAGE_AUDIT.md').read_text()
           external = status['external_execution']
 
-          assert external['author_umbrella_lineage_clarification_sent'] is False
+          assert external['author_umbrella_lineage_clarification_sent'] is True
           assert external['author_umbrella_lineage_clarification_draft_created'] is True
-          assert external['author_umbrella_lineage_clarification_status'] == 'draft_created_after_gmail_rate_limit'
+          assert external['author_umbrella_lineage_clarification_draft_pending'] is False
+          assert external['author_umbrella_lineage_clarification_status'] == 'sent_confirmed_by_gmail'
+          assert external['author_umbrella_lineage_clarification_sent_message_id'] == '1a1a8f2999166f97'
+          assert external['author_umbrella_lineage_clarification_sent_thread_id'] == '1a1a7ce37fa8d5f5'
           assert '## Delivery status' in record
-          assert 'was **not sent**' in record
-          assert 'saved as a draft' in record
+          assert '**Delivered:**' in record
+          assert '1a1a8f2999166f97' in record
+          assert 'not of recipient delivery confirmation' in record
 
           assert status['working_drug_discovered'] is False
           assert status['measured_dia_health_one_hit'] is False
@@ -71,7 +76,7 @@ jobs:
           }, indent=2, sort_keys=True))
           PY
 
-      - name: Commit corrected records
+      - name: Commit reconciled records
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
