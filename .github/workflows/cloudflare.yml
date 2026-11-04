@@ -36,6 +36,13 @@ jobs:
           for file in favicon.ico robots.txt sitemap.xml; do
             if [ -f "$file" ]; then cp "$file" "_site/$file"; fi
           done
+          if [ -f research/status/index.html ]; then
+            test -s _site/research/status/index.html
+            test -s _site/research/status/status.json
+            test -s _site/research/CONFIDENCE_LEDGER.md
+            test -s _site/research/AWS_1000_CONFIDENCE_PLAN_V2.md
+            test -s _site/research/MCQ1_EVIDENCE_RECORD.md
+          fi
       - name: Deploy to Cloudflare Pages
         if: github.event_name != 'pull_request'
         id: deploy
@@ -59,8 +66,19 @@ jobs:
           DEPLOYMENT_URL: ${{ steps.deploy.outputs.url }}
         run: |
           for attempt in 1 2 3 4 5; do
+            root_ok=false
+            status_ok=true
             if curl --fail --silent --show-error "$DEPLOYMENT_URL/" -o deployed.html && cmp _site/index.html deployed.html; then
-              echo 'HTTPS readback matches the committed website.' >> "$GITHUB_STEP_SUMMARY"
+              root_ok=true
+            fi
+            if [ -f _site/research/status/index.html ]; then
+              status_ok=false
+              if curl --fail --silent --show-error "$DEPLOYMENT_URL/research/status/" -o deployed-status.html && cmp _site/research/status/index.html deployed-status.html; then
+                status_ok=true
+              fi
+            fi
+            if [ "$root_ok" = true ] && [ "$status_ok" = true ]; then
+              echo 'HTTPS readback matches the committed website and research status page.' >> "$GITHUB_STEP_SUMMARY"
               exit 0
             fi
             sleep 5
