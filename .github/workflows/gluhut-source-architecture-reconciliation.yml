@@ -1,0 +1,120 @@
+name: Reconcile GluHUT truncated architecture
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-source-architecture-reconciliation
+    paths:
+      - "research/reconcile_gluhut_truncated_architecture.py"
+      - "tests/test_reconcile_gluhut_truncated_architecture.py"
+      - ".github/workflows/gluhut-source-architecture-reconciliation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-source-architecture-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ARCHIVE_MD5: 9f3c6733dc608d2bd37c488c560a5443
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_reconcile_gluhut_truncated_architecture.py -v
+
+      - name: Acquire and verify public SMD archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/SMD_trajectories.zip \
+            'https://zenodo.org/api/records/19664426/files/SMD_trajectories.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/SMD_trajectories.zip" | md5sum --check --strict
+
+      - name: Reconcile compiled graph with published architecture
+        run: |
+          python research/reconcile_gluhut_truncated_architecture.py \
+            --archive /tmp/SMD_trajectories.zip \
+            --output-json research/data/gluhut-truncated-architecture-reconciliation.json \
+            | tee /tmp/architecture-summary.json
+
+      - name: Validate bounded conclusions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-truncated-architecture-reconciliation.json').read_text())
+          checks = data['cross_system']['all_checks']
+          decision = data['decision']
+          module_bookkeeping = data['published_module_formula_bookkeeping']
+          assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert data['archive']['crc_verified'] is True
+          assert len(data['systems']) == 4
+          assert module_bookkeeping['calculated_total_string'] == 'C60H75N15O9'
+          assert module_bookkeeping['matches_expected_host_formula'] is True
+          assert data['cross_system']['architecture_signature_identical_across_four_sugars'] is True
+          for key, value in checks.items():
+              assert value is True, (key, value)
+          assert decision['compiled_formula_reconciled_to_published_truncated_architecture'] is True
+          assert decision['two_cap_three_pillar_six_urea_architecture_reconciled'] is True
+          assert decision['compiled_graph_matches_published_truncated_host'] is True
+          assert decision['exact_author_atom_names_and_source_build_files_available'] is False
+          assert decision['resp_gaff_derivation_reconstructable'] is False
+          assert decision['force_field_chemically_validated'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['mcq1_parameter_transfer_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          reference = data['systems'][0]
+          assert reference['host_formula_string'] == 'C60H75N15O9'
+          assert len(reference['rings']) == 5
+          assert len(reference['urea_connections']) == 6
+          assert len(reference['observed_urea_pairs']) == 6
+          print(json.dumps({
+              'module_bookkeeping': module_bookkeeping,
+              'cross_system': data['cross_system'],
+              'decision': decision,
+              'reference_system': reference,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit reconciliation output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-truncated-architecture-reconciliation.json
+          if git diff --cached --quiet; then
+            echo 'No reconciliation changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT truncated architecture reconciliation'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT truncated architecture reconciliation'
+            echo
+            if [ -f /tmp/architecture-summary.json ]; then
+              echo '```json'
+              cat /tmp/architecture-summary.json
+              echo '```'
+            else
+              echo 'No reconciliation summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
