@@ -1,5 +1,5 @@
 {
-  "schema": "dia-health-one.public-confidence-status.v3",
+  "schema": "dia-health-one.public-confidence-status.v4",
   "updated": "2026-11-04",
   "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
@@ -50,13 +50,24 @@
     "roh_is_covalently_part_of_guest": true,
     "fructofuranose_us2_short_window_gate_passed": false,
     "fructofuranose_us2_exclusion_shift_kcal_per_mol": 0.707,
+    "smd_host_reference_is_same_two_six_carbon_aromatic_rings": true,
+    "smd_guest_coordinate_is_chemically_uniform_across_sugars": false,
+    "smd_glucose_and_galactose_selection": "six-member pyranose ring plus exocyclic C6",
+    "smd_fructopyranose_selection": "six-member ring heavy atoms only",
+    "smd_fructofuranose_selection": "five-member ring plus isolated hydrogen H62",
+    "smd_fructofuranose_contains_unexplained_hydrogen_H62": true,
+    "smd_force_constant_convention_validated": false,
+    "new_smd_or_umbrella_generation_authorized": false,
+    "deposited_histogram_and_wham_reanalysis_remains_reproducible": true,
+    "causal_link_between_H62_and_short_window_failure_established": false,
     "source_resp_gaff_glycam_generation_available": false,
     "standalone_start_coordinates_available": false,
     "source_graph_fully_reconciled": false,
     "pag_calibration_completed": false,
     "candidate_ranking_authorized": false,
     "calibration_record": "../AWS1_NO_AWS_RESULTS.md",
-    "graph_chemistry_record": "../GLUHUT_GRAPH_CHEMISTRY_AUDIT.md"
+    "graph_chemistry_record": "../GLUHUT_GRAPH_CHEMISTRY_AUDIT.md",
+    "smd_restraint_record": "../GLUHUT_SMD_RESTRAINT_AUDIT.md"
   },
   "minimum_physical_experiment": [
     "MC-P0",
@@ -73,15 +84,16 @@
     "must_outperform_positional_control": true
   },
   "aws_execution": {
-    "current_gate": "AWS-1 public analysis and compiled graph chemistry audited; source graph, restraint mapping, parameter provenance and parent PaG calibration pending",
+    "current_gate": "AWS-1 public analysis, compiled graph chemistry, and SMD coordinate mapping audited; source graph, author clarification, parameter provenance and parent PaG calibration pending",
     "candidate_screen_authorized": false,
     "boltz_host_guest_affinity_authorized": false,
     "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
     "aws_credits_spent_usd": 0,
-    "next_action": "map the SMD restraint groups, reconcile the compiled C60H75N15O9 host with the published truncated chemical graph, and obtain source parameter provenance before parent glucose-versus-PaG calibration"
+    "next_action": "obtain author clarification or corrected fructofuranose restraint, validate the force convention, reconcile the compiled C60H75N15O9 host with the published chemical graph, and obtain source parameter provenance before parent glucose-versus-PaG calibration"
   },
   "external_execution": {
     "author_parameter_request_sent": true,
+    "author_smd_restraint_clarification_sent": true,
     "nnc2215_pag_source_request_sent": true,
     "carbometrics_feasibility_request_sent": true,
     "spirochem_synthesis_request_sent": true,
@@ -89,7 +101,8 @@
     "reply_watch_enabled": true
   },
   "next_confidence_changes": [
-    "map deposited SMD restraint atom groups to exact host and guest atoms",
+    "obtain author clarification or corrected fructofuranose SMD restraint",
+    "validate the deposited AMBER force-constant convention against the paper",
     "reconcile the compiled C60H75N15O9 host with the published truncated chemical graph",
     "obtain RESP/GAFF/GLYCAM and start-coordinate provenance",
     "calibrate a source-matched parent glucose-versus-PaG calculation",
