@@ -1,0 +1,2282 @@
+{
+  "binpos_layout": {
+    "header_bytes": 4,
+    "natom": 183,
+    "record_bytes": 2200
+  },
+  "decision": {
+    "all_714_trajectory_files_parsed": true,
+    "all_route_centres_match_mapped_wham_centres": false,
+    "all_routes_have_51_windows_0_to_15_by_0_3A": true,
+    "all_trajectory_files_have_100_recorded_frames": false,
+    "authoritative_route_lineage_file_present": false,
+    "candidate_ranking_authorized": false,
+    "expected_fourteen_route_directories_present": true,
+    "fourteen_route_directories_reduce_to_thirteen_unique_content_signatures": true,
+    "galactose_routeA_has_two_archive_copies_but_one_wham_route": true,
+    "galactose_run4a_and_run5a_are_exact_duplicate_routes": true,
+    "histogram_generation_reproducible_from_us_archive": false,
+    "median_histogram_to_visualization_frame_ratio_is_approximately_150": false,
+    "next_action": "compare duplicate window hashes with deposited histogram content, request the omitted full-resolution umbrella trajectories or frame-selection map, and obtain authoritative route-to-WHAM lineage before histogram regeneration",
+    "parent_pag_calibration_authorized": false,
+    "path_based_route_mapping_is_complete_but_not_authoritative": false,
+    "pmf_recalculation_from_us_trajectories_authorized": false,
+    "thirteen_unique_route_signatures_match_thirteen_wham_routes": true,
+    "umbrella_archive_contains_full_wham_histogram_frame_series": false,
+    "within_route_duplicate_window_content_detected": true
+  },
+  "deposited_wham_route_count": 13,
+  "duplicate_complete_route_groups": [
+    {
+      "mapped_wham_keys": [
+        "galactose/US-routeA"
+      ],
+      "route_content_signature_sha256": "40d6700004f70d60cc08e496827137a93791ab7a6cf2d436fa8f10d86c2e68f5",
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "trajectory_file_count_per_route": [
+        51
+      ]
+    }
+  ],
+  "duplicate_trajectory_content_groups": [
+    {
+      "centres_A": [
+        7.5
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-7-5-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-7-5-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "089859f2ed89e3300626f6b0f4e97e572a4cf21cd4abc10b46a8ea6b315c76c2"
+    },
+    {
+      "centres_A": [
+        11.1
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-11-1-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-11-1-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "0c3e2aa53afc2da386b3cadb1ac3f2a6aeaa4a464d132ecb3ae5d440e9c1b863"
+    },
+    {
+      "centres_A": [
+        3.0
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-3-0-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-3-0-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "13dea26be805aa6197b3acd6954f740a8086afa2ce16a70455d6f4080548a2c7"
+    },
+    {
+      "centres_A": [
+        6.6
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-6-6-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-6-6-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "15c447381f6411ee315e686319175ed3c9b6558fd32ffddda995ea9b99172429"
+    },
+    {
+      "centres_A": [
+        0.0,
+        0.3
+      ],
+      "different_centers_within_or_across_routes": true,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 1 (b)/prod-0-0-100-frames.binpos",
+        "US_Trajectories/galactose/run 1 (b)/prod-0-3-100-frames.binpos"
+      ],
+      "route_count": 1,
+      "route_keys": [
+        "galactose/run1b"
+      ],
+      "same_center_across_routes": false,
+      "sha256": "177c7cad3bbeb5392d97384e6c7e81a51a3006167fe9a38eef0a91c9a300a656"
+    },
+    {
+      "centres_A": [
+        13.5
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-13-5-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-13-5-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "1b8a4391c14661a672c1af96c9b50ee507a73aa7c28fa6f451758a2ed39d77eb"
+    },
+    {
+      "centres_A": [
+        9.0
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-9-0-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-9-0-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "1db614fb2921725cda0699ffce92e2cef3a2ce3f9c993c8639c478c4e80f646a"
+    },
+    {
+      "centres_A": [
+        4.8
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-4-8-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-4-8-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "209ad4a8d67f99494ffb861fd55d0d2ab03927a2858281b58bdcbf831454ee0a"
+    },
+    {
+      "centres_A": [
+        14.7
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-14-7-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-14-7-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "2a5c3cab11b887a953af65a8e56570aa660fc44eb2d92e50ec121ba046637267"
+    },
+    {
+      "centres_A": [
+        12.6
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-12-6-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-12-6-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "2d44d32af5d8abb1b2db83a3fd7ad001ad1d53a0d59e17dbb4d049a97232f2a6"
+    },
+    {
+      "centres_A": [
+        8.1
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-8-1-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-8-1-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "30b36553390b3d8907294e51365edba1c8077f302e23cde0fdb5c60b7a6daf02"
+    },
+    {
+      "centres_A": [
+        4.5
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-4-5-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-4-5-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "3bdb708dc3b727ca4b9aac9eb810c4b643390f4817e4dfb9f04a167dd2396201"
+    },
+    {
+      "centres_A": [
+        5.4
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-5-4-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-5-4-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "3be7b01b7e434430edfec24bab0e20a66ff0d751a2f51527158e8f5c215828af"
+    },
+    {
+      "centres_A": [
+        9.3
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-9-3-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-9-3-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "488639a94ce4a27732c1c73f8aa9ecd54f93059b0f581fcefe54c72f56921cac"
+    },
+    {
+      "centres_A": [
+        9.6
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-9-6-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-9-6-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "4fedb4a8d8f0d29bc87ba07e361a52d20791827e5475af3fd76469df701e7ecb"
+    },
+    {
+      "centres_A": [
+        6.3
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-6-3-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-6-3-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "547ce06ad2cb6b49c8a73c55741e486326c32c13261a960a37096439f1aead21"
+    },
+    {
+      "centres_A": [
+        14.1
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-14-1-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-14-1-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "5894a9a20381318abc74931b161f5bd3fe2111a1165dfb507ab6eca0ccc4eefa"
+    },
+    {
+      "centres_A": [
+        5.1
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-5-1-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-5-1-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "5e9db4e65d60ae710aa31bac3db0dbded29edfa22fc30ca7cc3bb6e18ca8a9b2"
+    },
+    {
+      "centres_A": [
+        10.8
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-10-8-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-10-8-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "68f9035f7fcedab80fa0c0f2e62678883db15fdef1da0dcc22ffda0de2a84593"
+    },
+    {
+      "centres_A": [
+        5.7
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-5-7-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-5-7-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "6a0ca8af7b0ca6647b730fe227f04e21ba501ed05d6c866212a536d3294ed010"
+    },
+    {
+      "centres_A": [
+        9.9
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-9-9-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-9-9-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "6baf44164c5810544722d7bb3c20376252fe2da3f5ed2b1e5d2aec3a67d4922e"
+    },
+    {
+      "centres_A": [
+        10.5
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-10-5-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-10-5-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "6cd097c2f74151243d293b86e6942813a99205dcceff3017f7e700d41824a33e"
+    },
+    {
+      "centres_A": [
+        1.8
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-1-8-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-1-8-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "73362f99c61584dfb7b2d16eef3e931f6d64a3cdc3a9c56b5498905a209ea7cb"
+    },
+    {
+      "centres_A": [
+        2.7
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-2-7-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-2-7-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "748041f3f5c2600ed17cbdb52c32bcf9d136f6afda75cd1d75ad6248becf0eb9"
+    },
+    {
+      "centres_A": [
+        13.2
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-13-2-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-13-2-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "74f71e532f9b40a1e1bd8519a94d01625314b6adef1d9f5742a624255e84dfcc"
+    },
+    {
+      "centres_A": [
+        2.4
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-2-4-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-2-4-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "759fc08d9fc8104e15c9f0b0da06262cd92282a483e29809355f887e80637b80"
+    },
+    {
+      "centres_A": [
+        1.5
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-1-5-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-1-5-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "7638b51dce8f7454d6ab9cfe779f24664e356c8a3940b1b267c1fef02d75e9f4"
+    },
+    {
+      "centres_A": [
+        4.2
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-4-2-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-4-2-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "793fc84f77900e650eb9de9341d54a364fe7e92e08f81b6b4ef15cfdf6146d11"
+    },
+    {
+      "centres_A": [
+        0.0
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-0-0-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-0-0-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "7a2bf0d8455cdc7af023610fa8995726be5ca8afe7b53b0be20103e364689ba8"
+    },
+    {
+      "centres_A": [
+        2.1
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-2-1-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-2-1-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "7b6888adbac28cf892eeb2153909ae083280fe84ce5fcc3ffceca0fedf63df7c"
+    },
+    {
+      "centres_A": [
+        6.9
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-6-9-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-6-9-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "7df8f1cd609f9ffca05790f4f99b60df10c73b6bd3f06322f686edae62722e10"
+    },
+    {
+      "centres_A": [
+        3.9
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-3-9-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-3-9-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "83ce6f0adcbedd35b66aff108cac99de81b708b9f0ea5178203beae4da74d2c6"
+    },
+    {
+      "centres_A": [
+        3.6
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-3-6-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-3-6-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "9271db651346f4b16470a2aa4d612535a8bdf362d1e84fa7bb67ca80f76d2d2a"
+    },
+    {
+      "centres_A": [
+        0.9
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-0-9-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-0-9-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "98c81caa3e2bfcc5042558f035d0a7779cd28cccf9be5d7183e733aa52a0aea3"
+    },
+    {
+      "centres_A": [
+        12.0
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-12-0-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-12-0-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "a2b5ff8901fca980e1a2b5b19c0bfe1ff464ae879563c4bfe97ef84a08f2929e"
+    },
+    {
+      "centres_A": [
+        14.4
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-14-4-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-14-4-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "a7303eab2822bfba7b2b424d8929a588fb77214529398a07f1a4fd85211f2320"
+    },
+    {
+      "centres_A": [
+        3.3
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-3-3-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-3-3-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "a8faddedf72b79e8ed88b3b1e8e87968599580c6cfec254de4aaf5af694a5410"
+    },
+    {
+      "centres_A": [
+        15.0
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-15-0-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-15-0-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "b0af898a30934dfa47e88a3dd70c186ce2b25d428b8a4a8823426601e20e7e6a"
+    },
+    {
+      "centres_A": [
+        8.4
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-8-4-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-8-4-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "baa3d9d56f17038136bc2a2f31f4e59476a7bfc59d33b6cb11cf7ffa2f795423"
+    },
+    {
+      "centres_A": [
+        1.2
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-1-2-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-1-2-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "bfd33ccbd94ba805752bac2e92bc16d2e3da25446fbea93d847c46c4d4da9c67"
+    },
+    {
+      "centres_A": [
+        0.3
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-0-3-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-0-3-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "c0b96a51f48d8e1888bb95c15428e0a54351957667943f86edb2760125eab3f8"
+    },
+    {
+      "centres_A": [
+        0.6
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-0-6-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-0-6-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "c2a200d36b177e85b32c5ee7e240611d552bfe5c500fa7a0c704759a134273d4"
+    },
+    {
+      "centres_A": [
+        0.0,
+        0.3
+      ],
+      "different_centers_within_or_across_routes": true,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 2 (b)/prod-0-0-100-frames.binpos",
+        "US_Trajectories/galactose/run 2 (b)/prod-0-3-100-frames.binpos"
+      ],
+      "route_count": 1,
+      "route_keys": [
+        "galactose/run2b"
+      ],
+      "same_center_across_routes": false,
+      "sha256": "c32f36783a381a7b03ca4bab3c6483ebf6918b77a1b04f1de257fb31994d140d"
+    },
+    {
+      "centres_A": [
+        11.4
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-11-4-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-11-4-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "c4e0ff364e32c1b22666bbab83c77a91bcda4aeba9a060799d2ac88c678683a1"
+    },
+    {
+      "centres_A": [
+        7.8
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-7-8-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-7-8-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "d5f750705896a8a643345783744b2cce10990072bb1ec1a623216c38a7c1f01e"
+    },
+    {
+      "centres_A": [
+        7.2
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-7-2-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-7-2-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "df3fb8ce1b4ec0c3db41fce38a7d6dbd9b7fe2f0f918226824850f559ebda347"
+    },
+    {
+      "centres_A": [
+        8.7
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-8-7-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-8-7-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "e911809fb2d81b430ff31c76184990c525292f69c2f5a16fb33d21257dc15b94"
+    },
+    {
+      "centres_A": [
+        12.3
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-12-3-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-12-3-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "eadeb058cf234c655a6c20b4634c75a6b41bb29b554a874b418a72c747df8ecd"
+    },
+    {
+      "centres_A": [
+        6.0
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-6-0-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-6-0-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "f09d48e830a00b5a88fd5e7011fe4b5ec16a47c381ca8b23a1df690499685365"
+    },
+    {
+      "centres_A": [
+        10.2
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-10-2-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-10-2-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "f246dff5a2fecac02d6d26dee6ebe8bb9b04b28f68caa6142d09cc53ce204461"
+    },
+    {
+      "centres_A": [
+        13.8
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-13-8-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-13-8-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "f37e0d24a88796119fb981519f2a5d0c2b6c8277e4b9750790f06d608d87133b"
+    },
+    {
+      "centres_A": [
+        11.7
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-11-7-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-11-7-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "f3b83cab24183325dbb2e6bee46878d6f9a0b7b71dcb645b8463e05ae6532ed6"
+    },
+    {
+      "centres_A": [
+        12.9
+      ],
+      "different_centers_within_or_across_routes": false,
+      "file_count": 2,
+      "paths": [
+        "US_Trajectories/galactose/run 4 (a)/prod-12-9-100-frames.binpos",
+        "US_Trajectories/galactose/run 5 (a)/prod-12-9-100-frames.binpos"
+      ],
+      "route_count": 2,
+      "route_keys": [
+        "galactose/run4a",
+        "galactose/run5a"
+      ],
+      "same_center_across_routes": true,
+      "sha256": "f5319485705e7c969acfb259975bb2c6a347a6d4d48f0464b98b8dd816fbc8b3"
+    }
+  ],
+  "expected_route_keys": [
+    "fructofuranose/run1",
+    "fructofuranose/run2",
+    "fructofuranose/run3",
+    "fructopyranose/run1",
+    "fructopyranose/run2",
+    "fructopyranose/run3",
+    "galactose/run1b",
+    "galactose/run2b",
+    "galactose/run3b",
+    "galactose/run4a",
+    "galactose/run5a",
+    "glucose/run1",
+    "glucose/run2",
+    "glucose/run3"
+  ],
+  "inputs": {
+    "umbrella_inventory": {
+      "archive": {
+        "crc_verified": true,
+        "directory_count": 20,
+        "file_count": 730,
+        "filename": "US_Trajectories.zip",
+        "md5": "c460e6a1ee97ac531fc284d8f07e381e",
+        "member_count": 750,
+        "sha256": "1e68f57ef15c3c010a767ab3c8181b5eb8df106d1ee96066f6afa4d54cb8f517",
+        "size_bytes": 123756824,
+        "total_uncompressed_bytes": 137772187
+      },
+      "path": "research/data/gluhut-us-archive-inventory.json",
+      "sha256": "ca9d5904300583e087ef96748d90484db627f25df2af1415deff359266aa0843"
+    },
+    "wham_reproduction": {
+      "archive": {
+        "filename": "WHAM_PMF.zip",
+        "md5": "dbc6723b8adcb85deb8230f63b6a51da",
+        "sha256": "e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb",
+        "size_bytes": 41560830
+      },
+      "path": "research/data/gluhut-all-sugars-wham-reproduction.json",
+      "sha256": "cfc91079806653d1b04cdd780ac2c8aef378940394da25ed4d18e5ac6a7dc19d"
+    }
+  },
+  "limitations": [
+    "The route-to-WHAM mapping is inferred from system, run number, A/B label and complete centre coverage; the deposit contains no authoritative lineage manifest.",
+    "Each umbrella BINPOS contains 100 recorded frames, whereas deposited WHAM histograms usually contain approximately 15,001 samples; no sampling/downselection map is present.",
+    "Byte-identical 100-frame visualization files do not prove that the unavailable full-resolution trajectories were identical.",
+    "Matching route centres and route counts does not prove that the deposited histograms were generated from these downsampled files.",
+    "No coordinate, histogram, PMF, work, affinity or candidate calculation is performed."
+  ],
+  "mapped_wham_route_count": 13,
+  "not_target_claim": "not regenerated histograms, not a new PMF or affinity, not NNC2215, PaG, MC-Q1, efficacy, safety, or a drug result",
+  "observed_route_keys": [
+    "fructofuranose/run1",
+    "fructofuranose/run2",
+    "fructofuranose/run3",
+    "fructopyranose/run1",
+    "fructopyranose/run2",
+    "fructopyranose/run3",
+    "galactose/run1b",
+    "galactose/run2b",
+    "galactose/run3b",
+    "galactose/run4a",
+    "galactose/run5a",
+    "glucose/run1",
+    "glucose/run2",
+    "glucose/run3"
+  ],
+  "raw_route_directory_count": 14,
+  "route_summaries": [
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "fructofuranose/US-1",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "aa07800649ab1e8ed7e4398d8aaff55b49308578c5e7ed9ce7d1bbcc31a2fab6",
+      "route_id": "run1",
+      "route_key": "fructofuranose/run1",
+      "system": "fructofuranose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "fructofuranose/US-2",
+      "median_histogram_to_trajectory_frame_ratio": null,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "452a603e6426bc9fe292401847f58b3a3134f47f50b03422fb22dae197917845",
+      "route_id": "run2",
+      "route_key": "fructofuranose/run2",
+      "system": "fructofuranose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        1,
+        10
+      ],
+      "trajectory_frames_total": 501,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 205,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "fructofuranose/US-3",
+      "median_histogram_to_trajectory_frame_ratio": 1500.1,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "a16f8c7330ff28d33f42ac8b3d1fca901688c479c4018bfcbb45d88f5cf1ec5b",
+      "route_id": "run3",
+      "route_key": "fructofuranose/run3",
+      "system": "fructofuranose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        10
+      ],
+      "trajectory_frames_total": 510,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "fructopyranose/US-1",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "29e77d53dd1e9d5a52dcf9515916577685eb50662a7b323f5b8895f0a2fcf5d3",
+      "route_id": "run1",
+      "route_key": "fructopyranose/run1",
+      "system": "fructopyranose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "fructopyranose/US-2",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "417b1cb65f40d0bf68651852b154a2796a619375a8ae2a349854a572337cb95a",
+      "route_id": "run2",
+      "route_key": "fructopyranose/run2",
+      "system": "fructopyranose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "fructopyranose/US-3",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "3447ab41fce1cb7ccb98c893240c41a0538b9f7c21deb5e910e0543c778b0d85",
+      "route_id": "run3",
+      "route_key": "fructopyranose/run3",
+      "system": "fructopyranose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": "b",
+      "mapped_wham_key": "galactose/US-1",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "19259a26e0cf67134f5f8952be43dcb8b8800880b65036dbb3a9915187069b8e",
+      "route_id": "run1b",
+      "route_key": "galactose/run1b",
+      "system": "galactose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 50,
+      "wham_centres_match_trajectory_centres": false,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 52,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 1,
+      "within_route_duplicate_groups": [
+        {
+          "centres_A": [
+            0.0,
+            0.3
+          ],
+          "file_count": 2,
+          "paths": [
+            "US_Trajectories/galactose/run 1 (b)/prod-0-0-100-frames.binpos",
+            "US_Trajectories/galactose/run 1 (b)/prod-0-3-100-frames.binpos"
+          ],
+          "sha256": "177c7cad3bbeb5392d97384e6c7e81a51a3006167fe9a38eef0a91c9a300a656"
+        }
+      ]
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": "b",
+      "mapped_wham_key": "galactose/US-2",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "6fe835e43e65270a44587ece1a3cdbf726d51958bfe5618b700fd69108510ba9",
+      "route_id": "run2b",
+      "route_key": "galactose/run2b",
+      "system": "galactose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 50,
+      "wham_centres_match_trajectory_centres": false,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 52,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 1,
+      "within_route_duplicate_groups": [
+        {
+          "centres_A": [
+            0.0,
+            0.3
+          ],
+          "file_count": 2,
+          "paths": [
+            "US_Trajectories/galactose/run 2 (b)/prod-0-0-100-frames.binpos",
+            "US_Trajectories/galactose/run 2 (b)/prod-0-3-100-frames.binpos"
+          ],
+          "sha256": "c32f36783a381a7b03ca4bab3c6483ebf6918b77a1b04f1de257fb31994d140d"
+        }
+      ]
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": "b",
+      "mapped_wham_key": "galactose/US-3",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "b5f056426cb48d9d46e5858b0ae8734468d4b4caaf2685a3e5f928dda7368d51",
+      "route_id": "run3b",
+      "route_key": "galactose/run3b",
+      "system": "galactose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": false,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 52,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": "a",
+      "mapped_wham_key": "galactose/US-routeA",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "40d6700004f70d60cc08e496827137a93791ab7a6cf2d436fa8f10d86c2e68f5",
+      "route_id": "run4a",
+      "route_key": "galactose/run4a",
+      "system": "galactose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": "a",
+      "mapped_wham_key": "galactose/US-routeA",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "40d6700004f70d60cc08e496827137a93791ab7a6cf2d436fa8f10d86c2e68f5",
+      "route_id": "run5a",
+      "route_key": "galactose/run5a",
+      "system": "galactose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "glucose/US-1",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "9dcf127169193bb95fcfc269d8838e61471bcae39e719c8d3f3297cc4b92704d",
+      "route_id": "run1",
+      "route_key": "glucose/run1",
+      "system": "glucose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "glucose/US-2",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "2134d490ecddd49d91cd2c47ba65abd401b6b17e3eb6744581b68c9676546c14",
+      "route_id": "run2",
+      "route_key": "glucose/run2",
+      "system": "glucose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    },
+    {
+      "complete_0_to_15_by_0_3A_coverage": true,
+      "expected_window_count": 51,
+      "label": null,
+      "mapped_wham_key": "glucose/US-3",
+      "median_histogram_to_trajectory_frame_ratio": 150.01,
+      "missing_window_centres_A": [],
+      "route_content_signature_sha256": "7cba509885d691938f50607110e239287e01f46fff417afed1fe662cacc16a2b",
+      "route_id": "run3",
+      "route_key": "glucose/run3",
+      "system": "glucose",
+      "trajectory_file_count": 51,
+      "trajectory_frames_per_window_values": [
+        100
+      ],
+      "trajectory_frames_total": 5100,
+      "unexpected_window_centres_A": [],
+      "unique_trajectory_content_count": 51,
+      "wham_centres_match_trajectory_centres": true,
+      "wham_frames_maximum_window": 15001,
+      "wham_frames_median_window": 15001.0,
+      "wham_frames_minimum_window": 15001,
+      "wham_window_count": 51,
+      "window_centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "within_route_duplicate_group_count": 0,
+      "within_route_duplicate_groups": []
+    }
+  ],
+  "schema": "dia-health-one.gluhut-us-route-lineage.v1",
+  "scope": "public GluHUT umbrella trajectory archive versus deposited WHAM routes",
+  "status": "route_window_coverage_reconciled_full_resolution_histogram_lineage_missing",
+  "trajectory_file_count": 714,
+  "unique_complete_route_content_signature_count": 13,
+  "wham_route_to_umbrella_directories": {
+    "fructofuranose/US-1": [
+      "fructofuranose/run1"
+    ],
+    "fructofuranose/US-2": [
+      "fructofuranose/run2"
+    ],
+    "fructofuranose/US-3": [
+      "fructofuranose/run3"
+    ],
+    "fructopyranose/US-1": [
+      "fructopyranose/run1"
+    ],
+    "fructopyranose/US-2": [
+      "fructopyranose/run2"
+    ],
+    "fructopyranose/US-3": [
+      "fructopyranose/run3"
+    ],
+    "galactose/US-1": [
+      "galactose/run1b"
+    ],
+    "galactose/US-2": [
+      "galactose/run2b"
+    ],
+    "galactose/US-3": [
+      "galactose/run3b"
+    ],
+    "galactose/US-routeA": [
+      "galactose/run4a",
+      "galactose/run5a"
+    ],
+    "glucose/US-1": [
+      "glucose/run1"
+    ],
+    "glucose/US-2": [
+      "glucose/run2"
+    ],
+    "glucose/US-3": [
+      "glucose/run3"
+    ]
+  },
+  "within_route_duplicate_groups_by_route": {
+    "galactose/run1b": [
+      {
+        "centres_A": [
+          0.0,
+          0.3
+        ],
+        "file_count": 2,
+        "paths": [
+          "US_Trajectories/galactose/run 1 (b)/prod-0-0-100-frames.binpos",
+          "US_Trajectories/galactose/run 1 (b)/prod-0-3-100-frames.binpos"
+        ],
+        "sha256": "177c7cad3bbeb5392d97384e6c7e81a51a3006167fe9a38eef0a91c9a300a656"
+      }
+    ],
+    "galactose/run2b": [
+      {
+        "centres_A": [
+          0.0,
+          0.3
+        ],
+        "file_count": 2,
+        "paths": [
+          "US_Trajectories/galactose/run 2 (b)/prod-0-0-100-frames.binpos",
+          "US_Trajectories/galactose/run 2 (b)/prod-0-3-100-frames.binpos"
+        ],
+        "sha256": "c32f36783a381a7b03ca4bab3c6483ebf6918b77a1b04f1de257fb31994d140d"
+      }
+    ]
+  }
+}
