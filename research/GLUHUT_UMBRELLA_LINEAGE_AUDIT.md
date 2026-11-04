@@ -200,3 +200,10 @@ The requested package now includes:
 ## Evidence boundary
 
 This is a provenance audit of public umbrella trajectory and WHAM files. It is not a new PMF, a binding affinity, an NNC2215 result, a PaG result, an MC-Q1 result, efficacy, safety or a working-drug result.
+
+## Delivery status
+
+The umbrella-specific provenance addendum was **not sent** on 4 November 2026 because Gmail returned an outbound rate-limit error. The complete message was saved as a draft in the existing Wayne Powell / Anthony Davis thread.
+
+Earlier source-parameter, SMD atom-selection and endpoint-provenance requests were sent successfully. The umbrella addendum remains queued and must not be represented as delivered until Gmail confirms a successful send.
+
