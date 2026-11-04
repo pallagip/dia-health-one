@@ -1,0 +1,98 @@
+{
+ "schema": "dia-health-one.mc-proxy-coordinate-package.v1",
+ "updated": "2026-11-04",
+ "title": "NNC2215 macrocycle proxy coordinate package",
+ "purpose": "Public record of the Dia Health One generated macrocycle and glucose proxy coordinates. These are model-generated geometry inputs for a clearly labelled proxy study. They are not the 2026 in-house crystal structure, not full NNC2215 and not simulation outputs.",
+ "status_terms": {
+  "kind": "model-generated proxy input",
+  "is_2026_inhouse_crystal": false,
+  "is_full_nnc2215": false,
+  "is_experimental_structure": false,
+  "basis": "public 2024 author-built models (Figshare 26526460) and the Nature Extended Data Fig. 8i macrocycle graph",
+  "affinity_result": false
+ },
+ "source_reference": {
+  "figure": "Nature 2024 Extended Data Fig. 8i",
+  "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-024-08042-3/MediaObjects/41586_2024_8042_Fig13_ESM.jpg",
+  "reported_roof_formula": "C56H63N15O12",
+  "author_models_doi": "10.6084/m9.figshare.26526460.v1",
+  "author_models_license": "CC BY 4.0"
+ },
+ "artifacts": [
+  {
+   "id": "MC-PROXY-TRICARBOXYLATE",
+   "label": "Macrocycle proxy, tricarboxylate microstate",
+   "role": "Constrained macrocycle built on the open-model heavy-atom coordinates",
+   "file_sdf": "proxy/inputs/macrocycle_fig8i_tricarboxylate.sdf",
+   "file_mol": "proxy/inputs/macrocycle_fig8i_tricarboxylate.mol",
+   "format": "MDL molfile / SDF",
+   "atoms_total": 143,
+   "bonds_total": 149,
+   "element_counts": {
+    "C": 56,
+    "H": 60,
+    "N": 15,
+    "O": 12
+   },
+   "formula": "C56H60N15O12",
+   "formal_charge": -3,
+   "microstate_assumption": "Three aryl carboxylates deprotonated at pH 7.4; ureas and azide neutral. Matches the deprotonated carboxylates recorded in both model PDBs.",
+   "generation": "RDKit ETKDGv3 embedding (randomSeed 2215) with the open-model mapped heavy atoms used as an explicit coordinate map (CoordMap), Kabsch-aligned to the model frame, then MMFF94 minimisation with 100 kcal/mol/A^2 position restraints on the mapped atoms.",
+   "coordinates_mapped_to_open_model_heavy_atoms": 56,
+   "rmsd_to_open_model_A": "restrained to the mapped open-model heavy atoms (reported as reproduced positionally; not an independent structural refinement)",
+   "note": "Roof methyl carbons take the model C27/C29 positions; the propyl-azide tail carbons C22-C23 and N3 are newly embedded. This is a model-generated geometry, not an author coordinate set."
+  },
+  {
+   "id": "MC-PROXY-GLUCOSE",
+   "label": "Glucose reference pose",
+   "role": "Beta-D-glucose reference pose taken from the open model",
+   "file_sdf": "proxy/inputs/glucose_model_pose.sdf",
+   "format": "MDL molfile / SDF",
+   "atoms_total": 24,
+   "bonds_total": 24,
+   "element_counts": {
+    "C": 6,
+    "H": 12,
+    "O": 6
+   },
+   "formula": "C6H12O6",
+   "formal_charge": 0,
+   "stereo_check": "3D-assigned stereochemistry canonicalises to the same SMILES as beta-D-glucopyranose.",
+   "min_heavy_distance_to_macrocycle_A": 0.5,
+   "centroid_to_macrocycle_centroid_A": 0.96,
+   "note": "The glucose reference pose and the constrained macrocycle overlap at this geometry (minimum heavy-atom separation 0.504 A, centroid separation 0.958 A). This is reported as measured: it is the same steric overlap that causes every rigid PaG conformer to be rejected below, and it means the two published model components cannot be used together as a bound glucose complex without a documented pose protocol.",
+   "source": "Open-model residue BGLC (chain D, 24 atoms including hydrogens)"
+  }
+ ],
+ "excess_carbon_audit": {
+  "record": "proxy/data/nnc2215-mc-excess-carbon-audit.json",
+  "finding": "Both public model PDBs carry a 64-carbon macrocycle heavy-element pool against the Fig 8i C56 macrocycle graph (the roof ring has 2-carbon ethyl substituents where the figure draws methyls).",
+  "pool_heavy_counts_original_pdbs": {
+   "C": 64,
+   "N": 15,
+   "O": 14
+  },
+  "expected_fig8i_macrocycle_formula": "C56H63N15O12",
+  "resolution_in_proxy": "The proxy macrocycle is built from the Fig 8i C56 neutral graph; the two excess roof-ethyl terminal carbons are removed for graph isomorphism. Their positions remain a documented model inference, not an author atom map."
+ },
+ "pag_pose": {
+  "status": "NOT GENERATED",
+  "reason": "The pre-registered glucose-mimetic placement hypothesis did not hold for this macrocycle geometry. 300 ETKDGv3 PaG conformers were generated and rigidly aligned to the 11 mapped glucose ring atoms; every conformer had a heavy-atom clash with the macrocycle. Minimum heavy-atom distances were 0.27, 0.45, 1.04, 1.11 and 1.23 A at the min, 10th, 50th, 90th and 100th percentiles.",
+  "pre_registered_filter": "Reject any conformer with a PaG heavy atom closer than 2.0 A to a macrocycle heavy atom; fallback threshold 1.6 A. Zero conformers passed either filter.",
+  "consequence": "The failure is a result about the pose hypothesis, so no PaG coordinate is published. PaG placement remains an open gate and needs either author coordinates or a separately pre-registered strategy.",
+  "script": "proxy/prepare_macrocycle_proxy.py",
+  "procedure_documented": true
+ },
+ "what_this_does_not_establish": [
+  "That these coordinates reproduce the 2026 in-house crystal structure.",
+  "That the macrocycle bond orders, stereochemistry, protonation or charges are validated.",
+  "Any glucose or PaG binding affinity, selectivity or receptor activity.",
+  "A simulation-ready topology or force field.",
+  "A physical PaG bound pose."
+ ],
+ "provenance": {
+  "generated_by": "Dia Health One research tooling (RDKit 2026.03.1)",
+  "generation_date": "2026-10-30",
+  "environment_note": "Local research environment; the interactive viewer reads the published coordinates directly and does not prepare or validate chemistry."
+ }
+}
