@@ -169,6 +169,8 @@
     .method-visual { margin-top: 34px; display: flex; align-items: center; gap: 10px; color: #81808a; font: 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
     .method-visual .line { height: 1px; flex: 1; background: linear-gradient(90deg, #b8a9db, #93bc75); position: relative; }
     .method-visual .line::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #93bc75; position: absolute; right: 0; top: -3px; }
+    .method-status { margin: 24px 0 0; font-size: 13px; line-height: 1.5; }
+    .method-status a { color: var(--purple-dark); font-weight: 700; }
     .team-section { background: #f0edf6; }
     .team-heading { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 42px; }
     .team-heading h2 { margin: 18px 0 0; max-width: 610px; font-size: clamp(38px, 5vw, 62px); line-height: 1.03; letter-spacing: -.065em; font-weight: 600; }
@@ -249,8 +251,10 @@
       <a href="#challenge">The challenge</a>
       <a href="#approach">Our approach</a>
       <a href="#team">Founders</a>
+      <a href="/research/status/">Research status</a>
     </nav>
     <div class="topbar-actions">
+      <a class="research-link" href="/research/status/">Status</a>
       <a class="research-link" href="/research/">Research Demo</a>
       <a class="contact-link" href="mailto:patrik@diahealth.one?subject=DIA%20HEALTH%20ONE%20%E2%80%94%20Hello">Contact</a>
     </div>
@@ -312,6 +316,7 @@
       <div class="reveal">
         <div class="method-copy"><p>We compute the target, then falsify mechanisms analytically.</p><p>Each hypothesis is tested in days, not years.</p></div>
         <div class="method-visual"><span>Target</span><i class="line"></i><span>Mechanism</span><i class="line"></i><span>Evidence</span></div>
+        <p class="method-status"><a href="/research/status/">See where every claim stands — published facts, reproduced computation and untested chemistry ↗</a></p>
       </div>
     </section>
 
