@@ -77,5 +77,36 @@ class ContactStatusCorrectionTests(unittest.TestCase):
             self.assertIn("was **not sent**", record_path.read_text())
 
 
+
+    def test_confirmed_delivery_preserved(self) -> None:
+        status = {
+            "external_execution": {
+                "author_umbrella_lineage_clarification_sent": False,
+                "author_umbrella_lineage_clarification_sent_message_id": module.SENT_MESSAGE_ID,
+                "author_umbrella_lineage_clarification_sent_thread_id": module.SENT_THREAD_ID,
+            },
+        }
+        first = module.correct_status(status)
+        second = module.correct_status(first)
+        self.assertEqual(first, second)
+        external = first["external_execution"]
+        self.assertTrue(external["author_umbrella_lineage_clarification_sent"])
+        self.assertFalse(external["author_umbrella_lineage_clarification_draft_pending"])
+        self.assertEqual(external["author_umbrella_lineage_clarification_status"], module.DELIVERED_VALUE)
+
+    def test_sent_record_is_idempotent(self) -> None:
+        first = module.correct_record("# Record\n", delivered=True)
+        self.assertEqual(module.correct_record(first, delivered=True), first)
+        self.assertIn("1a1a8f2999166f97", first)
+        self.assertIn("Gmail send", first)
+        with self.assertRaises(module.CorrectionError):
+            module.correct_record(first, delivered=False)
+
+    def test_unchanged_historical_note_is_replaced_after_gmail_confirmation(self) -> None:
+        historical = module.correct_record("# Record\n", delivered=False)
+        delivered = module.correct_record(historical, delivered=True)
+        self.assertNotIn("was **not sent**", delivered)
+        self.assertIn("**Delivered:**", delivered)
+
 if __name__ == "__main__":
     unittest.main()
