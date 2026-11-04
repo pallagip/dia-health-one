@@ -1,5 +1,5 @@
 {
-  "schema": "dia-health-one.public-confidence-status.v2",
+  "schema": "dia-health-one.public-confidence-status.v3",
   "updated": "2026-11-04",
   "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
@@ -37,14 +37,26 @@
     "independent_numpy_glucose_max_absolute_difference_kcal_per_mol": 0.000454,
     "common_compiled_host_across_four_sugars": true,
     "compiled_host_atom_count": 159,
+    "compiled_host_formula": "C60H75N15O9",
+    "compiled_host_heavy_atom_count": 84,
+    "compiled_host_cycle_rank": 7,
+    "compiled_host_urea_carbonyl_count": 6,
+    "compiled_host_amide_carbonyl_count": 3,
+    "compiled_host_methyl_group_count": 9,
     "compiled_host_physical_fingerprint_sha256": "78e512d17cf1a9db672f22da49a3e59f96bb0af7dae5c059e8a4d1353de46cb1",
+    "combined_guest_formula": "C6H12O6",
+    "combined_guest_neutral": true,
+    "roh_is_counterion": false,
+    "roh_is_covalently_part_of_guest": true,
     "fructofuranose_us2_short_window_gate_passed": false,
     "fructofuranose_us2_exclusion_shift_kcal_per_mol": 0.707,
     "source_resp_gaff_glycam_generation_available": false,
     "standalone_start_coordinates_available": false,
+    "source_graph_fully_reconciled": false,
     "pag_calibration_completed": false,
     "candidate_ranking_authorized": false,
-    "record": "../AWS1_NO_AWS_RESULTS.md"
+    "calibration_record": "../AWS1_NO_AWS_RESULTS.md",
+    "graph_chemistry_record": "../GLUHUT_GRAPH_CHEMISTRY_AUDIT.md"
   },
   "minimum_physical_experiment": [
     "MC-P0",
@@ -61,23 +73,24 @@
     "must_outperform_positional_control": true
   },
   "aws_execution": {
-    "current_gate": "AWS-1 public analysis reproduced; chemistry provenance and parent PaG calibration pending",
+    "current_gate": "AWS-1 public analysis and compiled graph chemistry audited; source graph, restraint mapping, parameter provenance and parent PaG calibration pending",
     "candidate_screen_authorized": false,
     "boltz_host_guest_affinity_authorized": false,
     "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
     "aws_credits_spent_usd": 0,
-    "next_action": "reconcile the compiled 159-atom host with an exact chemical graph and obtain source parameter provenance before parent glucose-versus-PaG calibration"
+    "next_action": "map the SMD restraint groups, reconcile the compiled C60H75N15O9 host with the published truncated chemical graph, and obtain source parameter provenance before parent glucose-versus-PaG calibration"
   },
   "external_execution": {
     "author_parameter_request_sent": true,
     "nnc2215_pag_source_request_sent": true,
     "carbometrics_feasibility_request_sent": true,
     "spirochem_synthesis_request_sent": true,
-    "domainex_binding_request_status": "queued_after_temporary_gmail_rate_limit",
+    "domainex_binding_request_status": "sent",
     "reply_watch_enabled": true
   },
   "next_confidence_changes": [
-    "reconcile the compiled GluHUT host with an exact chemical graph",
+    "map deposited SMD restraint atom groups to exact host and guest atoms",
+    "reconcile the compiled C60H75N15O9 host with the published truncated chemical graph",
     "obtain RESP/GAFF/GLYCAM and start-coordinate provenance",
     "calibrate a source-matched parent glucose-versus-PaG calculation",
     "obtain provider acceptance and synthesis quotation",
