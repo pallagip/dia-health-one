@@ -1,0 +1,116 @@
+name: Inventory GluHUT umbrella trajectories
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-us-archive-inventory
+    paths:
+      - "research/audit_gluhut_us_archive.py"
+      - "tests/test_audit_gluhut_us_archive.py"
+      - ".github/workflows/gluhut-us-archive-inventory.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-us-archive-inventory-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ARCHIVE_MD5: c460e6a1ee97ac531fc284d8f07e381e
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_us_archive.py -v
+
+      - name: Acquire and verify public umbrella archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/US_Trajectories.zip \
+            'https://zenodo.org/api/records/19664426/files/US_Trajectories.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/US_Trajectories.zip" | md5sum --check --strict
+
+      - name: Inventory archive
+        run: |
+          python research/audit_gluhut_us_archive.py \
+            --archive /tmp/US_Trajectories.zip \
+            --output-json research/data/gluhut-us-archive-inventory.json \
+            | tee /tmp/us-archive-summary.json
+
+      - name: Validate bounded conclusions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(
+              Path('research/data/gluhut-us-archive-inventory.json').read_text()
+          )
+          decision = data['decision']
+          archive = data['archive']
+          assert archive['size_bytes'] == 123756824
+          assert archive['md5'] == 'c460e6a1ee97ac531fc284d8f07e381e'
+          assert archive['crc_verified'] is True
+          assert archive['file_count'] > 0
+          assert decision['archive_integrity_verified'] is True
+          assert decision['unsafe_or_encrypted_members_detected'] is False
+          assert decision['route_and_window_lineage_validated'] is False
+          assert decision['histogram_generation_reproduced'] is False
+          assert decision['pmf_recalculation_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          assert sum(data['extension_counts'].values()) == archive['file_count']
+          assert sum(data['system_file_counts'].values()) == archive['file_count']
+          print(json.dumps({
+              'archive': archive,
+              'extension_counts': data['extension_counts'],
+              'classification_counts': data['classification_counts'],
+              'system_file_counts': data['system_file_counts'],
+              'top_level_file_counts': data['top_level_file_counts'],
+              'duplicate_groups': data['duplicate_file_content_groups'],
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit deterministic inventory
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-us-archive-inventory.json
+          if git diff --cached --quiet; then
+            echo 'No inventory changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT umbrella archive inventory'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT umbrella trajectory archive inventory'
+            echo
+            if [ -f /tmp/us-archive-summary.json ]; then
+              echo '```json'
+              cat /tmp/us-archive-summary.json
+              echo '```'
+            else
+              echo 'No inventory summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
