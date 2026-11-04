@@ -1,0 +1,2779 @@
+{
+  "archive": {
+    "crc_verified": true,
+    "filename": "SMD_trajectories.zip",
+    "md5": "9f3c6733dc608d2bd37c488c560a5443",
+    "sha256": "04c58666328764aeb47bac0d9f8607546f9763892cb9a333b108630df70e3943",
+    "size_bytes": 37931874
+  },
+  "cross_system": {
+    "all_checks": {
+      "all_pillars_have_one_N_methyl_benzamide": true,
+      "both_caps_have_three_ethyl_three_methylene_pattern": true,
+      "five_aromatic_six_member_rings": true,
+      "host_formula_matches": true,
+      "no_other_oxygenated_carbons": true,
+      "six_urea_carbonyls": true,
+      "three_amide_carbonyls": true,
+      "three_pillars": true,
+      "two_caps": true,
+      "ureas_form_complete_K2_3_cap_pillar_graph": true
+    },
+    "architecture_signature_identical_across_four_sugars": true,
+    "architecture_signature_sha256": "641d6d491682d17e3f170d8340ce8087ae0eb1e9c6d57e420715c0c7a5b4f6a5"
+  },
+  "decision": {
+    "candidate_ranking_authorized": false,
+    "compiled_formula_reconciled_to_published_truncated_architecture": true,
+    "compiled_graph_matches_published_truncated_host": true,
+    "exact_author_atom_names_and_source_build_files_available": false,
+    "force_field_chemically_validated": false,
+    "mcq1_parameter_transfer_authorized": false,
+    "next_action": "request source mol2/RESP/frcmod/tleap and starting coordinates; validate the compiled charges and GAFF terms against those files before parent PaG work",
+    "parent_pag_calibration_authorized": false,
+    "resp_gaff_derivation_reconstructable": false,
+    "two_cap_three_pillar_six_urea_architecture_reconciled": true
+  },
+  "limitations": [
+    "The published architecture is reconciled at molecular-graph and formula level, not by an author-supplied atom-name map.",
+    "AMBER atom types and numerical terms remain compiled outputs whose source derivation is unavailable.",
+    "Formula and motif agreement do not validate partial charges, protonation, conformational sampling, or transferability.",
+    "The simulated object is the methyl-truncated public host, not full receptor 2 or the NNC2215 conjugate."
+  ],
+  "not_target_claim": "not complete receptor 2, not NNC2215, not PaG or MC-Q1 affinity, not efficacy, safety, or a drug result",
+  "primary_sources": [
+    {
+      "doi": "10.1038/s41557-018-0155-z",
+      "evidence": "2019 receptor design and synthesis figures show two triethyl aromatic caps, three benzamide-containing pillars, six urea bridges, and three outer solubilising amide substituents."
+    },
+    {
+      "doi": "10.1039/D6SC00738D",
+      "evidence": "2026 methods state that the polycarboxylate dendrimer was removed at the outer amide linker and replaced with methyl for the simulation model."
+    }
+  ],
+  "published_module_formula_bookkeeping": {
+    "calculated_total": {
+      "C": 60,
+      "H": 75,
+      "N": 15,
+      "O": 9
+    },
+    "calculated_total_string": "C60H75N15O9",
+    "matches_expected_host_formula": true,
+    "modules": {
+      "six_urea_carbonyls": {
+        "formula": {
+          "C": 1,
+          "O": 1
+        },
+        "multiplicity": 6
+      },
+      "three_N_methyl_diaminobenzamide_pillars": {
+        "formula": {
+          "C": 8,
+          "H": 9,
+          "N": 3,
+          "O": 1
+        },
+        "multiplicity": 3
+      },
+      "two_triethyl_tris_methylene_caps_with_three_NH_each": {
+        "formula": {
+          "C": 15,
+          "H": 24,
+          "N": 3
+        },
+        "multiplicity": 2
+      }
+    }
+  },
+  "schema": "dia-health-one.gluhut-truncated-architecture-reconciliation.v1",
+  "scope": "public truncated GluHUT host graph in four deposited AMBER systems",
+  "status": "compiled_graph_matches_published_truncated_architecture",
+  "systems": [
+    {
+      "architecture_signature_sha256": "641d6d491682d17e3f170d8340ce8087ae0eb1e9c6d57e420715c0c7a5b4f6a5",
+      "cap_audits": [
+        {
+          "branch_classification_counts": {
+            "ethyl_CH2_to_CH3": 3,
+            "methylene_to_urea_N": 3
+          },
+          "branches": [
+            {
+              "branch_carbon_atom_1_based": 2,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C2",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                1
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 6,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C6",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                7
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 9,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C9",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                10
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 26,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C20",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                27
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 29,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C23",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                30
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 77,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C57",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                76
+              ]
+            }
+          ],
+          "matches_three_ethyl_three_methylene_pattern": true,
+          "ring_id": "ring_1"
+        },
+        {
+          "branch_classification_counts": {
+            "ethyl_CH2_to_CH3": 3,
+            "methylene_to_urea_N": 3
+          },
+          "branches": [
+            {
+              "branch_carbon_atom_1_based": 46,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C34",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                45
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 49,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C37",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                50
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 52,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C40",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                53
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 57,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C43",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                58
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 60,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C46",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                61
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 81,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C59",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                82
+              ]
+            }
+          ],
+          "matches_three_ethyl_three_methylene_pattern": true,
+          "ring_id": "ring_4"
+        }
+      ],
+      "carbonyl_groups": [
+        {
+          "atom_1_based": 11,
+          "atom_name": "C10",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            10,
+            12,
+            24
+          ]
+        },
+        {
+          "atom_1_based": 17,
+          "atom_name": "C15",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            16,
+            18,
+            20
+          ]
+        },
+        {
+          "atom_1_based": 31,
+          "atom_name": "C24",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            30,
+            32,
+            84
+          ]
+        },
+        {
+          "atom_1_based": 37,
+          "atom_name": "C29",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            36,
+            38,
+            40
+          ]
+        },
+        {
+          "atom_1_based": 44,
+          "atom_name": "C33",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            43,
+            45,
+            83
+          ]
+        },
+        {
+          "atom_1_based": 54,
+          "atom_name": "C41",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            23,
+            53,
+            55
+          ]
+        },
+        {
+          "atom_1_based": 62,
+          "atom_name": "C47",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            61,
+            63,
+            79
+          ]
+        },
+        {
+          "atom_1_based": 67,
+          "atom_name": "C51",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            66,
+            68,
+            70
+          ]
+        },
+        {
+          "atom_1_based": 75,
+          "atom_name": "C56",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            74,
+            76,
+            78
+          ]
+        }
+      ],
+      "checks": {
+        "all_pillars_have_one_N_methyl_benzamide": true,
+        "both_caps_have_three_ethyl_three_methylene_pattern": true,
+        "five_aromatic_six_member_rings": true,
+        "host_formula_matches": true,
+        "no_other_oxygenated_carbons": true,
+        "six_urea_carbonyls": true,
+        "three_amide_carbonyls": true,
+        "three_pillars": true,
+        "two_caps": true,
+        "ureas_form_complete_K2_3_cap_pillar_graph": true
+      },
+      "expected_K2_3_pairs": [
+        [
+          "ring_1",
+          "ring_2"
+        ],
+        [
+          "ring_1",
+          "ring_3"
+        ],
+        [
+          "ring_1",
+          "ring_5"
+        ],
+        [
+          "ring_4",
+          "ring_2"
+        ],
+        [
+          "ring_4",
+          "ring_3"
+        ],
+        [
+          "ring_4",
+          "ring_5"
+        ]
+      ],
+      "host_formula": {
+        "C": 60,
+        "H": 75,
+        "N": 15,
+        "O": 9
+      },
+      "host_formula_string": "C60H75N15O9",
+      "observed_urea_pairs": [
+        [
+          "ring_1",
+          "ring_2"
+        ],
+        [
+          "ring_1",
+          "ring_3"
+        ],
+        [
+          "ring_1",
+          "ring_5"
+        ],
+        [
+          "ring_4",
+          "ring_2"
+        ],
+        [
+          "ring_4",
+          "ring_3"
+        ],
+        [
+          "ring_4",
+          "ring_5"
+        ]
+      ],
+      "path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "pillar_audits": [
+        {
+          "amide_N_methyl_carbon_atom_1_based": 19,
+          "amide_carbonyl_atom_1_based": 17,
+          "amide_nitrogen_atom_1_based": 18,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_2"
+        },
+        {
+          "amide_N_methyl_carbon_atom_1_based": 39,
+          "amide_carbonyl_atom_1_based": 37,
+          "amide_nitrogen_atom_1_based": 38,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_3"
+        },
+        {
+          "amide_N_methyl_carbon_atom_1_based": 69,
+          "amide_carbonyl_atom_1_based": 67,
+          "amide_nitrogen_atom_1_based": 68,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_5"
+        }
+      ],
+      "rings": [
+        {
+          "atom_indices_1_based": [
+            3,
+            4,
+            5,
+            8,
+            25,
+            28
+          ],
+          "atom_names": [
+            "C3",
+            "C4",
+            "C5",
+            "C8",
+            "C19",
+            "C22"
+          ],
+          "classification": "triethyl_tris_methylene_cap",
+          "external_heavy_atom_indices_1_based": [
+            2,
+            6,
+            9,
+            26,
+            29,
+            77
+          ],
+          "external_heavy_elements": {
+            "C": 6
+          },
+          "ring_hydrogen_atom_indices_1_based": [],
+          "ring_hydrogen_count": 0,
+          "ring_id": "ring_1"
+        },
+        {
+          "atom_indices_1_based": [
+            13,
+            14,
+            15,
+            16,
+            21,
+            22
+          ],
+          "atom_names": [
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C17",
+            "C18"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            12,
+            17,
+            23
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            99,
+            100,
+            105
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_2"
+        },
+        {
+          "atom_indices_1_based": [
+            33,
+            34,
+            35,
+            36,
+            41,
+            42
+          ],
+          "atom_names": [
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C31",
+            "C32"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            32,
+            37,
+            43
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            116,
+            117,
+            122
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_3"
+        },
+        {
+          "atom_indices_1_based": [
+            47,
+            48,
+            51,
+            56,
+            59,
+            80
+          ],
+          "atom_names": [
+            "C35",
+            "C36",
+            "C39",
+            "C42",
+            "C45",
+            "C58"
+          ],
+          "classification": "triethyl_tris_methylene_cap",
+          "external_heavy_atom_indices_1_based": [
+            46,
+            49,
+            52,
+            57,
+            60,
+            81
+          ],
+          "external_heavy_elements": {
+            "C": 6
+          },
+          "ring_hydrogen_atom_indices_1_based": [],
+          "ring_hydrogen_count": 0,
+          "ring_id": "ring_4"
+        },
+        {
+          "atom_indices_1_based": [
+            64,
+            65,
+            66,
+            71,
+            72,
+            73
+          ],
+          "atom_names": [
+            "C48",
+            "C49",
+            "C50",
+            "C53",
+            "C54",
+            "C55"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            63,
+            67,
+            74
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            144,
+            149,
+            150
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_5"
+        }
+      ],
+      "sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47",
+      "system_name": "fructofuranose",
+      "urea_connections": [
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 9,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 10,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            },
+            {
+              "attachment_atom_1_based": 13,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 12,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_2"
+            }
+          ],
+          "pillar_ring_id": "ring_2",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 11
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 29,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 30,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            },
+            {
+              "attachment_atom_1_based": 33,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 32,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_3"
+            }
+          ],
+          "pillar_ring_id": "ring_3",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 31
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 73,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 74,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_5"
+            },
+            {
+              "attachment_atom_1_based": 77,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 76,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            }
+          ],
+          "pillar_ring_id": "ring_5",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 75
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 22,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 23,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_2"
+            },
+            {
+              "attachment_atom_1_based": 52,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 53,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            }
+          ],
+          "pillar_ring_id": "ring_2",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 54
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 42,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 43,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_3"
+            },
+            {
+              "attachment_atom_1_based": 46,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 45,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            }
+          ],
+          "pillar_ring_id": "ring_3",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 44
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 60,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 61,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            },
+            {
+              "attachment_atom_1_based": 64,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 63,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_5"
+            }
+          ],
+          "pillar_ring_id": "ring_5",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 62
+        }
+      ]
+    },
+    {
+      "architecture_signature_sha256": "641d6d491682d17e3f170d8340ce8087ae0eb1e9c6d57e420715c0c7a5b4f6a5",
+      "cap_audits": [
+        {
+          "branch_classification_counts": {
+            "ethyl_CH2_to_CH3": 3,
+            "methylene_to_urea_N": 3
+          },
+          "branches": [
+            {
+              "branch_carbon_atom_1_based": 2,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C2",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                1
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 6,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C6",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                7
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 9,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C9",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                10
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 26,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C20",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                27
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 29,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C23",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                30
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 77,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C57",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                76
+              ]
+            }
+          ],
+          "matches_three_ethyl_three_methylene_pattern": true,
+          "ring_id": "ring_1"
+        },
+        {
+          "branch_classification_counts": {
+            "ethyl_CH2_to_CH3": 3,
+            "methylene_to_urea_N": 3
+          },
+          "branches": [
+            {
+              "branch_carbon_atom_1_based": 46,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C34",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                45
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 49,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C37",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                50
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 52,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C40",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                53
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 57,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C43",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                58
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 60,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C46",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                61
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 81,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C59",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                82
+              ]
+            }
+          ],
+          "matches_three_ethyl_three_methylene_pattern": true,
+          "ring_id": "ring_4"
+        }
+      ],
+      "carbonyl_groups": [
+        {
+          "atom_1_based": 11,
+          "atom_name": "C10",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            10,
+            12,
+            24
+          ]
+        },
+        {
+          "atom_1_based": 17,
+          "atom_name": "C15",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            16,
+            18,
+            20
+          ]
+        },
+        {
+          "atom_1_based": 31,
+          "atom_name": "C24",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            30,
+            32,
+            84
+          ]
+        },
+        {
+          "atom_1_based": 37,
+          "atom_name": "C29",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            36,
+            38,
+            40
+          ]
+        },
+        {
+          "atom_1_based": 44,
+          "atom_name": "C33",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            43,
+            45,
+            83
+          ]
+        },
+        {
+          "atom_1_based": 54,
+          "atom_name": "C41",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            23,
+            53,
+            55
+          ]
+        },
+        {
+          "atom_1_based": 62,
+          "atom_name": "C47",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            61,
+            63,
+            79
+          ]
+        },
+        {
+          "atom_1_based": 67,
+          "atom_name": "C51",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            66,
+            68,
+            70
+          ]
+        },
+        {
+          "atom_1_based": 75,
+          "atom_name": "C56",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            74,
+            76,
+            78
+          ]
+        }
+      ],
+      "checks": {
+        "all_pillars_have_one_N_methyl_benzamide": true,
+        "both_caps_have_three_ethyl_three_methylene_pattern": true,
+        "five_aromatic_six_member_rings": true,
+        "host_formula_matches": true,
+        "no_other_oxygenated_carbons": true,
+        "six_urea_carbonyls": true,
+        "three_amide_carbonyls": true,
+        "three_pillars": true,
+        "two_caps": true,
+        "ureas_form_complete_K2_3_cap_pillar_graph": true
+      },
+      "expected_K2_3_pairs": [
+        [
+          "ring_1",
+          "ring_2"
+        ],
+        [
+          "ring_1",
+          "ring_3"
+        ],
+        [
+          "ring_1",
+          "ring_5"
+        ],
+        [
+          "ring_4",
+          "ring_2"
+        ],
+        [
+          "ring_4",
+          "ring_3"
+        ],
+        [
+          "ring_4",
+          "ring_5"
+        ]
+      ],
+      "host_formula": {
+        "C": 60,
+        "H": 75,
+        "N": 15,
+        "O": 9
+      },
+      "host_formula_string": "C60H75N15O9",
+      "observed_urea_pairs": [
+        [
+          "ring_1",
+          "ring_2"
+        ],
+        [
+          "ring_1",
+          "ring_3"
+        ],
+        [
+          "ring_1",
+          "ring_5"
+        ],
+        [
+          "ring_4",
+          "ring_2"
+        ],
+        [
+          "ring_4",
+          "ring_3"
+        ],
+        [
+          "ring_4",
+          "ring_5"
+        ]
+      ],
+      "path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "pillar_audits": [
+        {
+          "amide_N_methyl_carbon_atom_1_based": 19,
+          "amide_carbonyl_atom_1_based": 17,
+          "amide_nitrogen_atom_1_based": 18,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_2"
+        },
+        {
+          "amide_N_methyl_carbon_atom_1_based": 39,
+          "amide_carbonyl_atom_1_based": 37,
+          "amide_nitrogen_atom_1_based": 38,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_3"
+        },
+        {
+          "amide_N_methyl_carbon_atom_1_based": 69,
+          "amide_carbonyl_atom_1_based": 67,
+          "amide_nitrogen_atom_1_based": 68,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_5"
+        }
+      ],
+      "rings": [
+        {
+          "atom_indices_1_based": [
+            3,
+            4,
+            5,
+            8,
+            25,
+            28
+          ],
+          "atom_names": [
+            "C3",
+            "C4",
+            "C5",
+            "C8",
+            "C19",
+            "C22"
+          ],
+          "classification": "triethyl_tris_methylene_cap",
+          "external_heavy_atom_indices_1_based": [
+            2,
+            6,
+            9,
+            26,
+            29,
+            77
+          ],
+          "external_heavy_elements": {
+            "C": 6
+          },
+          "ring_hydrogen_atom_indices_1_based": [],
+          "ring_hydrogen_count": 0,
+          "ring_id": "ring_1"
+        },
+        {
+          "atom_indices_1_based": [
+            13,
+            14,
+            15,
+            16,
+            21,
+            22
+          ],
+          "atom_names": [
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C17",
+            "C18"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            12,
+            17,
+            23
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            99,
+            100,
+            105
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_2"
+        },
+        {
+          "atom_indices_1_based": [
+            33,
+            34,
+            35,
+            36,
+            41,
+            42
+          ],
+          "atom_names": [
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C31",
+            "C32"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            32,
+            37,
+            43
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            116,
+            117,
+            122
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_3"
+        },
+        {
+          "atom_indices_1_based": [
+            47,
+            48,
+            51,
+            56,
+            59,
+            80
+          ],
+          "atom_names": [
+            "C35",
+            "C36",
+            "C39",
+            "C42",
+            "C45",
+            "C58"
+          ],
+          "classification": "triethyl_tris_methylene_cap",
+          "external_heavy_atom_indices_1_based": [
+            46,
+            49,
+            52,
+            57,
+            60,
+            81
+          ],
+          "external_heavy_elements": {
+            "C": 6
+          },
+          "ring_hydrogen_atom_indices_1_based": [],
+          "ring_hydrogen_count": 0,
+          "ring_id": "ring_4"
+        },
+        {
+          "atom_indices_1_based": [
+            64,
+            65,
+            66,
+            71,
+            72,
+            73
+          ],
+          "atom_names": [
+            "C48",
+            "C49",
+            "C50",
+            "C53",
+            "C54",
+            "C55"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            63,
+            67,
+            74
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            144,
+            149,
+            150
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_5"
+        }
+      ],
+      "sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb",
+      "system_name": "fructopyranose",
+      "urea_connections": [
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 9,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 10,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            },
+            {
+              "attachment_atom_1_based": 13,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 12,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_2"
+            }
+          ],
+          "pillar_ring_id": "ring_2",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 11
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 29,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 30,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            },
+            {
+              "attachment_atom_1_based": 33,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 32,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_3"
+            }
+          ],
+          "pillar_ring_id": "ring_3",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 31
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 73,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 74,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_5"
+            },
+            {
+              "attachment_atom_1_based": 77,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 76,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            }
+          ],
+          "pillar_ring_id": "ring_5",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 75
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 22,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 23,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_2"
+            },
+            {
+              "attachment_atom_1_based": 52,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 53,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            }
+          ],
+          "pillar_ring_id": "ring_2",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 54
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 42,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 43,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_3"
+            },
+            {
+              "attachment_atom_1_based": 46,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 45,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            }
+          ],
+          "pillar_ring_id": "ring_3",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 44
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 60,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 61,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            },
+            {
+              "attachment_atom_1_based": 64,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 63,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_5"
+            }
+          ],
+          "pillar_ring_id": "ring_5",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 62
+        }
+      ]
+    },
+    {
+      "architecture_signature_sha256": "641d6d491682d17e3f170d8340ce8087ae0eb1e9c6d57e420715c0c7a5b4f6a5",
+      "cap_audits": [
+        {
+          "branch_classification_counts": {
+            "ethyl_CH2_to_CH3": 3,
+            "methylene_to_urea_N": 3
+          },
+          "branches": [
+            {
+              "branch_carbon_atom_1_based": 2,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C2",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                1
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 6,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C6",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                7
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 9,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C9",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                10
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 26,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C20",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                27
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 29,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C23",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                30
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 77,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C57",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                76
+              ]
+            }
+          ],
+          "matches_three_ethyl_three_methylene_pattern": true,
+          "ring_id": "ring_1"
+        },
+        {
+          "branch_classification_counts": {
+            "ethyl_CH2_to_CH3": 3,
+            "methylene_to_urea_N": 3
+          },
+          "branches": [
+            {
+              "branch_carbon_atom_1_based": 46,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C34",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                45
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 49,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C37",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                50
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 52,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C40",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                53
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 57,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C43",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                58
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 60,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C46",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                61
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 81,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C59",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                82
+              ]
+            }
+          ],
+          "matches_three_ethyl_three_methylene_pattern": true,
+          "ring_id": "ring_4"
+        }
+      ],
+      "carbonyl_groups": [
+        {
+          "atom_1_based": 11,
+          "atom_name": "C10",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            10,
+            12,
+            24
+          ]
+        },
+        {
+          "atom_1_based": 17,
+          "atom_name": "C15",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            16,
+            18,
+            20
+          ]
+        },
+        {
+          "atom_1_based": 31,
+          "atom_name": "C24",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            30,
+            32,
+            84
+          ]
+        },
+        {
+          "atom_1_based": 37,
+          "atom_name": "C29",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            36,
+            38,
+            40
+          ]
+        },
+        {
+          "atom_1_based": 44,
+          "atom_name": "C33",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            43,
+            45,
+            83
+          ]
+        },
+        {
+          "atom_1_based": 54,
+          "atom_name": "C41",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            23,
+            53,
+            55
+          ]
+        },
+        {
+          "atom_1_based": 62,
+          "atom_name": "C47",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            61,
+            63,
+            79
+          ]
+        },
+        {
+          "atom_1_based": 67,
+          "atom_name": "C51",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            66,
+            68,
+            70
+          ]
+        },
+        {
+          "atom_1_based": 75,
+          "atom_name": "C56",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            74,
+            76,
+            78
+          ]
+        }
+      ],
+      "checks": {
+        "all_pillars_have_one_N_methyl_benzamide": true,
+        "both_caps_have_three_ethyl_three_methylene_pattern": true,
+        "five_aromatic_six_member_rings": true,
+        "host_formula_matches": true,
+        "no_other_oxygenated_carbons": true,
+        "six_urea_carbonyls": true,
+        "three_amide_carbonyls": true,
+        "three_pillars": true,
+        "two_caps": true,
+        "ureas_form_complete_K2_3_cap_pillar_graph": true
+      },
+      "expected_K2_3_pairs": [
+        [
+          "ring_1",
+          "ring_2"
+        ],
+        [
+          "ring_1",
+          "ring_3"
+        ],
+        [
+          "ring_1",
+          "ring_5"
+        ],
+        [
+          "ring_4",
+          "ring_2"
+        ],
+        [
+          "ring_4",
+          "ring_3"
+        ],
+        [
+          "ring_4",
+          "ring_5"
+        ]
+      ],
+      "host_formula": {
+        "C": 60,
+        "H": 75,
+        "N": 15,
+        "O": 9
+      },
+      "host_formula_string": "C60H75N15O9",
+      "observed_urea_pairs": [
+        [
+          "ring_1",
+          "ring_2"
+        ],
+        [
+          "ring_1",
+          "ring_3"
+        ],
+        [
+          "ring_1",
+          "ring_5"
+        ],
+        [
+          "ring_4",
+          "ring_2"
+        ],
+        [
+          "ring_4",
+          "ring_3"
+        ],
+        [
+          "ring_4",
+          "ring_5"
+        ]
+      ],
+      "path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "pillar_audits": [
+        {
+          "amide_N_methyl_carbon_atom_1_based": 19,
+          "amide_carbonyl_atom_1_based": 17,
+          "amide_nitrogen_atom_1_based": 18,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_2"
+        },
+        {
+          "amide_N_methyl_carbon_atom_1_based": 39,
+          "amide_carbonyl_atom_1_based": 37,
+          "amide_nitrogen_atom_1_based": 38,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_3"
+        },
+        {
+          "amide_N_methyl_carbon_atom_1_based": 69,
+          "amide_carbonyl_atom_1_based": 67,
+          "amide_nitrogen_atom_1_based": 68,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_5"
+        }
+      ],
+      "rings": [
+        {
+          "atom_indices_1_based": [
+            3,
+            4,
+            5,
+            8,
+            25,
+            28
+          ],
+          "atom_names": [
+            "C3",
+            "C4",
+            "C5",
+            "C8",
+            "C19",
+            "C22"
+          ],
+          "classification": "triethyl_tris_methylene_cap",
+          "external_heavy_atom_indices_1_based": [
+            2,
+            6,
+            9,
+            26,
+            29,
+            77
+          ],
+          "external_heavy_elements": {
+            "C": 6
+          },
+          "ring_hydrogen_atom_indices_1_based": [],
+          "ring_hydrogen_count": 0,
+          "ring_id": "ring_1"
+        },
+        {
+          "atom_indices_1_based": [
+            13,
+            14,
+            15,
+            16,
+            21,
+            22
+          ],
+          "atom_names": [
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C17",
+            "C18"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            12,
+            17,
+            23
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            99,
+            100,
+            105
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_2"
+        },
+        {
+          "atom_indices_1_based": [
+            33,
+            34,
+            35,
+            36,
+            41,
+            42
+          ],
+          "atom_names": [
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C31",
+            "C32"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            32,
+            37,
+            43
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            116,
+            117,
+            122
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_3"
+        },
+        {
+          "atom_indices_1_based": [
+            47,
+            48,
+            51,
+            56,
+            59,
+            80
+          ],
+          "atom_names": [
+            "C35",
+            "C36",
+            "C39",
+            "C42",
+            "C45",
+            "C58"
+          ],
+          "classification": "triethyl_tris_methylene_cap",
+          "external_heavy_atom_indices_1_based": [
+            46,
+            49,
+            52,
+            57,
+            60,
+            81
+          ],
+          "external_heavy_elements": {
+            "C": 6
+          },
+          "ring_hydrogen_atom_indices_1_based": [],
+          "ring_hydrogen_count": 0,
+          "ring_id": "ring_4"
+        },
+        {
+          "atom_indices_1_based": [
+            64,
+            65,
+            66,
+            71,
+            72,
+            73
+          ],
+          "atom_names": [
+            "C48",
+            "C49",
+            "C50",
+            "C53",
+            "C54",
+            "C55"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            63,
+            67,
+            74
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            144,
+            149,
+            150
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_5"
+        }
+      ],
+      "sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58",
+      "system_name": "galactose",
+      "urea_connections": [
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 9,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 10,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            },
+            {
+              "attachment_atom_1_based": 13,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 12,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_2"
+            }
+          ],
+          "pillar_ring_id": "ring_2",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 11
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 29,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 30,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            },
+            {
+              "attachment_atom_1_based": 33,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 32,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_3"
+            }
+          ],
+          "pillar_ring_id": "ring_3",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 31
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 73,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 74,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_5"
+            },
+            {
+              "attachment_atom_1_based": 77,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 76,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            }
+          ],
+          "pillar_ring_id": "ring_5",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 75
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 22,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 23,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_2"
+            },
+            {
+              "attachment_atom_1_based": 52,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 53,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            }
+          ],
+          "pillar_ring_id": "ring_2",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 54
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 42,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 43,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_3"
+            },
+            {
+              "attachment_atom_1_based": 46,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 45,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            }
+          ],
+          "pillar_ring_id": "ring_3",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 44
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 60,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 61,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            },
+            {
+              "attachment_atom_1_based": 64,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 63,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_5"
+            }
+          ],
+          "pillar_ring_id": "ring_5",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 62
+        }
+      ]
+    },
+    {
+      "architecture_signature_sha256": "641d6d491682d17e3f170d8340ce8087ae0eb1e9c6d57e420715c0c7a5b4f6a5",
+      "cap_audits": [
+        {
+          "branch_classification_counts": {
+            "ethyl_CH2_to_CH3": 3,
+            "methylene_to_urea_N": 3
+          },
+          "branches": [
+            {
+              "branch_carbon_atom_1_based": 2,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C2",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                1
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 6,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C6",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                7
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 9,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C9",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                10
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 26,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C20",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                27
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 29,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C23",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                30
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 77,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C57",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                76
+              ]
+            }
+          ],
+          "matches_three_ethyl_three_methylene_pattern": true,
+          "ring_id": "ring_1"
+        },
+        {
+          "branch_classification_counts": {
+            "ethyl_CH2_to_CH3": 3,
+            "methylene_to_urea_N": 3
+          },
+          "branches": [
+            {
+              "branch_carbon_atom_1_based": 46,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C34",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                45
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 49,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C37",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                50
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 52,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C40",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                53
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 57,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C43",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                58
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 60,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C46",
+              "classification": "methylene_to_urea_N",
+              "other_heavy_neighbours_1_based": [
+                61
+              ]
+            },
+            {
+              "branch_carbon_atom_1_based": 81,
+              "branch_carbon_hydrogen_count": 2,
+              "branch_carbon_name": "C59",
+              "classification": "ethyl_CH2_to_CH3",
+              "other_heavy_neighbours_1_based": [
+                82
+              ]
+            }
+          ],
+          "matches_three_ethyl_three_methylene_pattern": true,
+          "ring_id": "ring_4"
+        }
+      ],
+      "carbonyl_groups": [
+        {
+          "atom_1_based": 11,
+          "atom_name": "C10",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            10,
+            12,
+            24
+          ]
+        },
+        {
+          "atom_1_based": 17,
+          "atom_name": "C15",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            16,
+            18,
+            20
+          ]
+        },
+        {
+          "atom_1_based": 31,
+          "atom_name": "C24",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            30,
+            32,
+            84
+          ]
+        },
+        {
+          "atom_1_based": 37,
+          "atom_name": "C29",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            36,
+            38,
+            40
+          ]
+        },
+        {
+          "atom_1_based": 44,
+          "atom_name": "C33",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            43,
+            45,
+            83
+          ]
+        },
+        {
+          "atom_1_based": 54,
+          "atom_name": "C41",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            23,
+            53,
+            55
+          ]
+        },
+        {
+          "atom_1_based": 62,
+          "atom_name": "C47",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            61,
+            63,
+            79
+          ]
+        },
+        {
+          "atom_1_based": 67,
+          "atom_name": "C51",
+          "classification": "amide_carbonyl",
+          "heavy_neighbour_elements": [
+            "C",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            66,
+            68,
+            70
+          ]
+        },
+        {
+          "atom_1_based": 75,
+          "atom_name": "C56",
+          "classification": "urea_carbonyl",
+          "heavy_neighbour_elements": [
+            "N",
+            "N",
+            "O"
+          ],
+          "heavy_neighbour_indices_1_based": [
+            74,
+            76,
+            78
+          ]
+        }
+      ],
+      "checks": {
+        "all_pillars_have_one_N_methyl_benzamide": true,
+        "both_caps_have_three_ethyl_three_methylene_pattern": true,
+        "five_aromatic_six_member_rings": true,
+        "host_formula_matches": true,
+        "no_other_oxygenated_carbons": true,
+        "six_urea_carbonyls": true,
+        "three_amide_carbonyls": true,
+        "three_pillars": true,
+        "two_caps": true,
+        "ureas_form_complete_K2_3_cap_pillar_graph": true
+      },
+      "expected_K2_3_pairs": [
+        [
+          "ring_1",
+          "ring_2"
+        ],
+        [
+          "ring_1",
+          "ring_3"
+        ],
+        [
+          "ring_1",
+          "ring_5"
+        ],
+        [
+          "ring_4",
+          "ring_2"
+        ],
+        [
+          "ring_4",
+          "ring_3"
+        ],
+        [
+          "ring_4",
+          "ring_5"
+        ]
+      ],
+      "host_formula": {
+        "C": 60,
+        "H": 75,
+        "N": 15,
+        "O": 9
+      },
+      "host_formula_string": "C60H75N15O9",
+      "observed_urea_pairs": [
+        [
+          "ring_1",
+          "ring_2"
+        ],
+        [
+          "ring_1",
+          "ring_3"
+        ],
+        [
+          "ring_1",
+          "ring_5"
+        ],
+        [
+          "ring_4",
+          "ring_2"
+        ],
+        [
+          "ring_4",
+          "ring_3"
+        ],
+        [
+          "ring_4",
+          "ring_5"
+        ]
+      ],
+      "path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "pillar_audits": [
+        {
+          "amide_N_methyl_carbon_atom_1_based": 19,
+          "amide_carbonyl_atom_1_based": 17,
+          "amide_nitrogen_atom_1_based": 18,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_2"
+        },
+        {
+          "amide_N_methyl_carbon_atom_1_based": 39,
+          "amide_carbonyl_atom_1_based": 37,
+          "amide_nitrogen_atom_1_based": 38,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_3"
+        },
+        {
+          "amide_N_methyl_carbon_atom_1_based": 69,
+          "amide_carbonyl_atom_1_based": 67,
+          "amide_nitrogen_atom_1_based": 68,
+          "attached_amide_count": 1,
+          "matches_N_methyl_benzamide": true,
+          "ring_id": "ring_5"
+        }
+      ],
+      "rings": [
+        {
+          "atom_indices_1_based": [
+            3,
+            4,
+            5,
+            8,
+            25,
+            28
+          ],
+          "atom_names": [
+            "C3",
+            "C4",
+            "C5",
+            "C8",
+            "C19",
+            "C22"
+          ],
+          "classification": "triethyl_tris_methylene_cap",
+          "external_heavy_atom_indices_1_based": [
+            2,
+            6,
+            9,
+            26,
+            29,
+            77
+          ],
+          "external_heavy_elements": {
+            "C": 6
+          },
+          "ring_hydrogen_atom_indices_1_based": [],
+          "ring_hydrogen_count": 0,
+          "ring_id": "ring_1"
+        },
+        {
+          "atom_indices_1_based": [
+            13,
+            14,
+            15,
+            16,
+            21,
+            22
+          ],
+          "atom_names": [
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C17",
+            "C18"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            12,
+            17,
+            23
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            99,
+            100,
+            105
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_2"
+        },
+        {
+          "atom_indices_1_based": [
+            33,
+            34,
+            35,
+            36,
+            41,
+            42
+          ],
+          "atom_names": [
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C31",
+            "C32"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            32,
+            37,
+            43
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            116,
+            117,
+            122
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_3"
+        },
+        {
+          "atom_indices_1_based": [
+            47,
+            48,
+            51,
+            56,
+            59,
+            80
+          ],
+          "atom_names": [
+            "C35",
+            "C36",
+            "C39",
+            "C42",
+            "C45",
+            "C58"
+          ],
+          "classification": "triethyl_tris_methylene_cap",
+          "external_heavy_atom_indices_1_based": [
+            46,
+            49,
+            52,
+            57,
+            60,
+            81
+          ],
+          "external_heavy_elements": {
+            "C": 6
+          },
+          "ring_hydrogen_atom_indices_1_based": [],
+          "ring_hydrogen_count": 0,
+          "ring_id": "ring_4"
+        },
+        {
+          "atom_indices_1_based": [
+            64,
+            65,
+            66,
+            71,
+            72,
+            73
+          ],
+          "atom_names": [
+            "C48",
+            "C49",
+            "C50",
+            "C53",
+            "C54",
+            "C55"
+          ],
+          "classification": "diaminobenzamide_pillar",
+          "external_heavy_atom_indices_1_based": [
+            63,
+            67,
+            74
+          ],
+          "external_heavy_elements": {
+            "C": 1,
+            "N": 2
+          },
+          "ring_hydrogen_atom_indices_1_based": [
+            144,
+            149,
+            150
+          ],
+          "ring_hydrogen_count": 3,
+          "ring_id": "ring_5"
+        }
+      ],
+      "sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4",
+      "system_name": "glucose",
+      "urea_connections": [
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 9,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 10,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            },
+            {
+              "attachment_atom_1_based": 13,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 12,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_2"
+            }
+          ],
+          "pillar_ring_id": "ring_2",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 11
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 29,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 30,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            },
+            {
+              "attachment_atom_1_based": 33,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 32,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_3"
+            }
+          ],
+          "pillar_ring_id": "ring_3",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 31
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 73,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 74,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_5"
+            },
+            {
+              "attachment_atom_1_based": 77,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 76,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_1"
+            }
+          ],
+          "pillar_ring_id": "ring_5",
+          "roof_ring_id": "ring_1",
+          "urea_carbonyl_atom_1_based": 75
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 22,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 23,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_2"
+            },
+            {
+              "attachment_atom_1_based": 52,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 53,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            }
+          ],
+          "pillar_ring_id": "ring_2",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 54
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 42,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 43,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_3"
+            },
+            {
+              "attachment_atom_1_based": 46,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 45,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            }
+          ],
+          "pillar_ring_id": "ring_3",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 44
+        },
+        {
+          "endpoints": [
+            {
+              "attachment_atom_1_based": 60,
+              "attachment_mode": "via_methylene_to_aromatic_ring",
+              "nitrogen_atom_1_based": 61,
+              "ring_classification": "triethyl_tris_methylene_cap",
+              "ring_id": "ring_4"
+            },
+            {
+              "attachment_atom_1_based": 64,
+              "attachment_mode": "direct_to_aromatic_ring",
+              "nitrogen_atom_1_based": 63,
+              "ring_classification": "diaminobenzamide_pillar",
+              "ring_id": "ring_5"
+            }
+          ],
+          "pillar_ring_id": "ring_5",
+          "roof_ring_id": "ring_4",
+          "urea_carbonyl_atom_1_based": 62
+        }
+      ]
+    }
+  ]
+}
