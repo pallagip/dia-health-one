@@ -15,6 +15,8 @@ The result is useful but qualified:
 - an independent NumPy WHAM implementation reproduces the three glucose routes within `0.000454 kcal/mol`;
 - one fructofuranose route fails a prespecified short-window sensitivity test;
 - all four deposited sugar systems use one exactly identical compiled 159-atom host;
+- the host formula is `C60H75N15O9`, with six urea and three amide carbonyls;
+- the two-atom `ROH` residue is covalently attached to the carbohydrate and completes a neutral `C6H12O6` guest; it is not a counterion;
 - the source RESP/GAFF/GLYCAM generation package and standalone start coordinates are not deposited;
 - no PaG or MC-Q1 ranking is yet justified.
 
@@ -57,8 +59,8 @@ Each topology contains:
 
 - 183 atoms;
 - a 159-atom host residue labelled `MOL`;
-- a 22-atom sugar residue;
-- a two-atom `ROH` residue.
+- a 22-atom carbohydrate residue;
+- a two-atom `ROH` carbohydrate-completion residue.
 
 The compiled host is exactly identical across glucose, galactose, fructopyranose and fructofuranose:
 
@@ -76,6 +78,35 @@ Physical-host fingerprint:
 
 This supports the common-host assumption for the public sugar benchmark.
 
+## Compiled graph chemistry
+
+The host is one connected component with:
+
+- formula `C60H75N15O9`;
+- 84 heavy atoms;
+- effectively neutral compiled charge;
+- six urea carbonyls;
+- three amide carbonyls;
+- nine methyl groups;
+- heavy-graph cycle rank 7.
+
+The host formula and motif inventory are identical across all four systems. These values are suitable for atom-level reconciliation with the published truncated GluHUT chemical drawing. They do not reveal how the RESP charges were generated.
+
+### Correction: `ROH` is covalent guest chemistry
+
+The earlier residue-level charge partition could be read as a positively charged sugar balanced by a negative `ROH` counterion. Direct graph inspection disproves that interpretation.
+
+In every system, carbohydrate atom 160 is covalently bonded to oxygen atom 183 in `ROH`:
+
+- glucose and galactose: `C1–O1(ROH)`;
+- fructopyranose and fructofuranose: `C2–O1(ROH)`;
+- compiled equilibrium bond length: 1.43 Å;
+- compiled force constant: 320 kcal mol⁻¹ Å⁻².
+
+Together the two residue records form one connected neutral 24-atom guest with formula `C6H12O6`. The approximately `+0.194 e` and `−0.194 e` residue charges are an internal template partition of one molecule, not an ion pair.
+
+This removes a false chemistry blocker. The derivation and transferability of the guest charges remain unvalidated.
+
 ## Corrected SMD archive inventory
 
 The archive contains:
@@ -91,9 +122,7 @@ The `.rst` files contain `&rst`, `iat`, `igr1`, `igr2`, `r2`, `rk2` and related 
 
 ## Outstanding chemistry questions
 
-The compiled sugar residues carry approximately `+0.194 e`, balanced by the two-atom `ROH` residue at approximately `−0.194 e`. The source derivation and chemical rationale are not established by the deposit.
-
-The compiled host can be used to reproduce the public benchmark, but the following remain unavailable:
+The compiled host and guests can be used to reproduce the public benchmark, but the following remain unavailable:
 
 - host RESP inputs, outputs and ESP calculation;
 - source GAFF atom typing and parameter files;
@@ -103,16 +132,19 @@ The compiled host can be used to reproduce the public benchmark, but the followi
 - a source-matched PaG model;
 - MC-Q1-specific parameters.
 
+The compiled `C60H75N15O9` host must still be reconciled atom by atom with the published truncated chemical graph and synthesis.
+
 ## External requests sent
 
 Requests were sent to:
 
-- Adrian Mulholland and Anthony Davis for source RESP/GAFF/GLYCAM files, starting coordinates, sugar/`ROH` charge rationale and clarification of the short fructofuranose window;
+- Adrian Mulholland and Anthony Davis for source RESP/GAFF/GLYCAM files, starting coordinates, the carbohydrate residue split and clarification of the short fructofuranose window;
 - Jeppe Sturis for the exact receptor analogue, coordinates and parameters used in the NNC2215–PaG study;
 - Carbometrics for platform access, rights and four-compound feasibility;
-- SpiroChem for a site-defined synthesis and positional-assignment quotation.
+- SpiroChem for a site-defined synthesis and positional-assignment quotation;
+- Domainex for orthogonal direct glucose-versus-PaG binding-method feasibility.
 
-A direct-binding method request to Domainex remains queued after Gmail temporarily rate-limited the send attempt.
+A conditional reply watch is active for substantive author and provider responses.
 
 ## Current decision
 
@@ -120,8 +152,8 @@ The public host–guest analysis pipeline has crossed an important calibration t
 
 Authorized next work:
 
-1. reconcile the compiled 159-atom host with an exact chemical graph;
-2. audit sugar and `ROH` charge construction;
+1. map the SMD restraint atom groups to exact host and guest atoms;
+2. reconcile the compiled `C60H75N15O9` host with the published truncated chemical graph;
 3. obtain source parameter-generation and starting-coordinate provenance;
 4. prepare a source-matched parent glucose-versus-PaG calibration only after those checks pass;
 5. obtain synthesis and direct-binding quotations in parallel.
