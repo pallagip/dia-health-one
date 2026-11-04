@@ -1,0 +1,5534 @@
+{
+  "archive": {
+    "filename": "WHAM_PMF.zip",
+    "md5": "dbc6723b8adcb85deb8230f63b6a51da",
+    "sha256": "e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb",
+    "size_bytes": 41560830
+  },
+  "created_at_utc": "2026-11-04T08:11:09.027125+00:00",
+  "decision": {
+    "candidate_ranking_authorized": false,
+    "independent_wham_crosscheck_pass": true,
+    "reason": "hold-out sugar and sensitivity gates remain required"
+  },
+  "implementation": {
+    "bins": 400,
+    "bulk_region_A": [
+      13.0,
+      15.0
+    ],
+    "force_constant_kcal_mol_A2": 100.0,
+    "language": "Python/NumPy",
+    "maximum_iterations": 200000,
+    "numpy_version": "2.2.6",
+    "range_A": [
+      0.0,
+      15.0
+    ],
+    "temperature_K": 300.0,
+    "tolerance_kcal_mol": 1e-06
+  },
+  "limitations": [
+    "Agreement on glucose does not validate PaG or transfer to NNC2215.",
+    "Histogram bin-edge conventions can create small implementation differences.",
+    "Autocorrelation weighting and sensitivity to trajectory truncation remain separate gates."
+  ],
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, signalling, efficacy, safety, or a drug result",
+  "routes": [
+    {
+      "binding_free_energy_kcal_mol": -13.794807715701362,
+      "centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "difference_from_grossfield_kcal_mol": -0.0003355458900404784,
+      "frames_inside_range": 757437,
+      "frames_per_window_inside_range": [
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        7387
+      ],
+      "frames_per_window_raw": [
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001
+      ],
+      "frames_total_raw": 765051,
+      "grossfield_reference_kcal_mol": -13.794472169811321,
+      "iterations": 49169,
+      "maximum_offset_change_kcal_mol": 9.999963186402283e-07,
+      "median_adjacent_bhattacharyya": 0.1560145793248532,
+      "minimum_adjacent_bhattacharyya": 0.013827375574751057,
+      "pmf_profile": [
+        {
+          "coordinate_A": 0.01875,
+          "relative_free_energy_kcal_mol": 2.5075901311297155
+        },
+        {
+          "coordinate_A": 0.056249999999999994,
+          "relative_free_energy_kcal_mol": 1.3880154461222038
+        },
+        {
+          "coordinate_A": 0.09375,
+          "relative_free_energy_kcal_mol": 0.7870147391022859
+        },
+        {
+          "coordinate_A": 0.13124999999999998,
+          "relative_free_energy_kcal_mol": 0.4457092172074903
+        },
+        {
+          "coordinate_A": 0.16875,
+          "relative_free_energy_kcal_mol": 0.20844712711023594
+        },
+        {
+          "coordinate_A": 0.20625,
+          "relative_free_energy_kcal_mol": 0.10060475875166991
+        },
+        {
+          "coordinate_A": 0.24375,
+          "relative_free_energy_kcal_mol": 0.046335952022646384
+        },
+        {
+          "coordinate_A": 0.28125,
+          "relative_free_energy_kcal_mol": 0.0993964235325906
+        },
+        {
+          "coordinate_A": 0.31875,
+          "relative_free_energy_kcal_mol": 0.13909154210857452
+        },
+        {
+          "coordinate_A": 0.35624999999999996,
+          "relative_free_energy_kcal_mol": 0.25767247993419057
+        },
+        {
+          "coordinate_A": 0.39375,
+          "relative_free_energy_kcal_mol": 0.3291710269121272
+        },
+        {
+          "coordinate_A": 0.43124999999999997,
+          "relative_free_energy_kcal_mol": 0.4484200985679337
+        },
+        {
+          "coordinate_A": 0.46875,
+          "relative_free_energy_kcal_mol": 0.4993857021618749
+        },
+        {
+          "coordinate_A": 0.50625,
+          "relative_free_energy_kcal_mol": 0.46739198433072193
+        },
+        {
+          "coordinate_A": 0.54375,
+          "relative_free_energy_kcal_mol": 0.4116267215564162
+        },
+        {
+          "coordinate_A": 0.58125,
+          "relative_free_energy_kcal_mol": 0.40257167446153524
+        },
+        {
+          "coordinate_A": 0.6187499999999999,
+          "relative_free_energy_kcal_mol": 0.29354309301106307
+        },
+        {
+          "coordinate_A": 0.65625,
+          "relative_free_energy_kcal_mol": 0.23684209501789796
+        },
+        {
+          "coordinate_A": 0.69375,
+          "relative_free_energy_kcal_mol": 0.16500692965376615
+        },
+        {
+          "coordinate_A": 0.73125,
+          "relative_free_energy_kcal_mol": 0.08303483562131547
+        },
+        {
+          "coordinate_A": 0.76875,
+          "relative_free_energy_kcal_mol": 0.0024640009899113136
+        },
+        {
+          "coordinate_A": 0.8062499999999999,
+          "relative_free_energy_kcal_mol": 0.013181472260035798
+        },
+        {
+          "coordinate_A": 0.84375,
+          "relative_free_energy_kcal_mol": 0.0
+        },
+        {
+          "coordinate_A": 0.8812499999999999,
+          "relative_free_energy_kcal_mol": 0.01247365788568991
+        },
+        {
+          "coordinate_A": 0.91875,
+          "relative_free_energy_kcal_mol": 0.04041669622964926
+        },
+        {
+          "coordinate_A": 0.95625,
+          "relative_free_energy_kcal_mol": 0.12931821824944606
+        },
+        {
+          "coordinate_A": 0.9937499999999999,
+          "relative_free_energy_kcal_mol": 0.17951693637514665
+        },
+        {
+          "coordinate_A": 1.03125,
+          "relative_free_energy_kcal_mol": 0.25002778926801583
+        },
+        {
+          "coordinate_A": 1.06875,
+          "relative_free_energy_kcal_mol": 0.3969878854618145
+        },
+        {
+          "coordinate_A": 1.10625,
+          "relative_free_energy_kcal_mol": 0.5522843673944562
+        },
+        {
+          "coordinate_A": 1.1437499999999998,
+          "relative_free_energy_kcal_mol": 0.7189128556517853
+        },
+        {
+          "coordinate_A": 1.18125,
+          "relative_free_energy_kcal_mol": 0.9068274748191881
+        },
+        {
+          "coordinate_A": 1.21875,
+          "relative_free_energy_kcal_mol": 1.0923982847891496
+        },
+        {
+          "coordinate_A": 1.25625,
+          "relative_free_energy_kcal_mol": 1.300777602962342
+        },
+        {
+          "coordinate_A": 1.29375,
+          "relative_free_energy_kcal_mol": 1.5536012348509662
+        },
+        {
+          "coordinate_A": 1.3312499999999998,
+          "relative_free_energy_kcal_mol": 1.8481023057606478
+        },
+        {
+          "coordinate_A": 1.36875,
+          "relative_free_energy_kcal_mol": 2.098001062321004
+        },
+        {
+          "coordinate_A": 1.40625,
+          "relative_free_energy_kcal_mol": 2.4198869824361866
+        },
+        {
+          "coordinate_A": 1.44375,
+          "relative_free_energy_kcal_mol": 2.69581682482631
+        },
+        {
+          "coordinate_A": 1.48125,
+          "relative_free_energy_kcal_mol": 3.0370734360948273
+        },
+        {
+          "coordinate_A": 1.5187499999999998,
+          "relative_free_energy_kcal_mol": 3.3404281055166782
+        },
+        {
+          "coordinate_A": 1.55625,
+          "relative_free_energy_kcal_mol": 3.7459997837947276
+        },
+        {
+          "coordinate_A": 1.59375,
+          "relative_free_energy_kcal_mol": 4.084801128608446
+        },
+        {
+          "coordinate_A": 1.63125,
+          "relative_free_energy_kcal_mol": 4.437482760708017
+        },
+        {
+          "coordinate_A": 1.66875,
+          "relative_free_energy_kcal_mol": 4.775285011232613
+        },
+        {
+          "coordinate_A": 1.7062499999999998,
+          "relative_free_energy_kcal_mol": 5.1332016593158585
+        },
+        {
+          "coordinate_A": 1.74375,
+          "relative_free_energy_kcal_mol": 5.45942279592228
+        },
+        {
+          "coordinate_A": 1.78125,
+          "relative_free_energy_kcal_mol": 5.844421696001587
+        },
+        {
+          "coordinate_A": 1.8187499999999999,
+          "relative_free_energy_kcal_mol": 6.17623524975004
+        },
+        {
+          "coordinate_A": 1.85625,
+          "relative_free_energy_kcal_mol": 6.589487056137154
+        },
+        {
+          "coordinate_A": 1.8937499999999998,
+          "relative_free_energy_kcal_mol": 6.921773382862451
+        },
+        {
+          "coordinate_A": 1.93125,
+          "relative_free_energy_kcal_mol": 7.4004082513531015
+        },
+        {
+          "coordinate_A": 1.96875,
+          "relative_free_energy_kcal_mol": 7.788172773114223
+        },
+        {
+          "coordinate_A": 2.0062499999999996,
+          "relative_free_energy_kcal_mol": 8.217618792098854
+        },
+        {
+          "coordinate_A": 2.04375,
+          "relative_free_energy_kcal_mol": 8.634813085308497
+        },
+        {
+          "coordinate_A": 2.08125,
+          "relative_free_energy_kcal_mol": 9.091413719822603
+        },
+        {
+          "coordinate_A": 2.11875,
+          "relative_free_energy_kcal_mol": 9.498457731813831
+        },
+        {
+          "coordinate_A": 2.15625,
+          "relative_free_energy_kcal_mol": 10.035834736725418
+        },
+        {
+          "coordinate_A": 2.1937499999999996,
+          "relative_free_energy_kcal_mol": 10.368166837240869
+        },
+        {
+          "coordinate_A": 2.23125,
+          "relative_free_energy_kcal_mol": 10.577733109214229
+        },
+        {
+          "coordinate_A": 2.26875,
+          "relative_free_energy_kcal_mol": 10.324642677235184
+        },
+        {
+          "coordinate_A": 2.30625,
+          "relative_free_energy_kcal_mol": 10.22221552088805
+        },
+        {
+          "coordinate_A": 2.34375,
+          "relative_free_energy_kcal_mol": 10.045700338133715
+        },
+        {
+          "coordinate_A": 2.3812499999999996,
+          "relative_free_energy_kcal_mol": 9.916153607486745
+        },
+        {
+          "coordinate_A": 2.41875,
+          "relative_free_energy_kcal_mol": 9.788162803204246
+        },
+        {
+          "coordinate_A": 2.45625,
+          "relative_free_energy_kcal_mol": 9.684905121770203
+        },
+        {
+          "coordinate_A": 2.49375,
+          "relative_free_energy_kcal_mol": 9.55485032488312
+        },
+        {
+          "coordinate_A": 2.53125,
+          "relative_free_energy_kcal_mol": 9.455745566445495
+        },
+        {
+          "coordinate_A": 2.5687499999999996,
+          "relative_free_energy_kcal_mol": 9.334521153190448
+        },
+        {
+          "coordinate_A": 2.60625,
+          "relative_free_energy_kcal_mol": 9.251117132997054
+        },
+        {
+          "coordinate_A": 2.64375,
+          "relative_free_energy_kcal_mol": 9.179648213275678
+        },
+        {
+          "coordinate_A": 2.68125,
+          "relative_free_energy_kcal_mol": 9.12965230207702
+        },
+        {
+          "coordinate_A": 2.71875,
+          "relative_free_energy_kcal_mol": 9.036945079645404
+        },
+        {
+          "coordinate_A": 2.7562499999999996,
+          "relative_free_energy_kcal_mol": 9.01424362152102
+        },
+        {
+          "coordinate_A": 2.79375,
+          "relative_free_energy_kcal_mol": 8.93635300375201
+        },
+        {
+          "coordinate_A": 2.83125,
+          "relative_free_energy_kcal_mol": 8.915155105891301
+        },
+        {
+          "coordinate_A": 2.86875,
+          "relative_free_energy_kcal_mol": 8.884921435862154
+        },
+        {
+          "coordinate_A": 2.90625,
+          "relative_free_energy_kcal_mol": 8.866501197927501
+        },
+        {
+          "coordinate_A": 2.9437499999999996,
+          "relative_free_energy_kcal_mol": 8.836522354104025
+        },
+        {
+          "coordinate_A": 2.98125,
+          "relative_free_energy_kcal_mol": 8.864896106347341
+        },
+        {
+          "coordinate_A": 3.01875,
+          "relative_free_energy_kcal_mol": 8.86421586695449
+        },
+        {
+          "coordinate_A": 3.05625,
+          "relative_free_energy_kcal_mol": 8.879313347746097
+        },
+        {
+          "coordinate_A": 3.09375,
+          "relative_free_energy_kcal_mol": 8.841637445453797
+        },
+        {
+          "coordinate_A": 3.1312499999999996,
+          "relative_free_energy_kcal_mol": 8.93234772161919
+        },
+        {
+          "coordinate_A": 3.16875,
+          "relative_free_energy_kcal_mol": 8.89894819990366
+        },
+        {
+          "coordinate_A": 3.20625,
+          "relative_free_energy_kcal_mol": 8.936938246617038
+        },
+        {
+          "coordinate_A": 3.24375,
+          "relative_free_energy_kcal_mol": 8.96911979903718
+        },
+        {
+          "coordinate_A": 3.28125,
+          "relative_free_energy_kcal_mol": 9.03467366019805
+        },
+        {
+          "coordinate_A": 3.3187499999999996,
+          "relative_free_energy_kcal_mol": 9.071007445776122
+        },
+        {
+          "coordinate_A": 3.35625,
+          "relative_free_energy_kcal_mol": 9.159564067483588
+        },
+        {
+          "coordinate_A": 3.39375,
+          "relative_free_energy_kcal_mol": 9.174309784999478
+        },
+        {
+          "coordinate_A": 3.43125,
+          "relative_free_energy_kcal_mol": 9.261612545684635
+        },
+        {
+          "coordinate_A": 3.46875,
+          "relative_free_energy_kcal_mol": 9.279901832809715
+        },
+        {
+          "coordinate_A": 3.5062499999999996,
+          "relative_free_energy_kcal_mol": 9.405540393790378
+        },
+        {
+          "coordinate_A": 3.54375,
+          "relative_free_energy_kcal_mol": 9.497318566961793
+        },
+        {
+          "coordinate_A": 3.58125,
+          "relative_free_energy_kcal_mol": 9.605401215541402
+        },
+        {
+          "coordinate_A": 3.6187499999999995,
+          "relative_free_energy_kcal_mol": 9.64729481402054
+        },
+        {
+          "coordinate_A": 3.65625,
+          "relative_free_energy_kcal_mol": 9.745694069271453
+        },
+        {
+          "coordinate_A": 3.6937499999999996,
+          "relative_free_energy_kcal_mol": 9.794608973065952
+        },
+        {
+          "coordinate_A": 3.73125,
+          "relative_free_energy_kcal_mol": 9.91394920638111
+        },
+        {
+          "coordinate_A": 3.76875,
+          "relative_free_energy_kcal_mol": 9.953180772189803
+        },
+        {
+          "coordinate_A": 3.8062499999999995,
+          "relative_free_energy_kcal_mol": 10.022659262170533
+        },
+        {
+          "coordinate_A": 3.84375,
+          "relative_free_energy_kcal_mol": 10.061837124393668
+        },
+        {
+          "coordinate_A": 3.8812499999999996,
+          "relative_free_energy_kcal_mol": 10.165461003717166
+        },
+        {
+          "coordinate_A": 3.91875,
+          "relative_free_energy_kcal_mol": 10.223339546796225
+        },
+        {
+          "coordinate_A": 3.95625,
+          "relative_free_energy_kcal_mol": 10.279732192996452
+        },
+        {
+          "coordinate_A": 3.99375,
+          "relative_free_energy_kcal_mol": 10.344272878652188
+        },
+        {
+          "coordinate_A": 4.03125,
+          "relative_free_energy_kcal_mol": 10.402032072692203
+        },
+        {
+          "coordinate_A": 4.06875,
+          "relative_free_energy_kcal_mol": 10.459207990175729
+        },
+        {
+          "coordinate_A": 4.106249999999999,
+          "relative_free_energy_kcal_mol": 10.534122699697225
+        },
+        {
+          "coordinate_A": 4.14375,
+          "relative_free_energy_kcal_mol": 10.602644632293755
+        },
+        {
+          "coordinate_A": 4.18125,
+          "relative_free_energy_kcal_mol": 10.632156976622728
+        },
+        {
+          "coordinate_A": 4.21875,
+          "relative_free_energy_kcal_mol": 10.674202989224872
+        },
+        {
+          "coordinate_A": 4.25625,
+          "relative_free_energy_kcal_mol": 10.70238293914481
+        },
+        {
+          "coordinate_A": 4.293749999999999,
+          "relative_free_energy_kcal_mol": 10.743757703049013
+        },
+        {
+          "coordinate_A": 4.33125,
+          "relative_free_energy_kcal_mol": 10.800780117928706
+        },
+        {
+          "coordinate_A": 4.36875,
+          "relative_free_energy_kcal_mol": 10.867871583030606
+        },
+        {
+          "coordinate_A": 4.40625,
+          "relative_free_energy_kcal_mol": 10.888158720986329
+        },
+        {
+          "coordinate_A": 4.44375,
+          "relative_free_energy_kcal_mol": 10.985000458157504
+        },
+        {
+          "coordinate_A": 4.481249999999999,
+          "relative_free_energy_kcal_mol": 11.05704242495368
+        },
+        {
+          "coordinate_A": 4.51875,
+          "relative_free_energy_kcal_mol": 11.099834790868467
+        },
+        {
+          "coordinate_A": 4.55625,
+          "relative_free_energy_kcal_mol": 11.148992296894468
+        },
+        {
+          "coordinate_A": 4.59375,
+          "relative_free_energy_kcal_mol": 11.199301029493867
+        },
+        {
+          "coordinate_A": 4.63125,
+          "relative_free_energy_kcal_mol": 11.280030616118172
+        },
+        {
+          "coordinate_A": 4.668749999999999,
+          "relative_free_energy_kcal_mol": 11.357845516380268
+        },
+        {
+          "coordinate_A": 4.70625,
+          "relative_free_energy_kcal_mol": 11.465324555623459
+        },
+        {
+          "coordinate_A": 4.74375,
+          "relative_free_energy_kcal_mol": 11.540667216377395
+        },
+        {
+          "coordinate_A": 4.78125,
+          "relative_free_energy_kcal_mol": 11.615846623766267
+        },
+        {
+          "coordinate_A": 4.81875,
+          "relative_free_energy_kcal_mol": 11.6781035756927
+        },
+        {
+          "coordinate_A": 4.856249999999999,
+          "relative_free_energy_kcal_mol": 11.751445809121677
+        },
+        {
+          "coordinate_A": 4.89375,
+          "relative_free_energy_kcal_mol": 11.802942115616707
+        },
+        {
+          "coordinate_A": 4.93125,
+          "relative_free_energy_kcal_mol": 11.869771551583622
+        },
+        {
+          "coordinate_A": 4.96875,
+          "relative_free_energy_kcal_mol": 11.853787587233652
+        },
+        {
+          "coordinate_A": 5.00625,
+          "relative_free_energy_kcal_mol": 11.958601406206201
+        },
+        {
+          "coordinate_A": 5.043749999999999,
+          "relative_free_energy_kcal_mol": 11.99013735409276
+        },
+        {
+          "coordinate_A": 5.08125,
+          "relative_free_energy_kcal_mol": 12.065395516854107
+        },
+        {
+          "coordinate_A": 5.11875,
+          "relative_free_energy_kcal_mol": 12.078960820723815
+        },
+        {
+          "coordinate_A": 5.15625,
+          "relative_free_energy_kcal_mol": 12.109385688378257
+        },
+        {
+          "coordinate_A": 5.19375,
+          "relative_free_energy_kcal_mol": 12.14126807518762
+        },
+        {
+          "coordinate_A": 5.231249999999999,
+          "relative_free_energy_kcal_mol": 12.217954229949319
+        },
+        {
+          "coordinate_A": 5.26875,
+          "relative_free_energy_kcal_mol": 12.276754112600216
+        },
+        {
+          "coordinate_A": 5.30625,
+          "relative_free_energy_kcal_mol": 12.337177069117036
+        },
+        {
+          "coordinate_A": 5.34375,
+          "relative_free_energy_kcal_mol": 12.334387550299821
+        },
+        {
+          "coordinate_A": 5.38125,
+          "relative_free_energy_kcal_mol": 12.407357177656234
+        },
+        {
+          "coordinate_A": 5.418749999999999,
+          "relative_free_energy_kcal_mol": 12.421093538943266
+        },
+        {
+          "coordinate_A": 5.45625,
+          "relative_free_energy_kcal_mol": 12.460250319436273
+        },
+        {
+          "coordinate_A": 5.49375,
+          "relative_free_energy_kcal_mol": 12.470953802577098
+        },
+        {
+          "coordinate_A": 5.53125,
+          "relative_free_energy_kcal_mol": 12.45817237906372
+        },
+        {
+          "coordinate_A": 5.56875,
+          "relative_free_energy_kcal_mol": 12.525794603864293
+        },
+        {
+          "coordinate_A": 5.606249999999999,
+          "relative_free_energy_kcal_mol": 12.591989517446196
+        },
+        {
+          "coordinate_A": 5.64375,
+          "relative_free_energy_kcal_mol": 12.642806462409036
+        },
+        {
+          "coordinate_A": 5.68125,
+          "relative_free_energy_kcal_mol": 12.663565185275639
+        },
+        {
+          "coordinate_A": 5.71875,
+          "relative_free_energy_kcal_mol": 12.711297455728
+        },
+        {
+          "coordinate_A": 5.75625,
+          "relative_free_energy_kcal_mol": 12.739808250282003
+        },
+        {
+          "coordinate_A": 5.793749999999999,
+          "relative_free_energy_kcal_mol": 12.778212638305117
+        },
+        {
+          "coordinate_A": 5.83125,
+          "relative_free_energy_kcal_mol": 12.755359296139474
+        },
+        {
+          "coordinate_A": 5.86875,
+          "relative_free_energy_kcal_mol": 12.793057611037057
+        },
+        {
+          "coordinate_A": 5.90625,
+          "relative_free_energy_kcal_mol": 12.814629979975535
+        },
+        {
+          "coordinate_A": 5.94375,
+          "relative_free_energy_kcal_mol": 12.804228295949947
+        },
+        {
+          "coordinate_A": 5.981249999999999,
+          "relative_free_energy_kcal_mol": 12.853640942439615
+        },
+        {
+          "coordinate_A": 6.01875,
+          "relative_free_energy_kcal_mol": 12.828464499933938
+        },
+        {
+          "coordinate_A": 6.05625,
+          "relative_free_energy_kcal_mol": 12.874618968474191
+        },
+        {
+          "coordinate_A": 6.09375,
+          "relative_free_energy_kcal_mol": 12.825718605310971
+        },
+        {
+          "coordinate_A": 6.13125,
+          "relative_free_energy_kcal_mol": 12.850714687645068
+        },
+        {
+          "coordinate_A": 6.168749999999999,
+          "relative_free_energy_kcal_mol": 12.85524051115648
+        },
+        {
+          "coordinate_A": 6.20625,
+          "relative_free_energy_kcal_mol": 12.883424445017582
+        },
+        {
+          "coordinate_A": 6.24375,
+          "relative_free_energy_kcal_mol": 12.920346412495094
+        },
+        {
+          "coordinate_A": 6.28125,
+          "relative_free_energy_kcal_mol": 12.933048396235717
+        },
+        {
+          "coordinate_A": 6.31875,
+          "relative_free_energy_kcal_mol": 12.929910038848123
+        },
+        {
+          "coordinate_A": 6.356249999999999,
+          "relative_free_energy_kcal_mol": 12.94300825322497
+        },
+        {
+          "coordinate_A": 6.39375,
+          "relative_free_energy_kcal_mol": 12.93480489395817
+        },
+        {
+          "coordinate_A": 6.43125,
+          "relative_free_energy_kcal_mol": 12.938410167782013
+        },
+        {
+          "coordinate_A": 6.46875,
+          "relative_free_energy_kcal_mol": 12.943651815684746
+        },
+        {
+          "coordinate_A": 6.50625,
+          "relative_free_energy_kcal_mol": 13.018052873871984
+        },
+        {
+          "coordinate_A": 6.543749999999999,
+          "relative_free_energy_kcal_mol": 13.031923784037863
+        },
+        {
+          "coordinate_A": 6.58125,
+          "relative_free_energy_kcal_mol": 13.07619117069289
+        },
+        {
+          "coordinate_A": 6.61875,
+          "relative_free_energy_kcal_mol": 13.089589701153766
+        },
+        {
+          "coordinate_A": 6.65625,
+          "relative_free_energy_kcal_mol": 13.120598958513067
+        },
+        {
+          "coordinate_A": 6.69375,
+          "relative_free_energy_kcal_mol": 13.123423103526715
+        },
+        {
+          "coordinate_A": 6.731249999999999,
+          "relative_free_energy_kcal_mol": 13.132868879277792
+        },
+        {
+          "coordinate_A": 6.76875,
+          "relative_free_energy_kcal_mol": 13.143711750532775
+        },
+        {
+          "coordinate_A": 6.80625,
+          "relative_free_energy_kcal_mol": 13.164515245608865
+        },
+        {
+          "coordinate_A": 6.84375,
+          "relative_free_energy_kcal_mol": 13.149473006408854
+        },
+        {
+          "coordinate_A": 6.88125,
+          "relative_free_energy_kcal_mol": 13.16769374210188
+        },
+        {
+          "coordinate_A": 6.918749999999999,
+          "relative_free_energy_kcal_mol": 13.154756889405254
+        },
+        {
+          "coordinate_A": 6.95625,
+          "relative_free_energy_kcal_mol": 13.168766064918412
+        },
+        {
+          "coordinate_A": 6.99375,
+          "relative_free_energy_kcal_mol": 13.153480331812807
+        },
+        {
+          "coordinate_A": 7.03125,
+          "relative_free_energy_kcal_mol": 13.158867404332584
+        },
+        {
+          "coordinate_A": 7.06875,
+          "relative_free_energy_kcal_mol": 13.112003533578763
+        },
+        {
+          "coordinate_A": 7.106249999999999,
+          "relative_free_energy_kcal_mol": 13.135978667463544
+        },
+        {
+          "coordinate_A": 7.14375,
+          "relative_free_energy_kcal_mol": 13.104595620446037
+        },
+        {
+          "coordinate_A": 7.1812499999999995,
+          "relative_free_energy_kcal_mol": 13.124150629748327
+        },
+        {
+          "coordinate_A": 7.21875,
+          "relative_free_energy_kcal_mol": 13.082140561519488
+        },
+        {
+          "coordinate_A": 7.25625,
+          "relative_free_energy_kcal_mol": 13.07204048836676
+        },
+        {
+          "coordinate_A": 7.293749999999999,
+          "relative_free_energy_kcal_mol": 13.028338032889899
+        },
+        {
+          "coordinate_A": 7.33125,
+          "relative_free_energy_kcal_mol": 12.988229642464578
+        },
+        {
+          "coordinate_A": 7.3687499999999995,
+          "relative_free_energy_kcal_mol": 12.983871430019006
+        },
+        {
+          "coordinate_A": 7.40625,
+          "relative_free_energy_kcal_mol": 12.989222092803084
+        },
+        {
+          "coordinate_A": 7.44375,
+          "relative_free_energy_kcal_mol": 13.000760732443894
+        },
+        {
+          "coordinate_A": 7.481249999999999,
+          "relative_free_energy_kcal_mol": 13.007533278300086
+        },
+        {
+          "coordinate_A": 7.51875,
+          "relative_free_energy_kcal_mol": 12.980615535056149
+        },
+        {
+          "coordinate_A": 7.5562499999999995,
+          "relative_free_energy_kcal_mol": 12.993544347761008
+        },
+        {
+          "coordinate_A": 7.59375,
+          "relative_free_energy_kcal_mol": 12.968935099512715
+        },
+        {
+          "coordinate_A": 7.63125,
+          "relative_free_energy_kcal_mol": 12.952121215304805
+        },
+        {
+          "coordinate_A": 7.668749999999999,
+          "relative_free_energy_kcal_mol": 12.872199740725952
+        },
+        {
+          "coordinate_A": 7.70625,
+          "relative_free_energy_kcal_mol": 12.929365407186406
+        },
+        {
+          "coordinate_A": 7.7437499999999995,
+          "relative_free_energy_kcal_mol": 12.886323988536683
+        },
+        {
+          "coordinate_A": 7.78125,
+          "relative_free_energy_kcal_mol": 12.893475182381353
+        },
+        {
+          "coordinate_A": 7.81875,
+          "relative_free_energy_kcal_mol": 12.866731546595176
+        },
+        {
+          "coordinate_A": 7.856249999999999,
+          "relative_free_energy_kcal_mol": 12.88362290052482
+        },
+        {
+          "coordinate_A": 7.89375,
+          "relative_free_energy_kcal_mol": 12.83883442277968
+        },
+        {
+          "coordinate_A": 7.9312499999999995,
+          "relative_free_energy_kcal_mol": 12.84260733464159
+        },
+        {
+          "coordinate_A": 7.96875,
+          "relative_free_energy_kcal_mol": 12.821767130471583
+        },
+        {
+          "coordinate_A": 8.00625,
+          "relative_free_energy_kcal_mol": 12.841480931702469
+        },
+        {
+          "coordinate_A": 8.04375,
+          "relative_free_energy_kcal_mol": 12.825883752535743
+        },
+        {
+          "coordinate_A": 8.08125,
+          "relative_free_energy_kcal_mol": 12.846397715764514
+        },
+        {
+          "coordinate_A": 8.118749999999999,
+          "relative_free_energy_kcal_mol": 12.84529201005031
+        },
+        {
+          "coordinate_A": 8.15625,
+          "relative_free_energy_kcal_mol": 12.865066593429527
+        },
+        {
+          "coordinate_A": 8.19375,
+          "relative_free_energy_kcal_mol": 12.814522226329666
+        },
+        {
+          "coordinate_A": 8.23125,
+          "relative_free_energy_kcal_mol": 12.855314791404293
+        },
+        {
+          "coordinate_A": 8.26875,
+          "relative_free_energy_kcal_mol": 12.817844972124147
+        },
+        {
+          "coordinate_A": 8.306249999999999,
+          "relative_free_energy_kcal_mol": 12.830204979166476
+        },
+        {
+          "coordinate_A": 8.34375,
+          "relative_free_energy_kcal_mol": 12.838426986523649
+        },
+        {
+          "coordinate_A": 8.38125,
+          "relative_free_energy_kcal_mol": 12.866741060027518
+        },
+        {
+          "coordinate_A": 8.41875,
+          "relative_free_energy_kcal_mol": 12.844642174435531
+        },
+        {
+          "coordinate_A": 8.45625,
+          "relative_free_energy_kcal_mol": 12.863615815347416
+        },
+        {
+          "coordinate_A": 8.493749999999999,
+          "relative_free_energy_kcal_mol": 12.810567254385377
+        },
+        {
+          "coordinate_A": 8.53125,
+          "relative_free_energy_kcal_mol": 12.837958442565386
+        },
+        {
+          "coordinate_A": 8.56875,
+          "relative_free_energy_kcal_mol": 12.838804006933357
+        },
+        {
+          "coordinate_A": 8.60625,
+          "relative_free_energy_kcal_mol": 12.861638332706844
+        },
+        {
+          "coordinate_A": 8.64375,
+          "relative_free_energy_kcal_mol": 12.887419603978453
+        },
+        {
+          "coordinate_A": 8.681249999999999,
+          "relative_free_energy_kcal_mol": 12.860855396677215
+        },
+        {
+          "coordinate_A": 8.71875,
+          "relative_free_energy_kcal_mol": 12.862999631198551
+        },
+        {
+          "coordinate_A": 8.75625,
+          "relative_free_energy_kcal_mol": 12.899495749331335
+        },
+        {
+          "coordinate_A": 8.79375,
+          "relative_free_energy_kcal_mol": 12.873776198134774
+        },
+        {
+          "coordinate_A": 8.83125,
+          "relative_free_energy_kcal_mol": 12.888026096122832
+        },
+        {
+          "coordinate_A": 8.868749999999999,
+          "relative_free_energy_kcal_mol": 12.83783986675088
+        },
+        {
+          "coordinate_A": 8.90625,
+          "relative_free_energy_kcal_mol": 12.87608000046151
+        },
+        {
+          "coordinate_A": 8.94375,
+          "relative_free_energy_kcal_mol": 12.892511618500686
+        },
+        {
+          "coordinate_A": 8.98125,
+          "relative_free_energy_kcal_mol": 12.915711126845308
+        },
+        {
+          "coordinate_A": 9.01875,
+          "relative_free_energy_kcal_mol": 12.90641177383386
+        },
+        {
+          "coordinate_A": 9.056249999999999,
+          "relative_free_energy_kcal_mol": 12.924031361897807
+        },
+        {
+          "coordinate_A": 9.09375,
+          "relative_free_energy_kcal_mol": 12.922411137089286
+        },
+        {
+          "coordinate_A": 9.13125,
+          "relative_free_energy_kcal_mol": 12.89074286328696
+        },
+        {
+          "coordinate_A": 9.16875,
+          "relative_free_energy_kcal_mol": 12.923604012569449
+        },
+        {
+          "coordinate_A": 9.20625,
+          "relative_free_energy_kcal_mol": 12.956661359307747
+        },
+        {
+          "coordinate_A": 9.243749999999999,
+          "relative_free_energy_kcal_mol": 12.941741771175293
+        },
+        {
+          "coordinate_A": 9.28125,
+          "relative_free_energy_kcal_mol": 12.97348601509358
+        },
+        {
+          "coordinate_A": 9.31875,
+          "relative_free_energy_kcal_mol": 12.982789990247332
+        },
+        {
+          "coordinate_A": 9.35625,
+          "relative_free_energy_kcal_mol": 12.957549631766861
+        },
+        {
+          "coordinate_A": 9.39375,
+          "relative_free_energy_kcal_mol": 12.93263191944896
+        },
+        {
+          "coordinate_A": 9.431249999999999,
+          "relative_free_energy_kcal_mol": 12.981042409541262
+        },
+        {
+          "coordinate_A": 9.46875,
+          "relative_free_energy_kcal_mol": 12.968648247914336
+        },
+        {
+          "coordinate_A": 9.50625,
+          "relative_free_energy_kcal_mol": 13.025586564182053
+        },
+        {
+          "coordinate_A": 9.54375,
+          "relative_free_energy_kcal_mol": 13.00759456005217
+        },
+        {
+          "coordinate_A": 9.58125,
+          "relative_free_energy_kcal_mol": 13.046405273052255
+        },
+        {
+          "coordinate_A": 9.618749999999999,
+          "relative_free_energy_kcal_mol": 13.051503256660107
+        },
+        {
+          "coordinate_A": 9.65625,
+          "relative_free_energy_kcal_mol": 13.065428757348153
+        },
+        {
+          "coordinate_A": 9.69375,
+          "relative_free_energy_kcal_mol": 13.05283170117018
+        },
+        {
+          "coordinate_A": 9.73125,
+          "relative_free_energy_kcal_mol": 13.02704008260993
+        },
+        {
+          "coordinate_A": 9.76875,
+          "relative_free_energy_kcal_mol": 13.041362068031107
+        },
+        {
+          "coordinate_A": 9.806249999999999,
+          "relative_free_energy_kcal_mol": 13.058979184218886
+        },
+        {
+          "coordinate_A": 9.84375,
+          "relative_free_energy_kcal_mol": 13.072131465148745
+        },
+        {
+          "coordinate_A": 9.88125,
+          "relative_free_energy_kcal_mol": 13.107742148311768
+        },
+        {
+          "coordinate_A": 9.91875,
+          "relative_free_energy_kcal_mol": 13.076100178874311
+        },
+        {
+          "coordinate_A": 9.95625,
+          "relative_free_energy_kcal_mol": 13.10904953150074
+        },
+        {
+          "coordinate_A": 9.993749999999999,
+          "relative_free_energy_kcal_mol": 13.091252223451178
+        },
+        {
+          "coordinate_A": 10.03125,
+          "relative_free_energy_kcal_mol": 13.098613330533986
+        },
+        {
+          "coordinate_A": 10.06875,
+          "relative_free_energy_kcal_mol": 13.10693594607451
+        },
+        {
+          "coordinate_A": 10.10625,
+          "relative_free_energy_kcal_mol": 13.123845494536686
+        },
+        {
+          "coordinate_A": 10.14375,
+          "relative_free_energy_kcal_mol": 13.131813565998142
+        },
+        {
+          "coordinate_A": 10.181249999999999,
+          "relative_free_energy_kcal_mol": 13.171745097914188
+        },
+        {
+          "coordinate_A": 10.21875,
+          "relative_free_energy_kcal_mol": 13.175631767629058
+        },
+        {
+          "coordinate_A": 10.25625,
+          "relative_free_energy_kcal_mol": 13.1622728143054
+        },
+        {
+          "coordinate_A": 10.29375,
+          "relative_free_energy_kcal_mol": 13.165864908705602
+        },
+        {
+          "coordinate_A": 10.33125,
+          "relative_free_energy_kcal_mol": 13.18572062107144
+        },
+        {
+          "coordinate_A": 10.368749999999999,
+          "relative_free_energy_kcal_mol": 13.206886771307225
+        },
+        {
+          "coordinate_A": 10.40625,
+          "relative_free_energy_kcal_mol": 13.24139323069478
+        },
+        {
+          "coordinate_A": 10.44375,
+          "relative_free_energy_kcal_mol": 13.230377035913236
+        },
+        {
+          "coordinate_A": 10.48125,
+          "relative_free_energy_kcal_mol": 13.259058911667053
+        },
+        {
+          "coordinate_A": 10.51875,
+          "relative_free_energy_kcal_mol": 13.265434201965133
+        },
+        {
+          "coordinate_A": 10.556249999999999,
+          "relative_free_energy_kcal_mol": 13.290406957355675
+        },
+        {
+          "coordinate_A": 10.59375,
+          "relative_free_energy_kcal_mol": 13.220879049887932
+        },
+        {
+          "coordinate_A": 10.63125,
+          "relative_free_energy_kcal_mol": 13.29885374950909
+        },
+        {
+          "coordinate_A": 10.66875,
+          "relative_free_energy_kcal_mol": 13.262023865354097
+        },
+        {
+          "coordinate_A": 10.70625,
+          "relative_free_energy_kcal_mol": 13.273968937403033
+        },
+        {
+          "coordinate_A": 10.743749999999999,
+          "relative_free_energy_kcal_mol": 13.287026776733013
+        },
+        {
+          "coordinate_A": 10.78125,
+          "relative_free_energy_kcal_mol": 13.300970685708156
+        },
+        {
+          "coordinate_A": 10.81875,
+          "relative_free_energy_kcal_mol": 13.299485298017826
+        },
+        {
+          "coordinate_A": 10.85625,
+          "relative_free_energy_kcal_mol": 13.309223801159375
+        },
+        {
+          "coordinate_A": 10.89375,
+          "relative_free_energy_kcal_mol": 13.317528703128582
+        },
+        {
+          "coordinate_A": 10.931249999999999,
+          "relative_free_energy_kcal_mol": 13.345035212915398
+        },
+        {
+          "coordinate_A": 10.96875,
+          "relative_free_energy_kcal_mol": 13.322637874995168
+        },
+        {
+          "coordinate_A": 11.00625,
+          "relative_free_energy_kcal_mol": 13.362314449469118
+        },
+        {
+          "coordinate_A": 11.04375,
+          "relative_free_energy_kcal_mol": 13.411365761713984
+        },
+        {
+          "coordinate_A": 11.08125,
+          "relative_free_energy_kcal_mol": 13.444652687478047
+        },
+        {
+          "coordinate_A": 11.118749999999999,
+          "relative_free_energy_kcal_mol": 13.422680103008398
+        },
+        {
+          "coordinate_A": 11.15625,
+          "relative_free_energy_kcal_mol": 13.459670360481791
+        },
+        {
+          "coordinate_A": 11.19375,
+          "relative_free_energy_kcal_mol": 13.44279647588461
+        },
+        {
+          "coordinate_A": 11.23125,
+          "relative_free_energy_kcal_mol": 13.412663733925298
+        },
+        {
+          "coordinate_A": 11.26875,
+          "relative_free_energy_kcal_mol": 13.459883117364518
+        },
+        {
+          "coordinate_A": 11.306249999999999,
+          "relative_free_energy_kcal_mol": 13.484115826045702
+        },
+        {
+          "coordinate_A": 11.34375,
+          "relative_free_energy_kcal_mol": 13.513735191842235
+        },
+        {
+          "coordinate_A": 11.38125,
+          "relative_free_energy_kcal_mol": 13.548018786064182
+        },
+        {
+          "coordinate_A": 11.41875,
+          "relative_free_energy_kcal_mol": 13.526554744827317
+        },
+        {
+          "coordinate_A": 11.45625,
+          "relative_free_energy_kcal_mol": 13.566861918263227
+        },
+        {
+          "coordinate_A": 11.493749999999999,
+          "relative_free_energy_kcal_mol": 13.551826314784002
+        },
+        {
+          "coordinate_A": 11.53125,
+          "relative_free_energy_kcal_mol": 13.598367132536954
+        },
+        {
+          "coordinate_A": 11.56875,
+          "relative_free_energy_kcal_mol": 13.584106908224532
+        },
+        {
+          "coordinate_A": 11.60625,
+          "relative_free_energy_kcal_mol": 13.64118206963089
+        },
+        {
+          "coordinate_A": 11.64375,
+          "relative_free_energy_kcal_mol": 13.620073518280511
+        },
+        {
+          "coordinate_A": 11.681249999999999,
+          "relative_free_energy_kcal_mol": 13.66534662042011
+        },
+        {
+          "coordinate_A": 11.71875,
+          "relative_free_energy_kcal_mol": 13.643713248390695
+        },
+        {
+          "coordinate_A": 11.75625,
+          "relative_free_energy_kcal_mol": 13.66735230153029
+        },
+        {
+          "coordinate_A": 11.79375,
+          "relative_free_energy_kcal_mol": 13.67068849439203
+        },
+        {
+          "coordinate_A": 11.83125,
+          "relative_free_energy_kcal_mol": 13.675038388387469
+        },
+        {
+          "coordinate_A": 11.868749999999999,
+          "relative_free_energy_kcal_mol": 13.654519983676922
+        },
+        {
+          "coordinate_A": 11.90625,
+          "relative_free_energy_kcal_mol": 13.670356767141566
+        },
+        {
+          "coordinate_A": 11.94375,
+          "relative_free_energy_kcal_mol": 13.671556865751679
+        },
+        {
+          "coordinate_A": 11.98125,
+          "relative_free_energy_kcal_mol": 13.666188951308406
+        },
+        {
+          "coordinate_A": 12.01875,
+          "relative_free_energy_kcal_mol": 13.696934112326097
+        },
+        {
+          "coordinate_A": 12.056249999999999,
+          "relative_free_energy_kcal_mol": 13.679381397407631
+        },
+        {
+          "coordinate_A": 12.09375,
+          "relative_free_energy_kcal_mol": 13.641352058923312
+        },
+        {
+          "coordinate_A": 12.13125,
+          "relative_free_energy_kcal_mol": 13.64137465367736
+        },
+        {
+          "coordinate_A": 12.16875,
+          "relative_free_energy_kcal_mol": 13.654799095576465
+        },
+        {
+          "coordinate_A": 12.20625,
+          "relative_free_energy_kcal_mol": 13.670457426844102
+        },
+        {
+          "coordinate_A": 12.243749999999999,
+          "relative_free_energy_kcal_mol": 13.683580231553192
+        },
+        {
+          "coordinate_A": 12.28125,
+          "relative_free_energy_kcal_mol": 13.695196408543032
+        },
+        {
+          "coordinate_A": 12.31875,
+          "relative_free_energy_kcal_mol": 13.68868579715643
+        },
+        {
+          "coordinate_A": 12.35625,
+          "relative_free_energy_kcal_mol": 13.718723145123484
+        },
+        {
+          "coordinate_A": 12.39375,
+          "relative_free_energy_kcal_mol": 13.680585761708304
+        },
+        {
+          "coordinate_A": 12.431249999999999,
+          "relative_free_energy_kcal_mol": 13.637447685941574
+        },
+        {
+          "coordinate_A": 12.46875,
+          "relative_free_energy_kcal_mol": 13.710941512485622
+        },
+        {
+          "coordinate_A": 12.50625,
+          "relative_free_energy_kcal_mol": 13.74530953796495
+        },
+        {
+          "coordinate_A": 12.54375,
+          "relative_free_energy_kcal_mol": 13.736515764013292
+        },
+        {
+          "coordinate_A": 12.58125,
+          "relative_free_energy_kcal_mol": 13.76726697806852
+        },
+        {
+          "coordinate_A": 12.618749999999999,
+          "relative_free_energy_kcal_mol": 13.75495766753043
+        },
+        {
+          "coordinate_A": 12.65625,
+          "relative_free_energy_kcal_mol": 13.75382472640741
+        },
+        {
+          "coordinate_A": 12.69375,
+          "relative_free_energy_kcal_mol": 13.71861412118482
+        },
+        {
+          "coordinate_A": 12.73125,
+          "relative_free_energy_kcal_mol": 13.724043856126096
+        },
+        {
+          "coordinate_A": 12.76875,
+          "relative_free_energy_kcal_mol": 13.754519965037575
+        },
+        {
+          "coordinate_A": 12.806249999999999,
+          "relative_free_energy_kcal_mol": 13.733225668484298
+        },
+        {
+          "coordinate_A": 12.84375,
+          "relative_free_energy_kcal_mol": 13.762110057430677
+        },
+        {
+          "coordinate_A": 12.88125,
+          "relative_free_energy_kcal_mol": 13.754968937917582
+        },
+        {
+          "coordinate_A": 12.91875,
+          "relative_free_energy_kcal_mol": 13.754373487243063
+        },
+        {
+          "coordinate_A": 12.95625,
+          "relative_free_energy_kcal_mol": 13.762953386014587
+        },
+        {
+          "coordinate_A": 12.993749999999999,
+          "relative_free_energy_kcal_mol": 13.727738673488574
+        },
+        {
+          "coordinate_A": 13.03125,
+          "relative_free_energy_kcal_mol": 13.773683167420955
+        },
+        {
+          "coordinate_A": 13.06875,
+          "relative_free_energy_kcal_mol": 13.74983019924997
+        },
+        {
+          "coordinate_A": 13.10625,
+          "relative_free_energy_kcal_mol": 13.770076893535713
+        },
+        {
+          "coordinate_A": 13.14375,
+          "relative_free_energy_kcal_mol": 13.782713495320504
+        },
+        {
+          "coordinate_A": 13.181249999999999,
+          "relative_free_energy_kcal_mol": 13.783592323150947
+        },
+        {
+          "coordinate_A": 13.21875,
+          "relative_free_energy_kcal_mol": 13.764136205410441
+        },
+        {
+          "coordinate_A": 13.25625,
+          "relative_free_energy_kcal_mol": 13.788101051952289
+        },
+        {
+          "coordinate_A": 13.29375,
+          "relative_free_energy_kcal_mol": 13.795573124347882
+        },
+        {
+          "coordinate_A": 13.33125,
+          "relative_free_energy_kcal_mol": 13.771718510065776
+        },
+        {
+          "coordinate_A": 13.368749999999999,
+          "relative_free_energy_kcal_mol": 13.77630453527023
+        },
+        {
+          "coordinate_A": 13.40625,
+          "relative_free_energy_kcal_mol": 13.805687439672868
+        },
+        {
+          "coordinate_A": 13.44375,
+          "relative_free_energy_kcal_mol": 13.773085595834724
+        },
+        {
+          "coordinate_A": 13.48125,
+          "relative_free_energy_kcal_mol": 13.801980127934637
+        },
+        {
+          "coordinate_A": 13.51875,
+          "relative_free_energy_kcal_mol": 13.775876268100358
+        },
+        {
+          "coordinate_A": 13.556249999999999,
+          "relative_free_energy_kcal_mol": 13.790751050714018
+        },
+        {
+          "coordinate_A": 13.59375,
+          "relative_free_energy_kcal_mol": 13.779054332211885
+        },
+        {
+          "coordinate_A": 13.63125,
+          "relative_free_energy_kcal_mol": 13.774516407595332
+        },
+        {
+          "coordinate_A": 13.66875,
+          "relative_free_energy_kcal_mol": 13.756641587847469
+        },
+        {
+          "coordinate_A": 13.70625,
+          "relative_free_energy_kcal_mol": 13.782604694027267
+        },
+        {
+          "coordinate_A": 13.743749999999999,
+          "relative_free_energy_kcal_mol": 13.770533773319261
+        },
+        {
+          "coordinate_A": 13.78125,
+          "relative_free_energy_kcal_mol": 13.788798753121998
+        },
+        {
+          "coordinate_A": 13.81875,
+          "relative_free_energy_kcal_mol": 13.779654944564301
+        },
+        {
+          "coordinate_A": 13.85625,
+          "relative_free_energy_kcal_mol": 13.78394878334976
+        },
+        {
+          "coordinate_A": 13.89375,
+          "relative_free_energy_kcal_mol": 13.760141848811985
+        },
+        {
+          "coordinate_A": 13.931249999999999,
+          "relative_free_energy_kcal_mol": 13.791883290440387
+        },
+        {
+          "coordinate_A": 13.96875,
+          "relative_free_energy_kcal_mol": 13.740750685424228
+        },
+        {
+          "coordinate_A": 14.00625,
+          "relative_free_energy_kcal_mol": 13.787279103291272
+        },
+        {
+          "coordinate_A": 14.04375,
+          "relative_free_energy_kcal_mol": 13.787368283744135
+        },
+        {
+          "coordinate_A": 14.08125,
+          "relative_free_energy_kcal_mol": 13.825715558138572
+        },
+        {
+          "coordinate_A": 14.118749999999999,
+          "relative_free_energy_kcal_mol": 13.814929048630075
+        },
+        {
+          "coordinate_A": 14.15625,
+          "relative_free_energy_kcal_mol": 13.821564665091064
+        },
+        {
+          "coordinate_A": 14.19375,
+          "relative_free_energy_kcal_mol": 13.802643398640397
+        },
+        {
+          "coordinate_A": 14.23125,
+          "relative_free_energy_kcal_mol": 13.791779150906383
+        },
+        {
+          "coordinate_A": 14.26875,
+          "relative_free_energy_kcal_mol": 13.826466445463117
+        },
+        {
+          "coordinate_A": 14.306249999999999,
+          "relative_free_energy_kcal_mol": 13.826089783080088
+        },
+        {
+          "coordinate_A": 14.34375,
+          "relative_free_energy_kcal_mol": 13.806689075458054
+        },
+        {
+          "coordinate_A": 14.381249999999998,
+          "relative_free_energy_kcal_mol": 13.812736821886753
+        },
+        {
+          "coordinate_A": 14.41875,
+          "relative_free_energy_kcal_mol": 13.79504883977457
+        },
+        {
+          "coordinate_A": 14.45625,
+          "relative_free_energy_kcal_mol": 13.836586165192884
+        },
+        {
+          "coordinate_A": 14.493749999999999,
+          "relative_free_energy_kcal_mol": 13.794334627563206
+        },
+        {
+          "coordinate_A": 14.53125,
+          "relative_free_energy_kcal_mol": 13.806272022274873
+        },
+        {
+          "coordinate_A": 14.568749999999998,
+          "relative_free_energy_kcal_mol": 13.786052374865488
+        },
+        {
+          "coordinate_A": 14.60625,
+          "relative_free_energy_kcal_mol": 13.822906261535934
+        },
+        {
+          "coordinate_A": 14.64375,
+          "relative_free_energy_kcal_mol": 13.846593640259005
+        },
+        {
+          "coordinate_A": 14.681249999999999,
+          "relative_free_energy_kcal_mol": 13.83058788184538
+        },
+        {
+          "coordinate_A": 14.71875,
+          "relative_free_energy_kcal_mol": 13.825302921391664
+        },
+        {
+          "coordinate_A": 14.756249999999998,
+          "relative_free_energy_kcal_mol": 13.857157520782113
+        },
+        {
+          "coordinate_A": 14.79375,
+          "relative_free_energy_kcal_mol": 13.821379242544339
+        },
+        {
+          "coordinate_A": 14.83125,
+          "relative_free_energy_kcal_mol": 13.806133054756286
+        },
+        {
+          "coordinate_A": 14.868749999999999,
+          "relative_free_energy_kcal_mol": 13.78450869590124
+        },
+        {
+          "coordinate_A": 14.90625,
+          "relative_free_energy_kcal_mol": 13.794380142442632
+        },
+        {
+          "coordinate_A": 14.943749999999998,
+          "relative_free_energy_kcal_mol": 13.803277744059603
+        },
+        {
+          "coordinate_A": 14.98125,
+          "relative_free_energy_kcal_mol": 13.799387373957877
+        }
+      ],
+      "route": "US-1",
+      "source_members": [
+        "WHAM_PMF/histogram-collection-glucose-US-1/0-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/0-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/0-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/0-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/1-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/1-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/1-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/2-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/2-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/2-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/3-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/3-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/3-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/3-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/4-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/4-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/4-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/5-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/5-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/5-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/6-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/6-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/6-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/6-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/7-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/7-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/7-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/8-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/8-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/8-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/9-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/9-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/9-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/9-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/10-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/10-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/10-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/11-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/11-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/11-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/12-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/12-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/12-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/12-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/13-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/13-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/13-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/14-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/14-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/14-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-1/15-0-test-dist_vs_t.dat"
+      ],
+      "window_count": 51,
+      "within_route_tolerance": true
+    },
+    {
+      "binding_free_energy_kcal_mol": -12.789695438046895,
+      "centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "difference_from_grossfield_kcal_mol": 0.00044997704744531575,
+      "frames_inside_range": 757575,
+      "frames_per_window_inside_range": [
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        14999,
+        7527
+      ],
+      "frames_per_window_raw": [
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001
+      ],
+      "frames_total_raw": 765051,
+      "grossfield_reference_kcal_mol": -12.79014541509434,
+      "iterations": 46707,
+      "maximum_offset_change_kcal_mol": 9.998928955923247e-07,
+      "median_adjacent_bhattacharyya": 0.1558452003810304,
+      "minimum_adjacent_bhattacharyya": 0.04834882406654199,
+      "pmf_profile": [
+        {
+          "coordinate_A": 0.01875,
+          "relative_free_energy_kcal_mol": 2.4283764877692473
+        },
+        {
+          "coordinate_A": 0.056249999999999994,
+          "relative_free_energy_kcal_mol": 1.2915572743144268
+        },
+        {
+          "coordinate_A": 0.09375,
+          "relative_free_energy_kcal_mol": 0.6907476481500299
+        },
+        {
+          "coordinate_A": 0.13124999999999998,
+          "relative_free_energy_kcal_mol": 0.37268348566627024
+        },
+        {
+          "coordinate_A": 0.16875,
+          "relative_free_energy_kcal_mol": 0.12876799045034765
+        },
+        {
+          "coordinate_A": 0.20625,
+          "relative_free_energy_kcal_mol": 0.027539916097911038
+        },
+        {
+          "coordinate_A": 0.24375,
+          "relative_free_energy_kcal_mol": 0.0
+        },
+        {
+          "coordinate_A": 0.28125,
+          "relative_free_energy_kcal_mol": 0.025704803140830734
+        },
+        {
+          "coordinate_A": 0.31875,
+          "relative_free_energy_kcal_mol": 0.07851113082752649
+        },
+        {
+          "coordinate_A": 0.35624999999999996,
+          "relative_free_energy_kcal_mol": 0.1841572638916657
+        },
+        {
+          "coordinate_A": 0.39375,
+          "relative_free_energy_kcal_mol": 0.261156709749835
+        },
+        {
+          "coordinate_A": 0.43124999999999997,
+          "relative_free_energy_kcal_mol": 0.35894014655797024
+        },
+        {
+          "coordinate_A": 0.46875,
+          "relative_free_energy_kcal_mol": 0.40426472966356264
+        },
+        {
+          "coordinate_A": 0.50625,
+          "relative_free_energy_kcal_mol": 0.4552655810234483
+        },
+        {
+          "coordinate_A": 0.54375,
+          "relative_free_energy_kcal_mol": 0.44732743944703635
+        },
+        {
+          "coordinate_A": 0.58125,
+          "relative_free_energy_kcal_mol": 0.4268808661273208
+        },
+        {
+          "coordinate_A": 0.6187499999999999,
+          "relative_free_energy_kcal_mol": 0.37732223556204414
+        },
+        {
+          "coordinate_A": 0.65625,
+          "relative_free_energy_kcal_mol": 0.30980384038014724
+        },
+        {
+          "coordinate_A": 0.69375,
+          "relative_free_energy_kcal_mol": 0.19690321420402812
+        },
+        {
+          "coordinate_A": 0.73125,
+          "relative_free_energy_kcal_mol": 0.15649689138651462
+        },
+        {
+          "coordinate_A": 0.76875,
+          "relative_free_energy_kcal_mol": 0.07022194397004428
+        },
+        {
+          "coordinate_A": 0.8062499999999999,
+          "relative_free_energy_kcal_mol": 0.12333437960698593
+        },
+        {
+          "coordinate_A": 0.84375,
+          "relative_free_energy_kcal_mol": 0.09761379241015367
+        },
+        {
+          "coordinate_A": 0.8812499999999999,
+          "relative_free_energy_kcal_mol": 0.13479686454140483
+        },
+        {
+          "coordinate_A": 0.91875,
+          "relative_free_energy_kcal_mol": 0.18362609494854612
+        },
+        {
+          "coordinate_A": 0.95625,
+          "relative_free_energy_kcal_mol": 0.22471377339868362
+        },
+        {
+          "coordinate_A": 0.9937499999999999,
+          "relative_free_energy_kcal_mol": 0.2705973241516969
+        },
+        {
+          "coordinate_A": 1.03125,
+          "relative_free_energy_kcal_mol": 0.33399841159392185
+        },
+        {
+          "coordinate_A": 1.06875,
+          "relative_free_energy_kcal_mol": 0.42023342972621025
+        },
+        {
+          "coordinate_A": 1.10625,
+          "relative_free_energy_kcal_mol": 0.6268445996825218
+        },
+        {
+          "coordinate_A": 1.1437499999999998,
+          "relative_free_energy_kcal_mol": 0.7595862642098061
+        },
+        {
+          "coordinate_A": 1.18125,
+          "relative_free_energy_kcal_mol": 0.970461967236784
+        },
+        {
+          "coordinate_A": 1.21875,
+          "relative_free_energy_kcal_mol": 1.1481583058972988
+        },
+        {
+          "coordinate_A": 1.25625,
+          "relative_free_energy_kcal_mol": 1.35336583768969
+        },
+        {
+          "coordinate_A": 1.29375,
+          "relative_free_energy_kcal_mol": 1.5487662236634474
+        },
+        {
+          "coordinate_A": 1.3312499999999998,
+          "relative_free_energy_kcal_mol": 1.8233750334414762
+        },
+        {
+          "coordinate_A": 1.36875,
+          "relative_free_energy_kcal_mol": 2.0902057415797226
+        },
+        {
+          "coordinate_A": 1.40625,
+          "relative_free_energy_kcal_mol": 2.391669974962695
+        },
+        {
+          "coordinate_A": 1.44375,
+          "relative_free_energy_kcal_mol": 2.664281101941639
+        },
+        {
+          "coordinate_A": 1.48125,
+          "relative_free_energy_kcal_mol": 2.9874861772511845
+        },
+        {
+          "coordinate_A": 1.5187499999999998,
+          "relative_free_energy_kcal_mol": 3.2269753141978796
+        },
+        {
+          "coordinate_A": 1.55625,
+          "relative_free_energy_kcal_mol": 3.6256889806743353
+        },
+        {
+          "coordinate_A": 1.59375,
+          "relative_free_energy_kcal_mol": 3.942658482766995
+        },
+        {
+          "coordinate_A": 1.63125,
+          "relative_free_energy_kcal_mol": 4.405354537916821
+        },
+        {
+          "coordinate_A": 1.66875,
+          "relative_free_energy_kcal_mol": 4.7854219178044515
+        },
+        {
+          "coordinate_A": 1.7062499999999998,
+          "relative_free_energy_kcal_mol": 5.257059738796956
+        },
+        {
+          "coordinate_A": 1.74375,
+          "relative_free_energy_kcal_mol": 5.668361449428763
+        },
+        {
+          "coordinate_A": 1.78125,
+          "relative_free_energy_kcal_mol": 6.184074954721495
+        },
+        {
+          "coordinate_A": 1.8187499999999999,
+          "relative_free_energy_kcal_mol": 6.6691215443521505
+        },
+        {
+          "coordinate_A": 1.85625,
+          "relative_free_energy_kcal_mol": 7.19488809701648
+        },
+        {
+          "coordinate_A": 1.8937499999999998,
+          "relative_free_energy_kcal_mol": 7.593034437414559
+        },
+        {
+          "coordinate_A": 1.93125,
+          "relative_free_energy_kcal_mol": 8.014548076486179
+        },
+        {
+          "coordinate_A": 1.96875,
+          "relative_free_energy_kcal_mol": 8.237738184789512
+        },
+        {
+          "coordinate_A": 2.0062499999999996,
+          "relative_free_energy_kcal_mol": 8.352678765336927
+        },
+        {
+          "coordinate_A": 2.04375,
+          "relative_free_energy_kcal_mol": 8.368875196837424
+        },
+        {
+          "coordinate_A": 2.08125,
+          "relative_free_energy_kcal_mol": 8.339686917678824
+        },
+        {
+          "coordinate_A": 2.11875,
+          "relative_free_energy_kcal_mol": 8.245287134228567
+        },
+        {
+          "coordinate_A": 2.15625,
+          "relative_free_energy_kcal_mol": 8.203673487141796
+        },
+        {
+          "coordinate_A": 2.1937499999999996,
+          "relative_free_energy_kcal_mol": 8.098414433338176
+        },
+        {
+          "coordinate_A": 2.23125,
+          "relative_free_energy_kcal_mol": 8.061081658611613
+        },
+        {
+          "coordinate_A": 2.26875,
+          "relative_free_energy_kcal_mol": 7.990199647379022
+        },
+        {
+          "coordinate_A": 2.30625,
+          "relative_free_energy_kcal_mol": 7.95196278657935
+        },
+        {
+          "coordinate_A": 2.34375,
+          "relative_free_energy_kcal_mol": 7.9378701341029565
+        },
+        {
+          "coordinate_A": 2.3812499999999996,
+          "relative_free_energy_kcal_mol": 7.924662349781969
+        },
+        {
+          "coordinate_A": 2.41875,
+          "relative_free_energy_kcal_mol": 7.89111269995144
+        },
+        {
+          "coordinate_A": 2.45625,
+          "relative_free_energy_kcal_mol": 7.909814763879727
+        },
+        {
+          "coordinate_A": 2.49375,
+          "relative_free_energy_kcal_mol": 7.879619936107183
+        },
+        {
+          "coordinate_A": 2.53125,
+          "relative_free_energy_kcal_mol": 7.893852673925197
+        },
+        {
+          "coordinate_A": 2.5687499999999996,
+          "relative_free_energy_kcal_mol": 7.901751552213653
+        },
+        {
+          "coordinate_A": 2.60625,
+          "relative_free_energy_kcal_mol": 7.950171425213648
+        },
+        {
+          "coordinate_A": 2.64375,
+          "relative_free_energy_kcal_mol": 7.980055997339933
+        },
+        {
+          "coordinate_A": 2.68125,
+          "relative_free_energy_kcal_mol": 8.019750709995662
+        },
+        {
+          "coordinate_A": 2.71875,
+          "relative_free_energy_kcal_mol": 8.024952460860792
+        },
+        {
+          "coordinate_A": 2.7562499999999996,
+          "relative_free_energy_kcal_mol": 8.085845636078231
+        },
+        {
+          "coordinate_A": 2.79375,
+          "relative_free_energy_kcal_mol": 8.082205503673993
+        },
+        {
+          "coordinate_A": 2.83125,
+          "relative_free_energy_kcal_mol": 8.155391320748299
+        },
+        {
+          "coordinate_A": 2.86875,
+          "relative_free_energy_kcal_mol": 8.18888333772148
+        },
+        {
+          "coordinate_A": 2.90625,
+          "relative_free_energy_kcal_mol": 8.28221457063732
+        },
+        {
+          "coordinate_A": 2.9437499999999996,
+          "relative_free_energy_kcal_mol": 8.343219390058268
+        },
+        {
+          "coordinate_A": 2.98125,
+          "relative_free_energy_kcal_mol": 8.401507880521587
+        },
+        {
+          "coordinate_A": 3.01875,
+          "relative_free_energy_kcal_mol": 8.474542800444501
+        },
+        {
+          "coordinate_A": 3.05625,
+          "relative_free_energy_kcal_mol": 8.578440093407448
+        },
+        {
+          "coordinate_A": 3.09375,
+          "relative_free_energy_kcal_mol": 8.617096349005758
+        },
+        {
+          "coordinate_A": 3.1312499999999996,
+          "relative_free_energy_kcal_mol": 8.693004266569815
+        },
+        {
+          "coordinate_A": 3.16875,
+          "relative_free_energy_kcal_mol": 8.738879991707535
+        },
+        {
+          "coordinate_A": 3.20625,
+          "relative_free_energy_kcal_mol": 8.865557001184573
+        },
+        {
+          "coordinate_A": 3.24375,
+          "relative_free_energy_kcal_mol": 8.888702357464188
+        },
+        {
+          "coordinate_A": 3.28125,
+          "relative_free_energy_kcal_mol": 8.97296636184371
+        },
+        {
+          "coordinate_A": 3.3187499999999996,
+          "relative_free_energy_kcal_mol": 9.024179294371887
+        },
+        {
+          "coordinate_A": 3.35625,
+          "relative_free_energy_kcal_mol": 9.115393161308283
+        },
+        {
+          "coordinate_A": 3.39375,
+          "relative_free_energy_kcal_mol": 9.143617823075969
+        },
+        {
+          "coordinate_A": 3.43125,
+          "relative_free_energy_kcal_mol": 9.25910685859284
+        },
+        {
+          "coordinate_A": 3.46875,
+          "relative_free_energy_kcal_mol": 9.258732978262572
+        },
+        {
+          "coordinate_A": 3.5062499999999996,
+          "relative_free_energy_kcal_mol": 9.3825841175709
+        },
+        {
+          "coordinate_A": 3.54375,
+          "relative_free_energy_kcal_mol": 9.44439057254872
+        },
+        {
+          "coordinate_A": 3.58125,
+          "relative_free_energy_kcal_mol": 9.56482730041531
+        },
+        {
+          "coordinate_A": 3.6187499999999995,
+          "relative_free_energy_kcal_mol": 9.636121867005127
+        },
+        {
+          "coordinate_A": 3.65625,
+          "relative_free_energy_kcal_mol": 9.744785678262135
+        },
+        {
+          "coordinate_A": 3.6937499999999996,
+          "relative_free_energy_kcal_mol": 9.802011569452922
+        },
+        {
+          "coordinate_A": 3.73125,
+          "relative_free_energy_kcal_mol": 9.949004586682106
+        },
+        {
+          "coordinate_A": 3.76875,
+          "relative_free_energy_kcal_mol": 10.049583776952252
+        },
+        {
+          "coordinate_A": 3.8062499999999995,
+          "relative_free_energy_kcal_mol": 10.143788359235757
+        },
+        {
+          "coordinate_A": 3.84375,
+          "relative_free_energy_kcal_mol": 10.237202821123068
+        },
+        {
+          "coordinate_A": 3.8812499999999996,
+          "relative_free_energy_kcal_mol": 10.360296926904404
+        },
+        {
+          "coordinate_A": 3.91875,
+          "relative_free_energy_kcal_mol": 10.415421188106011
+        },
+        {
+          "coordinate_A": 3.95625,
+          "relative_free_energy_kcal_mol": 10.54790683186015
+        },
+        {
+          "coordinate_A": 3.99375,
+          "relative_free_energy_kcal_mol": 10.60139430768252
+        },
+        {
+          "coordinate_A": 4.03125,
+          "relative_free_energy_kcal_mol": 10.700315761907722
+        },
+        {
+          "coordinate_A": 4.06875,
+          "relative_free_energy_kcal_mol": 10.82373571360847
+        },
+        {
+          "coordinate_A": 4.106249999999999,
+          "relative_free_energy_kcal_mol": 10.91139202926431
+        },
+        {
+          "coordinate_A": 4.14375,
+          "relative_free_energy_kcal_mol": 11.034579838904577
+        },
+        {
+          "coordinate_A": 4.18125,
+          "relative_free_energy_kcal_mol": 11.130052455492551
+        },
+        {
+          "coordinate_A": 4.21875,
+          "relative_free_energy_kcal_mol": 11.24471566075656
+        },
+        {
+          "coordinate_A": 4.25625,
+          "relative_free_energy_kcal_mol": 11.324891224229205
+        },
+        {
+          "coordinate_A": 4.293749999999999,
+          "relative_free_energy_kcal_mol": 11.43016535531135
+        },
+        {
+          "coordinate_A": 4.33125,
+          "relative_free_energy_kcal_mol": 11.500643823639116
+        },
+        {
+          "coordinate_A": 4.36875,
+          "relative_free_energy_kcal_mol": 11.48023738895314
+        },
+        {
+          "coordinate_A": 4.40625,
+          "relative_free_energy_kcal_mol": 11.550549397459204
+        },
+        {
+          "coordinate_A": 4.44375,
+          "relative_free_energy_kcal_mol": 11.578748549360597
+        },
+        {
+          "coordinate_A": 4.481249999999999,
+          "relative_free_energy_kcal_mol": 11.59659209969943
+        },
+        {
+          "coordinate_A": 4.51875,
+          "relative_free_energy_kcal_mol": 11.549064095596275
+        },
+        {
+          "coordinate_A": 4.55625,
+          "relative_free_energy_kcal_mol": 11.517739767896183
+        },
+        {
+          "coordinate_A": 4.59375,
+          "relative_free_energy_kcal_mol": 11.46508884806687
+        },
+        {
+          "coordinate_A": 4.63125,
+          "relative_free_energy_kcal_mol": 11.43125087103261
+        },
+        {
+          "coordinate_A": 4.668749999999999,
+          "relative_free_energy_kcal_mol": 11.342116623221637
+        },
+        {
+          "coordinate_A": 4.70625,
+          "relative_free_energy_kcal_mol": 11.295812484729927
+        },
+        {
+          "coordinate_A": 4.74375,
+          "relative_free_energy_kcal_mol": 11.209743453033495
+        },
+        {
+          "coordinate_A": 4.78125,
+          "relative_free_energy_kcal_mol": 11.20097651378008
+        },
+        {
+          "coordinate_A": 4.81875,
+          "relative_free_energy_kcal_mol": 11.153105150127644
+        },
+        {
+          "coordinate_A": 4.856249999999999,
+          "relative_free_energy_kcal_mol": 11.078987098656004
+        },
+        {
+          "coordinate_A": 4.89375,
+          "relative_free_energy_kcal_mol": 11.03848307326161
+        },
+        {
+          "coordinate_A": 4.93125,
+          "relative_free_energy_kcal_mol": 10.978794101495229
+        },
+        {
+          "coordinate_A": 4.96875,
+          "relative_free_energy_kcal_mol": 10.930465894855264
+        },
+        {
+          "coordinate_A": 5.00625,
+          "relative_free_energy_kcal_mol": 10.91207645412728
+        },
+        {
+          "coordinate_A": 5.043749999999999,
+          "relative_free_energy_kcal_mol": 10.916957697794185
+        },
+        {
+          "coordinate_A": 5.08125,
+          "relative_free_energy_kcal_mol": 10.891997564128852
+        },
+        {
+          "coordinate_A": 5.11875,
+          "relative_free_energy_kcal_mol": 10.848956538242065
+        },
+        {
+          "coordinate_A": 5.15625,
+          "relative_free_energy_kcal_mol": 10.861419232335503
+        },
+        {
+          "coordinate_A": 5.19375,
+          "relative_free_energy_kcal_mol": 10.833130434297953
+        },
+        {
+          "coordinate_A": 5.231249999999999,
+          "relative_free_energy_kcal_mol": 10.837443052287295
+        },
+        {
+          "coordinate_A": 5.26875,
+          "relative_free_energy_kcal_mol": 10.842688485206875
+        },
+        {
+          "coordinate_A": 5.30625,
+          "relative_free_energy_kcal_mol": 10.894162906491045
+        },
+        {
+          "coordinate_A": 5.34375,
+          "relative_free_energy_kcal_mol": 10.90931252859441
+        },
+        {
+          "coordinate_A": 5.38125,
+          "relative_free_energy_kcal_mol": 10.988126240618742
+        },
+        {
+          "coordinate_A": 5.418749999999999,
+          "relative_free_energy_kcal_mol": 10.994430526800505
+        },
+        {
+          "coordinate_A": 5.45625,
+          "relative_free_energy_kcal_mol": 11.049306248260981
+        },
+        {
+          "coordinate_A": 5.49375,
+          "relative_free_energy_kcal_mol": 11.058245851709609
+        },
+        {
+          "coordinate_A": 5.53125,
+          "relative_free_energy_kcal_mol": 11.12717707960623
+        },
+        {
+          "coordinate_A": 5.56875,
+          "relative_free_energy_kcal_mol": 11.135060034719357
+        },
+        {
+          "coordinate_A": 5.606249999999999,
+          "relative_free_energy_kcal_mol": 11.172459907291426
+        },
+        {
+          "coordinate_A": 5.64375,
+          "relative_free_energy_kcal_mol": 11.212373518043956
+        },
+        {
+          "coordinate_A": 5.68125,
+          "relative_free_energy_kcal_mol": 11.26012563629662
+        },
+        {
+          "coordinate_A": 5.71875,
+          "relative_free_energy_kcal_mol": 11.271858422554931
+        },
+        {
+          "coordinate_A": 5.75625,
+          "relative_free_energy_kcal_mol": 11.311909712040801
+        },
+        {
+          "coordinate_A": 5.793749999999999,
+          "relative_free_energy_kcal_mol": 11.306270053036567
+        },
+        {
+          "coordinate_A": 5.83125,
+          "relative_free_energy_kcal_mol": 11.293003882472485
+        },
+        {
+          "coordinate_A": 5.86875,
+          "relative_free_energy_kcal_mol": 11.332242821362692
+        },
+        {
+          "coordinate_A": 5.90625,
+          "relative_free_energy_kcal_mol": 11.346853794686128
+        },
+        {
+          "coordinate_A": 5.94375,
+          "relative_free_energy_kcal_mol": 11.374858169187526
+        },
+        {
+          "coordinate_A": 5.981249999999999,
+          "relative_free_energy_kcal_mol": 11.428897098653449
+        },
+        {
+          "coordinate_A": 6.01875,
+          "relative_free_energy_kcal_mol": 11.43407046191039
+        },
+        {
+          "coordinate_A": 6.05625,
+          "relative_free_energy_kcal_mol": 11.466396545467166
+        },
+        {
+          "coordinate_A": 6.09375,
+          "relative_free_energy_kcal_mol": 11.471547140593193
+        },
+        {
+          "coordinate_A": 6.13125,
+          "relative_free_energy_kcal_mol": 11.471775364861639
+        },
+        {
+          "coordinate_A": 6.168749999999999,
+          "relative_free_energy_kcal_mol": 11.510498087203212
+        },
+        {
+          "coordinate_A": 6.20625,
+          "relative_free_energy_kcal_mol": 11.52635258274422
+        },
+        {
+          "coordinate_A": 6.24375,
+          "relative_free_energy_kcal_mol": 11.559269798957637
+        },
+        {
+          "coordinate_A": 6.28125,
+          "relative_free_energy_kcal_mol": 11.608137248265123
+        },
+        {
+          "coordinate_A": 6.31875,
+          "relative_free_energy_kcal_mol": 11.624412623172141
+        },
+        {
+          "coordinate_A": 6.356249999999999,
+          "relative_free_energy_kcal_mol": 11.677094075750455
+        },
+        {
+          "coordinate_A": 6.39375,
+          "relative_free_energy_kcal_mol": 11.676894178448528
+        },
+        {
+          "coordinate_A": 6.43125,
+          "relative_free_energy_kcal_mol": 11.711834746248396
+        },
+        {
+          "coordinate_A": 6.46875,
+          "relative_free_energy_kcal_mol": 11.765112107976368
+        },
+        {
+          "coordinate_A": 6.50625,
+          "relative_free_energy_kcal_mol": 11.808656086329568
+        },
+        {
+          "coordinate_A": 6.543749999999999,
+          "relative_free_energy_kcal_mol": 11.8157517653751
+        },
+        {
+          "coordinate_A": 6.58125,
+          "relative_free_energy_kcal_mol": 11.86370661590785
+        },
+        {
+          "coordinate_A": 6.61875,
+          "relative_free_energy_kcal_mol": 11.840221069357833
+        },
+        {
+          "coordinate_A": 6.65625,
+          "relative_free_energy_kcal_mol": 11.884530230764451
+        },
+        {
+          "coordinate_A": 6.69375,
+          "relative_free_energy_kcal_mol": 11.894815152210958
+        },
+        {
+          "coordinate_A": 6.731249999999999,
+          "relative_free_energy_kcal_mol": 11.89002776901513
+        },
+        {
+          "coordinate_A": 6.76875,
+          "relative_free_energy_kcal_mol": 11.899032765315345
+        },
+        {
+          "coordinate_A": 6.80625,
+          "relative_free_energy_kcal_mol": 11.952450394176319
+        },
+        {
+          "coordinate_A": 6.84375,
+          "relative_free_energy_kcal_mol": 11.958697927664389
+        },
+        {
+          "coordinate_A": 6.88125,
+          "relative_free_energy_kcal_mol": 12.011859735827791
+        },
+        {
+          "coordinate_A": 6.918749999999999,
+          "relative_free_energy_kcal_mol": 11.992653213002084
+        },
+        {
+          "coordinate_A": 6.95625,
+          "relative_free_energy_kcal_mol": 11.999516498591497
+        },
+        {
+          "coordinate_A": 6.99375,
+          "relative_free_energy_kcal_mol": 11.988982577324299
+        },
+        {
+          "coordinate_A": 7.03125,
+          "relative_free_energy_kcal_mol": 12.014013174195727
+        },
+        {
+          "coordinate_A": 7.06875,
+          "relative_free_energy_kcal_mol": 11.975666973736608
+        },
+        {
+          "coordinate_A": 7.106249999999999,
+          "relative_free_energy_kcal_mol": 12.054219649957329
+        },
+        {
+          "coordinate_A": 7.14375,
+          "relative_free_energy_kcal_mol": 12.07066505210261
+        },
+        {
+          "coordinate_A": 7.1812499999999995,
+          "relative_free_energy_kcal_mol": 12.053219987286234
+        },
+        {
+          "coordinate_A": 7.21875,
+          "relative_free_energy_kcal_mol": 12.047393322576232
+        },
+        {
+          "coordinate_A": 7.25625,
+          "relative_free_energy_kcal_mol": 12.084598203967662
+        },
+        {
+          "coordinate_A": 7.293749999999999,
+          "relative_free_energy_kcal_mol": 12.052640806100127
+        },
+        {
+          "coordinate_A": 7.33125,
+          "relative_free_energy_kcal_mol": 12.04744075681806
+        },
+        {
+          "coordinate_A": 7.3687499999999995,
+          "relative_free_energy_kcal_mol": 12.010175437497947
+        },
+        {
+          "coordinate_A": 7.40625,
+          "relative_free_energy_kcal_mol": 12.051175390012908
+        },
+        {
+          "coordinate_A": 7.44375,
+          "relative_free_energy_kcal_mol": 12.048858837738036
+        },
+        {
+          "coordinate_A": 7.481249999999999,
+          "relative_free_energy_kcal_mol": 12.051820035114325
+        },
+        {
+          "coordinate_A": 7.51875,
+          "relative_free_energy_kcal_mol": 12.024162238598942
+        },
+        {
+          "coordinate_A": 7.5562499999999995,
+          "relative_free_energy_kcal_mol": 12.036910829605334
+        },
+        {
+          "coordinate_A": 7.59375,
+          "relative_free_energy_kcal_mol": 11.986380371791794
+        },
+        {
+          "coordinate_A": 7.63125,
+          "relative_free_energy_kcal_mol": 11.968052591795521
+        },
+        {
+          "coordinate_A": 7.668749999999999,
+          "relative_free_energy_kcal_mol": 11.969623323516922
+        },
+        {
+          "coordinate_A": 7.70625,
+          "relative_free_energy_kcal_mol": 12.014755837593198
+        },
+        {
+          "coordinate_A": 7.7437499999999995,
+          "relative_free_energy_kcal_mol": 11.995420132822595
+        },
+        {
+          "coordinate_A": 7.78125,
+          "relative_free_energy_kcal_mol": 12.024329783813748
+        },
+        {
+          "coordinate_A": 7.81875,
+          "relative_free_energy_kcal_mol": 11.974388184646994
+        },
+        {
+          "coordinate_A": 7.856249999999999,
+          "relative_free_energy_kcal_mol": 11.985419964914643
+        },
+        {
+          "coordinate_A": 7.89375,
+          "relative_free_energy_kcal_mol": 11.938240255379336
+        },
+        {
+          "coordinate_A": 7.9312499999999995,
+          "relative_free_energy_kcal_mol": 11.967816489830046
+        },
+        {
+          "coordinate_A": 7.96875,
+          "relative_free_energy_kcal_mol": 11.979178653806214
+        },
+        {
+          "coordinate_A": 8.00625,
+          "relative_free_energy_kcal_mol": 11.989750294691909
+        },
+        {
+          "coordinate_A": 8.04375,
+          "relative_free_energy_kcal_mol": 11.953245606543947
+        },
+        {
+          "coordinate_A": 8.08125,
+          "relative_free_energy_kcal_mol": 11.984580515627421
+        },
+        {
+          "coordinate_A": 8.118749999999999,
+          "relative_free_energy_kcal_mol": 11.944025877311375
+        },
+        {
+          "coordinate_A": 8.15625,
+          "relative_free_energy_kcal_mol": 11.944778563284737
+        },
+        {
+          "coordinate_A": 8.19375,
+          "relative_free_energy_kcal_mol": 11.904308517881523
+        },
+        {
+          "coordinate_A": 8.23125,
+          "relative_free_energy_kcal_mol": 11.908914779849328
+        },
+        {
+          "coordinate_A": 8.26875,
+          "relative_free_energy_kcal_mol": 11.89744271925766
+        },
+        {
+          "coordinate_A": 8.306249999999999,
+          "relative_free_energy_kcal_mol": 11.904697985611852
+        },
+        {
+          "coordinate_A": 8.34375,
+          "relative_free_energy_kcal_mol": 11.875492999251847
+        },
+        {
+          "coordinate_A": 8.38125,
+          "relative_free_energy_kcal_mol": 11.905963090118586
+        },
+        {
+          "coordinate_A": 8.41875,
+          "relative_free_energy_kcal_mol": 11.903334871409932
+        },
+        {
+          "coordinate_A": 8.45625,
+          "relative_free_energy_kcal_mol": 11.87692333007886
+        },
+        {
+          "coordinate_A": 8.493749999999999,
+          "relative_free_energy_kcal_mol": 11.901538723060423
+        },
+        {
+          "coordinate_A": 8.53125,
+          "relative_free_energy_kcal_mol": 11.865967686842954
+        },
+        {
+          "coordinate_A": 8.56875,
+          "relative_free_energy_kcal_mol": 11.868738012278751
+        },
+        {
+          "coordinate_A": 8.60625,
+          "relative_free_energy_kcal_mol": 11.913349594051875
+        },
+        {
+          "coordinate_A": 8.64375,
+          "relative_free_energy_kcal_mol": 11.901469350448668
+        },
+        {
+          "coordinate_A": 8.681249999999999,
+          "relative_free_energy_kcal_mol": 11.92535952054201
+        },
+        {
+          "coordinate_A": 8.71875,
+          "relative_free_energy_kcal_mol": 11.91646041616707
+        },
+        {
+          "coordinate_A": 8.75625,
+          "relative_free_energy_kcal_mol": 11.940481231248226
+        },
+        {
+          "coordinate_A": 8.79375,
+          "relative_free_energy_kcal_mol": 11.894864135608552
+        },
+        {
+          "coordinate_A": 8.83125,
+          "relative_free_energy_kcal_mol": 11.899696775377377
+        },
+        {
+          "coordinate_A": 8.868749999999999,
+          "relative_free_energy_kcal_mol": 11.909822234234111
+        },
+        {
+          "coordinate_A": 8.90625,
+          "relative_free_energy_kcal_mol": 11.925696735508804
+        },
+        {
+          "coordinate_A": 8.94375,
+          "relative_free_energy_kcal_mol": 11.941596998622552
+        },
+        {
+          "coordinate_A": 8.98125,
+          "relative_free_energy_kcal_mol": 11.9839749104957
+        },
+        {
+          "coordinate_A": 9.01875,
+          "relative_free_energy_kcal_mol": 11.96191801122167
+        },
+        {
+          "coordinate_A": 9.056249999999999,
+          "relative_free_energy_kcal_mol": 11.990791852310153
+        },
+        {
+          "coordinate_A": 9.09375,
+          "relative_free_energy_kcal_mol": 11.963675523806014
+        },
+        {
+          "coordinate_A": 9.13125,
+          "relative_free_energy_kcal_mol": 11.967448819802138
+        },
+        {
+          "coordinate_A": 9.16875,
+          "relative_free_energy_kcal_mol": 11.966354307812153
+        },
+        {
+          "coordinate_A": 9.20625,
+          "relative_free_energy_kcal_mol": 11.98474992474123
+        },
+        {
+          "coordinate_A": 9.243749999999999,
+          "relative_free_energy_kcal_mol": 11.998411671320062
+        },
+        {
+          "coordinate_A": 9.28125,
+          "relative_free_energy_kcal_mol": 12.025935772351934
+        },
+        {
+          "coordinate_A": 9.31875,
+          "relative_free_energy_kcal_mol": 12.042544254305987
+        },
+        {
+          "coordinate_A": 9.35625,
+          "relative_free_energy_kcal_mol": 12.05370191296501
+        },
+        {
+          "coordinate_A": 9.39375,
+          "relative_free_energy_kcal_mol": 12.066155630677834
+        },
+        {
+          "coordinate_A": 9.431249999999999,
+          "relative_free_energy_kcal_mol": 12.07080093282756
+        },
+        {
+          "coordinate_A": 9.46875,
+          "relative_free_energy_kcal_mol": 12.065462307949062
+        },
+        {
+          "coordinate_A": 9.50625,
+          "relative_free_energy_kcal_mol": 12.07429069858379
+        },
+        {
+          "coordinate_A": 9.54375,
+          "relative_free_energy_kcal_mol": 12.09830014980874
+        },
+        {
+          "coordinate_A": 9.58125,
+          "relative_free_energy_kcal_mol": 12.121769689754586
+        },
+        {
+          "coordinate_A": 9.618749999999999,
+          "relative_free_energy_kcal_mol": 12.110646504436424
+        },
+        {
+          "coordinate_A": 9.65625,
+          "relative_free_energy_kcal_mol": 12.136057743675142
+        },
+        {
+          "coordinate_A": 9.69375,
+          "relative_free_energy_kcal_mol": 12.115180131994476
+        },
+        {
+          "coordinate_A": 9.73125,
+          "relative_free_energy_kcal_mol": 12.128005611468998
+        },
+        {
+          "coordinate_A": 9.76875,
+          "relative_free_energy_kcal_mol": 12.155916463520272
+        },
+        {
+          "coordinate_A": 9.806249999999999,
+          "relative_free_energy_kcal_mol": 12.179417511546134
+        },
+        {
+          "coordinate_A": 9.84375,
+          "relative_free_energy_kcal_mol": 12.144710046543018
+        },
+        {
+          "coordinate_A": 9.88125,
+          "relative_free_energy_kcal_mol": 12.186318527011009
+        },
+        {
+          "coordinate_A": 9.91875,
+          "relative_free_energy_kcal_mol": 12.169294028058067
+        },
+        {
+          "coordinate_A": 9.95625,
+          "relative_free_energy_kcal_mol": 12.189668904353159
+        },
+        {
+          "coordinate_A": 9.993749999999999,
+          "relative_free_energy_kcal_mol": 12.19542760409531
+        },
+        {
+          "coordinate_A": 10.03125,
+          "relative_free_energy_kcal_mol": 12.21550206810853
+        },
+        {
+          "coordinate_A": 10.06875,
+          "relative_free_energy_kcal_mol": 12.149706619687281
+        },
+        {
+          "coordinate_A": 10.10625,
+          "relative_free_energy_kcal_mol": 12.204421017597053
+        },
+        {
+          "coordinate_A": 10.14375,
+          "relative_free_energy_kcal_mol": 12.2070181132387
+        },
+        {
+          "coordinate_A": 10.181249999999999,
+          "relative_free_energy_kcal_mol": 12.245843610640627
+        },
+        {
+          "coordinate_A": 10.21875,
+          "relative_free_energy_kcal_mol": 12.233707114493544
+        },
+        {
+          "coordinate_A": 10.25625,
+          "relative_free_energy_kcal_mol": 12.255675958345806
+        },
+        {
+          "coordinate_A": 10.29375,
+          "relative_free_energy_kcal_mol": 12.24799363035885
+        },
+        {
+          "coordinate_A": 10.33125,
+          "relative_free_energy_kcal_mol": 12.219688400866891
+        },
+        {
+          "coordinate_A": 10.368749999999999,
+          "relative_free_energy_kcal_mol": 12.208565201004053
+        },
+        {
+          "coordinate_A": 10.40625,
+          "relative_free_energy_kcal_mol": 12.257978723709698
+        },
+        {
+          "coordinate_A": 10.44375,
+          "relative_free_energy_kcal_mol": 12.276378672815028
+        },
+        {
+          "coordinate_A": 10.48125,
+          "relative_free_energy_kcal_mol": 12.298025800201218
+        },
+        {
+          "coordinate_A": 10.51875,
+          "relative_free_energy_kcal_mol": 12.288925539848277
+        },
+        {
+          "coordinate_A": 10.556249999999999,
+          "relative_free_energy_kcal_mol": 12.300271136393295
+        },
+        {
+          "coordinate_A": 10.59375,
+          "relative_free_energy_kcal_mol": 12.296618700547093
+        },
+        {
+          "coordinate_A": 10.63125,
+          "relative_free_energy_kcal_mol": 12.297881349905763
+        },
+        {
+          "coordinate_A": 10.66875,
+          "relative_free_energy_kcal_mol": 12.305161039431376
+        },
+        {
+          "coordinate_A": 10.70625,
+          "relative_free_energy_kcal_mol": 12.344246208557944
+        },
+        {
+          "coordinate_A": 10.743749999999999,
+          "relative_free_energy_kcal_mol": 12.297236830410375
+        },
+        {
+          "coordinate_A": 10.78125,
+          "relative_free_energy_kcal_mol": 12.353291082560375
+        },
+        {
+          "coordinate_A": 10.81875,
+          "relative_free_energy_kcal_mol": 12.321125487068207
+        },
+        {
+          "coordinate_A": 10.85625,
+          "relative_free_energy_kcal_mol": 12.36990963881446
+        },
+        {
+          "coordinate_A": 10.89375,
+          "relative_free_energy_kcal_mol": 12.301156545523703
+        },
+        {
+          "coordinate_A": 10.931249999999999,
+          "relative_free_energy_kcal_mol": 12.376100205881809
+        },
+        {
+          "coordinate_A": 10.96875,
+          "relative_free_energy_kcal_mol": 12.345183406640269
+        },
+        {
+          "coordinate_A": 11.00625,
+          "relative_free_energy_kcal_mol": 12.390226402601977
+        },
+        {
+          "coordinate_A": 11.04375,
+          "relative_free_energy_kcal_mol": 12.38307207960573
+        },
+        {
+          "coordinate_A": 11.08125,
+          "relative_free_energy_kcal_mol": 12.414476989957485
+        },
+        {
+          "coordinate_A": 11.118749999999999,
+          "relative_free_energy_kcal_mol": 12.397893648863768
+        },
+        {
+          "coordinate_A": 11.15625,
+          "relative_free_energy_kcal_mol": 12.40831807015262
+        },
+        {
+          "coordinate_A": 11.19375,
+          "relative_free_energy_kcal_mol": 12.402687560594009
+        },
+        {
+          "coordinate_A": 11.23125,
+          "relative_free_energy_kcal_mol": 12.453965747390408
+        },
+        {
+          "coordinate_A": 11.26875,
+          "relative_free_energy_kcal_mol": 12.441748057714989
+        },
+        {
+          "coordinate_A": 11.306249999999999,
+          "relative_free_energy_kcal_mol": 12.497106652492528
+        },
+        {
+          "coordinate_A": 11.34375,
+          "relative_free_energy_kcal_mol": 12.519285869842498
+        },
+        {
+          "coordinate_A": 11.38125,
+          "relative_free_energy_kcal_mol": 12.523705909144285
+        },
+        {
+          "coordinate_A": 11.41875,
+          "relative_free_energy_kcal_mol": 12.562289924140211
+        },
+        {
+          "coordinate_A": 11.45625,
+          "relative_free_energy_kcal_mol": 12.54001861591804
+        },
+        {
+          "coordinate_A": 11.493749999999999,
+          "relative_free_energy_kcal_mol": 12.573434429182367
+        },
+        {
+          "coordinate_A": 11.53125,
+          "relative_free_energy_kcal_mol": 12.550478143344783
+        },
+        {
+          "coordinate_A": 11.56875,
+          "relative_free_energy_kcal_mol": 12.586358511914145
+        },
+        {
+          "coordinate_A": 11.60625,
+          "relative_free_energy_kcal_mol": 12.621738943466426
+        },
+        {
+          "coordinate_A": 11.64375,
+          "relative_free_energy_kcal_mol": 12.6426751925438
+        },
+        {
+          "coordinate_A": 11.681249999999999,
+          "relative_free_energy_kcal_mol": 12.660399845463258
+        },
+        {
+          "coordinate_A": 11.71875,
+          "relative_free_energy_kcal_mol": 12.658273727133631
+        },
+        {
+          "coordinate_A": 11.75625,
+          "relative_free_energy_kcal_mol": 12.680433034484428
+        },
+        {
+          "coordinate_A": 11.79375,
+          "relative_free_energy_kcal_mol": 12.663551247142184
+        },
+        {
+          "coordinate_A": 11.83125,
+          "relative_free_energy_kcal_mol": 12.68032028642166
+        },
+        {
+          "coordinate_A": 11.868749999999999,
+          "relative_free_energy_kcal_mol": 12.710423057758463
+        },
+        {
+          "coordinate_A": 11.90625,
+          "relative_free_energy_kcal_mol": 12.718338082008305
+        },
+        {
+          "coordinate_A": 11.94375,
+          "relative_free_energy_kcal_mol": 12.719375633971504
+        },
+        {
+          "coordinate_A": 11.98125,
+          "relative_free_energy_kcal_mol": 12.733120657496675
+        },
+        {
+          "coordinate_A": 12.01875,
+          "relative_free_energy_kcal_mol": 12.728594580884682
+        },
+        {
+          "coordinate_A": 12.056249999999999,
+          "relative_free_energy_kcal_mol": 12.762741422132756
+        },
+        {
+          "coordinate_A": 12.09375,
+          "relative_free_energy_kcal_mol": 12.738081844424933
+        },
+        {
+          "coordinate_A": 12.13125,
+          "relative_free_energy_kcal_mol": 12.7066448562672
+        },
+        {
+          "coordinate_A": 12.16875,
+          "relative_free_energy_kcal_mol": 12.716300789166077
+        },
+        {
+          "coordinate_A": 12.20625,
+          "relative_free_energy_kcal_mol": 12.767928166606273
+        },
+        {
+          "coordinate_A": 12.243749999999999,
+          "relative_free_energy_kcal_mol": 12.754295128933485
+        },
+        {
+          "coordinate_A": 12.28125,
+          "relative_free_energy_kcal_mol": 12.773410970667102
+        },
+        {
+          "coordinate_A": 12.31875,
+          "relative_free_energy_kcal_mol": 12.785636731398988
+        },
+        {
+          "coordinate_A": 12.35625,
+          "relative_free_energy_kcal_mol": 12.748821713981323
+        },
+        {
+          "coordinate_A": 12.39375,
+          "relative_free_energy_kcal_mol": 12.75300284772148
+        },
+        {
+          "coordinate_A": 12.431249999999999,
+          "relative_free_energy_kcal_mol": 12.796268270023539
+        },
+        {
+          "coordinate_A": 12.46875,
+          "relative_free_energy_kcal_mol": 12.781613141359209
+        },
+        {
+          "coordinate_A": 12.50625,
+          "relative_free_energy_kcal_mol": 12.780058608055871
+        },
+        {
+          "coordinate_A": 12.54375,
+          "relative_free_energy_kcal_mol": 12.816911312186473
+        },
+        {
+          "coordinate_A": 12.58125,
+          "relative_free_energy_kcal_mol": 12.826367496907427
+        },
+        {
+          "coordinate_A": 12.618749999999999,
+          "relative_free_energy_kcal_mol": 12.815336434180802
+        },
+        {
+          "coordinate_A": 12.65625,
+          "relative_free_energy_kcal_mol": 12.831908409742567
+        },
+        {
+          "coordinate_A": 12.69375,
+          "relative_free_energy_kcal_mol": 12.82868145747454
+        },
+        {
+          "coordinate_A": 12.73125,
+          "relative_free_energy_kcal_mol": 12.810347208207862
+        },
+        {
+          "coordinate_A": 12.76875,
+          "relative_free_energy_kcal_mol": 12.762960085069293
+        },
+        {
+          "coordinate_A": 12.806249999999999,
+          "relative_free_energy_kcal_mol": 12.832356857592634
+        },
+        {
+          "coordinate_A": 12.84375,
+          "relative_free_energy_kcal_mol": 12.801645017831664
+        },
+        {
+          "coordinate_A": 12.88125,
+          "relative_free_energy_kcal_mol": 12.833781251007936
+        },
+        {
+          "coordinate_A": 12.91875,
+          "relative_free_energy_kcal_mol": 12.81238667289079
+        },
+        {
+          "coordinate_A": 12.95625,
+          "relative_free_energy_kcal_mol": 12.857370574083179
+        },
+        {
+          "coordinate_A": 12.993749999999999,
+          "relative_free_energy_kcal_mol": 12.77098453173248
+        },
+        {
+          "coordinate_A": 13.03125,
+          "relative_free_energy_kcal_mol": 12.802846271296964
+        },
+        {
+          "coordinate_A": 13.06875,
+          "relative_free_energy_kcal_mol": 12.772184156701256
+        },
+        {
+          "coordinate_A": 13.10625,
+          "relative_free_energy_kcal_mol": 12.764959356949936
+        },
+        {
+          "coordinate_A": 13.14375,
+          "relative_free_energy_kcal_mol": 12.781026642735696
+        },
+        {
+          "coordinate_A": 13.181249999999999,
+          "relative_free_energy_kcal_mol": 12.825041825512583
+        },
+        {
+          "coordinate_A": 13.21875,
+          "relative_free_energy_kcal_mol": 12.788963379480144
+        },
+        {
+          "coordinate_A": 13.25625,
+          "relative_free_energy_kcal_mol": 12.804061369485838
+        },
+        {
+          "coordinate_A": 13.29375,
+          "relative_free_energy_kcal_mol": 12.774194800519453
+        },
+        {
+          "coordinate_A": 13.33125,
+          "relative_free_energy_kcal_mol": 12.788725191124223
+        },
+        {
+          "coordinate_A": 13.368749999999999,
+          "relative_free_energy_kcal_mol": 12.791243848169884
+        },
+        {
+          "coordinate_A": 13.40625,
+          "relative_free_energy_kcal_mol": 12.81443892615434
+        },
+        {
+          "coordinate_A": 13.44375,
+          "relative_free_energy_kcal_mol": 12.819899045237447
+        },
+        {
+          "coordinate_A": 13.48125,
+          "relative_free_energy_kcal_mol": 12.824383720636922
+        },
+        {
+          "coordinate_A": 13.51875,
+          "relative_free_energy_kcal_mol": 12.808519418040321
+        },
+        {
+          "coordinate_A": 13.556249999999999,
+          "relative_free_energy_kcal_mol": 12.812928529440939
+        },
+        {
+          "coordinate_A": 13.59375,
+          "relative_free_energy_kcal_mol": 12.813397944096435
+        },
+        {
+          "coordinate_A": 13.63125,
+          "relative_free_energy_kcal_mol": 12.819966213933194
+        },
+        {
+          "coordinate_A": 13.66875,
+          "relative_free_energy_kcal_mol": 12.78927050726781
+        },
+        {
+          "coordinate_A": 13.70625,
+          "relative_free_energy_kcal_mol": 12.815157713626245
+        },
+        {
+          "coordinate_A": 13.743749999999999,
+          "relative_free_energy_kcal_mol": 12.804791823907227
+        },
+        {
+          "coordinate_A": 13.78125,
+          "relative_free_energy_kcal_mol": 12.85432747453595
+        },
+        {
+          "coordinate_A": 13.81875,
+          "relative_free_energy_kcal_mol": 12.810466645677254
+        },
+        {
+          "coordinate_A": 13.85625,
+          "relative_free_energy_kcal_mol": 12.831026026167075
+        },
+        {
+          "coordinate_A": 13.89375,
+          "relative_free_energy_kcal_mol": 12.794513466322437
+        },
+        {
+          "coordinate_A": 13.931249999999999,
+          "relative_free_energy_kcal_mol": 12.789647325078166
+        },
+        {
+          "coordinate_A": 13.96875,
+          "relative_free_energy_kcal_mol": 12.813113313279793
+        },
+        {
+          "coordinate_A": 14.00625,
+          "relative_free_energy_kcal_mol": 12.820382201744753
+        },
+        {
+          "coordinate_A": 14.04375,
+          "relative_free_energy_kcal_mol": 12.824173493178023
+        },
+        {
+          "coordinate_A": 14.08125,
+          "relative_free_energy_kcal_mol": 12.823185162415802
+        },
+        {
+          "coordinate_A": 14.118749999999999,
+          "relative_free_energy_kcal_mol": 12.811655226414748
+        },
+        {
+          "coordinate_A": 14.15625,
+          "relative_free_energy_kcal_mol": 12.818657682297179
+        },
+        {
+          "coordinate_A": 14.19375,
+          "relative_free_energy_kcal_mol": 12.780883474403494
+        },
+        {
+          "coordinate_A": 14.23125,
+          "relative_free_energy_kcal_mol": 12.803896896729404
+        },
+        {
+          "coordinate_A": 14.26875,
+          "relative_free_energy_kcal_mol": 12.774082126173662
+        },
+        {
+          "coordinate_A": 14.306249999999999,
+          "relative_free_energy_kcal_mol": 12.784736273895309
+        },
+        {
+          "coordinate_A": 14.34375,
+          "relative_free_energy_kcal_mol": 12.751140694986049
+        },
+        {
+          "coordinate_A": 14.381249999999998,
+          "relative_free_energy_kcal_mol": 12.795255295098723
+        },
+        {
+          "coordinate_A": 14.41875,
+          "relative_free_energy_kcal_mol": 12.75340448394985
+        },
+        {
+          "coordinate_A": 14.45625,
+          "relative_free_energy_kcal_mol": 12.775923720708947
+        },
+        {
+          "coordinate_A": 14.493749999999999,
+          "relative_free_energy_kcal_mol": 12.734145412125805
+        },
+        {
+          "coordinate_A": 14.53125,
+          "relative_free_energy_kcal_mol": 12.825323259849998
+        },
+        {
+          "coordinate_A": 14.568749999999998,
+          "relative_free_energy_kcal_mol": 12.75713740122581
+        },
+        {
+          "coordinate_A": 14.60625,
+          "relative_free_energy_kcal_mol": 12.77626066974425
+        },
+        {
+          "coordinate_A": 14.64375,
+          "relative_free_energy_kcal_mol": 12.751742936636115
+        },
+        {
+          "coordinate_A": 14.681249999999999,
+          "relative_free_energy_kcal_mol": 12.784644082687972
+        },
+        {
+          "coordinate_A": 14.71875,
+          "relative_free_energy_kcal_mol": 12.791726533596286
+        },
+        {
+          "coordinate_A": 14.756249999999998,
+          "relative_free_energy_kcal_mol": 12.781510464563732
+        },
+        {
+          "coordinate_A": 14.79375,
+          "relative_free_energy_kcal_mol": 12.766832184500572
+        },
+        {
+          "coordinate_A": 14.83125,
+          "relative_free_energy_kcal_mol": 12.755398416837709
+        },
+        {
+          "coordinate_A": 14.868749999999999,
+          "relative_free_energy_kcal_mol": 12.716056259234875
+        },
+        {
+          "coordinate_A": 14.90625,
+          "relative_free_energy_kcal_mol": 12.736797374797844
+        },
+        {
+          "coordinate_A": 14.943749999999998,
+          "relative_free_energy_kcal_mol": 12.721772322826007
+        },
+        {
+          "coordinate_A": 14.98125,
+          "relative_free_energy_kcal_mol": 12.728039230484887
+        }
+      ],
+      "route": "US-2",
+      "source_members": [
+        "WHAM_PMF/histogram-collection-glucose-US-2/0-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/0-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/0-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/0-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/1-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/1-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/1-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/2-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/2-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/2-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/3-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/3-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/3-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/3-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/4-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/4-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/4-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/5-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/5-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/5-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/6-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/6-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/6-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/6-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/7-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/7-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/7-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/8-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/8-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/8-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/9-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/9-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/9-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/9-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/10-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/10-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/10-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/11-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/11-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/11-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/12-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/12-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/12-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/12-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/13-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/13-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/13-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/14-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/14-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/14-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-2/15-0-test-dist_vs_t.dat"
+      ],
+      "window_count": 51,
+      "within_route_tolerance": true
+    },
+    {
+      "binding_free_energy_kcal_mol": -11.759950047514828,
+      "centres_A": [
+        0.0,
+        0.3,
+        0.6,
+        0.9,
+        1.2,
+        1.5,
+        1.8,
+        2.1,
+        2.4,
+        2.7,
+        3.0,
+        3.3,
+        3.6,
+        3.9,
+        4.2,
+        4.5,
+        4.8,
+        5.1,
+        5.4,
+        5.7,
+        6.0,
+        6.3,
+        6.6,
+        6.9,
+        7.2,
+        7.5,
+        7.8,
+        8.1,
+        8.4,
+        8.7,
+        9.0,
+        9.3,
+        9.6,
+        9.9,
+        10.2,
+        10.5,
+        10.8,
+        11.1,
+        11.4,
+        11.7,
+        12.0,
+        12.3,
+        12.6,
+        12.9,
+        13.2,
+        13.5,
+        13.8,
+        14.1,
+        14.4,
+        14.7,
+        15.0
+      ],
+      "difference_from_grossfield_kcal_mol": 0.000453254371965528,
+      "frames_inside_range": 757595,
+      "frames_per_window_inside_range": [
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        7545
+      ],
+      "frames_per_window_raw": [
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001,
+        15001
+      ],
+      "frames_total_raw": 765051,
+      "grossfield_reference_kcal_mol": -11.760403301886793,
+      "iterations": 46298,
+      "maximum_offset_change_kcal_mol": 9.999048184994308e-07,
+      "median_adjacent_bhattacharyya": 0.15691636784175114,
+      "minimum_adjacent_bhattacharyya": 0.04534266001852255,
+      "pmf_profile": [
+        {
+          "coordinate_A": 0.01875,
+          "relative_free_energy_kcal_mol": 2.535193050724725
+        },
+        {
+          "coordinate_A": 0.056249999999999994,
+          "relative_free_energy_kcal_mol": 1.3958044501612807
+        },
+        {
+          "coordinate_A": 0.09375,
+          "relative_free_energy_kcal_mol": 0.8114533156618295
+        },
+        {
+          "coordinate_A": 0.13124999999999998,
+          "relative_free_energy_kcal_mol": 0.47424470692964216
+        },
+        {
+          "coordinate_A": 0.16875,
+          "relative_free_energy_kcal_mol": 0.25028365827832794
+        },
+        {
+          "coordinate_A": 0.20625,
+          "relative_free_energy_kcal_mol": 0.14024983027883767
+        },
+        {
+          "coordinate_A": 0.24375,
+          "relative_free_energy_kcal_mol": 0.08586256642476117
+        },
+        {
+          "coordinate_A": 0.28125,
+          "relative_free_energy_kcal_mol": 0.1642321121027643
+        },
+        {
+          "coordinate_A": 0.31875,
+          "relative_free_energy_kcal_mol": 0.17041557914763705
+        },
+        {
+          "coordinate_A": 0.35624999999999996,
+          "relative_free_energy_kcal_mol": 0.28293868180419957
+        },
+        {
+          "coordinate_A": 0.39375,
+          "relative_free_energy_kcal_mol": 0.3834432245648368
+        },
+        {
+          "coordinate_A": 0.43124999999999997,
+          "relative_free_energy_kcal_mol": 0.49015889406252944
+        },
+        {
+          "coordinate_A": 0.46875,
+          "relative_free_energy_kcal_mol": 0.5190958327958656
+        },
+        {
+          "coordinate_A": 0.50625,
+          "relative_free_energy_kcal_mol": 0.4992445817474873
+        },
+        {
+          "coordinate_A": 0.54375,
+          "relative_free_energy_kcal_mol": 0.4326369806864063
+        },
+        {
+          "coordinate_A": 0.58125,
+          "relative_free_energy_kcal_mol": 0.38077642613670315
+        },
+        {
+          "coordinate_A": 0.6187499999999999,
+          "relative_free_energy_kcal_mol": 0.28125685392450206
+        },
+        {
+          "coordinate_A": 0.65625,
+          "relative_free_energy_kcal_mol": 0.21650354848626335
+        },
+        {
+          "coordinate_A": 0.69375,
+          "relative_free_energy_kcal_mol": 0.11872070505633417
+        },
+        {
+          "coordinate_A": 0.73125,
+          "relative_free_energy_kcal_mol": 0.033007137184458246
+        },
+        {
+          "coordinate_A": 0.76875,
+          "relative_free_energy_kcal_mol": 0.005520206264741451
+        },
+        {
+          "coordinate_A": 0.8062499999999999,
+          "relative_free_energy_kcal_mol": 0.014452842205155941
+        },
+        {
+          "coordinate_A": 0.84375,
+          "relative_free_energy_kcal_mol": 0.0
+        },
+        {
+          "coordinate_A": 0.8812499999999999,
+          "relative_free_energy_kcal_mol": 0.010181794267078714
+        },
+        {
+          "coordinate_A": 0.91875,
+          "relative_free_energy_kcal_mol": 0.0017707545330432062
+        },
+        {
+          "coordinate_A": 0.95625,
+          "relative_free_energy_kcal_mol": 0.05856236246021618
+        },
+        {
+          "coordinate_A": 0.9937499999999999,
+          "relative_free_energy_kcal_mol": 0.09951694658404146
+        },
+        {
+          "coordinate_A": 1.03125,
+          "relative_free_energy_kcal_mol": 0.2191576276193699
+        },
+        {
+          "coordinate_A": 1.06875,
+          "relative_free_energy_kcal_mol": 0.31842394787916134
+        },
+        {
+          "coordinate_A": 1.10625,
+          "relative_free_energy_kcal_mol": 0.48717970016684486
+        },
+        {
+          "coordinate_A": 1.1437499999999998,
+          "relative_free_energy_kcal_mol": 0.6268527200512344
+        },
+        {
+          "coordinate_A": 1.18125,
+          "relative_free_energy_kcal_mol": 0.8493372196139435
+        },
+        {
+          "coordinate_A": 1.21875,
+          "relative_free_energy_kcal_mol": 1.0218860184915457
+        },
+        {
+          "coordinate_A": 1.25625,
+          "relative_free_energy_kcal_mol": 1.264973209965189
+        },
+        {
+          "coordinate_A": 1.29375,
+          "relative_free_energy_kcal_mol": 1.499068900548898
+        },
+        {
+          "coordinate_A": 1.3312499999999998,
+          "relative_free_energy_kcal_mol": 1.7560579726843517
+        },
+        {
+          "coordinate_A": 1.36875,
+          "relative_free_energy_kcal_mol": 2.0107967514868337
+        },
+        {
+          "coordinate_A": 1.40625,
+          "relative_free_energy_kcal_mol": 2.297245975168949
+        },
+        {
+          "coordinate_A": 1.44375,
+          "relative_free_energy_kcal_mol": 2.547557769682506
+        },
+        {
+          "coordinate_A": 1.48125,
+          "relative_free_energy_kcal_mol": 2.8561576794671106
+        },
+        {
+          "coordinate_A": 1.5187499999999998,
+          "relative_free_energy_kcal_mol": 3.158676492639851
+        },
+        {
+          "coordinate_A": 1.55625,
+          "relative_free_energy_kcal_mol": 3.5209570843006093
+        },
+        {
+          "coordinate_A": 1.59375,
+          "relative_free_energy_kcal_mol": 3.8633394121071567
+        },
+        {
+          "coordinate_A": 1.63125,
+          "relative_free_energy_kcal_mol": 4.318187880039248
+        },
+        {
+          "coordinate_A": 1.66875,
+          "relative_free_energy_kcal_mol": 4.72790066914833
+        },
+        {
+          "coordinate_A": 1.7062499999999998,
+          "relative_free_energy_kcal_mol": 5.202595121438715
+        },
+        {
+          "coordinate_A": 1.74375,
+          "relative_free_energy_kcal_mol": 5.631583580155575
+        },
+        {
+          "coordinate_A": 1.78125,
+          "relative_free_energy_kcal_mol": 6.077275948519313
+        },
+        {
+          "coordinate_A": 1.8187499999999999,
+          "relative_free_energy_kcal_mol": 6.61215871213827
+        },
+        {
+          "coordinate_A": 1.85625,
+          "relative_free_energy_kcal_mol": 7.1234030117078575
+        },
+        {
+          "coordinate_A": 1.8937499999999998,
+          "relative_free_energy_kcal_mol": 7.569903745703568
+        },
+        {
+          "coordinate_A": 1.93125,
+          "relative_free_energy_kcal_mol": 7.935823745604629
+        },
+        {
+          "coordinate_A": 1.96875,
+          "relative_free_energy_kcal_mol": 8.040800008357794
+        },
+        {
+          "coordinate_A": 2.0062499999999996,
+          "relative_free_energy_kcal_mol": 8.074943564523203
+        },
+        {
+          "coordinate_A": 2.04375,
+          "relative_free_energy_kcal_mol": 8.054194857270923
+        },
+        {
+          "coordinate_A": 2.08125,
+          "relative_free_energy_kcal_mol": 7.994816581124702
+        },
+        {
+          "coordinate_A": 2.11875,
+          "relative_free_energy_kcal_mol": 7.911611390400645
+        },
+        {
+          "coordinate_A": 2.15625,
+          "relative_free_energy_kcal_mol": 7.845291378129032
+        },
+        {
+          "coordinate_A": 2.1937499999999996,
+          "relative_free_energy_kcal_mol": 7.764690043264575
+        },
+        {
+          "coordinate_A": 2.23125,
+          "relative_free_energy_kcal_mol": 7.71447559757138
+        },
+        {
+          "coordinate_A": 2.26875,
+          "relative_free_energy_kcal_mol": 7.623544328020153
+        },
+        {
+          "coordinate_A": 2.30625,
+          "relative_free_energy_kcal_mol": 7.587352989415349
+        },
+        {
+          "coordinate_A": 2.34375,
+          "relative_free_energy_kcal_mol": 7.537274508667148
+        },
+        {
+          "coordinate_A": 2.3812499999999996,
+          "relative_free_energy_kcal_mol": 7.512883504223094
+        },
+        {
+          "coordinate_A": 2.41875,
+          "relative_free_energy_kcal_mol": 7.494151035868666
+        },
+        {
+          "coordinate_A": 2.45625,
+          "relative_free_energy_kcal_mol": 7.480971362973217
+        },
+        {
+          "coordinate_A": 2.49375,
+          "relative_free_energy_kcal_mol": 7.452126546313833
+        },
+        {
+          "coordinate_A": 2.53125,
+          "relative_free_energy_kcal_mol": 7.475921336919444
+        },
+        {
+          "coordinate_A": 2.5687499999999996,
+          "relative_free_energy_kcal_mol": 7.435649175696425
+        },
+        {
+          "coordinate_A": 2.60625,
+          "relative_free_energy_kcal_mol": 7.497408332147105
+        },
+        {
+          "coordinate_A": 2.64375,
+          "relative_free_energy_kcal_mol": 7.537217207982262
+        },
+        {
+          "coordinate_A": 2.68125,
+          "relative_free_energy_kcal_mol": 7.616658648194582
+        },
+        {
+          "coordinate_A": 2.71875,
+          "relative_free_energy_kcal_mol": 7.637803253510281
+        },
+        {
+          "coordinate_A": 2.7562499999999996,
+          "relative_free_energy_kcal_mol": 7.6784781091197045
+        },
+        {
+          "coordinate_A": 2.79375,
+          "relative_free_energy_kcal_mol": 7.710788275938381
+        },
+        {
+          "coordinate_A": 2.83125,
+          "relative_free_energy_kcal_mol": 7.768487268057099
+        },
+        {
+          "coordinate_A": 2.86875,
+          "relative_free_energy_kcal_mol": 7.822632197808292
+        },
+        {
+          "coordinate_A": 2.90625,
+          "relative_free_energy_kcal_mol": 7.871182369979586
+        },
+        {
+          "coordinate_A": 2.9437499999999996,
+          "relative_free_energy_kcal_mol": 7.94991063531719
+        },
+        {
+          "coordinate_A": 2.98125,
+          "relative_free_energy_kcal_mol": 7.978096968959244
+        },
+        {
+          "coordinate_A": 3.01875,
+          "relative_free_energy_kcal_mol": 8.028919991460093
+        },
+        {
+          "coordinate_A": 3.05625,
+          "relative_free_energy_kcal_mol": 8.113378482493484
+        },
+        {
+          "coordinate_A": 3.09375,
+          "relative_free_energy_kcal_mol": 8.131204148272273
+        },
+        {
+          "coordinate_A": 3.1312499999999996,
+          "relative_free_energy_kcal_mol": 8.17135645369234
+        },
+        {
+          "coordinate_A": 3.16875,
+          "relative_free_energy_kcal_mol": 8.23028596086702
+        },
+        {
+          "coordinate_A": 3.20625,
+          "relative_free_energy_kcal_mol": 8.302552865797889
+        },
+        {
+          "coordinate_A": 3.24375,
+          "relative_free_energy_kcal_mol": 8.355819757949257
+        },
+        {
+          "coordinate_A": 3.28125,
+          "relative_free_energy_kcal_mol": 8.435785111799428
+        },
+        {
+          "coordinate_A": 3.3187499999999996,
+          "relative_free_energy_kcal_mol": 8.47601047769149
+        },
+        {
+          "coordinate_A": 3.35625,
+          "relative_free_energy_kcal_mol": 8.581443551157449
+        },
+        {
+          "coordinate_A": 3.39375,
+          "relative_free_energy_kcal_mol": 8.61995637094469
+        },
+        {
+          "coordinate_A": 3.43125,
+          "relative_free_energy_kcal_mol": 8.677068620433097
+        },
+        {
+          "coordinate_A": 3.46875,
+          "relative_free_energy_kcal_mol": 8.753823921945836
+        },
+        {
+          "coordinate_A": 3.5062499999999996,
+          "relative_free_energy_kcal_mol": 8.868503904476482
+        },
+        {
+          "coordinate_A": 3.54375,
+          "relative_free_energy_kcal_mol": 8.903144406735557
+        },
+        {
+          "coordinate_A": 3.58125,
+          "relative_free_energy_kcal_mol": 9.02808488637473
+        },
+        {
+          "coordinate_A": 3.6187499999999995,
+          "relative_free_energy_kcal_mol": 9.063812322932623
+        },
+        {
+          "coordinate_A": 3.65625,
+          "relative_free_energy_kcal_mol": 9.151714625121924
+        },
+        {
+          "coordinate_A": 3.6937499999999996,
+          "relative_free_energy_kcal_mol": 9.211914591761381
+        },
+        {
+          "coordinate_A": 3.73125,
+          "relative_free_energy_kcal_mol": 9.33301692932103
+        },
+        {
+          "coordinate_A": 3.76875,
+          "relative_free_energy_kcal_mol": 9.421413857028371
+        },
+        {
+          "coordinate_A": 3.8062499999999995,
+          "relative_free_energy_kcal_mol": 9.564641400695752
+        },
+        {
+          "coordinate_A": 3.84375,
+          "relative_free_energy_kcal_mol": 9.652677946487456
+        },
+        {
+          "coordinate_A": 3.8812499999999996,
+          "relative_free_energy_kcal_mol": 9.770713683577508
+        },
+        {
+          "coordinate_A": 3.91875,
+          "relative_free_energy_kcal_mol": 9.893117751393392
+        },
+        {
+          "coordinate_A": 3.95625,
+          "relative_free_energy_kcal_mol": 10.003684913252622
+        },
+        {
+          "coordinate_A": 3.99375,
+          "relative_free_energy_kcal_mol": 10.054219358610219
+        },
+        {
+          "coordinate_A": 4.03125,
+          "relative_free_energy_kcal_mol": 10.183210736752807
+        },
+        {
+          "coordinate_A": 4.06875,
+          "relative_free_energy_kcal_mol": 10.271479264486391
+        },
+        {
+          "coordinate_A": 4.106249999999999,
+          "relative_free_energy_kcal_mol": 10.385034824270349
+        },
+        {
+          "coordinate_A": 4.14375,
+          "relative_free_energy_kcal_mol": 10.492265254240749
+        },
+        {
+          "coordinate_A": 4.18125,
+          "relative_free_energy_kcal_mol": 10.605292618048729
+        },
+        {
+          "coordinate_A": 4.21875,
+          "relative_free_energy_kcal_mol": 10.673186915814053
+        },
+        {
+          "coordinate_A": 4.25625,
+          "relative_free_energy_kcal_mol": 10.800520542144215
+        },
+        {
+          "coordinate_A": 4.293749999999999,
+          "relative_free_energy_kcal_mol": 10.842821076547331
+        },
+        {
+          "coordinate_A": 4.33125,
+          "relative_free_energy_kcal_mol": 10.943576638345379
+        },
+        {
+          "coordinate_A": 4.36875,
+          "relative_free_energy_kcal_mol": 10.963089047704557
+        },
+        {
+          "coordinate_A": 4.40625,
+          "relative_free_energy_kcal_mol": 11.046365889736304
+        },
+        {
+          "coordinate_A": 4.44375,
+          "relative_free_energy_kcal_mol": 11.070921405517153
+        },
+        {
+          "coordinate_A": 4.481249999999999,
+          "relative_free_energy_kcal_mol": 11.078855564961255
+        },
+        {
+          "coordinate_A": 4.51875,
+          "relative_free_energy_kcal_mol": 11.05224536599232
+        },
+        {
+          "coordinate_A": 4.55625,
+          "relative_free_energy_kcal_mol": 11.051686051777486
+        },
+        {
+          "coordinate_A": 4.59375,
+          "relative_free_energy_kcal_mol": 10.977746363310496
+        },
+        {
+          "coordinate_A": 4.63125,
+          "relative_free_energy_kcal_mol": 10.936697765559499
+        },
+        {
+          "coordinate_A": 4.668749999999999,
+          "relative_free_energy_kcal_mol": 10.917126573902854
+        },
+        {
+          "coordinate_A": 4.70625,
+          "relative_free_energy_kcal_mol": 10.877845180082023
+        },
+        {
+          "coordinate_A": 4.74375,
+          "relative_free_energy_kcal_mol": 10.830332117452416
+        },
+        {
+          "coordinate_A": 4.78125,
+          "relative_free_energy_kcal_mol": 10.810907012376168
+        },
+        {
+          "coordinate_A": 4.81875,
+          "relative_free_energy_kcal_mol": 10.748704078621506
+        },
+        {
+          "coordinate_A": 4.856249999999999,
+          "relative_free_energy_kcal_mol": 10.709388471256592
+        },
+        {
+          "coordinate_A": 4.89375,
+          "relative_free_energy_kcal_mol": 10.655145611503896
+        },
+        {
+          "coordinate_A": 4.93125,
+          "relative_free_energy_kcal_mol": 10.625722470930436
+        },
+        {
+          "coordinate_A": 4.96875,
+          "relative_free_energy_kcal_mol": 10.582167543077219
+        },
+        {
+          "coordinate_A": 5.00625,
+          "relative_free_energy_kcal_mol": 10.607533418323936
+        },
+        {
+          "coordinate_A": 5.043749999999999,
+          "relative_free_energy_kcal_mol": 10.553555353755918
+        },
+        {
+          "coordinate_A": 5.08125,
+          "relative_free_energy_kcal_mol": 10.545776689839578
+        },
+        {
+          "coordinate_A": 5.11875,
+          "relative_free_energy_kcal_mol": 10.527825019982686
+        },
+        {
+          "coordinate_A": 5.15625,
+          "relative_free_energy_kcal_mol": 10.551022059371006
+        },
+        {
+          "coordinate_A": 5.19375,
+          "relative_free_energy_kcal_mol": 10.508357410333987
+        },
+        {
+          "coordinate_A": 5.231249999999999,
+          "relative_free_energy_kcal_mol": 10.528479104912742
+        },
+        {
+          "coordinate_A": 5.26875,
+          "relative_free_energy_kcal_mol": 10.536480508109975
+        },
+        {
+          "coordinate_A": 5.30625,
+          "relative_free_energy_kcal_mol": 10.561994127583889
+        },
+        {
+          "coordinate_A": 5.34375,
+          "relative_free_energy_kcal_mol": 10.594309528646702
+        },
+        {
+          "coordinate_A": 5.38125,
+          "relative_free_energy_kcal_mol": 10.632128943287604
+        },
+        {
+          "coordinate_A": 5.418749999999999,
+          "relative_free_energy_kcal_mol": 10.647118299694561
+        },
+        {
+          "coordinate_A": 5.45625,
+          "relative_free_energy_kcal_mol": 10.687182929065864
+        },
+        {
+          "coordinate_A": 5.49375,
+          "relative_free_energy_kcal_mol": 10.702244171432705
+        },
+        {
+          "coordinate_A": 5.53125,
+          "relative_free_energy_kcal_mol": 10.785596530261488
+        },
+        {
+          "coordinate_A": 5.56875,
+          "relative_free_energy_kcal_mol": 10.766183414931207
+        },
+        {
+          "coordinate_A": 5.606249999999999,
+          "relative_free_energy_kcal_mol": 10.806077539980544
+        },
+        {
+          "coordinate_A": 5.64375,
+          "relative_free_energy_kcal_mol": 10.824952016404648
+        },
+        {
+          "coordinate_A": 5.68125,
+          "relative_free_energy_kcal_mol": 10.889053354311493
+        },
+        {
+          "coordinate_A": 5.71875,
+          "relative_free_energy_kcal_mol": 10.873838590198956
+        },
+        {
+          "coordinate_A": 5.75625,
+          "relative_free_energy_kcal_mol": 10.878762086594264
+        },
+        {
+          "coordinate_A": 5.793749999999999,
+          "relative_free_energy_kcal_mol": 10.870172584003962
+        },
+        {
+          "coordinate_A": 5.83125,
+          "relative_free_energy_kcal_mol": 10.919094127177196
+        },
+        {
+          "coordinate_A": 5.86875,
+          "relative_free_energy_kcal_mol": 10.90902436736572
+        },
+        {
+          "coordinate_A": 5.90625,
+          "relative_free_energy_kcal_mol": 10.932385597027732
+        },
+        {
+          "coordinate_A": 5.94375,
+          "relative_free_energy_kcal_mol": 10.952612829494756
+        },
+        {
+          "coordinate_A": 5.981249999999999,
+          "relative_free_energy_kcal_mol": 10.980621961252545
+        },
+        {
+          "coordinate_A": 6.01875,
+          "relative_free_energy_kcal_mol": 10.982198813958028
+        },
+        {
+          "coordinate_A": 6.05625,
+          "relative_free_energy_kcal_mol": 11.01843537745247
+        },
+        {
+          "coordinate_A": 6.09375,
+          "relative_free_energy_kcal_mol": 11.027056613247852
+        },
+        {
+          "coordinate_A": 6.13125,
+          "relative_free_energy_kcal_mol": 11.131203084572677
+        },
+        {
+          "coordinate_A": 6.168749999999999,
+          "relative_free_energy_kcal_mol": 11.087800979578525
+        },
+        {
+          "coordinate_A": 6.20625,
+          "relative_free_energy_kcal_mol": 11.121440346232495
+        },
+        {
+          "coordinate_A": 6.24375,
+          "relative_free_energy_kcal_mol": 11.119325312309591
+        },
+        {
+          "coordinate_A": 6.28125,
+          "relative_free_energy_kcal_mol": 11.127575984977991
+        },
+        {
+          "coordinate_A": 6.31875,
+          "relative_free_energy_kcal_mol": 11.142182218846525
+        },
+        {
+          "coordinate_A": 6.356249999999999,
+          "relative_free_energy_kcal_mol": 11.144526350564329
+        },
+        {
+          "coordinate_A": 6.39375,
+          "relative_free_energy_kcal_mol": 11.138432819362238
+        },
+        {
+          "coordinate_A": 6.43125,
+          "relative_free_energy_kcal_mol": 11.130024651779497
+        },
+        {
+          "coordinate_A": 6.46875,
+          "relative_free_energy_kcal_mol": 11.112138816201007
+        },
+        {
+          "coordinate_A": 6.50625,
+          "relative_free_energy_kcal_mol": 11.122947063032242
+        },
+        {
+          "coordinate_A": 6.543749999999999,
+          "relative_free_energy_kcal_mol": 11.103037803478017
+        },
+        {
+          "coordinate_A": 6.58125,
+          "relative_free_energy_kcal_mol": 11.1312811839342
+        },
+        {
+          "coordinate_A": 6.61875,
+          "relative_free_energy_kcal_mol": 11.127720851640474
+        },
+        {
+          "coordinate_A": 6.65625,
+          "relative_free_energy_kcal_mol": 11.094502323043502
+        },
+        {
+          "coordinate_A": 6.69375,
+          "relative_free_energy_kcal_mol": 11.073943857758119
+        },
+        {
+          "coordinate_A": 6.731249999999999,
+          "relative_free_energy_kcal_mol": 11.033372212497664
+        },
+        {
+          "coordinate_A": 6.76875,
+          "relative_free_energy_kcal_mol": 11.047270633607654
+        },
+        {
+          "coordinate_A": 6.80625,
+          "relative_free_energy_kcal_mol": 11.068281843120502
+        },
+        {
+          "coordinate_A": 6.84375,
+          "relative_free_energy_kcal_mol": 11.072420519940767
+        },
+        {
+          "coordinate_A": 6.88125,
+          "relative_free_energy_kcal_mol": 11.092989685100775
+        },
+        {
+          "coordinate_A": 6.918749999999999,
+          "relative_free_energy_kcal_mol": 11.085251415904125
+        },
+        {
+          "coordinate_A": 6.95625,
+          "relative_free_energy_kcal_mol": 11.092415846605125
+        },
+        {
+          "coordinate_A": 6.99375,
+          "relative_free_energy_kcal_mol": 11.083322219817543
+        },
+        {
+          "coordinate_A": 7.03125,
+          "relative_free_energy_kcal_mol": 11.064065295109401
+        },
+        {
+          "coordinate_A": 7.06875,
+          "relative_free_energy_kcal_mol": 11.068681940681293
+        },
+        {
+          "coordinate_A": 7.106249999999999,
+          "relative_free_energy_kcal_mol": 11.09467928327427
+        },
+        {
+          "coordinate_A": 7.14375,
+          "relative_free_energy_kcal_mol": 11.083545740818257
+        },
+        {
+          "coordinate_A": 7.1812499999999995,
+          "relative_free_energy_kcal_mol": 11.095958886471141
+        },
+        {
+          "coordinate_A": 7.21875,
+          "relative_free_energy_kcal_mol": 11.08262734808493
+        },
+        {
+          "coordinate_A": 7.25625,
+          "relative_free_energy_kcal_mol": 11.0908212669634
+        },
+        {
+          "coordinate_A": 7.293749999999999,
+          "relative_free_energy_kcal_mol": 11.08010051797714
+        },
+        {
+          "coordinate_A": 7.33125,
+          "relative_free_energy_kcal_mol": 11.027517290103885
+        },
+        {
+          "coordinate_A": 7.3687499999999995,
+          "relative_free_energy_kcal_mol": 11.027599248137832
+        },
+        {
+          "coordinate_A": 7.40625,
+          "relative_free_energy_kcal_mol": 11.024144228914396
+        },
+        {
+          "coordinate_A": 7.44375,
+          "relative_free_energy_kcal_mol": 10.99481729363131
+        },
+        {
+          "coordinate_A": 7.481249999999999,
+          "relative_free_energy_kcal_mol": 11.017057538599193
+        },
+        {
+          "coordinate_A": 7.51875,
+          "relative_free_energy_kcal_mol": 10.981891153043454
+        },
+        {
+          "coordinate_A": 7.5562499999999995,
+          "relative_free_energy_kcal_mol": 10.964973214103113
+        },
+        {
+          "coordinate_A": 7.59375,
+          "relative_free_energy_kcal_mol": 10.92099352593623
+        },
+        {
+          "coordinate_A": 7.63125,
+          "relative_free_energy_kcal_mol": 10.983958644817271
+        },
+        {
+          "coordinate_A": 7.668749999999999,
+          "relative_free_energy_kcal_mol": 10.945870755873447
+        },
+        {
+          "coordinate_A": 7.70625,
+          "relative_free_energy_kcal_mol": 10.965323783346655
+        },
+        {
+          "coordinate_A": 7.7437499999999995,
+          "relative_free_energy_kcal_mol": 10.961845487234125
+        },
+        {
+          "coordinate_A": 7.78125,
+          "relative_free_energy_kcal_mol": 10.985012765411167
+        },
+        {
+          "coordinate_A": 7.81875,
+          "relative_free_energy_kcal_mol": 10.971734397221402
+        },
+        {
+          "coordinate_A": 7.856249999999999,
+          "relative_free_energy_kcal_mol": 10.97486550107331
+        },
+        {
+          "coordinate_A": 7.89375,
+          "relative_free_energy_kcal_mol": 10.92411355436131
+        },
+        {
+          "coordinate_A": 7.9312499999999995,
+          "relative_free_energy_kcal_mol": 10.925570710967486
+        },
+        {
+          "coordinate_A": 7.96875,
+          "relative_free_energy_kcal_mol": 10.910750928976022
+        },
+        {
+          "coordinate_A": 8.00625,
+          "relative_free_energy_kcal_mol": 10.9381705438473
+        },
+        {
+          "coordinate_A": 8.04375,
+          "relative_free_energy_kcal_mol": 10.93422319558979
+        },
+        {
+          "coordinate_A": 8.08125,
+          "relative_free_energy_kcal_mol": 10.942490231453261
+        },
+        {
+          "coordinate_A": 8.118749999999999,
+          "relative_free_energy_kcal_mol": 10.900395290459727
+        },
+        {
+          "coordinate_A": 8.15625,
+          "relative_free_energy_kcal_mol": 10.913546458103616
+        },
+        {
+          "coordinate_A": 8.19375,
+          "relative_free_energy_kcal_mol": 10.880453120836235
+        },
+        {
+          "coordinate_A": 8.23125,
+          "relative_free_energy_kcal_mol": 10.88662990080125
+        },
+        {
+          "coordinate_A": 8.26875,
+          "relative_free_energy_kcal_mol": 10.883884774803112
+        },
+        {
+          "coordinate_A": 8.306249999999999,
+          "relative_free_energy_kcal_mol": 10.947282368916786
+        },
+        {
+          "coordinate_A": 8.34375,
+          "relative_free_energy_kcal_mol": 10.921585503594097
+        },
+        {
+          "coordinate_A": 8.38125,
+          "relative_free_energy_kcal_mol": 10.950267876659366
+        },
+        {
+          "coordinate_A": 8.41875,
+          "relative_free_energy_kcal_mol": 10.914704721182876
+        },
+        {
+          "coordinate_A": 8.45625,
+          "relative_free_energy_kcal_mol": 10.948089885509292
+        },
+        {
+          "coordinate_A": 8.493749999999999,
+          "relative_free_energy_kcal_mol": 10.918268872056846
+        },
+        {
+          "coordinate_A": 8.53125,
+          "relative_free_energy_kcal_mol": 10.943286023598986
+        },
+        {
+          "coordinate_A": 8.56875,
+          "relative_free_energy_kcal_mol": 10.894722805010275
+        },
+        {
+          "coordinate_A": 8.60625,
+          "relative_free_energy_kcal_mol": 10.96945533673808
+        },
+        {
+          "coordinate_A": 8.64375,
+          "relative_free_energy_kcal_mol": 10.927930303508376
+        },
+        {
+          "coordinate_A": 8.681249999999999,
+          "relative_free_energy_kcal_mol": 10.956779852891762
+        },
+        {
+          "coordinate_A": 8.71875,
+          "relative_free_energy_kcal_mol": 10.936519792590506
+        },
+        {
+          "coordinate_A": 8.75625,
+          "relative_free_energy_kcal_mol": 10.984728173609478
+        },
+        {
+          "coordinate_A": 8.79375,
+          "relative_free_energy_kcal_mol": 10.965232079260355
+        },
+        {
+          "coordinate_A": 8.83125,
+          "relative_free_energy_kcal_mol": 10.959253170258524
+        },
+        {
+          "coordinate_A": 8.868749999999999,
+          "relative_free_energy_kcal_mol": 10.942015641718998
+        },
+        {
+          "coordinate_A": 8.90625,
+          "relative_free_energy_kcal_mol": 10.964270501090645
+        },
+        {
+          "coordinate_A": 8.94375,
+          "relative_free_energy_kcal_mol": 10.965942359095235
+        },
+        {
+          "coordinate_A": 8.98125,
+          "relative_free_energy_kcal_mol": 10.984163545621593
+        },
+        {
+          "coordinate_A": 9.01875,
+          "relative_free_energy_kcal_mol": 10.970616677297416
+        },
+        {
+          "coordinate_A": 9.056249999999999,
+          "relative_free_energy_kcal_mol": 10.977135685545004
+        },
+        {
+          "coordinate_A": 9.09375,
+          "relative_free_energy_kcal_mol": 10.977812249168595
+        },
+        {
+          "coordinate_A": 9.13125,
+          "relative_free_energy_kcal_mol": 10.991766055742067
+        },
+        {
+          "coordinate_A": 9.16875,
+          "relative_free_energy_kcal_mol": 10.979632405690534
+        },
+        {
+          "coordinate_A": 9.20625,
+          "relative_free_energy_kcal_mol": 10.998916790590858
+        },
+        {
+          "coordinate_A": 9.243749999999999,
+          "relative_free_energy_kcal_mol": 11.000671040452412
+        },
+        {
+          "coordinate_A": 9.28125,
+          "relative_free_energy_kcal_mol": 11.004986646451922
+        },
+        {
+          "coordinate_A": 9.31875,
+          "relative_free_energy_kcal_mol": 10.992255490345439
+        },
+        {
+          "coordinate_A": 9.35625,
+          "relative_free_energy_kcal_mol": 10.985054357502145
+        },
+        {
+          "coordinate_A": 9.39375,
+          "relative_free_energy_kcal_mol": 10.970250704570478
+        },
+        {
+          "coordinate_A": 9.431249999999999,
+          "relative_free_energy_kcal_mol": 10.982846089408566
+        },
+        {
+          "coordinate_A": 9.46875,
+          "relative_free_energy_kcal_mol": 10.944771233157566
+        },
+        {
+          "coordinate_A": 9.50625,
+          "relative_free_energy_kcal_mol": 11.015989696407788
+        },
+        {
+          "coordinate_A": 9.54375,
+          "relative_free_energy_kcal_mol": 10.988401865895314
+        },
+        {
+          "coordinate_A": 9.58125,
+          "relative_free_energy_kcal_mol": 11.038588831877323
+        },
+        {
+          "coordinate_A": 9.618749999999999,
+          "relative_free_energy_kcal_mol": 11.047052707406893
+        },
+        {
+          "coordinate_A": 9.65625,
+          "relative_free_energy_kcal_mol": 11.085633386229125
+        },
+        {
+          "coordinate_A": 9.69375,
+          "relative_free_energy_kcal_mol": 11.090163456507751
+        },
+        {
+          "coordinate_A": 9.73125,
+          "relative_free_energy_kcal_mol": 11.075442708772671
+        },
+        {
+          "coordinate_A": 9.76875,
+          "relative_free_energy_kcal_mol": 11.07021640423407
+        },
+        {
+          "coordinate_A": 9.806249999999999,
+          "relative_free_energy_kcal_mol": 11.119561072518891
+        },
+        {
+          "coordinate_A": 9.84375,
+          "relative_free_energy_kcal_mol": 11.104669882846942
+        },
+        {
+          "coordinate_A": 9.88125,
+          "relative_free_energy_kcal_mol": 11.142289047059677
+        },
+        {
+          "coordinate_A": 9.91875,
+          "relative_free_energy_kcal_mol": 11.153000289498067
+        },
+        {
+          "coordinate_A": 9.95625,
+          "relative_free_energy_kcal_mol": 11.16580983501239
+        },
+        {
+          "coordinate_A": 9.993749999999999,
+          "relative_free_energy_kcal_mol": 11.159263548514819
+        },
+        {
+          "coordinate_A": 10.03125,
+          "relative_free_energy_kcal_mol": 11.134961050204986
+        },
+        {
+          "coordinate_A": 10.06875,
+          "relative_free_energy_kcal_mol": 11.125869927165953
+        },
+        {
+          "coordinate_A": 10.10625,
+          "relative_free_energy_kcal_mol": 11.192112838874383
+        },
+        {
+          "coordinate_A": 10.14375,
+          "relative_free_energy_kcal_mol": 11.198163304950178
+        },
+        {
+          "coordinate_A": 10.181249999999999,
+          "relative_free_energy_kcal_mol": 11.196220805305565
+        },
+        {
+          "coordinate_A": 10.21875,
+          "relative_free_energy_kcal_mol": 11.186611333081638
+        },
+        {
+          "coordinate_A": 10.25625,
+          "relative_free_energy_kcal_mol": 11.223439983169161
+        },
+        {
+          "coordinate_A": 10.29375,
+          "relative_free_energy_kcal_mol": 11.19621779524895
+        },
+        {
+          "coordinate_A": 10.33125,
+          "relative_free_energy_kcal_mol": 11.186474513508257
+        },
+        {
+          "coordinate_A": 10.368749999999999,
+          "relative_free_energy_kcal_mol": 11.142282035544632
+        },
+        {
+          "coordinate_A": 10.40625,
+          "relative_free_energy_kcal_mol": 11.18288724010215
+        },
+        {
+          "coordinate_A": 10.44375,
+          "relative_free_energy_kcal_mol": 11.210277576110473
+        },
+        {
+          "coordinate_A": 10.48125,
+          "relative_free_energy_kcal_mol": 11.212053713348078
+        },
+        {
+          "coordinate_A": 10.51875,
+          "relative_free_energy_kcal_mol": 11.216181817373547
+        },
+        {
+          "coordinate_A": 10.556249999999999,
+          "relative_free_energy_kcal_mol": 11.24063493727399
+        },
+        {
+          "coordinate_A": 10.59375,
+          "relative_free_energy_kcal_mol": 11.2213435117246
+        },
+        {
+          "coordinate_A": 10.63125,
+          "relative_free_energy_kcal_mol": 11.233563554144741
+        },
+        {
+          "coordinate_A": 10.66875,
+          "relative_free_energy_kcal_mol": 11.198624543550844
+        },
+        {
+          "coordinate_A": 10.70625,
+          "relative_free_energy_kcal_mol": 11.225664752198387
+        },
+        {
+          "coordinate_A": 10.743749999999999,
+          "relative_free_energy_kcal_mol": 11.259418692572071
+        },
+        {
+          "coordinate_A": 10.78125,
+          "relative_free_energy_kcal_mol": 11.290033974214511
+        },
+        {
+          "coordinate_A": 10.81875,
+          "relative_free_energy_kcal_mol": 11.288124666237223
+        },
+        {
+          "coordinate_A": 10.85625,
+          "relative_free_energy_kcal_mol": 11.313712074670214
+        },
+        {
+          "coordinate_A": 10.89375,
+          "relative_free_energy_kcal_mol": 11.290599450077883
+        },
+        {
+          "coordinate_A": 10.931249999999999,
+          "relative_free_energy_kcal_mol": 11.334018238774407
+        },
+        {
+          "coordinate_A": 10.96875,
+          "relative_free_energy_kcal_mol": 11.348249229814249
+        },
+        {
+          "coordinate_A": 11.00625,
+          "relative_free_energy_kcal_mol": 11.375473190095548
+        },
+        {
+          "coordinate_A": 11.04375,
+          "relative_free_energy_kcal_mol": 11.408059827289312
+        },
+        {
+          "coordinate_A": 11.08125,
+          "relative_free_energy_kcal_mol": 11.41320536307239
+        },
+        {
+          "coordinate_A": 11.118749999999999,
+          "relative_free_energy_kcal_mol": 11.401863545062746
+        },
+        {
+          "coordinate_A": 11.15625,
+          "relative_free_energy_kcal_mol": 11.421821842655653
+        },
+        {
+          "coordinate_A": 11.19375,
+          "relative_free_energy_kcal_mol": 11.405015314371058
+        },
+        {
+          "coordinate_A": 11.23125,
+          "relative_free_energy_kcal_mol": 11.44502288013428
+        },
+        {
+          "coordinate_A": 11.26875,
+          "relative_free_energy_kcal_mol": 11.45939607689726
+        },
+        {
+          "coordinate_A": 11.306249999999999,
+          "relative_free_energy_kcal_mol": 11.501175328122086
+        },
+        {
+          "coordinate_A": 11.34375,
+          "relative_free_energy_kcal_mol": 11.528471556574754
+        },
+        {
+          "coordinate_A": 11.38125,
+          "relative_free_energy_kcal_mol": 11.567081797274868
+        },
+        {
+          "coordinate_A": 11.41875,
+          "relative_free_energy_kcal_mol": 11.5499874188151
+        },
+        {
+          "coordinate_A": 11.45625,
+          "relative_free_energy_kcal_mol": 11.595465354016827
+        },
+        {
+          "coordinate_A": 11.493749999999999,
+          "relative_free_energy_kcal_mol": 11.581461457829146
+        },
+        {
+          "coordinate_A": 11.53125,
+          "relative_free_energy_kcal_mol": 11.58022647312192
+        },
+        {
+          "coordinate_A": 11.56875,
+          "relative_free_energy_kcal_mol": 11.576875450157976
+        },
+        {
+          "coordinate_A": 11.60625,
+          "relative_free_energy_kcal_mol": 11.613247302910244
+        },
+        {
+          "coordinate_A": 11.64375,
+          "relative_free_energy_kcal_mol": 11.612189131593896
+        },
+        {
+          "coordinate_A": 11.681249999999999,
+          "relative_free_energy_kcal_mol": 11.657819775670912
+        },
+        {
+          "coordinate_A": 11.71875,
+          "relative_free_energy_kcal_mol": 11.650845905846053
+        },
+        {
+          "coordinate_A": 11.75625,
+          "relative_free_energy_kcal_mol": 11.661722036724028
+        },
+        {
+          "coordinate_A": 11.79375,
+          "relative_free_energy_kcal_mol": 11.679504224509184
+        },
+        {
+          "coordinate_A": 11.83125,
+          "relative_free_energy_kcal_mol": 11.632963888673231
+        },
+        {
+          "coordinate_A": 11.868749999999999,
+          "relative_free_energy_kcal_mol": 11.673109060350425
+        },
+        {
+          "coordinate_A": 11.90625,
+          "relative_free_energy_kcal_mol": 11.667220553533475
+        },
+        {
+          "coordinate_A": 11.94375,
+          "relative_free_energy_kcal_mol": 11.665589037362082
+        },
+        {
+          "coordinate_A": 11.98125,
+          "relative_free_energy_kcal_mol": 11.715364614445468
+        },
+        {
+          "coordinate_A": 12.01875,
+          "relative_free_energy_kcal_mol": 11.681388184466975
+        },
+        {
+          "coordinate_A": 12.056249999999999,
+          "relative_free_energy_kcal_mol": 11.67588143442721
+        },
+        {
+          "coordinate_A": 12.09375,
+          "relative_free_energy_kcal_mol": 11.6591076526926
+        },
+        {
+          "coordinate_A": 12.13125,
+          "relative_free_energy_kcal_mol": 11.685624390967131
+        },
+        {
+          "coordinate_A": 12.16875,
+          "relative_free_energy_kcal_mol": 11.653669222450356
+        },
+        {
+          "coordinate_A": 12.20625,
+          "relative_free_energy_kcal_mol": 11.630199774164405
+        },
+        {
+          "coordinate_A": 12.243749999999999,
+          "relative_free_energy_kcal_mol": 11.653778080437958
+        },
+        {
+          "coordinate_A": 12.28125,
+          "relative_free_energy_kcal_mol": 11.658904047073662
+        },
+        {
+          "coordinate_A": 12.31875,
+          "relative_free_energy_kcal_mol": 11.656533195246745
+        },
+        {
+          "coordinate_A": 12.35625,
+          "relative_free_energy_kcal_mol": 11.662655276670144
+        },
+        {
+          "coordinate_A": 12.39375,
+          "relative_free_energy_kcal_mol": 11.636617766855416
+        },
+        {
+          "coordinate_A": 12.431249999999999,
+          "relative_free_energy_kcal_mol": 11.644109959136317
+        },
+        {
+          "coordinate_A": 12.46875,
+          "relative_free_energy_kcal_mol": 11.616649907101676
+        },
+        {
+          "coordinate_A": 12.50625,
+          "relative_free_energy_kcal_mol": 11.64789940732016
+        },
+        {
+          "coordinate_A": 12.54375,
+          "relative_free_energy_kcal_mol": 11.652565755560737
+        },
+        {
+          "coordinate_A": 12.58125,
+          "relative_free_energy_kcal_mol": 11.683001630371912
+        },
+        {
+          "coordinate_A": 12.618749999999999,
+          "relative_free_energy_kcal_mol": 11.65034599449996
+        },
+        {
+          "coordinate_A": 12.65625,
+          "relative_free_energy_kcal_mol": 11.646330884089293
+        },
+        {
+          "coordinate_A": 12.69375,
+          "relative_free_energy_kcal_mol": 11.634299843304364
+        },
+        {
+          "coordinate_A": 12.73125,
+          "relative_free_energy_kcal_mol": 11.663732784382585
+        },
+        {
+          "coordinate_A": 12.76875,
+          "relative_free_energy_kcal_mol": 11.68204598026657
+        },
+        {
+          "coordinate_A": 12.806249999999999,
+          "relative_free_energy_kcal_mol": 11.711307259734914
+        },
+        {
+          "coordinate_A": 12.84375,
+          "relative_free_energy_kcal_mol": 11.708342027893192
+        },
+        {
+          "coordinate_A": 12.88125,
+          "relative_free_energy_kcal_mol": 11.730003083178902
+        },
+        {
+          "coordinate_A": 12.91875,
+          "relative_free_energy_kcal_mol": 11.716264697396836
+        },
+        {
+          "coordinate_A": 12.95625,
+          "relative_free_energy_kcal_mol": 11.718750281585965
+        },
+        {
+          "coordinate_A": 12.993749999999999,
+          "relative_free_energy_kcal_mol": 11.72849204017321
+        },
+        {
+          "coordinate_A": 13.03125,
+          "relative_free_energy_kcal_mol": 11.744339413496974
+        },
+        {
+          "coordinate_A": 13.06875,
+          "relative_free_energy_kcal_mol": 11.699232152573853
+        },
+        {
+          "coordinate_A": 13.10625,
+          "relative_free_energy_kcal_mol": 11.760765150618314
+        },
+        {
+          "coordinate_A": 13.14375,
+          "relative_free_energy_kcal_mol": 11.768251034856515
+        },
+        {
+          "coordinate_A": 13.181249999999999,
+          "relative_free_energy_kcal_mol": 11.7760294682249
+        },
+        {
+          "coordinate_A": 13.21875,
+          "relative_free_energy_kcal_mol": 11.746454182815631
+        },
+        {
+          "coordinate_A": 13.25625,
+          "relative_free_energy_kcal_mol": 11.776672811943264
+        },
+        {
+          "coordinate_A": 13.29375,
+          "relative_free_energy_kcal_mol": 11.765060622773536
+        },
+        {
+          "coordinate_A": 13.33125,
+          "relative_free_energy_kcal_mol": 11.74612797643976
+        },
+        {
+          "coordinate_A": 13.368749999999999,
+          "relative_free_energy_kcal_mol": 11.713128980062022
+        },
+        {
+          "coordinate_A": 13.40625,
+          "relative_free_energy_kcal_mol": 11.738433874036172
+        },
+        {
+          "coordinate_A": 13.44375,
+          "relative_free_energy_kcal_mol": 11.753765849052506
+        },
+        {
+          "coordinate_A": 13.48125,
+          "relative_free_energy_kcal_mol": 11.770037221037496
+        },
+        {
+          "coordinate_A": 13.51875,
+          "relative_free_energy_kcal_mol": 11.738241618472529
+        },
+        {
+          "coordinate_A": 13.556249999999999,
+          "relative_free_energy_kcal_mol": 11.779526223371525
+        },
+        {
+          "coordinate_A": 13.59375,
+          "relative_free_energy_kcal_mol": 11.738752669416732
+        },
+        {
+          "coordinate_A": 13.63125,
+          "relative_free_energy_kcal_mol": 11.71899792845221
+        },
+        {
+          "coordinate_A": 13.66875,
+          "relative_free_energy_kcal_mol": 11.751828898573095
+        },
+        {
+          "coordinate_A": 13.70625,
+          "relative_free_energy_kcal_mol": 11.79115609652483
+        },
+        {
+          "coordinate_A": 13.743749999999999,
+          "relative_free_energy_kcal_mol": 11.742405969536401
+        },
+        {
+          "coordinate_A": 13.78125,
+          "relative_free_energy_kcal_mol": 11.768511476494734
+        },
+        {
+          "coordinate_A": 13.81875,
+          "relative_free_energy_kcal_mol": 11.745528326329367
+        },
+        {
+          "coordinate_A": 13.85625,
+          "relative_free_energy_kcal_mol": 11.737896744907447
+        },
+        {
+          "coordinate_A": 13.89375,
+          "relative_free_energy_kcal_mol": 11.735319473650625
+        },
+        {
+          "coordinate_A": 13.931249999999999,
+          "relative_free_energy_kcal_mol": 11.735804259801274
+        },
+        {
+          "coordinate_A": 13.96875,
+          "relative_free_energy_kcal_mol": 11.757293184056767
+        },
+        {
+          "coordinate_A": 14.00625,
+          "relative_free_energy_kcal_mol": 11.777314434212824
+        },
+        {
+          "coordinate_A": 14.04375,
+          "relative_free_energy_kcal_mol": 11.754133494215727
+        },
+        {
+          "coordinate_A": 14.08125,
+          "relative_free_energy_kcal_mol": 11.766418958017335
+        },
+        {
+          "coordinate_A": 14.118749999999999,
+          "relative_free_energy_kcal_mol": 11.77043951086801
+        },
+        {
+          "coordinate_A": 14.15625,
+          "relative_free_energy_kcal_mol": 11.80071989848363
+        },
+        {
+          "coordinate_A": 14.19375,
+          "relative_free_energy_kcal_mol": 11.771369935241585
+        },
+        {
+          "coordinate_A": 14.23125,
+          "relative_free_energy_kcal_mol": 11.769270258037444
+        },
+        {
+          "coordinate_A": 14.26875,
+          "relative_free_energy_kcal_mol": 11.758165137773666
+        },
+        {
+          "coordinate_A": 14.306249999999999,
+          "relative_free_energy_kcal_mol": 11.80069837539021
+        },
+        {
+          "coordinate_A": 14.34375,
+          "relative_free_energy_kcal_mol": 11.784292709644749
+        },
+        {
+          "coordinate_A": 14.381249999999998,
+          "relative_free_energy_kcal_mol": 11.783200546439694
+        },
+        {
+          "coordinate_A": 14.41875,
+          "relative_free_energy_kcal_mol": 11.783210549447622
+        },
+        {
+          "coordinate_A": 14.45625,
+          "relative_free_energy_kcal_mol": 11.784369680162804
+        },
+        {
+          "coordinate_A": 14.493749999999999,
+          "relative_free_energy_kcal_mol": 11.742181575976876
+        },
+        {
+          "coordinate_A": 14.53125,
+          "relative_free_energy_kcal_mol": 11.735567560966542
+        },
+        {
+          "coordinate_A": 14.568749999999998,
+          "relative_free_energy_kcal_mol": 11.716306346375436
+        },
+        {
+          "coordinate_A": 14.60625,
+          "relative_free_energy_kcal_mol": 11.798130217673268
+        },
+        {
+          "coordinate_A": 14.64375,
+          "relative_free_energy_kcal_mol": 11.76378862307461
+        },
+        {
+          "coordinate_A": 14.681249999999999,
+          "relative_free_energy_kcal_mol": 11.805675492529128
+        },
+        {
+          "coordinate_A": 14.71875,
+          "relative_free_energy_kcal_mol": 11.7971194026669
+        },
+        {
+          "coordinate_A": 14.756249999999998,
+          "relative_free_energy_kcal_mol": 11.774561896218941
+        },
+        {
+          "coordinate_A": 14.79375,
+          "relative_free_energy_kcal_mol": 11.775312316578157
+        },
+        {
+          "coordinate_A": 14.83125,
+          "relative_free_energy_kcal_mol": 11.741528073084172
+        },
+        {
+          "coordinate_A": 14.868749999999999,
+          "relative_free_energy_kcal_mol": 11.758787699631535
+        },
+        {
+          "coordinate_A": 14.90625,
+          "relative_free_energy_kcal_mol": 11.770858351088915
+        },
+        {
+          "coordinate_A": 14.943749999999998,
+          "relative_free_energy_kcal_mol": 11.743667715112052
+        },
+        {
+          "coordinate_A": 14.98125,
+          "relative_free_energy_kcal_mol": 11.750702151855485
+        }
+      ],
+      "route": "US-3",
+      "source_members": [
+        "WHAM_PMF/histogram-collection-glucose-US-3/0-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/0-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/0-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/0-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/1-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/1-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/1-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/2-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/2-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/2-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/3-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/3-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/3-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/3-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/4-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/4-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/4-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/5-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/5-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/5-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/6-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/6-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/6-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/6-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/7-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/7-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/7-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/8-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/8-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/8-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/9-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/9-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/9-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/9-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/10-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/10-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/10-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/11-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/11-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/11-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/12-0-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/12-3-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/12-6-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/12-9-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/13-2-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/13-5-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/13-8-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/14-1-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/14-4-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/14-7-test-dist_vs_t.dat",
+        "WHAM_PMF/histogram-collection-glucose-US-3/15-0-test-dist_vs_t.dat"
+      ],
+      "window_count": 51,
+      "within_route_tolerance": true
+    }
+  ],
+  "schema": "dia-health-one.gluhut-glucose-numpy-wham-crosscheck.v1",
+  "scope": "public GluHUT host-D-glucose methodological calibration only",
+  "status": "crosscheck_complete_pending_scientific_review",
+  "summary": {
+    "all_routes_within_tolerance": true,
+    "grossfield_mean_kcal_mol": -12.781673628930818,
+    "grossfield_sample_sd_kcal_mol": 1.0170608970143054,
+    "maximum_absolute_route_difference_kcal_mol": 0.000453254371965528,
+    "numpy_mean_kcal_mol": -12.781484400421029,
+    "numpy_sample_sd_kcal_mol": 1.0174536836134385
+  }
+}
