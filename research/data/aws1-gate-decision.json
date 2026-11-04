@@ -1,0 +1,78 @@
+{
+  "schema": "dia-health-one.aws1-gate-decision.v1",
+  "decision_date": "2026-11-04",
+  "aws_spend_usd": 0,
+  "gate": "reproduce deposited GluHUT WHAM/PMF analysis before prospective candidate calculation",
+  "overall_verdict": "PASS",
+  "overall_scope": "deposited WHAM input and analysis reproduction only",
+  "qualification_required": true,
+  "candidate_ranking_authorized": false,
+  "pag_calibration_completed": false,
+  "mcq1_evidence_level": "E2",
+  "criteria": {
+    "checksums_and_byte_sizes_verified": true,
+    "archive_extraction_and_input_parsing_deterministic": true,
+    "one_glucose_pmf_regenerated": true,
+    "three_glucose_routes_interpretable": true,
+    "independent_numpy_glucose_max_absolute_difference_kcal_per_mol": 0.000454,
+    "holdout_sugar_qualitative_ranking_reproduced": true,
+    "sugar_specific_retuning_required": false,
+    "reasonable_analysis_variations_reverse_qualitative_ranking": false,
+    "inputs_outputs_code_hashes_and_limitations_retained": true
+  },
+  "subgates": {
+    "fructofuranose_us2_route_robustness": {
+      "verdict": "FAIL",
+      "baseline_kcal_per_mol": -7.521,
+      "omit_12_6A_window_kcal_per_mol": -6.815,
+      "absolute_shift_kcal_per_mol": 0.707,
+      "preregistered_threshold_kcal_per_mol": 0.5,
+      "direct_12_3_to_12_9A_overlap_after_omission": 0.000133
+    },
+    "raw_trajectory_to_wham_lineage": {
+      "verdict": "FAIL",
+      "public_umbrella_trajectory_file_count": 714,
+      "raw_route_directory_count": 14,
+      "unique_complete_route_signature_count": 13,
+      "deposited_wham_route_count": 13,
+      "full_histogram_frame_series_available": false,
+      "authoritative_route_lineage_available": false,
+      "histogram_generation_reproducible_from_public_trajectory_archive": false,
+      "pmf_recalculation_from_public_trajectory_archive_authorized": false
+    },
+    "prospective_smd_or_umbrella_generation": {
+      "verdict": "BLOCKED",
+      "reason": "incomplete source coordinates, inconsistent guest restraint groups, missing full trajectory lineage and missing source parameter derivation"
+    }
+  },
+  "calibrated_public_facts": {
+    "common_compiled_host_across_four_sugars": true,
+    "compiled_host_atom_count": 159,
+    "compiled_host_formula": "C60H75N15O9",
+    "compiled_host_urea_carbonyl_count": 6,
+    "compiled_host_amide_carbonyl_count": 3,
+    "compiled_graph_matches_published_truncated_architecture": true,
+    "combined_guest_formula": "C6H12O6",
+    "combined_guest_neutral": true,
+    "source_resp_gaff_glycam_derivation_reconstructable": false,
+    "standalone_start_coordinates_available": false,
+    "smd_guest_coordinate_chemically_uniform_across_sugars": false,
+    "fructofuranose_deposited_group_contains_H62": true,
+    "automatic_corrected_restraint_selected": false
+  },
+  "next_gate": {
+    "name": "source-controlled parent glucose-versus-PaG calibration readiness",
+    "compute_release_authorized": false,
+    "requirements": [
+      "exact parent receptor chemical graph and atom mapping",
+      "source or independently regenerated host charges and nonstandard parameters",
+      "reviewed glucose and PaG parameterization, protonation and ion assumptions",
+      "source-controlled starting coordinates or preregistered pose generation",
+      "one chemically uniform reaction coordinate",
+      "multiple independent paths with overlap and convergence diagnostics",
+      "predeclared uncertainty and stop rule",
+      "explicit separation of free-receptor/model and complete NNC2215 observables"
+    ]
+  },
+  "evidence_boundary": "No Dia Health One compound has been synthesized or measured. This verdict does not establish PaG selectivity, MC-Q1 affinity, switching, efficacy, safety or a working drug."
+}
