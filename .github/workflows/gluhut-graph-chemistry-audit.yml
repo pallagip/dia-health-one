@@ -1,0 +1,122 @@
+name: Audit GluHUT graph chemistry
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-graph-and-guest-chemistry
+    paths:
+      - "research/audit_gluhut_graph_chemistry.py"
+      - "tests/test_audit_gluhut_graph_chemistry.py"
+      - ".github/workflows/gluhut-graph-chemistry-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-graph-chemistry-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ARCHIVE_MD5: 9f3c6733dc608d2bd37c488c560a5443
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_graph_chemistry.py -v
+
+      - name: Acquire and verify public SMD archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/SMD_trajectories.zip \
+            'https://zenodo.org/api/records/19664426/files/SMD_trajectories.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/SMD_trajectories.zip" | md5sum --check --strict
+
+      - name: Audit host graph and guest residue chemistry
+        run: |
+          python research/audit_gluhut_graph_chemistry.py \
+            --archive /tmp/SMD_trajectories.zip \
+            --output-json research/data/gluhut-graph-chemistry-audit.json \
+            | tee /tmp/graph-chemistry-summary.json
+
+      - name: Validate bounded conclusions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-graph-chemistry-audit.json').read_text())
+          summary = data['cross_system_summary']
+          decision = data['decision']
+          assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert data['archive']['crc_verified'] is True
+          assert len(data['systems']) == 4
+          assert summary['host_formula_identical'] is True
+          assert summary['all_combined_guests_neutral'] is True
+          assert summary['all_combined_guests_single_covalent_component'] is True
+          assert decision['roh_is_counterion'] is False
+          assert decision['roh_is_covalently_part_of_guest'] is True
+          assert decision['combined_guest_formula_matches_hexose'] is True
+          assert decision['source_graph_fully_reconciled'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          assert decision['pag_parameterization_authorized'] is False
+          assert decision['mcq1_parameter_transfer_authorized'] is False
+          for system in data['systems']:
+              assert system['host']['connected_component_count'] == 1
+              assert system['combined_guest']['formula'] == 'C6H12O6'
+              assert abs(system['combined_guest']['charge_e']) <= 1e-5
+          print(json.dumps({
+              'summary': summary,
+              'decision': decision,
+              'host': data['systems'][0]['host'],
+              'guests': [
+                  {
+                      'system': system['system_name'],
+                      'residues': system['residues'],
+                      'cross_residue_bonds': system['cross_residue_bonds'],
+                      'combined_guest': system['combined_guest'],
+                  }
+                  for system in data['systems']
+              ],
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit audit output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-graph-chemistry-audit.json
+          if git diff --cached --quiet; then
+            echo 'No audit changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT graph chemistry audit'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT graph chemistry audit'
+            echo
+            if [ -f /tmp/graph-chemistry-summary.json ]; then
+              echo '```json'
+              cat /tmp/graph-chemistry-summary.json
+              echo '```'
+            else
+              echo 'No audit summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
