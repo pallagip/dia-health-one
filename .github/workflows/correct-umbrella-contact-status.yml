@@ -1,0 +1,111 @@
+name: Correct umbrella author-contact status
+
+on:
+  push:
+    branches:
+      - main
+      - fix/umbrella-author-contact-status
+    paths:
+      - "research/correct_umbrella_contact_status.py"
+      - "tests/test_correct_umbrella_contact_status.py"
+      - "research/GLUHUT_UMBRELLA_LINEAGE_AUDIT.md"
+      - "research/status/status.json"
+      - ".github/workflows/correct-umbrella-contact-status.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: correct-umbrella-contact-status-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_correct_umbrella_contact_status.py -v
+
+      - name: Correct machine and human records
+        run: |
+          python research/correct_umbrella_contact_status.py \
+            --status-json research/status/status.json \
+            --record research/GLUHUT_UMBRELLA_LINEAGE_AUDIT.md \
+            | tee /tmp/contact-status-summary.json
+
+      - name: Validate exact delivery boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          status = json.loads(Path('research/status/status.json').read_text())
+          record = Path('research/GLUHUT_UMBRELLA_LINEAGE_AUDIT.md').read_text()
+          external = status['external_execution']
+
+          assert external['author_umbrella_lineage_clarification_sent'] is False
+          assert external['author_umbrella_lineage_clarification_draft_created'] is True
+          assert external['author_umbrella_lineage_clarification_status'] == 'draft_created_after_gmail_rate_limit'
+          assert '## Delivery status' in record
+          assert 'was **not sent**' in record
+          assert 'saved as a draft' in record
+
+          assert status['working_drug_discovered'] is False
+          assert status['measured_dia_health_one_hit'] is False
+          assert status['primary_candidate']['candidate_ranking_authorized'] is False
+          print(json.dumps({
+              'schema': status['schema'],
+              'external_execution': external,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit corrected records
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/status/status.json research/GLUHUT_UMBRELLA_LINEAGE_AUDIT.md
+          if git diff --cached --quiet; then
+            echo 'No contact-status changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Correct umbrella author-contact status'
+
+          target_branch="$GITHUB_REF_NAME"
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt $attempt to $target_branch"
+            git fetch origin "$target_branch"
+            git rebase "origin/$target_branch"
+            if git push origin "HEAD:$target_branch"; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo 'Could not publish corrected contact status.' >&2
+          exit 1
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## Umbrella author-contact status correction'
+            echo
+            if [ -f /tmp/contact-status-summary.json ]; then
+              echo '```json'
+              cat /tmp/contact-status-summary.json
+              echo '```'
+            else
+              echo 'No correction summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
