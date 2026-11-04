@@ -1,0 +1,96 @@
+name: Inventory GluHUT SMD archive
+
+on:
+  push:
+    branches:
+      - analysis/gluhut-smd-archive-inventory
+    paths:
+      - "research/audit_gluhut_smd_archive.py"
+      - "tests/test_audit_gluhut_smd_archive.py"
+      - ".github/workflows/gluhut-smd-inventory.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-smd-inventory-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ARCHIVE_MD5: 9f3c6733dc608d2bd37c488c560a5443
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run inventory tests
+        run: python -m unittest tests/test_audit_gluhut_smd_archive.py -v
+
+      - name: Acquire and verify public SMD archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/SMD_trajectories.zip \
+            'https://zenodo.org/api/records/19664426/files/SMD_trajectories.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/SMD_trajectories.zip" | md5sum --check --strict
+
+      - name: Inventory chemistry, coordinates and protocol files
+        run: |
+          python research/audit_gluhut_smd_archive.py \
+            --archive /tmp/SMD_trajectories.zip \
+            --output-json research/data/gluhut-smd-archive-inventory.json | tee /tmp/smd-inventory-summary.txt
+
+      - name: Validate evidence boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-smd-archive-inventory.json').read_text())
+          assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert data['archive']['crc_verified'] is True
+          assert data['decision']['candidate_ranking_authorized'] is False
+          assert 'not NNC2215' in data['not_target_claim']
+          print(json.dumps({
+              'classification_counts': data['classification_counts'],
+              'exact_input_components': data['exact_input_components'],
+              'decision': data['decision'],
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit archive inventory to branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-smd-archive-inventory.json
+          if git diff --cached --quiet; then
+            echo 'No inventory changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT SMD archive inventory'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT SMD archive inventory'
+            echo
+            if [ -f /tmp/smd-inventory-summary.txt ]; then
+              echo '```json'
+              cat /tmp/smd-inventory-summary.txt
+              echo '```'
+            else
+              echo 'No inventory summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
