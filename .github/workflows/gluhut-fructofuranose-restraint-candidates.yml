@@ -1,0 +1,115 @@
+name: Audit fructofuranose restraint candidates
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-fructofuranose-restraint-candidates
+    paths:
+      - "research/audit_gluhut_fructofuranose_restraint_candidates.py"
+      - "tests/test_audit_gluhut_fructofuranose_restraint_candidates.py"
+      - ".github/workflows/gluhut-fructofuranose-restraint-candidates.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-fructofuranose-restraint-candidates-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ARCHIVE_MD5: 9f3c6733dc608d2bd37c488c560a5443
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_fructofuranose_restraint_candidates.py -v
+
+      - name: Acquire and verify public SMD archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/SMD_trajectories.zip \
+            'https://zenodo.org/api/records/19664426/files/SMD_trajectories.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/SMD_trajectories.zip" | md5sum --check --strict
+
+      - name: Audit bounded heavy-atom alternatives
+        run: |
+          python research/audit_gluhut_fructofuranose_restraint_candidates.py \
+            --archive /tmp/SMD_trajectories.zip \
+            --output-json research/data/gluhut-fructofuranose-restraint-candidates.json \
+            | tee /tmp/fructofuranose-candidate-summary.json
+
+      - name: Validate evidence boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-fructofuranose-restraint-candidates.json').read_text())
+          decision = data['decision']
+          deposited = data['deposited_fructofuranose_selection']
+          comparison = data['same_numeric_index_comparison']
+          assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert data['archive']['crc_verified'] is True
+          assert deposited['selected_hydrogen']['atom_name'] == 'H62'
+          assert deposited['selected_hydrogen']['element'] == 'H'
+          assert deposited['connected_component_count'] == 2
+          assert decision['deposited_H62_has_one_heavy_parent'] is True
+          assert comparison['fructopyranose_and_fructofuranose_igr2_indices_identical'] is True
+          assert comparison['all_indices_preserve_chemical_identity'] is False
+          assert decision['same_numeric_indices_reused_between_fructose_templates'] is True
+          assert decision['same_numeric_indices_preserve_chemical_identity'] is False
+          assert decision['at_least_one_all_heavy_connected_alternative_exists'] is True
+          assert len(data['viable_all_heavy_connected_hypotheses']) >= 1
+          assert decision['automatic_correction_selected'] is False
+          assert decision['author_clarification_required'] is True
+          assert decision['new_smd_or_umbrella_generation_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          print(json.dumps({
+              'deposited': deposited,
+              'adjacent_heavy_atoms': data['adjacent_unselected_guest_heavy_atoms'],
+              'numeric_index_comparison': comparison,
+              'viable_hypotheses': data['viable_all_heavy_connected_hypotheses'],
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit audit output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-fructofuranose-restraint-candidates.json
+          if git diff --cached --quiet; then
+            echo 'No audit changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record fructofuranose restraint candidates'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## Fructofuranose restraint candidate audit'
+            echo
+            if [ -f /tmp/fructofuranose-candidate-summary.json ]; then
+              echo '```json'
+              cat /tmp/fructofuranose-candidate-summary.json
+              echo '```'
+            else
+              echo 'No candidate summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
