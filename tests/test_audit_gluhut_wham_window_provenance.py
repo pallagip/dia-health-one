@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hashlib
 import importlib.util
 import json
 import sys
@@ -96,6 +95,7 @@ class WhamWindowProvenanceTests(unittest.TestCase):
                 for route_number in range(1, 4):
                     route = f"US-{route_number}"
                     times = [float(index) for index in range(5)]
+                    route_offset = route_number * 0.001
                     handle.writestr(
                         archive_path("galactose", route, 0.0),
                         payload(times, [0.1 * route_number + value for value in times]),
@@ -106,15 +106,33 @@ class WhamWindowProvenanceTests(unittest.TestCase):
                     )
                     handle.writestr(
                         archive_path("galactose", route, 2.1),
-                        payload(times, [2.1 + 0.01 * value for value in times]),
+                        payload(
+                            times,
+                            [
+                                2.1 + route_offset + 0.01 * value
+                                for value in times
+                            ],
+                        ),
                     )
                     handle.writestr(
                         archive_path("galactose", route, 2.25),
-                        payload(times, [2.26 + 0.02 * value for value in times]),
+                        payload(
+                            times,
+                            [
+                                2.26 + route_offset + 0.02 * value
+                                for value in times
+                            ],
+                        ),
                     )
                     handle.writestr(
                         archive_path("galactose", route, 2.4),
-                        payload(times, [2.4 + 0.03 * value for value in times]),
+                        payload(
+                            times,
+                            [
+                                2.4 + route_offset + 0.03 * value
+                                for value in times
+                            ],
+                        ),
                     )
 
                 lower_times = [0.0, 1.0, 2.0, 3.0, 4.0]
