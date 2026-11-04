@@ -1,6 +1,6 @@
 {
   "schema": "dia-health-one.public-confidence-status.v10",
-  "updated": "2026-11-05",
+  "updated": "2026-11-04",
   "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
   "measured_dia_health_one_hit": false,
