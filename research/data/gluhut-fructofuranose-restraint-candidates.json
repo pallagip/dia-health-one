@@ -1,0 +1,983 @@
+{
+  "adjacent_unselected_guest_heavy_atoms": [
+    {
+      "amber_atom_type": "Cg",
+      "atom_1_based": 164,
+      "atom_name": "C6",
+      "atomic_number": 6,
+      "charge_e": 0.27199999999999996,
+      "element": "C",
+      "residue_index_1_based": 2,
+      "residue_label": "0CU"
+    },
+    {
+      "amber_atom_type": "Oh",
+      "atom_1_based": 171,
+      "atom_name": "O4",
+      "atomic_number": 8,
+      "charge_e": -0.763,
+      "element": "O",
+      "residue_index_1_based": 2,
+      "residue_label": "0CU"
+    },
+    {
+      "amber_atom_type": "Oh",
+      "atom_1_based": 175,
+      "atom_name": "O3",
+      "atomic_number": 8,
+      "charge_e": -0.691,
+      "element": "O",
+      "residue_index_1_based": 2,
+      "residue_label": "0CU"
+    },
+    {
+      "amber_atom_type": "Cg",
+      "atom_1_based": 177,
+      "atom_name": "C1",
+      "atomic_number": 6,
+      "charge_e": 0.28700000000000003,
+      "element": "C",
+      "residue_index_1_based": 2,
+      "residue_label": "0CU"
+    },
+    {
+      "amber_atom_type": "Oh",
+      "atom_1_based": 183,
+      "atom_name": "O1",
+      "atomic_number": 8,
+      "charge_e": -0.639,
+      "element": "O",
+      "residue_index_1_based": 3,
+      "residue_label": "ROH"
+    }
+  ],
+  "archive": {
+    "crc_verified": true,
+    "filename": "SMD_trajectories.zip",
+    "md5": "9f3c6733dc608d2bd37c488c560a5443",
+    "sha256": "04c58666328764aeb47bac0d9f8607546f9763892cb9a333b108630df70e3943",
+    "size_bytes": 37931874
+  },
+  "bounded_hypotheses": [
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "C",
+        "C"
+      ],
+      "label": "omit_H62_use_five_ring_atoms",
+      "noncore_selected_atoms": [],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 5,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_heavy_atom_core_only",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        164,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C6",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "C",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_C6_atom_164",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 164,
+          "atom_name": "C6",
+          "atomic_number": 6,
+          "charge_e": 0.27199999999999996,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        171,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "O4",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "O",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_O4_atom_171",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Oh",
+          "atom_1_based": 171,
+          "atom_name": "O4",
+          "atomic_number": 8,
+          "charge_e": -0.763,
+          "element": "O",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        175,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "O3",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "O",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_O3_atom_175",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Oh",
+          "atom_1_based": 175,
+          "atom_name": "O3",
+          "atomic_number": 8,
+          "charge_e": -0.691,
+          "element": "O",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        177,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C1",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "C",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_C1_atom_177",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 177,
+          "atom_name": "C1",
+          "atomic_number": 6,
+          "charge_e": 0.28700000000000003,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        183,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "O1",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "O",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_O1_atom_183",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Oh",
+          "atom_1_based": 183,
+          "atom_name": "O1",
+          "atomic_number": 8,
+          "charge_e": -0.639,
+          "element": "O",
+          "residue_index_1_based": 3,
+          "residue_label": "ROH"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    }
+  ],
+  "decision": {
+    "at_least_one_all_heavy_connected_alternative_exists": true,
+    "author_clarification_required": true,
+    "automatic_correction_selected": false,
+    "candidate_ranking_authorized": false,
+    "deposited_H62_has_one_heavy_parent": true,
+    "deposited_H62_parent_atom_name": "C6",
+    "new_smd_or_umbrella_generation_authorized": false,
+    "next_action": "ask the authors whether H62 was intentional and which of the bounded five-ring or ring-plus-exocyclic-heavy-atom definitions was intended; do not emit a corrected production input without that answer",
+    "same_numeric_indices_preserve_chemical_identity": false,
+    "same_numeric_indices_reused_between_fructose_templates": true
+  },
+  "deposited_fructofuranose_selection": {
+    "atom_indices_1_based": [
+      160,
+      161,
+      162,
+      165,
+      169,
+      173
+    ],
+    "atoms": [
+      {
+        "amber_atom_type": "Cg",
+        "atom_1_based": 160,
+        "atom_name": "C2",
+        "atomic_number": 6,
+        "charge_e": 0.239,
+        "element": "C",
+        "residue_index_1_based": 2,
+        "residue_label": "0CU"
+      },
+      {
+        "amber_atom_type": "Os",
+        "atom_1_based": 161,
+        "atom_name": "O5",
+        "atomic_number": 8,
+        "charge_e": -0.449,
+        "element": "O",
+        "residue_index_1_based": 2,
+        "residue_label": "0CU"
+      },
+      {
+        "amber_atom_type": "Cg",
+        "atom_1_based": 162,
+        "atom_name": "C5",
+        "atomic_number": 6,
+        "charge_e": 0.31,
+        "element": "C",
+        "residue_index_1_based": 2,
+        "residue_label": "0CU"
+      },
+      {
+        "amber_atom_type": "H1",
+        "atom_1_based": 165,
+        "atom_name": "H62",
+        "atomic_number": 1,
+        "charge_e": 0.0,
+        "element": "H",
+        "residue_index_1_based": 2,
+        "residue_label": "0CU"
+      },
+      {
+        "amber_atom_type": "Cg",
+        "atom_1_based": 169,
+        "atom_name": "C4",
+        "atomic_number": 6,
+        "charge_e": 0.293,
+        "element": "C",
+        "residue_index_1_based": 2,
+        "residue_label": "0CU"
+      },
+      {
+        "amber_atom_type": "Cg",
+        "atom_1_based": 173,
+        "atom_name": "C3",
+        "atomic_number": 6,
+        "charge_e": 0.333,
+        "element": "C",
+        "residue_index_1_based": 2,
+        "residue_label": "0CU"
+      }
+    ],
+    "connected_component_count": 2,
+    "cyclic_core_atom_indices_1_based": [
+      160,
+      161,
+      162,
+      169,
+      173
+    ],
+    "cyclic_core_atom_names": [
+      "C2",
+      "O5",
+      "C5",
+      "C4",
+      "C3"
+    ],
+    "restraint_path": "SMD_trajectories/Input-files/Fructofuranose-SMD.RST",
+    "selected_hydrogen": {
+      "amber_atom_type": "H1",
+      "atom_1_based": 165,
+      "atom_name": "H62",
+      "atomic_number": 1,
+      "charge_e": 0.0,
+      "element": "H",
+      "residue_index_1_based": 2,
+      "residue_label": "0CU"
+    },
+    "selected_hydrogen_heavy_parent": {
+      "amber_atom_type": "Cg",
+      "atom_1_based": 164,
+      "atom_name": "C6",
+      "atomic_number": 6,
+      "charge_e": 0.27199999999999996,
+      "element": "C",
+      "residue_index_1_based": 2,
+      "residue_label": "0CU"
+    },
+    "selected_hydrogen_neighbours_1_based": [
+      164
+    ]
+  },
+  "limitations": [
+    "Topology adjacency can identify chemically coherent alternatives but cannot recover author intent.",
+    "No coordinates, centre-of-mass values, pulling work or PMF are calculated.",
+    "A viable graph replacement is not evidence that the replacement reproduces the published path.",
+    "No corrected restraint file is generated by this audit."
+  ],
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, binding affinity, efficacy, safety, or a drug result",
+  "same_numeric_index_comparison": {
+    "all_indices_preserve_atom_name": false,
+    "all_indices_preserve_element": false,
+    "crosswalk": [
+      {
+        "atom_index_1_based": 160,
+        "fructofuranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 160,
+          "atom_name": "C2",
+          "atomic_number": 6,
+          "charge_e": 0.239,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        },
+        "fructopyranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 160,
+          "atom_name": "C2",
+          "atomic_number": 6,
+          "charge_e": 0.244,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CB"
+        },
+        "same_atom_name": true,
+        "same_element": true
+      },
+      {
+        "atom_index_1_based": 161,
+        "fructofuranose": {
+          "amber_atom_type": "Os",
+          "atom_1_based": 161,
+          "atom_name": "O5",
+          "atomic_number": 8,
+          "charge_e": -0.449,
+          "element": "O",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        },
+        "fructopyranose": {
+          "amber_atom_type": "Os",
+          "atom_1_based": 161,
+          "atom_name": "O6",
+          "atomic_number": 8,
+          "charge_e": -0.46,
+          "element": "O",
+          "residue_index_1_based": 2,
+          "residue_label": "0CB"
+        },
+        "same_atom_name": false,
+        "same_element": true
+      },
+      {
+        "atom_index_1_based": 162,
+        "fructofuranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 162,
+          "atom_name": "C5",
+          "atomic_number": 6,
+          "charge_e": 0.31,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        },
+        "fructopyranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 162,
+          "atom_name": "C6",
+          "atomic_number": 6,
+          "charge_e": 0.365,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CB"
+        },
+        "same_atom_name": false,
+        "same_element": true
+      },
+      {
+        "atom_index_1_based": 165,
+        "fructofuranose": {
+          "amber_atom_type": "H1",
+          "atom_1_based": 165,
+          "atom_name": "H62",
+          "atomic_number": 1,
+          "charge_e": 0.0,
+          "element": "H",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        },
+        "fructopyranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 165,
+          "atom_name": "C5",
+          "atomic_number": 6,
+          "charge_e": 0.19499999999999998,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CB"
+        },
+        "same_atom_name": false,
+        "same_element": false
+      },
+      {
+        "atom_index_1_based": 169,
+        "fructofuranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 169,
+          "atom_name": "C4",
+          "atomic_number": 6,
+          "charge_e": 0.293,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        },
+        "fructopyranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 169,
+          "atom_name": "C4",
+          "atomic_number": 6,
+          "charge_e": 0.344,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CB"
+        },
+        "same_atom_name": true,
+        "same_element": true
+      },
+      {
+        "atom_index_1_based": 173,
+        "fructofuranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 173,
+          "atom_name": "C3",
+          "atomic_number": 6,
+          "charge_e": 0.333,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        },
+        "fructopyranose": {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 173,
+          "atom_name": "C3",
+          "atomic_number": 6,
+          "charge_e": 0.317,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CB"
+        },
+        "same_atom_name": true,
+        "same_element": true
+      }
+    ],
+    "fructopyranose_and_fructofuranose_igr2_indices_identical": true,
+    "indices": [
+      160,
+      161,
+      162,
+      165,
+      169,
+      173
+    ]
+  },
+  "schema": "dia-health-one.gluhut-fructofuranose-restraint-candidates.v1",
+  "scope": "deposited fructofuranose SMD igr2 atom-selection anomaly",
+  "status": "bounded_candidate_replacements_identified_no_correction_selected",
+  "viable_all_heavy_connected_hypotheses": [
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "C",
+        "C"
+      ],
+      "label": "omit_H62_use_five_ring_atoms",
+      "noncore_selected_atoms": [],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 5,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_heavy_atom_core_only",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        164,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C6",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "C",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_C6_atom_164",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 164,
+          "atom_name": "C6",
+          "atomic_number": 6,
+          "charge_e": 0.27199999999999996,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        171,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "O4",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "O",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_O4_atom_171",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Oh",
+          "atom_1_based": 171,
+          "atom_name": "O4",
+          "atomic_number": 8,
+          "charge_e": -0.763,
+          "element": "O",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        175,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "O3",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "O",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_O3_atom_175",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Oh",
+          "atom_1_based": 175,
+          "atom_name": "O3",
+          "atomic_number": 8,
+          "charge_e": -0.691,
+          "element": "O",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        177,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C1",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "C",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_C1_atom_177",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 177,
+          "atom_name": "C1",
+          "atomic_number": 6,
+          "charge_e": 0.28700000000000003,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    },
+    {
+      "all_selected_atoms_are_heavy": true,
+      "atom_indices_1_based": [
+        160,
+        161,
+        162,
+        183,
+        169,
+        173
+      ],
+      "atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "O1",
+        "C4",
+        "C3"
+      ],
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "elements": [
+        "C",
+        "O",
+        "C",
+        "O",
+        "C",
+        "C"
+      ],
+      "label": "replace_H62_with_O1_atom_183",
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Oh",
+          "atom_1_based": 183,
+          "atom_name": "O1",
+          "atomic_number": 8,
+          "charge_e": -0.639,
+          "element": "O",
+          "residue_index_1_based": 3,
+          "residue_label": "ROH"
+        }
+      ],
+      "retains_five_member_cyclic_core": true,
+      "selected_atom_count": 6,
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "single_connected_component": true
+    }
+  ]
+}
