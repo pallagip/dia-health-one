@@ -1,0 +1,604 @@
+{
+  "decision": {
+    "all_twenty_trajectories_accounted_for": true,
+    "candidate_ranking_authorized": false,
+    "duplicate_coordinate_series_detected": true,
+    "duplicate_file_content_detected": true,
+    "heterogeneous_systems": [
+      "galactose"
+    ],
+    "new_smd_or_umbrella_generation_authorized": false,
+    "next_action": "inspect file naming and restraint provenance for each endpoint cluster; request author clarification for mixed-target or duplicate trajectories; do not pool heterogeneous files as one protocol",
+    "one_endpoint_protocol_per_system": false,
+    "parent_pag_calibration_authorized": false
+  },
+  "duplicate_coordinate_series_groups": [
+    {
+      "hash": "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57",
+      "paths": [
+        "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+        "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos"
+      ],
+      "systems": [
+        "galactose"
+      ],
+      "trajectory_count": 2
+    }
+  ],
+  "duplicate_file_content_groups": [
+    {
+      "hash": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "paths": [
+        "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+        "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos"
+      ],
+      "systems": [
+        "galactose"
+      ],
+      "trajectory_count": 2
+    }
+  ],
+  "limitations": [
+    "Endpoint clusters are based only on the reconstructed deposited COM coordinate and a prespecified 0.25 A tolerance.",
+    "A 15 or 20 A endpoint does not by itself establish the intended target or production duration.",
+    "File-content or coordinate-series equality detects exact duplicates only, not trajectories sharing a starting structure or random seed.",
+    "The audit does not reconstruct time, work, applied target history, or umbrella-window generation."
+  ],
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, SMD work, PMF, binding affinity, efficacy, safety, or a drug result",
+  "schema": "dia-health-one.gluhut-smd-endpoint-provenance.v1",
+  "scope": "file-level endpoint provenance of twenty public GluHUT SMD BINPOS trajectories",
+  "settings": {
+    "endpoint_cluster_tolerance_A": 0.25,
+    "expected_targets_A": [
+      15.0,
+      20.0
+    ],
+    "target_match_tolerance_A": 0.25
+  },
+  "source": {
+    "path": "research/data/gluhut-binpos-coordinate-audit.json",
+    "sha256": "23aef74c018ef3359a659968fce605fd2b6b484718d0ab3183415a4fbe31b9f4",
+    "total_frame_count": 20000,
+    "trajectory_count": 20
+  },
+  "status": "endpoint_protocol_heterogeneity_detected",
+  "systems": {
+    "fructofuranose": {
+      "endpoint_cluster_count": 1,
+      "endpoint_clusters": [
+        {
+          "cluster_index": 1,
+          "coordinate_sha256": [
+            "f1e4d4fac895c7f752b39fff22ef3c8308c824415383befdc8e53277cfd4004b",
+            "b5a45ee191baa0094733f5e2c5bd959413d9d0269fb8fbf0500a3ef59fdbc50b",
+            "a9c1cb012861759088b93e3b8904119846d0743906a68c604b5e65055aecf609",
+            "8c2952bb0ebd61f155728ffd8861d5c69aee00c09a05accf9429e00cc90d99c0",
+            "73cca4480e710e878130004c118a1d509de0de76da910b882c2797f39e15f728"
+          ],
+          "file_sha256": [
+            "4370f94a3f83a70d6994f610e147d7f80e4a3e38295e9a2e40eb7b96e9e06f17",
+            "d701f87dc2f6443a6698659957030d88db502239445c16afd122067a359fe5aa",
+            "d3fa728de9cffbc0c3d9ac520c67281bb7d74874206f0952e02c0611f2ddb402",
+            "0c13d6ac5d65e04725a326ddc5753ba4259aa9782ad29e3e3eadc88cf17e9bb9",
+            "9782a67e8358462fced17f1956232871afd3f980e35561f78f4c4549d1c59f3a"
+          ],
+          "maximum_last_A": 15.067594561525013,
+          "mean_last_A": 14.97749866541506,
+          "minimum_last_A": 14.909546745169852,
+          "paths": [
+            "SMD_trajectories/fructofuranose/run 4/fructofuranose-pull-4-visualisation.binpos",
+            "SMD_trajectories/fructofuranose/run 2/fructofuranose-pull-2-visualisation.binpos",
+            "SMD_trajectories/fructofuranose/run 1/fructofuranose-pull-1-visualisation.binpos",
+            "SMD_trajectories/fructofuranose/run 5/fructofuranose-pull-5-visualisation.binpos",
+            "SMD_trajectories/fructofuranose/run 3/fructofuranose-pull-3-visualisation.binpos"
+          ],
+          "trajectory_count": 5
+        }
+      ],
+      "endpoint_protocol_heterogeneous": false,
+      "trajectories": [
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.02490918999835756,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "a9c1cb012861759088b93e3b8904119846d0743906a68c604b5e65055aecf609",
+          "file_sha256": "d3fa728de9cffbc0c3d9ac520c67281bb7d74874206f0952e02c0611f2ddb402",
+          "first_A": 0.11063979795833428,
+          "fraction_positive_frame_steps": 0.5955955955955956,
+          "frame_count": 1000,
+          "last_A": 14.975090810001642,
+          "last_minus_target_15A": -0.02490918999835756,
+          "net_change_A": 14.864451012043308,
+          "path": "SMD_trajectories/fructofuranose/run 1/fructofuranose-pull-1-visualisation.binpos",
+          "system_name": "fructofuranose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.05396613750701995,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "b5a45ee191baa0094733f5e2c5bd959413d9d0269fb8fbf0500a3ef59fdbc50b",
+          "file_sha256": "d701f87dc2f6443a6698659957030d88db502239445c16afd122067a359fe5aa",
+          "first_A": 0.03393403000027333,
+          "fraction_positive_frame_steps": 0.6036036036036037,
+          "frame_count": 1000,
+          "last_A": 14.94603386249298,
+          "last_minus_target_15A": -0.05396613750701995,
+          "net_change_A": 14.912099832492707,
+          "path": "SMD_trajectories/fructofuranose/run 2/fructofuranose-pull-2-visualisation.binpos",
+          "system_name": "fructofuranose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.06759456152501286,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "73cca4480e710e878130004c118a1d509de0de76da910b882c2797f39e15f728",
+          "file_sha256": "9782a67e8358462fced17f1956232871afd3f980e35561f78f4c4549d1c59f3a",
+          "first_A": 0.061608533531279035,
+          "fraction_positive_frame_steps": 0.6046046046046046,
+          "frame_count": 1000,
+          "last_A": 15.067594561525013,
+          "last_minus_target_15A": 0.06759456152501286,
+          "net_change_A": 15.005986027993734,
+          "path": "SMD_trajectories/fructofuranose/run 3/fructofuranose-pull-3-visualisation.binpos",
+          "system_name": "fructofuranose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.09045325483014821,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "f1e4d4fac895c7f752b39fff22ef3c8308c824415383befdc8e53277cfd4004b",
+          "file_sha256": "4370f94a3f83a70d6994f610e147d7f80e4a3e38295e9a2e40eb7b96e9e06f17",
+          "first_A": 0.09534965797758276,
+          "fraction_positive_frame_steps": 0.6006006006006006,
+          "frame_count": 1000,
+          "last_A": 14.909546745169852,
+          "last_minus_target_15A": -0.09045325483014821,
+          "net_change_A": 14.81419708719227,
+          "path": "SMD_trajectories/fructofuranose/run 4/fructofuranose-pull-4-visualisation.binpos",
+          "system_name": "fructofuranose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.010772652114178882,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "8c2952bb0ebd61f155728ffd8861d5c69aee00c09a05accf9429e00cc90d99c0",
+          "file_sha256": "0c13d6ac5d65e04725a326ddc5753ba4259aa9782ad29e3e3eadc88cf17e9bb9",
+          "first_A": 0.06348628246657821,
+          "fraction_positive_frame_steps": 0.6086086086086087,
+          "frame_count": 1000,
+          "last_A": 14.989227347885821,
+          "last_minus_target_15A": -0.010772652114178882,
+          "net_change_A": 14.925741065419244,
+          "path": "SMD_trajectories/fructofuranose/run 5/fructofuranose-pull-5-visualisation.binpos",
+          "system_name": "fructofuranose"
+        }
+      ],
+      "trajectory_count": 5
+    },
+    "fructopyranose": {
+      "endpoint_cluster_count": 1,
+      "endpoint_clusters": [
+        {
+          "cluster_index": 1,
+          "coordinate_sha256": [
+            "1f1f9572c23fcdbaa1eb5b1a4b2e611d7185aaa26a6d4a7680d595275dee5861",
+            "9f7aeb9fc6d10e183a6c925715b861a7ef14a2dcda1bffe7d8e00c5f78c0662f",
+            "bc157c3c7271a265444e2d11994603b9a1725ccb724935f190d0505115a5f724",
+            "91dea328df6438f8b2b78f52d4c712081c25c89b5686beb4181f370f938867e9",
+            "0c2215bbfadd5d1ceae9174b0220b24860109b276ace5b32bb579ffdad51b74c"
+          ],
+          "file_sha256": [
+            "750cb7c0ab513ec684cf716cb5b500ab82f1ddcc51bee1b18273ecf20e0fb931",
+            "38faedea0517750d26cb3000151156e51bd390205995b99c5c8fa6e4208c5385",
+            "8c9fa5b4297ae74acb772728f664f81c91fab91e2de2b3fe28ba1f16650b5dd0",
+            "f17b4004b45deb8dc9ae139966fc7251224265faf35ca8eca1ed81173db4c167",
+            "8543bd6165fa9aa52fae738800fe788e1d27534c597f02ccdf2ca1df29c1970c"
+          ],
+          "maximum_last_A": 20.06710445730212,
+          "mean_last_A": 20.002386667370196,
+          "minimum_last_A": 19.95677246524349,
+          "paths": [
+            "SMD_trajectories/fructopyranose/run 3/fructopyranose-3-visualisation.binpos",
+            "SMD_trajectories/fructopyranose/run 5/fructopyranose-5-visualisation.binpos",
+            "SMD_trajectories/fructopyranose/run 2/fructopyranose-2-visualisation.binpos",
+            "SMD_trajectories/fructopyranose/run 4/fructopyranose-4-visualisation.binpos",
+            "SMD_trajectories/fructopyranose/run 1/fructopyranose-1-visualisation.binpos"
+          ],
+          "trajectory_count": 5
+        }
+      ],
+      "endpoint_protocol_heterogeneous": false,
+      "trajectories": [
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.06710445730211845,
+            "closest_target_A": 20.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "0c2215bbfadd5d1ceae9174b0220b24860109b276ace5b32bb579ffdad51b74c",
+          "file_sha256": "8543bd6165fa9aa52fae738800fe788e1d27534c597f02ccdf2ca1df29c1970c",
+          "first_A": 0.09571189689539357,
+          "fraction_positive_frame_steps": 0.6316316316316316,
+          "frame_count": 1000,
+          "last_A": 20.06710445730212,
+          "last_minus_target_15A": 5.0671044573021184,
+          "net_change_A": 19.971392560406724,
+          "path": "SMD_trajectories/fructopyranose/run 1/fructopyranose-1-visualisation.binpos",
+          "system_name": "fructopyranose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.003994672798111054,
+            "closest_target_A": 20.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "bc157c3c7271a265444e2d11994603b9a1725ccb724935f190d0505115a5f724",
+          "file_sha256": "8c9fa5b4297ae74acb772728f664f81c91fab91e2de2b3fe28ba1f16650b5dd0",
+          "first_A": 0.016286918707568453,
+          "fraction_positive_frame_steps": 0.6476476476476476,
+          "frame_count": 1000,
+          "last_A": 20.00399467279811,
+          "last_minus_target_15A": 5.003994672798111,
+          "net_change_A": 19.987707754090543,
+          "path": "SMD_trajectories/fructopyranose/run 2/fructopyranose-2-visualisation.binpos",
+          "system_name": "fructopyranose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.04322753475651098,
+            "closest_target_A": 20.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "1f1f9572c23fcdbaa1eb5b1a4b2e611d7185aaa26a6d4a7680d595275dee5861",
+          "file_sha256": "750cb7c0ab513ec684cf716cb5b500ab82f1ddcc51bee1b18273ecf20e0fb931",
+          "first_A": 0.1126097545810462,
+          "fraction_positive_frame_steps": 0.6536536536536537,
+          "frame_count": 1000,
+          "last_A": 19.95677246524349,
+          "last_minus_target_15A": 4.956772465243489,
+          "net_change_A": 19.84416271066244,
+          "path": "SMD_trajectories/fructopyranose/run 3/fructopyranose-3-visualisation.binpos",
+          "system_name": "fructopyranose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.007816162709435304,
+            "closest_target_A": 20.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "91dea328df6438f8b2b78f52d4c712081c25c89b5686beb4181f370f938867e9",
+          "file_sha256": "f17b4004b45deb8dc9ae139966fc7251224265faf35ca8eca1ed81173db4c167",
+          "first_A": 0.14868733432016037,
+          "fraction_positive_frame_steps": 0.6416416416416416,
+          "frame_count": 1000,
+          "last_A": 20.007816162709435,
+          "last_minus_target_15A": 5.007816162709435,
+          "net_change_A": 19.859128828389274,
+          "path": "SMD_trajectories/fructopyranose/run 4/fructopyranose-4-visualisation.binpos",
+          "system_name": "fructopyranose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.023754421202170306,
+            "closest_target_A": 20.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "9f7aeb9fc6d10e183a6c925715b861a7ef14a2dcda1bffe7d8e00c5f78c0662f",
+          "file_sha256": "38faedea0517750d26cb3000151156e51bd390205995b99c5c8fa6e4208c5385",
+          "first_A": 0.09962432229284629,
+          "fraction_positive_frame_steps": 0.6376376376376376,
+          "frame_count": 1000,
+          "last_A": 19.97624557879783,
+          "last_minus_target_15A": 4.97624557879783,
+          "net_change_A": 19.876621256504983,
+          "path": "SMD_trajectories/fructopyranose/run 5/fructopyranose-5-visualisation.binpos",
+          "system_name": "fructopyranose"
+        }
+      ],
+      "trajectory_count": 5
+    },
+    "galactose": {
+      "endpoint_cluster_count": 2,
+      "endpoint_clusters": [
+        {
+          "cluster_index": 1,
+          "coordinate_sha256": [
+            "7f91656bcab220c7f7a189c30f4aa5476e15ee79abc1107000d5158321700e23",
+            "f5fc8bac1cebf72ff9cbe55dd3606bc56462598047009d93608ad09f6a156ca0",
+            "a94fdd4a9d52160c5b87828441455bbb3154eb95b472cd48fa1492c070ffa4e1"
+          ],
+          "file_sha256": [
+            "073d0618dd7042e0d10eae5a29d24053136860b99187b0c8db0b6fedb82804c6",
+            "8c45c30e8321fcd77458feb2d8cbd3634c077c2ccefc280495daffd1b2069636",
+            "9c6acba4f2ff51e149b3d26eff618ec4a2e36499b09fda9638cacd7f5139b1cb"
+          ],
+          "maximum_last_A": 15.048412386739026,
+          "mean_last_A": 14.999259043483697,
+          "minimum_last_A": 14.942600162146935,
+          "paths": [
+            "SMD_trajectories/galactose/run 3/galactose-pull-3-B.binpos",
+            "SMD_trajectories/galactose/run 1/galactose-pull-1-B.binpos",
+            "SMD_trajectories/galactose/run 2/galactose-pull-2-B.binpos"
+          ],
+          "trajectory_count": 3
+        },
+        {
+          "cluster_index": 2,
+          "coordinate_sha256": [
+            "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57",
+            "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57"
+          ],
+          "file_sha256": [
+            "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+            "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903"
+          ],
+          "maximum_last_A": 22.126171614350604,
+          "mean_last_A": 22.126171614350604,
+          "minimum_last_A": 22.126171614350604,
+          "paths": [
+            "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+            "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos"
+          ],
+          "trajectory_count": 2
+        }
+      ],
+      "endpoint_protocol_heterogeneous": true,
+      "trajectories": [
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.006764581565128935,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "f5fc8bac1cebf72ff9cbe55dd3606bc56462598047009d93608ad09f6a156ca0",
+          "file_sha256": "8c45c30e8321fcd77458feb2d8cbd3634c077c2ccefc280495daffd1b2069636",
+          "first_A": 0.10260277875238843,
+          "fraction_positive_frame_steps": 0.6156156156156156,
+          "frame_count": 1000,
+          "last_A": 15.006764581565129,
+          "last_minus_target_15A": 0.006764581565128935,
+          "net_change_A": 14.904161802812741,
+          "path": "SMD_trajectories/galactose/run 1/galactose-pull-1-B.binpos",
+          "system_name": "galactose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.04841238673902559,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "a94fdd4a9d52160c5b87828441455bbb3154eb95b472cd48fa1492c070ffa4e1",
+          "file_sha256": "9c6acba4f2ff51e149b3d26eff618ec4a2e36499b09fda9638cacd7f5139b1cb",
+          "first_A": 0.0690893355538023,
+          "fraction_positive_frame_steps": 0.5905905905905906,
+          "frame_count": 1000,
+          "last_A": 15.048412386739026,
+          "last_minus_target_15A": 0.04841238673902559,
+          "net_change_A": 14.979323051185224,
+          "path": "SMD_trajectories/galactose/run 2/galactose-pull-2-B.binpos",
+          "system_name": "galactose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.05739983785306535,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "7f91656bcab220c7f7a189c30f4aa5476e15ee79abc1107000d5158321700e23",
+          "file_sha256": "073d0618dd7042e0d10eae5a29d24053136860b99187b0c8db0b6fedb82804c6",
+          "first_A": 0.07064648512124025,
+          "fraction_positive_frame_steps": 0.6086086086086087,
+          "frame_count": 1000,
+          "last_A": 14.942600162146935,
+          "last_minus_target_15A": -0.05739983785306535,
+          "net_change_A": 14.871953677025694,
+          "path": "SMD_trajectories/galactose/run 3/galactose-pull-3-B.binpos",
+          "system_name": "galactose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 2.1261716143506035,
+            "closest_target_A": 20.0,
+            "matches_within_tolerance": false
+          },
+          "coordinate_sha256": "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57",
+          "file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+          "first_A": 0.7300290601638892,
+          "fraction_positive_frame_steps": 0.5265265265265265,
+          "frame_count": 1000,
+          "last_A": 22.126171614350604,
+          "last_minus_target_15A": 7.1261716143506035,
+          "net_change_A": 21.396142554186714,
+          "path": "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+          "system_name": "galactose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 2.1261716143506035,
+            "closest_target_A": 20.0,
+            "matches_within_tolerance": false
+          },
+          "coordinate_sha256": "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57",
+          "file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+          "first_A": 0.7300290601638892,
+          "fraction_positive_frame_steps": 0.5265265265265265,
+          "frame_count": 1000,
+          "last_A": 22.126171614350604,
+          "last_minus_target_15A": 7.1261716143506035,
+          "net_change_A": 21.396142554186714,
+          "path": "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos",
+          "system_name": "galactose"
+        }
+      ],
+      "trajectory_count": 5
+    },
+    "glucose": {
+      "endpoint_cluster_count": 1,
+      "endpoint_clusters": [
+        {
+          "cluster_index": 1,
+          "coordinate_sha256": [
+            "5984c0ab7d8c074d6858de99a7e5d1c564a7e2a856f61d98a1f0ad5d15bf3c54",
+            "ae4b00465d502d02a471f91f586f3e5c6c92a428f4aeddc57042b43ed890b457",
+            "10af47f776d0ca25b77d2c022bdaedc8a9cfd5a945a4e070d3e889728f58dc22",
+            "1ac1053f8fd65b41d130ac847397ee42a5ad7c143c77da05abf0d02ad134c96b",
+            "00c297e88d1b9b2e0e29132a3d1ddc3bbce89fb7a6b44a1239ac55f4d546d3a4"
+          ],
+          "file_sha256": [
+            "ab81901d95f445d2395755daeac3382654fee11708a84ce64d12ea22943a02f5",
+            "8e7a41eadd1d5a978a6ff2c61b613da39d84be0f34e8ee4913f78b5f6f037a43",
+            "42e6ba7d443d0967416d06a5ce8e72a17cdf990dabc65707cd23abdd8f2b5b19",
+            "d5db1c6c6e3fe692e6cb8ccfb92fe9e8e9bd02f23c534d70590cf08f478c462a",
+            "3a7ef8c26ed71f8bf75f944739b3ffdb212726680653fc7556642f32b9453034"
+          ],
+          "maximum_last_A": 15.003377256643349,
+          "mean_last_A": 14.97390435521639,
+          "minimum_last_A": 14.928967891071835,
+          "paths": [
+            "SMD_trajectories/glucose/run2/glucose-pull-2-visualisation.binpos",
+            "SMD_trajectories/glucose/run1/glucose-pull-1-visualisation.binpos",
+            "SMD_trajectories/glucose/run3/glucose-pull-3-visualisation.binpos",
+            "SMD_trajectories/glucose/run4/glucose-pull-4-visualisation.binpos",
+            "SMD_trajectories/glucose/run5/glucose-pull-5-visualisation.binpos"
+          ],
+          "trajectory_count": 5
+        }
+      ],
+      "endpoint_protocol_heterogeneous": false,
+      "trajectories": [
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.058496009422723816,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "ae4b00465d502d02a471f91f586f3e5c6c92a428f4aeddc57042b43ed890b457",
+          "file_sha256": "8e7a41eadd1d5a978a6ff2c61b613da39d84be0f34e8ee4913f78b5f6f037a43",
+          "first_A": 0.07977124050637563,
+          "fraction_positive_frame_steps": 0.6116116116116116,
+          "frame_count": 1000,
+          "last_A": 14.941503990577276,
+          "last_minus_target_15A": -0.058496009422723816,
+          "net_change_A": 14.861732750070901,
+          "path": "SMD_trajectories/glucose/run1/glucose-pull-1-visualisation.binpos",
+          "system_name": "glucose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.07103210892816492,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "5984c0ab7d8c074d6858de99a7e5d1c564a7e2a856f61d98a1f0ad5d15bf3c54",
+          "file_sha256": "ab81901d95f445d2395755daeac3382654fee11708a84ce64d12ea22943a02f5",
+          "first_A": 0.07004566430603183,
+          "fraction_positive_frame_steps": 0.6016016016016016,
+          "frame_count": 1000,
+          "last_A": 14.928967891071835,
+          "last_minus_target_15A": -0.07103210892816492,
+          "net_change_A": 14.858922226765804,
+          "path": "SMD_trajectories/glucose/run2/glucose-pull-2-visualisation.binpos",
+          "system_name": "glucose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.0029642226582442532,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "10af47f776d0ca25b77d2c022bdaedc8a9cfd5a945a4e070d3e889728f58dc22",
+          "file_sha256": "42e6ba7d443d0967416d06a5ce8e72a17cdf990dabc65707cd23abdd8f2b5b19",
+          "first_A": 0.05584844524049951,
+          "fraction_positive_frame_steps": 0.5945945945945946,
+          "frame_count": 1000,
+          "last_A": 14.997035777341756,
+          "last_minus_target_15A": -0.0029642226582442532,
+          "net_change_A": 14.941187332101256,
+          "path": "SMD_trajectories/glucose/run3/glucose-pull-3-visualisation.binpos",
+          "system_name": "glucose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.001363139552259085,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "1ac1053f8fd65b41d130ac847397ee42a5ad7c143c77da05abf0d02ad134c96b",
+          "file_sha256": "d5db1c6c6e3fe692e6cb8ccfb92fe9e8e9bd02f23c534d70590cf08f478c462a",
+          "first_A": 0.15077416052905115,
+          "fraction_positive_frame_steps": 0.6076076076076076,
+          "frame_count": 1000,
+          "last_A": 14.998636860447741,
+          "last_minus_target_15A": -0.001363139552259085,
+          "net_change_A": 14.84786269991869,
+          "path": "SMD_trajectories/glucose/run4/glucose-pull-4-visualisation.binpos",
+          "system_name": "glucose"
+        },
+        {
+          "closest_expected_target": {
+            "absolute_difference_A": 0.0033772566433487583,
+            "closest_target_A": 15.0,
+            "matches_within_tolerance": true
+          },
+          "coordinate_sha256": "00c297e88d1b9b2e0e29132a3d1ddc3bbce89fb7a6b44a1239ac55f4d546d3a4",
+          "file_sha256": "3a7ef8c26ed71f8bf75f944739b3ffdb212726680653fc7556642f32b9453034",
+          "first_A": 0.09392111602127684,
+          "fraction_positive_frame_steps": 0.6076076076076076,
+          "frame_count": 1000,
+          "last_A": 15.003377256643349,
+          "last_minus_target_15A": 0.0033772566433487583,
+          "net_change_A": 14.909456140622073,
+          "path": "SMD_trajectories/glucose/run5/glucose-pull-5-visualisation.binpos",
+          "system_name": "glucose"
+        }
+      ],
+      "trajectory_count": 5
+    }
+  },
+  "trajectories_outside_15_or_20A_target_tolerance": [
+    {
+      "closest_expected_target": {
+        "absolute_difference_A": 2.1261716143506035,
+        "closest_target_A": 20.0,
+        "matches_within_tolerance": false
+      },
+      "coordinate_sha256": "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57",
+      "file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "first_A": 0.7300290601638892,
+      "fraction_positive_frame_steps": 0.5265265265265265,
+      "frame_count": 1000,
+      "last_A": 22.126171614350604,
+      "last_minus_target_15A": 7.1261716143506035,
+      "net_change_A": 21.396142554186714,
+      "path": "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+      "system_name": "galactose"
+    },
+    {
+      "closest_expected_target": {
+        "absolute_difference_A": 2.1261716143506035,
+        "closest_target_A": 20.0,
+        "matches_within_tolerance": false
+      },
+      "coordinate_sha256": "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57",
+      "file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "first_A": 0.7300290601638892,
+      "fraction_positive_frame_steps": 0.5265265265265265,
+      "frame_count": 1000,
+      "last_A": 22.126171614350604,
+      "last_minus_target_15A": 7.1261716143506035,
+      "net_change_A": 21.396142554186714,
+      "path": "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos",
+      "system_name": "galactose"
+    }
+  ]
+}

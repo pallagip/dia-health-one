@@ -1,0 +1,103 @@
+name: Audit GluHUT SMD endpoint provenance
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-smd-endpoint-provenance
+    paths:
+      - "research/summarize_gluhut_smd_endpoint_provenance.py"
+      - "tests/test_summarize_gluhut_smd_endpoint_provenance.py"
+      - "research/data/gluhut-binpos-coordinate-audit.json"
+      - ".github/workflows/gluhut-smd-endpoint-provenance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-smd-endpoint-provenance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_summarize_gluhut_smd_endpoint_provenance.py -v
+
+      - name: Audit endpoint provenance
+        run: |
+          python research/summarize_gluhut_smd_endpoint_provenance.py \
+            --input-json research/data/gluhut-binpos-coordinate-audit.json \
+            --output-json research/data/gluhut-smd-endpoint-provenance.json \
+            | tee /tmp/endpoint-provenance-summary.json
+
+      - name: Validate evidence boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-smd-endpoint-provenance.json').read_text())
+          decision = data['decision']
+          assert data['source']['trajectory_count'] == 20
+          assert data['source']['total_frame_count'] == 20000
+          assert decision['all_twenty_trajectories_accounted_for'] is True
+          assert decision['candidate_ranking_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['new_smd_or_umbrella_generation_authorized'] is False
+          assert set(data['systems']) == {
+              'glucose', 'galactose', 'fructopyranose', 'fructofuranose'
+          }
+          print(json.dumps({
+              'systems': {
+                  name: {
+                      'endpoint_cluster_count': value['endpoint_cluster_count'],
+                      'endpoint_clusters': value['endpoint_clusters'],
+                  }
+                  for name, value in data['systems'].items()
+              },
+              'duplicate_file_content_groups': data['duplicate_file_content_groups'],
+              'duplicate_coordinate_series_groups': data['duplicate_coordinate_series_groups'],
+              'target_mismatches': data['trajectories_outside_15_or_20A_target_tolerance'],
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit deterministic endpoint audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-smd-endpoint-provenance.json
+          if git diff --cached --quiet; then
+            echo 'No endpoint-provenance changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT SMD endpoint provenance'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT SMD endpoint provenance'
+            echo
+            if [ -f /tmp/endpoint-provenance-summary.json ]; then
+              echo '```json'
+              cat /tmp/endpoint-provenance-summary.json
+              echo '```'
+            else
+              echo 'No endpoint summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
