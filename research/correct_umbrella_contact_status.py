@@ -61,14 +61,14 @@ def correct_status(status: dict[str, Any]) -> dict[str, Any]:
 
 def correct_record(text: str, delivered: bool = False) -> str:
     target = DELIVERY_SECTION_SENT if delivered else DELIVERY_SECTION_PENDING
-    expression = r"(?ms)^## Delivery status\\n.*?(?=^## |\\Z)"
+    expression = r"(?ms)^## Delivery status\n.*?(?=^## |\Z)"
     existing = re.search(expression, text)
     if existing:
         section = existing.group()
         if not delivered and "was **not sent**" not in section:
             raise CorrectionError("cannot regress an existing delivered section")
         prefix = text[:existing.start()].rstrip()
-        suffix = text[existing.end():].lstrip("\\n")
+        suffix = text[existing.end():].lstrip("\n")
         return prefix + target + (suffix if suffix else "")
     return text.rstrip() + target
 
