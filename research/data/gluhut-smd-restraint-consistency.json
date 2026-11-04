@@ -1,0 +1,484 @@
+{
+  "cross_system_findings": {
+    "all_guest_selections_are_heavy_atoms": false,
+    "causal_link_to_short_window_failure_established": false,
+    "co_occurs_with_known_fructofuranose_us2_short_window_sensitivity_failure": true,
+    "fructofuranose_selected_hydrogen_is_isolated": true,
+    "fructofuranose_selected_hydrogen_name": "H62",
+    "fructofuranose_selection": "five-member ring plus isolated hydrogen H62",
+    "fructopyranose_selection": "six-member ring heavy atoms only",
+    "galactose_selection": "six-member pyranose ring plus exocyclic C6",
+    "glucose_selection": "six-member pyranose ring plus exocyclic C6",
+    "guest_group_definitions_chemically_uniform": false,
+    "guest_selection_classes": {
+      "fructofuranose": "cyclic_core_plus_selected_hydrogen_or_mixed_atoms",
+      "fructopyranose": "cyclic_heavy_atom_core_only",
+      "galactose": "cyclic_core_plus_exocyclic_heavy_atom",
+      "glucose": "cyclic_core_plus_exocyclic_heavy_atom"
+    }
+  },
+  "decision": {
+    "candidate_ranking_authorized": false,
+    "deposited_histogram_and_wham_reanalysis_remains_reproducible": true,
+    "force_constant_convention_validated": false,
+    "fructofuranose_group_contains_unexplained_hydrogen_H62": true,
+    "guest_reaction_coordinate_definition_is_uniform_across_sugars": false,
+    "host_reference_group_matches_two_aromatic_six_carbon_rings": true,
+    "new_smd_or_umbrella_generation_authorized": false,
+    "next_action": "request author clarification or a corrected fructofuranose restraint; confirm why glucose/galactose include exocyclic C6 while fructopyranose uses ring atoms only; validate the rk2=200 and reported force-constant convention",
+    "parent_pag_calibration_authorized": false
+  },
+  "guest_group_summaries": [
+    {
+      "connected_component_count": 2,
+      "cyclic_core_atom_count": 5,
+      "cyclic_core_atom_indices_1_based": [
+        160,
+        161,
+        162,
+        169,
+        173
+      ],
+      "cyclic_core_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "induced_cycle_rank": 1,
+      "isolated_selected_atoms": [
+        {
+          "amber_atom_type": "H1",
+          "atom_1_based": 165,
+          "atom_name": "H62",
+          "atomic_number": 1,
+          "charge_e": 0.0,
+          "element": "H",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "leaf_selected_atoms": [],
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "H1",
+          "atom_1_based": 165,
+          "atom_name": "H62",
+          "atomic_number": 1,
+          "charge_e": 0.0,
+          "element": "H",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "selected_atom_count": 6,
+      "selected_atom_indices_1_based": [
+        160,
+        161,
+        162,
+        165,
+        169,
+        173
+      ],
+      "selected_atom_names": [
+        "C2",
+        "O5",
+        "C5",
+        "H62",
+        "C4",
+        "C3"
+      ],
+      "selected_elements": [
+        "C",
+        "O",
+        "C",
+        "H",
+        "C",
+        "C"
+      ],
+      "selected_hydrogen_atoms": [
+        {
+          "amber_atom_type": "H1",
+          "atom_1_based": 165,
+          "atom_name": "H62",
+          "atomic_number": 1,
+          "charge_e": 0.0,
+          "element": "H",
+          "residue_index_1_based": 2,
+          "residue_label": "0CU"
+        }
+      ],
+      "selected_hydrogen_count": 1,
+      "selection_class": "cyclic_core_plus_selected_hydrogen_or_mixed_atoms",
+      "selection_identity_sha256": "3319225bd17097b2cb5de5d20d9105fe1fc81d4554aa97f7fdb0fc3d9026d8c8",
+      "system_name": "fructofuranose"
+    },
+    {
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 6,
+      "cyclic_core_atom_indices_1_based": [
+        160,
+        161,
+        162,
+        165,
+        169,
+        173
+      ],
+      "cyclic_core_atom_names": [
+        "C2",
+        "O6",
+        "C6",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "induced_cycle_rank": 1,
+      "isolated_selected_atoms": [],
+      "leaf_selected_atoms": [],
+      "noncore_selected_atoms": [],
+      "selected_atom_count": 6,
+      "selected_atom_indices_1_based": [
+        160,
+        161,
+        162,
+        165,
+        169,
+        173
+      ],
+      "selected_atom_names": [
+        "C2",
+        "O6",
+        "C6",
+        "C5",
+        "C4",
+        "C3"
+      ],
+      "selected_elements": [
+        "C",
+        "O",
+        "C",
+        "C",
+        "C",
+        "C"
+      ],
+      "selected_hydrogen_atoms": [],
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_heavy_atom_core_only",
+      "selection_identity_sha256": "e916d6997c26c0b43713ecb8b56f53c3a785cf77bd52de3b9232cc1525c33bb7",
+      "system_name": "fructopyranose"
+    },
+    {
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 6,
+      "cyclic_core_atom_indices_1_based": [
+        160,
+        162,
+        163,
+        170,
+        174,
+        178
+      ],
+      "cyclic_core_atom_names": [
+        "C1",
+        "O5",
+        "C5",
+        "C4",
+        "C3",
+        "C2"
+      ],
+      "induced_cycle_rank": 1,
+      "isolated_selected_atoms": [],
+      "leaf_selected_atoms": [
+        {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 165,
+          "atom_name": "C6",
+          "atomic_number": 6,
+          "charge_e": 0.319,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0LB"
+        }
+      ],
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 165,
+          "atom_name": "C6",
+          "atomic_number": 6,
+          "charge_e": 0.319,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0LB"
+        }
+      ],
+      "selected_atom_count": 7,
+      "selected_atom_indices_1_based": [
+        160,
+        178,
+        174,
+        170,
+        163,
+        162,
+        165
+      ],
+      "selected_atom_names": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "O5",
+        "C6"
+      ],
+      "selected_elements": [
+        "C",
+        "C",
+        "C",
+        "C",
+        "C",
+        "O",
+        "C"
+      ],
+      "selected_hydrogen_atoms": [],
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "selection_identity_sha256": "a73e70b75f96e8b30b88ed363fb0704f607b6bf3bbd60bcea974adc0e325eea1",
+      "system_name": "galactose"
+    },
+    {
+      "connected_component_count": 1,
+      "cyclic_core_atom_count": 6,
+      "cyclic_core_atom_indices_1_based": [
+        160,
+        162,
+        163,
+        170,
+        174,
+        178
+      ],
+      "cyclic_core_atom_names": [
+        "C1",
+        "O5",
+        "C5",
+        "C4",
+        "C3",
+        "C2"
+      ],
+      "induced_cycle_rank": 1,
+      "isolated_selected_atoms": [],
+      "leaf_selected_atoms": [
+        {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 165,
+          "atom_name": "C6",
+          "atomic_number": 6,
+          "charge_e": 0.282,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0GB"
+        }
+      ],
+      "noncore_selected_atoms": [
+        {
+          "amber_atom_type": "Cg",
+          "atom_1_based": 165,
+          "atom_name": "C6",
+          "atomic_number": 6,
+          "charge_e": 0.282,
+          "element": "C",
+          "residue_index_1_based": 2,
+          "residue_label": "0GB"
+        }
+      ],
+      "selected_atom_count": 7,
+      "selected_atom_indices_1_based": [
+        160,
+        178,
+        174,
+        170,
+        163,
+        162,
+        165
+      ],
+      "selected_atom_names": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "O5",
+        "C6"
+      ],
+      "selected_elements": [
+        "C",
+        "C",
+        "C",
+        "C",
+        "C",
+        "O",
+        "C"
+      ],
+      "selected_hydrogen_atoms": [],
+      "selected_hydrogen_count": 0,
+      "selection_class": "cyclic_core_plus_exocyclic_heavy_atom",
+      "selection_identity_sha256": "a73e70b75f96e8b30b88ed363fb0704f607b6bf3bbd60bcea974adc0e325eea1",
+      "system_name": "glucose"
+    }
+  ],
+  "host_reference_group": {
+    "all_atoms_are_aromatic_carbon_type_ca": true,
+    "atom_indices_1_based": [
+      47,
+      48,
+      51,
+      56,
+      59,
+      80,
+      3,
+      4,
+      5,
+      8,
+      25,
+      28
+    ],
+    "atom_names": [
+      "C35",
+      "C36",
+      "C39",
+      "C42",
+      "C45",
+      "C58",
+      "C3",
+      "C4",
+      "C5",
+      "C8",
+      "C19",
+      "C22"
+    ],
+    "component_sizes": [
+      6,
+      6
+    ],
+    "same_mapped_identity_across_systems": true,
+    "two_six_member_aromatic_rings": true
+  },
+  "limitations": [
+    "This result interprets atom selections and compiled graph connectivity; it does not inspect trajectory coordinates or calculate centres of mass.",
+    "The selected H62 may be intentional, a naming artifact, or a deposited input error; the audit cannot distinguish these without author clarification.",
+    "The inconsistency does not invalidate reanalysis of the already deposited reaction-coordinate time series, but it blocks clean prospective regeneration and cross-sugar interpretation.",
+    "No causal link is established between H62 selection and the separate fructofuranose US-2 short-window sensitivity failure."
+  ],
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, binding affinity, efficacy, safety, or a drug result",
+  "parameter_consistency": {
+    "all_recorded_parameters_identical": false,
+    "core_parameters_compared": [
+      "iat",
+      "r2",
+      "r2a",
+      "rk2",
+      "iresid"
+    ],
+    "core_parameters_identical": true,
+    "per_system": {
+      "fructofuranose": {
+        "iat": [
+          -1,
+          -1
+        ],
+        "iresid": 0.0,
+        "nstep1": null,
+        "nstep2": null,
+        "outxyz": null,
+        "r1": null,
+        "r1a": null,
+        "r2": 0.0,
+        "r2a": 15.0,
+        "r3": null,
+        "r3a": null,
+        "r4": null,
+        "r4a": null,
+        "rk2": 200.0,
+        "rk2a": null,
+        "rk3": null,
+        "rk3a": null
+      },
+      "fructopyranose": {
+        "iat": [
+          -1,
+          -1
+        ],
+        "iresid": 0.0,
+        "nstep1": null,
+        "nstep2": null,
+        "outxyz": 1.0,
+        "r1": null,
+        "r1a": null,
+        "r2": 0.0,
+        "r2a": 15.0,
+        "r3": null,
+        "r3a": null,
+        "r4": null,
+        "r4a": null,
+        "rk2": 200.0,
+        "rk2a": null,
+        "rk3": null,
+        "rk3a": null
+      },
+      "galactose": {
+        "iat": [
+          -1,
+          -1
+        ],
+        "iresid": 0.0,
+        "nstep1": null,
+        "nstep2": null,
+        "outxyz": null,
+        "r1": null,
+        "r1a": null,
+        "r2": 0.0,
+        "r2a": 15.0,
+        "r3": null,
+        "r3a": null,
+        "r4": null,
+        "r4a": null,
+        "rk2": 200.0,
+        "rk2a": null,
+        "rk3": null,
+        "rk3a": null
+      },
+      "glucose": {
+        "iat": [
+          -1,
+          -1
+        ],
+        "iresid": 0.0,
+        "nstep1": null,
+        "nstep2": null,
+        "outxyz": null,
+        "r1": null,
+        "r1a": null,
+        "r2": 0.0,
+        "r2a": 15.0,
+        "r3": null,
+        "r3a": null,
+        "r4": null,
+        "r4a": null,
+        "rk2": 200.0,
+        "rk2a": null,
+        "rk3": null,
+        "rk3a": null
+      }
+    }
+  },
+  "schema": "dia-health-one.gluhut-smd-restraint-consistency.v1",
+  "scope": "chemical interpretation of deposited public GluHUT SMD group selections",
+  "source_mapping": {
+    "archive_md5": "9f3c6733dc608d2bd37c488c560a5443",
+    "archive_sha256": "04c58666328764aeb47bac0d9f8607546f9763892cb9a333b108630df70e3943",
+    "path": "research/data/gluhut-smd-restraint-mapping.json",
+    "sha256": "b26e23e8ce6e773d959d5ecc810eac1c7c9b91583d9d45f093f486faa214ed20"
+  },
+  "status": "guest_reaction_coordinate_selection_inconsistent_author_clarification_required"
+}

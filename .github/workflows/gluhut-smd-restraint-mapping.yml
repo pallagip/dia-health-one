@@ -5,9 +5,12 @@ on:
     branches:
       - main
       - analysis/gluhut-smd-restraint-mapping
+      - fix/gluhut-smd-restraint-anomaly
     paths:
       - "research/audit_gluhut_smd_restraints.py"
+      - "research/summarize_gluhut_smd_restraint_anomaly.py"
       - "tests/test_audit_gluhut_smd_restraints.py"
+      - "tests/test_summarize_gluhut_smd_restraint_anomaly.py"
       - ".github/workflows/gluhut-smd-restraint-mapping.yml"
   workflow_dispatch:
 
@@ -36,7 +39,10 @@ jobs:
           python-version: "3.12"
 
       - name: Run unit tests
-        run: python -m unittest tests/test_audit_gluhut_smd_restraints.py -v
+        run: |
+          python -m unittest \
+            tests/test_audit_gluhut_smd_restraints.py \
+            tests/test_summarize_gluhut_smd_restraint_anomaly.py -v
 
       - name: Acquire and verify public SMD archive
         run: |
@@ -53,60 +59,94 @@ jobs:
             --output-json research/data/gluhut-smd-restraint-mapping.json \
             | tee /tmp/restraint-mapping-summary.json
 
-      - name: Validate bounded conclusions
+      - name: Summarize chemical consistency and preserve anomalies
+        run: |
+          python research/summarize_gluhut_smd_restraint_anomaly.py \
+            --mapping-json research/data/gluhut-smd-restraint-mapping.json \
+            --output-json research/data/gluhut-smd-restraint-consistency.json \
+            | tee /tmp/restraint-consistency-summary.json
+
+      - name: Validate bounded conclusions and failed consistency gate
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          data = json.loads(Path('research/data/gluhut-smd-restraint-mapping.json').read_text())
-          summary = data['cross_system_summary']
-          decision = data['decision']
-          assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
-          assert data['archive']['crc_verified'] is True
-          assert len(data['restraint_files']) == 3
+
+          mapping = json.loads(Path('research/data/gluhut-smd-restraint-mapping.json').read_text())
+          summary = mapping['cross_system_summary']
+          decision = mapping['decision']
+          assert mapping['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert mapping['archive']['crc_verified'] is True
+          assert len(mapping['restraint_files']) == 3
           assert summary['mapping_count'] == 4
           assert summary['host_group_index_set_identical'] is True
           assert summary['host_group_mapped_identity_identical'] is True
           assert summary['host_group_all_carbon'] is True
           assert summary['host_group_all_MOL_residue'] is True
           assert summary['guest_groups_exclude_host_residue'] is True
-          assert summary['guest_groups_heavy_atoms_only'] is True
+          assert summary['guest_groups_heavy_atoms_only'] is False
           assert decision['group1_is_same_12_host_carbons_across_all_systems'] is True
-          assert decision['group2_is_guest_only_heavy_atom_selection'] is True
+          assert decision['group2_is_guest_only_heavy_atom_selection'] is False
           assert decision['force_constant_convention_validated'] is False
           assert decision['candidate_ranking_authorized'] is False
           assert decision['pag_parameterization_authorized'] is False
           assert decision['mcq1_parameter_transfer_authorized'] is False
+
+          consistency = json.loads(Path('research/data/gluhut-smd-restraint-consistency.json').read_text())
+          findings = consistency['cross_system_findings']
+          bounded = consistency['decision']
+          assert consistency['status'] == 'guest_reaction_coordinate_selection_inconsistent_author_clarification_required'
+          assert findings['guest_group_definitions_chemically_uniform'] is False
+          assert findings['all_guest_selections_are_heavy_atoms'] is False
+          assert findings['glucose_selection'] == 'six-member pyranose ring plus exocyclic C6'
+          assert findings['galactose_selection'] == 'six-member pyranose ring plus exocyclic C6'
+          assert findings['fructopyranose_selection'] == 'six-member ring heavy atoms only'
+          assert findings['fructofuranose_selection'] == 'five-member ring plus isolated hydrogen H62'
+          assert findings['fructofuranose_selected_hydrogen_name'] == 'H62'
+          assert findings['fructofuranose_selected_hydrogen_is_isolated'] is True
+          assert findings['causal_link_to_short_window_failure_established'] is False
+          assert bounded['host_reference_group_matches_two_aromatic_six_carbon_rings'] is True
+          assert bounded['guest_reaction_coordinate_definition_is_uniform_across_sugars'] is False
+          assert bounded['fructofuranose_group_contains_unexplained_hydrogen_H62'] is True
+          assert bounded['deposited_histogram_and_wham_reanalysis_remains_reproducible'] is True
+          assert bounded['new_smd_or_umbrella_generation_authorized'] is False
+          assert bounded['force_constant_convention_validated'] is False
+          assert bounded['parent_pag_calibration_authorized'] is False
+          assert bounded['candidate_ranking_authorized'] is False
+
           print(json.dumps({
-              'summary': summary,
-              'decision': decision,
-              'mappings': data['mappings'],
+              'mapping_summary': summary,
+              'mapping_decision': decision,
+              'consistency_findings': findings,
+              'consistency_decision': bounded,
           }, indent=2, sort_keys=True))
           PY
 
-      - name: Commit audit output
+      - name: Commit mapping and failed consistency result
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add research/data/gluhut-smd-restraint-mapping.json
+          git add \
+            research/data/gluhut-smd-restraint-mapping.json \
+            research/data/gluhut-smd-restraint-consistency.json
           if git diff --cached --quiet; then
             echo 'No audit changes to commit.'
             exit 0
           fi
-          git commit -m 'Record GluHUT SMD restraint mapping'
+          git commit -m 'Record GluHUT SMD restraint inconsistency'
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Publish summary
         if: always()
         run: |
           {
-            echo '## GluHUT SMD restraint mapping'
+            echo '## GluHUT SMD restraint mapping and consistency gate'
             echo
-            if [ -f /tmp/restraint-mapping-summary.json ]; then
-              echo '```json'
-              cat /tmp/restraint-mapping-summary.json
-              echo '```'
-            else
-              echo 'No mapping summary was generated.'
-            fi
+            for file in /tmp/restraint-mapping-summary.json /tmp/restraint-consistency-summary.json; do
+              if [ -f "$file" ]; then
+                echo '```json'
+                cat "$file"
+                echo '```'
+              fi
+            done
           } >> "$GITHUB_STEP_SUMMARY"
