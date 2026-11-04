@@ -1,0 +1,1941 @@
+{
+  "archive": {
+    "crc_verified": true,
+    "filename": "SMD_trajectories.zip",
+    "md5": "9f3c6733dc608d2bd37c488c560a5443",
+    "sha256": "04c58666328764aeb47bac0d9f8607546f9763892cb9a333b108630df70e3943",
+    "size_bytes": 37931874
+  },
+  "decision": {
+    "all_binpos_headers_and_record_sizes_valid": true,
+    "all_files_little_endian": true,
+    "all_paths_match_forward_unbinding_shape": true,
+    "candidate_ranking_authorized": false,
+    "mcq1_parameter_transfer_authorized": false,
+    "new_smd_or_umbrella_generation_authorized": false,
+    "next_action": "use recorded first/last frames to audit deposited paths and reconstruct representative coordinate snapshots; still request exact source restarts and corrected guest groups before prospective generation",
+    "original_pretrajectory_start_coordinates_recovered": false,
+    "parent_pag_calibration_authorized": false,
+    "recorded_coordinate_frames_recoverable": true,
+    "recorded_first_and_last_frames_hashed": true,
+    "recorded_frames_can_replace_missing_source_restart": false,
+    "recorded_frames_can_support_coordinate_level_provenance_audit": true
+  },
+  "format_source": {
+    "format": "four-byte fxyz header; each frame is one native-endian int natom followed by 3*natom native-endian float coordinates",
+    "path": "src/Traj_Binpos.cpp",
+    "repository": "Amber-MD/cpptraj"
+  },
+  "limitations": [
+    "The first recorded frame may follow minimisation, equilibration, or earlier unrecorded integration steps.",
+    "BINPOS does not store periodic box information, velocities, forces, or simulation time.",
+    "Reaction coordinates use the deposited atom groups, including the unresolved fructofuranose H62 selection.",
+    "A monotonic recorded COM path does not validate the work protocol, force field, or free-energy calculation."
+  ],
+  "not_target_claim": "not source restart recovery, not SMD work or PMF, not NNC2215, PaG, MC-Q1, affinity, efficacy, safety, or a drug result",
+  "schema": "dia-health-one.gluhut-binpos-coordinate-recovery.v1",
+  "scope": "twenty public GluHUT Scripps BINPOS trajectories",
+  "status": "recorded_trajectory_coordinates_recovered_not_original_restart",
+  "system_summaries": [
+    {
+      "first_reaction_coordinate_range_A": [
+        0.03393403000027332,
+        0.1106397979583343
+      ],
+      "frame_counts": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "last_reaction_coordinate_range_A": [
+        14.909546745169852,
+        15.067594561525013
+      ],
+      "smd_like_forward_path_count": 5,
+      "system_name": "fructofuranose",
+      "total_recorded_frames": 5000,
+      "trajectory_count": 5,
+      "trajectory_paths": [
+        "SMD_trajectories/fructofuranose/run 1/fructofuranose-pull-1-visualisation.binpos",
+        "SMD_trajectories/fructofuranose/run 2/fructofuranose-pull-2-visualisation.binpos",
+        "SMD_trajectories/fructofuranose/run 3/fructofuranose-pull-3-visualisation.binpos",
+        "SMD_trajectories/fructofuranose/run 4/fructofuranose-pull-4-visualisation.binpos",
+        "SMD_trajectories/fructofuranose/run 5/fructofuranose-pull-5-visualisation.binpos"
+      ],
+      "unique_first_frame_coordinate_hash_count": 5,
+      "unique_last_frame_coordinate_hash_count": 5
+    },
+    {
+      "first_reaction_coordinate_range_A": [
+        0.016286918707568453,
+        0.14868733432016037
+      ],
+      "frame_counts": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "last_reaction_coordinate_range_A": [
+        19.95677246524349,
+        20.06710445730212
+      ],
+      "smd_like_forward_path_count": 5,
+      "system_name": "fructopyranose",
+      "total_recorded_frames": 5000,
+      "trajectory_count": 5,
+      "trajectory_paths": [
+        "SMD_trajectories/fructopyranose/run 1/fructopyranose-1-visualisation.binpos",
+        "SMD_trajectories/fructopyranose/run 2/fructopyranose-2-visualisation.binpos",
+        "SMD_trajectories/fructopyranose/run 3/fructopyranose-3-visualisation.binpos",
+        "SMD_trajectories/fructopyranose/run 4/fructopyranose-4-visualisation.binpos",
+        "SMD_trajectories/fructopyranose/run 5/fructopyranose-5-visualisation.binpos"
+      ],
+      "unique_first_frame_coordinate_hash_count": 5,
+      "unique_last_frame_coordinate_hash_count": 5
+    },
+    {
+      "first_reaction_coordinate_range_A": [
+        0.0690893355538023,
+        0.7300290601638892
+      ],
+      "frame_counts": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "last_reaction_coordinate_range_A": [
+        14.942600162146935,
+        22.126171614350604
+      ],
+      "smd_like_forward_path_count": 5,
+      "system_name": "galactose",
+      "total_recorded_frames": 5000,
+      "trajectory_count": 5,
+      "trajectory_paths": [
+        "SMD_trajectories/galactose/run 1/galactose-pull-1-B.binpos",
+        "SMD_trajectories/galactose/run 2/galactose-pull-2-B.binpos",
+        "SMD_trajectories/galactose/run 3/galactose-pull-3-B.binpos",
+        "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+        "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos"
+      ],
+      "unique_first_frame_coordinate_hash_count": 4,
+      "unique_last_frame_coordinate_hash_count": 4
+    },
+    {
+      "first_reaction_coordinate_range_A": [
+        0.05584844524049951,
+        0.15077416052905115
+      ],
+      "frame_counts": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "last_reaction_coordinate_range_A": [
+        14.928967891071837,
+        15.003377256643349
+      ],
+      "smd_like_forward_path_count": 5,
+      "system_name": "glucose",
+      "total_recorded_frames": 5000,
+      "trajectory_count": 5,
+      "trajectory_paths": [
+        "SMD_trajectories/glucose/run1/glucose-pull-1-visualisation.binpos",
+        "SMD_trajectories/glucose/run2/glucose-pull-2-visualisation.binpos",
+        "SMD_trajectories/glucose/run3/glucose-pull-3-visualisation.binpos",
+        "SMD_trajectories/glucose/run4/glucose-pull-4-visualisation.binpos",
+        "SMD_trajectories/glucose/run5/glucose-pull-5-visualisation.binpos"
+      ],
+      "unique_first_frame_coordinate_hash_count": 5,
+      "unique_last_frame_coordinate_hash_count": 5
+    }
+  ],
+  "topologies": {
+    "fructofuranose": {
+      "natom": 183,
+      "path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47",
+      "total_mass": 1330.506
+    },
+    "fructopyranose": {
+      "natom": 183,
+      "path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb",
+      "total_mass": 1330.506
+    },
+    "galactose": {
+      "natom": 183,
+      "path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58",
+      "total_mass": 1330.506
+    },
+    "glucose": {
+      "natom": 183,
+      "path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4",
+      "total_mass": 1330.506
+    }
+  },
+  "total_recorded_frames": 20000,
+  "trajectories": [
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "63703b9db99dc42595a3aa10ebd8eda29ecdd054e6243c0a66404f08b4dac672",
+        "maximum_xyz_A": [
+          35.20863342285156,
+          38.18619155883789,
+          36.24057388305664
+        ],
+        "minimum_xyz_A": [
+          19.049081802368164,
+          16.271373748779297,
+          19.388824462890625
+        ],
+        "reaction_coordinate_A": 0.1106397979583343
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "ed747ef9e4e0551f3be44bf7375d5ec57a2716144269bfcea0b071bf50c31f20",
+        "maximum_xyz_A": [
+          33.19700241088867,
+          40.84505081176758,
+          39.424591064453125
+        ],
+        "minimum_xyz_A": [
+          14.303206443786621,
+          14.157766342163086,
+          19.48796844482422
+        ],
+        "reaction_coordinate_A": 14.975090810001642
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructofuranose/run 1/fructofuranose-pull-1-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "e15810c5607b8b53468e06885f00233a172a21a94f1c6e01c4c558075096c9bb",
+        "first_A": 0.1106397979583343,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8808808808808809,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 65.048,
+        "last_A": 14.975090810001642,
+        "maximum_A": 14.998684904306177,
+        "maximum_frame_index_zero_based": 996,
+        "mean_A": 7.479097027920751,
+        "minimum_A": 0.043413709606103724,
+        "minimum_frame_index_zero_based": 2,
+        "net_change_A": 14.864451012043308,
+        "pearson_correlation_with_frame_index": 0.9999444563549589,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.05119874666064214,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructofuranose-SMD.RST",
+      "restraint_sha256": "53b4051814abf4a0a25bbc2eb9d3b62c1c557e956d4a77f6d0339e3aaff0b95c",
+      "sha256": "d3fa728de9cffbc0c3d9ac520c67281bb7d74874206f0952e02c0611f2ddb402",
+      "size_bytes": 2200004,
+      "system_name": "fructofuranose",
+      "topology_path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "topology_sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "ee56c0fff6cfbe0676eef95fe452250e6451f5800ef4eed9ffee88a7f9a0a912",
+        "maximum_xyz_A": [
+          35.43632125854492,
+          38.14556121826172,
+          36.20591735839844
+        ],
+        "minimum_xyz_A": [
+          18.445886611938477,
+          16.667469024658203,
+          19.395050048828125
+        ],
+        "reaction_coordinate_A": 0.03393403000027332
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "06521e2256405e6ae8e7eb49046591a8dede7d06861bcf0f2fc081699be49177",
+        "maximum_xyz_A": [
+          37.48651885986328,
+          35.41509246826172,
+          40.804290771484375
+        ],
+        "minimum_xyz_A": [
+          19.99720001220703,
+          16.46221351623535,
+          16.893077850341797
+        ],
+        "reaction_coordinate_A": 14.946033862492978
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructofuranose/run 2/fructofuranose-pull-2-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "bbc259a9bba97dbebe1adcee5e45794c77267e04d021441af204d3617ff00f15",
+        "first_A": 0.03393403000027332,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8528528528528528,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 65.048,
+        "last_A": 14.946033862492978,
+        "maximum_A": 14.964621561650604,
+        "maximum_frame_index_zero_based": 997,
+        "mean_A": 7.481396929208695,
+        "minimum_A": 0.03393403000027332,
+        "minimum_frame_index_zero_based": 0,
+        "net_change_A": 14.912099832492705,
+        "pearson_correlation_with_frame_index": 0.9999327703155652,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.05426064542457642,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructofuranose-SMD.RST",
+      "restraint_sha256": "53b4051814abf4a0a25bbc2eb9d3b62c1c557e956d4a77f6d0339e3aaff0b95c",
+      "sha256": "d701f87dc2f6443a6698659957030d88db502239445c16afd122067a359fe5aa",
+      "size_bytes": 2200004,
+      "system_name": "fructofuranose",
+      "topology_path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "topology_sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "ba15a81720ab573362f0d943dde6aaf1984526d387e274218b44ef6847974412",
+        "maximum_xyz_A": [
+          35.51728057861328,
+          38.33405685424805,
+          36.38066482543945
+        ],
+        "minimum_xyz_A": [
+          18.994916915893555,
+          16.73069953918457,
+          19.54336929321289
+        ],
+        "reaction_coordinate_A": 0.061608533531279035
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "a1f567e92fd96029ba0dadc058d1921e815f38cec7179155ebab727536634647",
+        "maximum_xyz_A": [
+          34.150672912597656,
+          37.823333740234375,
+          44.88887405395508
+        ],
+        "minimum_xyz_A": [
+          18.65840721130371,
+          16.816099166870117,
+          15.059000968933105
+        ],
+        "reaction_coordinate_A": 15.067594561525013
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructofuranose/run 3/fructofuranose-pull-3-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "33ee799b6706deb17b34620b10c4d5b492252f91e72866673609d85c98a7b0c1",
+        "first_A": 0.061608533531279035,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8858858858858859,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 65.048,
+        "last_A": 15.067594561525013,
+        "maximum_A": 15.067594561525013,
+        "maximum_frame_index_zero_based": 999,
+        "mean_A": 7.481098048418311,
+        "minimum_A": 0.044647396250687164,
+        "minimum_frame_index_zero_based": 2,
+        "net_change_A": 15.005986027993734,
+        "pearson_correlation_with_frame_index": 0.9999471174079239,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.05047842404718181,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructofuranose-SMD.RST",
+      "restraint_sha256": "53b4051814abf4a0a25bbc2eb9d3b62c1c557e956d4a77f6d0339e3aaff0b95c",
+      "sha256": "9782a67e8358462fced17f1956232871afd3f980e35561f78f4c4549d1c59f3a",
+      "size_bytes": 2200004,
+      "system_name": "fructofuranose",
+      "topology_path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "topology_sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "c6e90739313d4f26702935763f382b0f502c2af9aec54b36a7a76ea493fb9428",
+        "maximum_xyz_A": [
+          35.72068405151367,
+          38.83442687988281,
+          36.70848083496094
+        ],
+        "minimum_xyz_A": [
+          18.4287166595459,
+          16.569252014160156,
+          19.37450408935547
+        ],
+        "reaction_coordinate_A": 0.09534965797758276
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "cd3cfa75554f0b245f00c767dad30b36710e6cf57624c22bbcb41b8c84018228",
+        "maximum_xyz_A": [
+          42.469879150390625,
+          34.1824836730957,
+          38.65034103393555
+        ],
+        "minimum_xyz_A": [
+          18.32560920715332,
+          16.59781265258789,
+          17.210323333740234
+        ],
+        "reaction_coordinate_A": 14.909546745169852
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructofuranose/run 4/fructofuranose-pull-4-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "98b022fe5e5651a8281381a36c3a75a83d8306518972bd0e981de9a3866e640e",
+        "first_A": 0.09534965797758276,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8918918918918919,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 65.048,
+        "last_A": 14.909546745169852,
+        "maximum_A": 14.967292067236249,
+        "maximum_frame_index_zero_based": 995,
+        "mean_A": 7.477537996971974,
+        "minimum_A": 0.09249134339199486,
+        "minimum_frame_index_zero_based": 3,
+        "net_change_A": 14.81419708719227,
+        "pearson_correlation_with_frame_index": 0.9999474532272746,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.05037538819492134,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructofuranose-SMD.RST",
+      "restraint_sha256": "53b4051814abf4a0a25bbc2eb9d3b62c1c557e956d4a77f6d0339e3aaff0b95c",
+      "sha256": "4370f94a3f83a70d6994f610e147d7f80e4a3e38295e9a2e40eb7b96e9e06f17",
+      "size_bytes": 2200004,
+      "system_name": "fructofuranose",
+      "topology_path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "topology_sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "14bfe822b8a2bbbf599fba03b2b936418d7564edcf2be0aa997a9bd4a6c9e681",
+        "maximum_xyz_A": [
+          35.65110778808594,
+          38.227806091308594,
+          36.29057312011719
+        ],
+        "minimum_xyz_A": [
+          18.705989837646484,
+          16.83289337158203,
+          19.640342712402344
+        ],
+        "reaction_coordinate_A": 0.06348628246657821
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "3d4be0d0a2899f151bfc9904423c3999b79c96ffe5f79321259eab40dabfd0ed",
+        "maximum_xyz_A": [
+          36.52056884765625,
+          38.03348922729492,
+          34.08511734008789
+        ],
+        "minimum_xyz_A": [
+          16.884899139404297,
+          12.061012268066406,
+          17.38813591003418
+        ],
+        "reaction_coordinate_A": 14.989227347885821
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructofuranose/run 5/fructofuranose-pull-5-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "e3fc28ea1abe749f275814719fb303889f022120f8068ab644a40b00aba9c0d6",
+        "first_A": 0.06348628246657821,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8748748748748749,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 65.048,
+        "last_A": 14.989227347885821,
+        "maximum_A": 15.031923060075698,
+        "maximum_frame_index_zero_based": 996,
+        "mean_A": 7.479847540816169,
+        "minimum_A": 0.01798777385654629,
+        "minimum_frame_index_zero_based": 2,
+        "net_change_A": 14.925741065419244,
+        "pearson_correlation_with_frame_index": 0.9999419652701644,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.051778712407887784,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructofuranose-SMD.RST",
+      "restraint_sha256": "53b4051814abf4a0a25bbc2eb9d3b62c1c557e956d4a77f6d0339e3aaff0b95c",
+      "sha256": "0c13d6ac5d65e04725a326ddc5753ba4259aa9782ad29e3e3eadc88cf17e9bb9",
+      "size_bytes": 2200004,
+      "system_name": "fructofuranose",
+      "topology_path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "topology_sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "42b69945942d8086f7aa5d5fb555d19b5ca087b608abad2492c9dd1821065bfa",
+        "maximum_xyz_A": [
+          34.145965576171875,
+          38.78599166870117,
+          37.586143493652344
+        ],
+        "minimum_xyz_A": [
+          18.84592628479004,
+          19.458740234375,
+          17.313777923583984
+        ],
+        "reaction_coordinate_A": 0.09571189689539357
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "300835cae202a8df32d38382a6977fd74b682575575c30425d3c61dcfba74d4c",
+        "maximum_xyz_A": [
+          36.811859130859375,
+          33.72032165527344,
+          39.0351676940918
+        ],
+        "minimum_xyz_A": [
+          14.337435722351074,
+          10.154773712158203,
+          10.532767295837402
+        ],
+        "reaction_coordinate_A": 20.06710445730212
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructopyranose/run 1/fructopyranose-1-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "98b5898e1633258d1064d8b0a28612ef5797d3ad13fbb8cb7db933d049c09c5b",
+        "first_A": 0.09571189689539357,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.9009009009009009,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 76.05,
+        "last_A": 20.06710445730212,
+        "maximum_A": 20.06710445730212,
+        "maximum_frame_index_zero_based": 999,
+        "mean_A": 9.991131000996802,
+        "minimum_A": 0.03272875267026189,
+        "minimum_frame_index_zero_based": 1,
+        "net_change_A": 19.971392560406724,
+        "pearson_correlation_with_frame_index": 0.9999757678378703,
+        "rmse_from_linear_0_to_15A_schedule_A": 2.877841915555046,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructopyranose-SMD.RST",
+      "restraint_sha256": "68a2e2ea96645920e229ae7c17874ccecd47a1c1941f0325e396ff758145a941",
+      "sha256": "8543bd6165fa9aa52fae738800fe788e1d27534c597f02ccdf2ca1df29c1970c",
+      "size_bytes": 2200004,
+      "system_name": "fructopyranose",
+      "topology_path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "topology_sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "6cb43cfd4a9585fa5a217eeacef37b923573b41579e1d9bf73d9d06aaca7f999",
+        "maximum_xyz_A": [
+          34.16275405883789,
+          38.49884033203125,
+          36.950984954833984
+        ],
+        "minimum_xyz_A": [
+          19.381563186645508,
+          19.209306716918945,
+          17.306903839111328
+        ],
+        "reaction_coordinate_A": 0.016286918707568453
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "fd63d98bfb11d62461038563db3d2480f79cb371961e4fc5058f0a49072a097d",
+        "maximum_xyz_A": [
+          33.699302673339844,
+          48.57147979736328,
+          35.74574661254883
+        ],
+        "minimum_xyz_A": [
+          19.782438278198242,
+          14.150129318237305,
+          14.792820930480957
+        ],
+        "reaction_coordinate_A": 20.00399467279811
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructopyranose/run 2/fructopyranose-2-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "952a2f6b4d7900a2045c932c8c19bb6d18539b0c71757361bc2371c6a88d9161",
+        "first_A": 0.016286918707568453,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8948948948948949,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 76.05,
+        "last_A": 20.00399467279811,
+        "maximum_A": 20.00399467279811,
+        "maximum_frame_index_zero_based": 999,
+        "mean_A": 9.991903673382508,
+        "minimum_A": 0.016286918707568453,
+        "minimum_frame_index_zero_based": 0,
+        "net_change_A": 19.987707754090543,
+        "pearson_correlation_with_frame_index": 0.999977247683304,
+        "rmse_from_linear_0_to_15A_schedule_A": 2.878591451568213,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructopyranose-SMD.RST",
+      "restraint_sha256": "68a2e2ea96645920e229ae7c17874ccecd47a1c1941f0325e396ff758145a941",
+      "sha256": "8c9fa5b4297ae74acb772728f664f81c91fab91e2de2b3fe28ba1f16650b5dd0",
+      "size_bytes": 2200004,
+      "system_name": "fructopyranose",
+      "topology_path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "topology_sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "66323896a27d9a29d25cf2bd4ed5682e6abed4b8fbae595f6d7d30e9604ad39f",
+        "maximum_xyz_A": [
+          34.01133346557617,
+          38.599212646484375,
+          38.65378952026367
+        ],
+        "minimum_xyz_A": [
+          19.364559173583984,
+          20.115938186645508,
+          16.991500854492188
+        ],
+        "reaction_coordinate_A": 0.1126097545810462
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "40760833e3f47bec8dd149e7a43e5dd64d82b0c445ede217254c1773e5e5a11b",
+        "maximum_xyz_A": [
+          36.575218200683594,
+          38.91700744628906,
+          46.56401062011719
+        ],
+        "minimum_xyz_A": [
+          18.859901428222656,
+          17.871074676513672,
+          15.773405075073242
+        ],
+        "reaction_coordinate_A": 19.95677246524349
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructopyranose/run 3/fructopyranose-3-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "97f07d282b78ee468d1815dfe3631cf0f1d7a7d04f5476f1c863d2cd3b73b612",
+        "first_A": 0.1126097545810462,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8958958958958959,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 76.05,
+        "last_A": 19.95677246524349,
+        "maximum_A": 19.97782333378304,
+        "maximum_frame_index_zero_based": 998,
+        "mean_A": 9.991699429475931,
+        "minimum_A": 0.07015438463389005,
+        "minimum_frame_index_zero_based": 2,
+        "net_change_A": 19.84416271066244,
+        "pearson_correlation_with_frame_index": 0.9999768966681393,
+        "rmse_from_linear_0_to_15A_schedule_A": 2.8774036269950884,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructopyranose-SMD.RST",
+      "restraint_sha256": "68a2e2ea96645920e229ae7c17874ccecd47a1c1941f0325e396ff758145a941",
+      "sha256": "750cb7c0ab513ec684cf716cb5b500ab82f1ddcc51bee1b18273ecf20e0fb931",
+      "size_bytes": 2200004,
+      "system_name": "fructopyranose",
+      "topology_path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "topology_sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "98d0bfff59d0ca5ae3cdd90e50e0b1123d2b66b92a6de037a39d1251178e27b2",
+        "maximum_xyz_A": [
+          34.66557693481445,
+          37.83750915527344,
+          37.92266845703125
+        ],
+        "minimum_xyz_A": [
+          19.39426040649414,
+          20.45619010925293,
+          17.21621322631836
+        ],
+        "reaction_coordinate_A": 0.14868733432016037
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "53dff20b55c2fb71b5da4cf6a1dcca51d7763e819aea9f057a295659703417b3",
+        "maximum_xyz_A": [
+          33.99097442626953,
+          39.7381591796875,
+          38.50609588623047
+        ],
+        "minimum_xyz_A": [
+          18.98785972595215,
+          17.53339385986328,
+          5.544113636016846
+        ],
+        "reaction_coordinate_A": 20.007816162709435
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructopyranose/run 4/fructopyranose-4-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "b0eb9e5a8c3684f8f3df0b1f335803cbd67469c4756b9c60d98a8a38a38a6cc6",
+        "first_A": 0.14868733432016037,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.908908908908909,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 76.05,
+        "last_A": 20.007816162709435,
+        "maximum_A": 20.007816162709435,
+        "maximum_frame_index_zero_based": 999,
+        "mean_A": 9.99089653756758,
+        "minimum_A": 0.066198446975087,
+        "minimum_frame_index_zero_based": 3,
+        "net_change_A": 19.859128828389274,
+        "pearson_correlation_with_frame_index": 0.9999765791718742,
+        "rmse_from_linear_0_to_15A_schedule_A": 2.878337066358409,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructopyranose-SMD.RST",
+      "restraint_sha256": "68a2e2ea96645920e229ae7c17874ccecd47a1c1941f0325e396ff758145a941",
+      "sha256": "f17b4004b45deb8dc9ae139966fc7251224265faf35ca8eca1ed81173db4c167",
+      "size_bytes": 2200004,
+      "system_name": "fructopyranose",
+      "topology_path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "topology_sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "d06e16552c8ea3aafb040e5bc0eaabce921fa687317b8789701f7c2ec99e7e37",
+        "maximum_xyz_A": [
+          34.17456817626953,
+          38.46080017089844,
+          37.66795349121094
+        ],
+        "minimum_xyz_A": [
+          19.279415130615234,
+          19.07428741455078,
+          16.894258499145508
+        ],
+        "reaction_coordinate_A": 0.09962432229284629
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "4b116400b63a12b6f1b2901d8ecf3515dafa487a6f8b2dec3fdf9e081f9c9a08",
+        "maximum_xyz_A": [
+          36.94368362426758,
+          49.455963134765625,
+          39.36962127685547
+        ],
+        "minimum_xyz_A": [
+          18.258378982543945,
+          19.240076065063477,
+          17.897293090820312
+        ],
+        "reaction_coordinate_A": 19.97624557879783
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/fructopyranose/run 5/fructopyranose-5-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "a6296d6621b4fa28bff2aceca708f084bfc2748ab803f7515997b1ad354bb930",
+        "first_A": 0.09962432229284629,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.9029029029029029,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          161,
+          162,
+          165,
+          169,
+          173
+        ],
+        "group2_total_mass_Da": 76.05,
+        "last_A": 19.97624557879783,
+        "maximum_A": 19.97624557879783,
+        "maximum_frame_index_zero_based": 999,
+        "mean_A": 9.990121616161941,
+        "minimum_A": 0.08433957006417307,
+        "minimum_frame_index_zero_based": 1,
+        "net_change_A": 19.876621256504983,
+        "pearson_correlation_with_frame_index": 0.9999753441978115,
+        "rmse_from_linear_0_to_15A_schedule_A": 2.8772854550755693,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Fructopyranose-SMD.RST",
+      "restraint_sha256": "68a2e2ea96645920e229ae7c17874ccecd47a1c1941f0325e396ff758145a941",
+      "sha256": "38faedea0517750d26cb3000151156e51bd390205995b99c5c8fa6e4208c5385",
+      "size_bytes": 2200004,
+      "system_name": "fructopyranose",
+      "topology_path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "topology_sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "d185c7e4a5bd09b81a03f8b23cf4118b136995d3f3a696685891b709d64460a0",
+        "maximum_xyz_A": [
+          34.40768814086914,
+          37.85034942626953,
+          33.34161376953125
+        ],
+        "minimum_xyz_A": [
+          15.104188919067383,
+          16.039352416992188,
+          19.537078857421875
+        ],
+        "reaction_coordinate_A": 0.10260277875238843
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "27aa759b4a699af349fb5c2d2401e1316675c583bceb6300e1518aa842e230e4",
+        "maximum_xyz_A": [
+          33.69685363769531,
+          36.49225997924805,
+          36.1424560546875
+        ],
+        "minimum_xyz_A": [
+          17.746715545654297,
+          11.207391738891602,
+          17.513277053833008
+        ],
+        "reaction_coordinate_A": 15.006764581565129
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/galactose/run 1/galactose-pull-1-B.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "42862d555d238c8b08a9454f35196160d295d7b747518f41efaf14694b952ec2",
+        "first_A": 0.10260277875238843,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8808808808808809,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 15.006764581565129,
+        "maximum_A": 15.024250602623715,
+        "maximum_frame_index_zero_based": 998,
+        "mean_A": 7.489465191223612,
+        "minimum_A": 0.03941224640353149,
+        "minimum_frame_index_zero_based": 1,
+        "net_change_A": 14.904161802812741,
+        "pearson_correlation_with_frame_index": 0.9999582450277831,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.04103657702217086,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "8c45c30e8321fcd77458feb2d8cbd3634c077c2ccefc280495daffd1b2069636",
+      "size_bytes": 2200004,
+      "system_name": "galactose",
+      "topology_path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "topology_sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "5668be8c466e88e110ae5ce63afbb165ab89816a750133c0c9558f92b043f5a9",
+        "maximum_xyz_A": [
+          35.46192169189453,
+          36.530677795410156,
+          33.19976043701172
+        ],
+        "minimum_xyz_A": [
+          14.39603328704834,
+          16.512678146362305,
+          19.80655288696289
+        ],
+        "reaction_coordinate_A": 0.0690893355538023
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "7cb047aa3d4210119f5449e55541fbfde9fe773f000cb796cc9b698132a9f7ca",
+        "maximum_xyz_A": [
+          36.81930160522461,
+          36.55526351928711,
+          34.4229736328125
+        ],
+        "minimum_xyz_A": [
+          13.474206924438477,
+          16.970129013061523,
+          16.678050994873047
+        ],
+        "reaction_coordinate_A": 15.048412386739026
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/galactose/run 2/galactose-pull-2-B.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "14720893456d5df3db707ea49f9d8493923febac68a32a243c56847a3ebed2dd",
+        "first_A": 0.0690893355538023,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8698698698698699,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 15.048412386739026,
+        "maximum_A": 15.048412386739026,
+        "maximum_frame_index_zero_based": 999,
+        "mean_A": 7.491285115180246,
+        "minimum_A": 0.0681088796822851,
+        "minimum_frame_index_zero_based": 4,
+        "net_change_A": 14.979323051185224,
+        "pearson_correlation_with_frame_index": 0.9999526997093103,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.04312731461992289,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "9c6acba4f2ff51e149b3d26eff618ec4a2e36499b09fda9638cacd7f5139b1cb",
+      "size_bytes": 2200004,
+      "system_name": "galactose",
+      "topology_path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "topology_sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "9bfee7031698c4f513029e1cab0c4a7219efb274577e911599e39f628bec8e23",
+        "maximum_xyz_A": [
+          34.99336624145508,
+          37.664337158203125,
+          33.23797607421875
+        ],
+        "minimum_xyz_A": [
+          14.850446701049805,
+          15.845465660095215,
+          19.775432586669922
+        ],
+        "reaction_coordinate_A": 0.07064648512124025
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "558fdc29e6c15ca635623d2cedeb9f13d2f49b4a7b31545caeef72fd23455122",
+        "maximum_xyz_A": [
+          41.0966682434082,
+          38.926517486572266,
+          35.13340377807617
+        ],
+        "minimum_xyz_A": [
+          17.795246124267578,
+          15.301809310913086,
+          19.079730987548828
+        ],
+        "reaction_coordinate_A": 14.942600162146935
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/galactose/run 3/galactose-pull-3-B.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "a0ed3e6b6498ac6e30d086e571e29e8eeaf31ba9bd009b645a918c26f5c69f8d",
+        "first_A": 0.07064648512124025,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8928928928928929,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 14.942600162146935,
+        "maximum_A": 15.018062850356447,
+        "maximum_frame_index_zero_based": 998,
+        "mean_A": 7.491741767133096,
+        "minimum_A": 0.05633680509526967,
+        "minimum_frame_index_zero_based": 4,
+        "net_change_A": 14.871953677025694,
+        "pearson_correlation_with_frame_index": 0.9999568855234717,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.04118960291934634,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "073d0618dd7042e0d10eae5a29d24053136860b99187b0c8db0b6fedb82804c6",
+      "size_bytes": 2200004,
+      "system_name": "galactose",
+      "topology_path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "topology_sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "1ec0442433f1ada5a623a8a93bec4d2e4431522923b062f8b129de22e0b3e353",
+        "maximum_xyz_A": [
+          34.882568359375,
+          37.564064025878906,
+          33.41949462890625
+        ],
+        "minimum_xyz_A": [
+          14.790046691894531,
+          17.0155029296875,
+          19.612340927124023
+        ],
+        "reaction_coordinate_A": 0.7300290601638892
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "e1c945bcf0d418052133ea6e870b85b6d9d57e13a98fd141460cd711658699a5",
+        "maximum_xyz_A": [
+          37.8197135925293,
+          37.54741287231445,
+          34.3345947265625
+        ],
+        "minimum_xyz_A": [
+          10.02759075164795,
+          15.32075023651123,
+          9.747422218322754
+        ],
+        "reaction_coordinate_A": 22.126171614350604
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "3884258186b616503130dc444f5fccd4ae009cdf8e49e1714a49f19cbd706c48",
+        "first_A": 0.7300290601638892,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.5985985985985987,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 22.126171614350604,
+        "maximum_A": 27.52219897512384,
+        "maximum_frame_index_zero_based": 988,
+        "mean_A": 9.1131526222808,
+        "minimum_A": 0.6908680857907181,
+        "minimum_frame_index_zero_based": 14,
+        "net_change_A": 21.396142554186714,
+        "pearson_correlation_with_frame_index": 0.9576947266547208,
+        "rmse_from_linear_0_to_15A_schedule_A": 2.998569733041626,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "size_bytes": 2200004,
+      "system_name": "galactose",
+      "topology_path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "topology_sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "1ec0442433f1ada5a623a8a93bec4d2e4431522923b062f8b129de22e0b3e353",
+        "maximum_xyz_A": [
+          34.882568359375,
+          37.564064025878906,
+          33.41949462890625
+        ],
+        "minimum_xyz_A": [
+          14.790046691894531,
+          17.0155029296875,
+          19.612340927124023
+        ],
+        "reaction_coordinate_A": 0.7300290601638892
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "e1c945bcf0d418052133ea6e870b85b6d9d57e13a98fd141460cd711658699a5",
+        "maximum_xyz_A": [
+          37.8197135925293,
+          37.54741287231445,
+          34.3345947265625
+        ],
+        "minimum_xyz_A": [
+          10.02759075164795,
+          15.32075023651123,
+          9.747422218322754
+        ],
+        "reaction_coordinate_A": 22.126171614350604
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "3884258186b616503130dc444f5fccd4ae009cdf8e49e1714a49f19cbd706c48",
+        "first_A": 0.7300290601638892,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.5985985985985987,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 22.126171614350604,
+        "maximum_A": 27.52219897512384,
+        "maximum_frame_index_zero_based": 988,
+        "mean_A": 9.1131526222808,
+        "minimum_A": 0.6908680857907181,
+        "minimum_frame_index_zero_based": 14,
+        "net_change_A": 21.396142554186714,
+        "pearson_correlation_with_frame_index": 0.9576947266547208,
+        "rmse_from_linear_0_to_15A_schedule_A": 2.998569733041626,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "size_bytes": 2200004,
+      "system_name": "galactose",
+      "topology_path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "topology_sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "2a6c132d77063fb3c040f41dcac0a9dae0c83a6c3fb290d34d1a8738e8e7eb7d",
+        "maximum_xyz_A": [
+          35.16905975341797,
+          38.3263053894043,
+          33.26978302001953
+        ],
+        "minimum_xyz_A": [
+          14.103025436401367,
+          16.151920318603516,
+          20.63787841796875
+        ],
+        "reaction_coordinate_A": 0.07977124050637563
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "0211314d12469efea9cd47437e5989b196d1284a8b70ad77cb042e18d2dc2211",
+        "maximum_xyz_A": [
+          39.81776809692383,
+          34.35867691040039,
+          36.77463912963867
+        ],
+        "minimum_xyz_A": [
+          10.649358749389648,
+          19.940166473388672,
+          16.248260498046875
+        ],
+        "reaction_coordinate_A": 14.941503990577276
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/glucose/run1/glucose-pull-1-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "e1b980e8e6f1d45e904fa07227f30f51dfde715fb03798f4d1373bcc1f94d1c2",
+        "first_A": 0.07977124050637563,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8668668668668669,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 14.941503990577276,
+        "maximum_A": 15.00170692336123,
+        "maximum_frame_index_zero_based": 998,
+        "mean_A": 7.491688610615693,
+        "minimum_A": 0.0657799635606902,
+        "minimum_frame_index_zero_based": 5,
+        "net_change_A": 14.861732750070901,
+        "pearson_correlation_with_frame_index": 0.9999566590401319,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.04132247096015944,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "8e7a41eadd1d5a978a6ff2c61b613da39d84be0f34e8ee4913f78b5f6f037a43",
+      "size_bytes": 2200004,
+      "system_name": "glucose",
+      "topology_path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "topology_sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "b64b60ae24d0624acc5bdf54737ccc158e3449d7f05627652b3932bb378969bc",
+        "maximum_xyz_A": [
+          36.37732696533203,
+          37.713783264160156,
+          33.3983154296875
+        ],
+        "minimum_xyz_A": [
+          14.38365650177002,
+          17.249488830566406,
+          20.898193359375
+        ],
+        "reaction_coordinate_A": 0.07004566430603183
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "130e4e4268c52b0aad2641ed0d605039a389389803c67b368a6794594c701d7d",
+        "maximum_xyz_A": [
+          36.63176727294922,
+          37.6932373046875,
+          34.364036560058594
+        ],
+        "minimum_xyz_A": [
+          14.653446197509766,
+          13.699332237243652,
+          14.980846405029297
+        ],
+        "reaction_coordinate_A": 14.928967891071837
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/glucose/run2/glucose-pull-2-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "c513283d0625a36f100fb96b38524638416c9bf0e5ea0536645f805843ed6516",
+        "first_A": 0.07004566430603183,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8848848848848849,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 14.928967891071837,
+        "maximum_A": 14.960220313031694,
+        "maximum_frame_index_zero_based": 998,
+        "mean_A": 7.492462476316326,
+        "minimum_A": 0.061261135716962775,
+        "minimum_frame_index_zero_based": 4,
+        "net_change_A": 14.858922226765806,
+        "pearson_correlation_with_frame_index": 0.9999610172446762,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.0390276354616202,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "ab81901d95f445d2395755daeac3382654fee11708a84ce64d12ea22943a02f5",
+      "size_bytes": 2200004,
+      "system_name": "glucose",
+      "topology_path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "topology_sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "4c346110cb3ff209e5524bb323dc164861d80527acd35698c87c99355d1bd93b",
+        "maximum_xyz_A": [
+          35.5656852722168,
+          38.428619384765625,
+          33.37565231323242
+        ],
+        "minimum_xyz_A": [
+          14.443197250366211,
+          15.581168174743652,
+          20.31098747253418
+        ],
+        "reaction_coordinate_A": 0.05584844524049951
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "3aac0a02f793b03d0c9c74ccf2cb8d39f6de8bd9a59a8c9202a5e38c6b70b712",
+        "maximum_xyz_A": [
+          34.23557662963867,
+          36.37983703613281,
+          38.248714447021484
+        ],
+        "minimum_xyz_A": [
+          15.357841491699219,
+          15.675357818603516,
+          15.347776412963867
+        ],
+        "reaction_coordinate_A": 14.997035777341756
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/glucose/run3/glucose-pull-3-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "aa63b0f5a8b6f453cf9146d2a9c58385b4ab432967ef85f6ec20d9e3102fff3d",
+        "first_A": 0.05584844524049951,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8878878878878879,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 14.997035777341756,
+        "maximum_A": 14.997035777341756,
+        "maximum_frame_index_zero_based": 999,
+        "mean_A": 7.49348925190478,
+        "minimum_A": 0.05584844524049951,
+        "minimum_frame_index_zero_based": 0,
+        "net_change_A": 14.941187332101256,
+        "pearson_correlation_with_frame_index": 0.9999588253835427,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.0399923146889702,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "42e6ba7d443d0967416d06a5ce8e72a17cdf990dabc65707cd23abdd8f2b5b19",
+      "size_bytes": 2200004,
+      "system_name": "glucose",
+      "topology_path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "topology_sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "d5ab5b160a995c117963e9eefe484976c1fe07dbf66f66fd8d0e2fb8102c5297",
+        "maximum_xyz_A": [
+          35.399757385253906,
+          37.98952865600586,
+          33.16267013549805
+        ],
+        "minimum_xyz_A": [
+          14.325441360473633,
+          16.246980667114258,
+          20.44669532775879
+        ],
+        "reaction_coordinate_A": 0.15077416052905115
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "73e4669cbfaea541c2141ff70ecef06eb20ceb5bef7ae121b7850bf4504175d2",
+        "maximum_xyz_A": [
+          38.46989059448242,
+          35.18813705444336,
+          40.39328384399414
+        ],
+        "minimum_xyz_A": [
+          14.502212524414062,
+          20.62555503845215,
+          19.17825698852539
+        ],
+        "reaction_coordinate_A": 14.99863686044774
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/glucose/run4/glucose-pull-4-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "5ab2d0b47ed338caee8dcbd9462b04bc728c6c284037304e2e5a589826a303a1",
+        "first_A": 0.15077416052905115,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.8898898898898899,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 14.99863686044774,
+        "maximum_A": 14.99863686044774,
+        "maximum_frame_index_zero_based": 999,
+        "mean_A": 7.492064016449904,
+        "minimum_A": 0.058453356822840426,
+        "minimum_frame_index_zero_based": 8,
+        "net_change_A": 14.847862699918688,
+        "pearson_correlation_with_frame_index": 0.9999597708117235,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.03985594589944178,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "d5db1c6c6e3fe692e6cb8ccfb92fe9e8e9bd02f23c534d70590cf08f478c462a",
+      "size_bytes": 2200004,
+      "system_name": "glucose",
+      "topology_path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "topology_sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4"
+    },
+    {
+      "first_frame": {
+        "coordinate_bytes_sha256": "e0d3bea06a05d68ef3828f32309b70800f4e46855dc368ba8a16c51704481096",
+        "maximum_xyz_A": [
+          34.79987716674805,
+          38.20512008666992,
+          33.189208984375
+        ],
+        "minimum_xyz_A": [
+          14.232060432434082,
+          15.99402904510498,
+          20.6094913482666
+        ],
+        "reaction_coordinate_A": 0.09392111602127684
+      },
+      "last_frame": {
+        "coordinate_bytes_sha256": "8f61329d59fb280e87c4642b4252bee9742bc1a13b63bb9a99dc997aec49023d",
+        "maximum_xyz_A": [
+          37.51102828979492,
+          38.53520965576172,
+          39.559776306152344
+        ],
+        "minimum_xyz_A": [
+          19.743940353393555,
+          11.908160209655762,
+          20.117839813232422
+        ],
+        "reaction_coordinate_A": 15.003377256643349
+      },
+      "layout": {
+        "coordinate_bytes_per_frame": 2196,
+        "coordinate_count_per_frame": 549,
+        "endian": "<",
+        "frame_count": 1000,
+        "natom": 183,
+        "record_bytes": 2200
+      },
+      "path": "SMD_trajectories/glucose/run5/glucose-pull-5-visualisation.binpos",
+      "reaction_coordinate": {
+        "deposited_target_end_A": 15.0,
+        "deposited_target_start_A": 0.0,
+        "distance_series_sha256": "38f83b64894de484cbf4ced66f5fa80fc200a5d9cec5772fac46acfb7fcdfdd1",
+        "first_A": 0.09392111602127684,
+        "fraction_nondecreasing_with_0_05A_tolerance": 0.9029029029029029,
+        "group1_atom_indices_1_based": [
+          47,
+          48,
+          51,
+          56,
+          59,
+          80,
+          3,
+          4,
+          5,
+          8,
+          25,
+          28
+        ],
+        "group1_total_mass_Da": 144.12,
+        "group2_atom_indices_1_based": [
+          160,
+          178,
+          174,
+          170,
+          163,
+          162,
+          165
+        ],
+        "group2_total_mass_Da": 88.06,
+        "last_A": 15.003377256643349,
+        "maximum_A": 15.017655081830432,
+        "maximum_frame_index_zero_based": 998,
+        "mean_A": 7.49211911261208,
+        "minimum_A": 0.03648287098269761,
+        "minimum_frame_index_zero_based": 3,
+        "net_change_A": 14.909456140622073,
+        "pearson_correlation_with_frame_index": 0.999959251526585,
+        "rmse_from_linear_0_to_15A_schedule_A": 0.0400183843374838,
+        "smd_like_forward_unbinding_path": true
+      },
+      "restraint_path": "SMD_trajectories/Input-files/Glucose-and-galactose-SMD.RST",
+      "restraint_sha256": "2f13517d7ec5f35e9407755e4edd8acfe60e27117c9157ea213bcf34f5e26fb5",
+      "sha256": "3a7ef8c26ed71f8bf75f944739b3ffdb212726680653fc7556642f32b9453034",
+      "size_bytes": 2200004,
+      "system_name": "glucose",
+      "topology_path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "topology_sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4"
+    }
+  ],
+  "trajectory_count": 20
+}
