@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - analysis/gluhut-fructofuranose-restraint-candidates
+      - fix/fructofuranose-candidate-validation
     paths:
       - "research/audit_gluhut_fructofuranose_restraint_candidates.py"
       - "tests/test_audit_gluhut_fructofuranose_restraint_candidates.py"
@@ -69,7 +70,8 @@ jobs:
           assert deposited['connected_component_count'] == 2
           assert decision['deposited_H62_has_one_heavy_parent'] is True
           assert comparison['fructopyranose_and_fructofuranose_igr2_indices_identical'] is True
-          assert comparison['all_indices_preserve_chemical_identity'] is False
+          assert comparison['all_indices_preserve_atom_name'] is False
+          assert comparison['all_indices_preserve_element'] is False
           assert decision['same_numeric_indices_reused_between_fructose_templates'] is True
           assert decision['same_numeric_indices_preserve_chemical_identity'] is False
           assert decision['at_least_one_all_heavy_connected_alternative_exists'] is True
