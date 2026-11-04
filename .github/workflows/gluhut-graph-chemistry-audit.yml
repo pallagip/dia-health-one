@@ -3,6 +3,7 @@ name: Audit GluHUT graph chemistry
 on:
   push:
     branches:
+      - main
       - analysis/gluhut-graph-and-guest-chemistry
     paths:
       - "research/audit_gluhut_graph_chemistry.py"
