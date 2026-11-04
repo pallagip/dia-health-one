@@ -1,0 +1,1578 @@
+{
+  "archive": {
+    "crc_verified": true,
+    "filename": "SMD_trajectories.zip",
+    "md5": "9f3c6733dc608d2bd37c488c560a5443",
+    "sha256": "04c58666328764aeb47bac0d9f8607546f9763892cb9a333b108630df70e3943",
+    "size_bytes": 37931874
+  },
+  "cross_system": {
+    "host_charge_vector_sha256": "a0a59d6dcb57afb3425fdefe94299ca3eab892f2379cd4dcec2ab31ac69a9594",
+    "host_charge_vectors_identical": true,
+    "host_total_charges_e": {
+      "fructofuranose": -2.982236052121324e-06,
+      "fructopyranose": -2.982236052121324e-06,
+      "galactose": -2.982236052121324e-06,
+      "glucose": -2.982236052121324e-06
+    },
+    "systems": [
+      "fructofuranose",
+      "fructopyranose",
+      "galactose",
+      "glucose"
+    ],
+    "topology_count": 4
+  },
+  "decision": {
+    "automatic_charge_symmetrisation_authorized": false,
+    "candidate_ranking_authorized": false,
+    "compiled_charges_are_exactly_graph_symmetry_averaged": true,
+    "direct_transfer_to_pag_or_mcq1_authorized": false,
+    "heavy_graph_automorphisms_enumerated": true,
+    "large_graph_equivalent_charge_asymmetry_detected": false,
+    "next_action": "request source RESP conformers, ESP grids, equivalencing constraints and final mol2; use compiled charges only for exact public benchmark reproduction",
+    "nontrivial_graph_symmetry_present": true,
+    "parent_pag_calibration_authorized": false,
+    "source_resp_derivation_reconstructable": false
+  },
+  "graph_symmetry": {
+    "automorphism_count": 6,
+    "edge_labels": [
+      "bond force constant",
+      "equilibrium distance"
+    ],
+    "heavy_atom_count": 84,
+    "heavy_bond_count": 90,
+    "heavy_orbit_count": 28,
+    "heavy_orbit_size_distribution": {
+      "3": 28
+    },
+    "node_labels": [
+      "element",
+      "AMBER atom type",
+      "full degree",
+      "heavy degree",
+      "attached hydrogen count"
+    ],
+    "nontrivial_heavy_orbit_count": 28
+  },
+  "heavy_atom_orbits": [
+    {
+      "amber_atom_type": "o",
+      "atom_indices_1_based": [
+        55,
+        79,
+        83
+      ],
+      "atom_names": [
+        "O4",
+        "O7",
+        "O8"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.6054290018274312,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.6054290018274312,
+        "minimum": -0.6054290018274312,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.6054290018274312,
+        -0.6054290018274312,
+        -0.6054290018274312
+      ],
+      "element": "O",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 1,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c3",
+      "atom_indices_1_based": [
+        50,
+        58,
+        82
+      ],
+      "atom_names": [
+        "C38",
+        "C44",
+        "C60"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.22162400026341347,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.22162400026341347,
+        "minimum": -0.22162400026341347,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.22162400026341347,
+        -0.22162400026341347,
+        -0.22162400026341347
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 2,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c3",
+      "atom_indices_1_based": [
+        49,
+        57,
+        81
+      ],
+      "atom_names": [
+        "C37",
+        "C43",
+        "C59"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.14489800025243793,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.14489800025243793,
+        "minimum": 0.14489800025243793,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.14489800025243793,
+        0.14489800025243793,
+        0.14489800025243793
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 3,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        48,
+        56,
+        80
+      ],
+      "atom_names": [
+        "C36",
+        "C42",
+        "C58"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.061946000230486825,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.061946000230486825,
+        "minimum": -0.061946000230486825,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.061946000230486825,
+        -0.061946000230486825,
+        -0.061946000230486825
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 4,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        47,
+        51,
+        59
+      ],
+      "atom_names": [
+        "C35",
+        "C39",
+        "C45"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.09090199974756205,
+        "maximum_absolute_deviation_from_mean": 1.3877787807814457e-17,
+        "mean": -0.09090199974756204,
+        "minimum": -0.09090199974756205,
+        "population_standard_deviation": 1.3877787807814457e-17,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.09090199974756205,
+        -0.09090199974756205,
+        -0.09090199974756205
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 5,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c3",
+      "atom_indices_1_based": [
+        46,
+        52,
+        60
+      ],
+      "atom_names": [
+        "C34",
+        "C40",
+        "C46"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.13157999978048873,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.13157999978048873,
+        "minimum": 0.13157999978048873,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.13157999978048873,
+        0.13157999978048873,
+        0.13157999978048873
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 6,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "n",
+      "atom_indices_1_based": [
+        45,
+        53,
+        61
+      ],
+      "atom_names": [
+        "N9",
+        "N10",
+        "N11"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.7603260016573099,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.7603260016573099,
+        "minimum": -0.7603260016573099,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.7603260016573099,
+        -0.7603260016573099,
+        -0.7603260016573099
+      ],
+      "element": "N",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 7,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c",
+      "atom_indices_1_based": [
+        44,
+        54,
+        62
+      ],
+      "atom_names": [
+        "C33",
+        "C41",
+        "C47"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.9576400015365787,
+        "maximum_absolute_deviation_from_mean": 1.1102230246251565e-16,
+        "mean": 0.9576400015365788,
+        "minimum": 0.9576400015365787,
+        "population_standard_deviation": 1.1102230246251565e-16,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.9576400015365787,
+        0.9576400015365787,
+        0.9576400015365787
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 8,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "o",
+      "atom_indices_1_based": [
+        24,
+        78,
+        84
+      ],
+      "atom_names": [
+        "O2",
+        "O6",
+        "O9"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.6645169984030556,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.6645169984030556,
+        "minimum": -0.6645169984030556,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.6645169984030556,
+        -0.6645169984030556,
+        -0.6645169984030556
+      ],
+      "element": "O",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 9,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "n",
+      "atom_indices_1_based": [
+        23,
+        43,
+        63
+      ],
+      "atom_names": [
+        "N4",
+        "N8",
+        "N12"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.671538998918907,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.671538998918907,
+        "minimum": -0.671538998918907,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.671538998918907,
+        -0.671538998918907,
+        -0.671538998918907
+      ],
+      "element": "N",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 10,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        22,
+        42,
+        64
+      ],
+      "atom_names": [
+        "C18",
+        "C32",
+        "C48"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.12420499991768326,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.12420499991768326,
+        "minimum": 0.12420499991768326,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.12420499991768326,
+        0.12420499991768326,
+        0.12420499991768326
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 11,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        21,
+        41,
+        65
+      ],
+      "atom_names": [
+        "C17",
+        "C31",
+        "C49"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.10452500013719453,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.10452500013719453,
+        "minimum": -0.10452500013719453,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.10452500013719453,
+        -0.10452500013719453,
+        -0.10452500013719453
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 12,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "o",
+      "atom_indices_1_based": [
+        20,
+        40,
+        70
+      ],
+      "atom_names": [
+        "O1",
+        "O3",
+        "O5"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.6144610010810929,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.6144610010810929,
+        "minimum": -0.6144610010810929,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.6144610010810929,
+        -0.6144610010810929,
+        -0.6144610010810929
+      ],
+      "element": "O",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 13,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c3",
+      "atom_indices_1_based": [
+        19,
+        39,
+        69
+      ],
+      "atom_names": [
+        "C16",
+        "C30",
+        "C52"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.013752000021951124,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.013752000021951124,
+        "minimum": -0.013752000021951124,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.013752000021951124,
+        -0.013752000021951124,
+        -0.013752000021951124
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 14,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "n",
+      "atom_indices_1_based": [
+        18,
+        38,
+        68
+      ],
+      "atom_names": [
+        "N3",
+        "N7",
+        "N13"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.6463559978707408,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.6463559978707408,
+        "minimum": -0.6463559978707408,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.6463559978707408,
+        -0.6463559978707408,
+        -0.6463559978707408
+      ],
+      "element": "N",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 15,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c",
+      "atom_indices_1_based": [
+        17,
+        37,
+        67
+      ],
+      "atom_names": [
+        "C15",
+        "C29",
+        "C51"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.8423850007957283,
+        "maximum_absolute_deviation_from_mean": 1.1102230246251565e-16,
+        "mean": 0.8423850007957284,
+        "minimum": 0.8423850007957283,
+        "population_standard_deviation": 1.1102230246251565e-16,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.8423850007957283,
+        0.8423850007957283,
+        0.8423850007957283
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 16,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        16,
+        36,
+        66
+      ],
+      "atom_names": [
+        "C14",
+        "C28",
+        "C50"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.29965200002195114,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.29965200002195114,
+        "minimum": -0.29965200002195114,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.29965200002195114,
+        -0.29965200002195114,
+        -0.29965200002195114
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 17,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        15,
+        35,
+        71
+      ],
+      "atom_names": [
+        "C13",
+        "C27",
+        "C53"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.03686,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.03686,
+        "minimum": -0.03686,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.03686,
+        -0.03686,
+        -0.03686
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 18,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        14,
+        34,
+        72
+      ],
+      "atom_names": [
+        "C12",
+        "C26",
+        "C54"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.3628600001097556,
+        "maximum_absolute_deviation_from_mean": 5.551115123125783e-17,
+        "mean": -0.36286000010975555,
+        "minimum": -0.3628600001097556,
+        "population_standard_deviation": 5.551115123125783e-17,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.3628600001097556,
+        -0.3628600001097556,
+        -0.3628600001097556
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 19,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        13,
+        33,
+        73
+      ],
+      "atom_names": [
+        "C11",
+        "C25",
+        "C55"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.3662940002085357,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.3662940002085357,
+        "minimum": 0.3662940002085357,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.3662940002085357,
+        0.3662940002085357,
+        0.3662940002085357
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 20,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "n",
+      "atom_indices_1_based": [
+        12,
+        32,
+        74
+      ],
+      "atom_names": [
+        "N2",
+        "N6",
+        "N14"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.7084819973329383,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.7084819973329383,
+        "minimum": -0.7084819973329383,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.7084819973329383,
+        -0.7084819973329383,
+        -0.7084819973329383
+      ],
+      "element": "N",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 21,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c",
+      "atom_indices_1_based": [
+        11,
+        31,
+        75
+      ],
+      "atom_names": [
+        "C10",
+        "C24",
+        "C56"
+      ],
+      "charge_statistics_e": {
+        "maximum": 1.0531120001317067,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 1.0531120001317067,
+        "minimum": 1.0531120001317067,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        1.0531120001317067,
+        1.0531120001317067,
+        1.0531120001317067
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 22,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "n",
+      "atom_indices_1_based": [
+        10,
+        30,
+        76
+      ],
+      "atom_names": [
+        "N1",
+        "N5",
+        "N15"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.7972330002249991,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.7972330002249991,
+        "minimum": -0.7972330002249991,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.7972330002249991,
+        -0.7972330002249991,
+        -0.7972330002249991
+      ],
+      "element": "N",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 23,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c3",
+      "atom_indices_1_based": [
+        9,
+        29,
+        77
+      ],
+      "atom_names": [
+        "C9",
+        "C23",
+        "C57"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.02269,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.02269,
+        "minimum": 0.02269,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.02269,
+        0.02269,
+        0.02269
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 24,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        4,
+        8,
+        28
+      ],
+      "atom_names": [
+        "C4",
+        "C8",
+        "C22"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.003812,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.003812,
+        "minimum": 0.003812,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.003812,
+        0.003812,
+        0.003812
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 25,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "ca",
+      "atom_indices_1_based": [
+        3,
+        5,
+        25
+      ],
+      "atom_names": [
+        "C3",
+        "C5",
+        "C19"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.11297999978048874,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.11297999978048874,
+        "minimum": -0.11297999978048874,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.11297999978048874,
+        -0.11297999978048874,
+        -0.11297999978048874
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 26,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c3",
+      "atom_indices_1_based": [
+        2,
+        6,
+        26
+      ],
+      "atom_names": [
+        "C2",
+        "C6",
+        "C20"
+      ],
+      "charge_statistics_e": {
+        "maximum": 0.07628200007682893,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.07628200007682893,
+        "minimum": 0.07628200007682893,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.07628200007682893,
+        0.07628200007682893,
+        0.07628200007682893
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 27,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "amber_atom_type": "c3",
+      "atom_indices_1_based": [
+        1,
+        7,
+        27
+      ],
+      "atom_names": [
+        "C1",
+        "C7",
+        "C21"
+      ],
+      "charge_statistics_e": {
+        "maximum": -0.16356599990121992,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": -0.16356599990121992,
+        "minimum": -0.16356599990121992,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        -0.16356599990121992,
+        -0.16356599990121992,
+        -0.16356599990121992
+      ],
+      "element": "C",
+      "exactly_equal_within_tolerance": true,
+      "orbit_id": 28,
+      "orbit_size": 3,
+      "range_exceeds_0_05e": false
+    }
+  ],
+  "hydrogen_groups": [
+    {
+      "charge_statistics_e": {
+        "maximum": 0.05649599995609774,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.05649599995609774,
+        "minimum": 0.05649599995609774,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.05649599995609774,
+        0.05649599995609774,
+        0.05649599995609774,
+        0.05649599995609774,
+        0.05649599995609774,
+        0.05649599995609774,
+        0.05649599995609774,
+        0.05649599995609774,
+        0.05649599995609774
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hc",
+      "hydrogen_atom_indices_1_based": [
+        129,
+        130,
+        131,
+        137,
+        138,
+        139,
+        157,
+        158,
+        159
+      ],
+      "hydrogen_atom_names": [
+        "H45",
+        "H46",
+        "H47",
+        "H53",
+        "H54",
+        "H55",
+        "H73",
+        "H74",
+        "H75"
+      ],
+      "hydrogen_count": 9,
+      "parent_heavy_atom_indices_1_based": [
+        50,
+        58,
+        82
+      ],
+      "parent_heavy_orbit_id": 2,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.06742600001097555,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.06742600001097555,
+        "minimum": 0.06742600001097555,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.06742600001097555,
+        0.06742600001097555,
+        0.06742600001097555,
+        0.06742600001097555,
+        0.06742600001097555,
+        0.06742600001097555,
+        0.06742600001097555,
+        0.06742600001097555,
+        0.06742600001097555
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "h1",
+      "hydrogen_atom_indices_1_based": [
+        102,
+        103,
+        104,
+        119,
+        120,
+        121,
+        146,
+        147,
+        148
+      ],
+      "hydrogen_atom_names": [
+        "H18",
+        "H19",
+        "H20",
+        "H35",
+        "H36",
+        "H37",
+        "H62",
+        "H63",
+        "H64"
+      ],
+      "hydrogen_count": 9,
+      "parent_heavy_atom_indices_1_based": [
+        19,
+        39,
+        69
+      ],
+      "parent_heavy_orbit_id": 14,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.04701600001097556,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.04701600001097556,
+        "minimum": 0.04701600001097556,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.04701600001097556,
+        0.04701600001097556,
+        0.04701600001097556,
+        0.04701600001097556,
+        0.04701600001097556,
+        0.04701600001097556,
+        0.04701600001097556,
+        0.04701600001097556,
+        0.04701600001097556
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hc",
+      "hydrogen_atom_indices_1_based": [
+        85,
+        86,
+        87,
+        92,
+        93,
+        94,
+        109,
+        110,
+        111
+      ],
+      "hydrogen_atom_names": [
+        "H1",
+        "H2",
+        "H3",
+        "H8",
+        "H9",
+        "H10",
+        "H25",
+        "H26",
+        "H27"
+      ],
+      "hydrogen_count": 9,
+      "parent_heavy_atom_indices_1_based": [
+        1,
+        7,
+        27
+      ],
+      "parent_heavy_orbit_id": 28,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.013866000010975562,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.013866000010975562,
+        "minimum": 0.013866000010975562,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.013866000010975562,
+        0.013866000010975562,
+        0.013866000010975562,
+        0.013866000010975562,
+        0.013866000010975562,
+        0.013866000010975562
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hc",
+      "hydrogen_atom_indices_1_based": [
+        127,
+        128,
+        135,
+        136,
+        155,
+        156
+      ],
+      "hydrogen_atom_names": [
+        "H43",
+        "H44",
+        "H51",
+        "H52",
+        "H71",
+        "H72"
+      ],
+      "hydrogen_count": 6,
+      "parent_heavy_atom_indices_1_based": [
+        49,
+        57,
+        81
+      ],
+      "parent_heavy_orbit_id": 3,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.07659400020853568,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.07659400020853568,
+        "minimum": 0.07659400020853568,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.07659400020853568,
+        0.07659400020853568,
+        0.07659400020853568,
+        0.07659400020853568,
+        0.07659400020853568,
+        0.07659400020853568
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "h1",
+      "hydrogen_atom_indices_1_based": [
+        125,
+        126,
+        132,
+        133,
+        140,
+        141
+      ],
+      "hydrogen_atom_names": [
+        "H41",
+        "H42",
+        "H48",
+        "H49",
+        "H56",
+        "H57"
+      ],
+      "hydrogen_count": 6,
+      "parent_heavy_atom_indices_1_based": [
+        46,
+        52,
+        60
+      ],
+      "parent_heavy_orbit_id": 6,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.10797700015914566,
+        "maximum_absolute_deviation_from_mean": 1.3877787807814457e-17,
+        "mean": 0.10797700015914564,
+        "minimum": 0.10797700015914566,
+        "population_standard_deviation": 1.3877787807814457e-17,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.10797700015914566,
+        0.10797700015914566,
+        0.10797700015914566,
+        0.10797700015914566,
+        0.10797700015914566,
+        0.10797700015914566
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "h1",
+      "hydrogen_atom_indices_1_based": [
+        95,
+        96,
+        112,
+        113,
+        153,
+        154
+      ],
+      "hydrogen_atom_names": [
+        "H11",
+        "H12",
+        "H28",
+        "H29",
+        "H69",
+        "H70"
+      ],
+      "hydrogen_count": 6,
+      "parent_heavy_atom_indices_1_based": [
+        9,
+        29,
+        77
+      ],
+      "parent_heavy_orbit_id": 24,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.027700999983536655,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.027700999983536655,
+        "minimum": 0.027700999983536655,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.027700999983536655,
+        0.027700999983536655,
+        0.027700999983536655,
+        0.027700999983536655,
+        0.027700999983536655,
+        0.027700999983536655
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hc",
+      "hydrogen_atom_indices_1_based": [
+        88,
+        89,
+        90,
+        91,
+        107,
+        108
+      ],
+      "hydrogen_atom_names": [
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H23",
+        "H24"
+      ],
+      "hydrogen_count": 6,
+      "parent_heavy_atom_indices_1_based": [
+        2,
+        6,
+        26
+      ],
+      "parent_heavy_orbit_id": 27,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.3456820000768289,
+        "maximum_absolute_deviation_from_mean": 5.551115123125783e-17,
+        "mean": 0.345682000076829,
+        "minimum": 0.3456820000768289,
+        "population_standard_deviation": 5.551115123125783e-17,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.3456820000768289,
+        0.3456820000768289,
+        0.3456820000768289
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hn",
+      "hydrogen_atom_indices_1_based": [
+        124,
+        134,
+        142
+      ],
+      "hydrogen_atom_names": [
+        "H40",
+        "H50",
+        "H58"
+      ],
+      "hydrogen_count": 3,
+      "parent_heavy_atom_indices_1_based": [
+        45,
+        53,
+        61
+      ],
+      "parent_heavy_orbit_id": 7,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.34249000016463343,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.34249000016463343,
+        "minimum": 0.34249000016463343,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.34249000016463343,
+        0.34249000016463343,
+        0.34249000016463343
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hn",
+      "hydrogen_atom_indices_1_based": [
+        106,
+        123,
+        143
+      ],
+      "hydrogen_atom_names": [
+        "H22",
+        "H39",
+        "H59"
+      ],
+      "hydrogen_count": 3,
+      "parent_heavy_atom_indices_1_based": [
+        23,
+        43,
+        63
+      ],
+      "parent_heavy_orbit_id": 10,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.16134899985182988,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.16134899985182988,
+        "minimum": 0.16134899985182988,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.16134899985182988,
+        0.16134899985182988,
+        0.16134899985182988
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "ha",
+      "hydrogen_atom_indices_1_based": [
+        105,
+        122,
+        144
+      ],
+      "hydrogen_atom_names": [
+        "H21",
+        "H38",
+        "H60"
+      ],
+      "hydrogen_count": 3,
+      "parent_heavy_atom_indices_1_based": [
+        21,
+        41,
+        65
+      ],
+      "parent_heavy_orbit_id": 12,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.3632709998189032,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.3632709998189032,
+        "minimum": 0.3632709998189032,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.3632709998189032,
+        0.3632709998189032,
+        0.3632709998189032
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hn",
+      "hydrogen_atom_indices_1_based": [
+        101,
+        118,
+        145
+      ],
+      "hydrogen_atom_names": [
+        "H17",
+        "H34",
+        "H61"
+      ],
+      "hydrogen_count": 3,
+      "parent_heavy_atom_indices_1_based": [
+        18,
+        38,
+        68
+      ],
+      "parent_heavy_orbit_id": 15,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.10988100020304792,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.10988100020304792,
+        "minimum": 0.10988100020304792,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.10988100020304792,
+        0.10988100020304792,
+        0.10988100020304792
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "ha",
+      "hydrogen_atom_indices_1_based": [
+        100,
+        117,
+        149
+      ],
+      "hydrogen_atom_names": [
+        "H16",
+        "H33",
+        "H65"
+      ],
+      "hydrogen_count": 3,
+      "parent_heavy_atom_indices_1_based": [
+        15,
+        35,
+        71
+      ],
+      "parent_heavy_orbit_id": 18,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.2352929997859765,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.2352929997859765,
+        "minimum": 0.2352929997859765,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.2352929997859765,
+        0.2352929997859765,
+        0.2352929997859765
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "ha",
+      "hydrogen_atom_indices_1_based": [
+        99,
+        116,
+        150
+      ],
+      "hydrogen_atom_names": [
+        "H15",
+        "H32",
+        "H66"
+      ],
+      "hydrogen_count": 3,
+      "parent_heavy_atom_indices_1_based": [
+        14,
+        34,
+        72
+      ],
+      "parent_heavy_orbit_id": 19,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.30961700004939,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.30961700004939,
+        "minimum": 0.30961700004939,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.30961700004939,
+        0.30961700004939,
+        0.30961700004939
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hn",
+      "hydrogen_atom_indices_1_based": [
+        98,
+        115,
+        151
+      ],
+      "hydrogen_atom_names": [
+        "H14",
+        "H31",
+        "H67"
+      ],
+      "hydrogen_count": 3,
+      "parent_heavy_atom_indices_1_based": [
+        12,
+        32,
+        74
+      ],
+      "parent_heavy_orbit_id": 21,
+      "range_exceeds_0_05e": false
+    },
+    {
+      "charge_statistics_e": {
+        "maximum": 0.3814380001426823,
+        "maximum_absolute_deviation_from_mean": 0.0,
+        "mean": 0.3814380001426823,
+        "minimum": 0.3814380001426823,
+        "population_standard_deviation": 0.0,
+        "range": 0.0
+      },
+      "charges_e": [
+        0.3814380001426823,
+        0.3814380001426823,
+        0.3814380001426823
+      ],
+      "exactly_equal_within_tolerance": true,
+      "hydrogen_amber_atom_type": "hn",
+      "hydrogen_atom_indices_1_based": [
+        97,
+        114,
+        152
+      ],
+      "hydrogen_atom_names": [
+        "H13",
+        "H30",
+        "H68"
+      ],
+      "hydrogen_count": 3,
+      "parent_heavy_atom_indices_1_based": [
+        10,
+        30,
+        76
+      ],
+      "parent_heavy_orbit_id": 23,
+      "range_exceeds_0_05e": false
+    }
+  ],
+  "limitations": [
+    "Graph-equivalent atoms can receive different RESP charges when charges are fit to an asymmetric conformation without equivalencing constraints.",
+    "Charge asymmetry is descriptive and is not by itself evidence that the published parameterisation is invalid.",
+    "Heavy-atom automorphisms use compiled atom types and bonded parameters as graph labels; alternative source atom typing could define different equivalence classes.",
+    "Hydrogen groups are defined from heavy-parent graph orbits and AMBER hydrogen type rather than full all-hydrogen automorphism enumeration.",
+    "No production parameter file is modified or symmetrised by this audit."
+  ],
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, binding affinity, efficacy, safety, or a drug result",
+  "schema": "dia-health-one.gluhut-charge-symmetry.v1",
+  "scope": "graph-equivalent atom charge variation in the public methyl-truncated GluHUT host",
+  "software": {
+    "networkx": "3.4.2",
+    "python": "3.12.15"
+  },
+  "status": "compiled_charge_symmetry_quantified_source_resp_derivation_missing",
+  "summary": {
+    "all_nontrivial_heavy_orbits_exactly_equal": true,
+    "all_nontrivial_hydrogen_groups_exactly_equal": true,
+    "heavy_orbits_with_range_above_0_05e": 0,
+    "hydrogen_groups_with_range_above_0_05e": 0,
+    "maximum_nontrivial_heavy_orbit_charge_range_e": 0.0,
+    "maximum_nontrivial_hydrogen_group_charge_range_e": 0.0,
+    "symmetry_averaging_adjustment": {
+      "atoms_with_absolute_adjustment_above_0_05e": 0,
+      "averaged_total_charge_e": -2.9822360511637565e-06,
+      "maximum_absolute_per_atom_adjustment_e": 1.1102230246251565e-16,
+      "mean_absolute_per_atom_adjustment_e": 7.069816430396044e-18,
+      "original_total_charge_e": -2.982236052121324e-06,
+      "rms_per_atom_adjustment_e": 2.433750816437806e-17,
+      "total_charge_difference_e": 9.575673587391975e-16
+    }
+  }
+}
