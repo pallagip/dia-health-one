@@ -201,7 +201,7 @@
     "spirochem_synthesis_request_sent": true,
     "domainex_binding_request_status": "sent",
     "reply_watch_enabled": true,
-    "author_umbrella_lineage_clarification_sent": false,
+    "author_umbrella_lineage_clarification_sent": true,
     "author_umbrella_lineage_clarification_draft_created": true,
     "author_umbrella_lineage_clarification_status": "draft_created_after_gmail_rate_limit"
   },
