@@ -1,0 +1,126 @@
+name: Export public GluHUT host graph
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/export-gluhut-host-graph
+    paths:
+      - "research/export_gluhut_host_graph.py"
+      - "tests/test_export_gluhut_host_graph.py"
+      - ".github/workflows/export-gluhut-host-graph.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: export-gluhut-host-graph-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ARCHIVE_MD5: 9f3c6733dc608d2bd37c488c560a5443
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run exporter unit tests
+        run: python -m unittest tests/test_export_gluhut_host_graph.py -v
+
+      - name: Acquire and verify public SMD archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/SMD_trajectories.zip \
+            'https://zenodo.org/api/records/19664426/files/SMD_trajectories.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/SMD_trajectories.zip" | md5sum --check --strict
+
+      - name: Export canonical public host heavy graph
+        run: |
+          python research/export_gluhut_host_graph.py \
+            --archive /tmp/SMD_trajectories.zip \
+            --output-json research/data/gluhut-public-host-heavy-graph.json \
+            | tee /tmp/gluhut-host-graph-summary.json
+
+      - name: Validate bounded result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path('research/data/gluhut-public-host-heavy-graph.json').read_text())
+          cross = data['cross_system']
+          host = data['canonical_host']
+          residue = host['residue']
+          graph = host['heavy_graph']
+          decision = data['decision']
+
+          assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert data['archive']['crc_verified'] is True
+          assert cross['system_count'] == 4
+          assert cross['systems'] == ['fructofuranose', 'fructopyranose', 'galactose', 'glucose']
+          assert cross['host_formula_identical'] is True
+          assert cross['host_heavy_node_count_identical'] is True
+          assert cross['host_heavy_edge_count_identical'] is True
+          assert cross['host_structural_graph_identical'] is True
+          assert cross['host_compiled_parameters_identical'] is True
+          assert residue['label'] == 'MOL'
+          assert residue['formula'] == 'C60H75N15O9'
+          assert residue['atom_count'] == 159
+          assert residue['heavy_atom_count'] == 84
+          assert graph['node_count'] == 84
+          assert graph['edge_count'] == 90
+          assert graph['chemical_bond_order_known'] is False
+          assert len(graph['nodes']) == 84
+          assert len(graph['edges']) == 90
+          assert len(cross['structural_fingerprint_sha256']) == 64
+          assert len(cross['compiled_parameter_fingerprint_sha256']) == 64
+          assert decision['safe_for_public_constitutional_connectivity_comparison'] is True
+          assert decision['safe_for_parameter_transfer_to_private_candidates'] is False
+          assert decision['chemical_bond_orders_reconstructed'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          print(json.dumps({
+              'archive': data['archive'],
+              'cross_system': cross,
+              'canonical_residue': residue,
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit exported graph
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-public-host-heavy-graph.json
+          if git diff --cached --quiet; then
+            echo 'No host-graph changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record public GluHUT host heavy graph'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## Public GluHUT host heavy graph'
+            echo
+            if [ -f /tmp/gluhut-host-graph-summary.json ]; then
+              echo '```json'
+              cat /tmp/gluhut-host-graph-summary.json
+              echo '```'
+            else
+              echo 'No graph summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
