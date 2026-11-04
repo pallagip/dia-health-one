@@ -24,13 +24,14 @@ TEXT_PREVIEW_LIMIT = 256 * 1024
 TEXT_EXTENSIONS = {
     ".txt", ".md", ".in", ".mdin", ".out", ".log", ".sh", ".py",
     ".pdb", ".mol2", ".frcmod", ".lib", ".off", ".prmtop", ".parm7",
-    ".rst7", ".inpcrd", ".crd", ".top", ".dat", ".csv", ".json",
+    ".rst", ".rst7", ".inpcrd", ".crd", ".top", ".dat", ".csv", ".json",
 }
 TOPOLOGY_EXTENSIONS = {".prmtop", ".parm7", ".top", ".psf"}
-COORDINATE_EXTENSIONS = {".pdb", ".rst7", ".inpcrd", ".crd", ".mol2"}
-PARAMETER_EXTENSIONS = {".frcmod", ".lib", ".off", ".mol2"}
+PARAMETERIZED_TOPOLOGY_EXTENSIONS = {".prmtop", ".parm7", ".top"}
+COORDINATE_EXTENSIONS = {".pdb", ".rst", ".rst7", ".inpcrd", ".crd", ".mol2"}
+SOURCE_PARAMETER_EXTENSIONS = {".frcmod", ".lib", ".off", ".mol2"}
 PROTOCOL_EXTENSIONS = {".in", ".mdin", ".sh", ".py", ".txt", ".md"}
-TRAJECTORY_EXTENSIONS = {".nc", ".mdcrd", ".dcd", ".xtc", ".trr"}
+TRAJECTORY_EXTENSIONS = {".binpos", ".nc", ".mdcrd", ".dcd", ".xtc", ".trr"}
 
 
 class InventoryError(RuntimeError):
@@ -70,10 +71,12 @@ def classify(extension: str) -> list[str]:
     classes: list[str] = []
     if extension in TOPOLOGY_EXTENSIONS:
         classes.append("topology")
+    if extension in PARAMETERIZED_TOPOLOGY_EXTENSIONS:
+        classes.append("parameterized_topology")
     if extension in COORDINATE_EXTENSIONS:
         classes.append("coordinate")
-    if extension in PARAMETER_EXTENSIONS:
-        classes.append("parameter")
+    if extension in SOURCE_PARAMETER_EXTENSIONS:
+        classes.append("source_parameter")
     if extension in PROTOCOL_EXTENSIONS:
         classes.append("protocol_or_documentation")
     if extension in TRAJECTORY_EXTENSIONS:
@@ -154,22 +157,49 @@ def audit(archive_path: Path, output_json: Path) -> dict:
         for row in files
         for classification in row["classifications"]
     )
+    relevant_classes = {
+        "topology",
+        "parameterized_topology",
+        "coordinate",
+        "source_parameter",
+        "protocol_or_documentation",
+        "trajectory",
+    }
     relevant = [
         row
         for row in files
-        if any(
-            item in row["classifications"]
-            for item in ("topology", "coordinate", "parameter", "protocol_or_documentation")
-        )
+        if any(item in relevant_classes for item in row["classifications"])
     ]
     exact_input_components = {
         "topology_present": any("topology" in row["classifications"] for row in files),
+        "parameterized_topology_present": any(
+            "parameterized_topology" in row["classifications"] for row in files
+        ),
         "coordinate_present": any("coordinate" in row["classifications"] for row in files),
-        "parameter_present": any("parameter" in row["classifications"] for row in files),
-        "protocol_present": any("protocol_or_documentation" in row["classifications"] for row in files),
+        "source_parameter_files_present": any(
+            "source_parameter" in row["classifications"] for row in files
+        ),
+        "protocol_present": any(
+            "protocol_or_documentation" in row["classifications"] for row in files
+        ),
+        "trajectory_present": any("trajectory" in row["classifications"] for row in files),
     }
+    compiled_system_bundle_present = all(
+        exact_input_components[key]
+        for key in (
+            "topology_present",
+            "parameterized_topology_present",
+            "coordinate_present",
+            "protocol_present",
+            "trajectory_present",
+        )
+    )
+    parameter_generation_provenance_complete = exact_input_components[
+        "source_parameter_files_present"
+    ]
+
     report = {
-        "schema": "dia-health-one.gluhut-smd-archive-inventory.v1",
+        "schema": "dia-health-one.gluhut-smd-archive-inventory.v2",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "status": "archive_inventory_complete_not_chemistry_validated",
         "scope": "public GluHUT steered-MD archive provenance and input discovery",
@@ -188,21 +218,33 @@ def audit(archive_path: Path, output_json: Path) -> dict:
         "extension_counts": dict(sorted(type_counts.items())),
         "classification_counts": dict(sorted(class_counts.items())),
         "exact_input_components": exact_input_components,
-        "exact_reusable_input_bundle_present": all(exact_input_components.values()),
+        "compiled_system_bundle_present": compiled_system_bundle_present,
+        "parameter_generation_provenance_complete": parameter_generation_provenance_complete,
+        "exact_reusable_input_bundle_present": (
+            compiled_system_bundle_present and parameter_generation_provenance_complete
+        ),
         "relevant_members": relevant,
         "members": rows,
         "decision": {
-            "can_begin_exact_parent_parameter_audit_from_this_archive_alone": all(
-                exact_input_components.values()
+            "can_begin_compiled_topology_and_coordinate_audit_from_this_archive": (
+                compiled_system_bundle_present
+            ),
+            "can_reconstruct_parameter_generation_from_this_archive": (
+                parameter_generation_provenance_complete
+            ),
+            "can_begin_exact_parent_parameter_audit_from_this_archive_alone": (
+                compiled_system_bundle_present
             ),
             "candidate_ranking_authorized": False,
             "next_action": (
-                "audit identified topology, coordinates, parameters and protocol"
-                if all(exact_input_components.values())
+                "audit the compiled parm7/rst systems atom-by-atom and request the missing source RESP/GAFF/GLYCAM parameter-generation files"
+                if compiled_system_bundle_present
                 else "inspect other deposited archives or request missing exact inputs from authors"
             ),
         },
         "limitations": [
+            "A parm7/prmtop is a compiled parameterized topology, but it does not reveal the complete RESP derivation or original frcmod/mol2/lib inputs.",
+            "An .rst file is classified as an AMBER coordinate/restart file, but each restart must still be matched to the correct topology and protocol.",
             "File presence does not establish that topology, charges, protonation or parameters are chemically correct.",
             "SMD inputs may describe a truncated public analogue rather than the complete NNC2215 conjugate.",
             "No file in this audit is assumed transferable to PaG or MC-Q1 without atom-level review.",
