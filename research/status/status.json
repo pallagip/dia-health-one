@@ -1,5 +1,5 @@
 {
-  "schema": "dia-health-one.public-confidence-status.v7",
+  "schema": "dia-health-one.public-confidence-status.v8",
   "updated": "2026-11-04",
   "program_stage": "hypothesis_and_calibrated_public_benchmark",
   "working_drug_discovered": false,
@@ -81,11 +81,48 @@
     "smd_equivalent_standard_harmonic_K_kcal_mol_A2": 400.0,
     "umbrella_paper_amber_rk2_kcal_mol_A2": 50.0,
     "umbrella_grossfield_wham_K_kcal_mol_A2": 100.0,
+    "native_binpos_reader_validated": true,
+    "deposited_smd_trajectory_file_count": 20,
+    "deposited_smd_total_recorded_frames": 20000,
+    "deposited_smd_atoms_per_frame": 183,
+    "all_deposited_smd_files_decoded": true,
+    "all_deposited_smd_coordinate_shapes_match_topology": true,
+    "deposited_smd_coordinate_unit_self_check_passed": true,
+    "fructofuranose_five_ring_only_mean_absolute_coordinate_delta_A": 0.026035339468361885,
+    "fructofuranose_five_ring_only_mean_run_maximum_absolute_delta_A": 0.050052365643620166,
+    "fructofuranose_H62_to_C6_mean_absolute_coordinate_delta_A": 0.2224637818255069,
+    "fructofuranose_H62_to_C6_mean_run_maximum_absolute_delta_A": 0.3842929239446839,
+    "posthoc_coordinate_delta_selects_corrected_restraint": false,
+    "smd_endpoint_protocol_uniform_across_all_systems": false,
+    "smd_heterogeneous_systems": [
+      "galactose"
+    ],
+    "smd_glucose_unique_file_count": 5,
+    "smd_glucose_endpoint_cluster_mean_A": 14.974,
+    "smd_fructofuranose_unique_file_count": 5,
+    "smd_fructofuranose_endpoint_cluster_mean_A": 14.97749866541506,
+    "smd_fructopyranose_unique_file_count": 5,
+    "smd_fructopyranose_endpoint_cluster_mean_A": 20.002386667370196,
+    "smd_galactose_approximately_15A_distinct_file_count": 3,
+    "smd_galactose_approximately_15A_endpoint_mean_A": 14.999,
+    "smd_galactose_approximately_15A_endpoint_range_A": [
+      14.943,
+      15.048
+    ],
+    "smd_galactose_approximately_22A_file_count": 2,
+    "smd_galactose_approximately_22A_unique_coordinate_series_count": 1,
+    "smd_galactose_approximately_22A_endpoint_A": 22.126,
+    "smd_galactose_run4_run5_exact_duplicate": true,
+    "smd_galactose_duplicate_file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+    "smd_galactose_duplicate_coordinate_series_sha256": "2190f8472e49e407c95818f89599d08835562b6e12dfaafc73b3c9f13c348f57",
+    "smd_galactose_files_may_be_pooled_as_five_independent_runs": false,
+    "smd_endpoint_provenance_clarified_by_authors": false,
     "new_smd_or_umbrella_generation_authorized": false,
     "deposited_histogram_and_wham_reanalysis_remains_reproducible": true,
     "causal_link_between_H62_and_short_window_failure_established": false,
     "source_resp_gaff_glycam_generation_available": false,
     "standalone_start_coordinates_available": false,
+    "recorded_first_frames_replace_source_start_coordinates": false,
     "source_graph_fully_reconciled": true,
     "source_resp_gaff_derivation_reconstructable": false,
     "force_field_chemically_validated": false,
@@ -93,10 +130,11 @@
     "candidate_ranking_authorized": false,
     "calibration_record": "../AWS1_NO_AWS_RESULTS.md",
     "graph_chemistry_record": "../GLUHUT_GRAPH_CHEMISTRY_AUDIT.md",
-    "source_architecture_record": "../data/gluhut-truncated-architecture-reconciliation.json",
+    "source_architecture_record": "../GLUHUT_TRUNCATED_ARCHITECTURE_RECONCILIATION.md",
     "smd_restraint_record": "../GLUHUT_SMD_RESTRAINT_AUDIT.md",
     "fructofuranose_candidate_record": "../GLUHUT_FRUCTOFURANOSE_RESTRAINT_CANDIDATES.md",
-    "force_convention_record": "../GLUHUT_FORCE_CONVENTION.md"
+    "force_convention_record": "../GLUHUT_FORCE_CONVENTION.md",
+    "smd_coordinate_provenance_record": "../GLUHUT_SMD_COORDINATE_PROVENANCE.md"
   },
   "minimum_physical_experiment": [
     "MC-P0",
@@ -113,16 +151,17 @@
     "must_outperform_positional_control": true
   },
   "aws_execution": {
-    "current_gate": "AWS-1 public analysis reproduced; compiled host architecture and force convention reconciled; guest-coordinate intent, source parameter derivation, start coordinates and parent PaG calibration pending",
+    "current_gate": "AWS-1 public analysis reproduced; host architecture and force convention reconciled; recorded coordinates recovered; SMD endpoint/file provenance is heterogeneous; source parameter derivation, start coordinates, corrected guest groups and parent PaG calibration pending",
     "candidate_screen_authorized": false,
     "boltz_host_guest_affinity_authorized": false,
     "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
     "aws_credits_spent_usd": 0,
-    "next_action": "obtain author clarification on the reused fructose atom indices and intended fructofuranose group, obtain source RESP/GAFF/GLYCAM and start-coordinate provenance, then calibrate the parent glucose-versus-PaG system"
+    "next_action": "obtain author clarification on the duplicate galactose file, mixed endpoints and fructofuranose group; obtain source RESP/GAFF/GLYCAM and starting coordinates; then preregister a source-matched parent glucose-versus-PaG calibration"
   },
   "external_execution": {
     "author_parameter_request_sent": true,
     "author_smd_restraint_clarification_sent": true,
+    "author_smd_endpoint_and_duplicate_clarification_sent": true,
     "erc_project_contact_routed_to_wayne_powell": true,
     "nnc2215_pag_source_request_sent": true,
     "carbometrics_feasibility_request_sent": true,
@@ -131,8 +170,9 @@
     "reply_watch_enabled": true
   },
   "next_confidence_changes": [
+    "obtain author clarification on galactose duplicate files and mixed SMD endpoints",
     "obtain author clarification on the reused fructose indices and intended fructofuranose SMD group",
-    "obtain RESP/GAFF/GLYCAM and start-coordinate provenance",
+    "obtain RESP/GAFF/GLYCAM and source starting-coordinate provenance",
     "calibrate a source-matched parent glucose-versus-PaG calculation",
     "obtain provider acceptance and synthesis quotation",
     "measure authenticated free-binder glucose and PaG binding"
