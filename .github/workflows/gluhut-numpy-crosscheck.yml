@@ -1,0 +1,98 @@
+name: Cross-check GluHUT glucose PMFs with NumPy WHAM
+
+on:
+  push:
+    branches:
+      - analysis/gluhut-numpy-crosscheck
+    paths:
+      - "research/crossvalidate_gluhut_glucose_wham_numpy.py"
+      - "tests/test_crossvalidate_gluhut_glucose_wham_numpy.py"
+      - ".github/workflows/gluhut-numpy-crosscheck.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-numpy-crosscheck-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  crosscheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      ARCHIVE_MD5: dbc6723b8adcb85deb8230f63b6a51da
+      ARCHIVE_SHA256: e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check --no-cache-dir numpy==2.2.6
+
+      - name: Run solver tests
+        run: python -m unittest tests/test_crossvalidate_gluhut_glucose_wham_numpy.py -v
+
+      - name: Acquire and verify public Zenodo archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/WHAM_PMF.zip \
+            'https://zenodo.org/api/records/19664426/files/WHAM_PMF.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/WHAM_PMF.zip" | md5sum --check --strict
+          echo "$ARCHIVE_SHA256  /tmp/WHAM_PMF.zip" | sha256sum --check --strict
+
+      - name: Run independent glucose WHAM cross-check
+        run: |
+          python research/crossvalidate_gluhut_glucose_wham_numpy.py \
+            --archive /tmp/WHAM_PMF.zip \
+            --output-json research/data/gluhut-glucose-numpy-wham-crosscheck.json \
+            --maximum-route-difference-kcal 0.10 | tee /tmp/numpy-wham-summary.txt
+
+      - name: Validate evidence boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-glucose-numpy-wham-crosscheck.json').read_text())
+          assert data['decision']['independent_wham_crosscheck_pass'] is True
+          assert data['decision']['candidate_ranking_authorized'] is False
+          assert data['summary']['all_routes_within_tolerance'] is True
+          assert 'not NNC2215' in data['not_target_claim']
+          print(json.dumps(data['summary'], indent=2, sort_keys=True))
+          PY
+
+      - name: Commit cross-check result to branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-glucose-numpy-wham-crosscheck.json
+          if git diff --cached --quiet; then
+            echo 'No result changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record independent NumPy WHAM glucose cross-check'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## Independent NumPy WHAM cross-check'
+            echo
+            if [ -f /tmp/numpy-wham-summary.txt ]; then
+              echo '```json'
+              cat /tmp/numpy-wham-summary.txt
+              echo '```'
+            else
+              echo 'No cross-check summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
