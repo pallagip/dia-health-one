@@ -160,11 +160,23 @@ class CompiledSystemAuditTests(unittest.TestCase):
 
     def test_restart_parser(self):
         payload = b"title\n       2  1.2500000\n 0 0 0 1 1 1\n 10 10 10\n"
-        result = module.parse_restart("fixture.rst", payload)
+        result = module.parse_restart("fixture.rst7", payload)
         self.assertEqual(result["natom"], 2)
         self.assertFalse(result["velocities_present"])
         self.assertEqual(result["box_value_count"], 3)
         self.assertEqual(result["time"], 1.25)
+
+    def test_ambiguous_rst_is_classified_by_content(self):
+        restraint = b"&rst\n iat=-1,-1,\n r1=0.0, r2=1.0, r3=2.0, r4=3.0,\n/\n"
+        result = module.classify_ambiguous_rst("distance.rst", restraint)
+        self.assertEqual(result["kind"], "restraint_input")
+        self.assertTrue(result["contains_iat"])
+        self.assertTrue(result["contains_rst_namelist"])
+
+        restart = b"title\n       2\n 0 0 0 1 1 1\n"
+        result = module.classify_ambiguous_rst("coordinate.rst", restart)
+        self.assertEqual(result["kind"], "restart_coordinate")
+        self.assertEqual(result["restart"]["natom"], 2)
 
     def test_unsafe_paths(self):
         for value in ("../x", "/x", "a\\b"):
