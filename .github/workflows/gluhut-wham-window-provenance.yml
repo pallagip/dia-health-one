@@ -1,0 +1,140 @@
+name: Audit GluHUT WHAM window provenance
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-wham-window-provenance
+    paths:
+      - "research/audit_gluhut_wham_window_provenance.py"
+      - "tests/test_audit_gluhut_wham_window_provenance.py"
+      - ".github/workflows/gluhut-wham-window-provenance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-wham-window-provenance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ARCHIVE_MD5: dbc6723b8adcb85deb8230f63b6a51da
+      ARCHIVE_SHA256: e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_wham_window_provenance.py -v
+
+      - name: Acquire and verify WHAM archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/WHAM_PMF.zip \
+            'https://zenodo.org/api/records/19664426/files/WHAM_PMF.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/WHAM_PMF.zip" | md5sum --check --strict
+          echo "$ARCHIVE_SHA256  /tmp/WHAM_PMF.zip" | sha256sum --check --strict
+
+      - name: Audit deposited window time series
+        run: |
+          python research/audit_gluhut_wham_window_provenance.py \
+            --archive /tmp/WHAM_PMF.zip \
+            --output-json research/data/gluhut-wham-window-provenance.json \
+            | tee /tmp/wham-window-summary.json
+
+      - name: Persist deterministic audit output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-wham-window-provenance.json
+          if git diff --cached --quiet; then
+            echo 'No WHAM provenance changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT WHAM window provenance'
+
+          target_branch="$GITHUB_REF_NAME"
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt $attempt to $target_branch"
+            git fetch origin "$target_branch"
+            git rebase "origin/$target_branch"
+            if git push origin "HEAD:$target_branch"; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo 'Could not publish deterministic WHAM provenance output.' >&2
+          exit 1
+
+      - name: Validate stable evidence boundaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(
+              Path('research/data/gluhut-wham-window-provenance.json').read_text()
+          )
+          decision = data['decision']
+          archive = data['archive']
+          short = data['fructofuranose_US2_12_6_check']
+
+          assert archive['size_bytes'] == 41560830
+          assert archive['md5'] == 'dbc6723b8adcb85deb8230f63b6a51da'
+          assert archive['sha256'] == 'e0e7b7c04326b8fe86cf71e2193315f34fb865168cf11117b3caf9253119c6eb'
+          assert archive['crc_verified'] is True
+          assert data['window_file_count'] >= 600
+          assert len(data['galactose_pathB_checks']) == 3
+          assert short['sample_count'] == 205
+
+          assert decision['all_window_files_parsed'] is True
+          assert decision['all_time_columns_strictly_increasing'] is True
+          assert decision['fructofuranose_US2_12_6_has_205_samples'] is True
+          assert decision['authoritative_trajectory_to_wham_lineage_established'] is False
+          assert decision['histogram_generation_reproducible_from_public_trajectory_archive'] is False
+          assert decision['pmf_recalculation_from_public_trajectory_archive_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+
+          for check in data['galactose_pathB_checks']:
+              assert check['2_25_sample_count'] > 0
+              assert len(check['2_25_file_sha256']) == 64
+
+          print(json.dumps({
+              'archive': archive,
+              'window_file_count': data['window_file_count'],
+              'sample_count_distribution': data['sample_count_distribution'],
+              'exact_duplicate_file_groups': data['exact_duplicate_file_groups'],
+              'galactose_pathB_checks': data['galactose_pathB_checks'],
+              'fructofuranose_US2_12_6_check': short,
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT WHAM window provenance'
+            echo
+            if [ -f /tmp/wham-window-summary.json ]; then
+              echo '```json'
+              cat /tmp/wham-window-summary.json
+              echo '```'
+            else
+              echo 'No WHAM window summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
