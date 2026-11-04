@@ -1,0 +1,108 @@
+{
+  "decision": {
+    "amber_to_standard_harmonic_conversion_resolved": true,
+    "candidate_ranking_authorized": false,
+    "force_constant_scalar_convention_validated": true,
+    "new_smd_or_umbrella_generation_authorized": false,
+    "next_action": "retain the resolved coefficient conversion, but obtain author clarification/corrected guest groups and source coordinates before prospective trajectory generation",
+    "paper_uses_unambiguous_standard_half_k_notation": false,
+    "parent_pag_calibration_authorized": false,
+    "smd_paper_and_deposit_numerically_consistent_under_amber_convention": true,
+    "umbrella_paper_and_wham_metadata_consistent": true
+  },
+  "definitions": {
+    "amber_distance_units": "rk2 in kcal mol^-1 A^-2",
+    "amber_parabolic_energy": "E = rk2 * (R - R0)^2",
+    "conversion": "K_standard = 2 * rk2_amber",
+    "grossfield_wham_metadata_convention": "conventional harmonic K in 0.5*K*(R-R0)^2",
+    "standard_harmonic_energy": "E = 0.5 * K * (R - R0)^2"
+  },
+  "inputs": {
+    "paper_doi": "10.1039/D6SC00738D",
+    "smd_mapping_path": "research/data/gluhut-smd-restraint-mapping.json",
+    "smd_mapping_sha256": "b26e23e8ce6e773d959d5ecc810eac1c7c9b91583d9d45f093f486faa214ed20",
+    "wham_crosscheck_path": "research/data/gluhut-glucose-numpy-wham-crosscheck.json",
+    "wham_crosscheck_sha256": "87bf104de1fc83272dfc723fba4fc133f8f754205d09761b7febb8636f06cd34"
+  },
+  "limitations": [
+    "The paper uses the phrase force constant without explicitly distinguishing the AMBER rk2 coefficient from conventional 0.5*K*x^2 notation.",
+    "This audit resolves scalar equivalence only; it does not validate atom groups, mass weighting, target interpolation, trajectory generation, or starting coordinates.",
+    "The deposited fructofuranose group inconsistency remains unresolved.",
+    "Agreement of coefficients does not validate the host or guest force-field derivation."
+  ],
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, binding affinity, efficacy, safety, or a drug result",
+  "references": [
+    {
+      "doi": "10.1039/D6SC00738D",
+      "relevant_report": "SMD: 200 kcal mol^-1 A^-2; umbrella sampling: 50 kcal mol^-1 A^-2",
+      "source": "Eades et al., Chemical Science 2026"
+    },
+    {
+      "relevant_report": "parabolic energy is rk2*(R-r2)^2",
+      "source": "AMBER users manual, NMR restraint functional form"
+    },
+    {
+      "relevant_report": "the conventionally defined force constant is twice rk2",
+      "source": "AMBER users manual, umbrella sampling convention"
+    }
+  ],
+  "schema": "dia-health-one.gluhut-force-convention.v1",
+  "scope": "published and deposited GluHUT SMD/umbrella restraint coefficients",
+  "smd": {
+    "deposited_rk2_values_kcal_mol_A2": [
+      200.0,
+      200.0,
+      200.0,
+      200.0
+    ],
+    "energy_examples": [
+      {
+        "amber_energy_kcal_mol": 2.0000000000000004,
+        "displacement_A": 0.1,
+        "standard_harmonic_energy_kcal_mol": 2.0000000000000004
+      },
+      {
+        "amber_energy_kcal_mol": 50.0,
+        "displacement_A": 0.5,
+        "standard_harmonic_energy_kcal_mol": 50.0
+      },
+      {
+        "amber_energy_kcal_mol": 200.0,
+        "displacement_A": 1.0,
+        "standard_harmonic_energy_kcal_mol": 200.0
+      }
+    ],
+    "interpretation": "The paper's SMD value 200 matches the deposited AMBER rk2 input. In the conventional 0.5*K*x^2 notation, the same potential has K=400.",
+    "paper_numeric_value_matches_deposited_rk2": true,
+    "paper_reported_numeric_value_kcal_mol_A2": 200.0,
+    "paper_value_if_interpreted_as_standard_K_matches": false,
+    "standard_harmonic_K_kcal_mol_A2": 400.0,
+    "unique_deposited_rk2_kcal_mol_A2": 200.0
+  },
+  "status": "scalar_force_convention_resolved_other_provenance_gates_open",
+  "umbrella": {
+    "deposited_reproduction_wham_K_kcal_mol_A2": 100.0,
+    "energy_examples": [
+      {
+        "amber_energy_kcal_mol": 0.5000000000000001,
+        "displacement_A": 0.1,
+        "standard_harmonic_energy_kcal_mol": 0.5000000000000001
+      },
+      {
+        "amber_energy_kcal_mol": 12.5,
+        "displacement_A": 0.5,
+        "standard_harmonic_energy_kcal_mol": 12.5
+      },
+      {
+        "amber_energy_kcal_mol": 50.0,
+        "displacement_A": 1.0,
+        "standard_harmonic_energy_kcal_mol": 50.0
+      }
+    ],
+    "expected_amber_rk2_kcal_mol_A2": 50.0,
+    "expected_grossfield_wham_K_kcal_mol_A2": 100.0,
+    "interpretation": "The paper's umbrella value 50 is consistent with an AMBER rk2 coefficient of 50, while Grossfield WHAM requires K=100.",
+    "paper_reported_numeric_value_kcal_mol_A2": 50.0,
+    "wham_K_matches_twice_paper_value": true
+  }
+}
