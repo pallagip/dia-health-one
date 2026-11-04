@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Audit compiled AMBER GluHUT host–sugar systems from the public SMD archive.
 
-The audit parses deposited parm7 topologies and restart coordinates, identifies
-the largest residue as the synthetic host, compares host atom properties,
-nonbonded coefficients, exclusions, and bonded terms across sugars, and records
-what is reusable for benchmark reproduction.
+The audit parses deposited parm7 topologies and AMBER control/restart inputs,
+identifies the largest residue as the synthetic host, compares host atom
+properties, nonbonded coefficients, exclusions, and bonded terms across sugars,
+and records what is reusable for benchmark reproduction.
 
 It does not reconstruct RESP/GAFF/GLYCAM parameter generation, calculate an
 affinity, validate chemical correctness, or authorize PaG/MC-Q1 ranking.
@@ -14,7 +14,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import math
 import re
 import stat
 import zipfile
@@ -547,6 +546,43 @@ def parse_restart(path: str, payload: bytes) -> dict[str, Any]:
     }
 
 
+def classify_ambiguous_rst(path: str, payload: bytes) -> dict[str, Any]:
+    """Classify a .rst member as AMBER restraint input or coordinate restart."""
+    try:
+        text = payload.decode("utf-8")
+    except UnicodeDecodeError:
+        return {
+            "kind": "restart_coordinate",
+            "restart": parse_restart(path, payload),
+        }
+    lines = text.splitlines()
+    nonblank = [line.strip() for line in lines if line.strip()]
+    lowered = "\n".join(nonblank[:40]).lower()
+    if (
+        any(line.lower().startswith("&rst") for line in nonblank[:20])
+        or "iat=" in lowered
+        or "r1=" in lowered
+        or "r2=" in lowered
+        or "r3=" in lowered
+        or "r4=" in lowered
+    ):
+        return {
+            "kind": "restraint_input",
+            "path": path,
+            "sha256": sha256_bytes(payload),
+            "line_count": len(lines),
+            "head": lines[:40],
+            "contains_iat": "iat=" in lowered,
+            "contains_rst_namelist": any(
+                line.lower().startswith("&rst") for line in nonblank[:20]
+            ),
+        }
+    return {
+        "kind": "restart_coordinate",
+        "restart": parse_restart(path, payload),
+    }
+
+
 def max_abs_difference(left: list[float], right: list[float]) -> float | None:
     if len(left) != len(right):
         return None
@@ -684,6 +720,7 @@ def audit(archive_path: Path, output_json: Path) -> dict[str, Any]:
 
     topology_summaries: list[dict[str, Any]] = []
     restart_summaries: list[dict[str, Any]] = []
+    restraint_summaries: list[dict[str, Any]] = []
     protocol_members: list[dict[str, Any]] = []
     seen: set[str] = set()
 
@@ -709,7 +746,16 @@ def audit(archive_path: Path, output_json: Path) -> dict[str, Any]:
                 summary = topology_summary(info.filename, payload)
                 summary["system_name"] = infer_system_name(info.filename)
                 topology_summaries.append(summary)
-            elif suffix in {".rst", ".rst7", ".inpcrd"}:
+            elif suffix == ".rst":
+                classified = classify_ambiguous_rst(info.filename, payload)
+                if classified["kind"] == "restraint_input":
+                    classified["system_name"] = infer_system_name(info.filename)
+                    restraint_summaries.append(classified)
+                else:
+                    summary = classified["restart"]
+                    summary["system_name"] = infer_system_name(info.filename)
+                    restart_summaries.append(summary)
+            elif suffix in {".rst7", ".inpcrd"}:
                 summary = parse_restart(info.filename, payload)
                 summary["system_name"] = infer_system_name(info.filename)
                 restart_summaries.append(summary)
@@ -733,6 +779,7 @@ def audit(archive_path: Path, output_json: Path) -> dict[str, Any]:
 
     topology_summaries.sort(key=lambda row: row["system_name"])
     restart_summaries.sort(key=lambda row: row["path"])
+    restraint_summaries.sort(key=lambda row: row["path"])
     protocol_members.sort(key=lambda row: row["path"])
     if len(topology_summaries) != 4:
         raise AuditError(f"expected 4 topologies, found {len(topology_summaries)}")
@@ -794,11 +841,13 @@ def audit(archive_path: Path, output_json: Path) -> dict[str, Any]:
         },
         "topology_count": len(topology_summaries),
         "restart_count": len(restart_summaries),
+        "restraint_input_count": len(restraint_summaries),
         "protocol_document_count": len(protocol_members),
         "topologies": topology_summaries,
         "host_comparison": host_comparison,
         "guest_and_system_summary": guest_rows,
         "restart_matches": restart_matches,
+        "restraint_inputs": restraint_summaries,
         "protocol_documents": protocol_members,
         "decision": {
             "physical_host_parameters_identical_across_sugars": (
@@ -823,7 +872,8 @@ def audit(archive_path: Path, output_json: Path) -> dict[str, Any]:
         "limitations": [
             "A compiled parm7 contains numerical charges and terms but not the full derivation, quantum-chemistry inputs, atom typing history, or original source parameter files.",
             "Exact equality across deposited sugar systems would show internal reuse, not chemical validation.",
-            "All four systems can share NATOM, so atom count alone cannot identify a restart; directory and protocol provenance remain necessary.",
+            "The deposited .rst members are AMBER restraint-control inputs, not coordinate restart files; no standalone restart coordinate was found in this archive.",
+            "Trajectory frames can be interpreted with the matching topology, but the exact simulation-start coordinates are not deposited as a restart file here.",
             "The public host is a truncated GluHUT benchmark system, not the complete NNC2215 insulin conjugate.",
             "No compiled parameter is assumed transferable to PaG or MC-Q1.",
         ],
@@ -854,6 +904,7 @@ def main() -> int:
             {
                 "topology_count": report["topology_count"],
                 "restart_count": report["restart_count"],
+                "restraint_input_count": report["restraint_input_count"],
                 "host_comparison": report["host_comparison"],
                 "decision": report["decision"],
             },
