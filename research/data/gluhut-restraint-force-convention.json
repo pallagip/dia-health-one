@@ -1,0 +1,113 @@
+{
+  "decision": {
+    "amber_energy_form_validated_from_manual": true,
+    "candidate_ranking_authorized": false,
+    "conventional_K_is_twice_amber_rk2": true,
+    "force_constant_convention_resolved": true,
+    "guest_atom_selection_validated": false,
+    "mcq1_parameter_transfer_authorized": false,
+    "new_smd_or_umbrella_generation_authorized": false,
+    "next_action": "use the resolved 2x conversion in all manifests, but wait for corrected guest groups, source coordinates, and parameter provenance before generation",
+    "paper_values_are_consistent_with_amber_rk2_reporting": true,
+    "parent_pag_calibration_authorized": false,
+    "portable_values": {
+      "amber_rst_smd_rk2_kcal_mol_A2": 200.0,
+      "amber_rst_umbrella_rk2_kcal_mol_A2": 50.0,
+      "grossfield_wham_umbrella_K_kcal_mol_A2": 100.0,
+      "half_K_package_smd_K_kcal_mol_A2": 400.0,
+      "half_K_package_umbrella_K_kcal_mol_A2": 100.0
+    },
+    "smd_deposited_rk2_matches_article_numeric_value": true,
+    "smd_start_and_end_match_article": true,
+    "umbrella_wham_metadata_is_twice_article_amber_value": true
+  },
+  "definitions": {
+    "amber_distance_restraint": "E = rk2 * (R - R0)^2",
+    "conventional_harmonic": "E = 0.5 * K * (R - R0)^2",
+    "conversion": "K = 2 * rk2"
+  },
+  "energy_equivalence_examples": [
+    {
+      "displacement_A": 0.1,
+      "smd_amber_energy_kcal_mol": 2.0000000000000004,
+      "smd_conventional_energy_kcal_mol": 2.0000000000000004,
+      "umbrella_amber_energy_kcal_mol": 0.5000000000000001,
+      "umbrella_conventional_energy_kcal_mol": 0.5000000000000001
+    },
+    {
+      "displacement_A": 0.5,
+      "smd_amber_energy_kcal_mol": 50.0,
+      "smd_conventional_energy_kcal_mol": 50.0,
+      "umbrella_amber_energy_kcal_mol": 12.5,
+      "umbrella_conventional_energy_kcal_mol": 12.5
+    },
+    {
+      "displacement_A": 1.0,
+      "smd_amber_energy_kcal_mol": 200.0,
+      "smd_conventional_energy_kcal_mol": 200.0,
+      "umbrella_amber_energy_kcal_mol": 50.0,
+      "umbrella_conventional_energy_kcal_mol": 50.0
+    }
+  ],
+  "limitations": [
+    "The article uses the word force constant for values that numerically match AMBER rk2; external packages may use the conventional half-K form.",
+    "Resolving the coefficient convention does not resolve the inconsistent fructofuranose guest group.",
+    "No coordinate, force, work, trajectory, PMF, or affinity is recalculated here.",
+    "The AMBER manual source is an archived official manual; source-code behavior should still be checked when the exact AMBER 24 build is available."
+  ],
+  "not_target_claim": "not validation of guest atom selections, coordinates, sampling, PMFs, NNC2215, PaG, MC-Q1, efficacy, safety, or a drug result",
+  "schema": "dia-health-one.gluhut-restraint-force-convention.v1",
+  "scope": "public GluHUT SMD and umbrella restraint coefficient translation",
+  "smd": {
+    "amber_rk2_kcal_mol_A2": 200.0,
+    "article_numeric_value_kcal_mol_A2": 200.0,
+    "conventional_half_K_kcal_mol_A2": 400.0,
+    "deposited_end_target_values_A": [
+      15.0
+    ],
+    "deposited_rk2_values_kcal_mol_A2": [
+      200.0
+    ],
+    "deposited_start_target_values_A": [
+      0.0
+    ],
+    "openmm_or_half_K_equivalent_kcal_mol_A2": 400.0
+  },
+  "sources": {
+    "amber_manual": {
+      "conventional_relation": "K_conventional = 2 * rk2",
+      "equation": "E = rk2 * (R - r2)^2 for the harmonic distance branch",
+      "sections": [
+        "6.8 Steered Molecular Dynamics",
+        "6.12.1 NMR restraints"
+      ],
+      "title": "AMBER 9 Users' Manual",
+      "url": "https://dev-archive.ambermd.org/200603/att-0122/amber9.pdf"
+    },
+    "article": {
+      "doi": "10.1039/D6SC00738D",
+      "reported_smd_harmonic_value_kcal_mol_A2": 200.0,
+      "reported_smd_range_A": [
+        0.0,
+        15.0
+      ],
+      "reported_umbrella_harmonic_value_kcal_mol_A2": 50.0
+    },
+    "smd_mapping": {
+      "path": "research/data/gluhut-smd-restraint-mapping.json",
+      "sha256": "b26e23e8ce6e773d959d5ecc810eac1c7c9b91583d9d45f093f486faa214ed20"
+    },
+    "wham_reproduction": {
+      "path": "research/data/gluhut-glucose-wham-reproduction.json",
+      "sha256": "0a94ecc9a43819a676973687f3a6e579061721af80ed1bf6d24e3ed4eab2dabb"
+    }
+  },
+  "status": "amber_wham_force_convention_reconciled",
+  "umbrella": {
+    "amber_rk2_recovered_from_wham_K_kcal_mol_A2": 50.0,
+    "article_amber_rk2_kcal_mol_A2": 50.0,
+    "calculated_conventional_K_kcal_mol_A2": 100.0,
+    "deposited_wham_metadata_K_kcal_mol_A2": 100.0,
+    "expected_article_amber_rk2_kcal_mol_A2": 50.0
+  }
+}
