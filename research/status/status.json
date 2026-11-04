@@ -1,0 +1,60 @@
+{
+  "schema": "dia-health-one.public-confidence-status.v1",
+  "updated": "2026-11-04",
+  "program_stage": "hypothesis",
+  "working_drug_discovered": false,
+  "measured_dia_health_one_hit": false,
+  "primary_candidate": {
+    "id": "MC-Q1",
+    "evidence_level": "E2",
+    "status": "defined and computationally stress-tested; not synthesized or measured",
+    "mechanism_label": "contact-site polarity/electronic/solvation hypothesis",
+    "simple_steric_block_claim_supported": false
+  },
+  "published_reference": {
+    "nnc2215_glucose_responsive": true,
+    "nnc2215_viable_therapeutic_candidate": false,
+    "nnc2215_glucose_kd_mM": 1.91,
+    "nnc2215_pag_kd_mM": 0.17,
+    "pag_preference_fold_point_estimate": 11.235294117647058,
+    "clinically_relevant_pag_effect_reported": true
+  },
+  "computational_evidence": {
+    "contact_site_pose_grid_size": 13824,
+    "contact_site_placements_below_4A": 5376,
+    "distal_a_placements_below_4A": 0,
+    "distal_b_placements_below_4A": 0,
+    "mcq1_contact_methoxy_clash_free_rotamers": 72,
+    "mcq1d_distal_a_clash_free_rotamers": 72,
+    "distal_b_clash_free_rotamers": 52,
+    "calibrated_affinity_prediction_available": false
+  },
+  "minimum_physical_experiment": [
+    "MC-P0",
+    "MC-Q1",
+    "MC-Q1D",
+    "MC-P3"
+  ],
+  "first_expansion_control": "MC-P1",
+  "direct_binding_advance_gate": {
+    "minimum_kd_pag_over_kd_glucose": 5,
+    "lower_95_percent_bound_must_exceed": 1,
+    "maximum_glucose_affinity_loss_vs_parent_fold": 5,
+    "orthogonal_method_required": true,
+    "must_outperform_positional_control": true
+  },
+  "aws_execution": {
+    "current_gate": "AWS-0/AWS-1 preparation",
+    "candidate_screen_authorized": false,
+    "boltz_host_guest_affinity_authorized": false,
+    "hill_curve_from_concentration_labelled_structure_predictions_authorized": false,
+    "next_action": "reproduce deposited GluHUT analysis before generating new trajectories"
+  },
+  "next_confidence_changes": [
+    "reproduce public GluHUT PMF analysis",
+    "validate exact chemistry and force field",
+    "calibrate a source-matched parent glucose-versus-PaG calculation",
+    "obtain provider acceptance and synthesis quotation",
+    "measure authenticated free-binder glucose and PaG binding"
+  ]
+}
