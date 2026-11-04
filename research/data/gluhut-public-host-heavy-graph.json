@@ -1,0 +1,2360 @@
+{
+  "archive": {
+    "crc_verified": true,
+    "filename": "SMD_trajectories.zip",
+    "md5": "9f3c6733dc608d2bd37c488c560a5443",
+    "sha256": "04c58666328764aeb47bac0d9f8607546f9763892cb9a333b108630df70e3943",
+    "size_bytes": 37931874
+  },
+  "canonical_host": {
+    "heavy_graph": {
+      "chemical_bond_order_known": false,
+      "compiled_parameter_fingerprint_sha256": "22064ce088ad67de700a8e53df150e231fa2cfe05863cba441f5b7c302c957c7",
+      "edge_count": 90,
+      "edges": [
+        {
+          "begin_compiled_atom_index_1_based": 1,
+          "begin_host_atom_index_1_based": 1,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 2,
+          "end_host_atom_index_1_based": 2,
+          "equilibrium_A": 1.5375,
+          "force_constant": 300.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 2,
+          "begin_host_atom_index_1_based": 2,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 3,
+          "end_host_atom_index_1_based": 3,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 3,
+          "begin_host_atom_index_1_based": 3,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 4,
+          "end_host_atom_index_1_based": 4,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 3,
+          "begin_host_atom_index_1_based": 3,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 28,
+          "end_host_atom_index_1_based": 28,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 4,
+          "begin_host_atom_index_1_based": 4,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 5,
+          "end_host_atom_index_1_based": 5,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 4,
+          "begin_host_atom_index_1_based": 4,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 77,
+          "end_host_atom_index_1_based": 77,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 5,
+          "begin_host_atom_index_1_based": 5,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 6,
+          "end_host_atom_index_1_based": 6,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 5,
+          "begin_host_atom_index_1_based": 5,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 8,
+          "end_host_atom_index_1_based": 8,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 6,
+          "begin_host_atom_index_1_based": 6,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 7,
+          "end_host_atom_index_1_based": 7,
+          "equilibrium_A": 1.5375,
+          "force_constant": 300.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 8,
+          "begin_host_atom_index_1_based": 8,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 9,
+          "end_host_atom_index_1_based": 9,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 8,
+          "begin_host_atom_index_1_based": 8,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 25,
+          "end_host_atom_index_1_based": 25,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 9,
+          "begin_host_atom_index_1_based": 9,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 10,
+          "end_host_atom_index_1_based": 10,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 10,
+          "begin_host_atom_index_1_based": 10,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 11,
+          "end_host_atom_index_1_based": 11,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 11,
+          "begin_host_atom_index_1_based": 11,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 12,
+          "end_host_atom_index_1_based": 12,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 11,
+          "begin_host_atom_index_1_based": 11,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 24,
+          "end_host_atom_index_1_based": 24,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 12,
+          "begin_host_atom_index_1_based": 12,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 13,
+          "end_host_atom_index_1_based": 13,
+          "equilibrium_A": 1.4121,
+          "force_constant": 384.2,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 13,
+          "begin_host_atom_index_1_based": 13,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 14,
+          "end_host_atom_index_1_based": 14,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 13,
+          "begin_host_atom_index_1_based": 13,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 22,
+          "end_host_atom_index_1_based": 22,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 14,
+          "begin_host_atom_index_1_based": 14,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 15,
+          "end_host_atom_index_1_based": 15,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 15,
+          "begin_host_atom_index_1_based": 15,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 16,
+          "end_host_atom_index_1_based": 16,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 16,
+          "begin_host_atom_index_1_based": 16,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 17,
+          "end_host_atom_index_1_based": 17,
+          "equilibrium_A": 1.4906,
+          "force_constant": 345.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 16,
+          "begin_host_atom_index_1_based": 16,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 21,
+          "end_host_atom_index_1_based": 21,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 17,
+          "begin_host_atom_index_1_based": 17,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 18,
+          "end_host_atom_index_1_based": 18,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 17,
+          "begin_host_atom_index_1_based": 17,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 20,
+          "end_host_atom_index_1_based": 20,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 18,
+          "begin_host_atom_index_1_based": 18,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 19,
+          "end_host_atom_index_1_based": 19,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 21,
+          "begin_host_atom_index_1_based": 21,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 22,
+          "end_host_atom_index_1_based": 22,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 22,
+          "begin_host_atom_index_1_based": 22,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 23,
+          "end_host_atom_index_1_based": 23,
+          "equilibrium_A": 1.4121,
+          "force_constant": 384.2,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 23,
+          "begin_host_atom_index_1_based": 23,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 54,
+          "end_host_atom_index_1_based": 54,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 25,
+          "begin_host_atom_index_1_based": 25,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 26,
+          "end_host_atom_index_1_based": 26,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 25,
+          "begin_host_atom_index_1_based": 25,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 28,
+          "end_host_atom_index_1_based": 28,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 26,
+          "begin_host_atom_index_1_based": 26,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 27,
+          "end_host_atom_index_1_based": 27,
+          "equilibrium_A": 1.5375,
+          "force_constant": 300.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 28,
+          "begin_host_atom_index_1_based": 28,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 29,
+          "end_host_atom_index_1_based": 29,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 29,
+          "begin_host_atom_index_1_based": 29,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 30,
+          "end_host_atom_index_1_based": 30,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 30,
+          "begin_host_atom_index_1_based": 30,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 31,
+          "end_host_atom_index_1_based": 31,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 31,
+          "begin_host_atom_index_1_based": 31,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 32,
+          "end_host_atom_index_1_based": 32,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 31,
+          "begin_host_atom_index_1_based": 31,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 84,
+          "end_host_atom_index_1_based": 84,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 32,
+          "begin_host_atom_index_1_based": 32,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 33,
+          "end_host_atom_index_1_based": 33,
+          "equilibrium_A": 1.4121,
+          "force_constant": 384.2,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 33,
+          "begin_host_atom_index_1_based": 33,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 34,
+          "end_host_atom_index_1_based": 34,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 33,
+          "begin_host_atom_index_1_based": 33,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 42,
+          "end_host_atom_index_1_based": 42,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 34,
+          "begin_host_atom_index_1_based": 34,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 35,
+          "end_host_atom_index_1_based": 35,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 35,
+          "begin_host_atom_index_1_based": 35,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 36,
+          "end_host_atom_index_1_based": 36,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 36,
+          "begin_host_atom_index_1_based": 36,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 37,
+          "end_host_atom_index_1_based": 37,
+          "equilibrium_A": 1.4906,
+          "force_constant": 345.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 36,
+          "begin_host_atom_index_1_based": 36,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 41,
+          "end_host_atom_index_1_based": 41,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 37,
+          "begin_host_atom_index_1_based": 37,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 38,
+          "end_host_atom_index_1_based": 38,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 37,
+          "begin_host_atom_index_1_based": 37,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 40,
+          "end_host_atom_index_1_based": 40,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 38,
+          "begin_host_atom_index_1_based": 38,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 39,
+          "end_host_atom_index_1_based": 39,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 41,
+          "begin_host_atom_index_1_based": 41,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 42,
+          "end_host_atom_index_1_based": 42,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 42,
+          "begin_host_atom_index_1_based": 42,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 43,
+          "end_host_atom_index_1_based": 43,
+          "equilibrium_A": 1.4121,
+          "force_constant": 384.2,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 43,
+          "begin_host_atom_index_1_based": 43,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 44,
+          "end_host_atom_index_1_based": 44,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 44,
+          "begin_host_atom_index_1_based": 44,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 45,
+          "end_host_atom_index_1_based": 45,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 44,
+          "begin_host_atom_index_1_based": 44,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 83,
+          "end_host_atom_index_1_based": 83,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 45,
+          "begin_host_atom_index_1_based": 45,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 46,
+          "end_host_atom_index_1_based": 46,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 46,
+          "begin_host_atom_index_1_based": 46,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 47,
+          "end_host_atom_index_1_based": 47,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 47,
+          "begin_host_atom_index_1_based": 47,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 48,
+          "end_host_atom_index_1_based": 48,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 47,
+          "begin_host_atom_index_1_based": 47,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 80,
+          "end_host_atom_index_1_based": 80,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 48,
+          "begin_host_atom_index_1_based": 48,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 49,
+          "end_host_atom_index_1_based": 49,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 48,
+          "begin_host_atom_index_1_based": 48,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 51,
+          "end_host_atom_index_1_based": 51,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 49,
+          "begin_host_atom_index_1_based": 49,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 50,
+          "end_host_atom_index_1_based": 50,
+          "equilibrium_A": 1.5375,
+          "force_constant": 300.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 51,
+          "begin_host_atom_index_1_based": 51,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 52,
+          "end_host_atom_index_1_based": 52,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 51,
+          "begin_host_atom_index_1_based": 51,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 56,
+          "end_host_atom_index_1_based": 56,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 52,
+          "begin_host_atom_index_1_based": 52,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 53,
+          "end_host_atom_index_1_based": 53,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 53,
+          "begin_host_atom_index_1_based": 53,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 54,
+          "end_host_atom_index_1_based": 54,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 54,
+          "begin_host_atom_index_1_based": 54,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 55,
+          "end_host_atom_index_1_based": 55,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 56,
+          "begin_host_atom_index_1_based": 56,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 57,
+          "end_host_atom_index_1_based": 57,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 56,
+          "begin_host_atom_index_1_based": 56,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 59,
+          "end_host_atom_index_1_based": 59,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 57,
+          "begin_host_atom_index_1_based": 57,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 58,
+          "end_host_atom_index_1_based": 58,
+          "equilibrium_A": 1.5375,
+          "force_constant": 300.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 59,
+          "begin_host_atom_index_1_based": 59,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 60,
+          "end_host_atom_index_1_based": 60,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 59,
+          "begin_host_atom_index_1_based": 59,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 80,
+          "end_host_atom_index_1_based": 80,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 60,
+          "begin_host_atom_index_1_based": 60,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 61,
+          "end_host_atom_index_1_based": 61,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 61,
+          "begin_host_atom_index_1_based": 61,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 62,
+          "end_host_atom_index_1_based": 62,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 62,
+          "begin_host_atom_index_1_based": 62,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 63,
+          "end_host_atom_index_1_based": 63,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 62,
+          "begin_host_atom_index_1_based": 62,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 79,
+          "end_host_atom_index_1_based": 79,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 63,
+          "begin_host_atom_index_1_based": 63,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 64,
+          "end_host_atom_index_1_based": 64,
+          "equilibrium_A": 1.4121,
+          "force_constant": 384.2,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 64,
+          "begin_host_atom_index_1_based": 64,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 65,
+          "end_host_atom_index_1_based": 65,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 64,
+          "begin_host_atom_index_1_based": 64,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 73,
+          "end_host_atom_index_1_based": 73,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 65,
+          "begin_host_atom_index_1_based": 65,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 66,
+          "end_host_atom_index_1_based": 66,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 66,
+          "begin_host_atom_index_1_based": 66,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 67,
+          "end_host_atom_index_1_based": 67,
+          "equilibrium_A": 1.4906,
+          "force_constant": 345.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 66,
+          "begin_host_atom_index_1_based": 66,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 71,
+          "end_host_atom_index_1_based": 71,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 67,
+          "begin_host_atom_index_1_based": 67,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 68,
+          "end_host_atom_index_1_based": 68,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 67,
+          "begin_host_atom_index_1_based": 67,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 70,
+          "end_host_atom_index_1_based": 70,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 68,
+          "begin_host_atom_index_1_based": 68,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 69,
+          "end_host_atom_index_1_based": 69,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 71,
+          "begin_host_atom_index_1_based": 71,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 72,
+          "end_host_atom_index_1_based": 72,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 72,
+          "begin_host_atom_index_1_based": 72,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 73,
+          "end_host_atom_index_1_based": 73,
+          "equilibrium_A": 1.3984,
+          "force_constant": 461.1,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 73,
+          "begin_host_atom_index_1_based": 73,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 74,
+          "end_host_atom_index_1_based": 74,
+          "equilibrium_A": 1.4121,
+          "force_constant": 384.2,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 74,
+          "begin_host_atom_index_1_based": 74,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 75,
+          "end_host_atom_index_1_based": 75,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 75,
+          "begin_host_atom_index_1_based": 75,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 76,
+          "end_host_atom_index_1_based": 76,
+          "equilibrium_A": 1.3789,
+          "force_constant": 427.6,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 75,
+          "begin_host_atom_index_1_based": 75,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 78,
+          "end_host_atom_index_1_based": 78,
+          "equilibrium_A": 1.2183,
+          "force_constant": 637.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 76,
+          "begin_host_atom_index_1_based": 76,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 77,
+          "end_host_atom_index_1_based": 77,
+          "equilibrium_A": 1.4619,
+          "force_constant": 328.7,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 80,
+          "begin_host_atom_index_1_based": 80,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 81,
+          "end_host_atom_index_1_based": 81,
+          "equilibrium_A": 1.5156,
+          "force_constant": 321.0,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        },
+        {
+          "begin_compiled_atom_index_1_based": 81,
+          "begin_host_atom_index_1_based": 81,
+          "chemical_bond_order_known": false,
+          "end_compiled_atom_index_1_based": 82,
+          "end_host_atom_index_1_based": 82,
+          "equilibrium_A": 1.5375,
+          "force_constant": 300.9,
+          "source_flag": "BONDS_WITHOUT_HYDROGEN"
+        }
+      ],
+      "node_count": 84,
+      "nodes": [
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C1",
+          "atomic_number": 6,
+          "charge_e": -0.16356599990121992,
+          "compiled_atom_index_1_based": 1,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            2
+          ],
+          "host_atom_index_1_based": 1,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C2",
+          "atomic_number": 6,
+          "charge_e": 0.07628200007682893,
+          "compiled_atom_index_1_based": 2,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            1,
+            3
+          ],
+          "host_atom_index_1_based": 2,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C3",
+          "atomic_number": 6,
+          "charge_e": -0.11297999978048874,
+          "compiled_atom_index_1_based": 3,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            2,
+            4,
+            28
+          ],
+          "host_atom_index_1_based": 3,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C4",
+          "atomic_number": 6,
+          "charge_e": 0.003812,
+          "compiled_atom_index_1_based": 4,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            3,
+            5,
+            77
+          ],
+          "host_atom_index_1_based": 4,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C5",
+          "atomic_number": 6,
+          "charge_e": -0.11297999978048874,
+          "compiled_atom_index_1_based": 5,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            4,
+            6,
+            8
+          ],
+          "host_atom_index_1_based": 5,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C6",
+          "atomic_number": 6,
+          "charge_e": 0.07628200007682893,
+          "compiled_atom_index_1_based": 6,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            5,
+            7
+          ],
+          "host_atom_index_1_based": 6,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C7",
+          "atomic_number": 6,
+          "charge_e": -0.16356599990121992,
+          "compiled_atom_index_1_based": 7,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            6
+          ],
+          "host_atom_index_1_based": 7,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C8",
+          "atomic_number": 6,
+          "charge_e": 0.003812,
+          "compiled_atom_index_1_based": 8,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            5,
+            9,
+            25
+          ],
+          "host_atom_index_1_based": 8,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C9",
+          "atomic_number": 6,
+          "charge_e": 0.02269,
+          "compiled_atom_index_1_based": 9,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            8,
+            10
+          ],
+          "host_atom_index_1_based": 9,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N1",
+          "atomic_number": 7,
+          "charge_e": -0.7972330002249991,
+          "compiled_atom_index_1_based": 10,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            9,
+            11
+          ],
+          "host_atom_index_1_based": 10,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C10",
+          "atomic_number": 6,
+          "charge_e": 1.0531120001317067,
+          "compiled_atom_index_1_based": 11,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            10,
+            12,
+            24
+          ],
+          "host_atom_index_1_based": 11,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N2",
+          "atomic_number": 7,
+          "charge_e": -0.7084819973329383,
+          "compiled_atom_index_1_based": 12,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            11,
+            13
+          ],
+          "host_atom_index_1_based": 12,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C11",
+          "atomic_number": 6,
+          "charge_e": 0.3662940002085357,
+          "compiled_atom_index_1_based": 13,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            12,
+            14,
+            22
+          ],
+          "host_atom_index_1_based": 13,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C12",
+          "atomic_number": 6,
+          "charge_e": -0.3628600001097556,
+          "compiled_atom_index_1_based": 14,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            13,
+            15
+          ],
+          "host_atom_index_1_based": 14,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C13",
+          "atomic_number": 6,
+          "charge_e": -0.03686,
+          "compiled_atom_index_1_based": 15,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            14,
+            16
+          ],
+          "host_atom_index_1_based": 15,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C14",
+          "atomic_number": 6,
+          "charge_e": -0.29965200002195114,
+          "compiled_atom_index_1_based": 16,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            15,
+            17,
+            21
+          ],
+          "host_atom_index_1_based": 16,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C15",
+          "atomic_number": 6,
+          "charge_e": 0.8423850007957283,
+          "compiled_atom_index_1_based": 17,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            16,
+            18,
+            20
+          ],
+          "host_atom_index_1_based": 17,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N3",
+          "atomic_number": 7,
+          "charge_e": -0.6463559978707408,
+          "compiled_atom_index_1_based": 18,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            17,
+            19
+          ],
+          "host_atom_index_1_based": 18,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C16",
+          "atomic_number": 6,
+          "charge_e": -0.013752000021951124,
+          "compiled_atom_index_1_based": 19,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            18
+          ],
+          "host_atom_index_1_based": 19,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O1",
+          "atomic_number": 8,
+          "charge_e": -0.6144610010810929,
+          "compiled_atom_index_1_based": 20,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            17
+          ],
+          "host_atom_index_1_based": 20,
+          "mass": 16.0,
+          "total_degree": 1
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C17",
+          "atomic_number": 6,
+          "charge_e": -0.10452500013719453,
+          "compiled_atom_index_1_based": 21,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            16,
+            22
+          ],
+          "host_atom_index_1_based": 21,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C18",
+          "atomic_number": 6,
+          "charge_e": 0.12420499991768326,
+          "compiled_atom_index_1_based": 22,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            13,
+            21,
+            23
+          ],
+          "host_atom_index_1_based": 22,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N4",
+          "atomic_number": 7,
+          "charge_e": -0.671538998918907,
+          "compiled_atom_index_1_based": 23,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            22,
+            54
+          ],
+          "host_atom_index_1_based": 23,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O2",
+          "atomic_number": 8,
+          "charge_e": -0.6645169984030556,
+          "compiled_atom_index_1_based": 24,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            11
+          ],
+          "host_atom_index_1_based": 24,
+          "mass": 16.0,
+          "total_degree": 1
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C19",
+          "atomic_number": 6,
+          "charge_e": -0.11297999978048874,
+          "compiled_atom_index_1_based": 25,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            8,
+            26,
+            28
+          ],
+          "host_atom_index_1_based": 25,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C20",
+          "atomic_number": 6,
+          "charge_e": 0.07628200007682893,
+          "compiled_atom_index_1_based": 26,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            25,
+            27
+          ],
+          "host_atom_index_1_based": 26,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C21",
+          "atomic_number": 6,
+          "charge_e": -0.16356599990121992,
+          "compiled_atom_index_1_based": 27,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            26
+          ],
+          "host_atom_index_1_based": 27,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C22",
+          "atomic_number": 6,
+          "charge_e": 0.003812,
+          "compiled_atom_index_1_based": 28,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            3,
+            25,
+            29
+          ],
+          "host_atom_index_1_based": 28,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C23",
+          "atomic_number": 6,
+          "charge_e": 0.02269,
+          "compiled_atom_index_1_based": 29,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            28,
+            30
+          ],
+          "host_atom_index_1_based": 29,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N5",
+          "atomic_number": 7,
+          "charge_e": -0.7972330002249991,
+          "compiled_atom_index_1_based": 30,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            29,
+            31
+          ],
+          "host_atom_index_1_based": 30,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C24",
+          "atomic_number": 6,
+          "charge_e": 1.0531120001317067,
+          "compiled_atom_index_1_based": 31,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            30,
+            32,
+            84
+          ],
+          "host_atom_index_1_based": 31,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N6",
+          "atomic_number": 7,
+          "charge_e": -0.7084819973329383,
+          "compiled_atom_index_1_based": 32,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            31,
+            33
+          ],
+          "host_atom_index_1_based": 32,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C25",
+          "atomic_number": 6,
+          "charge_e": 0.3662940002085357,
+          "compiled_atom_index_1_based": 33,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            32,
+            34,
+            42
+          ],
+          "host_atom_index_1_based": 33,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C26",
+          "atomic_number": 6,
+          "charge_e": -0.3628600001097556,
+          "compiled_atom_index_1_based": 34,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            33,
+            35
+          ],
+          "host_atom_index_1_based": 34,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C27",
+          "atomic_number": 6,
+          "charge_e": -0.03686,
+          "compiled_atom_index_1_based": 35,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            34,
+            36
+          ],
+          "host_atom_index_1_based": 35,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C28",
+          "atomic_number": 6,
+          "charge_e": -0.29965200002195114,
+          "compiled_atom_index_1_based": 36,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            35,
+            37,
+            41
+          ],
+          "host_atom_index_1_based": 36,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C29",
+          "atomic_number": 6,
+          "charge_e": 0.8423850007957283,
+          "compiled_atom_index_1_based": 37,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            36,
+            38,
+            40
+          ],
+          "host_atom_index_1_based": 37,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N7",
+          "atomic_number": 7,
+          "charge_e": -0.6463559978707408,
+          "compiled_atom_index_1_based": 38,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            37,
+            39
+          ],
+          "host_atom_index_1_based": 38,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C30",
+          "atomic_number": 6,
+          "charge_e": -0.013752000021951124,
+          "compiled_atom_index_1_based": 39,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            38
+          ],
+          "host_atom_index_1_based": 39,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O3",
+          "atomic_number": 8,
+          "charge_e": -0.6144610010810929,
+          "compiled_atom_index_1_based": 40,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            37
+          ],
+          "host_atom_index_1_based": 40,
+          "mass": 16.0,
+          "total_degree": 1
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C31",
+          "atomic_number": 6,
+          "charge_e": -0.10452500013719453,
+          "compiled_atom_index_1_based": 41,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            36,
+            42
+          ],
+          "host_atom_index_1_based": 41,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C32",
+          "atomic_number": 6,
+          "charge_e": 0.12420499991768326,
+          "compiled_atom_index_1_based": 42,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            33,
+            41,
+            43
+          ],
+          "host_atom_index_1_based": 42,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N8",
+          "atomic_number": 7,
+          "charge_e": -0.671538998918907,
+          "compiled_atom_index_1_based": 43,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            42,
+            44
+          ],
+          "host_atom_index_1_based": 43,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C33",
+          "atomic_number": 6,
+          "charge_e": 0.9576400015365787,
+          "compiled_atom_index_1_based": 44,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            43,
+            45,
+            83
+          ],
+          "host_atom_index_1_based": 44,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N9",
+          "atomic_number": 7,
+          "charge_e": -0.7603260016573099,
+          "compiled_atom_index_1_based": 45,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            44,
+            46
+          ],
+          "host_atom_index_1_based": 45,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C34",
+          "atomic_number": 6,
+          "charge_e": 0.13157999978048873,
+          "compiled_atom_index_1_based": 46,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            45,
+            47
+          ],
+          "host_atom_index_1_based": 46,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C35",
+          "atomic_number": 6,
+          "charge_e": -0.09090199974756205,
+          "compiled_atom_index_1_based": 47,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            46,
+            48,
+            80
+          ],
+          "host_atom_index_1_based": 47,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C36",
+          "atomic_number": 6,
+          "charge_e": -0.061946000230486825,
+          "compiled_atom_index_1_based": 48,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            47,
+            49,
+            51
+          ],
+          "host_atom_index_1_based": 48,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C37",
+          "atomic_number": 6,
+          "charge_e": 0.14489800025243793,
+          "compiled_atom_index_1_based": 49,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            48,
+            50
+          ],
+          "host_atom_index_1_based": 49,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C38",
+          "atomic_number": 6,
+          "charge_e": -0.22162400026341347,
+          "compiled_atom_index_1_based": 50,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            49
+          ],
+          "host_atom_index_1_based": 50,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C39",
+          "atomic_number": 6,
+          "charge_e": -0.09090199974756205,
+          "compiled_atom_index_1_based": 51,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            48,
+            52,
+            56
+          ],
+          "host_atom_index_1_based": 51,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C40",
+          "atomic_number": 6,
+          "charge_e": 0.13157999978048873,
+          "compiled_atom_index_1_based": 52,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            51,
+            53
+          ],
+          "host_atom_index_1_based": 52,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N10",
+          "atomic_number": 7,
+          "charge_e": -0.7603260016573099,
+          "compiled_atom_index_1_based": 53,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            52,
+            54
+          ],
+          "host_atom_index_1_based": 53,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C41",
+          "atomic_number": 6,
+          "charge_e": 0.9576400015365787,
+          "compiled_atom_index_1_based": 54,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            23,
+            53,
+            55
+          ],
+          "host_atom_index_1_based": 54,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O4",
+          "atomic_number": 8,
+          "charge_e": -0.6054290018274312,
+          "compiled_atom_index_1_based": 55,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            54
+          ],
+          "host_atom_index_1_based": 55,
+          "mass": 16.0,
+          "total_degree": 1
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C42",
+          "atomic_number": 6,
+          "charge_e": -0.061946000230486825,
+          "compiled_atom_index_1_based": 56,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            51,
+            57,
+            59
+          ],
+          "host_atom_index_1_based": 56,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C43",
+          "atomic_number": 6,
+          "charge_e": 0.14489800025243793,
+          "compiled_atom_index_1_based": 57,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            56,
+            58
+          ],
+          "host_atom_index_1_based": 57,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C44",
+          "atomic_number": 6,
+          "charge_e": -0.22162400026341347,
+          "compiled_atom_index_1_based": 58,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            57
+          ],
+          "host_atom_index_1_based": 58,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C45",
+          "atomic_number": 6,
+          "charge_e": -0.09090199974756205,
+          "compiled_atom_index_1_based": 59,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            56,
+            60,
+            80
+          ],
+          "host_atom_index_1_based": 59,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C46",
+          "atomic_number": 6,
+          "charge_e": 0.13157999978048873,
+          "compiled_atom_index_1_based": 60,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            59,
+            61
+          ],
+          "host_atom_index_1_based": 60,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N11",
+          "atomic_number": 7,
+          "charge_e": -0.7603260016573099,
+          "compiled_atom_index_1_based": 61,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            60,
+            62
+          ],
+          "host_atom_index_1_based": 61,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C47",
+          "atomic_number": 6,
+          "charge_e": 0.9576400015365787,
+          "compiled_atom_index_1_based": 62,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            61,
+            63,
+            79
+          ],
+          "host_atom_index_1_based": 62,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N12",
+          "atomic_number": 7,
+          "charge_e": -0.671538998918907,
+          "compiled_atom_index_1_based": 63,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            62,
+            64
+          ],
+          "host_atom_index_1_based": 63,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C48",
+          "atomic_number": 6,
+          "charge_e": 0.12420499991768326,
+          "compiled_atom_index_1_based": 64,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            63,
+            65,
+            73
+          ],
+          "host_atom_index_1_based": 64,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C49",
+          "atomic_number": 6,
+          "charge_e": -0.10452500013719453,
+          "compiled_atom_index_1_based": 65,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            64,
+            66
+          ],
+          "host_atom_index_1_based": 65,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C50",
+          "atomic_number": 6,
+          "charge_e": -0.29965200002195114,
+          "compiled_atom_index_1_based": 66,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            65,
+            67,
+            71
+          ],
+          "host_atom_index_1_based": 66,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C51",
+          "atomic_number": 6,
+          "charge_e": 0.8423850007957283,
+          "compiled_atom_index_1_based": 67,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            66,
+            68,
+            70
+          ],
+          "host_atom_index_1_based": 67,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N13",
+          "atomic_number": 7,
+          "charge_e": -0.6463559978707408,
+          "compiled_atom_index_1_based": 68,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            67,
+            69
+          ],
+          "host_atom_index_1_based": 68,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C52",
+          "atomic_number": 6,
+          "charge_e": -0.013752000021951124,
+          "compiled_atom_index_1_based": 69,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            68
+          ],
+          "host_atom_index_1_based": 69,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O5",
+          "atomic_number": 8,
+          "charge_e": -0.6144610010810929,
+          "compiled_atom_index_1_based": 70,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            67
+          ],
+          "host_atom_index_1_based": 70,
+          "mass": 16.0,
+          "total_degree": 1
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C53",
+          "atomic_number": 6,
+          "charge_e": -0.03686,
+          "compiled_atom_index_1_based": 71,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            66,
+            72
+          ],
+          "host_atom_index_1_based": 71,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C54",
+          "atomic_number": 6,
+          "charge_e": -0.3628600001097556,
+          "compiled_atom_index_1_based": 72,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            71,
+            73
+          ],
+          "host_atom_index_1_based": 72,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C55",
+          "atomic_number": 6,
+          "charge_e": 0.3662940002085357,
+          "compiled_atom_index_1_based": 73,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            64,
+            72,
+            74
+          ],
+          "host_atom_index_1_based": 73,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N14",
+          "atomic_number": 7,
+          "charge_e": -0.7084819973329383,
+          "compiled_atom_index_1_based": 74,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            73,
+            75
+          ],
+          "host_atom_index_1_based": 74,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c",
+          "atom_name": "C56",
+          "atomic_number": 6,
+          "charge_e": 1.0531120001317067,
+          "compiled_atom_index_1_based": 75,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            74,
+            76,
+            78
+          ],
+          "host_atom_index_1_based": 75,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "n",
+          "atom_name": "N15",
+          "atomic_number": 7,
+          "charge_e": -0.7972330002249991,
+          "compiled_atom_index_1_based": 76,
+          "element": "N",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            75,
+            77
+          ],
+          "host_atom_index_1_based": 76,
+          "mass": 14.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C57",
+          "atomic_number": 6,
+          "charge_e": 0.02269,
+          "compiled_atom_index_1_based": 77,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            4,
+            76
+          ],
+          "host_atom_index_1_based": 77,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O6",
+          "atomic_number": 8,
+          "charge_e": -0.6645169984030556,
+          "compiled_atom_index_1_based": 78,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            75
+          ],
+          "host_atom_index_1_based": 78,
+          "mass": 16.0,
+          "total_degree": 1
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O7",
+          "atomic_number": 8,
+          "charge_e": -0.6054290018274312,
+          "compiled_atom_index_1_based": 79,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            62
+          ],
+          "host_atom_index_1_based": 79,
+          "mass": 16.0,
+          "total_degree": 1
+        },
+        {
+          "amber_atom_type": "ca",
+          "atom_name": "C58",
+          "atomic_number": 6,
+          "charge_e": -0.061946000230486825,
+          "compiled_atom_index_1_based": 80,
+          "element": "C",
+          "heavy_degree": 3,
+          "heavy_neighbour_host_indices_1_based": [
+            47,
+            59,
+            81
+          ],
+          "host_atom_index_1_based": 80,
+          "mass": 12.01,
+          "total_degree": 3
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C59",
+          "atomic_number": 6,
+          "charge_e": 0.14489800025243793,
+          "compiled_atom_index_1_based": 81,
+          "element": "C",
+          "heavy_degree": 2,
+          "heavy_neighbour_host_indices_1_based": [
+            80,
+            82
+          ],
+          "host_atom_index_1_based": 81,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "c3",
+          "atom_name": "C60",
+          "atomic_number": 6,
+          "charge_e": -0.22162400026341347,
+          "compiled_atom_index_1_based": 82,
+          "element": "C",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            81
+          ],
+          "host_atom_index_1_based": 82,
+          "mass": 12.01,
+          "total_degree": 4
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O8",
+          "atomic_number": 8,
+          "charge_e": -0.6054290018274312,
+          "compiled_atom_index_1_based": 83,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            44
+          ],
+          "host_atom_index_1_based": 83,
+          "mass": 16.0,
+          "total_degree": 1
+        },
+        {
+          "amber_atom_type": "o",
+          "atom_name": "O9",
+          "atomic_number": 8,
+          "charge_e": -0.6645169984030556,
+          "compiled_atom_index_1_based": 84,
+          "element": "O",
+          "heavy_degree": 1,
+          "heavy_neighbour_host_indices_1_based": [
+            31
+          ],
+          "host_atom_index_1_based": 84,
+          "mass": 16.0,
+          "total_degree": 1
+        }
+      ],
+      "structural_fingerprint_sha256": "d0053ef82839b1c7f9bd43a5aa59c014a2ab6b55f060cc89d2f65c4024f4c0ff"
+    },
+    "residue": {
+      "atom_count": 159,
+      "compiled_charge_e": -2.982236052121324e-06,
+      "element_counts": {
+        "C": 60,
+        "H": 75,
+        "N": 15,
+        "O": 9
+      },
+      "first_compiled_atom_index_1_based": 1,
+      "formula": "C60H75N15O9",
+      "heavy_atom_count": 84,
+      "index_1_based": 1,
+      "label": "MOL",
+      "last_compiled_atom_index_1_based": 159
+    },
+    "source_system": "glucose",
+    "source_topology_path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+    "source_topology_sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4"
+  },
+  "cross_system": {
+    "compiled_parameter_fingerprint_sha256": "22064ce088ad67de700a8e53df150e231fa2cfe05863cba441f5b7c302c957c7",
+    "host_compiled_parameters_identical": true,
+    "host_formula_identical": true,
+    "host_heavy_edge_count_identical": true,
+    "host_heavy_node_count_identical": true,
+    "host_structural_graph_identical": true,
+    "structural_fingerprint_sha256": "d0053ef82839b1c7f9bd43a5aa59c014a2ab6b55f060cc89d2f65c4024f4c0ff",
+    "system_count": 4,
+    "systems": [
+      "fructofuranose",
+      "fructopyranose",
+      "galactose",
+      "glucose"
+    ]
+  },
+  "decision": {
+    "candidate_ranking_authorized": false,
+    "chemical_bond_orders_reconstructed": false,
+    "next_action": "compare this element-connectivity graph privately with the frozen MC-P0 graph; treat every non-common atom, edge, charge, type and term as non-transferable until independently parameterized",
+    "safe_for_parameter_transfer_to_private_candidates": false,
+    "safe_for_public_constitutional_connectivity_comparison": true
+  },
+  "limitations": [
+    "AMBER parm7 connectivity does not preserve formal chemical bond order.",
+    "Compiled charges and terms are internally identical but their RESP/GAFF source derivation is not deposited.",
+    "The exported host is the public truncated benchmark receptor, not MC-P0 or complete NNC2215.",
+    "A common element-connectivity subgraph does not authorize charge or force-field transfer."
+  ],
+  "not_target_claim": "not MC-P0, NNC2215, PaG, MC-Q1, affinity, efficacy, safety, or a drug result",
+  "schema": "dia-health-one.gluhut-public-host-heavy-graph.v1",
+  "scope": "public truncated GluHUT benchmark host only",
+  "status": "public_compiled_host_graph_exported_bond_orders_unknown",
+  "system_sources": [
+    {
+      "compiled_parameter_fingerprint_sha256": "22064ce088ad67de700a8e53df150e231fa2cfe05863cba441f5b7c302c957c7",
+      "structural_fingerprint_sha256": "d0053ef82839b1c7f9bd43a5aa59c014a2ab6b55f060cc89d2f65c4024f4c0ff",
+      "system_name": "fructofuranose",
+      "topology_path": "SMD_trajectories/fructofuranose/strip.fructofuranose.parm7",
+      "topology_sha256": "e60c15c0e9dd0ab8c70990eefcdea400c8d39891c981506c0dbaefdc39637f47"
+    },
+    {
+      "compiled_parameter_fingerprint_sha256": "22064ce088ad67de700a8e53df150e231fa2cfe05863cba441f5b7c302c957c7",
+      "structural_fingerprint_sha256": "d0053ef82839b1c7f9bd43a5aa59c014a2ab6b55f060cc89d2f65c4024f4c0ff",
+      "system_name": "fructopyranose",
+      "topology_path": "SMD_trajectories/fructopyranose/strip.fructopyranose.parm7",
+      "topology_sha256": "868ab0ebcfb3d003e8ff32f97e35f851ee468ca2eea38e8dbca7c2b821576adb"
+    },
+    {
+      "compiled_parameter_fingerprint_sha256": "22064ce088ad67de700a8e53df150e231fa2cfe05863cba441f5b7c302c957c7",
+      "structural_fingerprint_sha256": "d0053ef82839b1c7f9bd43a5aa59c014a2ab6b55f060cc89d2f65c4024f4c0ff",
+      "system_name": "galactose",
+      "topology_path": "SMD_trajectories/galactose/strip.galactose-aq.parm7",
+      "topology_sha256": "4d440086475f734b799184deac1ba4afb5b0d2d93fa9e7808cdf983600082f58"
+    },
+    {
+      "compiled_parameter_fingerprint_sha256": "22064ce088ad67de700a8e53df150e231fa2cfe05863cba441f5b7c302c957c7",
+      "structural_fingerprint_sha256": "d0053ef82839b1c7f9bd43a5aa59c014a2ab6b55f060cc89d2f65c4024f4c0ff",
+      "system_name": "glucose",
+      "topology_path": "SMD_trajectories/glucose/strip.glucose-aq.parm7",
+      "topology_sha256": "e000d13cf35a23292cbe56c5bff8811ec05032d2f96d58c1f7e9bec7f8074bc4"
+    }
+  ]
+}
