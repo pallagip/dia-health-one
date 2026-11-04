@@ -1,0 +1,112 @@
+name: Audit GluHUT BINPOS step discontinuities
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-binpos-step-discontinuity
+    paths:
+      - "research/audit_gluhut_binpos_step_discontinuity.py"
+      - "tests/test_audit_gluhut_binpos_step_discontinuity.py"
+      - "research/binpos_native_reader.py"
+      - ".github/workflows/gluhut-binpos-step-discontinuity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-binpos-step-discontinuity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ARCHIVE_MD5: 9f3c6733dc608d2bd37c488c560a5443
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned NumPy
+        run: python -m pip install --disable-pip-version-check "numpy==2.4.6"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_audit_gluhut_binpos_step_discontinuity.py -v
+
+      - name: Acquire and verify public SMD archive
+        run: |
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'DiaHealthOne-Reproducibility/1.0' \
+            --output /tmp/SMD_trajectories.zip \
+            'https://zenodo.org/api/records/19664426/files/SMD_trajectories.zip/content'
+          echo "$ARCHIVE_MD5  /tmp/SMD_trajectories.zip" | md5sum --check --strict
+
+      - name: Audit frame-to-frame COM continuity
+        run: |
+          python research/audit_gluhut_binpos_step_discontinuity.py \
+            --archive /tmp/SMD_trajectories.zip \
+            --output-json research/data/gluhut-binpos-step-discontinuity.json \
+            | tee /tmp/step-discontinuity-summary.json
+
+      - name: Validate bounded conclusion
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('research/data/gluhut-binpos-step-discontinuity.json').read_text())
+          decision = data['decision']
+          assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
+          assert data['archive']['crc_verified'] is True
+          assert data['settings']['binpos_reader'] == 'diahealthone-native-binpos-v1'
+          assert data['trajectory_count'] == 20
+          assert data['total_frame_count'] == 20000
+          assert decision['all_twenty_trajectories_analysed'] is True
+          assert decision['automatic_unwrapping_or_correction_authorized'] is False
+          assert decision['new_smd_or_umbrella_generation_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+          assert len(data['galactose_path_A']) == 2
+          assert len(data['galactose_path_B']) == 3
+          print(json.dumps({
+              'systems': data['system_summaries'],
+              'galactose_A': data['galactose_path_A'],
+              'galactose_B': data['galactose_path_B'],
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit deterministic step audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-binpos-step-discontinuity.json
+          if git diff --cached --quiet; then
+            echo 'No step-audit changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT BINPOS step-discontinuity audit'
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT BINPOS step-discontinuity audit'
+            echo
+            if [ -f /tmp/step-discontinuity-summary.json ]; then
+              echo '```json'
+              cat /tmp/step-discontinuity-summary.json
+              echo '```'
+            else
+              echo 'No step-discontinuity summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
