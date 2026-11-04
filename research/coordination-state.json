@@ -1,0 +1,58 @@
+{
+  "schema": "dia-health-one.public-agent-coordination.v1",
+  "updated_at": "2026-11-04T22:40:00+01:00",
+  "repository_role": "public_evidence_and_website",
+  "canonical_private_repository": "w1ne/dia-health-one-research-archive",
+  "public_repository": "pallagip/dia-health-one",
+  "canonical_private_active_issue": 82,
+  "canonical_private_physical_issue": 58,
+  "latest_private_coordination_merge": {
+    "pr": 85,
+    "commit": "7d8e51e6828cbd4c760414671416f117f83684c4"
+  },
+  "public_science_state": {
+    "aws1_deposited_wham_analysis": "PASS_WITH_QUALIFICATIONS",
+    "fructofuranose_us2_route_robustness": "FAIL",
+    "raw_trajectory_to_wham_lineage": "FAIL",
+    "new_smd_or_umbrella_generation_authorized": false,
+    "aws2_parent_calibration_readiness": "BLOCKED",
+    "aws_spend_usd": 0,
+    "mcq1_evidence_level": "E2",
+    "mcq1_synthesized": false,
+    "mcq1_measured": false,
+    "candidate_ranking_authorized": false,
+    "working_drug_discovered": false
+  },
+  "latest_public_science_merges": [
+    {
+      "pr": 60,
+      "commit": "cb083036fb5410f94412781531de89db94b2ba5e",
+      "purpose": "bounded AWS-1 PASS"
+    },
+    {
+      "pr": 38,
+      "commit": "75be8df449ccda9c1ae3c1d84581fe2018eea880",
+      "purpose": "bounded fructofuranose restraint alternatives"
+    }
+  ],
+  "public_edit_policy": {
+    "website_only_changes_may_change_science_values": false,
+    "new_science_requires_private_canonical_record": true,
+    "confidential_provider_content_allowed": false,
+    "must_preserve_negative_results": true,
+    "must_keep_status_json_consistent": true
+  },
+  "allowed_public_tasks": [
+    "evidence presentation and discoverability",
+    "bounded synchronization from the canonical private archive",
+    "metadata, link, JSON and deployment validation",
+    "clarification of evidence boundaries"
+  ],
+  "disallowed_public_tasks": [
+    "unsynchronized candidate design or ranking",
+    "confidential procurement or provider disclosure",
+    "efficacy, safety, hit or drug overclaiming",
+    "silent modification of scientific values in website-only changes"
+  ],
+  "evidence_boundary": "This file coordinates public work. It does not authorize candidate ranking, a measured hit, efficacy, safety or a working drug."
+}
