@@ -5,9 +5,13 @@ on:
     branches:
       - main
       - analysis/gluhut-binpos-coordinate-audit
+      - fix/gluhut-binpos-native-reader
     paths:
       - "research/audit_gluhut_binpos_coordinates.py"
+      - "research/binpos_native_reader.py"
+      - "research/run_gluhut_binpos_coordinate_audit.py"
       - "tests/test_audit_gluhut_binpos_coordinates.py"
+      - "tests/test_binpos_native_reader.py"
       - "research/data/gluhut-fructofuranose-restraint-candidates.json"
       - ".github/workflows/gluhut-binpos-coordinate-audit.yml"
   workflow_dispatch:
@@ -36,11 +40,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install pinned trajectory reader
-        run: python -m pip install --disable-pip-version-check "mdtraj==1.11.2" "numpy<2.5"
+      - name: Install pinned NumPy
+        run: python -m pip install --disable-pip-version-check "numpy==2.4.6"
 
       - name: Run unit tests
-        run: python -m unittest tests/test_audit_gluhut_binpos_coordinates.py -v
+        run: |
+          python -m unittest \
+            tests/test_audit_gluhut_binpos_coordinates.py \
+            tests/test_binpos_native_reader.py -v
 
       - name: Acquire and verify public SMD archive
         run: |
@@ -52,7 +59,7 @@ jobs:
 
       - name: Reconstruct deposited COM coordinates
         run: |
-          python research/audit_gluhut_binpos_coordinates.py \
+          python research/run_gluhut_binpos_coordinate_audit.py \
             --archive /tmp/SMD_trajectories.zip \
             --candidates-json research/data/gluhut-fructofuranose-restraint-candidates.json \
             --output-json research/data/gluhut-binpos-coordinate-audit.json \
@@ -67,7 +74,7 @@ jobs:
           decision = data['decision']
           assert data['archive']['md5'] == '9f3c6733dc608d2bd37c488c560a5443'
           assert data['archive']['crc_verified'] is True
-          assert data['software']['mdtraj'] == '1.11.2'
+          assert data['software']['binpos_reader'] == 'diahealthone-native-binpos-v1'
           assert data['software']['binpos_low_level_return_unit'] == 'angstrom'
           assert data['trajectory_count'] == 20
           assert data['total_frame_count'] > 0
