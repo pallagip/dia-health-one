@@ -1,0 +1,1362 @@
+{
+  "archive": {
+    "crc_verified": true,
+    "filename": "SMD_trajectories.zip",
+    "md5": "9f3c6733dc608d2bd37c488c560a5443",
+    "sha256": "04c58666328764aeb47bac0d9f8607546f9763892cb9a333b108630df70e3943",
+    "size_bytes": 37931874
+  },
+  "decision": {
+    "all_twenty_trajectories_analysed": true,
+    "automatic_unwrapping_or_correction_authorized": false,
+    "candidate_ranking_authorized": false,
+    "different_or_mislabeled_deposited_path_supported": true,
+    "galactose_A_contains_pbc_like_single_frame_jump": false,
+    "galactose_A_progresses_smoothly_to_endpoint_above_20A": true,
+    "new_smd_or_umbrella_generation_authorized": false,
+    "next_action": "request author clarification and the missing intended galactose A replicate; do not treat the duplicated A file or mixed endpoints as five independent runs",
+    "parent_pag_calibration_authorized": false,
+    "periodic_imaging_explanation_supported": false
+  },
+  "galactose_path_A": [
+    {
+      "file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "first_A": 0.7300290601638892,
+      "frame_count": 1000,
+      "last_A": 22.126171614350604,
+      "net_change_A": 21.396142554186714,
+      "path": "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 2.672172654811739,
+          "mean": 0.29453934951896293,
+          "median": 0.1833480784279793,
+          "minimum": 0.00024367104252320804,
+          "p90": 0.6723964872295444,
+          "p95": 0.9558103752488516,
+          "p99": 1.6633568450748408,
+          "standard_deviation": 0.3351144884951112
+        },
+        "coordinate_after_maximum_step_A": 22.459454082580102,
+        "coordinate_before_maximum_step_A": 25.13162673739184,
+        "counts_above_threshold_A": {
+          "0.25": 404,
+          "0.5": 174,
+          "1.0": 45,
+          "2.0": 5,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.070794509990543,
+        "fraction_negative_steps": 0.47347347347347346,
+        "fraction_positive_steps": 0.5265265265265265,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 18.25666340800574,
+        "maximum_absolute_step_A": 2.672172654811739,
+        "maximum_step_from_frame_index_0_based": 997,
+        "maximum_step_signed_A": -2.672172654811739,
+        "maximum_step_to_frame_index_0_based": 998,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 2.164680239634734,
+          "mean": 0.02141756011430102,
+          "median": 0.0115721085561864,
+          "minimum": -2.672172654811739,
+          "p90": 0.47007841620806695,
+          "p95": 0.6823889581647016,
+          "p99": 1.4733090724742102,
+          "standard_deviation": 0.445641601439031
+        }
+      },
+      "system_name": "galactose"
+    },
+    {
+      "file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "first_A": 0.7300290601638892,
+      "frame_count": 1000,
+      "last_A": 22.126171614350604,
+      "net_change_A": 21.396142554186714,
+      "path": "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 2.672172654811739,
+          "mean": 0.29453934951896293,
+          "median": 0.1833480784279793,
+          "minimum": 0.00024367104252320804,
+          "p90": 0.6723964872295444,
+          "p95": 0.9558103752488516,
+          "p99": 1.6633568450748408,
+          "standard_deviation": 0.3351144884951112
+        },
+        "coordinate_after_maximum_step_A": 22.459454082580102,
+        "coordinate_before_maximum_step_A": 25.13162673739184,
+        "counts_above_threshold_A": {
+          "0.25": 404,
+          "0.5": 174,
+          "1.0": 45,
+          "2.0": 5,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.070794509990543,
+        "fraction_negative_steps": 0.47347347347347346,
+        "fraction_positive_steps": 0.5265265265265265,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 18.25666340800574,
+        "maximum_absolute_step_A": 2.672172654811739,
+        "maximum_step_from_frame_index_0_based": 997,
+        "maximum_step_signed_A": -2.672172654811739,
+        "maximum_step_to_frame_index_0_based": 998,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 2.164680239634734,
+          "mean": 0.02141756011430102,
+          "median": 0.0115721085561864,
+          "minimum": -2.672172654811739,
+          "p90": 0.47007841620806695,
+          "p95": 0.6823889581647016,
+          "p99": 1.4733090724742102,
+          "standard_deviation": 0.445641601439031
+        }
+      },
+      "system_name": "galactose"
+    }
+  ],
+  "galactose_path_B": [
+    {
+      "file_sha256": "8c45c30e8321fcd77458feb2d8cbd3634c077c2ccefc280495daffd1b2069636",
+      "first_A": 0.10260277875238843,
+      "frame_count": 1000,
+      "last_A": 15.006764581565129,
+      "net_change_A": 14.904161802812741,
+      "path": "SMD_trajectories/galactose/run 1/galactose-pull-1-B.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.17895350926486664,
+          "mean": 0.04465025365839113,
+          "median": 0.03735858445082485,
+          "minimum": 5.258104845751177e-06,
+          "p90": 0.09213826791910916,
+          "p95": 0.10841491252026698,
+          "p99": 0.14124912721052119,
+          "standard_deviation": 0.03385916971301552
+        },
+        "coordinate_after_maximum_step_A": 5.9425454374760145,
+        "coordinate_before_maximum_step_A": 5.763591928211148,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8623281092818138,
+        "fraction_negative_steps": 0.3843843843843844,
+        "fraction_positive_steps": 0.6156156156156156,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.117441819435939,
+        "maximum_absolute_step_A": 0.17895350926486664,
+        "maximum_step_from_frame_index_0_based": 390,
+        "maximum_step_signed_A": 0.17895350926486664,
+        "maximum_step_to_frame_index_0_based": 391,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.17895350926486664,
+          "mean": 0.014919080883696437,
+          "median": 0.015325605478128335,
+          "minimum": -0.141952422353528,
+          "p90": 0.08554268466850416,
+          "p95": 0.10308980535659876,
+          "p99": 0.1402710471341725,
+          "standard_deviation": 0.05401397551559394
+        }
+      },
+      "system_name": "galactose"
+    },
+    {
+      "file_sha256": "9c6acba4f2ff51e149b3d26eff618ec4a2e36499b09fda9638cacd7f5139b1cb",
+      "first_A": 0.0690893355538023,
+      "frame_count": 1000,
+      "last_A": 15.048412386739026,
+      "net_change_A": 14.979323051185224,
+      "path": "SMD_trajectories/galactose/run 2/galactose-pull-2-B.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.23247196640213552,
+          "mean": 0.04647647070682115,
+          "median": 0.0396459639009521,
+          "minimum": 8.415836700415014e-05,
+          "p90": 0.09354659680008402,
+          "p95": 0.11518326734805552,
+          "p99": 0.15618881330278456,
+          "standard_deviation": 0.03547735414901641
+        },
+        "coordinate_after_maximum_step_A": 4.544554406074322,
+        "coordinate_before_maximum_step_A": 4.312082439672187,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8646661310383856,
+        "fraction_negative_steps": 0.4094094094094094,
+        "fraction_positive_steps": 0.5905905905905906,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.118561639549483,
+        "maximum_absolute_step_A": 0.23247196640213552,
+        "maximum_step_from_frame_index_0_based": 296,
+        "maximum_step_signed_A": 0.23247196640213552,
+        "maximum_step_to_frame_index_0_based": 297,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.23247196640213552,
+          "mean": 0.014994317368553776,
+          "median": 0.014195449049815068,
+          "minimum": -0.1464628254864513,
+          "p90": 0.0866895643206098,
+          "p95": 0.10638841950462824,
+          "p99": 0.15618881330278456,
+          "standard_deviation": 0.05651438253602195
+        }
+      },
+      "system_name": "galactose"
+    },
+    {
+      "file_sha256": "073d0618dd7042e0d10eae5a29d24053136860b99187b0c8db0b6fedb82804c6",
+      "first_A": 0.07064648512124025,
+      "frame_count": 1000,
+      "last_A": 14.942600162146935,
+      "net_change_A": 14.871953677025694,
+      "path": "SMD_trajectories/galactose/run 3/galactose-pull-3-B.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.1929541261591199,
+          "mean": 0.0450949440335687,
+          "median": 0.0382727550837636,
+          "minimum": 0.0001035452410920179,
+          "p90": 0.09154402168165206,
+          "p95": 0.11203797451406637,
+          "p99": 0.14892899591373573,
+          "standard_deviation": 0.033717150709820044
+        },
+        "coordinate_after_maximum_step_A": 5.836901180546806,
+        "coordinate_before_maximum_step_A": 5.643947054387686,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8638515826570423,
+        "fraction_negative_steps": 0.3913913913913914,
+        "fraction_positive_steps": 0.6086086086086087,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.117682730708093,
+        "maximum_absolute_step_A": 0.1929541261591199,
+        "maximum_step_from_frame_index_0_based": 381,
+        "maximum_step_signed_A": 0.1929541261591199,
+        "maximum_step_to_frame_index_0_based": 382,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.1929541261591199,
+          "mean": 0.014886840517543238,
+          "median": 0.015132015079541317,
+          "minimum": -0.13875178967637103,
+          "p90": 0.08463973884283628,
+          "p95": 0.10390298660926577,
+          "p99": 0.14892899591373573,
+          "standard_deviation": 0.054302690621963155
+        }
+      },
+      "system_name": "galactose"
+    }
+  ],
+  "limitations": [
+    "The 5 A threshold is a conservative discontinuity screen, not a formal periodic-boundary reconstruction.",
+    "BINPOS contains no box vectors, so minimum-image unwrapping cannot be performed from this archive alone.",
+    "Smooth coordinate progression does not distinguish an intentional longer target from a mislabeled or wrong trajectory.",
+    "The audit does not reconstruct applied target versus time or nonequilibrium work."
+  ],
+  "not_target_claim": "not NNC2215, PaG, MC-Q1, work, PMF, binding affinity, efficacy, safety, or a drug result",
+  "schema": "dia-health-one.gluhut-binpos-step-discontinuity.v1",
+  "scope": "frame-to-frame continuity of all public GluHUT SMD COM coordinates",
+  "settings": {
+    "binpos_reader": "diahealthone-native-binpos-v1",
+    "pbc_like_jump_threshold_A": 5.0,
+    "step_thresholds_A": [
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      5.0
+    ]
+  },
+  "status": "galactose_A_no_large_single_frame_jump",
+  "system_summaries": {
+    "fructofuranose": {
+      "maximum_absolute_step_A_across_trajectories": {
+        "maximum": 0.20934334047335845,
+        "mean": 0.19022685769614928,
+        "median": 0.18276215372689641,
+        "minimum": 0.1736125110183213,
+        "p90": 0.20925459527804183,
+        "p95": 0.20929896787570013,
+        "p99": 0.2093344659538268,
+        "standard_deviation": 0.015800676962040072
+      },
+      "paths_with_pbc_like_jump": [],
+      "pbc_like_jump_trajectory_count": 0,
+      "trajectory_count": 5
+    },
+    "fructopyranose": {
+      "maximum_absolute_step_A_across_trajectories": {
+        "maximum": 0.23912200103068137,
+        "mean": 0.21562987856357257,
+        "median": 0.2141098919763169,
+        "minimum": 0.20150671585695967,
+        "p90": 0.2312651763098014,
+        "p95": 0.23519358867024137,
+        "p99": 0.23833631855859339,
+        "standard_deviation": 0.013456182682634557
+      },
+      "paths_with_pbc_like_jump": [],
+      "pbc_like_jump_trajectory_count": 0,
+      "trajectory_count": 5
+    },
+    "galactose": {
+      "maximum_absolute_step_A_across_trajectories": {
+        "maximum": 2.672172654811739,
+        "mean": 1.18974498228992,
+        "median": 0.23247196640213552,
+        "minimum": 0.17895350926486664,
+        "p90": 2.672172654811739,
+        "p95": 2.672172654811739,
+        "p99": 2.672172654811739,
+        "standard_deviation": 1.210524402750307
+      },
+      "paths_with_pbc_like_jump": [],
+      "pbc_like_jump_trajectory_count": 0,
+      "trajectory_count": 5
+    },
+    "glucose": {
+      "maximum_absolute_step_A_across_trajectories": {
+        "maximum": 0.214796308099082,
+        "mean": 0.20534658369244027,
+        "median": 0.2081923098020031,
+        "minimum": 0.1941595960239617,
+        "p90": 0.21478511927804114,
+        "p95": 0.21479071368856156,
+        "p99": 0.21479518921697793,
+        "standard_deviation": 0.009189113027525163
+      },
+      "paths_with_pbc_like_jump": [],
+      "pbc_like_jump_trajectory_count": 0,
+      "trajectory_count": 5
+    }
+  },
+  "total_frame_count": 20000,
+  "trajectories": [
+    {
+      "file_sha256": "d3fa728de9cffbc0c3d9ac520c67281bb7d74874206f0952e02c0611f2ddb402",
+      "first_A": 0.11063979795833428,
+      "frame_count": 1000,
+      "last_A": 14.975090810001642,
+      "net_change_A": 14.864451012043308,
+      "path": "SMD_trajectories/fructofuranose/run 1/fructofuranose-pull-1-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.18276215372689641,
+          "mean": 0.04661253652312078,
+          "median": 0.040349750922102245,
+          "minimum": 0.00016574110254197194,
+          "p90": 0.09404533819999907,
+          "p95": 0.11500490495557684,
+          "p99": 0.15213426187475898,
+          "standard_deviation": 0.03475819536562942
+        },
+        "coordinate_after_maximum_step_A": 12.76118020035987,
+        "coordinate_before_maximum_step_A": 12.578418046632974,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8406042781902452,
+        "fraction_negative_steps": 0.4044044044044044,
+        "fraction_positive_steps": 0.5955955955955956,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.121659312029053,
+        "maximum_absolute_step_A": 0.18276215372689641,
+        "maximum_step_from_frame_index_0_based": 841,
+        "maximum_step_signed_A": 0.18276215372689641,
+        "maximum_step_to_frame_index_0_based": 842,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.18276215372689641,
+          "mean": 0.014879330342385694,
+          "median": 0.016074212720434744,
+          "minimum": -0.15840563740341906,
+          "p90": 0.08602823231669092,
+          "p95": 0.10610589201882747,
+          "p99": 0.1448613055194494,
+          "standard_deviation": 0.05620912946093982
+        }
+      },
+      "system_name": "fructofuranose"
+    },
+    {
+      "file_sha256": "d701f87dc2f6443a6698659957030d88db502239445c16afd122067a359fe5aa",
+      "first_A": 0.03393403000027333,
+      "frame_count": 1000,
+      "last_A": 14.94603386249298,
+      "net_change_A": 14.912099832492707,
+      "path": "SMD_trajectories/fructofuranose/run 2/fructofuranose-pull-2-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.20934334047335845,
+          "mean": 0.048737473142760605,
+          "median": 0.04300357194792159,
+          "minimum": 4.021522445718517e-05,
+          "p90": 0.10198191799141479,
+          "p95": 0.115944534226527,
+          "p99": 0.15504208300250485,
+          "standard_deviation": 0.03635336502537622
+        },
+        "coordinate_after_maximum_step_A": 2.8808000733884622,
+        "coordinate_before_maximum_step_A": 2.6714567329151038,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.837883769978458,
+        "fraction_negative_steps": 0.3963963963963964,
+        "fraction_positive_steps": 0.6036036036036037,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.113039690072796,
+        "maximum_absolute_step_A": 0.20934334047335845,
+        "maximum_step_from_frame_index_0_based": 186,
+        "maximum_step_signed_A": 0.20934334047335845,
+        "maximum_step_to_frame_index_0_based": 187,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.20934334047335845,
+          "mean": 0.01492702685935206,
+          "median": 0.015098324243799865,
+          "minimum": -0.15996960973531849,
+          "p90": 0.08995824667789681,
+          "p95": 0.1114039753861542,
+          "p99": 0.14625436542549627,
+          "standard_deviation": 0.0589414311511838
+        }
+      },
+      "system_name": "fructofuranose"
+    },
+    {
+      "file_sha256": "9782a67e8358462fced17f1956232871afd3f980e35561f78f4c4549d1c59f3a",
+      "first_A": 0.061608533531279035,
+      "frame_count": 1000,
+      "last_A": 15.067594561525013,
+      "net_change_A": 15.005986027993734,
+      "path": "SMD_trajectories/fructofuranose/run 3/fructofuranose-pull-3-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.17629480577710321,
+          "mean": 0.0449891586233726,
+          "median": 0.03746783219435823,
+          "minimum": 3.393450646793639e-05,
+          "p90": 0.09025897936165646,
+          "p95": 0.11253649191413566,
+          "p99": 0.14956718182250409,
+          "standard_deviation": 0.03379923464724012
+        },
+        "coordinate_after_maximum_step_A": 3.3782377000744583,
+        "coordinate_before_maximum_step_A": 3.201942894297355,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8381311057490304,
+        "fraction_negative_steps": 0.3953953953953954,
+        "fraction_positive_steps": 0.6046046046046046,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.136897023542318,
+        "maximum_absolute_step_A": 0.17629480577710321,
+        "maximum_step_from_frame_index_0_based": 225,
+        "maximum_step_signed_A": 0.17629480577710321,
+        "maximum_step_to_frame_index_0_based": 226,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.17629480577710321,
+          "mean": 0.015021007035028762,
+          "median": 0.015348645559697616,
+          "minimum": -0.16012239964752606,
+          "p90": 0.08339371594757844,
+          "p95": 0.1010938587537118,
+          "p99": 0.14516889526666965,
+          "standard_deviation": 0.05422897753076112
+        }
+      },
+      "system_name": "fructofuranose"
+    },
+    {
+      "file_sha256": "4370f94a3f83a70d6994f610e147d7f80e4a3e38295e9a2e40eb7b96e9e06f17",
+      "first_A": 0.09534965797758276,
+      "frame_count": 1000,
+      "last_A": 14.909546745169852,
+      "net_change_A": 14.81419708719227,
+      "path": "SMD_trajectories/fructofuranose/run 4/fructofuranose-pull-4-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.1736125110183213,
+          "mean": 0.044085171326676595,
+          "median": 0.03598353807676169,
+          "minimum": 0.00016785368834781877,
+          "p90": 0.09270320544589272,
+          "p95": 0.10647951534492037,
+          "p99": 0.13663104308874932,
+          "standard_deviation": 0.03304402692354272
+        },
+        "coordinate_after_maximum_step_A": 14.646051265650087,
+        "coordinate_before_maximum_step_A": 14.472438754631765,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8453524318450574,
+        "fraction_negative_steps": 0.3993993993993994,
+        "fraction_positive_steps": 0.6006006006006006,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.118787277762603,
+        "maximum_absolute_step_A": 0.1736125110183213,
+        "maximum_step_from_frame_index_0_based": 970,
+        "maximum_step_signed_A": 0.1736125110183213,
+        "maximum_step_to_frame_index_0_based": 971,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.1736125110183213,
+          "mean": 0.014829026113305575,
+          "median": 0.01443486328317789,
+          "minimum": -0.13030677845056915,
+          "p90": 0.08448347947528673,
+          "p95": 0.10015869017446088,
+          "p99": 0.13663104308874932,
+          "standard_deviation": 0.053061379842189796
+        }
+      },
+      "system_name": "fructofuranose"
+    },
+    {
+      "file_sha256": "0c13d6ac5d65e04725a326ddc5753ba4259aa9782ad29e3e3eadc88cf17e9bb9",
+      "first_A": 0.06348628246657821,
+      "frame_count": 1000,
+      "last_A": 14.989227347885821,
+      "net_change_A": 14.925741065419244,
+      "path": "SMD_trajectories/fructofuranose/run 5/fructofuranose-pull-5-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.20912147748506688,
+          "mean": 0.04745786363758011,
+          "median": 0.03991988221646192,
+          "minimum": 4.800218760170338e-05,
+          "p90": 0.09838984165826302,
+          "p95": 0.1140949014947108,
+          "p99": 0.13774906549356095,
+          "standard_deviation": 0.034835275318098005
+        },
+        "coordinate_after_maximum_step_A": 0.5128880580214429,
+        "coordinate_before_maximum_step_A": 0.303766580536376,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8419867170533444,
+        "fraction_negative_steps": 0.3913913913913914,
+        "fraction_positive_steps": 0.6086086086086087,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.119655185292794,
+        "maximum_absolute_step_A": 0.20912147748506688,
+        "maximum_step_from_frame_index_0_based": 28,
+        "maximum_step_signed_A": 0.20912147748506688,
+        "maximum_step_to_frame_index_0_based": 29,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.20912147748506688,
+          "mean": 0.014940681747166408,
+          "median": 0.015794511579348303,
+          "minimum": -0.17577198813855333,
+          "p90": 0.08754160980601783,
+          "p95": 0.1063968310238647,
+          "p99": 0.13413403410470648,
+          "standard_deviation": 0.056943140556705546
+        }
+      },
+      "system_name": "fructofuranose"
+    },
+    {
+      "file_sha256": "8543bd6165fa9aa52fae738800fe788e1d27534c597f02ccdf2ca1df29c1970c",
+      "first_A": 0.09571189689539357,
+      "frame_count": 1000,
+      "last_A": 20.06710445730212,
+      "net_change_A": 19.971392560406724,
+      "path": "SMD_trajectories/fructopyranose/run 1/fructopyranose-1-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.23912200103068137,
+          "mean": 0.04711712809367569,
+          "median": 0.04006598210966672,
+          "minimum": 2.0808190309473673e-05,
+          "p90": 0.09503822784944306,
+          "p95": 0.11984102059704672,
+          "p99": 0.15567190970145225,
+          "standard_deviation": 0.03555809565205569
+        },
+        "coordinate_after_maximum_step_A": 12.432602453956338,
+        "coordinate_before_maximum_step_A": 12.193480452925657,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.486828330212992,
+        "fraction_negative_steps": 0.3683683683683684,
+        "fraction_positive_steps": 0.6316316316316316,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 17.49081208631608,
+        "maximum_absolute_step_A": 0.23912200103068137,
+        "maximum_step_from_frame_index_0_based": 615,
+        "maximum_step_signed_A": 0.23912200103068137,
+        "maximum_step_to_frame_index_0_based": 616,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.23912200103068137,
+          "mean": 0.019991383944351078,
+          "median": 0.019939348123246603,
+          "minimum": -0.14871121845895496,
+          "p90": 0.09111266703613767,
+          "p95": 0.11182652643067491,
+          "p99": 0.15567190970145225,
+          "standard_deviation": 0.05554049418384866
+        }
+      },
+      "system_name": "fructopyranose"
+    },
+    {
+      "file_sha256": "8c9fa5b4297ae74acb772728f664f81c91fab91e2de2b3fe28ba1f16650b5dd0",
+      "first_A": 0.016286918707568453,
+      "frame_count": 1000,
+      "last_A": 20.00399467279811,
+      "net_change_A": 19.987707754090543,
+      "path": "SMD_trajectories/fructopyranose/run 2/fructopyranose-2-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.20393084472542355,
+          "mean": 0.04667399673515681,
+          "median": 0.03938737497942668,
+          "minimum": 3.5320575975106294e-07,
+          "p90": 0.09375758357263601,
+          "p95": 0.113588364379739,
+          "p99": 0.14692862490495626,
+          "standard_deviation": 0.034723332705343966
+        },
+        "coordinate_after_maximum_step_A": 5.228192402506772,
+        "coordinate_before_maximum_step_A": 5.024261557781348,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.4873229524211986,
+        "fraction_negative_steps": 0.35235235235235235,
+        "fraction_positive_steps": 0.6476476476476476,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 17.494512601279165,
+        "maximum_absolute_step_A": 0.20393084472542355,
+        "maximum_step_from_frame_index_0_based": 255,
+        "maximum_step_signed_A": 0.20393084472542355,
+        "maximum_step_to_frame_index_0_based": 256,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.20393084472542355,
+          "mean": 0.020007715469560105,
+          "median": 0.021400162599205963,
+          "minimum": -0.14442812192457577,
+          "p90": 0.0887964662880752,
+          "p95": 0.10984972546532494,
+          "p99": 0.14692862490495626,
+          "standard_deviation": 0.05462474830229028
+        }
+      },
+      "system_name": "fructopyranose"
+    },
+    {
+      "file_sha256": "750cb7c0ab513ec684cf716cb5b500ab82f1ddcc51bee1b18273ecf20e0fb931",
+      "first_A": 0.1126097545810462,
+      "frame_count": 1000,
+      "last_A": 19.95677246524349,
+      "net_change_A": 19.84416271066244,
+      "path": "SMD_trajectories/fructopyranose/run 3/fructopyranose-3-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.2141098919763169,
+          "mean": 0.04619389277856186,
+          "median": 0.038837594297537414,
+          "minimum": 5.52973019996017e-06,
+          "p90": 0.09724590314175892,
+          "p95": 0.11284202034176818,
+          "p99": 0.140247022588276,
+          "standard_deviation": 0.035677181401409144
+        },
+        "coordinate_after_maximum_step_A": 2.933696299436696,
+        "coordinate_before_maximum_step_A": 2.7195864074603793,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.492367231590095,
+        "fraction_negative_steps": 0.34634634634634637,
+        "fraction_positive_steps": 0.6536536536536537,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 17.490614953889875,
+        "maximum_absolute_step_A": 0.2141098919763169,
+        "maximum_step_from_frame_index_0_based": 143,
+        "maximum_step_signed_A": 0.2141098919763169,
+        "maximum_step_to_frame_index_0_based": 144,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.2141098919763169,
+          "mean": 0.019864026737399846,
+          "median": 0.017703964477075118,
+          "minimum": -0.1401226064339478,
+          "p90": 0.09253526648402115,
+          "p95": 0.11027337953472462,
+          "p99": 0.140247022588276,
+          "standard_deviation": 0.05488312531700604
+        }
+      },
+      "system_name": "fructopyranose"
+    },
+    {
+      "file_sha256": "f17b4004b45deb8dc9ae139966fc7251224265faf35ca8eca1ed81173db4c167",
+      "first_A": 0.14868733432016037,
+      "frame_count": 1000,
+      "last_A": 20.007816162709435,
+      "net_change_A": 19.859128828389274,
+      "path": "SMD_trajectories/fructopyranose/run 4/fructopyranose-4-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.20150671585695967,
+          "mean": 0.04557048891940048,
+          "median": 0.03833585513494997,
+          "minimum": 0.00010632067355409447,
+          "p90": 0.0965525163137452,
+          "p95": 0.11646409107333414,
+          "p99": 0.1502342147075512,
+          "standard_deviation": 0.03572680829205964
+        },
+        "coordinate_after_maximum_step_A": 6.646948120999523,
+        "coordinate_before_maximum_step_A": 6.445441405142564,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.485548832739283,
+        "fraction_negative_steps": 0.35835835835835833,
+        "fraction_positive_steps": 0.6416416416416416,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 17.49458911615463,
+        "maximum_absolute_step_A": 0.20150671585695967,
+        "maximum_step_from_frame_index_0_based": 326,
+        "maximum_step_signed_A": 0.20150671585695967,
+        "maximum_step_to_frame_index_0_based": 327,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.20150671585695967,
+          "mean": 0.0198790078362255,
+          "median": 0.017947834814119545,
+          "minimum": -0.1637420755850867,
+          "p90": 0.08926345166759121,
+          "p95": 0.11269442423030421,
+          "p99": 0.14083485898169265,
+          "standard_deviation": 0.05438657314575048
+        }
+      },
+      "system_name": "fructopyranose"
+    },
+    {
+      "file_sha256": "38faedea0517750d26cb3000151156e51bd390205995b99c5c8fa6e4208c5385",
+      "first_A": 0.09962432229284629,
+      "frame_count": 1000,
+      "last_A": 19.97624557879783,
+      "net_change_A": 19.876621256504983,
+      "path": "SMD_trajectories/fructopyranose/run 5/fructopyranose-5-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.2194799392284814,
+          "mean": 0.047520355983846484,
+          "median": 0.03975551203412486,
+          "minimum": 9.226044144750034e-05,
+          "p90": 0.09799266079752197,
+          "p95": 0.1194902143400521,
+          "p99": 0.1637599437578711,
+          "standard_deviation": 0.03670122346078607
+        },
+        "coordinate_after_maximum_step_A": 6.839505245372111,
+        "coordinate_before_maximum_step_A": 6.62002530614363,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.488015646781274,
+        "fraction_negative_steps": 0.36236236236236236,
+        "fraction_positive_steps": 0.6376376376376376,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 17.493697001891437,
+        "maximum_absolute_step_A": 0.2194799392284814,
+        "maximum_step_from_frame_index_0_based": 334,
+        "maximum_step_signed_A": 0.2194799392284814,
+        "maximum_step_to_frame_index_0_based": 335,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.2194799392284814,
+          "mean": 0.01989651777427926,
+          "median": 0.01902187304656211,
+          "minimum": -0.18698665289826977,
+          "p90": 0.09027715287576685,
+          "p95": 0.11383083169357787,
+          "p99": 0.153725855541223,
+          "standard_deviation": 0.056650618856353516
+        }
+      },
+      "system_name": "fructopyranose"
+    },
+    {
+      "file_sha256": "8c45c30e8321fcd77458feb2d8cbd3634c077c2ccefc280495daffd1b2069636",
+      "first_A": 0.10260277875238843,
+      "frame_count": 1000,
+      "last_A": 15.006764581565129,
+      "net_change_A": 14.904161802812741,
+      "path": "SMD_trajectories/galactose/run 1/galactose-pull-1-B.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.17895350926486664,
+          "mean": 0.04465025365839113,
+          "median": 0.03735858445082485,
+          "minimum": 5.258104845751177e-06,
+          "p90": 0.09213826791910916,
+          "p95": 0.10841491252026698,
+          "p99": 0.14124912721052119,
+          "standard_deviation": 0.03385916971301552
+        },
+        "coordinate_after_maximum_step_A": 5.9425454374760145,
+        "coordinate_before_maximum_step_A": 5.763591928211148,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8623281092818138,
+        "fraction_negative_steps": 0.3843843843843844,
+        "fraction_positive_steps": 0.6156156156156156,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.117441819435939,
+        "maximum_absolute_step_A": 0.17895350926486664,
+        "maximum_step_from_frame_index_0_based": 390,
+        "maximum_step_signed_A": 0.17895350926486664,
+        "maximum_step_to_frame_index_0_based": 391,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.17895350926486664,
+          "mean": 0.014919080883696437,
+          "median": 0.015325605478128335,
+          "minimum": -0.141952422353528,
+          "p90": 0.08554268466850416,
+          "p95": 0.10308980535659876,
+          "p99": 0.1402710471341725,
+          "standard_deviation": 0.05401397551559394
+        }
+      },
+      "system_name": "galactose"
+    },
+    {
+      "file_sha256": "9c6acba4f2ff51e149b3d26eff618ec4a2e36499b09fda9638cacd7f5139b1cb",
+      "first_A": 0.0690893355538023,
+      "frame_count": 1000,
+      "last_A": 15.048412386739026,
+      "net_change_A": 14.979323051185224,
+      "path": "SMD_trajectories/galactose/run 2/galactose-pull-2-B.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.23247196640213552,
+          "mean": 0.04647647070682115,
+          "median": 0.0396459639009521,
+          "minimum": 8.415836700415014e-05,
+          "p90": 0.09354659680008402,
+          "p95": 0.11518326734805552,
+          "p99": 0.15618881330278456,
+          "standard_deviation": 0.03547735414901641
+        },
+        "coordinate_after_maximum_step_A": 4.544554406074322,
+        "coordinate_before_maximum_step_A": 4.312082439672187,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8646661310383856,
+        "fraction_negative_steps": 0.4094094094094094,
+        "fraction_positive_steps": 0.5905905905905906,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.118561639549483,
+        "maximum_absolute_step_A": 0.23247196640213552,
+        "maximum_step_from_frame_index_0_based": 296,
+        "maximum_step_signed_A": 0.23247196640213552,
+        "maximum_step_to_frame_index_0_based": 297,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.23247196640213552,
+          "mean": 0.014994317368553776,
+          "median": 0.014195449049815068,
+          "minimum": -0.1464628254864513,
+          "p90": 0.0866895643206098,
+          "p95": 0.10638841950462824,
+          "p99": 0.15618881330278456,
+          "standard_deviation": 0.05651438253602195
+        }
+      },
+      "system_name": "galactose"
+    },
+    {
+      "file_sha256": "073d0618dd7042e0d10eae5a29d24053136860b99187b0c8db0b6fedb82804c6",
+      "first_A": 0.07064648512124025,
+      "frame_count": 1000,
+      "last_A": 14.942600162146935,
+      "net_change_A": 14.871953677025694,
+      "path": "SMD_trajectories/galactose/run 3/galactose-pull-3-B.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.1929541261591199,
+          "mean": 0.0450949440335687,
+          "median": 0.0382727550837636,
+          "minimum": 0.0001035452410920179,
+          "p90": 0.09154402168165206,
+          "p95": 0.11203797451406637,
+          "p99": 0.14892899591373573,
+          "standard_deviation": 0.033717150709820044
+        },
+        "coordinate_after_maximum_step_A": 5.836901180546806,
+        "coordinate_before_maximum_step_A": 5.643947054387686,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8638515826570423,
+        "fraction_negative_steps": 0.3913913913913914,
+        "fraction_positive_steps": 0.6086086086086087,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.117682730708093,
+        "maximum_absolute_step_A": 0.1929541261591199,
+        "maximum_step_from_frame_index_0_based": 381,
+        "maximum_step_signed_A": 0.1929541261591199,
+        "maximum_step_to_frame_index_0_based": 382,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.1929541261591199,
+          "mean": 0.014886840517543238,
+          "median": 0.015132015079541317,
+          "minimum": -0.13875178967637103,
+          "p90": 0.08463973884283628,
+          "p95": 0.10390298660926577,
+          "p99": 0.14892899591373573,
+          "standard_deviation": 0.054302690621963155
+        }
+      },
+      "system_name": "galactose"
+    },
+    {
+      "file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "first_A": 0.7300290601638892,
+      "frame_count": 1000,
+      "last_A": 22.126171614350604,
+      "net_change_A": 21.396142554186714,
+      "path": "SMD_trajectories/galactose/run 4/galactose-pull-4-A.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 2.672172654811739,
+          "mean": 0.29453934951896293,
+          "median": 0.1833480784279793,
+          "minimum": 0.00024367104252320804,
+          "p90": 0.6723964872295444,
+          "p95": 0.9558103752488516,
+          "p99": 1.6633568450748408,
+          "standard_deviation": 0.3351144884951112
+        },
+        "coordinate_after_maximum_step_A": 22.459454082580102,
+        "coordinate_before_maximum_step_A": 25.13162673739184,
+        "counts_above_threshold_A": {
+          "0.25": 404,
+          "0.5": 174,
+          "1.0": 45,
+          "2.0": 5,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.070794509990543,
+        "fraction_negative_steps": 0.47347347347347346,
+        "fraction_positive_steps": 0.5265265265265265,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 18.25666340800574,
+        "maximum_absolute_step_A": 2.672172654811739,
+        "maximum_step_from_frame_index_0_based": 997,
+        "maximum_step_signed_A": -2.672172654811739,
+        "maximum_step_to_frame_index_0_based": 998,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 2.164680239634734,
+          "mean": 0.02141756011430102,
+          "median": 0.0115721085561864,
+          "minimum": -2.672172654811739,
+          "p90": 0.47007841620806695,
+          "p95": 0.6823889581647016,
+          "p99": 1.4733090724742102,
+          "standard_deviation": 0.445641601439031
+        }
+      },
+      "system_name": "galactose"
+    },
+    {
+      "file_sha256": "7a689d6eadd31bfaa3b5689d579f698066544494b254a2858911fa800bcc1903",
+      "first_A": 0.7300290601638892,
+      "frame_count": 1000,
+      "last_A": 22.126171614350604,
+      "net_change_A": 21.396142554186714,
+      "path": "SMD_trajectories/galactose/run 5/galactose-pull-5-A.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 2.672172654811739,
+          "mean": 0.29453934951896293,
+          "median": 0.1833480784279793,
+          "minimum": 0.00024367104252320804,
+          "p90": 0.6723964872295444,
+          "p95": 0.9558103752488516,
+          "p99": 1.6633568450748408,
+          "standard_deviation": 0.3351144884951112
+        },
+        "coordinate_after_maximum_step_A": 22.459454082580102,
+        "coordinate_before_maximum_step_A": 25.13162673739184,
+        "counts_above_threshold_A": {
+          "0.25": 404,
+          "0.5": 174,
+          "1.0": 45,
+          "2.0": 5,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 2.070794509990543,
+        "fraction_negative_steps": 0.47347347347347346,
+        "fraction_positive_steps": 0.5265265265265265,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 18.25666340800574,
+        "maximum_absolute_step_A": 2.672172654811739,
+        "maximum_step_from_frame_index_0_based": 997,
+        "maximum_step_signed_A": -2.672172654811739,
+        "maximum_step_to_frame_index_0_based": 998,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 2.164680239634734,
+          "mean": 0.02141756011430102,
+          "median": 0.0115721085561864,
+          "minimum": -2.672172654811739,
+          "p90": 0.47007841620806695,
+          "p95": 0.6823889581647016,
+          "p99": 1.4733090724742102,
+          "standard_deviation": 0.445641601439031
+        }
+      },
+      "system_name": "galactose"
+    },
+    {
+      "file_sha256": "8e7a41eadd1d5a978a6ff2c61b613da39d84be0f34e8ee4913f78b5f6f037a43",
+      "first_A": 0.07977124050637563,
+      "frame_count": 1000,
+      "last_A": 14.941503990577276,
+      "net_change_A": 14.861732750070901,
+      "path": "SMD_trajectories/glucose/run1/glucose-pull-1-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.19481636849067474,
+          "mean": 0.04589238015189003,
+          "median": 0.039690292826423335,
+          "minimum": 4.049108948400715e-05,
+          "p90": 0.09293409755668129,
+          "p95": 0.10863813800000356,
+          "p99": 0.15502588626685226,
+          "standard_deviation": 0.03495274300028811
+        },
+        "coordinate_after_maximum_step_A": 3.760917093394102,
+        "coordinate_before_maximum_step_A": 3.566100724903427,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8604286211745458,
+        "fraction_negative_steps": 0.3883883883883884,
+        "fraction_positive_steps": 0.6116116116116116,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.116066392342606,
+        "maximum_absolute_step_A": 0.19481636849067474,
+        "maximum_step_from_frame_index_0_based": 241,
+        "maximum_step_signed_A": 0.19481636849067474,
+        "maximum_step_to_frame_index_0_based": 242,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.19481636849067474,
+          "mean": 0.01487660935943033,
+          "median": 0.013172100032832645,
+          "minimum": -0.15583613404265328,
+          "p90": 0.08740748949055172,
+          "p95": 0.10462105242846444,
+          "p99": 0.15102663278195572,
+          "standard_deviation": 0.05573590667798174
+        }
+      },
+      "system_name": "glucose"
+    },
+    {
+      "file_sha256": "ab81901d95f445d2395755daeac3382654fee11708a84ce64d12ea22943a02f5",
+      "first_A": 0.07004566430603183,
+      "frame_count": 1000,
+      "last_A": 14.928967891071835,
+      "net_change_A": 14.858922226765804,
+      "path": "SMD_trajectories/glucose/run2/glucose-pull-2-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.21476833604647982,
+          "mean": 0.04483716854695742,
+          "median": 0.03803347979650251,
+          "minimum": 7.455933111799595e-06,
+          "p90": 0.0904987837749486,
+          "p95": 0.10950082196269197,
+          "p99": 0.14666222827746653,
+          "standard_deviation": 0.03333606214907708
+        },
+        "coordinate_after_maximum_step_A": 5.097906045674321,
+        "coordinate_before_maximum_step_A": 4.883137709627841,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.863784923165627,
+        "fraction_negative_steps": 0.3983983983983984,
+        "fraction_positive_steps": 0.6016016016016016,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.123044922723738,
+        "maximum_absolute_step_A": 0.21476833604647982,
+        "maximum_step_from_frame_index_0_based": 331,
+        "maximum_step_signed_A": 0.21476833604647982,
+        "maximum_step_to_frame_index_0_based": 332,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.21476833604647982,
+          "mean": 0.01487379602278859,
+          "median": 0.015502405421870424,
+          "minimum": -0.1834744485359563,
+          "p90": 0.08417088919981824,
+          "p95": 0.10614073149859206,
+          "p99": 0.13823050385479346,
+          "standard_deviation": 0.0538556860023886
+        }
+      },
+      "system_name": "glucose"
+    },
+    {
+      "file_sha256": "42e6ba7d443d0967416d06a5ce8e72a17cdf990dabc65707cd23abdd8f2b5b19",
+      "first_A": 0.05584844524049951,
+      "frame_count": 1000,
+      "last_A": 14.997035777341756,
+      "net_change_A": 14.941187332101256,
+      "path": "SMD_trajectories/glucose/run3/glucose-pull-3-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.1941595960239617,
+          "mean": 0.04557370566000394,
+          "median": 0.03931613322091887,
+          "minimum": 1.5635683934256406e-05,
+          "p90": 0.08930126189531898,
+          "p95": 0.11011729929919915,
+          "p99": 0.1439540581332432,
+          "standard_deviation": 0.033089910272633416
+        },
+        "coordinate_after_maximum_step_A": 11.101132784406424,
+        "coordinate_before_maximum_step_A": 10.906973188382462,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8647200871298286,
+        "fraction_negative_steps": 0.40540540540540543,
+        "fraction_positive_steps": 0.5945945945945946,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.119898524876808,
+        "maximum_absolute_step_A": 0.1941595960239617,
+        "maximum_step_from_frame_index_0_based": 732,
+        "maximum_step_signed_A": 0.1941595960239617,
+        "maximum_step_to_frame_index_0_based": 733,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.1941595960239617,
+          "mean": 0.014956143475576833,
+          "median": 0.015834765345385193,
+          "minimum": -0.1775464458506546,
+          "p90": 0.0828414699653877,
+          "p95": 0.10644652490507157,
+          "p99": 0.14261109673497038,
+          "standard_deviation": 0.054297500695460806
+        }
+      },
+      "system_name": "glucose"
+    },
+    {
+      "file_sha256": "d5db1c6c6e3fe692e6cb8ccfb92fe9e8e9bd02f23c534d70590cf08f478c462a",
+      "first_A": 0.15077416052905115,
+      "frame_count": 1000,
+      "last_A": 14.998636860447741,
+      "net_change_A": 14.84786269991869,
+      "path": "SMD_trajectories/glucose/run4/glucose-pull-4-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.2081923098020031,
+          "mean": 0.04505463272937435,
+          "median": 0.03803834625651881,
+          "minimum": 3.575271073152919e-05,
+          "p90": 0.09368036429198054,
+          "p95": 0.11131197420397765,
+          "p99": 0.14495587752209851,
+          "standard_deviation": 0.03445441608772225
+        },
+        "coordinate_after_maximum_step_A": 6.384823162643321,
+        "coordinate_before_maximum_step_A": 6.176630852841318,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8667220723994469,
+        "fraction_negative_steps": 0.3923923923923924,
+        "fraction_positive_steps": 0.6076076076076076,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.115783018718117,
+        "maximum_absolute_step_A": 0.2081923098020031,
+        "maximum_step_from_frame_index_0_based": 419,
+        "maximum_step_signed_A": 0.2081923098020031,
+        "maximum_step_to_frame_index_0_based": 420,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.2081923098020031,
+          "mean": 0.014862725425344033,
+          "median": 0.012990141569958702,
+          "minimum": -0.17818864403747092,
+          "p90": 0.0867242051267235,
+          "p95": 0.1055835063146676,
+          "p99": 0.13692514661224323,
+          "standard_deviation": 0.05473688072274063
+        }
+      },
+      "system_name": "glucose"
+    },
+    {
+      "file_sha256": "3a7ef8c26ed71f8bf75f944739b3ffdb212726680653fc7556642f32b9453034",
+      "first_A": 0.09392111602127684,
+      "frame_count": 1000,
+      "last_A": 15.003377256643349,
+      "net_change_A": 14.909456140622073,
+      "path": "SMD_trajectories/glucose/run5/glucose-pull-5-visualisation.binpos",
+      "step_analysis": {
+        "absolute_step_summary_A": {
+          "maximum": 0.214796308099082,
+          "mean": 0.043426867640392955,
+          "median": 0.03591162290895866,
+          "minimum": 3.3413287455985596e-05,
+          "p90": 0.09018702655830087,
+          "p95": 0.10441939477801893,
+          "p99": 0.14274791036011764,
+          "standard_deviation": 0.0332777884054648
+        },
+        "coordinate_after_maximum_step_A": 8.826070341646483,
+        "coordinate_before_maximum_step_A": 8.611274033547401,
+        "counts_above_threshold_A": {
+          "0.25": 0,
+          "0.5": 0,
+          "1.0": 0,
+          "2.0": 0,
+          "5.0": 0
+        },
+        "first_quarter_coordinate_mean_A": 1.8615806693661834,
+        "fraction_negative_steps": 0.3923923923923924,
+        "fraction_positive_steps": 0.6076076076076076,
+        "frame_step_count": 999,
+        "last_quarter_coordinate_mean_A": 13.119093710432114,
+        "maximum_absolute_step_A": 0.214796308099082,
+        "maximum_step_from_frame_index_0_based": 581,
+        "maximum_step_signed_A": 0.214796308099082,
+        "maximum_step_to_frame_index_0_based": 582,
+        "pbc_like_jump_detected": false,
+        "signed_step_summary_A": {
+          "maximum": 0.214796308099082,
+          "mean": 0.014924380521143216,
+          "median": 0.014622953769896085,
+          "minimum": -0.14931324222959041,
+          "p90": 0.08083762953712237,
+          "p95": 0.10030936211364659,
+          "p99": 0.13222093292845938,
+          "standard_deviation": 0.05263617482563885
+        }
+      },
+      "system_name": "glucose"
+    }
+  ],
+  "trajectory_count": 20
+}
