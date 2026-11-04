@@ -1,0 +1,158 @@
+name: Summarize GluHUT umbrella lineage anomalies
+
+on:
+  push:
+    branches:
+      - main
+      - analysis/gluhut-us-lineage-anomalies
+    paths:
+      - "research/summarize_gluhut_us_lineage_anomalies.py"
+      - "tests/test_summarize_gluhut_us_lineage_anomalies.py"
+      - "research/data/gluhut-us-archive-inventory.json"
+      - "research/data/gluhut-all-sugars-wham-reproduction.json"
+      - "research/data/gluhut-us-route-lineage.json"
+      - ".github/workflows/gluhut-us-lineage-anomalies.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gluhut-us-lineage-anomalies-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run unit tests
+        run: python -m unittest tests/test_summarize_gluhut_us_lineage_anomalies.py -v
+
+      - name: Generate compact anomaly ledger
+        run: |
+          python research/summarize_gluhut_us_lineage_anomalies.py \
+            --umbrella-inventory research/data/gluhut-us-archive-inventory.json \
+            --wham-reproduction research/data/gluhut-all-sugars-wham-reproduction.json \
+            --route-lineage research/data/gluhut-us-route-lineage.json \
+            --output-json research/data/gluhut-us-lineage-anomalies.json \
+            | tee /tmp/us-anomaly-summary.json
+
+      - name: Validate material anomalies and evidence boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(
+              Path('research/data/gluhut-us-lineage-anomalies.json').read_text()
+          )
+          decision = data['decision']
+          summary = data['summary']
+
+          assert summary['trajectory_file_count'] == 714
+          assert summary['raw_route_directory_count'] == 14
+          assert summary['unique_complete_route_content_signature_count'] == 13
+          assert summary['deposited_wham_route_count'] == 13
+          assert summary['frame_failure_route_count'] == 2
+          assert summary['center_mismatch_route_count'] == 3
+          assert summary['complete_duplicate_route_group_count'] == 1
+          assert summary['within_route_duplicate_route_count'] == 2
+
+          frame_by_route = {
+              row['route_key']: row for row in data['frame_count_failures']
+          }
+          assert set(frame_by_route) == {
+              'fructofuranose/run2', 'fructofuranose/run3'
+          }
+          assert frame_by_route['fructofuranose/run2']['unique_frame_counts'] == [1, 10]
+          assert frame_by_route['fructofuranose/run3']['unique_frame_counts'] == [10]
+          assert frame_by_route['fructofuranose/run2']['total_file_count'] == 51
+          assert frame_by_route['fructofuranose/run3']['total_file_count'] == 51
+
+          mismatch_by_route = {
+              row['route_key']: row for row in data['center_mismatches']
+          }
+          assert set(mismatch_by_route) == {
+              'galactose/run1b', 'galactose/run2b', 'galactose/run3b'
+          }
+          for row in mismatch_by_route.values():
+              assert row['trajectory_window_count'] == 51
+              assert row['wham_window_count'] == 52
+              assert row['trajectory_only_centres_A'] == []
+              assert row['wham_only_centres_A'] == [2.25]
+
+          assert decision['all_route_directory_names_cover_0_to_15_by_0_3A'] is True
+          assert decision['all_named_100_frame_files_actually_contain_100_frames'] is False
+          assert decision['frame_failure_routes_are_exactly_fructofuranose_run2_and_run3'] is True
+          assert decision['fructofuranose_run2_has_one_and_ten_frame_files'] is True
+          assert decision['fructofuranose_run3_has_only_ten_frame_files'] is True
+          assert decision['all_center_mismatches_are_galactose_pathB_extra_2_25A'] is True
+          assert decision['galactose_pathB_trajectory_archive_has_51_windows'] is True
+          assert decision['galactose_pathB_wham_has_52_windows_including_2_25A'] is True
+          assert decision['galactose_run4a_run5a_complete_routes_are_exact_duplicates'] is True
+          assert decision['galactose_run1b_run2b_have_duplicate_0_0_and_0_3_files'] is True
+          assert decision['fourteen_route_directories_reduce_to_thirteen_unique_content_signatures'] is True
+          assert decision['umbrella_archive_contains_full_wham_histogram_frame_series'] is False
+          assert decision['authoritative_route_lineage_file_present'] is False
+          assert decision['histogram_generation_reproducible_from_us_archive'] is False
+          assert decision['pmf_recalculation_from_us_trajectories_authorized'] is False
+          assert decision['parent_pag_calibration_authorized'] is False
+          assert decision['candidate_ranking_authorized'] is False
+
+          print(json.dumps({
+              'summary': summary,
+              'frame_count_failures': data['frame_count_failures'],
+              'center_mismatches': data['center_mismatches'],
+              'decision': decision,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Commit deterministic anomaly ledger
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/data/gluhut-us-lineage-anomalies.json
+          if git diff --cached --quiet; then
+            echo 'No anomaly-ledger changes to commit.'
+            exit 0
+          fi
+          git commit -m 'Record GluHUT umbrella lineage anomalies'
+
+          target_branch="$GITHUB_REF_NAME"
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt $attempt to $target_branch"
+            git fetch origin "$target_branch"
+            git rebase "origin/$target_branch"
+            if git push origin "HEAD:$target_branch"; then
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo 'Could not publish the deterministic anomaly ledger.' >&2
+          exit 1
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## GluHUT umbrella lineage anomaly ledger'
+            echo
+            if [ -f /tmp/us-anomaly-summary.json ]; then
+              echo '```json'
+              cat /tmp/us-anomaly-summary.json
+              echo '```'
+            else
+              echo 'No anomaly summary was generated.'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
