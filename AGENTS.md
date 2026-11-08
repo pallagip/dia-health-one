@@ -26,6 +26,12 @@ The canonical private technical and decision archive is `w1ne/dia-health-one-res
 
 Do not publish confidential provider correspondence, private quotations, licence discussions, unpublished structures not approved for release, or internal procurement data.
 
+## Founder publishing authority
+
+Patrik Pallagi (CEO) and Andrii Shylenko (CTO) are each independently authorized to approve, publish and promote public Dia Health One website and research content. Approval from either founder is sufficient; dual approval is not required. Do not impose an Andrii-only gate on Patrik's public posting rights.
+
+This is a publishing-authority rule, not a waiver of factual accuracy or external obligations. Public scientific material must still respect the evidence boundaries below, protect confidential/provider information and third-party rights, and comply with applicable law. An approval from either founder is sufficient to publish content that passes those checks.
+
 ## Current public scientific state
 
 - AWS-1: **PASS for deposited WHAM-analysis reproduction**, with mandatory qualifications.
