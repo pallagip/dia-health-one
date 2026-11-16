@@ -29,13 +29,16 @@ jobs:
           test -s index.html
           mkdir _site
           cp index.html _site/index.html
-          for directory in assets images team; do
+          for directory in assets images team blog; do
             if [ -d "$directory" ]; then cp -R "$directory" "_site/$directory"; fi
           done
           tar -C . --exclude=research/data/nvidia-access-status.json --exclude=research/COMPUTE_STATUS.md --exclude=research/MILESTONE_REPORT.md --exclude=research/README.md --exclude=research/NVIDIA_INNOVATION_LAB_BRIEF.md --exclude=research/compute_smart_insulin_design_envelope.py --exclude=research/data/smart-insulin-design-envelope.json --exclude=research/data/smart-insulin-occupancy.csv --exclude=research/data/smart-insulin-selectivity-targets.csv --exclude=research/assets/smart-insulin-design-envelope.svg --exclude=research/assets/smart-insulin-design-envelope.png -cf - research | tar -C _site -xf -
           for file in favicon.ico robots.txt sitemap.xml; do
             if [ -f "$file" ]; then cp "$file" "_site/$file"; fi
           done
+          test -s _site/blog/index.html
+          test -s _site/blog/smart-insulin-frontier/index.html
+          test -s _site/assets/blog/smart-insulin-frontier/linkedin-smart-insulin-1200x627.jpg
           if [ -f research/status/index.html ]; then
             test -s _site/research/status/index.html
             test -s _site/research/status/status.json
