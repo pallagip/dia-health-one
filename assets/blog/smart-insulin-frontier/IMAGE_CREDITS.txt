@@ -1,0 +1,11 @@
+Image 1: insulin-crystals-nasa.jpg
+Source: NASA/Marshall, Insulincrystals.jpg
+Page: https://commons.wikimedia.org/wiki/File:Insulincrystals.jpg
+License: Public domain (work of US federal government; NASA/Marshall photo ID 9901879).
+Use: illustrative micrograph of insulin crystals; NOT from 2025 membrane crystal study.
+Image 2: conventional-insulin-vial-john-campbell.jpg
+Source: John Campbell, Actrapid vial.jpg
+Page: https://commons.wikimedia.org/wiki/File:Actrapid_vial.jpg
+License: CC0
+Use: illustrative photograph of conventional insulin; NOT glucose-responsive insulin.
+Social image: linkedin-smart-insulin-1200x627.jpg (Dia Health One branded layout incorporating the NASA public-domain photo, no other third-party figures).
