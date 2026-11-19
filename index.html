@@ -204,8 +204,11 @@
     @media (max-width: 1040px) {
       .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-    @media (max-width: 1125px) {
-      .nav-center { display: none; }
+    @media (min-width: 761px) and (max-width: 1125px) {
+      .topbar { height: auto; min-height: 82px; flex-wrap: wrap; padding: 10px 0; row-gap: 10px; }
+      .wordmark { order: 0; }
+      .topbar-actions { order: 1; }
+      .nav-center { order: 2; flex: 0 0 100%; justify-content: center; gap: 24px; font-size: 11px; }
     }
     @media (max-width: 760px) {
       .shell { width: min(calc(100% - 40px), 560px); }
