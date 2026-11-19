@@ -196,8 +196,11 @@
     .closing h2 span { color: var(--green); }
     .closing .hero-cta { background: var(--green); color: var(--ink); box-shadow: none; }
     .closing .hero-cta:hover { background: #d7efc0; }
-    .footer { display: flex; justify-content: space-between; margin-top: 110px; border-top: 1px solid #ffffff23; padding-top: 20px; color: #a09ea7; font: 9px var(--mono); letter-spacing: .08em; }
+    .footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; margin-top: 110px; border-top: 1px solid #ffffff23; padding-top: 20px; color: #a09ea7; font: 9px var(--mono); letter-spacing: .08em; }
     .footer .wordmark { color: white; font: 700 10px var(--sans); }
+    .blog-footer-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #ffffff55; border-radius: 999px; color: var(--green); font: 800 11px var(--sans); letter-spacing: .12em; text-decoration: none; white-space: nowrap; }
+    .blog-footer-link:hover { border-color: var(--green); }
+    .blog-footer-link:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
     .reveal { opacity: 1; transform: none; }
     @keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(2deg); } }
     @keyframes marquee { to { transform: translateX(-50%); } }
@@ -264,7 +267,6 @@
       <a href="#approach">Our approach</a>
       <a href="#team">Founders</a>
       <a href="/research/status/">Research status</a>
-      <a href="/blog/">Blog</a>
     </nav>
     <div class="topbar-actions">
       <a class="research-link" href="/research/status/">Status</a>
@@ -330,7 +332,6 @@
         <div class="method-copy"><p>We compute the target, then falsify mechanisms analytically.</p><p>Each hypothesis is tested in days, not years.</p></div>
         <div class="method-visual"><span>Target</span><i class="line"></i><span>Mechanism</span><i class="line"></i><span>Evidence</span></div>
         <p class="method-status"><a href="/research/status/">See where every claim stands — published facts, reproduced computation and untested chemistry ↗</a></p>
-        <p class="method-status"><a href="/blog/">Read research notes on glucose-responsive insulin ↗</a></p>
       </div>
     </section>
 
@@ -363,7 +364,7 @@
         <div class="section-label">DIA HEALTH ONE</div>
         <h2>Let’s make insulin<br /><span>safer by design.</span></h2>
         <a class="hero-cta" href="mailto:patrik@diahealth.one?subject=DIA%20HEALTH%20ONE%20%E2%80%94%20Hello">Get in touch <span>↗</span></a>
-        <div class="footer"><a class="wordmark" href="#top"><img class="brand-symbol" src="/assets/dia-health-one-mark.svg" alt="" />DIA HEALTH ONE</a><span>DIA HEALTH ONE, INC. · COMPUTATIONAL INSULIN DISCOVERY</span><span>© 2026</span></div>
+        <div class="footer"><a class="wordmark" href="#top"><img class="brand-symbol" src="/assets/dia-health-one-mark.svg" alt="" />DIA HEALTH ONE</a><span>DIA HEALTH ONE, INC. · COMPUTATIONAL INSULIN DISCOVERY</span><a class="blog-footer-link" href="/blog/">BLOG <span aria-hidden="true">↗</span></a><span>© 2026</span></div>
       </div>
     </footer>
   </main>
