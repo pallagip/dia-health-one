@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 672" width="520" height="672" role="img" aria-labelledby="dl-title dl-desc" font-family="Manrope, Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+  <title id="dl-title">Conceptual diagram: five separate levels, from a strategic question down to a measured readout</title>
+  <desc id="dl-desc">A conceptual illustration only. It contains no data, no molecule, no candidate and no executed screen. Five stacked bands, read top to bottom: a strategic question, which is something to argue about rather than a design input; an operational variable, a setting someone can choose such as linker length or attachment site; a unique structure, one sanitized molecule with a defined synthetic route, counted apart from contexts and methods; the context and method a structure would be tested in, such as buffer, glucose level and assay protocol; and the measured readout the test reports back, which is an outcome and never a design input. The counts at each level are different quantities and must not be multiplied together.</desc>
+  <rect width="520" height="672" fill="#f7f6f2"/>
+
+  <text x="16" y="26" font-family="DM Mono, ui-monospace, Menlo, monospace" font-size="16" fill="#6f56b5" letter-spacing="1.2">CONCEPTUAL — NOT DATA</text>
+  <text x="16" y="58" font-size="24" font-weight="700" fill="#202027">Five levels. Five different counts.</text>
+
+  <!-- level 1 -->
+  <g>
+    <rect x="16" y="78" width="488" height="92" rx="15" fill="#ffffff" stroke="#deddd7"/>
+    <rect x="16" y="78" width="6" height="92" rx="3" fill="#6f56b5"/>
+    <text x="36" y="106" font-family="DM Mono, ui-monospace, Menlo, monospace" font-size="16" fill="#6f56b5" letter-spacing="1.2">1 · STRATEGIC QUESTION</text>
+    <text x="36" y="136" font-size="21" font-weight="650" fill="#202027">What must this comparison decide?</text>
+    <text x="36" y="160" font-size="17" fill="#72717b">A question to argue about, not an input.</text>
+  </g>
+  <path d="M260 170 l0 16 M253 180 l7 9 l7 -9" fill="none" stroke="#b6b2c2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- level 2 -->
+  <g>
+    <rect x="16" y="200" width="488" height="92" rx="15" fill="#ffffff" stroke="#deddd7"/>
+    <rect x="16" y="200" width="6" height="92" rx="3" fill="#6f56b5"/>
+    <text x="36" y="228" font-family="DM Mono, ui-monospace, Menlo, monospace" font-size="16" fill="#6f56b5" letter-spacing="1.2">2 · OPERATIONAL VARIABLE</text>
+    <text x="36" y="258" font-size="21" font-weight="650" fill="#202027">A setting someone can choose.</text>
+    <text x="36" y="282" font-size="17" fill="#72717b">Linker length, attachment site, rigidity.</text>
+  </g>
+  <path d="M260 292 l0 16 M253 302 l7 9 l7 -9" fill="none" stroke="#b6b2c2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- level 3 -->
+  <g>
+    <rect x="16" y="322" width="488" height="92" rx="15" fill="#ece7f7" stroke="#cfc3ea"/>
+    <rect x="16" y="322" width="6" height="92" rx="3" fill="#46337d"/>
+    <text x="36" y="350" font-family="DM Mono, ui-monospace, Menlo, monospace" font-size="16" fill="#46337d" letter-spacing="1.2">3 · UNIQUE STRUCTURE</text>
+    <text x="36" y="380" font-size="21" font-weight="650" fill="#202027">One sanitized, route-defined design.</text>
+    <text x="36" y="404" font-size="17" fill="#5d5869">Counted apart from contexts and methods.</text>
+  </g>
+  <path d="M260 414 l0 16 M253 424 l7 9 l7 -9" fill="none" stroke="#b6b2c2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- level 4 -->
+  <g>
+    <rect x="16" y="444" width="488" height="92" rx="15" fill="#ffffff" stroke="#deddd7"/>
+    <rect x="16" y="444" width="6" height="92" rx="3" fill="#6f56b5"/>
+    <text x="36" y="472" font-family="DM Mono, ui-monospace, Menlo, monospace" font-size="16" fill="#6f56b5" letter-spacing="1.2">4 · CONTEXT AND METHOD</text>
+    <text x="36" y="502" font-size="21" font-weight="650" fill="#202027">Where and how it would be tested.</text>
+    <text x="36" y="526" font-size="17" fill="#72717b">Buffer, glucose level, assay protocol.</text>
+  </g>
+  <path d="M260 536 l0 16 M253 546 l7 9 l7 -9" fill="none" stroke="#b6b2c2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- level 5 -->
+  <g>
+    <rect x="16" y="566" width="488" height="92" rx="15" fill="#25222d"/>
+    <rect x="16" y="566" width="6" height="92" rx="3" fill="#c8e5a8"/>
+    <text x="36" y="594" font-family="DM Mono, ui-monospace, Menlo, monospace" font-size="16" fill="#c8e5a8" letter-spacing="1.2">5 · MEASURED READOUT</text>
+    <text x="36" y="624" font-size="21" font-weight="650" fill="#ffffff">What the test reports back.</text>
+    <text x="36" y="648" font-size="17" fill="#d1ced8">An outcome, never a design input.</text>
+  </g>
+</svg>

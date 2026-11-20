@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f8f5" />
+  <meta name="description" content="A follow-up note on organizing a design map into testable comparisons: keep questions, variables, structures, contexts and readouts on separate levels. It reports no new research result." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Dia Health One" />
+  <meta property="article:published_time" content="2026-11-20T00:00:00+01:00" />
+  <meta property="og:title" content="From dimensions to testable bets" />
+  <meta property="og:description" content="How a design map becomes testable comparisons, and which counts must stay separate. No new research result, no candidate ranking." />
+  <meta property="og:url" content="https://www.diahealth.one/blog/opposite-bets/" />
+  <meta property="og:image" content="https://www.diahealth.one/assets/blog/opposite-bets/opposite-bets-social.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="Schematic of two opposing hypotheses compared under matched conditions. It shows no molecule, candidate, screen or result." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From dimensions to testable bets" />
+  <meta name="twitter:description" content="How a design map becomes testable comparisons, and which counts must stay separate. No new research result, no candidate ranking." />
+  <meta name="twitter:image" content="https://www.diahealth.one/assets/blog/opposite-bets/opposite-bets-social.png" />
+  <meta name="twitter:image:alt" content="Schematic of two opposing hypotheses compared under matched conditions. It shows no molecule, candidate, screen or result." />
+  <link rel="canonical" href="https://www.diahealth.one/blog/opposite-bets/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/dia-health-one-mark.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/blog/blog.css" />
+  <title>From dimensions to testable bets | DIA HEALTH ONE</title>
+  <style>
+    .opposite-bets{line-height:1.62}
+    .opposite-bets .hero{position:relative;padding:86px 0 54px;overflow:hidden;isolation:isolate}
+    .opposite-bets .hero::after{content:"";position:absolute;z-index:-1;width:460px;height:460px;right:-85px;top:-80px;border-radius:50%;background:radial-gradient(circle,rgba(113,85,189,.16),rgba(113,85,189,0) 68%)}
+    .opposite-bets .kicker,.opposite-bets .label{font:11px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--purple)}
+    .opposite-bets .hero h1{font-size:clamp(40px,6.6vw,74px);line-height:1;letter-spacing:-.062em;margin:18px 0 24px;font-weight:650;max-width:900px}
+    .opposite-bets .lead{font-size:clamp(18px,2.1vw,24px);max-width:800px;color:var(--muted);margin:0}
+    .opposite-bets .hero-note{margin-top:30px;border:1px solid #e2d7ad;border-left:5px solid #b99538;background:#fcf7e8;padding:19px 22px;border-radius:5px 16px 16px 5px;max-width:900px;color:#5e5848}
+    .opposite-bets .hero-note strong{color:var(--ink)}
+    .opposite-bets .figure{margin:0 auto;max-width:560px}
+    .opposite-bets .figure img{display:block;width:100%;height:auto;border:1px solid #e5e4e0;border-radius:20px;background:#fff}
+    .opposite-bets .figure figcaption{font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0 0}
+    .opposite-bets section{padding:48px 0}
+    .opposite-bets .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:26px}
+    .opposite-bets .section-head h2{font-size:clamp(29px,4.1vw,46px);letter-spacing:-.05em;line-height:1.06;margin:10px 0 0}
+    .opposite-bets .note{max-width:460px;color:var(--muted);font-size:14px;margin:0}
+    .opposite-bets .prose{max-width:760px;font-size:17px;color:#3c3b46}
+    .opposite-bets .prose p{margin:0 0 20px}
+    .opposite-bets .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .opposite-bets .card{background:#fff;border:1px solid #e5e4e0;border-radius:17px;padding:23px;box-shadow:0 10px 30px rgba(32,31,39,.035);min-width:0}
+    .opposite-bets .card h3{margin:9px 0;font-size:19px;letter-spacing:-.02em;overflow-wrap:anywhere}
+    .opposite-bets .card p{margin:0;color:var(--muted);font-size:14.5px}
+    .opposite-bets .card .label{font-size:11px}
+    .opposite-bets .insight-panel{background:#25222d;color:#fff;border-radius:22px;padding:clamp(24px,5vw,44px);display:grid;grid-template-columns:.75fr 1.25fr;gap:34px}
+    .opposite-bets .insight-panel .label{color:#cbbbf1}
+    .opposite-bets .insight-panel h2{margin-top:10px}
+    .opposite-bets .insight-panel p,.opposite-bets .insight-panel li{color:#d1ced8}
+    .opposite-bets .insight-panel p{margin:0 0 13px}
+    .opposite-bets .insight-panel ul{padding-left:20px;margin:0 0 18px}
+    .opposite-bets .insight-panel li+li{margin-top:8px}
+    .opposite-bets .insight-panel strong{color:#fff}
+    .opposite-bets .decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .opposite-bets .decision{background:#fff;border:1px solid #e5e4e0;border-radius:15px;padding:21px;min-width:0}
+    .opposite-bets .decision h3{font-size:17px;margin:0 0 8px;overflow-wrap:anywhere}
+    .opposite-bets .decision p{color:var(--muted);margin:0;font-size:14px}
+    .opposite-bets .limits{border:1px solid #e2d7ad;background:#fcf7e8;border-radius:18px;padding:24px}
+    .opposite-bets .limits h2{font-size:19px;letter-spacing:-.02em;line-height:1.3;margin:0 0 9px}
+    .opposite-bets .limits p{margin:0 0 12px;color:#5e5848}
+    .opposite-bets .limits p:last-child{margin:0}
+    .opposite-bets .source-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .opposite-bets .source-list a{display:flex;justify-content:space-between;gap:16px;padding:16px 18px;background:#fff;border:1px solid #e5e4e0;border-radius:12px;text-decoration:none;min-width:0}
+    .opposite-bets .source-list a span:first-child{overflow-wrap:anywhere}
+    .opposite-bets .source-list a:hover{border-color:var(--purple)}
+    .opposite-bets .back{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border-radius:999px;background:var(--deep);color:#fff;text-decoration:none;font-weight:700}
+    .opposite-bets .back:hover{background:var(--purple)}
+    @media(max-width:900px){.opposite-bets .cards{grid-template-columns:1fr 1fr}.opposite-bets .insight-panel{grid-template-columns:1fr}.opposite-bets .decision-grid{grid-template-columns:1fr 1fr}.opposite-bets .section-head{align-items:start;flex-direction:column}}
+    @media(max-width:760px){.opposite-bets .hero{padding:54px 0 34px}.opposite-bets .hero::after{width:300px;height:300px;right:-140px;top:-70px}.opposite-bets section{padding:38px 0}.opposite-bets .cards,.opposite-bets .decision-grid,.opposite-bets .source-list{grid-template-columns:1fr}.opposite-bets .insight-panel{padding:24px}.opposite-bets .card{padding:21px}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"From dimensions to testable bets","datePublished":"2026-11-20","dateModified":"2026-11-20","description":"A follow-up note on organizing a design map into testable comparisons, and on keeping questions, variables, structures, contexts and readouts as separate levels. It reports no new research result.","image":"https://www.diahealth.one/assets/blog/opposite-bets/opposite-bets-social.png","author":{"@type":"Organization","name":"Dia Health One"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.diahealth.one/blog/opposite-bets/"},"publisher":{"@type":"Organization","name":"Dia Health One","url":"https://www.diahealth.one/"}}</script>
+</head>
+<body id="top" class="opposite-bets">
+<header class="shell topbar">
+  <a class="wordmark" href="/" aria-label="DIA HEALTH ONE home"><img class="brand-symbol" src="/assets/dia-health-one-mark.svg" alt="">DIA <span>HEALTH</span> ONE</a>
+  <nav class="nav-center" aria-label="Main navigation">
+    <a href="/#smart-insulin">Smart insulin</a>
+    <a href="/#challenge">The challenge</a>
+    <a href="/#approach">Our approach</a>
+    <a href="/#team">Founders</a>
+    <a href="/research/status/">Research status</a>
+    <a aria-current="page" href="/blog/">Blog</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="research-link" href="/research/status/">Status</a>
+    <a class="research-link" href="/research/"><span class="link-label">Research Demo</span><span class="link-label-short">Demo</span></a>
+    <a class="contact-link" href="mailto:patrik@diahealth.one?subject=DIA%20HEALTH%20ONE%20%E2%80%94%20Hello">Contact</a>
+  </div>
+</header>
+<main>
+  <section class="hero wrap">
+    <div class="kicker">Research method · follow-up note · 20 November 2026</div>
+    <h1>From dimensions to testable bets.</h1>
+    <p class="lead">An earlier note argued for comparing opposing design hypotheses. This follow-up is about the step after that: how a design map becomes a set of comparisons someone can actually run, and which counts must stay apart while you do it.</p>
+    <div class="hero-note"><strong>Scope:</strong> this note reports no new research result and does not change program status. It describes bookkeeping for future comparisons. No molecule is proposed, enumerated, simulated, screened or ranked here.</div>
+  </section>
+
+  <section class="wrap" id="levels">
+    <div class="section-head"><div><div class="label">Keep the levels apart</div><h2>A map is not one long list.</h2></div><p class="note">The most common error in a design map is to flatten everything into a single count. Questions, variables, structures, contexts and readouts behave differently, and mixing them makes a plan look larger than it is.</p></div>
+    <div class="prose">
+      <p>A strategic question is something a team argues about: does ring rigidity matter more than linker length? An operational variable is a setting someone can choose: how long the linker is, where the attachment site sits. A unique structure is one specific, sanitized molecule with a defined synthetic route. A context or method is the buffer, the glucose level, the assay or the simulation protocol a structure is tested in. A measured readout is what the test reports back.</p>
+      <p>Readouts are the level people most often misfile. Response sharpness and conformational-change size are outcomes. Receptor accessibility can be a design objective, but its measured value is a readout for a defined structure and context. You choose a structure and context, then measure the outcome. Counting the design objective and the measurement as separate inputs can count the same effect twice.</p>
+      <p>The 19 November note listed insulin-receptor accessibility as a design dimension. This follow-up separates that design objective from its readout: accessibility is measured for a defined structure in a specified context.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <figure class="figure">
+      <img src="/assets/blog/opposite-bets/design-levels.svg" alt="Conceptual diagram with five stacked bands: strategic question, operational variable, unique structure, context and method, and measured readout. It shows no data, molecule or result." width="520" height="672" fetchpriority="high" />
+      <figcaption>Planning and scoping illustration only. It contains no data, no molecule, no candidate and no executed screen. The counts at each level are different quantities; they should not be multiplied together or reported as one number.</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap" id="numbers">
+    <div class="section-head"><div><div class="label">What the sketch numbers mean</div><h2>Proposed bookkeeping, nothing more.</h2></div><p class="note">The planning draft discusses growing roughly 20 strategic dimensions toward about 30 axes, then about 100 operational variables. It derives a scoping figure of roughly 5,000 variable-by-context comparison bets. The four comparison formats are described separately. These are planning figures only.</p></div>
+    <div class="cards">
+      <article class="card"><div class="label">About 30 axes</div><h3>A human-sized agenda.</h3><p>A count of topics a team could debate and prioritize. It is a proposal for how wide the agenda should be, not an approved program decision and not a list of agreed design choices.</p></article>
+      <article class="card"><div class="label">About 100 variables</div><h3>Settings, once an axis is specific.</h3><p>A proposal for how finely each axis might be broken into choosable settings. The public research record does not establish a reviewed or approved variable set; naming a variable does not authorize testing it.</p></article>
+      <article class="card"><div class="label">About 5,000 comparison bets</div><h3>Variables crossed with background conditions.</h3><p>The draft derives this scoping figure by crossing about 100 operational variables with 50 background contexts (5 pH × 2 salt × 5 glucose). It describes four comparison formats separately. The figure counts proposed comparisons, not unique molecules, simulations, screened candidates or results.</p></article>
+    </div>
+    <div class="prose" style="margin-top:26px">
+      <p>These figures are presented in the planning draft as bookkeeping and scoping proposals. They do not establish a validated schema or a completed simulation or screen. The public research record remains the place for verified outputs; treating these counts as results would overstate the work.</p>
+    </div>
+  </section>
+
+  <section class="wrap" id="counting">
+    <div class="section-head"><div><div class="label">Counting designs honestly</div><h2>A large number is not a library.</h2></div><p class="note">Our earlier note described a theoretical combinatorial design space. That description is not a count of structures we enumerated, validated or tested.</p></div>
+    <div class="prose">
+      <p>The narrow theoretical claim is only that combining the listed choices without constraint yields a very large arithmetic space.</p>
+      <p>So count the levels separately and say which one you mean. Unique, sanitized, route-defined structures are one count. Contexts are another. Methods, conformers and protonation states are another. Results are another again. Multiplying them together produces a headline number that answers no question anyone asked, and it hides the only count that matters at the start: how many distinct molecules a team could realistically make and test.</p>
+    </div>
+  </section>
+
+  <section class="wrap" id="ladders">
+    <div class="section-head"><div><div class="label">Design the comparison</div><h2>Opposite bets need meaningful settings.</h2></div><p class="note">An opposite bet is only as good as the two settings it compares. Both sides must be chemically and biologically sensible, and both must be appropriate to the assay or calculation that will judge them.</p></div>
+    <figure class="figure">
+      <img src="/assets/blog/opposite-bets/comparison-ladder.svg" alt="Conceptual diagram of three comparison rungs with uncertainty bars: a broad contrast and a narrower one where the bars stay apart, then a narrow one where the bars overlap and the decision is to stop. It shows no data, prediction or executed screen." width="520" height="618" loading="lazy" />
+      <figcaption>Conceptual illustration only. The positions and bars are drawn for explanation; they are not measurements, predictions or the output of an executed screen.</figcaption>
+    </figure>
+    <div class="prose" style="margin-top:34px">
+      <p>Start with the broadest contrast that still makes scientific sense in the chosen assay — two settings far enough apart to separate a real effect from noise, and both inside the range the assay can report. Extremes that no assay tolerates are not a comparison. A pH 1 to pH 14 ladder is an illustration, not a proposed experiment. Those extremes would not test the intended protein behavior under usable assay conditions.</p>
+      <p>Refine only on two conditions. First, the measured or modelled difference must exceed its own uncertainty. Second, the next, narrower comparison must be able to change a decision. If either condition fails, stop and record the interval reached. A broad contrast is useful only if it can change the next decision.</p>
+      <p>Not every choice is a ladder. An attachment site, a backbone, a sensor chemotype: these are categorical. They are compared as matched pairs under identical conditions, with no middle point to step toward. Dressing a categorical choice up as a numeric staircase invents precision the question does not have.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="insight-panel">
+      <div><div class="label">Models follow labels</div><h2>Architecture is set by data, not by ambition.</h2></div>
+      <div>
+        <p>A map of comparisons is not a training set. What a model can be is decided by the labels that exist and by how it performs on validated benchmarks — not by how many entries a planning document lists.</p>
+        <ul>
+          <li>A long axis list is not a feature vector. Features that are mostly absent or imputed teach a model the imputation, not the chemistry.</li>
+          <li>Any model needs an honest held-out evaluation against reference cases before its outputs are used for anything.</li>
+          <li>Predictions without calibrated uncertainty cannot support a decision, and uncertainty itself has to be checked against measured data.</li>
+        </ul>
+        <p><strong>Nothing of this kind is reported here.</strong> The planning draft's model ideas are proposals, not implemented tools. This note reports no high-dimensional feature model, graph neural network, trained model, candidate ranking or production campaign, and authorizes none.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head"><div><div class="label">Keep the record complete</div><h2>Counts and uncertainty stay visible.</h2></div><p class="note">Bookkeeping earns its place only if it records what happened to every comparison, including the ones that failed to separate.</p></div>
+    <div class="decision-grid">
+      <article class="decision"><h3>Say which count you mean</h3><p>Report questions, variables, unique structures, contexts and results as separate numbers with stated definitions. Do not combine them into a single headline figure.</p></article>
+      <article class="decision"><h3>Preserve stopped bets</h3><p>Keep comparisons that ended at the broad contrast, with the same inputs, method details and reasoning as the ones that continued. A negative comparison is a result.</p></article>
+      <article class="decision"><h3>Record the interval, not the winner</h3><p>When refinement stops, record where the difference fell inside its uncertainty. That interval is the finding; naming a winner beyond it overstates what was measured.</p></article>
+    </div>
+  </section>
+
+  <section class="wrap" id="limits">
+    <div class="limits"><div class="label">Evidence boundary</div><h2>Bookkeeping is not evidence.</h2><p>This note reports no new research result and does not change the public program status. The figures discussed here come from a planning draft. They are not approved program decisions or a validated platform, and they do not report a verified result or an executed screening campaign.</p><p>No Dia Health One compound is a measured hit, a working switch, an insulin candidate or a drug. Candidate ranking is not authorized, and no set of candidates is ready for a laboratory. The public status page remains the bounded record of what has been shown.</p></div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head"><div><div class="label">Read next</div><h2>Where this follows from.</h2></div><p class="note">The earlier note sets out why opposing hypotheses are compared at all. The status page states what the program has and has not shown.</p></div>
+    <div class="source-list">
+      <a href="/blog/opposite-bets-smart-insulin-discovery/"><span>Earlier note: why we test opposite ideas</span><span aria-hidden="true">→</span></a>
+      <a href="/research/status/"><span>Research status and confidence</span><span aria-hidden="true">↗</span></a>
+      <a href="/research/"><span>Research workspace</span><span aria-hidden="true">↗</span></a>
+      <a href="/blog/"><span>All research notes</span><span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:0"><a class="back" href="/blog/">← Back to research notes</a></section>
+</main>
+<footer class="wrap footer">© 2026 Dia Health One. Non-clinical research; no approved or clinically validated Dia Health One therapy.<div class="footnav"><a href="/blog/">More research notes</a><a href="/research/status/">Research status</a><a href="/">Home</a></div></footer>
+</body>
+</html>
